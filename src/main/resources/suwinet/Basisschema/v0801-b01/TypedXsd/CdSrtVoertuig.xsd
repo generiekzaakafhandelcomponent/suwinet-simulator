@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI) -->
+<!-- edited with XMLSpy v2019 rel. 3 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI) -->
 <!-- SuwiML Basisschema tabellen typed v0801-b01 -->
 <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801">
-	<!-- Woonwagenverwijzing v0801-b01 tabeldefinitie met type-aanduiding -->
-	<simpleType name="Woonwagenverwijzing">
+	<simpleType name="CdSrtVoertuig">
 		<restriction base="string">
-			<length value="2"/>
+			<length value="1"/>
 			<pattern value="\D*"/>
 		</restriction>
 	</simpleType>

@@ -26,7 +26,7 @@ configurations {
 	jaxws
 }
 
-task genWs {
+task genKadasterWs {
 	ext.sourcesDir = "${rootDir}/src/main/java"
 	ext.classesDir = "${buildDir}/classes/jaxb"
 	ext.schema = "${rootDir}/src/main/resources/suwinet/Diensten/KadasterDossierGSD/v0300-b02/Impl/BKWI.wsdl"
@@ -49,7 +49,30 @@ task genWs {
 	}
 }
 
-//compileJava.dependsOn genWs
+task genRDWWs {
+	ext.sourcesDir = "${rootDir}/src/main/java"
+	ext.classesDir = "${buildDir}/classes/jaxb"
+	ext.schema = "${rootDir}/src/main/resources/suwinet/Diensten/RDWDossierGSD/v0200-b02/Impl/BKWI.wsdl"
+
+	outputs.dir classesDir
+
+	doLast() {
+		project.ant {
+			taskdef (name:'wsimport',
+					classname:'com.sun.tools.ws.ant.WsImport',
+					classpath:configurations.jaxws.asPath)
+			mkdir(dir: sourcesDir)
+			mkdir(dir: classesDir)
+
+			wsimport(keep:true,
+					destdir: classesDir,
+					sourcedestdir: sourcesDir,
+					wsdl: schema)
+		}
+	}
+}
+
+//compileJava.dependsOn genKadasterWs
 
 bootJar {
 	archiveBaseName = 'gs-producing-web-service'
