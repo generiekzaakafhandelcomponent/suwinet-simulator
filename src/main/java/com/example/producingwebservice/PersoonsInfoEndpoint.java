@@ -49,7 +49,7 @@ public class PersoonsInfoEndpoint {
         logger.info("request.getBurgerservicenr(): " + request.getBurgerservicenr());
         printRequest(request);
 
-        PersoonsInfoResponse response = createPersoonsInfoResponse(request);
+        PersoonsInfoResponse response = createPersoonsInfoResponse();
         addClientSuwiPersoonsInfo(request, response);
 //        addPersoonNietGevonden(response);
 
@@ -62,7 +62,7 @@ public class PersoonsInfoEndpoint {
         response.getContent().add(fwiObjectFactory.createNietsGevonden("nope die ken ik niet"));
     }
 
-    private PersoonsInfoResponse createPersoonsInfoResponse(PersoonsInfo request) {
+    private PersoonsInfoResponse createPersoonsInfoResponse() {
         return kadasterdossiergsdFactory.createPersoonsInfoResponse();
     }
 

@@ -17,7 +17,7 @@ import jakarta.xml.ws.WebServiceFeature;
  * Generated source version: 3.0
  * 
  */
-@WebServiceClient(name = "KadasterDossierGSD-v0300", targetNamespace = "http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300", wsdlLocation = "file:/Users/paul/tmp/suwitense/src/main/resources/suwinet/Diensten/KadasterDossierGSD/v0300-b02/Impl/BKWI.wsdl")
+@WebServiceClient(name = "KadasterDossierGSD-v0300", targetNamespace = "http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300", wsdlLocation = "file:/Users/paul/denhaag/suwitense/src/main/resources/suwinet/Diensten/KadasterDossierGSD/v0300-b02/Impl/BKWI.wsdl")
 public class KadasterDossierGSDV0300
     extends Service
 {
@@ -30,7 +30,7 @@ public class KadasterDossierGSDV0300
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("file:/Users/paul/tmp/suwitense/src/main/resources/suwinet/Diensten/KadasterDossierGSD/v0300-b02/Impl/BKWI.wsdl");
+            url = new URL("file:/Users/paul/denhaag/suwitense/src/main/resources/suwinet/Diensten/KadasterDossierGSD/v0300-b02/Impl/BKWI.wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

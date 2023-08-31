@@ -57,8 +57,8 @@ public class ObjectInfoKadastraleAanduidingResponse {
      * <p>
      * You are getting this "catch-all" property because of the following reason: 
      * The field name "FWI" is used by two different parts of a schema. See: 
-     * line 38 of file:/Users/paul/tmp/suwitense/src/main/resources/suwinet/Diensten/KadasterDossierGSD/v0300-b02/BodyReaction.xsd
-     * line 36 of file:/Users/paul/tmp/suwitense/src/main/resources/suwinet/Diensten/KadasterDossierGSD/v0300-b02/BodyReaction.xsd
+     * line 38 of file:/Users/paul/denhaag/suwitense/src/main/resources/suwinet/Diensten/KadasterDossierGSD/v0300-b02/BodyReaction.xsd
+     * line 36 of file:/Users/paul/denhaag/suwitense/src/main/resources/suwinet/Diensten/KadasterDossierGSD/v0300-b02/BodyReaction.xsd
      * <p>
      * To get rid of this property, apply a property customization to one 
      * of both of the following declarations to change their names:Gets the value of the content property.
