@@ -1,9 +1,8 @@
-package com.example.producingwebservice;
+package com.ritense.suwitense.webservice.endpoint;
 
 import jakarta.xml.bind.JAXBElement;
 import jakarta.xml.bind.JAXBException;
 import nl.bkwi.suwiml.basisschema.v0801.StandaardBedr;
-import nl.bkwi.suwiml.diensten.kadasterdossiergsd.v0300.ClientSuwiPersoonsInfo;
 import nl.bkwi.suwiml.diensten.rdwdossiergsd.v0200.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,9 +17,9 @@ import javax.xml.namespace.QName;
 import java.math.BigInteger;
 
 @Endpoint
-public class RWDEndpoint extends SuwinetEndpoint {
+public class RWEndpoint extends SuwinetEndpoint {
 
-    Logger logger = LoggerFactory.getLogger(RWDEndpoint.class);
+    Logger logger = LoggerFactory.getLogger(RWEndpoint.class);
 
     private static final String NAMESPACE_URI = "http://bkwi.nl/SuwiML/Diensten/RDWDossierGSD/v0200";
     private static final String incomingSchema = "build/resources/main/suwinet/Diensten/RDWDossierGSD/v0200-b02/BodyAction.xsd";
@@ -34,7 +33,7 @@ public class RWDEndpoint extends SuwinetEndpoint {
     };
 
     @Autowired
-    public RWDEndpoint() {
+    public RWEndpoint() {
         super();
         dossierObjectFactory = new nl.bkwi.suwiml.diensten.rdwdossiergsd.v0200.ObjectFactory();
     }
@@ -52,7 +51,7 @@ public class RWDEndpoint extends SuwinetEndpoint {
             addPersoonNietGevonden(response.getContent());
         } else {
             KentekenInfoResponse.ClientSuwi clientSuwi = createClientSuwiPersoonsInfo(request);
-            JAXBElement<ClientSuwiPersoonsInfo> jaxbElement =  new JAXBElement(
+            JAXBElement<KentekenInfoResponse.ClientSuwi> jaxbElement =  new JAXBElement(
                     new QName("ClientSuwi"), KentekenInfoResponse.ClientSuwi.class, clientSuwi);
 
             response.getContent().add(jaxbElement);

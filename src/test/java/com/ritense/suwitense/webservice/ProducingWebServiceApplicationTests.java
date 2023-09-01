@@ -1,4 +1,4 @@
-package com.example.producingwebservice;
+package com.ritense.suwitense.webservice;
 
 import org.junit.jupiter.api.Test;
 

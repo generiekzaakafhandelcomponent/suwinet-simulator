@@ -72,6 +72,29 @@ task genRDWWs {
 	}
 }
 
+task genUWVWs {
+	ext.sourcesDir = "${rootDir}/src/main/java"
+	ext.classesDir = "${buildDir}/classes/jaxb"
+	ext.schema = "${rootDir}/src/main/resources/suwinet/Diensten/UWVDossierInkomstenGSDDigitaleDiensten/v0200-b01/Impl/BKWI.wsdl"
+
+	outputs.dir classesDir
+
+	doLast() {
+		project.ant {
+			taskdef (name:'wsimport',
+					classname:'com.sun.tools.ws.ant.WsImport',
+					classpath:configurations.jaxws.asPath)
+			mkdir(dir: sourcesDir)
+			mkdir(dir: classesDir)
+
+			wsimport(keep:true,
+					destdir: classesDir,
+					sourcedestdir: sourcesDir,
+					wsdl: schema)
+		}
+	}
+}
+
 //compileJava.dependsOn genKadasterWs
 
 bootJar {

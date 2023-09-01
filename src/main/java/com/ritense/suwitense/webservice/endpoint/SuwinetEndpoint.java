@@ -1,4 +1,4 @@
-package com.example.producingwebservice;
+package com.ritense.suwitense.webservice.endpoint;
 
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
