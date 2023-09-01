@@ -5,6 +5,7 @@ import javax.xml.namespace.QName;
 import jakarta.xml.bind.JAXBElement;
 import jakarta.xml.bind.annotation.XmlElementDecl;
 import jakarta.xml.bind.annotation.XmlRegistry;
+import nl.bkwi.suwiml.fwi.v0205.FWI;
 
 
 /**
@@ -26,6 +27,13 @@ public class ObjectFactory {
 
     private static final QName _PersoonsInfoResponseClientSuwi_QNAME = new QName("", "ClientSuwi");
     private static final QName _ObjectInfoKadastraleAanduidingResponseOnroerendeZaak_QNAME = new QName("", "OnroerendeZaak");
+
+    private static final QName _FWI_QNAME = new QName("http://bkwi.nl/SuwiML/FWI/v0205", "FWI");
+
+    @XmlElementDecl(namespace = "http://bkwi.nl/SuwiML/FWI/v0205", name = "FWI")
+    public JAXBElement<FWI> createFWI(FWI value) {
+        return new JAXBElement<>(_FWI_QNAME, FWI.class, null, value);
+    }
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: nl.bkwi.suwiml.diensten.kadasterdossiergsd.v0300

@@ -1,10 +1,7 @@
 package com.example.producingwebservice;
 
-import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBElement;
 import jakarta.xml.bind.JAXBException;
-import jakarta.xml.bind.Marshaller;
-import jakarta.xml.bind.annotation.XmlSeeAlso;
 import nl.bkwi.suwiml.diensten.kadasterdossiergsd.v0300.ClientSuwiPersoonsInfo;
 import nl.bkwi.suwiml.diensten.kadasterdossiergsd.v0300.PersoonsInfoResponse;
 import nl.bkwi.suwiml.diensten.kadasterdossiergsd.v0300.PersoonsInfo;
@@ -17,28 +14,33 @@ import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 import org.xml.sax.SAXException;
-
-import javax.xml.XMLConstants;
 import javax.xml.namespace.QName;
-import javax.xml.validation.Schema;
-import javax.xml.validation.SchemaFactory;
-import java.io.File;
 import java.math.BigInteger;
 
 @Endpoint
-@XmlSeeAlso({ nl.bkwi.suwiml.fwi.v0205.ObjectFactory.class,nl.bkwi.suwiml.fwi.v0205.FWI.class })
-public class PersoonsInfoEndpoint {
+public class PersoonsInfoEndpoint extends SuwinetEndpoint {
 
     Logger logger = LoggerFactory.getLogger(PersoonsInfoEndpoint.class);
 
     private static final String NAMESPACE_URI = "http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300";
 
-    nl.bkwi.suwiml.fwi.v0205.ObjectFactory fwiObjectFactory;
+    private static final String INCOMING_SCHEMA = "build/resources/main/suwinet/Diensten/KadasterDossierGSD/v0300-b02/BodyAction.xsd";
+    private static final String OUT_GOING_SCHEMA = "build/resources/main/suwinet/Diensten/KadasterDossierGSD/v0300-b02/BodyReaction.xsd";
+
+    private static final Class[] INCOMING_CLASSES = {
+            nl.bkwi.suwiml.diensten.kadasterdossiergsd.v0300.PersoonsInfo.class
+    };
+    private static final Class[] OUT_GOING_CLASSES = {
+            nl.bkwi.suwiml.fwi.v0205.ObjectFactory.class,
+            nl.bkwi.suwiml.diensten.kadasterdossiergsd.v0300.ObjectFactory.class
+    };
+
+
     nl.bkwi.suwiml.diensten.kadasterdossiergsd.v0300.ObjectFactory kadasterdossiergsdFactory;
 
     @Autowired
     public PersoonsInfoEndpoint() {
-        fwiObjectFactory = new nl.bkwi.suwiml.fwi.v0205.ObjectFactory();
+        super();
         kadasterdossiergsdFactory = new nl.bkwi.suwiml.diensten.kadasterdossiergsd.v0300.ObjectFactory();
     }
 
@@ -47,36 +49,41 @@ public class PersoonsInfoEndpoint {
     public PersoonsInfoResponse getPersoonsInfo(@RequestPayload PersoonsInfo request) throws JAXBException, SAXException {
 
         logger.info("request.getBurgerservicenr(): " + request.getBurgerservicenr());
-        printRequest(request);
+        logger.info("request: " + printPayload(request, INCOMING_CLASSES, INCOMING_SCHEMA));
 
-        PersoonsInfoResponse response = createPersoonsInfoResponse();
-        addClientSuwiPersoonsInfo(request, response);
-//        addPersoonNietGevonden(response);
+        PersoonsInfoResponse response = createResponse();
+        if(! request.getBurgerservicenr().isEmpty() ) {
+            ClientSuwiPersoonsInfo clientSuwiPersoonsInfo = createClientSuwiPersoonsInfo(request);
+            JAXBElement<ClientSuwiPersoonsInfo> jaxbElement = new JAXBElement(
+                    new QName("ClientSuwi"),
+                    ClientSuwiPersoonsInfo.class,
+                    clientSuwiPersoonsInfo
+            );
 
-        printResponse(response);
+            response.getContent().add(jaxbElement);
+
+        } else {
+            addPersoonNietGevonden(response.getContent());
+        }
+        logger.info("response: " + printPayload(response, OUT_GOING_CLASSES, OUT_GOING_SCHEMA));
 
         return response;
     }
 
-    private void addPersoonNietGevonden(PersoonsInfoResponse response) {
-        response.getContent().add(fwiObjectFactory.createNietsGevonden("nope die ken ik niet"));
-    }
-
-    private PersoonsInfoResponse createPersoonsInfoResponse() {
+    private PersoonsInfoResponse createResponse() {
         return kadasterdossiergsdFactory.createPersoonsInfoResponse();
     }
 
-    private void addClientSuwiPersoonsInfo(PersoonsInfo request, PersoonsInfoResponse response) {
+    private ClientSuwiPersoonsInfo createClientSuwiPersoonsInfo(PersoonsInfo request) {
 
-
-        ClientSuwiPersoonsInfo clientSuwiPersoonsInfo = kadasterdossiergsdFactory.createClientSuwiPersoonsInfo();
-        clientSuwiPersoonsInfo.setBurgerservicenr(request.getBurgerservicenr());
-        clientSuwiPersoonsInfo.setGeboortedat("19520524");
+        ClientSuwiPersoonsInfo clientSuwi = kadasterdossiergsdFactory.createClientSuwiPersoonsInfo();
+        clientSuwi.setBurgerservicenr(request.getBurgerservicenr());
+        clientSuwi.setGeboortedat("19520524");
         ClientSuwiPersoonsInfo.Eigendom eigendom = new ClientSuwiPersoonsInfo.Eigendom();
         eigendom.setIndEigendomOZVerleden("1");
-        clientSuwiPersoonsInfo.setDatToestandKadaster("19920526");
-        clientSuwiPersoonsInfo.setDatFiatteringKadaster("19720127");
-        clientSuwiPersoonsInfo.setEigendom(eigendom);
+        clientSuwi.setDatToestandKadaster("19920526");
+        clientSuwi.setDatFiatteringKadaster("19720127");
+        clientSuwi.setEigendom(eigendom);
         PostadresKadaster postAdres = kadasterdossiergsdFactory.createPostadresKadaster();
         postAdres.setGeneriekAdresBuitenland(null);
         PostadresKadaster.Postbusadres postbusadres = new PostadresKadaster.Postbusadres();
@@ -87,41 +94,7 @@ public class PersoonsInfoEndpoint {
         postbusadres.setWoonplaatsnaam("awdawdawd");
         postAdres.setPostbusadres(postbusadres);
         postAdres.setStraatadresBag(null);
-        clientSuwiPersoonsInfo.setCorrespondentieadres(postAdres);
-        JAXBElement<ClientSuwiPersoonsInfo> jaxbElement =  new JAXBElement(
-                new QName("ClientSuwi"), ClientSuwiPersoonsInfo.class, clientSuwiPersoonsInfo);
-
-        response.getContent().add(jaxbElement);
-    }
-
-    private void printRequest(PersoonsInfo request) throws JAXBException, SAXException {
-        JAXBContext jaxbContext = JAXBContext.newInstance(new Class[] {PersoonsInfo.class});
-
-        SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-        Schema schema = schemaFactory.newSchema(new File("build/resources/main/suwinet/Diensten/KadasterDossierGSD/v0300-b02/BodyAction.xsd"));
-
-        Marshaller marshaller = jaxbContext.createMarshaller();
-        marshaller.setSchema(schema);
-        logger.info("-------- request start ------------");
-        marshaller.marshal(request, System.out);
-        logger.info("\n-------- request end ------------");
-    }
-
-    private void printResponse(PersoonsInfoResponse response) throws JAXBException, SAXException {
-        JAXBContext jaxbContext = JAXBContext.newInstance(
-                new Class[] {
-                        nl.bkwi.suwiml.fwi.v0205.ObjectFactory.class,
-                        nl.bkwi.suwiml.diensten.kadasterdossiergsd.v0300.ObjectFactory.class
-                });
-
-        SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-        Schema schema = schemaFactory.newSchema(new File("build/resources/main/suwinet/Diensten/KadasterDossierGSD/v0300-b02/BodyReaction.xsd"));
-
-        Marshaller marshaller = jaxbContext.createMarshaller();
-        marshaller.setSchema(schema);
-        logger.info("-------- response start ------------");
-        logger.info("-------- JaxB content element size: " + response.getContent().size());
-        marshaller.marshal(response, System.out);
-        logger.info("\n-------- response end ------------");
+        clientSuwi.setCorrespondentieadres(postAdres);
+        return clientSuwi;
     }
 }
