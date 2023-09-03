@@ -1,0 +1,22 @@
+<ns4:UWVPersoonsIkvInfoResponse xmlns:ns3="http://bkwi.nl/SuwiML/FWI/v0205" xmlns:ns4="http://bkwi.nl/SuwiML/Diensten/UWVDossierInkomstenGSDDigitaleDiensten/v0200">
+    <ClientSuwi>
+        <Burgerservicenr>112233454</Burgerservicenr>
+        <Inkomstenverhouding>
+            <VolgnrIkv>1</VolgnrIkv>
+            <DatBIkv>66660101</DatBIkv>
+            <Inkomstenperiode>
+                <DatBIkp>20140101</DatBIkp>
+                <DatEIkp>88881231</DatEIkp>
+                <CdSrtIkv>11</CdSrtIkv>
+                <IndVerzekerdWaoIvaWga>1</IndVerzekerdWaoIvaWga>
+                <IndVerzekerdWw>1</IndVerzekerdWw>
+                <IndVerzekerdZw>1</IndVerzekerdZw>
+                <CdAardIkv>12</CdAardIkv>
+            </Inkomstenperiode>
+            <Inkomstenopgave>
+                <DatBIko>20180701</DatBIko>
+                <DatEIko>20180731</DatEIko>
+            </Inkomstenopgave>
+        </Inkomstenverhouding>
+    </ClientSuwi>
+</ns4:UWVPersoonsIkvInfoResponse>

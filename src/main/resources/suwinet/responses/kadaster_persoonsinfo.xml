@@ -1,0 +1,20 @@
+<ns3:PersoonsInfoResponse xmlns:ns2="http://bkwi.nl/SuwiML/FWI/v0205" xmlns:ns3="http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300">
+    <ClientSuwi>
+        <Burgerservicenr>111111110</Burgerservicenr>
+        <Geboortedat>19520524</Geboortedat>
+        <Correspondentieadres>
+            <Postbusadres>
+                <Locatieoms>locatieoms</Locatieoms>
+                <Postcd>1111wx</Postcd>
+                <Woonplaatsnaam>Den Haag</Woonplaatsnaam>
+                <Gemeentenaam>gemeentenaam</Gemeentenaam>
+                <Postbusnr>12345</Postbusnr>
+            </Postbusadres>
+        </Correspondentieadres>
+        <DatToestandKadaster>19920526</DatToestandKadaster>
+        <DatFiatteringKadaster>19720127</DatFiatteringKadaster>
+        <Eigendom>
+            <IndEigendomOZVerleden>1</IndEigendomOZVerleden>
+        </Eigendom>
+    </ClientSuwi>
+</ns3:PersoonsInfoResponse>

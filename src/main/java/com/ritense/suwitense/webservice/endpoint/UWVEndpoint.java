@@ -1,6 +1,5 @@
 package com.ritense.suwitense.webservice.endpoint;
 
-import jakarta.xml.bind.JAXBElement;
 import jakarta.xml.bind.JAXBException;
 import nl.bkwi.suwiml.diensten.uwvdossierinkomstengsddigitalediensten.v0200.UWVPersoonsIkvInfo;
 import nl.bkwi.suwiml.diensten.uwvdossierinkomstengsddigitalediensten.v0200.ObjectFactory;
@@ -14,11 +13,10 @@ import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 import org.xml.sax.SAXException;
 
-import javax.xml.namespace.QName;
-
 @Endpoint
 public class UWVEndpoint extends SuwinetEndpoint {
 
+    public static final String UWVPERSOONSIKVINFO_XML = "build/resources/main/suwinet/responses/uwv_UWVPersoonsIkvInfo.xml";
     Logger logger = LoggerFactory.getLogger(UWVEndpoint.class);
 
     private static final String NAMESPACE_URI = "http://bkwi.nl/SuwiML/Diensten/UWVDossierInkomstenGSDDigitaleDiensten/v0200";
@@ -45,31 +43,17 @@ public class UWVEndpoint extends SuwinetEndpoint {
         logger.info("request bsn: " + request.getBurgerservicenr());
         logger.info("request: " + printPayload(request, incomingClasses, incomingSchema));
 
-        UWVPersoonsIkvInfoResponse response = createResponse();
+        UWVPersoonsIkvInfoResponse response = null;
 
         if(request.getBurgerservicenr().isEmpty()) {
+            response = dossierObjectFactory.createUWVPersoonsIkvInfoResponse();
             addPersoonNietGevonden(response.getContent());
         } else {
-            UWVPersoonsIkvInfoResponse.ClientSuwi clientSuwi = createClientSuwiPersoonsInfo(request);
-            JAXBElement<UWVPersoonsIkvInfoResponse.ClientSuwi> jaxbElement =  new JAXBElement(
-                    new QName("ClientSuwi"), UWVPersoonsIkvInfoResponse.ClientSuwi.class, clientSuwi);
-
-            response.getContent().add(jaxbElement);
+            response = (UWVPersoonsIkvInfoResponse) unmarshal(UWVPersoonsIkvInfoResponse.class,UWVPERSOONSIKVINFO_XML);
         }
+
         logger.info("response: " + printPayload(response,outGoingClasses, outGoingSchema));
 
         return response;
     }
-
-    private UWVPersoonsIkvInfoResponse.ClientSuwi createClientSuwiPersoonsInfo(UWVPersoonsIkvInfo request) {
-        UWVPersoonsIkvInfoResponse.ClientSuwi clientSuwi = dossierObjectFactory.createUWVPersoonsIkvInfoResponseClientSuwi();
-        clientSuwi.setBurgerservicenr(request.getBurgerservicenr());
-
-        return clientSuwi;
-    }
-
-    private UWVPersoonsIkvInfoResponse createResponse() {
-        return dossierObjectFactory.createUWVPersoonsIkvInfoResponse();
-    }
-
 }
