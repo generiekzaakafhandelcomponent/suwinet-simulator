@@ -28,7 +28,7 @@ public class KadasterEndpoint extends SuwinetEndpoint {
             PersoonsInfo.class,
             ObjectInfoKadastraleAanduiding.class
     };
-    private static Class[] OUT_GOING_CLASSES = {ObjecFactory.class};
+    private static Class[] OUT_GOING_CLASSES = {ObjectFactory.class};
 
     ObjectFactory objectFactory;
 
