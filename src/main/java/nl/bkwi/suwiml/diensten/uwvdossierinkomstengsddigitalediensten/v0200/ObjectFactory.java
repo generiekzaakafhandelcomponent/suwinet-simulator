@@ -12,7 +12,7 @@ import nl.bkwi.suwiml.fwi.v0205.FWI;
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
  * generated in the nl.bkwi.suwiml.diensten.uwvdossierinkomstengsddigitalediensten.v0200 package. 
- * <p>An ObjectFactory allows you to programatically 
+ * <p>An ObjectFactory allows you to programmatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
  * content can consist of schema derived interfaces 
@@ -24,16 +24,15 @@ import nl.bkwi.suwiml.fwi.v0205.FWI;
  */
 @XmlRegistry
 public class ObjectFactory {
-
+    private static final QName _FWI_QNAME = new QName("http://bkwi.nl/SuwiML/FWI/v0205", "FWI");
     private static final QName _UWVPersoonsIkvInfoResponseClientSuwi_QNAME = new QName("", "ClientSuwi");
     private static final QName _UWVPersoonsIkvInfoResponsePeriodeGegevensleveringIko_QNAME = new QName("", "PeriodeGegevensleveringIko");
-
-    private static final QName _FWI_QNAME = new QName("http://bkwi.nl/SuwiML/FWI/v0205", "FWI");
 
     @XmlElementDecl(namespace = "http://bkwi.nl/SuwiML/FWI/v0205", name = "FWI")
     public JAXBElement<FWI> createFWI(FWI value) {
         return new JAXBElement<>(_FWI_QNAME, FWI.class, null, value);
     }
+
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: nl.bkwi.suwiml.diensten.uwvdossierinkomstengsddigitalediensten.v0200
      * 

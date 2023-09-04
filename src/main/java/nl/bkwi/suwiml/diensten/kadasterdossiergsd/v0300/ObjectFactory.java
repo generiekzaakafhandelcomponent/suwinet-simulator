@@ -12,7 +12,7 @@ import nl.bkwi.suwiml.fwi.v0205.FWI;
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
  * generated in the nl.bkwi.suwiml.diensten.kadasterdossiergsd.v0300 package. 
- * <p>An ObjectFactory allows you to programatically 
+ * <p>An ObjectFactory allows you to programmatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
  * content can consist of schema derived interfaces 
@@ -29,7 +29,6 @@ public class ObjectFactory {
     private static final QName _ObjectInfoKadastraleAanduidingResponseOnroerendeZaak_QNAME = new QName("", "OnroerendeZaak");
 
     private static final QName _FWI_QNAME = new QName("http://bkwi.nl/SuwiML/FWI/v0205", "FWI");
-
     @XmlElementDecl(namespace = "http://bkwi.nl/SuwiML/FWI/v0205", name = "FWI")
     public JAXBElement<FWI> createFWI(FWI value) {
         return new JAXBElement<>(_FWI_QNAME, FWI.class, null, value);
