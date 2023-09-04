@@ -37,8 +37,7 @@ public class UWVEndpoint extends SuwinetEndpoint {
         logger.info("request bsn: " + request.getBurgerservicenr());
         logger.debug("request: " + printPayload(request, incomingClasses, incomingSchema));
 
-        UWVPersoonsIkvInfoResponse response = null;
-
+        UWVPersoonsIkvInfoResponse response;
         if(request.getBurgerservicenr().isEmpty()) {
             response = dossierObjectFactory.createUWVPersoonsIkvInfoResponse();
             addPersoonNietGevonden(response.getContent());

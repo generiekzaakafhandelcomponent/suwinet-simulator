@@ -28,7 +28,7 @@ public class KadasterEndpoint extends SuwinetEndpoint {
             PersoonsInfo.class,
             ObjectInfoKadastraleAanduiding.class
     };
-    private static Class[] OUT_GOING_CLASSES = {ObjectFactory.class};
+    private static Class[] OUT_GOING_CLASSES = {ObjecFactory.class};
 
     ObjectFactory objectFactory;
 
@@ -42,7 +42,7 @@ public class KadasterEndpoint extends SuwinetEndpoint {
         logger.info("request.getBurgerservicenr(): " + request.getBurgerservicenr());
         logger.debug("request: " + printPayload(request, INCOMING_CLASSES, INCOMING_SCHEMA));
 
-        PersoonsInfoResponse response = null;
+        PersoonsInfoResponse response;
         if(request.getBurgerservicenr().isEmpty()) {
             response = objectFactory.createPersoonsInfoResponse();
             addPersoonNietGevonden(response.getContent());

@@ -36,8 +36,7 @@ public class RWEndpoint extends SuwinetEndpoint {
         logger.info("request.getKentekenVoertuig(): " + request.getKentekenVoertuig());
         logger.debug("request: " + printPayload(request, incomingClasses, incomingSchema));
 
-        KentekenInfoResponse response = null;
-
+        KentekenInfoResponse response;
         if(request.getKentekenVoertuig().isEmpty()) {
             response = dossierObjectFactory.createKentekenInfoResponse();
             addPersoonNietGevonden(response.getContent());
