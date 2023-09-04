@@ -25,23 +25,17 @@ public class UWVEndpoint extends SuwinetEndpoint {
     ObjectFactory dossierObjectFactory;
 
     private static final Class[] incomingClasses = {UWVPersoonsIkvInfo.class};
-    private static final Class[] outGoingClasses = {
-            nl.bkwi.suwiml.fwi.v0205.ObjectFactory.class,
-            ObjectFactory.class
-    };
+    private static final Class[] outGoingClasses = {ObjectFactory.class};
 
     @Autowired
-    public UWVEndpoint() {
-        super();
-        dossierObjectFactory = new ObjectFactory();
-    }
+    public UWVEndpoint() {dossierObjectFactory = new ObjectFactory();}
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "UWVPersoonsIkvInfo")
     @ResponsePayload
     public UWVPersoonsIkvInfoResponse getKentekenInfo(@RequestPayload UWVPersoonsIkvInfo request) throws JAXBException, SAXException {
 
         logger.info("request bsn: " + request.getBurgerservicenr());
-        logger.info("request: " + printPayload(request, incomingClasses, incomingSchema));
+        logger.debug("request: " + printPayload(request, incomingClasses, incomingSchema));
 
         UWVPersoonsIkvInfoResponse response = null;
 
@@ -52,7 +46,7 @@ public class UWVEndpoint extends SuwinetEndpoint {
             response = (UWVPersoonsIkvInfoResponse) unmarshal(UWVPersoonsIkvInfoResponse.class,UWVPERSOONSIKVINFO_XML);
         }
 
-        logger.info("response: " + printPayload(response,outGoingClasses, outGoingSchema));
+        logger.debug("response: " + printPayload(response,outGoingClasses, outGoingSchema));
 
         return response;
     }

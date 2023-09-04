@@ -21,26 +21,20 @@ public class RWEndpoint extends SuwinetEndpoint {
     private static final String NAMESPACE_URI = "http://bkwi.nl/SuwiML/Diensten/RDWDossierGSD/v0200";
     private static final String incomingSchema = "build/resources/main/suwinet/Diensten/RDWDossierGSD/v0200-b02/BodyAction.xsd";
     private static final String outGoingSchema = "build/resources/main/suwinet/Diensten/RDWDossierGSD/v0200-b02/BodyReaction.xsd";
-    nl.bkwi.suwiml.diensten.rdwdossiergsd.v0200.ObjectFactory dossierObjectFactory;
+    ObjectFactory dossierObjectFactory;
 
     private static final Class[] incomingClasses = {KentekenInfo.class};
-    private static final Class[] outGoingClasses = {
-            nl.bkwi.suwiml.fwi.v0205.ObjectFactory.class,
-            nl.bkwi.suwiml.diensten.rdwdossiergsd.v0200.ObjectFactory.class
-    };
+    private static final Class[] outGoingClasses = {ObjectFactory.class};
 
     @Autowired
-    public RWEndpoint() {
-        super();
-        dossierObjectFactory = new nl.bkwi.suwiml.diensten.rdwdossiergsd.v0200.ObjectFactory();
-    }
+    public RWEndpoint() {dossierObjectFactory = new ObjectFactory();}
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "KentekenInfo")
     @ResponsePayload
     public KentekenInfoResponse getKentekenInfo(@RequestPayload KentekenInfo request) throws JAXBException, SAXException {
 
         logger.info("request.getKentekenVoertuig(): " + request.getKentekenVoertuig());
-        logger.info("request: " + printPayload(request, incomingClasses, incomingSchema));
+        logger.debug("request: " + printPayload(request, incomingClasses, incomingSchema));
 
         KentekenInfoResponse response = null;
 
@@ -50,7 +44,7 @@ public class RWEndpoint extends SuwinetEndpoint {
         } else {
             response = (KentekenInfoResponse) unmarshal(KentekenInfoResponse.class,KENTEKENINFO_XML);
         }
-        logger.info("response: " + printPayload(response,outGoingClasses, outGoingSchema));
+        logger.debug("response: " + printPayload(response,outGoingClasses, outGoingSchema));
 
         return response;
     }
