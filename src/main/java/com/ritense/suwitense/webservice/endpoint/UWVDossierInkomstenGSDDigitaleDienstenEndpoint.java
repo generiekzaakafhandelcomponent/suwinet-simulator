@@ -14,10 +14,9 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 import org.xml.sax.SAXException;
 
 @Endpoint
-public class UWVEndpoint extends SuwinetEndpoint {
+public class UWVDossierInkomstenGSDDigitaleDienstenEndpoint extends SuwinetEndpoint {
 
-    public static final String UWVPERSOONSIKVINFO_XML = "build/resources/main/suwinet/responses/uwv_UWVPersoonsIkvInfo.xml";
-    Logger logger = LoggerFactory.getLogger(UWVEndpoint.class);
+    Logger logger = LoggerFactory.getLogger(UWVDossierInkomstenGSDDigitaleDienstenEndpoint.class);
 
     private static final String NAMESPACE_URI = "http://bkwi.nl/SuwiML/Diensten/UWVDossierInkomstenGSDDigitaleDiensten/v0200";
     private static final String incomingSchema = "build/resources/main/suwinet/Diensten/UWVDossierInkomstenGSDDigitaleDiensten/v0200-b01/BodyAction.xsd";
@@ -27,22 +26,26 @@ public class UWVEndpoint extends SuwinetEndpoint {
     private static final Class[] incomingClasses = {UWVPersoonsIkvInfo.class};
     private static final Class[] outGoingClasses = {ObjectFactory.class};
 
+    private static String servicePrefix = "UWVDossierInkomstenGSDDigitaleDiensten";
+
     @Autowired
-    public UWVEndpoint() {dossierObjectFactory = new ObjectFactory();}
+    public UWVDossierInkomstenGSDDigitaleDienstenEndpoint() {dossierObjectFactory = new ObjectFactory();}
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "UWVPersoonsIkvInfo")
     @ResponsePayload
     public UWVPersoonsIkvInfoResponse getKentekenInfo(@RequestPayload UWVPersoonsIkvInfo request) throws JAXBException, SAXException {
 
-        logger.info("request bsn: " + request.getBurgerservicenr());
         logger.debug("request: " + printPayload(request, incomingClasses, incomingSchema));
+        String xmlFilename = servicePrefix + "_UWVPersoonsIkvInfo_" + request.getBurgerservicenr() + ".xml";
+        logger.info("looking for: " + xmlFilename);
+        String responseFile = readResponseDirectory(xmlFilename);
 
         UWVPersoonsIkvInfoResponse response;
-        if(request.getBurgerservicenr().isEmpty()) {
+        if(responseFile.isEmpty()) {
             response = dossierObjectFactory.createUWVPersoonsIkvInfoResponse();
             addPersoonNietGevonden(response.getContent());
         } else {
-            response = (UWVPersoonsIkvInfoResponse) unmarshal(UWVPersoonsIkvInfoResponse.class,UWVPERSOONSIKVINFO_XML);
+            response = (UWVPersoonsIkvInfoResponse) unmarshal(UWVPersoonsIkvInfoResponse.class,responseFile);
         }
 
         logger.debug("response: " + printPayload(response,outGoingClasses, outGoingSchema));

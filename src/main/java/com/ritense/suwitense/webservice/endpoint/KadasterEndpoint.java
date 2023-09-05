@@ -16,9 +16,6 @@ public class KadasterEndpoint extends SuwinetEndpoint {
 
     Logger logger = LoggerFactory.getLogger(KadasterEndpoint.class);
 
-    private static final String PERSOONSINFO_XML = "build/resources/main/suwinet/responses/kadaster_persoonsinfo.xml";
-    private static final String OBJECTINFO_KADASTRALEAANDUIDING_XML = "build/resources/main/suwinet/responses/kadaster_ObjectInfoKadastraleAanduiding.xml";
-
     private static final String NAMESPACE_URI = "http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300";
 
     private static final String INCOMING_SCHEMA = "build/resources/main/suwinet/Diensten/KadasterDossierGSD/v0300-b02/BodyAction.xsd";
@@ -35,19 +32,22 @@ public class KadasterEndpoint extends SuwinetEndpoint {
     @Autowired
     public KadasterEndpoint() {objectFactory = new ObjectFactory();}
 
+    private static String servicePrefix = "KadasterDossierGSD";
+
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "PersoonsInfo")
     @ResponsePayload
     public PersoonsInfoResponse getPersoonsInfo(@RequestPayload PersoonsInfo request) throws JAXBException, SAXException {
 
-        logger.info("request.getBurgerservicenr(): " + request.getBurgerservicenr());
+        String xmlFilename = servicePrefix + "_PersoonsInfo_" + request.getBurgerservicenr() + ".xml";
+        String responseFile = readResponseDirectory(xmlFilename);
+        logger.info("looking for: " + xmlFilename);
         logger.debug("request: " + printPayload(request, INCOMING_CLASSES, INCOMING_SCHEMA));
-
         PersoonsInfoResponse response;
-        if(request.getBurgerservicenr().isEmpty()) {
+        if(responseFile.isEmpty()) {
             response = objectFactory.createPersoonsInfoResponse();
             addPersoonNietGevonden(response.getContent());
         } else {
-            response = (PersoonsInfoResponse) unmarshal(PersoonsInfoResponse.class,PERSOONSINFO_XML);
+            response = (PersoonsInfoResponse) unmarshal(PersoonsInfoResponse.class,responseFile);
         }
         logger.debug("response: " + printPayload(response, OUT_GOING_CLASSES, OUT_GOING_SCHEMA));
 
@@ -58,12 +58,23 @@ public class KadasterEndpoint extends SuwinetEndpoint {
     @ResponsePayload
     public ObjectInfoKadastraleAanduidingResponse getObjectInfoKadastraleAanduiding(@RequestPayload ObjectInfoKadastraleAanduiding request) throws JAXBException, SAXException {
 
-        logger.info("getObjectInfoKadastraleAanduiding request: " + request.getCdKadastraleGemeente());
+        String xmlFilename = servicePrefix + "_ObjectInfoKadastraleAanduiding_" +
+                request.getCdKadastraleGemeente() + "_" +
+                request.getKadastraalPerceelnr() + ".xml";
+
+        logger.info("getObjectInfoKadastraleAanduiding looking for: " + xmlFilename);
+        String responseFile = readResponseDirectory(xmlFilename);
+
         logger.debug("getObjectInfoKadastraleAanduiding request: " + printPayload(request, INCOMING_CLASSES, INCOMING_SCHEMA));
-        ObjectInfoKadastraleAanduidingResponse response = (ObjectInfoKadastraleAanduidingResponse) unmarshal(ObjectInfoKadastraleAanduidingResponse.class,OBJECTINFO_KADASTRALEAANDUIDING_XML);
+        ObjectInfoKadastraleAanduidingResponse response;
+        if(responseFile.isEmpty()) {
+            response = objectFactory.createObjectInfoKadastraleAanduidingResponse();
+            addPersoonNietGevonden(response.getContent());
+        } else {
+            response = (ObjectInfoKadastraleAanduidingResponse) unmarshal(ObjectInfoKadastraleAanduidingResponse.class, responseFile);
+        }
         logger.debug("response: " + printPayload(response, OUT_GOING_CLASSES, OUT_GOING_SCHEMA));
 
         return response;
     }
-
 }

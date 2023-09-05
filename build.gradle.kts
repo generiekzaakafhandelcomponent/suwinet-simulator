@@ -81,7 +81,7 @@ tasks.register("KadasterWsImport") {
     }
 }
 
-tasks.register("UWVWsImport") {
+tasks.register("UWVDossierInkomstenGSDDigitaleDienstenWsImport") {
 
     doLast {
         ant.withGroovyBuilder {
@@ -95,6 +95,34 @@ tasks.register("UWVWsImport") {
                 "keep" to true,
                 "sourcedestdir" to suwinetSourceDir,
                 "wsdl" to "${projectDir}/src/main/resources/suwinet/Diensten/UWVDossierInkomstenGSDDigitaleDiensten/v0200-b01/Impl/BKWI.wsdl",
+                "verbose" to true
+            ) {
+                "xjcarg"("value" to "-XautoNameResolution")
+            }
+        }
+    }
+}
+
+allprojects {
+    tasks.withType<JavaCompile>().configureEach {
+        options.compilerArgs.add("-Xlint:unchecked")
+        options.isDeprecation = true
+    }
+}
+tasks.register("UWVDossierInkomstenGSDWsImport") {
+
+    doLast {
+        ant.withGroovyBuilder {
+            mkdir(suwinetSourceDir)
+            "taskdef"(
+                "name" to "wsimport",
+                "classname" to "com.sun.tools.ws.ant.WsImport",
+                "classpath" to configurations["jaxws"].asPath
+            )
+            "wsimport"(
+                "keep" to true,
+                "sourcedestdir" to suwinetSourceDir,
+                "wsdl" to "${projectDir}/src/main/resources/suwinet/Diensten/UWVDossierInkomstenGSD/v0200-b02/Impl/BKWI.wsdl",
                 "verbose" to true
             ) {
                 "xjcarg"("value" to "-XautoNameResolution")

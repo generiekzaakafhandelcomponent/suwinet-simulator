@@ -12,11 +12,9 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 import org.xml.sax.SAXException;
 
 @Endpoint
-public class RWEndpoint extends SuwinetEndpoint {
+public class RDWEndpoint extends SuwinetEndpoint {
 
-    Logger logger = LoggerFactory.getLogger(RWEndpoint.class);
-
-    private static final String KENTEKENINFO_XML = "build/resources/main/suwinet/responses/rdw_KentekenInfoResponse.xml";
+    Logger logger = LoggerFactory.getLogger(RDWEndpoint.class);
 
     private static final String NAMESPACE_URI = "http://bkwi.nl/SuwiML/Diensten/RDWDossierGSD/v0200";
     private static final String incomingSchema = "build/resources/main/suwinet/Diensten/RDWDossierGSD/v0200-b02/BodyAction.xsd";
@@ -26,22 +24,26 @@ public class RWEndpoint extends SuwinetEndpoint {
     private static final Class[] incomingClasses = {KentekenInfo.class};
     private static final Class[] outGoingClasses = {ObjectFactory.class};
 
+    private static String servicePrefix = "RDWDossierGSD";
+
     @Autowired
-    public RWEndpoint() {dossierObjectFactory = new ObjectFactory();}
+    public RDWEndpoint() {dossierObjectFactory = new ObjectFactory();}
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "KentekenInfo")
     @ResponsePayload
     public KentekenInfoResponse getKentekenInfo(@RequestPayload KentekenInfo request) throws JAXBException, SAXException {
 
-        logger.info("request.getKentekenVoertuig(): " + request.getKentekenVoertuig());
         logger.debug("request: " + printPayload(request, incomingClasses, incomingSchema));
+        String xmlFilename = servicePrefix + "_KentekenInfo_" + request.getKentekenVoertuig() + ".xml";
+        logger.info("looking for: " + xmlFilename);
+        String responseFile = readResponseDirectory(xmlFilename);
 
         KentekenInfoResponse response;
-        if(request.getKentekenVoertuig().isEmpty()) {
+        if(responseFile.isEmpty()) {
             response = dossierObjectFactory.createKentekenInfoResponse();
             addPersoonNietGevonden(response.getContent());
         } else {
-            response = (KentekenInfoResponse) unmarshal(KentekenInfoResponse.class,KENTEKENINFO_XML);
+            response = (KentekenInfoResponse) unmarshal(KentekenInfoResponse.class,responseFile);
         }
         logger.debug("response: " + printPayload(response,outGoingClasses, outGoingSchema));
 

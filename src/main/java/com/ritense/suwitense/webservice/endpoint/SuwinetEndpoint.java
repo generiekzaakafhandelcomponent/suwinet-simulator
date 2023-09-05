@@ -1,9 +1,6 @@
 package com.ritense.suwitense.webservice.endpoint;
 
-import jakarta.xml.bind.JAXBContext;
-import jakarta.xml.bind.JAXBException;
-import jakarta.xml.bind.Marshaller;
-import jakarta.xml.bind.Unmarshaller;
+import jakarta.xml.bind.*;
 import nl.bkwi.suwiml.fwi.v0205.ObjectFactory;
 import org.xml.sax.SAXException;
 
@@ -14,8 +11,20 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.lang.reflect.Type;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Stream;
 
 public class SuwinetEndpoint {
+
+    private static final String RESOURCES_SUWINET_RESPONSES = "build/resources/main/suwinet/data/Responses/";
+    String readResponseDirectory(String filenameFilter) {
+        Optional<String> first = Stream.of(new File(RESOURCES_SUWINET_RESPONSES).listFiles())
+                .filter(file -> !file.isDirectory() && file.getName().endsWith(filenameFilter))
+                .map(File::getAbsolutePath)
+                .findFirst();
+
+        return first.isPresent() ? first.get() : "";
+    }
 
     Object unmarshal(Type xmlClass, String xmlFilename) {
         try {
@@ -42,7 +51,7 @@ public class SuwinetEndpoint {
         marshaller.marshal(response, stream);
         return stream.toString();
     }
-    void addPersoonNietGevonden(List responseList) {
+    void addPersoonNietGevonden(List<JAXBElement<?>> responseList) {
         ObjectFactory objectFactory = new ObjectFactory();
         responseList.add(objectFactory.createNietsGevonden("nope die ken ik niet"));
     }
