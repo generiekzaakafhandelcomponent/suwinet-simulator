@@ -24,14 +24,14 @@ public class UWVDossierInkomstenGSDEndpoint extends SuwinetEndpoint {
     private static final String NAMESPACE_URI = "http://bkwi.nl/SuwiML/Diensten/UWVDossierInkomstenGSD/v0200";
     private static final String incomingSchema = "build/resources/main/suwinet/Diensten/UWVDossierInkomstenGSD/v0200-b02/BodyAction.xsd";
     private static final String outGoingSchema = "build/resources/main/suwinet/Diensten/UWVDossierInkomstenGSD/v0200-b02/BodyReaction.xsd";
-    ObjectFactory dossierObjectFactory;
+    private ObjectFactory dossierObjectFactory = new ObjectFactory();
 
     private static final Class[] incomingClasses = {UWVPersoonsIkvInfo.class};
     private static final Class[] outGoingClasses = {ObjectFactory.class};
 
-    private static String servicePrefix = "UWVDossierInkomstenGSD";
+    private final static String servicePrefix = "UWVDossierInkomstenGSD";
     @Autowired
-    public UWVDossierInkomstenGSDEndpoint() {dossierObjectFactory = new ObjectFactory();}
+    public UWVDossierInkomstenGSDEndpoint() {}
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "UWVPersoonsIkvInfo")
     @ResponsePayload

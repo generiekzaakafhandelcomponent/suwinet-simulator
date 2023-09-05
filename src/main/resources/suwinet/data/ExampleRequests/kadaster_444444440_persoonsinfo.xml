@@ -1,0 +1,8 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v03="http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <v03:PersoonsInfo>
+            <Burgerservicenr>444444440</Burgerservicenr>
+        </v03:PersoonsInfo>
+    </soapenv:Body>
+</soapenv:Envelope>

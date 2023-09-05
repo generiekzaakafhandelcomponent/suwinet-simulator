@@ -24,7 +24,7 @@ public class RDWEndpoint extends SuwinetEndpoint {
     private static final Class[] incomingClasses = {KentekenInfo.class};
     private static final Class[] outGoingClasses = {ObjectFactory.class};
 
-    private static String servicePrefix = "RDWDossierGSD";
+    private final static String servicePrefix = "RDWDossierGSD";
 
     @Autowired
     public RDWEndpoint() {dossierObjectFactory = new ObjectFactory();}

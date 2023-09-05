@@ -26,7 +26,7 @@ public class UWVDossierInkomstenGSDDigitaleDienstenEndpoint extends SuwinetEndpo
     private static final Class[] incomingClasses = {UWVPersoonsIkvInfo.class};
     private static final Class[] outGoingClasses = {ObjectFactory.class};
 
-    private static String servicePrefix = "UWVDossierInkomstenGSDDigitaleDiensten";
+    private final static String servicePrefix = "UWVDossierInkomstenGSDDigitaleDiensten";
 
     @Autowired
     public UWVDossierInkomstenGSDDigitaleDienstenEndpoint() {dossierObjectFactory = new ObjectFactory();}

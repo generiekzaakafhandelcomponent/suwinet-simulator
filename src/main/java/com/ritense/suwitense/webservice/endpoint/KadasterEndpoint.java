@@ -27,12 +27,13 @@ public class KadasterEndpoint extends SuwinetEndpoint {
     };
     private static Class[] OUT_GOING_CLASSES = {ObjectFactory.class};
 
+    private final static String servicePrefix = "KadasterDossierGSD";
+
     ObjectFactory objectFactory;
 
     @Autowired
     public KadasterEndpoint() {objectFactory = new ObjectFactory();}
 
-    private static String servicePrefix = "KadasterDossierGSD";
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "PersoonsInfo")
     @ResponsePayload
