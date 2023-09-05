@@ -24,9 +24,14 @@ val suwinetSourceDir = "${projectDir}/src/main/java"
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-web-services")
+    implementation("org.springframework.boot:spring-boot-starter-security:3.1.3")
+    implementation("org.springframework.boot:spring-boot-starter-security")
+    implementation("org.springframework.security:spring-security-web:6.1.3")
     implementation("wsdl4j:wsdl4j")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.springframework.security:spring-security-test")
+
     jaxws("com.sun.xml.ws:jaxws-tools:4.0.1")
 }
 

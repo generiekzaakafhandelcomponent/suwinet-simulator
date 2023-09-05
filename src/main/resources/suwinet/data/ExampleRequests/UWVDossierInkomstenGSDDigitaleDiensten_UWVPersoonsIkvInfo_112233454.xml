@@ -1,0 +1,15 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v02="http://bkwi.nl/SuwiML/Diensten/UWVDossierInkomstenGSDDigitaleDiensten/v0200">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <v02:UWVPersoonsIkvInfo>
+            <Burgerservicenr>112233454</Burgerservicenr>
+            <!--Optional:-->
+            <PeriodeGegevensvraagIko>
+                <!--Optional:-->
+                <DatBPeriode>20020924</DatBPeriode>
+                <!--Optional:-->
+                <DatEPeriode>20230720</DatEPeriode>
+            </PeriodeGegevensvraagIko>
+        </v02:UWVPersoonsIkvInfo>
+    </soapenv:Body>
+</soapenv:Envelope>

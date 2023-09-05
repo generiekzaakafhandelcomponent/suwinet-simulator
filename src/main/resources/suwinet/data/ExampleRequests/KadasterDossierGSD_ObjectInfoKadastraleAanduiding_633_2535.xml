@@ -1,0 +1,11 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v03="http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <v03:ObjectInfoKadastraleAanduiding>
+            <CdKadastraleGemeente>633</CdKadastraleGemeente>
+            <KadastraleGemeentenaam>Naarden</KadastraleGemeentenaam>
+            <KadastraleSectie>A</KadastraleSectie>
+            <KadastraalPerceelnr>2535</KadastraalPerceelnr>
+        </v03:ObjectInfoKadastraleAanduiding>
+    </soapenv:Body>
+</soapenv:Envelope>
