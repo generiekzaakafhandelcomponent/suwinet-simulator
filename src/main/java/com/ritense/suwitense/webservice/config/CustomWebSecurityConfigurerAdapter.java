@@ -36,7 +36,7 @@ public class CustomWebSecurityConfigurerAdapter {
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-
+        logger.info("----- user: " + username + " password: " + password);
         auth
                 .inMemoryAuthentication()
                 .withUser(username)
