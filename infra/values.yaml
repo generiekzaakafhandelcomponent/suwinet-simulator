@@ -58,7 +58,7 @@ service:
   ## Note: port or ports must be provided to enable service!
   ##
   port: 8080
-  targetPort: 8080
+  targetPort: 8090
 
 resources:
   limits:
