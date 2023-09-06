@@ -62,11 +62,11 @@ service:
 
 resources:
   limits:
-    cpu: 100m
-    memory: 128Mi
+    cpu: 1
+    memory: 1024Mi
   requests:
-    cpu: 100m
-    memory: 128Mi
+    cpu: 500m
+    memory: 512Mi
 
 ## Configure the ingress resource that allows you to access the
 ## app installation. Set up the URL
