@@ -166,7 +166,7 @@ extraObjects:
     name: '{{ include "common.names.fullname" . }}-ag'
     namespace: '{{ .Release.Namespace }}'
     annotations:
-      appgw.ingress.kubernetes.io/health-probe-status-codes: "403"
+      appgw.ingress.kubernetes.io/health-probe-status-codes: "401"
       appgw.ingress.kubernetes.io/ssl-redirect: "true"
       appgw.ingress.kubernetes.io/rewrite-rule-set: zgw-rewriteset1
       meta.helm.sh/release-name: '{{ include "common.names.fullname" . }}'
