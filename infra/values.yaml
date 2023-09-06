@@ -58,7 +58,7 @@ service:
   ## Note: port or ports must be provided to enable service!
   ##
   port: 8080
-  targetPort: 8090
+  targetPort: 8080
 
 resources:
   limits:
@@ -192,6 +192,11 @@ extraObjects:
     - hosts:
       - '{{ .Values.ingress.hostname }}'
       secretName: '{{ .Values.ingress.existingTlsSecret }}'
+
+
+env:
+  - name: SERVER_PORT
+    value: 8080
 
 envFrom:
   - secretRef:
