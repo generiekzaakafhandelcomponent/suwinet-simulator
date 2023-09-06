@@ -102,7 +102,7 @@ ingress:
   # ## The Path to Nginx. You may need to set this to '/*' in order to use this
   # ## with ALB ingress controllers.
   # ##
-  path: /suwinet-simulator(.*)
+  path: /ws(.*)
 
   # ## Ingress annotations done as key:value pairs
   # ## For a full list of possible ingress annotations, please see
@@ -186,7 +186,7 @@ extraObjects:
               name: '{{ include "common.names.fullname" . }}'
               port:
                 name: app
-          path: /suwinet-simulator*
+          path: /ws*
           pathType: Prefix
     tls:
     - hosts:
