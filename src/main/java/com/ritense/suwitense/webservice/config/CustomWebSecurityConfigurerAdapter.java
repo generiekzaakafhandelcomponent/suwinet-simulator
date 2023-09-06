@@ -45,9 +45,9 @@ public class CustomWebSecurityConfigurerAdapter {
 
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf().disable().authorizeHttpRequests((authorize) -> {
-            authorize.anyRequest().authenticated();
-        }).httpBasic(withDefaults());
+        http.csrf().disable().authorizeHttpRequests((authorize) ->
+            authorize.anyRequest().authenticated()).httpBasic(withDefaults()
+        );
 
         return http.build();
     }
