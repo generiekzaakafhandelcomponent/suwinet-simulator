@@ -192,3 +192,25 @@ extraObjects:
     - hosts:
       - '{{ .Values.ingress.hostname }}'
       secretName: '{{ .Values.ingress.existingTlsSecret }}'
+
+envFrom:
+  - secretRef:
+       name: '{{ include "app.fullname" . }}'
+
+syncAKV:
+  sync-1:
+    vaultname: kv-zgw-ota-weu-01
+    objectname: '{{ include "app.fullname" . }}-test-suwinet-user'
+    objecttype: secret
+    output:
+      secret:
+        name: '{{ include "app.fullname" . }}'
+        dataKey: SUWINET_USER
+  sync-2:
+    vaultname: kv-zgw-ota-weu-01
+    objectname: '{{ include "app.fullname" . }}-test-suwinet-password'
+    objecttype: secret
+    output:
+      secret:
+        name: '{{ include "app.fullname" . }}'
+        dataKey: SUWINET_PASSWORD
