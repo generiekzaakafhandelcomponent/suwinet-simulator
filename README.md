@@ -34,11 +34,11 @@ The simulator uses basic authentication.
 The location of the responses is src/main/resources/suwinet/data/Responses/<BR>
 Based on the unique keys as **bsn**, **kenteken**, **Perceelnummer** in the request a xml response file is returned.
 The syntax of the response files are:
-1. PersoonsInfo: KadasterDossierGSD_PersoonsInfo_\<Burgerservicenr\>.xml 
-2. ObjectInfoKadastraleAanduiding: KadasterDossierGSD_ObjectInfoKadastraleAanduiding_\<CdKadastraleGemeente\>_\<KadastraalPerceelnr\>.xml
-3. UWVPersoonsIkvInfo: UWVDossierInkomstenGSDDigitaleDiensten_UWVPersoonsIkvInfo_\<Burgerservicenr\>.xml
-4. UWVPersoonsIkvInfo: UWVDossierInkomstenGSD_UWVPersoonsIkvInfo_\<Burgerservicenr\>.xml
-5. KentekenInfo: RDWDossierGSD_KentekenInfo_\<Burgerservicenr\>.xml
+1. PersoonsInfo:<BR>KadasterDossierGSD_PersoonsInfo_\<Burgerservicenr\>.xml
+2. ObjectInfoKadastraleAanduiding:<BR>KadasterDossierGSD_ObjectInfoKadastraleAanduiding_\<CdKadastraleGemeente\>_\<KadastraalPerceelnr\>.xml
+3. UWVPersoonsIkvInfo:<BR>UWVDossierInkomstenGSDDigitaleDiensten_UWVPersoonsIkvInfo_\<Burgerservicenr\>.xml
+4. UWVPersoonsIkvInfo:<BR>UWVDossierInkomstenGSD_UWVPersoonsIkvInfo_\<Burgerservicenr\>.xml
+5. KentekenInfo:<BR>RDWDossierGSD_KentekenInfo_\<Burgerservicenr\>.xml
 
 ### New WSDL endpoints
 
