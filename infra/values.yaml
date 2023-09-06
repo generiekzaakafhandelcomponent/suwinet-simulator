@@ -15,6 +15,9 @@ appKind: Deployment
 
 name: "suwinet-simulator"
 
+podLabels:
+  public-access: allow
+
 ## Controls whether the container automatically mounts the ServiceAccount's API credentials
 ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#opt-out-of-api-credential-automounting
 automountServiceAccountToken: false
