@@ -36,7 +36,6 @@ public class CustomWebSecurityConfigurerAdapter {
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        logger.info("----- user: " + username + " password: " + password);
         auth
                 .inMemoryAuthentication()
                 .withUser(username)
@@ -46,7 +45,6 @@ public class CustomWebSecurityConfigurerAdapter {
 
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        logger.info("------------------------------------ securityFilterChain");
         http.csrf().disable().authorizeHttpRequests((authorize) -> {
             authorize.anyRequest().authenticated();
         }).httpBasic(withDefaults());
@@ -56,7 +54,6 @@ public class CustomWebSecurityConfigurerAdapter {
 
     @Bean
     public UserDetailsService userDetailsService() {
-        logger.info("------------------------------------ userDetailsService");
         UserDetails admin = User.builder().username("admin").
                 password(passwordEncoder().encode("admin")).
                 roles("ADMIN").
