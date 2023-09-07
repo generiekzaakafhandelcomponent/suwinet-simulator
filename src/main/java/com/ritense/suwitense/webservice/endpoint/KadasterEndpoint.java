@@ -29,9 +29,6 @@ public class KadasterEndpoint extends SuwinetEndpoint {
     @Value("suwinet/Diensten/KadasterDossierGSD/v0300-b02/BodyReaction.xsd")
     ClassPathResource resourceBodyReaction;
 
-    private static final String INCOMING_SCHEMA = "suwinet/Diensten/KadasterDossierGSD/v0300-b02/BodyAction.xsd";
-    private static final String OUT_GOING_SCHEMA = "suwinet/Diensten/KadasterDossierGSD/v0300-b02/BodyReaction.xsd";
-
     private static final Class[] INCOMING_CLASSES = {
             PersoonsInfo.class,
             ObjectInfoKadastraleAanduiding.class
@@ -51,16 +48,16 @@ public class KadasterEndpoint extends SuwinetEndpoint {
     public PersoonsInfoResponse getPersoonsInfo(@RequestPayload PersoonsInfo request) throws JAXBException, SAXException, IOException {
 
         String xmlFilename = servicePrefix + "_PersoonsInfo_" + request.getBurgerservicenr() + ".xml";
-        logger.info("request: " + printPayload3(request, INCOMING_CLASSES, resourceBodyAction));
-        Resource resource = readResponseDirectory2(xmlFilename);
+        logger.debug("request: " + printPayload(request, INCOMING_CLASSES, resourceBodyAction));
+        Resource resource = readResponseDirectory(xmlFilename);
         PersoonsInfoResponse response;
         if(resource == null) {
             response = objectFactory.createPersoonsInfoResponse();
             addPersoonNietGevonden(response.getContent());
         } else {
-            response = (PersoonsInfoResponse) unmarshal2(PersoonsInfoResponse.class,resource);
+            response = (PersoonsInfoResponse) unmarshal(PersoonsInfoResponse.class,resource);
         }
-        logger.info("response: " + printPayload3(response, OUT_GOING_CLASSES, resourceBodyReaction));
+        logger.debug("response: " + printPayload(response, OUT_GOING_CLASSES, resourceBodyReaction));
 
         return response;
     }
@@ -74,17 +71,17 @@ public class KadasterEndpoint extends SuwinetEndpoint {
                 request.getKadastraalPerceelnr() + ".xml";
 
         logger.info("getObjectInfoKadastraleAanduiding looking for: " + xmlFilename);
-        String responseFile = readResponseDirectory(xmlFilename);
+        Resource resource = readResponseDirectory(xmlFilename);
 
-        logger.debug("getObjectInfoKadastraleAanduiding request: " + printPayload2(request, INCOMING_CLASSES, resourceBodyReaction.getFile()));
+        logger.debug("getObjectInfoKadastraleAanduiding request: " + printPayload(request, INCOMING_CLASSES, resourceBodyReaction));
         ObjectInfoKadastraleAanduidingResponse response;
-        if(responseFile.isEmpty()) {
+        if(resource==null) {
             response = objectFactory.createObjectInfoKadastraleAanduidingResponse();
             addPersoonNietGevonden(response.getContent());
         } else {
-            response = (ObjectInfoKadastraleAanduidingResponse) unmarshal(ObjectInfoKadastraleAanduidingResponse.class, responseFile);
+            response = (ObjectInfoKadastraleAanduidingResponse) unmarshal(ObjectInfoKadastraleAanduidingResponse.class, resource);
         }
-        logger.debug("response: " + printPayload2(response, OUT_GOING_CLASSES, resourceBodyReaction.getFile()));
+        logger.debug("response: " + printPayload(response, OUT_GOING_CLASSES, resourceBodyReaction));
 
         return response;
     }

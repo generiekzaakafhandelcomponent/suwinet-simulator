@@ -8,6 +8,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
@@ -24,8 +26,12 @@ public class UWVDossierInkomstenGSDEndpoint extends SuwinetEndpoint {
     Logger logger = LoggerFactory.getLogger(UWVDossierInkomstenGSDEndpoint.class);
 
     private static final String NAMESPACE_URI = "http://bkwi.nl/SuwiML/Diensten/UWVDossierInkomstenGSD/v0200";
-    private static final String incomingSchema = "build/resources/main/suwinet/Diensten/UWVDossierInkomstenGSD/v0200-b02/BodyAction.xsd";
-    private static final String outGoingSchema = "build/resources/main/suwinet/Diensten/UWVDossierInkomstenGSD/v0200-b02/BodyReaction.xsd";
+    @Value("suwinet/Diensten/UWVDossierInkomstenGSD/v0200-b02/BodyAction.xsd")
+    ClassPathResource resourceBodyAction;
+
+    @Value("suwinet/Diensten/UWVDossierInkomstenGSD/v0200-b02/BodyReaction.xsd")
+    ClassPathResource resourceBodyReaction;
+
     private ObjectFactory dossierObjectFactory = new ObjectFactory();
 
     private static final Class[] incomingClasses = {UWVPersoonsIkvInfo.class};
@@ -38,20 +44,20 @@ public class UWVDossierInkomstenGSDEndpoint extends SuwinetEndpoint {
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "UWVPersoonsIkvInfo")
     @ResponsePayload
     public UWVPersoonsIkvInfoResponse getUWVPersoonsIkvInfo(@RequestPayload UWVPersoonsIkvInfo request) throws JAXBException, SAXException, IOException {
-        logger.debug("request: " + printPayload(request, incomingClasses, incomingSchema));
+        logger.debug("request: " + printPayload(request, incomingClasses, resourceBodyAction));
         String xmlFilename = servicePrefix + "_UWVPersoonsIkvInfo_" + request.getBurgerservicenr() + ".xml";
         logger.info("looking for: " + xmlFilename);
-        String responseFile = readResponseDirectory(xmlFilename);
+        Resource resource = readResponseDirectory(xmlFilename);
 
         UWVPersoonsIkvInfoResponse response;
-        if(responseFile.isEmpty()) {
+        if(resource == null) {
             response = dossierObjectFactory.createUWVPersoonsIkvInfoResponse();
             addPersoonNietGevonden(response.getContent());
         } else {
-            response = (UWVPersoonsIkvInfoResponse) unmarshal(UWVPersoonsIkvInfoResponse.class,responseFile);
+            response = (UWVPersoonsIkvInfoResponse) unmarshal(UWVPersoonsIkvInfoResponse.class,resource);
         }
 
-        logger.debug("response: " + printPayload(response,outGoingClasses, outGoingSchema));
+        logger.debug("response: " + printPayload(response,outGoingClasses, resourceBodyReaction));
 
         return response;
     }
