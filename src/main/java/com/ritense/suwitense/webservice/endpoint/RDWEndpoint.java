@@ -11,6 +11,8 @@ import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 import org.xml.sax.SAXException;
 
+import java.io.IOException;
+
 @Endpoint
 public class RDWEndpoint extends SuwinetEndpoint {
 
@@ -31,7 +33,7 @@ public class RDWEndpoint extends SuwinetEndpoint {
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "KentekenInfo")
     @ResponsePayload
-    public KentekenInfoResponse getKentekenInfo(@RequestPayload KentekenInfo request) throws JAXBException, SAXException {
+    public KentekenInfoResponse getKentekenInfo(@RequestPayload KentekenInfo request) throws JAXBException, SAXException, IOException {
 
         logger.debug("request: " + printPayload(request, incomingClasses, incomingSchema));
         String xmlFilename = servicePrefix + "_KentekenInfo_" + request.getKentekenVoertuig() + ".xml";

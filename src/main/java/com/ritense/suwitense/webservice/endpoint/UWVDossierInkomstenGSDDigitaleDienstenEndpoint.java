@@ -13,6 +13,8 @@ import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 import org.xml.sax.SAXException;
 
+import java.io.IOException;
+
 @Endpoint
 public class UWVDossierInkomstenGSDDigitaleDienstenEndpoint extends SuwinetEndpoint {
 
@@ -33,7 +35,7 @@ public class UWVDossierInkomstenGSDDigitaleDienstenEndpoint extends SuwinetEndpo
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "UWVPersoonsIkvInfo")
     @ResponsePayload
-    public UWVPersoonsIkvInfoResponse getKentekenInfo(@RequestPayload UWVPersoonsIkvInfo request) throws JAXBException, SAXException {
+    public UWVPersoonsIkvInfoResponse getKentekenInfo(@RequestPayload UWVPersoonsIkvInfo request) throws JAXBException, SAXException, IOException {
 
         logger.debug("request: " + printPayload(request, incomingClasses, incomingSchema));
         String xmlFilename = servicePrefix + "_UWVPersoonsIkvInfo_" + request.getBurgerservicenr() + ".xml";

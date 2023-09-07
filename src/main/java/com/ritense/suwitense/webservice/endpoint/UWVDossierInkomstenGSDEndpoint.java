@@ -15,6 +15,8 @@ import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 import org.xml.sax.SAXException;
 
+import java.io.IOException;
+
 @Endpoint
 public class UWVDossierInkomstenGSDEndpoint extends SuwinetEndpoint {
 
@@ -35,7 +37,7 @@ public class UWVDossierInkomstenGSDEndpoint extends SuwinetEndpoint {
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "UWVPersoonsIkvInfo")
     @ResponsePayload
-    public UWVPersoonsIkvInfoResponse getUWVPersoonsIkvInfo(@RequestPayload UWVPersoonsIkvInfo request) throws JAXBException, SAXException {
+    public UWVPersoonsIkvInfoResponse getUWVPersoonsIkvInfo(@RequestPayload UWVPersoonsIkvInfo request) throws JAXBException, SAXException, IOException {
         logger.debug("request: " + printPayload(request, incomingClasses, incomingSchema));
         String xmlFilename = servicePrefix + "_UWVPersoonsIkvInfo_" + request.getBurgerservicenr() + ".xml";
         logger.info("looking for: " + xmlFilename);

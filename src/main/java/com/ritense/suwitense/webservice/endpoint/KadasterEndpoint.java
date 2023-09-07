@@ -5,11 +5,15 @@ import nl.bkwi.suwiml.diensten.kadasterdossiergsd.v0300.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.Resource;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 import org.xml.sax.SAXException;
+
+import java.io.IOException;
 
 @Endpoint
 public class KadasterEndpoint extends SuwinetEndpoint {
@@ -18,8 +22,14 @@ public class KadasterEndpoint extends SuwinetEndpoint {
 
     private static final String NAMESPACE_URI = "http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300";
 
-    private static final String INCOMING_SCHEMA = "build/resources/main/suwinet/Diensten/KadasterDossierGSD/v0300-b02/BodyAction.xsd";
-    private static final String OUT_GOING_SCHEMA = "build/resources/main/suwinet/Diensten/KadasterDossierGSD/v0300-b02/BodyReaction.xsd";
+    @Value("classpath:suwinet/Diensten/KadasterDossierGSD/v0300-b02/BodyAction.xsd")
+    Resource resourceBodyAction;
+
+    @Value("classpath:suwinet/Diensten/KadasterDossierGSD/v0300-b02/BodyReaction.xsd")
+    Resource resourceBodyReaction;
+
+    private static final String INCOMING_SCHEMA = "suwinet/Diensten/KadasterDossierGSD/v0300-b02/BodyAction.xsd";
+    private static final String OUT_GOING_SCHEMA = "suwinet/Diensten/KadasterDossierGSD/v0300-b02/BodyReaction.xsd";
 
     private static final Class[] INCOMING_CLASSES = {
             PersoonsInfo.class,
@@ -37,12 +47,12 @@ public class KadasterEndpoint extends SuwinetEndpoint {
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "PersoonsInfo")
     @ResponsePayload
-    public PersoonsInfoResponse getPersoonsInfo(@RequestPayload PersoonsInfo request) throws JAXBException, SAXException {
-
+    public PersoonsInfoResponse getPersoonsInfo(@RequestPayload PersoonsInfo request) throws JAXBException, SAXException, IOException {
+        logger.info(resourceBodyAction.getFilename() + "  resourceBodyAction: " + resourceBodyAction.exists());
         String xmlFilename = servicePrefix + "_PersoonsInfo_" + request.getBurgerservicenr() + ".xml";
         String responseFile = readResponseDirectory(xmlFilename);
         logger.info("looking for: " + xmlFilename);
-        logger.debug("request: " + printPayload(request, INCOMING_CLASSES, INCOMING_SCHEMA));
+        logger.debug("request: " + printPayload2(request, INCOMING_CLASSES, resourceBodyAction.getFile()));
         PersoonsInfoResponse response;
         if(responseFile.isEmpty()) {
             response = objectFactory.createPersoonsInfoResponse();
@@ -50,14 +60,14 @@ public class KadasterEndpoint extends SuwinetEndpoint {
         } else {
             response = (PersoonsInfoResponse) unmarshal(PersoonsInfoResponse.class,responseFile);
         }
-        logger.debug("response: " + printPayload(response, OUT_GOING_CLASSES, OUT_GOING_SCHEMA));
+        logger.debug("response: " + printPayload2(response, OUT_GOING_CLASSES, resourceBodyReaction.getFile()));
 
         return response;
     }
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "ObjectInfoKadastraleAanduiding")
     @ResponsePayload
-    public ObjectInfoKadastraleAanduidingResponse getObjectInfoKadastraleAanduiding(@RequestPayload ObjectInfoKadastraleAanduiding request) throws JAXBException, SAXException {
+    public ObjectInfoKadastraleAanduidingResponse getObjectInfoKadastraleAanduiding(@RequestPayload ObjectInfoKadastraleAanduiding request) throws JAXBException, SAXException, IOException {
 
         String xmlFilename = servicePrefix + "_ObjectInfoKadastraleAanduiding_" +
                 request.getCdKadastraleGemeente() + "_" +
@@ -66,7 +76,7 @@ public class KadasterEndpoint extends SuwinetEndpoint {
         logger.info("getObjectInfoKadastraleAanduiding looking for: " + xmlFilename);
         String responseFile = readResponseDirectory(xmlFilename);
 
-        logger.debug("getObjectInfoKadastraleAanduiding request: " + printPayload(request, INCOMING_CLASSES, INCOMING_SCHEMA));
+        logger.debug("getObjectInfoKadastraleAanduiding request: " + printPayload2(request, INCOMING_CLASSES, resourceBodyReaction.getFile()));
         ObjectInfoKadastraleAanduidingResponse response;
         if(responseFile.isEmpty()) {
             response = objectFactory.createObjectInfoKadastraleAanduidingResponse();
@@ -74,7 +84,7 @@ public class KadasterEndpoint extends SuwinetEndpoint {
         } else {
             response = (ObjectInfoKadastraleAanduidingResponse) unmarshal(ObjectInfoKadastraleAanduidingResponse.class, responseFile);
         }
-        logger.debug("response: " + printPayload(response, OUT_GOING_CLASSES, OUT_GOING_SCHEMA));
+        logger.debug("response: " + printPayload2(response, OUT_GOING_CLASSES, resourceBodyReaction.getFile()));
 
         return response;
     }
