@@ -31,14 +31,14 @@ The simulator uses basic authentication.
 
 ### Test content (with SoapUI)
 
-Rest requests are stored at src/main/resources/suwinet/data/ExampleRequests/
+Test requests are stored at src/main/resources/suwinet/data/ExampleRequests/
 SoapUI is an easy tool to test SOAP WS endpoints. When importing a WSDL in your SoapUI Project it will generate the requests for the available endpoints. 
 The WSDL files are stored at src/main/resources/suwinet/Diensten/\<service\>/\<version\>/Impl/BKWI.wsdl
 
 ### Adding test responses
 
 The location of the responses is src/main/resources/suwinet/data/Responses/<BR>
-Based on the unique keys as **bsn**, **kenteken**, **Perceelnummer** in the request a xml response file is returned
+Based on the unique keys as **bsn**, **kenteken**, **Perceelnummer** in the request a xml response file is returned.
 The syntax of the response files are:
 1. PersoonsInfo:<BR>KadasterDossierGSD_PersoonsInfo_\<Burgerservicenr\>.xml
 2. ObjectInfoKadastraleAanduiding:<BR>KadasterDossierGSD_ObjectInfoKadastraleAanduiding_\<CdKadastraleGemeente\>_\<KadastraalPerceelnr\>.xml
