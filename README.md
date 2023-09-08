@@ -20,15 +20,19 @@ The endpoint code is already generated based on Suwinet WSDLs.
 
 ### Simulated service endpoints:
 
-The services baseurl is <simulator-url>/ws/, the following services are supported: 
-  1. <simulator-url>/ws/KadasterDossierGSD-v0300/v1 - PersoonsInfo 
-  2. <simulator-url>/ws/KadasterDossierGSD-v0300/v1 - ObjectInfoKadastraleAanduiding
-  3. <simulator-url>/ws/UWVDossierInkomstenGSD-v0200/v1 - UWVPersoonsIkvInfo
-  4. <simulator-url>/ws/UWVDossierInkomstenGSDDigitaleDiensten-v0200/v1 - UWVPersoonsIkvInfo
-  5. <simulator-url>/ws/RDWDossierDigitaleDiensten-v0200/v1 - KentekenInfo 
+The services baseurl is \<simulator-url\>/ws/, the following services are supported: 
+  1. \<simulator-url\>/ws/KadasterDossierGSD-v0300/v1 - PersoonsInfo 
+  2. \<simulator-url\>/ws/KadasterDossierGSD-v0300/v1 - ObjectInfoKadastraleAanduiding
+  3. \<simulator-url\>/ws/UWVDossierInkomstenGSD-v0200/v1 - UWVPersoonsIkvInfo
+  4. \<simulator-url\>/ws/UWVDossierInkomstenGSDDigitaleDiensten-v0200/v1 - UWVPersoonsIkvInfo
+  5. \<simulator-url\>/ws/RDWDossierDigitaleDiensten-v0200/v1 - KentekenInfo 
 find example client requests in src/main/resources/suwinet/data/ExampleRequests
 The simulator uses basic authentication.
 
+### testing with SoapUI
+
+SoapUI is an easy tool to test SOAP WS endpoints. When importing a WSDL in your SoapUI Project it will generate the requests for the available endpoints. 
+The WSDL files are stored at resources/suwinet/Diensten/\<service\>/\<version\>/Impl/BKWI.wsdl
 ### Adding test responses
 
 The location of the responses is src/main/resources/suwinet/data/Responses/<BR>
@@ -43,7 +47,7 @@ The syntax of the response files are:
 ### New WSDL endpoints
 
 Add other WSDLs to add additional endpoints, a wsimport task defined in the build.gradle.kts e.g. **RDWWsImport** will generate the code.
-A small adjustment needs to be made to 2 files. Move the following code block from *src/main/java/nl/bkwi/suwiml/fwi/\<version\>/ObjectFactory.java* to *src/main/java/nl/bkwi/suwiml/diensten/\<SuwinetService\>/\<version\>/ObjectFactory.java*
+A small adjustment needs to be made to 2 files. Move the following code block from *src/main/java/nl/bkwi/suwiml/fwi/\<version\>/ObjectFactory.java* to *src/main/java/nl/bkwi/suwiml/diensten/\<SuwinetService\>/\<version\>/ObjectFactory.java* after the **wsimport** task
 
 ```java
    private static final QName _FWI_QNAME = new QName("http://bkwi.nl/SuwiML/FWI/v0205", "FWI");

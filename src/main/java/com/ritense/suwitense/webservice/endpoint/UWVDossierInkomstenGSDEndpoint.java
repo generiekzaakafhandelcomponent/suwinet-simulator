@@ -22,7 +22,6 @@ import java.io.IOException;
 @Endpoint
 public class UWVDossierInkomstenGSDEndpoint extends SuwinetEndpoint {
 
-    public static final String UWVPERSOONSIKVINFO_XML = "build/resources/main/suwinet/data/Responses/UWVDossierInkomstenGSD_UWVPersoonsIkvInfo_999996769.xml";
     Logger logger = LoggerFactory.getLogger(UWVDossierInkomstenGSDEndpoint.class);
 
     private static final String NAMESPACE_URI = "http://bkwi.nl/SuwiML/Diensten/UWVDossierInkomstenGSD/v0200";
@@ -46,7 +45,6 @@ public class UWVDossierInkomstenGSDEndpoint extends SuwinetEndpoint {
     public UWVPersoonsIkvInfoResponse getUWVPersoonsIkvInfo(@RequestPayload UWVPersoonsIkvInfo request) throws JAXBException, SAXException, IOException {
         logger.debug("request: " + printPayload(request, incomingClasses, resourceBodyAction));
         String xmlFilename = servicePrefix + "_UWVPersoonsIkvInfo_" + request.getBurgerservicenr() + ".xml";
-        logger.info("looking for: " + xmlFilename);
         Resource resource = readResponseDirectory(xmlFilename);
 
         UWVPersoonsIkvInfoResponse response;
