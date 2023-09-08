@@ -38,7 +38,7 @@ The WSDL files are stored at src/main/resources/suwinet/Diensten/\<service\>/\<v
 ### Adding test responses
 
 The location of the responses is src/main/resources/suwinet/data/Responses/<BR>
-Based on the unique keys as **bsn**, **kenteken**, **Perceelnummer** in the request a xml response file is returned.
+Based on the unique keys as **bsn**, **kenteken**, **Perceelnummer** in the request a xml response file is returned
 The syntax of the response files are:
 1. PersoonsInfo:<BR>KadasterDossierGSD_PersoonsInfo_\<Burgerservicenr\>.xml
 2. ObjectInfoKadastraleAanduiding:<BR>KadasterDossierGSD_ObjectInfoKadastraleAanduiding_\<CdKadastraleGemeente\>_\<KadastraalPerceelnr\>.xml
