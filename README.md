@@ -29,10 +29,12 @@ The services baseurl is \<simulator-url\>/ws/, the following services are suppor
 find example client requests in src/main/resources/suwinet/data/ExampleRequests
 The simulator uses basic authentication.
 
-### Testing with SoapUI
+### Test content (with SoapUI)
 
+Rest requests are stored at src/main/resources/suwinet/data/ExampleRequests/
 SoapUI is an easy tool to test SOAP WS endpoints. When importing a WSDL in your SoapUI Project it will generate the requests for the available endpoints. 
-The WSDL files are stored at resources/suwinet/Diensten/\<service\>/\<version\>/Impl/BKWI.wsdl
+The WSDL files are stored at src/main/resources/suwinet/Diensten/\<service\>/\<version\>/Impl/BKWI.wsdl
+
 ### Adding test responses
 
 The location of the responses is src/main/resources/suwinet/data/Responses/<BR>
