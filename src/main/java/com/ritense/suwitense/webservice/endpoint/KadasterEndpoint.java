@@ -73,7 +73,6 @@ public class KadasterEndpoint extends SuwinetEndpoint {
         logger.info("getObjectInfoKadastraleAanduiding looking for: " + xmlFilename);
         Resource resource = readResponseDirectory(xmlFilename);
 
-        logger.debug("getObjectInfoKadastraleAanduiding request: " + printPayload(request, INCOMING_CLASSES, resourceBodyReaction));
         ObjectInfoKadastraleAanduidingResponse response;
         if(resource==null) {
             response = objectFactory.createObjectInfoKadastraleAanduidingResponse();
@@ -81,7 +80,6 @@ public class KadasterEndpoint extends SuwinetEndpoint {
         } else {
             response = (ObjectInfoKadastraleAanduidingResponse) unmarshal(ObjectInfoKadastraleAanduidingResponse.class, resource);
         }
-        logger.debug("response: " + printPayload(response, OUT_GOING_CLASSES, resourceBodyReaction));
 
         return response;
     }
