@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v02="http://bkwi.nl/SuwiML/Diensten/RDWDossierGSD/v0200">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <v02:VoertuigbezitInfoPersoon>
+            <Burgerservicenr>123456782</Burgerservicenr>
+            <DatBPeilperiodeAansprakelijkheid>20230908</DatBPeilperiodeAansprakelijkheid>
+        </v02:VoertuigbezitInfoPersoon>
+    </soapenv:Body>
+</soapenv:Envelope>

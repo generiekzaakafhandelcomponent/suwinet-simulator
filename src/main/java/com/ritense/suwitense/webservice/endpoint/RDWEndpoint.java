@@ -58,4 +58,23 @@ public class RDWEndpoint extends SuwinetEndpoint {
 
         return response;
     }
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "VoertuigbezitInfoPersoon")
+    @ResponsePayload
+    public VoertuigbezitInfoPersoonResponse getVoertuigbezitInfoPersoon(@RequestPayload VoertuigbezitInfoPersoon request) throws JAXBException, SAXException, IOException {
+
+        String xmlFilename = servicePrefix + "_VoertuigbezitInfoPersoon_" + request.getBurgerservicenr() + ".xml";
+        logger.info("looking for: " + xmlFilename);
+        Resource resource = readResponseDirectory(xmlFilename);
+
+        VoertuigbezitInfoPersoonResponse response;
+        if(resource == null) {
+            response = dossierObjectFactory.createVoertuigbezitInfoPersoonResponse();
+            nl.bkwi.suwiml.fwi.v0205.ObjectFactory objectFactory = new nl.bkwi.suwiml.fwi.v0205.ObjectFactory();
+            response.setNietsGevonden(objectFactory.createNietsGevonden("nope die ken ik niet"));
+        } else {
+            response = (VoertuigbezitInfoPersoonResponse) unmarshal(VoertuigbezitInfoPersoonResponse.class,resource);
+        }
+
+        return response;
+    }
 }
