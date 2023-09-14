@@ -42,20 +42,20 @@ public class RDWEndpoint extends SuwinetEndpoint {
     @ResponsePayload
     public KentekenInfoResponse getKentekenInfo(@RequestPayload KentekenInfo request) throws JAXBException, SAXException, IOException {
 
-        logger.debug("request: " + printPayload(request, incomingClasses, resourceBodyAction));
         String xmlFilename = servicePrefix + "_KentekenInfo_" + request.getKentekenVoertuig() + ".xml";
         logger.info("looking for: " + xmlFilename);
         Resource resource = readResponseDirectory(xmlFilename);
 
         KentekenInfoResponse response;
         if(resource == null) {
+            logger.warn("not found: " + xmlFilename);
             response = dossierObjectFactory.createKentekenInfoResponse();
             addPersoonNietGevonden(response.getContent());
         } else {
+            logger.info("found: " + xmlFilename);
             response = (KentekenInfoResponse) unmarshal(KentekenInfoResponse.class,resource);
         }
-        logger.debug("response: " + printPayload(response,outGoingClasses, resourceBodyReaction));
-
+        logger.info("response: " + printPayload(response,outGoingClasses, resourceBodyReaction));
         return response;
     }
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "VoertuigbezitInfoPersoon")
@@ -68,10 +68,12 @@ public class RDWEndpoint extends SuwinetEndpoint {
 
         VoertuigbezitInfoPersoonResponse response;
         if(resource == null) {
+            logger.warn("not found: " + xmlFilename);
             response = dossierObjectFactory.createVoertuigbezitInfoPersoonResponse();
             nl.bkwi.suwiml.fwi.v0205.ObjectFactory objectFactory = new nl.bkwi.suwiml.fwi.v0205.ObjectFactory();
             response.setNietsGevonden(objectFactory.createNietsGevonden("nope die ken ik niet"));
         } else {
+            logger.info("found: " + xmlFilename);
             response = (VoertuigbezitInfoPersoonResponse) unmarshal(VoertuigbezitInfoPersoonResponse.class,resource);
         }
 
