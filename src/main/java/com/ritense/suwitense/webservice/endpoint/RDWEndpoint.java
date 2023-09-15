@@ -21,10 +21,10 @@ public class RDWEndpoint extends SuwinetEndpoint {
 
     Logger logger = LoggerFactory.getLogger(RDWEndpoint.class);
 
-    @Value("suwinet/Diensten/RDWDossierGSD/v0200-b02/BodyAction.xsd")
+    @Value("suwinet/RDWDossierGSD/Diensten/RDWDossierGSD/v0200-b02/BodyAction.xsd")
     ClassPathResource resourceBodyAction;
 
-    @Value("suwinet/Diensten/RDWDossierGSD/v0200-b02/BodyReaction.xsd")
+    @Value("suwinet/RDWDossierGSD/Diensten/RDWDossierGSD/v0200-b02/BodyReaction.xsd")
     ClassPathResource resourceBodyReaction;
 
     private static final String NAMESPACE_URI = "http://bkwi.nl/SuwiML/Diensten/RDWDossierGSD/v0200";
@@ -42,9 +42,11 @@ public class RDWEndpoint extends SuwinetEndpoint {
     @ResponsePayload
     public KentekenInfoResponse getKentekenInfo(@RequestPayload KentekenInfo request) throws JAXBException, SAXException, IOException {
 
+
         String xmlFilename = servicePrefix + "_KentekenInfo_" + request.getKentekenVoertuig() + ".xml";
         logger.info("looking for: " + xmlFilename);
         Resource resource = readResponseDirectory(xmlFilename);
+
 
         KentekenInfoResponse response;
         if(resource == null) {
@@ -55,7 +57,7 @@ public class RDWEndpoint extends SuwinetEndpoint {
             logger.info("found: " + xmlFilename);
             response = (KentekenInfoResponse) unmarshal(KentekenInfoResponse.class,resource);
         }
-        logger.info("response: " + printPayload(response,outGoingClasses, resourceBodyReaction));
+        logger.debug("response: " + printPayload(response,outGoingClasses, resourceBodyReaction));
         return response;
     }
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "VoertuigbezitInfoPersoon")

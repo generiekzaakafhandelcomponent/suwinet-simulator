@@ -23,10 +23,10 @@ public class KadasterEndpoint extends SuwinetEndpoint {
 
     private static final String NAMESPACE_URI = "http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300";
 
-    @Value("suwinet/Diensten/KadasterDossierGSD/v0300-b02/BodyAction.xsd")
+    @Value("suwinet/KadasterDossierGSD/Diensten/KadasterDossierGSD/v0300-b02/BodyAction.xsd")
     ClassPathResource resourceBodyAction;
 
-    @Value("suwinet/Diensten/KadasterDossierGSD/v0300-b02/BodyReaction.xsd")
+    @Value("suwinet/KadasterDossierGSD/Diensten/KadasterDossierGSD/v0300-b02/BodyReaction.xsd")
     ClassPathResource resourceBodyReaction;
 
     private static final Class[] INCOMING_CLASSES = {
