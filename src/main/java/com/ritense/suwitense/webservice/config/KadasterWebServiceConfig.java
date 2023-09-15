@@ -28,7 +28,7 @@ public class KadasterWebServiceConfig extends WsConfigurerAdapter {
     private Resource[] dienstenResources;
 
     @Bean
-    public XsdSchemaCollection getKadasterDossierGSDXsds() throws Exception {
+    public XsdSchemaCollection getKadasterDossierGSDXsds() {
         CommonsXsdSchemaCollection xsds = new CommonsXsdSchemaCollection(dienstenResources);
         xsds.setInline(true);
         return xsds;

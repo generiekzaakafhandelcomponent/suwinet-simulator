@@ -10,9 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 import org.springframework.ws.config.annotation.EnableWs;
 import org.springframework.ws.config.annotation.WsConfigurerAdapter;
-import org.springframework.ws.context.MessageContext;
 import org.springframework.ws.server.EndpointInterceptor;
-import org.springframework.ws.server.SmartEndpointInterceptor;
 import org.springframework.ws.soap.server.endpoint.interceptor.PayloadValidatingInterceptor;
 import org.springframework.ws.transport.http.MessageDispatcherServlet;
 import org.springframework.xml.xsd.XsdSchemaCollection;
@@ -29,7 +27,7 @@ public class UWVWebServiceConfig extends WsConfigurerAdapter {
     private Resource[] dienstenResources;
 
     @Bean
-    public XsdSchemaCollection getUWVDossierInkomstenGSDXsds() throws Exception {
+    public XsdSchemaCollection getUWVDossierInkomstenGSDXsds() {
         CommonsXsdSchemaCollection xsds = new CommonsXsdSchemaCollection(dienstenResources);
         xsds.setInline(true);
         return xsds;
