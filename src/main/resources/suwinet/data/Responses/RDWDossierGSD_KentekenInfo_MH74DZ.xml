@@ -1,6 +1,6 @@
 <ns4:KentekenInfoResponse xmlns:ns3="http://bkwi.nl/SuwiML/FWI/v0205" xmlns:ns4="http://bkwi.nl/SuwiML/Diensten/RDWDossierGSD/v0200">
     <ClientSuwi>
-        <Burgerservicenr>444444440</Burgerservicenr>
+        <Burgerservicenr>111111110</Burgerservicenr>
         <Voorletters>J</Voorletters>
         <SignificantDeelVanDeAchternaam>Janssen</SignificantDeelVanDeAchternaam>
         <Geboortedat>19641031</Geboortedat>

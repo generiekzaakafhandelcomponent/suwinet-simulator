@@ -25,5 +25,15 @@
                 </StatusVoertuig>
             </Voertuig>
         </Aansprakelijke>
+        <Aansprakelijke>
+            <DatRegistratieAansprakelijkheid>20120331</DatRegistratieAansprakelijkheid>
+            <Voertuig>
+                <KentekenVoertuig>16ZDLX</KentekenVoertuig>
+                <StatusVoertuig>
+                    <CdStatusVoertuig>87</CdStatusVoertuig>
+                    <DatBStatusVoertuig>20150621</DatBStatusVoertuig>
+                </StatusVoertuig>
+            </Voertuig>
+        </Aansprakelijke>
     </ClientSuwi>
 </smls:VoertuigbezitInfoPersoonResponse>

@@ -42,11 +42,9 @@ public class RDWEndpoint extends SuwinetEndpoint {
     @ResponsePayload
     public KentekenInfoResponse getKentekenInfo(@RequestPayload KentekenInfo request) throws JAXBException, SAXException, IOException {
 
-
         String xmlFilename = servicePrefix + "_KentekenInfo_" + request.getKentekenVoertuig() + ".xml";
         logger.info("looking for: " + xmlFilename);
         Resource resource = readResponseDirectory(xmlFilename);
-
 
         KentekenInfoResponse response;
         if(resource == null) {
