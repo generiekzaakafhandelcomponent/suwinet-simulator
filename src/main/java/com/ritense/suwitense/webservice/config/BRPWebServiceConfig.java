@@ -54,6 +54,6 @@ public class BRPWebServiceConfig extends WsConfigurerAdapter {
         servlet.setApplicationContext(applicationContext);
 
         servlet.setTransformWsdlLocations(true);
-        return new ServletRegistrationBean<>(servlet, "/ws/BRPDossierPersoonGSD/*");
+        return new ServletRegistrationBean<>(servlet, "/ws/BRPDossierPersoonGSD-v0200/*");
     }
 }

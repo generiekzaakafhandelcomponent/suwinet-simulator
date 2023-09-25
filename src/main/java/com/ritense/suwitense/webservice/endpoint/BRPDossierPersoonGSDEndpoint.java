@@ -50,6 +50,7 @@ public class BRPDossierPersoonGSDEndpoint extends SuwinetEndpoint {
 
         String xmlFilename = servicePrefix + "_AanvraagPersoon_" + request.getBurgerservicenr() + ".xml";
         Resource resource = readResponseDirectory(xmlFilename);
+        logger.info("looking for: " + xmlFilename);
         AanvraagPersoonResponse response;
         if(resource == null) {
             response = objectFactory.createAanvraagPersoonResponse();
