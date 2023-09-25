@@ -115,6 +115,28 @@ allprojects {
         options.isDeprecation = true
     }
 }
+tasks.register("BRPDossierPersoonGSDWsImport") {
+
+    doLast {
+        ant.withGroovyBuilder {
+            mkdir(suwinetSourceDir)
+            "taskdef"(
+                "name" to "wsimport",
+                "classname" to "com.sun.tools.ws.ant.WsImport",
+                "classpath" to configurations["jaxws"].asPath
+            )
+            "wsimport"(
+                "keep" to true,
+                "sourcedestdir" to suwinetSourceDir,
+                "wsdl" to "${projectDir}/src/main/resources/suwinet/BRPDossierPersoonGSD/Diensten/BRPDossierPersoonGSD/v0200-b02/Impl/BKWI.wsdl",
+                "verbose" to true
+            ) {
+                "xjcarg"("value" to "-XautoNameResolution")
+            }
+        }
+    }
+}
+
 tasks.register("UWVDossierInkomstenGSDWsImport") {
 
     doLast {

@@ -24,6 +24,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
 @XmlRegistry
 public class ObjectFactory {
 
+//    private static final QName _FWI_QNAME = new QName("http://bkwi.nl/SuwiML/FWI/v0205", "FWI");
     private static final QName _NietsGevonden_QNAME = new QName("http://bkwi.nl/SuwiML/FWI/v0205", "NietsGevonden");
     private static final QName _Fout_QNAME = new QName("http://bkwi.nl/SuwiML/FWI/v0205", "Fout");
     private static final QName _NietGerechtigd_QNAME = new QName("http://bkwi.nl/SuwiML/FWI/v0205", "NietGerechtigd");
@@ -68,6 +69,19 @@ public class ObjectFactory {
     public Melding.Bron createMeldingBron() {
         return new Melding.Bron();
     }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link FWI }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link FWI }{@code >}
+     */
+//    @XmlElementDecl(namespace = "http://bkwi.nl/SuwiML/FWI/v0205", name = "FWI")
+//    public JAXBElement<FWI> createFWI(FWI value) {
+//        return new JAXBElement<>(_FWI_QNAME, FWI.class, null, value);
+//    }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}

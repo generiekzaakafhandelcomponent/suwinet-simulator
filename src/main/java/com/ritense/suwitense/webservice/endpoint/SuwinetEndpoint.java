@@ -70,6 +70,6 @@ public class SuwinetEndpoint {
 
     void addPersoonNietGevonden(List<JAXBElement<?>> responseList) {
         ObjectFactory objectFactory = new ObjectFactory();
-        responseList.add(objectFactory.createNietsGevonden("nope die ken ik niet"));
+        responseList.add(objectFactory.createNietsGevonden("Niet gevonden"));
     }
 }
