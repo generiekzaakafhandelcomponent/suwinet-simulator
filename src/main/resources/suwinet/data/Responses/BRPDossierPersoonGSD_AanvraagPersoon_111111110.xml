@@ -20,6 +20,109 @@
                 <DatGeldigheidGegevens>19650310</DatGeldigheidGegevens>
             </GeldigheidGegevensNationaliteit>
         </Nationaliteit>
+        <Nationaliteit>
+            <CdNationaliteit>0002</CdNationaliteit>
+        </Nationaliteit>
+        <Nationaliteit>
+            <CdNationaliteit>0013</CdNationaliteit>
+        </Nationaliteit>
+        <Nationaliteit>
+            <CdNationaliteit>0175</CdNationaliteit>
+        </Nationaliteit>
+        <VerblijfplaatsHistorisch>
+            <DomicilieAdres>
+                <Postcd>2597LD</Postcd>
+                <Straatnaam>Nieuwe Parklaan</Straatnaam>
+                <Huisnr>58</Huisnr>
+            </DomicilieAdres>
+            <AangifteAdreshoudingBrp>
+                <CdGemeenteVanInschrijving>0518</CdGemeenteVanInschrijving>
+                <DatVanInschrijvingBijGemeente>19990720</DatVanInschrijvingBijGemeente>
+                <DatBAdreshoudingBrp>19990720</DatBAdreshoudingBrp>
+            </AangifteAdreshoudingBrp>
+        </VerblijfplaatsHistorisch>
+        <VerblijfplaatsHistorisch>
+            <DomicilieAdres>
+                <Postcd>4266EB</Postcd>
+                <Gemeentedeel>Eethen</Gemeentedeel>
+                <Straatnaam>Raadhuisstraat</Straatnaam>
+                <Huisnr>16</Huisnr>
+                <Huisletter>b</Huisletter>
+            </DomicilieAdres>
+            <AangifteAdreshoudingBrp>
+                <CdGemeenteVanInschrijving>0738</CdGemeenteVanInschrijving>
+                <DatVanInschrijvingBijGemeente>19730101</DatVanInschrijvingBijGemeente>
+                <DatBAdreshoudingBrp>19730101</DatBAdreshoudingBrp>
+            </AangifteAdreshoudingBrp>
+        </VerblijfplaatsHistorisch>
+        <VerblijfplaatsHistorisch>
+            <DomicilieAdres>
+                <Gemeentedeel>Eethen</Gemeentedeel>
+                <Straatnaam>Raadhuisstraat</Straatnaam>
+                <Huisnr>16</Huisnr>
+                <Huisletter>b</Huisletter>
+            </DomicilieAdres>
+            <AangifteAdreshoudingBrp>
+                <CdGemeenteVanInschrijving>0771</CdGemeenteVanInschrijving>
+                <DatVanInschrijvingBijGemeente>19230501</DatVanInschrijvingBijGemeente>
+                <DatBAdreshoudingBrp>19370519</DatBAdreshoudingBrp>
+            </AangifteAdreshoudingBrp>
+        </VerblijfplaatsHistorisch>
+        <VerblijfplaatsHistorisch>
+            <DomicilieAdres>
+                <Straatnaam>Hoek</Straatnaam>
+                <Huisnr>14</Huisnr>
+            </DomicilieAdres>
+            <AangifteAdreshoudingBrp>
+                <CdGemeenteVanInschrijving>0771</CdGemeenteVanInschrijving>
+                <DatVanInschrijvingBijGemeente>19230501</DatVanInschrijvingBijGemeente>
+                <DatBAdreshoudingBrp>19230501</DatBAdreshoudingBrp>
+            </AangifteAdreshoudingBrp>
+        </VerblijfplaatsHistorisch>
+        <VerblijfplaatsHistorisch>
+            <DomicilieAdres>
+                <Straatnaam>Hoek</Straatnaam>
+                <Huisnr>14</Huisnr>
+            </DomicilieAdres>
+            <AangifteAdreshoudingBrp>
+                <CdGemeenteVanInschrijving>1111</CdGemeenteVanInschrijving>
+                <DatVanInschrijvingBijGemeente>19080801</DatVanInschrijvingBijGemeente>
+                <DatBAdreshoudingBrp>19220327</DatBAdreshoudingBrp>
+            </AangifteAdreshoudingBrp>
+        </VerblijfplaatsHistorisch>
+        <VerblijfplaatsHistorisch>
+            <DomicilieAdres>
+                <Straatnaam>Dorpsstraat</Straatnaam>
+                <Huisnr>44</Huisnr>
+            </DomicilieAdres>
+            <AangifteAdreshoudingBrp>
+                <CdGemeenteVanInschrijving>1111</CdGemeenteVanInschrijving>
+                <DatVanInschrijvingBijGemeente>19080801</DatVanInschrijvingBijGemeente>
+                <DatBAdreshoudingBrp>19200219</DatBAdreshoudingBrp>
+            </AangifteAdreshoudingBrp>
+        </VerblijfplaatsHistorisch>
+        <VerblijfplaatsHistorisch>
+            <DomicilieAdres>
+                <Straatnaam>Hilsestraat</Straatnaam>
+                <Huisnr>19</Huisnr>
+            </DomicilieAdres>
+            <AangifteAdreshoudingBrp>
+                <CdGemeenteVanInschrijving>1111</CdGemeenteVanInschrijving>
+                <DatVanInschrijvingBijGemeente>19080801</DatVanInschrijvingBijGemeente>
+                <DatBAdreshoudingBrp>19080801</DatBAdreshoudingBrp>
+            </AangifteAdreshoudingBrp>
+        </VerblijfplaatsHistorisch>
+        <VerblijfplaatsHistorisch>
+            <DomicilieAdres>
+                <Straatnaam>Hilsestraat</Straatnaam>
+                <Huisnr>19</Huisnr>
+            </DomicilieAdres>
+            <AangifteAdreshoudingBrp>
+                <CdGemeenteVanInschrijving>1265</CdGemeenteVanInschrijving>
+                <DatVanInschrijvingBijGemeente>18991210</DatVanInschrijvingBijGemeente>
+                <DatBAdreshoudingBrp>18991210</DatBAdreshoudingBrp>
+            </AangifteAdreshoudingBrp>
+        </VerblijfplaatsHistorisch>
         <DomicilieAdres>
             <Postcd>1079WZ</Postcd>
             <Woonplaatsnaam>Amsterdam</Woonplaatsnaam>
@@ -69,14 +172,5 @@
             <DatBVerblijfstitel>20120915</DatBVerblijfstitel>
             <DatEVerblijfstitel>20240915</DatEVerblijfstitel>
         </Verblijfstitel>
-        <Nationaliteit>
-            <CdNationaliteit>NL</CdNationaliteit>
-        </Nationaliteit>
-        <Nationaliteit>
-            <CdNationaliteit>BE</CdNationaliteit>
-        </Nationaliteit>
-        <Nationaliteit>
-            <CdNationaliteit>IT</CdNationaliteit>
-        </Nationaliteit>
     </ClientSuwi>
 </brp:AanvraagPersoonResponse>
