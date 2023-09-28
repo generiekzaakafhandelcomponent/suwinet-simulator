@@ -28,7 +28,20 @@
             <Huisnr>19</Huisnr>
             <IdentificatiecdVerblijfplaats>0530010002090227</IdentificatiecdVerblijfplaats>
             <IdentificatiecdNraanduiding>0530200002130217</IdentificatiecdNraanduiding>
+            <Huisletter>C</Huisletter>
+            <Huisnrtoevoeging>Huis</Huisnrtoevoeging>
         </DomicilieAdres>
+        <Correspondentieadres>
+            <Postcd>2054RC</Postcd>
+            <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+            <Straatnaam>Kerkstraat</Straatnaam>
+            <NaamOpenbareRuimte>Zomerdijkstraat</NaamOpenbareRuimte>
+            <Huisnr>79</Huisnr>
+            <Huisletter>A</Huisletter>
+            <Huisnrtoevoeging>Huis</Huisnrtoevoeging>
+            <IdentificatiecdVerblijfplaats>0530010002090227</IdentificatiecdVerblijfplaats>
+            <IdentificatiecdNraanduiding>0530200002130217</IdentificatiecdNraanduiding>
+        </Correspondentieadres>
         <AangifteAdreshoudingBrp>
             <CdGemeenteVanInschrijving>0363</CdGemeenteVanInschrijving>
             <DatVanInschrijvingBijGemeente>19650310</DatVanInschrijvingBijGemeente>
@@ -51,5 +64,19 @@
             <DatBFamilierechtelijkeBetrekking>19650310</DatBFamilierechtelijkeBetrekking>
         </Ouder2>
         <InschrijvingsgegevensBrp/>
+        <Verblijfstitel>
+            <CdVerblijfstitel>41</CdVerblijfstitel>
+            <DatBVerblijfstitel>20120915</DatBVerblijfstitel>
+            <DatEVerblijfstitel>20240915</DatEVerblijfstitel>
+        </Verblijfstitel>
+        <Nationaliteit>
+            <CdNationaliteit>NL</CdNationaliteit>
+        </Nationaliteit>
+        <Nationaliteit>
+            <CdNationaliteit>BE</CdNationaliteit>
+        </Nationaliteit>
+        <Nationaliteit>
+            <CdNationaliteit>IT</CdNationaliteit>
+        </Nationaliteit>
     </ClientSuwi>
 </brp:AanvraagPersoonResponse>
