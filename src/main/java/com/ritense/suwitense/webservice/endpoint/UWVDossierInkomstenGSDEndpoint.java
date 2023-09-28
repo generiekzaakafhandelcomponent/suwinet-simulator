@@ -25,10 +25,10 @@ public class UWVDossierInkomstenGSDEndpoint extends SuwinetEndpoint {
     Logger logger = LoggerFactory.getLogger(UWVDossierInkomstenGSDEndpoint.class);
 
     private static final String NAMESPACE_URI = "http://bkwi.nl/SuwiML/Diensten/UWVDossierInkomstenGSD/v0200";
-    @Value("suwinet/Diensten/UWVDossierInkomstenGSD/v0200-b02/BodyAction.xsd")
+    @Value("suwinet/UWVDossierInkomstenGSD/Diensten/UWVDossierInkomstenGSD/v0200-b02/BodyAction.xsd")
     ClassPathResource resourceBodyAction;
 
-    @Value("suwinet/Diensten/UWVDossierInkomstenGSD/v0200-b02/BodyReaction.xsd")
+    @Value("suwinet/UWVDossierInkomstenGSD/Diensten/UWVDossierInkomstenGSD/v0200-b02/BodyReaction.xsd")
     ClassPathResource resourceBodyReaction;
 
     private ObjectFactory dossierObjectFactory = new ObjectFactory();

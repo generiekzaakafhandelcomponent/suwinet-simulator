@@ -54,6 +54,6 @@ public class UWVWebServiceConfig extends WsConfigurerAdapter {
         servlet.setApplicationContext(applicationContext);
 
         servlet.setTransformWsdlLocations(true);
-        return new ServletRegistrationBean<>(servlet, "/ws/UWVDossierInkomstenGSD/*");
+        return new ServletRegistrationBean<>(servlet, "/ws/UWVDossierInkomstenGSD-v0200/*");
     }
 }
