@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
@@ -31,7 +30,7 @@ public class UWVDossierInkomstenGSDEndpoint extends SuwinetEndpoint {
     @Value("suwinet/UWVDossierInkomstenGSD/Diensten/UWVDossierInkomstenGSD/v0200-b02/BodyReaction.xsd")
     ClassPathResource resourceBodyReaction;
 
-    private ObjectFactory dossierObjectFactory = new ObjectFactory();
+    private final ObjectFactory dossierObjectFactory = new ObjectFactory();
 
     private static final Class[] incomingClasses = {UWVPersoonsIkvInfo.class};
     private static final Class[] outGoingClasses = {ObjectFactory.class};
