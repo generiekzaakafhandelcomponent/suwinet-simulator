@@ -26,6 +26,10 @@
             <Straatnaam>Zomerdijkstraat</Straatnaam>
             <NaamOpenbareRuimte>Zomerdijkstraat</NaamOpenbareRuimte>
             <Huisnr>19</Huisnr>
+            <Huisnrtoevoeging>III</Huisnrtoevoeging>
+            <Huisletter>G</Huisletter>
+            <Locatieoms>Bij het hek recht omhoog</Locatieoms>
+            <AanduidingBijHuisnr>de trekbel</AanduidingBijHuisnr>
             <IdentificatiecdVerblijfplaats>0530010002090227</IdentificatiecdVerblijfplaats>
             <IdentificatiecdNraanduiding>0530200002130217</IdentificatiecdNraanduiding>
         </DomicilieAdres>

@@ -47,7 +47,9 @@
                 <Gemeentedeel>Eethen</Gemeentedeel>
                 <Straatnaam>Raadhuisstraat</Straatnaam>
                 <Huisnr>16</Huisnr>
-                <Huisletter>b</Huisletter>
+                <Huisletter>X</Huisletter>
+                <Locatieoms>Kelder</Locatieoms>
+                <AanduidingBijHuisnr>Middelste bel</AanduidingBijHuisnr>
             </DomicilieAdres>
             <AangifteAdreshoudingBrp>
                 <CdGemeenteVanInschrijving>0738</CdGemeenteVanInschrijving>
