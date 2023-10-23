@@ -46,7 +46,7 @@ public class DUODossierPersoonGSDEndpoint extends SuwinetEndpoint {
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "DUOPersoonsInfo")
     @ResponsePayload
-    public DUOPersoonsInfoResponse getAanvraagPersoon(@RequestPayload DUOPersoonsInfo request) throws JAXBException, SAXException, IOException {
+    public DUOPersoonsInfoResponse getDUOPersoonsInfo(@RequestPayload DUOPersoonsInfo request) throws JAXBException, SAXException, IOException {
 
         String xmlFilename = servicePrefix + "_DUOPersoonsInfo_" + request.getBurgerservicenr() + ".xml";
         Resource resource = readResponseDirectory(xmlFilename);
