@@ -3,7 +3,8 @@ package com.ritense.valtimo
 fun main() {
     println("adawdw")
     var list = lijstje()
-    println("4: ${list.getOrNull(4)}")
+    val bla = list.getOrNull(4)?: "nopes"
+    println("4: $bla")
     println("size = ${list.size}")
     list[1] = 'Z'
     println("1: ${list.getOrNull(1)}")
