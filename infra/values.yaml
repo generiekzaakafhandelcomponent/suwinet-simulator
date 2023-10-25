@@ -213,7 +213,7 @@ syncAKV:
     output:
       secret:
         name: '{{ include "app.fullname" . }}'
-        dataKey: SUWINET_SIMULATOR_BASIC_NAME
+        dataKey: SUWINET_USER
   sync-2:
     vaultname: kv-zgw-ota-weu-01
     objectname: '{{ include "app.fullname" . }}-test-suwinet-password'
@@ -221,4 +221,4 @@ syncAKV:
     output:
       secret:
         name: '{{ include "app.fullname" . }}'
-        dataKey: SUWINET_SIMULATOR_BASIC_SECRET
+        dataKey: SUWINET_PASSWORD
