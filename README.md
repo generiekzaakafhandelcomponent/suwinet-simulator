@@ -24,14 +24,19 @@ The services baseurl is \<simulator-url\>/ws/, the following services are suppor
   1. \<simulator-url\>/ws/KadasterDossierGSD-v0300/v1 - PersoonsInfo 
   2. \<simulator-url\>/ws/KadasterDossierGSD-v0300/v1 - ObjectInfoKadastraleAanduiding
   3. \<simulator-url\>/ws/UWVDossierInkomstenGSD-v0200/v1 - UWVPersoonsIkvInfo
-  4. \<simulator-url\>/ws/UWVDossierInkomstenGSDDigitaleDiensten-v0200/v1 - UWVPersoonsIkvInfo
-  5. \<simulator-url\>/ws/RDWDossierDigitaleDiensten-v0200/v1 - KentekenInfo 
-find example client requests in src/main/resources/suwinet/data/ExampleRequests
+  4. \<simulator-url\>/ws/RDWDossierDigitaleDiensten-v0200/v1 - VoertuigbezitInfoPersoon
+  5. \<simulator-url\>/ws/RDWDossierDigitaleDiensten-v0200/v1 - KentekenInfo
+  6. \<simulator-url\>/ws/BRPDossierPersoonGSD-v0200/v1 - AanvraagPersoon
+  7. \<simulator-url\>/ws/DUODossierPersoonGSD-v0300/v1 - DUOPersoonsInfo
+
+The simulator-url for **Den Haag Sociaal Domein** is https://sd-zgw.test.denhaag.nl/ <BR>
+You can find example client requests in src/main/resources/suwinet/data/ExampleRequests
 The simulator uses basic authentication.
 
 ### Test content (with SoapUI)
 
 Test requests are stored at src/main/resources/suwinet/data/ExampleRequests/
+
 SoapUI is an easy tool to test SOAP WS endpoints. When importing a WSDL in your SoapUI Project it will generate the requests for the available endpoints. 
 The WSDL files are stored at src/main/resources/suwinet/Diensten/\<service\>/\<version\>/Impl/BKWI.wsdl
 
