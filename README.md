@@ -45,11 +45,13 @@ The WSDL files are stored at src/main/resources/suwinet/Diensten/\<service\>/\<v
 The location of the responses is src/main/resources/suwinet/data/Responses/<BR>
 Based on the unique keys as **bsn**, **kenteken**, **Perceelnummer** in the request a xml response file is returned.
 The syntax of the response files are:
-1. PersoonsInfo:<BR>KadasterDossierGSD_PersoonsInfo_\<Burgerservicenr\>.xml
-2. ObjectInfoKadastraleAanduiding:<BR>KadasterDossierGSD_ObjectInfoKadastraleAanduiding_\<CdKadastraleGemeente\>_\<KadastraalPerceelnr\>.xml
-3. UWVPersoonsIkvInfo:<BR>UWVDossierInkomstenGSDDigitaleDiensten_UWVPersoonsIkvInfo_\<Burgerservicenr\>.xml
-4. UWVPersoonsIkvInfo:<BR>UWVDossierInkomstenGSD_UWVPersoonsIkvInfo_\<Burgerservicenr\>.xml
-5. KentekenInfo:<BR>RDWDossierGSD_KentekenInfo_\<Burgerservicenr\>.xml
+1. Kadaster - PersoonsInfo:<BR>KadasterDossierGSD_PersoonsInfo_\<Burgerservicenr\>.xml
+2. Kadaster - ObjectInfoKadastraleAanduiding:<BR>KadasterDossierGSD_ObjectInfoKadastraleAanduiding_\<CdKadastraleGemeente\>_\<KadastraalPerceelnr\>.xml
+3. UWV - UWVPersoonsIkvInfo:<BR>UWVDossierInkomstenGSD_UWVPersoonsIkvInfo_\<Burgerservicenr\>.xml
+4. RDW - VoertuigbezitInfoPersoon:<BR>RDWDossierGSD_VoertuigbezitInfoPersoon_\<Burgerservicenr\>.xml
+5. RDW - KentekenInfo:<BR>RDWDossierGSD_KentekenInfo_\<kenteken\>.xml
+6. BRP - AanvraagPersoon:<BR>BRPDossierPersoonGSD_AanvraagPersoon_\<Burgerservicenr\>.xml
+7. DUO - DUOPersoonsInfo:<BR>DUODossierPersoonGSD_DUOPersoonsInfo_\<Burgerservicenr\>.xml
 
 ### New WSDL endpoints
 
