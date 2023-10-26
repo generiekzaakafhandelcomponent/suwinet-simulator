@@ -14,5 +14,8 @@
             </StraatadresBag>
         </DomicilieAdres>
         <DatToestandKadaster>20170317</DatToestandKadaster>
+        <Eigendom>
+            <IndEigendomOZVerleden>1</IndEigendomOZVerleden>
+        </Eigendom>    
     </ClientSuwi>
 </ns3:PersoonsInfoResponse>
