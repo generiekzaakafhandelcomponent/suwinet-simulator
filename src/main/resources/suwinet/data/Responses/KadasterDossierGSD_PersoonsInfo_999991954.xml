@@ -1,0 +1,19 @@
+<ns3:PersoonsInfoResponse xmlns:ns3="http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300" xmlns:ns2="http://bkwi.nl/SuwiML/FWI/v0203">
+    <ClientSuwi>
+        <Burgerservicenr>999991954</Burgerservicenr>
+        <Voornamen>Sierra</Voornamen>
+        <SignificantDeelVanDeAchternaam>Kooyman</SignificantDeelVanDeAchternaam>
+        <Geslacht>2</Geslacht>
+        <Geboortedat>19801023</Geboortedat>
+        <DomicilieAdres>
+            <StraatadresBag>
+                <Postcd>2545CC</Postcd>
+                <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
+                <Straatnaam>Leyweg</Straatnaam>
+                <Huisnr>61</Huisnr>
+            </StraatadresBag>
+        </DomicilieAdres>
+        <DatToestandKadaster>20170317</DatToestandKadaster>
+        <DatFiatteringKadaster>20231023</DatFiatteringKadaster>
+    </ClientSuwi>
+</ns3:PersoonsInfoResponse>

@@ -1,14 +1,14 @@
 <brp:AanvraagPersoonResponse xmlns:brp="http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD/v0200">
     <ClientSuwi>
-        <Voornamen>Antoine</Voornamen>
-        <Voorvoegsel>van der</Voorvoegsel>
-        <SignificantDeelVanDeAchternaam>Aa</SignificantDeelVanDeAchternaam>
-        <Geboortedat>19700101</Geboortedat>
-        <Burgerservicenr>123456782</Burgerservicenr>
+        <Voornamen>Sierra</Voornamen>
+        <Voorvoegsel/>
+        <SignificantDeelVanDeAchternaam>Kooyman</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19801023</Geboortedat>
+        <Burgerservicenr>999991954</Burgerservicenr>
         <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
-        <ANr>10123456782</ANr>
+        <ANr>10999991954</ANr>
         <AanduidingNaamgebruik>1</AanduidingNaamgebruik>
-        <Geslacht>1</Geslacht>
+        <Geslacht>2</Geslacht>
         <CdGeboortegemeente>0363</CdGeboortegemeente>
         <Geboorteland>6030</Geboorteland>
         <GeldigheidGegevensPersoon>
@@ -21,20 +21,20 @@
             </GeldigheidGegevensNationaliteit>
         </Nationaliteit>
         <DomicilieAdres>
-            <Postcd>2511BT</Postcd>
+            <Postcd>2545CC</Postcd>
             <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
-            <Straatnaam>Spui</Straatnaam>
-            <NaamOpenbareRuimte>Spui</NaamOpenbareRuimte>
-            <Huisnr>70</Huisnr>
+            <Straatnaam>Leyweg</Straatnaam>
+            <NaamOpenbareRuimte>Leyweg</NaamOpenbareRuimte>
+            <Huisnr>61</Huisnr>
             <IdentificatiecdVerblijfplaats>0530010002090227</IdentificatiecdVerblijfplaats>
             <IdentificatiecdNraanduiding>0530200002130217</IdentificatiecdNraanduiding>
-            <Huisletter/>
+            <Huisletter>e</Huisletter>
             <Huisnrtoevoeging/>
         </DomicilieAdres>
         <AangifteAdreshoudingBrp>
             <CdGemeenteVanInschrijving>0518</CdGemeenteVanInschrijving>
-            <DatVanInschrijvingBijGemeente>19650310</DatVanInschrijvingBijGemeente>
-            <DatBAdreshoudingBrp>19650310</DatBAdreshoudingBrp>
+            <DatVanInschrijvingBijGemeente>19801023</DatVanInschrijvingBijGemeente>
+            <DatBAdreshoudingBrp>19801023</DatBAdreshoudingBrp>
         </AangifteAdreshoudingBrp>
         <Ouder1>
             <Voornamen>Eveline Johanna</Voornamen>
@@ -53,6 +53,5 @@
             <DatBFamilierechtelijkeBetrekking>19650310</DatBFamilierechtelijkeBetrekking>
         </Ouder2>
         <InschrijvingsgegevensBrp/>
-        <Verblijfstitel/>
     </ClientSuwi>
 </brp:AanvraagPersoonResponse>

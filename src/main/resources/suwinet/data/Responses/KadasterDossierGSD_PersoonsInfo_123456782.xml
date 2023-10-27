@@ -1,0 +1,19 @@
+<ns3:PersoonsInfoResponse xmlns:ns3="http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300" xmlns:ns2="http://bkwi.nl/SuwiML/FWI/v0203">
+    <ClientSuwi>
+        <Burgerservicenr>123456782</Burgerservicenr>
+        <Voornamen>Jan</Voornamen>
+        <SignificantDeelVanDeAchternaam>Jansen</SignificantDeelVanDeAchternaam>
+        <Geslacht>1</Geslacht>
+        <Geboortedat>19700101</Geboortedat>
+        <DomicilieAdres>
+            <StraatadresBag>
+                <Postcd>2511BT</Postcd>
+                <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
+                <Straatnaam>Spui</Straatnaam>
+                <Huisnr>70</Huisnr>
+            </StraatadresBag>
+        </DomicilieAdres>
+        <DatToestandKadaster>20170317</DatToestandKadaster>
+        <DatFiatteringKadaster>20231023</DatFiatteringKadaster>
+    </ClientSuwi>
+</ns3:PersoonsInfoResponse>
