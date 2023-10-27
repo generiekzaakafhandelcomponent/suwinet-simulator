@@ -63,15 +63,13 @@ public class RDWEndpoint extends SuwinetEndpoint {
     public VoertuigbezitInfoPersoonResponse getVoertuigbezitInfoPersoon(@RequestPayload VoertuigbezitInfoPersoon request) throws JAXBException, SAXException, IOException {
 
         String xmlFilename = servicePrefix + "_VoertuigbezitInfoPersoon_" + request.getBurgerservicenr() + ".xml";
-        logger.info("looking for: " + xmlFilename);
         Resource resource = readResponseDirectory(xmlFilename);
 
         VoertuigbezitInfoPersoonResponse response;
         if(resource == null) {
             logger.warn("not found: " + xmlFilename);
             response = dossierObjectFactory.createVoertuigbezitInfoPersoonResponse();
-            nl.bkwi.suwiml.fwi.v0205.ObjectFactory objectFactory = new nl.bkwi.suwiml.fwi.v0205.ObjectFactory();
-            response.setNietsGevonden(objectFactory.createNietsGevonden("nope die ken ik niet"));
+            response.setNietsGevonden("Niets gevonden");
         } else {
             logger.info("found: " + xmlFilename);
             response = (VoertuigbezitInfoPersoonResponse) unmarshal(VoertuigbezitInfoPersoonResponse.class,resource);
