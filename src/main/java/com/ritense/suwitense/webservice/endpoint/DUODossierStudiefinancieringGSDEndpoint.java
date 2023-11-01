@@ -44,7 +44,6 @@ public class DUODossierStudiefinancieringGSDEndpoint extends SuwinetEndpoint {
     @Autowired
     public DUODossierStudiefinancieringGSDEndpoint() {objectFactory = new ObjectFactory();}
 
-
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "DUOStudiefinancieringInfo")
     @ResponsePayload
     public DUOStudiefinancieringInfoResponse getDUOStudiefinancieringInfo(@RequestPayload DUOStudiefinancieringInfo request) throws JAXBException, SAXException, IOException {
