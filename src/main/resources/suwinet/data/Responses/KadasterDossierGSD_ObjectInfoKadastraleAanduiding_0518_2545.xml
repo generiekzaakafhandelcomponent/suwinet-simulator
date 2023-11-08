@@ -1,0 +1,52 @@
+<ns3:ObjectInfoKadastraleAanduidingResponse xmlns:ns3="http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300" xmlns:ns2="http://bkwi.nl/SuwiML/FWI/v0203">
+    <OnroerendeZaak>
+        <DatToestandKadaster>20231101</DatToestandKadaster>
+        <CdTypeOnroerendeZaak>A</CdTypeOnroerendeZaak>
+        <DatOntstaan>20230101</DatOntstaan>
+        <KadastraleAanduiding>
+            <CdKadastraleGemeente>0518</CdKadastraleGemeente>
+            <KadastraleGemeentenaam>Den Haag</KadastraleGemeentenaam>
+            <KadastraleSectie>A</KadastraleSectie>
+            <KadastraalPerceelnr>2545</KadastraalPerceelnr>
+            <VolgnrKadastraalAppartementsrecht>1</VolgnrKadastraalAppartementsrecht>
+        </KadastraleAanduiding>
+        <OmsKadastraalObject>Bebouwd: Wonen (appartement)</OmsKadastraalObject>
+        <ZakelijkRecht>
+            <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
+        </ZakelijkRecht>
+        <LocatieOZ>
+            <StraatadresBag>
+                <Postcd>2545CC</Postcd>
+                <Woonplaatsnaam>Den Haag</Woonplaatsnaam>
+                <Straatnaam>Leyweg</Straatnaam>
+                <Huisnr>61</Huisnr>
+            </StraatadresBag>
+        </LocatieOZ>
+        <BedrKoopsom>
+            <CdMunteenheid>EUR</CdMunteenheid>
+            <WaardeBedr>12500000</WaardeBedr>
+        </BedrKoopsom>
+        <JaarAankoop>2023</JaarAankoop>
+        <WijzeVerkrijgingEigendom>
+            <CdWijzeVerkrijgingEigendom>H</CdWijzeVerkrijgingEigendom>
+            <DatVerkrijgingEigendom>20230101</DatVerkrijgingEigendom>
+        </WijzeVerkrijgingEigendom>
+        <IndMeerGerechtigden>1</IndMeerGerechtigden>
+        <Gerechtigde>
+            <NatuurlijkPersoon>
+                <Burgerservicenr>999991954</Burgerservicenr>
+                <Voornamen>Sierra</Voornamen>
+                <SignificantDeelVanDeAchternaam>Kooyman</SignificantDeelVanDeAchternaam>
+                <Geslacht>1</Geslacht>
+            </NatuurlijkPersoon>
+            <DomicilieAdres>
+                <StraatadresBag>
+                    <Postcd>2545CC</Postcd>
+                    <Woonplaatsnaam>Den Haag</Woonplaatsnaam>
+                    <Straatnaam>Leyweg</Straatnaam>
+                    <Huisnr>61</Huisnr>
+                </StraatadresBag>
+            </DomicilieAdres>
+        </Gerechtigde>
+    </OnroerendeZaak>
+</ns3:ObjectInfoKadastraleAanduidingResponse>
