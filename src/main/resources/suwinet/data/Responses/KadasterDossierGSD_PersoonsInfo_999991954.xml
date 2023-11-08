@@ -1,8 +1,58 @@
-<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
-   <SOAP-ENV:Header/>
-   <SOAP-ENV:Body>
-      <ns4:PersoonsInfoResponse xmlns:ns3="http://bkwi.nl/SuwiML/FWI/v0205" xmlns:ns4="http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300">
-         <ns3:NietsGevonden xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Niet gevonden</ns3:NietsGevonden>
-      </ns4:PersoonsInfoResponse>
-   </SOAP-ENV:Body>
-</SOAP-ENV:Envelope>
+<ns3:PersoonsInfoResponse xmlns:ns3="http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300" xmlns:ns2="http://bkwi.nl/SuwiML/FWI/v0203">
+    <ClientSuwi>
+        <Burgerservicenr>999991954</Burgerservicenr>
+        <Voornamen>Sierra</Voornamen>
+        <Voorvoegsel/>
+        <SignificantDeelVanDeAchternaam>Kooyman</SignificantDeelVanDeAchternaam>
+        <Geslacht>2</Geslacht>
+        <Geboortedat>19801023</Geboortedat>
+        <DomicilieAdres>
+            <StraatadresBag>
+                <Postcd>2545CC</Postcd>
+                <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
+                <Straatnaam>Leyweg</Straatnaam>
+                <Huisnr>61</Huisnr>
+            </StraatadresBag>
+        </DomicilieAdres>
+        <Correspondentieadres>
+            <StraatadresBag>
+                <Postcd>2545CC</Postcd>
+                <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
+                <Straatnaam>Leyweg</Straatnaam>
+                <Huisnr>61</Huisnr>
+            </StraatadresBag>
+        </Correspondentieadres>
+        <DatToestandKadaster>20230904</DatToestandKadaster>
+        <Eigendom>
+            <OnroerendeZaak>
+                <CdTypeOnroerendeZaak>A</CdTypeOnroerendeZaak>
+                <DatOntstaan>19650113</DatOntstaan>
+                <KadastraleAanduiding>
+                    <CdKadastraleGemeente>633</CdKadastraleGemeente>
+                    <KadastraleGemeentenaam>Naarden</KadastraleGemeentenaam>
+                    <KadastraleSectie>A</KadastraleSectie>
+                    <KadastraalPerceelnr>2535</KadastraalPerceelnr>
+                    <VolgnrKadastraalAppartementsrecht>2</VolgnrKadastraalAppartementsrecht>
+                </KadastraleAanduiding>
+                <OmsKadastraalObject>Bebouwd: Wonen (appartement)</OmsKadastraalObject>
+                <ZakelijkRecht>
+                    <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
+                </ZakelijkRecht>
+                <LocatieOZ>
+                    <StraatadresBag>
+                        <Postcd>1411EA</Postcd>
+                        <Woonplaatsnaam>Naarden</Woonplaatsnaam>
+                        <Straatnaam>Marktstraat</Straatnaam>
+                        <Huisnr>12</Huisnr>
+                    </StraatadresBag>
+                </LocatieOZ>
+                <BedrKoopsom>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <WaardeBedr>7525000</WaardeBedr>
+                </BedrKoopsom>
+                <JaarAankoop>1965</JaarAankoop>
+                <IndMeerGerechtigden>2</IndMeerGerechtigden>
+            </OnroerendeZaak>
+        </Eigendom>
+    </ClientSuwi>
+</ns3:PersoonsInfoResponse>
