@@ -27,11 +27,11 @@
                 <CdTypeOnroerendeZaak>A</CdTypeOnroerendeZaak>
                 <DatOntstaan>19650113</DatOntstaan>
                 <KadastraleAanduiding>
-                    <CdKadastraleGemeente>633</CdKadastraleGemeente>
-                    <KadastraleGemeentenaam>Naarden</KadastraleGemeentenaam>
+                    <CdKadastraleGemeente>0518</CdKadastraleGemeente>
+                    <KadastraleGemeentenaam>Den Haag</KadastraleGemeentenaam>
                     <KadastraleSectie>A</KadastraleSectie>
-                    <KadastraalPerceelnr>2535</KadastraalPerceelnr>
-                    <VolgnrKadastraalAppartementsrecht>2</VolgnrKadastraalAppartementsrecht>
+                    <KadastraalPerceelnr>2545</KadastraalPerceelnr>
+                    <VolgnrKadastraalAppartementsrecht>1</VolgnrKadastraalAppartementsrecht>
                 </KadastraleAanduiding>
                 <OmsKadastraalObject>Bebouwd: Wonen (appartement)</OmsKadastraalObject>
                 <ZakelijkRecht>
@@ -39,18 +39,18 @@
                 </ZakelijkRecht>
                 <LocatieOZ>
                     <StraatadresBag>
-                        <Postcd>1411EA</Postcd>
-                        <Woonplaatsnaam>Naarden</Woonplaatsnaam>
-                        <Straatnaam>Marktstraat</Straatnaam>
-                        <Huisnr>12</Huisnr>
+                        <Postcd>2545CC</Postcd>
+                        <Woonplaatsnaam>Den  Haag</Woonplaatsnaam>
+                        <Straatnaam>Leyweg</Straatnaam>
+                        <Huisnr>61</Huisnr>
                     </StraatadresBag>
                 </LocatieOZ>
                 <BedrKoopsom>
                     <CdMunteenheid>EUR</CdMunteenheid>
-                    <WaardeBedr>7525000</WaardeBedr>
+                    <WaardeBedr>12500000</WaardeBedr>
                 </BedrKoopsom>
-                <JaarAankoop>1965</JaarAankoop>
-                <IndMeerGerechtigden>2</IndMeerGerechtigden>
+                <JaarAankoop>2023</JaarAankoop>
+                <IndMeerGerechtigden>1</IndMeerGerechtigden>
             </OnroerendeZaak>
         </Eigendom>
     </ClientSuwi>
