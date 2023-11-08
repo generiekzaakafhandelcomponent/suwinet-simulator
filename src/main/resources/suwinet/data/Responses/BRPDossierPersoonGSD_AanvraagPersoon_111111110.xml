@@ -177,5 +177,15 @@
             <DatBVerblijfstitel>20120915</DatBVerblijfstitel>
             <DatEVerblijfstitel>20240915</DatEVerblijfstitel>
         </Verblijfstitel>
+        <Kind>
+            <Voornamen>Catharina-Amalia Carmen</Voornamen>
+            <Voorvoegsel>van</Voorvoegsel>
+            <SignificantDeelVanDeAchternaam>Zorreguieta</SignificantDeelVanDeAchternaam>
+            <Geboortedat>20131007</Geboortedat>
+            <Burgerservicenr>111222333</Burgerservicenr>
+            <Titulatuur>
+                <CdAdellijkeTitelPredikaat>Prinses</CdAdellijkeTitelPredikaat>
+            </Titulatuur>
+        </Kind>
     </ClientSuwi>
 </brp:AanvraagPersoonResponse>
