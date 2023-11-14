@@ -160,6 +160,29 @@ tasks.register("DUODossierPersoonGSDWsImport") {
     }
 }
 
+
+tasks.register("SVBDossierPersoonGSDImport") {
+
+    doLast {
+        ant.withGroovyBuilder {
+            mkdir(suwinetSourceDir)
+            "taskdef"(
+                "name" to "wsimport",
+                "classname" to "com.sun.tools.ws.ant.WsImport",
+                "classpath" to configurations["jaxws"].asPath
+            )
+            "wsimport"(
+                "keep" to true,
+                "sourcedestdir" to suwinetSourceDir,
+                "wsdl" to "${projectDir}/src/main/resources/suwinet/SVBDossierPersoonGSD/Diensten/SVBDossierPersoonGSD/v0200-b01/Impl/BKWI.wsdl",
+                "verbose" to true
+            ) {
+                "xjcarg"("value" to "-XautoNameResolution")
+            }
+        }
+    }
+}
+
 tasks.register("BRPDossierPersoonGSDWsImport") {
 
     doLast {
