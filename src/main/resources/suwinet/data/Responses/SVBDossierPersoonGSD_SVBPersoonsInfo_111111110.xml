@@ -11,21 +11,21 @@
             <DatBUitkeringsverhouding>20190301</DatBUitkeringsverhouding>
             <DatEUitkeringsverhouding>20190531</DatEUitkeringsverhouding>
             <SzWet>
-                <CdSzWet>WW</CdSzWet>
+                <CdSzWet>AIO</CdSzWet>
             </SzWet>
             <Uitkeringsperiode>
                 <DatBUitkeringsperiode>20190301</DatBUitkeringsperiode>
                 <DatEUitkeringsperiode>20190331</DatEUitkeringsperiode>
                 <BrutoUitkeringsbedr>
                     <CdMunteenheid>EUR</CdMunteenheid>
-                    <WaardeBedr>182000</WaardeBedr>
+                    <WaardeBedr>12000</WaardeBedr>
                     <CdUitkeringsperiode>6</CdUitkeringsperiode>
                     <DatBBrutoUitkeringsbedr>20190301</DatBBrutoUitkeringsbedr>
                     <DatEBrutoUitkeringsbedr>20190331</DatEBrutoUitkeringsbedr>
                 </BrutoUitkeringsbedr>
                 <NettoUitkeringsbedr>
                     <CdMunteenheid>EUR</CdMunteenheid>
-                    <WaardeBedr>137900</WaardeBedr>
+                    <WaardeBedr>7900</WaardeBedr>
                     <CdUitkeringsperiode>6</CdUitkeringsperiode>
                     <DatBNettoUitkeringsbedr>20190301</DatBNettoUitkeringsbedr>
                     <DatENettoUitkeringsbedr>20190331</DatENettoUitkeringsbedr>
@@ -37,14 +37,14 @@
                 <DatEUitkeringsperiode>20190430</DatEUitkeringsperiode>
                 <BrutoUitkeringsbedr>
                     <CdMunteenheid>EUR</CdMunteenheid>
-                    <WaardeBedr>182000</WaardeBedr>
+                    <WaardeBedr>12000</WaardeBedr>
                     <CdUitkeringsperiode>6</CdUitkeringsperiode>
                     <DatBBrutoUitkeringsbedr>20190401</DatBBrutoUitkeringsbedr>
                     <DatEBrutoUitkeringsbedr>20190430</DatEBrutoUitkeringsbedr>
                 </BrutoUitkeringsbedr>
                 <NettoUitkeringsbedr>
                     <CdMunteenheid>EUR</CdMunteenheid>
-                    <WaardeBedr>137900</WaardeBedr>
+                    <WaardeBedr>7900</WaardeBedr>
                     <CdUitkeringsperiode>6</CdUitkeringsperiode>
                     <DatBNettoUitkeringsbedr>20190401</DatBNettoUitkeringsbedr>
                     <DatENettoUitkeringsbedr>20190430</DatENettoUitkeringsbedr>
@@ -56,14 +56,14 @@
                 <DatEUitkeringsperiode>20190531</DatEUitkeringsperiode>
                 <BrutoUitkeringsbedr>
                     <CdMunteenheid>EUR</CdMunteenheid>
-                    <WaardeBedr>182000</WaardeBedr>
+                    <WaardeBedr>12000</WaardeBedr>
                     <CdUitkeringsperiode>6</CdUitkeringsperiode>
                     <DatBBrutoUitkeringsbedr>20190501</DatBBrutoUitkeringsbedr>
                     <DatEBrutoUitkeringsbedr>20190531</DatEBrutoUitkeringsbedr>
                 </BrutoUitkeringsbedr>
                 <NettoUitkeringsbedr>
                     <CdMunteenheid>EUR</CdMunteenheid>
-                    <WaardeBedr>137900</WaardeBedr>
+                    <WaardeBedr>7900</WaardeBedr>
                     <CdUitkeringsperiode>6</CdUitkeringsperiode>
                     <DatBNettoUitkeringsbedr>20190501</DatBNettoUitkeringsbedr>
                     <DatENettoUitkeringsbedr>20190531</DatENettoUitkeringsbedr>
