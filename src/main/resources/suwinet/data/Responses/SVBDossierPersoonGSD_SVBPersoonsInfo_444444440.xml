@@ -75,14 +75,14 @@
                 <DatEUitkeringsperiode>20201231</DatEUitkeringsperiode>
                 <BrutoUitkeringsbedr>
                     <CdMunteenheid>EUR</CdMunteenheid>
-                    <WaardeBedr>116000</WaardeBedr>
+                    <WaardeBedr>0</WaardeBedr>
                     <CdUitkeringsperiode>6</CdUitkeringsperiode>
                     <DatBBrutoUitkeringsbedr>20201201</DatBBrutoUitkeringsbedr>
                     <DatEBrutoUitkeringsbedr>20201231</DatEBrutoUitkeringsbedr>
                 </BrutoUitkeringsbedr>
                 <NettoUitkeringsbedr>
                     <CdMunteenheid>EUR</CdMunteenheid>
-                    <WaardeBedr>89300</WaardeBedr>
+                    <WaardeBedr>0</WaardeBedr>
                     <CdUitkeringsperiode>6</CdUitkeringsperiode>
                     <DatBNettoUitkeringsbedr>20201201</DatBNettoUitkeringsbedr>
                     <DatENettoUitkeringsbedr>20201231</DatENettoUitkeringsbedr>
