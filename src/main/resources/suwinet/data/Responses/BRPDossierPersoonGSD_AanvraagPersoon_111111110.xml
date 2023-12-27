@@ -179,12 +179,32 @@
         </Verblijfstitel>
         <Kind>
             <Voornamen>Catharina-Amalia Carmen</Voornamen>
-            <Voorvoegsel>van</Voorvoegsel>
-            <SignificantDeelVanDeAchternaam>Zorreguieta</SignificantDeelVanDeAchternaam>
+            <Voorvoegsel>de</Voorvoegsel>
+            <SignificantDeelVanDeAchternaam>Jansen</SignificantDeelVanDeAchternaam>
             <Geboortedat>20131007</Geboortedat>
-            <Burgerservicenr>111222333</Burgerservicenr>
+            <Burgerservicenr>243000157</Burgerservicenr>
             <Titulatuur>
-                <CdAdellijkeTitelPredikaat>Prinses</CdAdellijkeTitelPredikaat>
+                <CdAdellijkeTitelPredikaat>PS</CdAdellijkeTitelPredikaat>
+            </Titulatuur>
+        </Kind>
+        <Kind>
+            <Voornamen>Lev Vigo Mels</Voornamen>
+            <Voorvoegsel>de</Voorvoegsel>
+            <SignificantDeelVanDeAchternaam>Jansen</SignificantDeelVanDeAchternaam>
+            <Geboortedat>20170819</Geboortedat>
+            <Burgerservicenr>010002546</Burgerservicenr>
+            <Titulatuur>
+                <CdAdellijkeTitelPredikaat>P</CdAdellijkeTitelPredikaat>
+            </Titulatuur>
+        </Kind>
+        <Kind>
+            <Voornamen>Theo Peter</Voornamen>
+            <Voorvoegsel>de</Voorvoegsel>
+            <SignificantDeelVanDeAchternaam>Jansen</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19910215</Geboortedat>
+            <Burgerservicenr>080000071</Burgerservicenr>
+            <Titulatuur>
+                <CdAdellijkeTitelPredikaat>G</CdAdellijkeTitelPredikaat>
             </Titulatuur>
         </Kind>
     </ClientSuwi>
