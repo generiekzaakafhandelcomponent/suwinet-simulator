@@ -178,7 +178,7 @@
             <DatEVerblijfstitel>20240915</DatEVerblijfstitel>
         </Verblijfstitel>
         <Kind>
-            <Voornamen>Catharina-Amalia Carmen</Voornamen>
+            <Voornamen>Catharina-Amalia Carmen woont thuis</Voornamen>
             <Voorvoegsel>de</Voorvoegsel>
             <SignificantDeelVanDeAchternaam>Jansen</SignificantDeelVanDeAchternaam>
             <Geboortedat>20131007</Geboortedat>
@@ -188,7 +188,17 @@
             </Titulatuur>
         </Kind>
         <Kind>
-            <Voornamen>Lev Vigo Mels</Voornamen>
+            <Voornamen>Wilma woont niet meer thuis</Voornamen>
+            <Voorvoegsel>de</Voorvoegsel>
+            <SignificantDeelVanDeAchternaam>Jansen</SignificantDeelVanDeAchternaam>
+            <Geboortedat>20140927</Geboortedat>
+            <Burgerservicenr>243000017</Burgerservicenr>
+            <Titulatuur>
+                <CdAdellijkeTitelPredikaat>PS</CdAdellijkeTitelPredikaat>
+            </Titulatuur>
+        </Kind>
+        <Kind>
+            <Voornamen>Lev Overleden</Voornamen>
             <Voorvoegsel>de</Voorvoegsel>
             <SignificantDeelVanDeAchternaam>Jansen</SignificantDeelVanDeAchternaam>
             <Geboortedat>20170819</Geboortedat>
@@ -198,7 +208,7 @@
             </Titulatuur>
         </Kind>
         <Kind>
-            <Voornamen>Theo Peter</Voornamen>
+            <Voornamen>Theo Al Te Oud</Voornamen>
             <Voorvoegsel>de</Voorvoegsel>
             <SignificantDeelVanDeAchternaam>Jansen</SignificantDeelVanDeAchternaam>
             <Geboortedat>19910215</Geboortedat>
