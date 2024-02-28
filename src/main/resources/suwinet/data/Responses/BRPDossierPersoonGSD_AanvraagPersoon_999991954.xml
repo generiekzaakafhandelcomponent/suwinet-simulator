@@ -31,6 +31,21 @@
             <Huisletter>e</Huisletter>
             <Huisnrtoevoeging/>
         </DomicilieAdres>
+        <Verblijfstitel>
+            <CdVerblijfstitel>41</CdVerblijfstitel>
+            <DatBVerblijfstitel>20120915</DatBVerblijfstitel>
+            <DatEVerblijfstitel>20240915</DatEVerblijfstitel>
+        </Verblijfstitel>
+        <Correspondentieadres>
+            <Postcd>5565RC</Postcd>
+            <Woonplaatsnaam>Eindhoven</Woonplaatsnaam>
+            <Straatnaam>Stratumseindstraat</Straatnaam>
+            <Huisnr>71</Huisnr>
+            <Huisletter>T</Huisletter>
+            <Huisnrtoevoeging>Huis</Huisnrtoevoeging>
+            <IdentificatiecdVerblijfplaats>0530010002090227</IdentificatiecdVerblijfplaats>
+            <IdentificatiecdNraanduiding>0530200002130217</IdentificatiecdNraanduiding>
+        </Correspondentieadres>
         <AangifteAdreshoudingBrp>
             <CdGemeenteVanInschrijving>0518</CdGemeenteVanInschrijving>
             <DatVanInschrijvingBijGemeente>19801023</DatVanInschrijvingBijGemeente>
