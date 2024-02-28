@@ -21,15 +21,15 @@
             </GeldigheidGegevensNationaliteit>
         </Nationaliteit>
         <DomicilieAdres>
-            <Postcd>2545CC</Postcd>
-            <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
-            <Straatnaam>Leyweg</Straatnaam>
-            <NaamOpenbareRuimte>Leyweg</NaamOpenbareRuimte>
-            <Huisnr>61</Huisnr>
+            <Postcd>1079WZ</Postcd>
+            <Woonplaatsnaam>Amsterdam</Woonplaatsnaam>
+            <Straatnaam>Zomerdijkstraat</Straatnaam>
+            <NaamOpenbareRuimte>Zomerdijkstraat</NaamOpenbareRuimte>
+            <Huisnr>19</Huisnr>
             <IdentificatiecdVerblijfplaats>0530010002090227</IdentificatiecdVerblijfplaats>
             <IdentificatiecdNraanduiding>0530200002130217</IdentificatiecdNraanduiding>
-            <Huisletter>e</Huisletter>
-            <Huisnrtoevoeging/>
+            <Huisletter>C</Huisletter>
+            <Huisnrtoevoeging>Huis</Huisnrtoevoeging>
         </DomicilieAdres>
         <Verblijfstitel>
             <CdVerblijfstitel>41</CdVerblijfstitel>
@@ -38,7 +38,7 @@
         </Verblijfstitel>
         <Correspondentieadres>
             <Postcd>5565RC</Postcd>
-            <Woonplaatsnaam>Eindhoven</Woonplaatsnaam>
+            <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
             <Straatnaam>Stratumseindstraat</Straatnaam>
             <Huisnr>71</Huisnr>
             <Huisletter>T</Huisletter>
