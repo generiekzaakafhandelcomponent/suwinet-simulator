@@ -68,5 +68,57 @@
             <DatBFamilierechtelijkeBetrekking>19650310</DatBFamilierechtelijkeBetrekking>
         </Ouder2>
         <InschrijvingsgegevensBrp/>
+        <Kind>
+            <Voornamen>Catharina-Amalia Carmen woont thuis</Voornamen>
+            <Voorvoegsel>de</Voorvoegsel>
+            <SignificantDeelVanDeAchternaam>Jansen</SignificantDeelVanDeAchternaam>
+            <Geboortedat>20131007</Geboortedat>
+            <Burgerservicenr>243000157</Burgerservicenr>
+            <Titulatuur>
+                <CdAdellijkeTitelPredikaat>PS</CdAdellijkeTitelPredikaat>
+            </Titulatuur>
+        </Kind>
+        <Kind>
+            <Voornamen>Wilma woont niet meer thuis</Voornamen>
+            <Voorvoegsel>de</Voorvoegsel>
+            <SignificantDeelVanDeAchternaam>Jansen</SignificantDeelVanDeAchternaam>
+            <Geboortedat>20140927</Geboortedat>
+            <Burgerservicenr>243000017</Burgerservicenr>
+            <Titulatuur>
+                <CdAdellijkeTitelPredikaat>PS</CdAdellijkeTitelPredikaat>
+            </Titulatuur>
+        </Kind>
+        <Kind>
+            <Voornamen>Lev Overleden</Voornamen>
+            <Voorvoegsel>de</Voorvoegsel>
+            <SignificantDeelVanDeAchternaam>Jansen</SignificantDeelVanDeAchternaam>
+            <Geboortedat>20170819</Geboortedat>
+            <Burgerservicenr>010002546</Burgerservicenr>
+            <Titulatuur>
+                <CdAdellijkeTitelPredikaat>P</CdAdellijkeTitelPredikaat>
+            </Titulatuur>
+        </Kind>
+        <Kind>
+            <Voornamen>Theo Al Te Oud</Voornamen>
+            <Voorvoegsel>de</Voorvoegsel>
+            <SignificantDeelVanDeAchternaam>Jansen</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19910215</Geboortedat>
+            <Burgerservicenr>080000071</Burgerservicenr>
+            <Titulatuur>
+                <CdAdellijkeTitelPredikaat>G</CdAdellijkeTitelPredikaat>
+            </Titulatuur>
+        </Kind>
+        <Huwelijk>
+            <Partner>
+                <Voornamen>Sierra</Voornamen>
+                <Voorvoegsel></Voorvoegsel>
+                <SignificantDeelVanDeAchternaam>Kooyman</SignificantDeelVanDeAchternaam>
+                <Geboortedat>19801023</Geboortedat>
+                <Burgerservicenr>999991954</Burgerservicenr>
+                <CdGeboortegemeente>0363</CdGeboortegemeente>
+                <Geboorteplaats>Wormer</Geboorteplaats>
+                <Geboorteland>6030</Geboorteland>
+            </Partner>
+        </Huwelijk>
     </ClientSuwi>
 </brp:AanvraagPersoonResponse>
