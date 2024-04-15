@@ -3,7 +3,7 @@
         <Voornamen>Sierra</Voornamen>
         <Voorvoegsel/>
         <SignificantDeelVanDeAchternaam>Kooyman</SignificantDeelVanDeAchternaam>
-        <Geboortedat>19801023</Geboortedat>
+        <Geboortedat>20030303</Geboortedat>
         <Burgerservicenr>999991954</Burgerservicenr>
         <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
         <ANr>10999991954</ANr>
@@ -110,13 +110,13 @@
         </Kind>
         <Huwelijk>
             <Partner>
-                <Voornamen>Sierra</Voornamen>
-                <Voorvoegsel></Voorvoegsel>
+                <Voornamen>Vries</Voornamen>
+                <Voorvoegsel>de</Voorvoegsel>
                 <SignificantDeelVanDeAchternaam>Kooyman</SignificantDeelVanDeAchternaam>
-                <Geboortedat>19801023</Geboortedat>
-                <Burgerservicenr>999991954</Burgerservicenr>
+                <Geboortedat>19700101</Geboortedat>
+                <Burgerservicenr>444444440</Burgerservicenr>
                 <CdGeboortegemeente>0363</CdGeboortegemeente>
-                <Geboorteplaats>Wormer</Geboorteplaats>
+                <Geboorteplaats>'s-Gravenhage</Geboorteplaats>
                 <Geboorteland>6030</Geboorteland>
             </Partner>
         </Huwelijk>
