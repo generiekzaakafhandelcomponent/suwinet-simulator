@@ -1,7 +1,7 @@
 <smls:VoertuigbezitInfoPersoonResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/RDWDossierGSD/v0200">
     <ClientSuwi>
         <Burgerservicenr>999991322</Burgerservicenr>
-        <Voorletters>C/Voorletters>
+        <Voorletters>C</Voorletters>
         <SignificantDeelVanDeAchternaam>Avion</SignificantDeelVanDeAchternaam>
         <Geboortedat>19601229</Geboortedat>
         <RdwAdres>
