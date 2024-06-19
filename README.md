@@ -29,12 +29,14 @@ The services baseurl is \<simulator-url\>/ws/, the following services are suppor
   6. \<simulator-url\>/ws/BRPDossierPersoonGSD-v0200/v1 - AanvraagPersoon
   7. \<simulator-url\>/ws/DUODossierPersoonGSD-v0300/v1 - DUOPersoonsInfo
 
-The simulator-url for **Den Haag Sociaal Domein** is https://sd-zgw.test.denhaag.nl/ <BR>
 You can find example client requests in src/main/resources/suwinet/data/ExampleRequests
 The simulator uses basic authentication.
 
-### Test content (with SoapUI)
+### Test the content with GZAC plugin code
+For GZAC a plugin is developed to retrieve data from Suwinet. Service tasks are configured via process links, each supported Suwinet endpoint has its own plugin action.
+You can find an implementation in the generiekzaakafhandelcomponent repository https://github.com/generiekzaakafhandelcomponent/Plugins
 
+### Test the content with SoapUI
 Test requests are stored at src/main/resources/suwinet/data/ExampleRequests/
 
 SoapUI is an easy tool to test SOAP WS endpoints. When importing a WSDL in your SoapUI Project it will generate the requests for the available endpoints. 
