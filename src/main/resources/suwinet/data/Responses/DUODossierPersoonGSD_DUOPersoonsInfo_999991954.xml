@@ -89,5 +89,47 @@
 				</InhoudDeelnameOpleidingDuo>
 			</DeelnameOpleidingGeregistrDuo>
 		</Onderwijsovereenkomst>
+		<ResultaatOpleidingGeregistrDuo>
+			<Brin>
+				<BrinNr>15AB</BrinNr>
+			</Brin>
+			<CdFaseOpleidingDuo>1</CdFaseOpleidingDuo>
+			<InhoudResultaatOpleidingDuo>
+				<NaamOpleidingKortDuo>Praktijkonderwijs</NaamOpleidingKortDuo>
+				<CdNiveauOpleidingDuo>VO-PRO</CdNiveauOpleidingDuo>
+			</InhoudResultaatOpleidingDuo>
+			<ResultaatExamen>
+				<DatResultaatExamen>20200115</DatResultaatExamen>
+				<CdResultaatExamen>2</CdResultaatExamen>
+			</ResultaatExamen>
+		</ResultaatOpleidingGeregistrDuo>
+		<ResultaatOpleidingGeregistrDuo>
+			<Brin>
+				<BrinNr>15AB</BrinNr>
+			</Brin>
+			<CdFaseOpleidingDuo>2</CdFaseOpleidingDuo>
+			<InhoudResultaatOpleidingDuo>
+				<NaamOpleidingKortDuo>Basisberoepsopleiding</NaamOpleidingKortDuo>
+				<CdNiveauOpleidingDuo>VO-MBO</CdNiveauOpleidingDuo>
+			</InhoudResultaatOpleidingDuo>
+			<ResultaatExamen>
+				<DatResultaatExamen>20210220</DatResultaatExamen>
+				<CdResultaatExamen>3</CdResultaatExamen>
+			</ResultaatExamen>
+		</ResultaatOpleidingGeregistrDuo>
+		<ResultaatOpleidingGeregistrDuo>
+			<Brin>
+				<BrinNr>15AB</BrinNr>
+			</Brin>
+			<CdFaseOpleidingDuo>3</CdFaseOpleidingDuo>
+			<InhoudResultaatOpleidingDuo>
+				<NaamOpleidingKortDuo>Middelbaar Beroepsonderwijs</NaamOpleidingKortDuo>
+				<CdNiveauOpleidingDuo>MBO-4</CdNiveauOpleidingDuo>
+			</InhoudResultaatOpleidingDuo>
+			<ResultaatExamen>
+				<DatResultaatExamen>20220529</DatResultaatExamen>
+				<CdResultaatExamen>4</CdResultaatExamen>
+			</ResultaatExamen>
+		</ResultaatOpleidingGeregistrDuo>
 	</ClientSuwi>
 </smls:DUOPersoonsInfoResponse>
