@@ -30,7 +30,7 @@ The services baseurl is \<simulator-url\>/ws/, the following services are suppor
   7. \<simulator-url\>/ws/DUODossierPersoonGSD-v0300/v1 - DUOPersoonsInfo
 
 You can find example client requests in src/main/resources/suwinet/data/ExampleRequests
-The simulator uses basic authentication.
+The simulator uses basic authentication. the default port is 8090 (see src/main/resources/application.properties)
 
 ### Test the content with GZAC plugin code
 For GZAC a plugin is developed to retrieve data from Suwinet. Service tasks are configured via process links, each supported Suwinet endpoint has its own plugin action.
