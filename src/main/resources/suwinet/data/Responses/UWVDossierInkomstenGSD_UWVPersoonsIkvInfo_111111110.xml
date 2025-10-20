@@ -33,7 +33,7 @@
             <Inkomstenperiode>
                 <DatBIkp>20100101</DatBIkp>
                 <DatEIkp>20121231</DatEIkp>
-                <CdSrtIkv>11</CdSrtIkv>
+                <CdSrtIkv>88</CdSrtIkv>
                 <CdTypeArbeidscontract>B</CdTypeArbeidscontract>
                 <IndLoonheffingskortingToegepast>1</IndLoonheffingskortingToegepast>
                 <IndRegelmatigArbeidspatroon>2</IndRegelmatigArbeidspatroon>
@@ -10298,7 +10298,7 @@
                 <!--FIKO-->
                 <DatBIkp>20110101</DatBIkp>
                 <DatEIkp>99991231</DatEIkp>
-                <CdSrtIkv>23</CdSrtIkv>
+                <CdSrtIkv>99</CdSrtIkv>
                 <!--PENSION-->
                 <IndLoonheffingskortingToegepast>1</IndLoonheffingskortingToegepast>
             </Inkomstenperiode>

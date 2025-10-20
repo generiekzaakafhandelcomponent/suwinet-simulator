@@ -25,5 +25,15 @@
                 </StatusVoertuig>
             </Voertuig>
         </Aansprakelijke>
+        <Aansprakelijke>
+            <DatRegistratieAansprakelijkheid>20231209</DatRegistratieAansprakelijkheid>
+            <Voertuig>
+                <KentekenVoertuig>0541AB</KentekenVoertuig>
+                <StatusVoertuig>
+                    <CdStatusVoertuig>65</CdStatusVoertuig>
+                    <DatBStatusVoertuig>19980608</DatBStatusVoertuig>
+                </StatusVoertuig>
+            </Voertuig>
+        </Aansprakelijke>
     </ClientSuwi>
 </smls:VoertuigbezitInfoPersoonResponse>

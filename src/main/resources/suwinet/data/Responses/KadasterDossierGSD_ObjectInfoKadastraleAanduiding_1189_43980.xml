@@ -14,6 +14,12 @@
         <ZakelijkRecht>
             <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
         </ZakelijkRecht>
+        <PubliekrechtelijkeBeperking>
+            <AantekeningKadastraalObject>
+                <DatEAantekeningKadastraalObject>19990919</DatEAantekeningKadastraalObject>
+                <OmsAantekeningKadastraalObject>Overstromingsrisicozone</OmsAantekeningKadastraalObject>
+            </AantekeningKadastraalObject>
+        </PubliekrechtelijkeBeperking>
         <LocatieOZ>
             <StraatadresBag>
                 <Postcd>3191GQ</Postcd>

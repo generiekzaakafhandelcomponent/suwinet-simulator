@@ -4,32 +4,47 @@
 		<Studiefinanciering>
 			<DatBToekenningsperiodeStufi>20211101</DatBToekenningsperiodeStufi>
 			<DatEToekenningsperiodeStufi>20211231</DatEToekenningsperiodeStufi>
-			<CdToekenningBasisbeursStufi>1</CdToekenningBasisbeursStufi>
+			<CdToekenningBasisbeursStufi>0</CdToekenningBasisbeursStufi>
 			<IndAanvullendeBeursStufi>1</IndAanvullendeBeursStufi>
+			<IndToekenningWtosVo18>1</IndToekenningWtosVo18>
+			<CdStatusPartnertoeslagStufi></CdStatusPartnertoeslagStufi>
+			<CdStatusEenOudertoeslagStufi></CdStatusEenOudertoeslagStufi>
 		</Studiefinanciering>
 		<Studiefinanciering>
 			<DatBToekenningsperiodeStufi>20220101</DatBToekenningsperiodeStufi>
 			<DatEToekenningsperiodeStufi>20220731</DatEToekenningsperiodeStufi>
 			<CdToekenningBasisbeursStufi>1</CdToekenningBasisbeursStufi>
-			<IndAanvullendeBeursStufi>1</IndAanvullendeBeursStufi>
+			<IndAanvullendeBeursStufi>2</IndAanvullendeBeursStufi>
+			<IndToekenningWtosVo18>1</IndToekenningWtosVo18>
+			<CdStatusPartnertoeslagStufi>1</CdStatusPartnertoeslagStufi>
+			<CdStatusEenOudertoeslagStufi>1</CdStatusEenOudertoeslagStufi>
 		</Studiefinanciering>
 		<Studiefinanciering>
 			<DatBToekenningsperiodeStufi>20220801</DatBToekenningsperiodeStufi>
 			<DatEToekenningsperiodeStufi>20221231</DatEToekenningsperiodeStufi>
-			<CdToekenningBasisbeursStufi>1</CdToekenningBasisbeursStufi>
+			<CdToekenningBasisbeursStufi>3</CdToekenningBasisbeursStufi>
 			<IndAanvullendeBeursStufi>1</IndAanvullendeBeursStufi>
+			<IndToekenningWtosVo18>1</IndToekenningWtosVo18>
+			<CdStatusPartnertoeslagStufi>2</CdStatusPartnertoeslagStufi>
+			<CdStatusEenOudertoeslagStufi>3</CdStatusEenOudertoeslagStufi>
 		</Studiefinanciering>
 		<Studiefinanciering>
 			<DatBToekenningsperiodeStufi>20230101</DatBToekenningsperiodeStufi>
 			<DatEToekenningsperiodeStufi>20230331</DatEToekenningsperiodeStufi>
-			<CdToekenningBasisbeursStufi>1</CdToekenningBasisbeursStufi>
-			<IndAanvullendeBeursStufi>1</IndAanvullendeBeursStufi>
+			<CdToekenningBasisbeursStufi>2</CdToekenningBasisbeursStufi>
+			<IndAanvullendeBeursStufi>2</IndAanvullendeBeursStufi>
+			<IndToekenningWtosVo18>2</IndToekenningWtosVo18>
+			<CdStatusPartnertoeslagStufi>3</CdStatusPartnertoeslagStufi>
+			<CdStatusEenOudertoeslagStufi>1</CdStatusEenOudertoeslagStufi>
 		</Studiefinanciering>
 		<Studiefinanciering>
 			<DatBToekenningsperiodeStufi>20230401</DatBToekenningsperiodeStufi>
 			<DatEToekenningsperiodeStufi>20230731</DatEToekenningsperiodeStufi>
-			<CdToekenningBasisbeursStufi>1</CdToekenningBasisbeursStufi>
+			<CdToekenningBasisbeursStufi>3</CdToekenningBasisbeursStufi>
 			<IndAanvullendeBeursStufi>1</IndAanvullendeBeursStufi>
+			<IndToekenningWtosVo18>2</IndToekenningWtosVo18>
+			<CdStatusPartnertoeslagStufi>1</CdStatusPartnertoeslagStufi>
+			<CdStatusEenOudertoeslagStufi>3</CdStatusEenOudertoeslagStufi>
 		</Studiefinanciering>
 	</ClientSuwi>
 </s60:DUOStudiefinancieringInfoResponse>

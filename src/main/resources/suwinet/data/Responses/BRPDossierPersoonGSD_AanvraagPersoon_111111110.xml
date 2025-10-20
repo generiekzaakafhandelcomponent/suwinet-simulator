@@ -139,17 +139,6 @@
             <Huisletter>C</Huisletter>
             <Huisnrtoevoeging>Huis</Huisnrtoevoeging>
         </DomicilieAdres>
-        <Correspondentieadres>
-            <Postcd>2054RC</Postcd>
-            <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
-            <Straatnaam>Kerkstraat</Straatnaam>
-            <NaamOpenbareRuimte>Zomerdijkstraat</NaamOpenbareRuimte>
-            <Huisnr>79</Huisnr>
-            <Huisletter>A</Huisletter>
-            <Huisnrtoevoeging>Huis</Huisnrtoevoeging>
-            <IdentificatiecdVerblijfplaats>0530010002090227</IdentificatiecdVerblijfplaats>
-            <IdentificatiecdNraanduiding>0530200002130217</IdentificatiecdNraanduiding>
-        </Correspondentieadres>
         <AangifteAdreshoudingBrp>
             <CdGemeenteVanInschrijving>0363</CdGemeenteVanInschrijving>
             <DatVanInschrijvingBijGemeente>19650310</DatVanInschrijvingBijGemeente>

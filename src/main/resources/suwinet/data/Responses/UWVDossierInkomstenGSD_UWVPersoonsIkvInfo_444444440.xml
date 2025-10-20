@@ -9,7 +9,6 @@
                 <Loonheffingennr>001002041L02</Loonheffingennr>
                 <RechtspersoonAdministratieveEenh>
                     <FiNr>001002041</FiNr>
-                    <NaamRechtspersoon>DE HANDELSKAMER</NaamRechtspersoon>
                 </RechtspersoonAdministratieveEenh>
                 <FeitelijkAdresAeh>
                     <Straatadres>
@@ -3474,7 +3473,7 @@
         </Inkomstenverhouding>
         <Inkomstenverhouding>
             <VolgnrIkv>2</VolgnrIkv>
-            <DatBIkv>20110101</DatBIkv>
+            <DatBIkv>20250301</DatBIkv>
             <AdministratieveEenheid>
                 <NaamAdministratieveEenheid>GPL01-FTG01</NaamAdministratieveEenheid>
                 <Loonheffingennr>803516666L01</Loonheffingennr>
@@ -6878,7 +6877,7 @@
         </Inkomstenverhouding>
         <Inkomstenverhouding>
             <VolgnrIkv>2</VolgnrIkv>
-            <DatBIkv>20110101</DatBIkv>
+            <DatBIkv>20250301</DatBIkv>
             <AdministratieveEenheid>
                 <Loonheffingennr>810220350L02</Loonheffingennr>
                 <DatBAdministratieveEenheid>20110802</DatBAdministratieveEenheid>
@@ -6899,7 +6898,7 @@
                 </FeitelijkAdresAeh>
             </AdministratieveEenheid>
             <Inkomstenperiode>
-                <DatBIkp>20110101</DatBIkp>
+                <DatBIkp>20250301</DatBIkp>
                 <DatEIkp>99991231</DatEIkp>
                 <CdSrtIkv>15</CdSrtIkv>
                 <!--NON PAYED JOB-->
@@ -6913,7 +6912,7 @@
                 </SectorBeroepsEnBedrijfsleven>
             </SectorRisicogroepIkv>
             <Inkomstenopgave>
-                <DatBIko>20110101</DatBIko>
+                <DatBIko>20250301</DatBIko>
                 <!--FIKO-->
                 <DatEIko>20231123</DatEIko>
                 <!--Datum van opvragen (systeemdatum)-->
@@ -6921,15 +6920,47 @@
         </Inkomstenverhouding>
         <Inkomstenverhouding>
             <VolgnrIkv>2</VolgnrIkv>
-            <DatBIkv>20110101</DatBIkv>
+            <DatBIkv>20250301</DatBIkv>
             <AdministratieveEenheid>
                 <Loonheffingennr>810220350L02</Loonheffingennr>
                 <DatBAdministratieveEenheid>20110802</DatBAdministratieveEenheid>
                 <DatEAdministratieveEenheid>20120203</DatEAdministratieveEenheid>
-                <RechtspersoonAdministratieveEenh>
-                    <FiNr>800007207</FiNr>
-                    <NaamRechtspersoon>UITVOERINGSINSTITUUT WERKNEMERSVERZEKERINGEN</NaamRechtspersoon>
-                </RechtspersoonAdministratieveEenh>
+                <PersoonAdministratieveEenheid xmlns:sml="http://example.org/sml" xmlns:smls="http://example.org/smls">
+                    <Voornamen>Jan Pieter</Voornamen>
+                    <Voorvoegsel>van</Voorvoegsel>
+                    <SignificantDeelVanDeAchternaam>Dijk</SignificantDeelVanDeAchternaam>
+                    <FeitelijkAdresPersoonAeh>
+                        <DatBAdres>20200101</DatBAdres>
+                        <DatEAdres>20231231</DatEAdres>
+                        <Straatadres>
+                            <straatnaam>Nieuwstraat</straatnaam>
+                            <huisnummer>12</huisnummer>
+                            <huisletter>A</huisletter>
+                            <postcode>1234 AB</postcode>
+                            <woonplaats>Amsterdam</woonplaats>
+                            <gemeente>Amsterdam</gemeente>
+                        </Straatadres>
+                    </FeitelijkAdresPersoonAeh>
+                    <FeitelijkAdresPersoonAeh>
+                        <DatBAdres>20240101</DatBAdres>
+                        <StraatadresBuitenland>
+                            <straatnaam>Rue de la Paix</straatnaam>
+                            <huisnummer>7</huisnummer>
+                            <postcode>75002</postcode>
+                            <woonplaats>Parijs</woonplaats>
+                            <land>FR</land>
+                        </StraatadresBuitenland>
+                    </FeitelijkAdresPersoonAeh>
+                    <CorrespondentieadresPersoonAeh>
+                        <DatBAdres>20220501</DatBAdres>
+                        <Postbusadres>
+                            <postbusnummer>456</postbusnummer>
+                            <postcode>2500AA</postcode>
+                            <woonplaats>Den Haag</woonplaats>
+                            <gemeente>'s-Gravenhage</gemeente>
+                        </Postbusadres>
+                    </CorrespondentieadresPersoonAeh>
+                </PersoonAdministratieveEenheid>
                 <FeitelijkAdresAeh>
                     <Straatadres>
                         <Postcd>1043DJ</Postcd>
@@ -6943,7 +6974,7 @@
             </AdministratieveEenheid>
             <Inkomstenperiode>
                 <!--FIKO-->
-                <DatBIkp>20110101</DatBIkp>
+                <DatBIkp>20250301</DatBIkp>
                 <DatEIkp>99991231</DatEIkp>
                 <CdSrtIkv>37</CdSrtIkv>
                 <!--PAYED JOB-->
@@ -6957,7 +6988,7 @@
                 </SectorBeroepsEnBedrijfsleven>
             </SectorRisicogroepIkv>
             <Inkomstenopgave>
-                <DatBIko>20110101</DatBIko>
+                <DatBIko>20250301</DatBIko>
                 <!--FIKO-->
                 <DatEIko>20231123</DatEIko>
                 <!--Datum van opvragen (systeemdatum)-->

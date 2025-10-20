@@ -15,29 +15,23 @@
             <DatGeldigheidGegevens>19650310</DatGeldigheidGegevens>
         </GeldigheidGegevensPersoon>
         <Nationaliteit>
+            <GeldigheidGegevensNationaliteit>
+                <DatGeldigheidGegevens>20150131</DatGeldigheidGegevens>
+            </GeldigheidGegevensNationaliteit>
+        </Nationaliteit>
+        <Nationaliteit>
             <CdNationaliteit>0001</CdNationaliteit>
             <GeldigheidGegevensNationaliteit>
                 <DatGeldigheidGegevens>19650310</DatGeldigheidGegevens>
             </GeldigheidGegevensNationaliteit>
         </Nationaliteit>
-        <DomicilieAdres>
-            <Postcd>2511EG</Postcd>
-            <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
-            <Straatnaam>Herengracht</Straatnaam>
-            <NaamOpenbareRuimte>Herengracht</NaamOpenbareRuimte>
-            <Huisnr>1</Huisnr>
-            <IdentificatiecdVerblijfplaats>0530010002090227</IdentificatiecdVerblijfplaats>
-            <IdentificatiecdNraanduiding>0530200002130217</IdentificatiecdNraanduiding>
-            <Huisletter/>
-            <Huisnrtoevoeging/>
-        </DomicilieAdres>
         <Verblijfstitel>
             <CdVerblijfstitel>41</CdVerblijfstitel>
             <DatBVerblijfstitel>20120915</DatBVerblijfstitel>
             <DatEVerblijfstitel>20240915</DatEVerblijfstitel>
         </Verblijfstitel>
         <Correspondentieadres>
-            <Postcd>2511BA</Postcd>
+            <Postcd>2581BA</Postcd>
             <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
             <Straatnaam>van Boetzelaerlaan</Straatnaam>
             <Huisnr>186</Huisnr>
@@ -104,6 +98,16 @@
             <SignificantDeelVanDeAchternaam>Jansen</SignificantDeelVanDeAchternaam>
             <Geboortedat>19910215</Geboortedat>
             <Burgerservicenr>080000071</Burgerservicenr>
+            <Titulatuur>
+                <CdAdellijkeTitelPredikaat>G</CdAdellijkeTitelPredikaat>
+            </Titulatuur>
+        </Kind>
+        <Kind>
+            <Voornamen>Baby Freddie</Voornamen>
+            <Voorvoegsel>de</Voorvoegsel>
+            <SignificantDeelVanDeAchternaam>Jansen</SignificantDeelVanDeAchternaam>
+            <Geboortedat>20241225</Geboortedat>
+            <Burgerservicenr>080000072</Burgerservicenr>
             <Titulatuur>
                 <CdAdellijkeTitelPredikaat>G</CdAdellijkeTitelPredikaat>
             </Titulatuur>
