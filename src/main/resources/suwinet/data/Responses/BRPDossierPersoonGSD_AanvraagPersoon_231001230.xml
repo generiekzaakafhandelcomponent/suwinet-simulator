@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Header xmlns:wsa="http://www.w3.org/2005/08/addressing">
+        <wsse:Security soap:mustUnderstand="1"
+            xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+            <wsu:Timestamp wsu:Id="TS-B63592846">
+                <wsu:Created>2024-09-26T12:04:07.617Z</wsu:Created>
+                <wsu:Expires>2024-09-26T12:09:07.617Z</wsu:Expires>
+            </wsu:Timestamp>
+            <wsse11:SignatureConfirmation
+                Value="yohWIgzxWKOE7KtcaY7WmpQ=="
+                wsu:Id="SC-B635492847" xmlns:wsse11="http://docs.oasis-open.org/wss/oasis-wss-wssecurity-secext-1.1.xsd"/>
+            <wsse:BinarySecurityToken
+                EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary"
+                ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3" wsu:Id="X509-B635DE528380271492848">MIIHjDSb1f3Qb9q0XPpwaGC4bg==</wsse:BinarySecurityToken>
+            <ds:Signature
+                Id="SIG-B63856" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+                <ds:SignedInfo>
+                    <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                        <ec:InclusiveNamespaces PrefixList="wsa soap" xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                    </ds:CanonicalizationMethod>
+                    <ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+                    <ds:Reference URI="#Id-1698635498">
+                        <ds:Transforms>
+                            <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                                <ec:InclusiveNamespaces PrefixList="" xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                            </ds:Transform>
+                        </ds:Transforms>
+                        <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                        <ds:DigestValue>EvyXS87dY=</ds:DigestValue>
+                    </ds:Reference>
+                    <ds:Reference URI="#id-B635DE492851">
+                        <ds:Transforms>
+                            <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                                <ec:InclusiveNamespaces
+                                    PrefixList="soap" xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                            </ds:Transform>
+                        </ds:Transforms>
+                        <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                        <ds:DigestValue>x5I004sw=</ds:DigestValue>
+                    </ds:Reference>
+                    <ds:Reference URI="#id-B63552">
+                        <ds:Transforms>
+                            <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                                <ec:InclusiveNamespaces
+                                    PrefixList="soap" xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                            </ds:Transform>
+                        </ds:Transforms>
+                        <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                        <ds:DigestValue>GZ1+mos=</ds:DigestValue>
+                    </ds:Reference>
+                    <ds:Reference URI="#id-B63553">
+                        <ds:Transforms>
+                            <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                                <ec:InclusiveNamespaces
+                                    PrefixList="soap" xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                            </ds:Transform>
+                        </ds:Transforms>
+                        <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                        <ds:DigestValue>hzH60E=</ds:DigestValue>
+                    </ds:Reference>
+                    <ds:Reference URI="#id-B62854">
+                        <ds:Transforms>
+                            <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                                <ec:InclusiveNamespaces
+                                    PrefixList="soap" xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                            </ds:Transform>
+                        </ds:Transforms>
+                        <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                        <ds:DigestValue>1qkDEsPk=</ds:DigestValue>
+                    </ds:Reference>
+                    <ds:Reference URI="#id-B61492855">
+                        <ds:Transforms>
+                            <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                                <ec:InclusiveNamespaces
+                                    PrefixList="soap" xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                            </ds:Transform>
+                        </ds:Transforms>
+                        <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                        <ds:DigestValue>E1KYeCp8oY=</ds:DigestValue>
+                    </ds:Reference>
+                    <ds:Reference URI="#TS-B692846">
+                        <ds:Transforms>
+                            <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                                <ec:InclusiveNamespaces
+                                    PrefixList="wsse wsa soap" xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                            </ds:Transform>
+                        </ds:Transforms>
+                        <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                        <ds:DigestValue>T5nDzw=</ds:DigestValue>
+                    </ds:Reference>
+                    <ds:Reference URI="#SC-B63492847">
+                        <ds:Transforms>
+                            <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                                <ec:InclusiveNamespaces
+                                    PrefixList="wsse wsa soap" xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                            </ds:Transform>
+                        </ds:Transforms>
+                        <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                        <ds:DigestValue>ojsFpU=</ds:DigestValue>
+                    </ds:Reference>
+                </ds:SignedInfo>
+                <ds:SignatureValue>T1shTN3TIJQouXScsh+eBINnt1kg=</ds:SignatureValue>
+                <ds:KeyInfo Id="KI-B635D6171492849">
+                    <wsse:SecurityTokenReference wsu:Id="STR-B630">
+                        <wsse:Reference
+                            URI="#X509-B6352848" ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3"/>
+                    </wsse:SecurityTokenReference>
+                </ds:KeyInfo>
+            </ds:Signature>
+        </wsse:Security>
+        <wsa:To wsu:Id="id-B63851" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">https://wsgateway-extern.denhaag.nl?oin=00000004124485341000</wsa:To>
+        <wsa:From wsu:Id="id-B63552" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+            <wsa:Address>https://suwibroker.suwinet.nl/suwibroker/soap/BRPDossierPersoonGSD-v0200?oin=00000004168307291000</wsa:Address>
+        </wsa:From>
+        <wsa:MessageID
+            wsu:Id="id-B632853" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">urn:uuid:7f5cac3c-f899-4bff-92b9-e5ff1cb3cfcd</wsa:MessageID>
+        <wsa:Action wsu:Id="id-B654" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD-v0200/AanvraagPersoonResponse</wsa:Action>
+        <wsa:RelatesTo
+            wsu:Id="id-B63855" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">MessageId-6951af4c-2587-8cbf-9746-d810a6cbbe30</wsa:RelatesTo>
+    </soap:Header>
+    <soap:Body wsu:Id="Id-1698635498" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+        <brp:AanvraagPersoonResponse xmlns:brp="http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD/v0200">
+            <ClientSuwi>
+                <Voornamen>Truus</Voornamen>
+                <SignificantDeelVanDeAchternaam>Zwart</SignificantDeelVanDeAchternaam>
+                <Geboortedat>19701111</Geboortedat>
+                <Burgerservicenr>231001230</Burgerservicenr>
+                <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
+                <ANr>7000000001</ANr>
+                <AanduidingNaamgebruik>1</AanduidingNaamgebruik>
+                <Geslacht>1</Geslacht>
+                <Geboorteplaats>Yolkonak</Geboorteplaats>
+                <Geboorteland>6043</Geboorteland>
+                <OnderzoekGegPersoon>
+                    <AanduidingOnderzoek>010000</AanduidingOnderzoek>
+                    <DatBOnderzoek>19971222</DatBOnderzoek>
+                    <DatEOnderzoek>20000126</DatEOnderzoek>
+                </OnderzoekGegPersoon>
+                <GeldigheidGegevensPersoon>
+                    <DatGeldigheidGegevens>00000000</DatGeldigheidGegevens>
+                </GeldigheidGegevensPersoon>
+                <Nationaliteit>
+                    <GeldigheidGegevensNationaliteit>
+                        <DatGeldigheidGegevens>20150131</DatGeldigheidGegevens>
+                    </GeldigheidGegevensNationaliteit>
+                </Nationaliteit>
+                <Nationaliteit>
+                    <CdNationaliteit>0001</CdNationaliteit>
+                    <GeldigheidGegevensNationaliteit>
+                        <DatGeldigheidGegevens>19951212</DatGeldigheidGegevens>
+                    </GeldigheidGegevensNationaliteit>
+                </Nationaliteit>
+                <NationaliteitHistorisch>
+                    <CdNationaliteit>0339</CdNationaliteit>
+                    <GeldigheidGegevensNationaliteit>
+                        <DatGeldigheidGegevens>00000000</DatGeldigheidGegevens>
+                    </GeldigheidGegevensNationaliteit>
+                </NationaliteitHistorisch>
+                <DomicilieAdres>
+                    <Postcd>2541RD</Postcd>
+                    <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
+                    <Straatnaam>Dwingelostraat</Straatnaam>
+                    <NaamOpenbareRuimte>Dwingelostraat</NaamOpenbareRuimte>
+                    <Huisnr>56</Huisnr>
+                    <IdentificatiecdVerblijfplaats>0518010000400009</IdentificatiecdVerblijfplaats>
+                    <IdentificatiecdNraanduiding>0518200000400008</IdentificatiecdNraanduiding>
+                </DomicilieAdres>
+                <Immigratie>
+                    <DatVestigingNederland>20071228</DatVestigingNederland>
+                    <LandVanwaarIngeschreven>7024</LandVanwaarIngeschreven>
+                </Immigratie>
+                <AangifteAdreshoudingBrp>
+                    <CdGemeenteVanInschrijving>0518</CdGemeenteVanInschrijving>
+                    <DatVanInschrijvingBijGemeente>19900523</DatVanInschrijvingBijGemeente>
+                    <DatBAdreshoudingBrp>20101020</DatBAdreshoudingBrp>
+                </AangifteAdreshoudingBrp>
+                <VerblijfplaatsHistorisch>
+                    <DomicilieAdres>
+                        <Postcd>2541RD</Postcd>
+                        <Straatnaam>Dwingelostraat</Straatnaam>
+                        <Huisnr>56</Huisnr>
+                    </DomicilieAdres>
+                    <Immigratie>
+                        <DatVestigingNederland>20071228</DatVestigingNederland>
+                        <LandVanwaarIngeschreven>7024</LandVanwaarIngeschreven>
+                    </Immigratie>
+                    <AangifteAdreshoudingBrp>
+                        <CdGemeenteVanInschrijving>0518</CdGemeenteVanInschrijving>
+                        <DatVanInschrijvingBijGemeente>19900523</DatVanInschrijvingBijGemeente>
+                        <DatBAdreshoudingBrp>20101020</DatBAdreshoudingBrp>
+                    </AangifteAdreshoudingBrp>
+                </VerblijfplaatsHistorisch>
+                <VerblijfplaatsHistorisch>
+                    <DomicilieAdres>
+                        <Postcd>2541RD</Postcd>
+                        <Straatnaam>Dwingelostraat</Straatnaam>
+                        <Huisnr>48</Huisnr>
+                    </DomicilieAdres>
+                    <Immigratie>
+                        <DatVestigingNederland>20071228</DatVestigingNederland>
+                        <LandVanwaarIngeschreven>7024</LandVanwaarIngeschreven>
+                    </Immigratie>
+                    <AangifteAdreshoudingBrp>
+                        <CdGemeenteVanInschrijving>0518</CdGemeenteVanInschrijving>
+                        <DatVanInschrijvingBijGemeente>19900523</DatVanInschrijvingBijGemeente>
+                        <DatBAdreshoudingBrp>20090106</DatBAdreshoudingBrp>
+                    </AangifteAdreshoudingBrp>
+                    <OnderzoekGegVerblijfplaats>
+                        <AanduidingOnderzoek>080000</AanduidingOnderzoek>
+                        <DatBOnderzoek>20100823</DatBOnderzoek>
+                        <DatEOnderzoek>20101013</DatEOnderzoek>
+                    </OnderzoekGegVerblijfplaats>
+                </VerblijfplaatsHistorisch>
+                <VerblijfplaatsHistorisch>
+                    <DomicilieAdres>
+                        <Postcd>2541RD</Postcd>
+                        <Straatnaam>Dwingelostraat</Straatnaam>
+                        <Huisnr>44</Huisnr>
+                    </DomicilieAdres>
+                    <Immigratie>
+                        <DatVestigingNederland>20071228</DatVestigingNederland>
+                        <LandVanwaarIngeschreven>7024</LandVanwaarIngeschreven>
+                    </Immigratie>
+                    <AangifteAdreshoudingBrp>
+                        <CdGemeenteVanInschrijving>0518</CdGemeenteVanInschrijving>
+                        <DatVanInschrijvingBijGemeente>19900523</DatVanInschrijvingBijGemeente>
+                        <DatBAdreshoudingBrp>20080609</DatBAdreshoudingBrp>
+                    </AangifteAdreshoudingBrp>
+                </VerblijfplaatsHistorisch>
+                <VerblijfplaatsHistorisch>
+                    <DomicilieAdres>
+                        <Postcd>2541RD</Postcd>
+                        <Straatnaam>Dwingelostraat</Straatnaam>
+                        <Huisnr>48</Huisnr>
+                    </DomicilieAdres>
+                    <Immigratie>
+                        <DatVestigingNederland>20071228</DatVestigingNederland>
+                        <LandVanwaarIngeschreven>7024</LandVanwaarIngeschreven>
+                    </Immigratie>
+                    <AangifteAdreshoudingBrp>
+                        <CdGemeenteVanInschrijving>0518</CdGemeenteVanInschrijving>
+                        <DatVanInschrijvingBijGemeente>19900523</DatVanInschrijvingBijGemeente>
+                        <DatBAdreshoudingBrp>20071228</DatBAdreshoudingBrp>
+                    </AangifteAdreshoudingBrp>
+                </VerblijfplaatsHistorisch>
+                <VerblijfplaatsHistorisch>
+                    <FeitelijkAdresBuitenland>
+                        <DatBAdresBuitenland>20030521</DatBAdresBuitenland>
+                        <LandAdresBuitenland>0000</LandAdresBuitenland>
+                    </FeitelijkAdresBuitenland>
+                    <AangifteAdreshoudingBrp>
+                        <CdGemeenteVanInschrijving>0518</CdGemeenteVanInschrijving>
+                        <DatVanInschrijvingBijGemeente>19900523</DatVanInschrijvingBijGemeente>
+                    </AangifteAdreshoudingBrp>
+                </VerblijfplaatsHistorisch>
+                <VerblijfplaatsHistorisch>
+                    <DomicilieAdres>
+                        <Postcd>2541RD</Postcd>
+                        <Straatnaam>Dwingelostraat</Straatnaam>
+                        <Huisnr>38</Huisnr>
+                    </DomicilieAdres>
+                    <Immigratie>
+                        <DatVestigingNederland>19900523</DatVestigingNederland>
+                        <LandVanwaarIngeschreven>6043</LandVanwaarIngeschreven>
+                    </Immigratie>
+                    <AangifteAdreshoudingBrp>
+                        <CdGemeenteVanInschrijving>0518</CdGemeenteVanInschrijving>
+                        <DatVanInschrijvingBijGemeente>19900523</DatVanInschrijvingBijGemeente>
+                        <DatBAdreshoudingBrp>20010920</DatBAdreshoudingBrp>
+                    </AangifteAdreshoudingBrp>
+                    <OnderzoekGegVerblijfplaats>
+                        <AanduidingOnderzoek>080000</AanduidingOnderzoek>
+                        <DatBOnderzoek>20030303</DatBOnderzoek>
+                        <DatEOnderzoek>20030521</DatEOnderzoek>
+                    </OnderzoekGegVerblijfplaats>
+                </VerblijfplaatsHistorisch>
+                <VerblijfplaatsHistorisch>
+                    <DomicilieAdres>
+                        <Postcd>2541RD</Postcd>
+                        <Straatnaam>Dwingelostraat</Straatnaam>
+                        <Huisnr>34</Huisnr>
+                        <Huisletter>B</Huisletter>
+                    </DomicilieAdres>
+                    <Immigratie>
+                        <DatVestigingNederland>19900523</DatVestigingNederland>
+                        <LandVanwaarIngeschreven>6043</LandVanwaarIngeschreven>
+                    </Immigratie>
+                    <AangifteAdreshoudingBrp>
+                        <CdGemeenteVanInschrijving>0518</CdGemeenteVanInschrijving>
+                        <DatVanInschrijvingBijGemeente>19900523</DatVanInschrijvingBijGemeente>
+                        <DatBAdreshoudingBrp>20000313</DatBAdreshoudingBrp>
+                    </AangifteAdreshoudingBrp>
+                </VerblijfplaatsHistorisch>
+                <VerblijfplaatsHistorisch>
+                    <DomicilieAdres>
+                        <Postcd>2541RD</Postcd>
+                        <Straatnaam>Dwingelostraat</Straatnaam>
+                        <Huisnr>34</Huisnr>
+                    </DomicilieAdres>
+                    <Immigratie>
+                        <DatVestigingNederland>19900523</DatVestigingNederland>
+                        <LandVanwaarIngeschreven>6043</LandVanwaarIngeschreven>
+                    </Immigratie>
+                    <AangifteAdreshoudingBrp>
+                        <CdGemeenteVanInschrijving>0518</CdGemeenteVanInschrijving>
+                        <DatVanInschrijvingBijGemeente>19900523</DatVanInschrijvingBijGemeente>
+                        <DatBAdreshoudingBrp>19990630</DatBAdreshoudingBrp>
+                    </AangifteAdreshoudingBrp>
+                </VerblijfplaatsHistorisch>
+                <VerblijfplaatsHistorisch>
+                    <DomicilieAdres>
+                        <Postcd>2541RD</Postcd>
+                        <Straatnaam>Dwingelostraat</Straatnaam>
+                        <Huisnr>28</Huisnr>
+                        <Huisletter>C</Huisletter>
+                    </DomicilieAdres>
+                    <Immigratie>
+                        <DatVestigingNederland>19900523</DatVestigingNederland>
+                        <LandVanwaarIngeschreven>6043</LandVanwaarIngeschreven>
+                    </Immigratie>
+                    <AangifteAdreshoudingBrp>
+                        <CdGemeenteVanInschrijving>0518</CdGemeenteVanInschrijving>
+                        <DatVanInschrijvingBijGemeente>19900523</DatVanInschrijvingBijGemeente>
+                        <DatBAdreshoudingBrp>19990331</DatBAdreshoudingBrp>
+                    </AangifteAdreshoudingBrp>
+                    <OnderzoekGegVerblijfplaats>
+                        <AanduidingOnderzoek>080000</AanduidingOnderzoek>
+                        <DatBOnderzoek>19990518</DatBOnderzoek>
+                        <DatEOnderzoek>19990630</DatEOnderzoek>
+                    </OnderzoekGegVerblijfplaats>
+                </VerblijfplaatsHistorisch>
+                <VerblijfplaatsHistorisch>
+                    <DomicilieAdres>
+                        <Postcd>2541RD</Postcd>
+                        <Straatnaam>Dwingelostraat</Straatnaam>
+                        <Huisnr>28</Huisnr>
+                        <Huisletter>C</Huisletter>
+                    </DomicilieAdres>
+                    <Immigratie>
+                        <DatVestigingNederland>19900523</DatVestigingNederland>
+                        <LandVanwaarIngeschreven>6043</LandVanwaarIngeschreven>
+                    </Immigratie>
+                    <AangifteAdreshoudingBrp>
+                        <CdGemeenteVanInschrijving>0518</CdGemeenteVanInschrijving>
+                        <DatVanInschrijvingBijGemeente>19900523</DatVanInschrijvingBijGemeente>
+                        <DatBAdreshoudingBrp>19980114</DatBAdreshoudingBrp>
+                    </AangifteAdreshoudingBrp>
+                </VerblijfplaatsHistorisch>
+                <VerblijfplaatsHistorisch>
+                    <DomicilieAdres>
+                        <Postcd>2541RD</Postcd>
+                        <Straatnaam>Dwingelostraat</Straatnaam>
+                        <Huisnr>24</Huisnr>
+                    </DomicilieAdres>
+                    <Immigratie>
+                        <DatVestigingNederland>19900523</DatVestigingNederland>
+                        <LandVanwaarIngeschreven>6043</LandVanwaarIngeschreven>
+                    </Immigratie>
+                    <AangifteAdreshoudingBrp>
+                        <CdGemeenteVanInschrijving>0518</CdGemeenteVanInschrijving>
+                        <DatVanInschrijvingBijGemeente>19900523</DatVanInschrijvingBijGemeente>
+                        <DatBAdreshoudingBrp>19980112</DatBAdreshoudingBrp>
+                    </AangifteAdreshoudingBrp>
+                </VerblijfplaatsHistorisch>
+                <VerblijfplaatsHistorisch>
+                    <DomicilieAdres>
+                        <Postcd>2541RD</Postcd>
+                        <Straatnaam>Dwingelostraat</Straatnaam>
+                        <Huisnr>26</Huisnr>
+                    </DomicilieAdres>
+                    <Immigratie>
+                        <DatVestigingNederland>19900523</DatVestigingNederland>
+                        <LandVanwaarIngeschreven>6043</LandVanwaarIngeschreven>
+                    </Immigratie>
+                    <AangifteAdreshoudingBrp>
+                        <CdGemeenteVanInschrijving>0518</CdGemeenteVanInschrijving>
+                        <DatVanInschrijvingBijGemeente>19900523</DatVanInschrijvingBijGemeente>
+                        <DatBAdreshoudingBrp>19971126</DatBAdreshoudingBrp>
+                    </AangifteAdreshoudingBrp>
+                </VerblijfplaatsHistorisch>
+                <VerblijfplaatsHistorisch>
+                    <DomicilieAdres>
+                        <Postcd>2541RD</Postcd>
+                        <Straatnaam>Dwingelostraat</Straatnaam>
+                        <Huisnr>18</Huisnr>
+                    </DomicilieAdres>
+                    <Immigratie>
+                        <DatVestigingNederland>19900523</DatVestigingNederland>
+                        <LandVanwaarIngeschreven>6043</LandVanwaarIngeschreven>
+                    </Immigratie>
+                    <AangifteAdreshoudingBrp>
+                        <CdGemeenteVanInschrijving>0518</CdGemeenteVanInschrijving>
+                        <DatVanInschrijvingBijGemeente>19900523</DatVanInschrijvingBijGemeente>
+                        <DatBAdreshoudingBrp>19970501</DatBAdreshoudingBrp>
+                    </AangifteAdreshoudingBrp>
+                </VerblijfplaatsHistorisch>
+                <VerblijfplaatsHistorisch>
+                    <DomicilieAdres>
+                        <Postcd>2541RD</Postcd>
+                        <Straatnaam>Dwingelostraat</Straatnaam>
+                        <Huisnr>14</Huisnr>
+                    </DomicilieAdres>
+                    <Immigratie>
+                        <DatVestigingNederland>19900523</DatVestigingNederland>
+                        <LandVanwaarIngeschreven>6043</LandVanwaarIngeschreven>
+                    </Immigratie>
+                    <AangifteAdreshoudingBrp>
+                        <CdGemeenteVanInschrijving>0518</CdGemeenteVanInschrijving>
+                        <DatVanInschrijvingBijGemeente>19900523</DatVanInschrijvingBijGemeente>
+                        <DatBAdreshoudingBrp>19960919</DatBAdreshoudingBrp>
+                    </AangifteAdreshoudingBrp>
+                </VerblijfplaatsHistorisch>
+                <VerblijfplaatsHistorisch>
+                    <DomicilieAdres>
+                        <Postcd>2541RD</Postcd>
+                        <Straatnaam>Dwingelostraat</Straatnaam>
+                        <Huisnr>8</Huisnr>
+                    </DomicilieAdres>
+                    <Immigratie>
+                        <DatVestigingNederland>19900523</DatVestigingNederland>
+                        <LandVanwaarIngeschreven>6043</LandVanwaarIngeschreven>
+                    </Immigratie>
+                    <AangifteAdreshoudingBrp>
+                        <CdGemeenteVanInschrijving>0518</CdGemeenteVanInschrijving>
+                        <DatVanInschrijvingBijGemeente>19900523</DatVanInschrijvingBijGemeente>
+                        <DatBAdreshoudingBrp>19960801</DatBAdreshoudingBrp>
+                    </AangifteAdreshoudingBrp>
+                </VerblijfplaatsHistorisch>
+                <VerblijfplaatsHistorisch>
+                    <DomicilieAdres>
+                        <Postcd>2541RD</Postcd>
+                        <Straatnaam>Dwingelostraat</Straatnaam>
+                        <Huisnr>4</Huisnr>
+                    </DomicilieAdres>
+                    <Immigratie>
+                        <DatVestigingNederland>19900523</DatVestigingNederland>
+                        <LandVanwaarIngeschreven>6043</LandVanwaarIngeschreven>
+                    </Immigratie>
+                    <AangifteAdreshoudingBrp>
+                        <CdGemeenteVanInschrijving>0518</CdGemeenteVanInschrijving>
+                        <DatVanInschrijvingBijGemeente>19900523</DatVanInschrijvingBijGemeente>
+                        <DatBAdreshoudingBrp>19940120</DatBAdreshoudingBrp>
+                    </AangifteAdreshoudingBrp>
+                </VerblijfplaatsHistorisch>
+                <Ouder1>
+                    <Voornamen>Truus</Voornamen>
+                    <SignificantDeelVanDeAchternaam>Janssen</SignificantDeelVanDeAchternaam>
+                    <DatBFamilierechtelijkeBetrekking>00000000</DatBFamilierechtelijkeBetrekking>
+                </Ouder1>
+                <Ouder2>
+                    <Voornamen>Bart</Voornamen>
+                    <SignificantDeelVanDeAchternaam>Janssen</SignificantDeelVanDeAchternaam>
+                    <DatBFamilierechtelijkeBetrekking>00000000</DatBFamilierechtelijkeBetrekking>
+                </Ouder2>
+                <Huwelijk>
+                    <DatHuwelijkssluiting>20221007</DatHuwelijkssluiting>
+                    <Partner>
+                        <Voornamen>Peter</Voornamen>
+                        <SignificantDeelVanDeAchternaam>Janssen</SignificantDeelVanDeAchternaam>
+                        <Geboortedat>19931006</Geboortedat>
+                        <Burgerservicenr>231111230</Burgerservicenr>
+                        <ANr>2000000007</ANr>
+                        <Geboorteplaats>Van</Geboorteplaats>
+                        <Geboorteland>6043</Geboorteland>
+                    </Partner>
+                    <PlaatsHuwelijkssluiting>Van</PlaatsHuwelijkssluiting>
+                    <LandHuwelijkssluiting>6043</LandHuwelijkssluiting>
+                </Huwelijk>
+                <Huwelijk>
+                    <Partner>
+                        <Voornamen>Piet</Voornamen>
+                        <SignificantDeelVanDeAchternaam>Janssen</SignificantDeelVanDeAchternaam>
+                        <Geboortedat>19740101</Geboortedat>
+                        <Burgerservicenr>231221320</Burgerservicenr>
+                        <ANr>4000000005</ANr>
+                        <Geboorteplaats>Van</Geboorteplaats>
+                        <Geboorteland>6043</Geboorteland>
+                    </Partner>
+                    <DatOntbindingHuwelijk>20030502</DatOntbindingHuwelijk>
+                    <PlaatsOntbindingHuwelijk>Van</PlaatsOntbindingHuwelijk>
+                    <LandOntbindingHuwelijk>6043</LandOntbindingHuwelijk>
+                    <CdRedenOntbindingHuwelijk>S</CdRedenOntbindingHuwelijk>
+                </Huwelijk>
+                <Huwelijk>
+                    <Partner>
+                        <Voornamen>Fritz</Voornamen>
+                        <SignificantDeelVanDeAchternaam>Alte</SignificantDeelVanDeAchternaam>
+                        <Geboortedat>19740504</Geboortedat>
+                        <Burgerservicenr>231331320</Burgerservicenr>
+                        <ANr>3000000003</ANr>
+                        <Geboorteplaats>Flensburg</Geboorteplaats>
+                        <Geboorteland>9089</Geboorteland>
+                    </Partner>
+                    <DatOntbindingHuwelijk>19950713</DatOntbindingHuwelijk>
+                    <CdGemeenteOntbindingHuwelijk>0518</CdGemeenteOntbindingHuwelijk>
+                    <LandOntbindingHuwelijk>6030</LandOntbindingHuwelijk>
+                    <CdRedenOntbindingHuwelijk>S</CdRedenOntbindingHuwelijk>
+                </Huwelijk>
+                <HuwelijkHistorisch>
+                    <DatHuwelijkssluiting>19960310</DatHuwelijkssluiting>
+                    <Partner>
+                        <Burgerservicenr>231441320</Burgerservicenr>
+                        <ANr>4000000005</ANr>
+                    </Partner>
+                </HuwelijkHistorisch>
+                <HuwelijkHistorisch>
+                    <DatHuwelijkssluiting>19930630</DatHuwelijkssluiting>
+                    <Partner>
+                        <Burgerservicenr>231551320</Burgerservicenr>
+                        <ANr>3000000003</ANr>
+                    </Partner>
+                </HuwelijkHistorisch>
+                <Kind>
+                    <Voornamen>Greetje</Voornamen>
+                    <SignificantDeelVanDeAchternaam>Janssen</SignificantDeelVanDeAchternaam>
+                    <Geboortedat>19951023</Geboortedat>
+                    <Burgerservicenr>225399623</Burgerservicenr>
+                    <ANr>2000000008</ANr>
+                    <GeldigheidGegevensKind>
+                        <DatGeldigheidGegevens>19951101</DatGeldigheidGegevens>
+                    </GeldigheidGegevensKind>
+                </Kind>
+                <InschrijvingsgegevensBrp>
+                    <CdGemeenteWaarPkZichBevindt>0518</CdGemeenteWaarPkZichBevindt>
+                    <CdPkVolledigGeconverteerd>P</CdPkVolledigGeconverteerd>
+                </InschrijvingsgegevensBrp>
+            </ClientSuwi>
+        </brp:AanvraagPersoonResponse>
+    </soap:Body>
+
+</soap:Envelope>
+

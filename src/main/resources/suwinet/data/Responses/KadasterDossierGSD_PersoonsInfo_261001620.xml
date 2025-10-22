@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Header xmlns:wsa="http://www.w3.org/2005/08/addressing">
+        <wsse:Security soapenv:mustUnderstand="1"
+            xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+            <wsu:Timestamp wsu:Id="TS-F840763AE6BCEF3E4B17273530481981507274">
+                <wsu:Created>2024-09-26T12:17:28.198Z</wsu:Created>
+                <wsu:Expires>2024-09-26T12:22:28.198Z</wsu:Expires>
+            </wsu:Timestamp>
+            <wsse11:SignatureConfirmation
+                Value="xulLfywbbQI481991507275" xmlns:wsse11="http://docs.oasis-open.org/wss/oasis-wss-wssecurity-secext-1.1.xsd"/>
+            <wsse:BinarySecurityToken
+                EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary"
+                ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3" wsu:Id="X509-F840763A0481991507276">MIIHjDCCBXSgAwIBAgITNUTDvNDbFDoK1ytuYyy1aSloZcjBz+o3In4hIKMizGxGH/zum3Q9nvlY6l5WfSb1f3Qb9q0XPpwaGC4bg==</wsse:BinarySecurityToken>
+            <ds:Signature
+                Id="SIG-F840763AE6B7284" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+                <ds:SignedInfo>
+                    <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                        <ec:InclusiveNamespaces PrefixList="wsa soapenv" xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                    </ds:CanonicalizationMethod>
+                    <ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+                    <ds:Reference URI="#Id-645598698">
+                        <ds:Transforms>
+                            <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                                <ec:InclusiveNamespaces PrefixList="" xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                            </ds:Transform>
+                        </ds:Transforms>
+                        <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                        <ds:DigestValue>lbf+vB17cjyIk=</ds:DigestValue>
+                    </ds:Reference>
+                    <ds:Reference URI="#id-F8400481991507279">
+                        <ds:Transforms>
+                            <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                                <ec:InclusiveNamespaces
+                                    PrefixList="soapenv" xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                            </ds:Transform>
+                        </ds:Transforms>
+                        <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                        <ds:DigestValue>vIB8okSwHDxULN1pI=</ds:DigestValue>
+                    </ds:Reference>
+                    <ds:Reference URI="#id-F84007280">
+                        <ds:Transforms>
+                            <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                                <ec:InclusiveNamespaces
+                                    PrefixList="soapenv" xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                            </ds:Transform>
+                        </ds:Transforms>
+                        <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                        <ds:DigestValue>b/aUyEj5BAywNU=</ds:DigestValue>
+                    </ds:Reference>
+                    <ds:Reference URI="#id-F8407607281">
+                        <ds:Transforms>
+                            <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                                <ec:InclusiveNamespaces
+                                    PrefixList="soapenv" xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                            </ds:Transform>
+                        </ds:Transforms>
+                        <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                        <ds:DigestValue>9UEln0vXt4d4=</ds:DigestValue>
+                    </ds:Reference>
+                    <ds:Reference URI="#id-F84076507282">
+                        <ds:Transforms>
+                            <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                                <ec:InclusiveNamespaces
+                                    PrefixList="soapenv" xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                            </ds:Transform>
+                        </ds:Transforms>
+                        <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                        <ds:DigestValue>17hq85okMhekgnE=</ds:DigestValue>
+                    </ds:Reference>
+                    <ds:Reference URI="#id-F8407607283">
+                        <ds:Transforms>
+                            <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                                <ec:InclusiveNamespaces
+                                    PrefixList="soapenv" xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                            </ds:Transform>
+                        </ds:Transforms>
+                        <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                        <ds:DigestValue>HS6KfQaaRbyITHoaQY=</ds:DigestValue>
+                    </ds:Reference>
+                    <ds:Reference URI="#TS-F840761507274">
+                        <ds:Transforms>
+                            <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                                <ec:InclusiveNamespaces
+                                    PrefixList="wsse wsa soapenv" xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                            </ds:Transform>
+                        </ds:Transforms>
+                        <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                        <ds:DigestValue>ToOVJLn9rmAvTiqQ=</ds:DigestValue>
+                    </ds:Reference>
+                    <ds:Reference URI="#SC-F84076507275">
+                        <ds:Transforms>
+                            <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                                <ec:InclusiveNamespaces
+                                    PrefixList="wsse wsa soapenv" xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                            </ds:Transform>
+                        </ds:Transforms>
+                        <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                        <ds:DigestValue>AMtSRraKJ5FIQLbhRA=</ds:DigestValue>
+                    </ds:Reference>
+                </ds:SignedInfo>
+                <ds:SignatureValue>FkXbdbMglmGLvQgxZ0adcEG5sx6kM=</ds:SignatureValue>
+                <ds:KeyInfo Id="KI-F830481991507277">
+                    <wsse:SecurityTokenReference wsu:Id="STR-F84076330481991507278">
+                        <wsse:Reference
+                            URI="#X509-991507276" ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3"/>
+                    </wsse:SecurityTokenReference>
+                </ds:KeyInfo>
+            </ds:Signature>
+        </wsse:Security>
+        <wsa:To wsu:Id="id-F8401507279" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">https://wsgateway-extern.denhaag.nl?oin=00000004124485341000</wsa:To>
+        <wsa:From wsu:Id="id-F81507280" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+            <wsa:Address>https://suwibroker.suwinet.nl/suwibroker/soap/KadasterDossierGSD-v0300?oin=00000004168307291000</wsa:Address>
+        </wsa:From>
+        <wsa:MessageID
+            wsu:Id="id-F8507281" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">urn:uuid:701d8966-aabc-4dbd-920e-db20c4cb43e3</wsa:MessageID>
+        <wsa:Action wsu:Id="id-F91507282" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD-v0300/PersoonsInfoResponse</wsa:Action>
+        <wsa:RelatesTo
+            wsu:Id="id-F8283" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">MessageId-0f3445a4-fd08-b545-ccd1-a2f30e312373</wsa:RelatesTo>
+    </soapenv:Header>
+    <soapenv:Body wsu:Id="Id-645598698" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+        <smls:PersoonsInfoResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300">
+            <ClientSuwi>
+                <Burgerservicenr>000000000</Burgerservicenr>
+                <Voornamen>Jan</Voornamen>
+                <SignificantDeelVanDeAchternaam>Klaassen</SignificantDeelVanDeAchternaam>
+                <Geslacht>1</Geslacht>
+                <Geboortedat>19720911</Geboortedat>
+                <DomicilieAdres>
+                    <StraatadresBag>
+                        <Postcd>2583RR</Postcd>
+                        <Woonplaatsnaam>'S-GRAVENHAGE</Woonplaatsnaam>
+                        <Straatnaam>Tholensestraat</Straatnaam>
+                        <Huisnr>99</Huisnr>
+                    </StraatadresBag>
+                </DomicilieAdres>
+                <Eigendom>
+                    <OnroerendeZaak>
+                        <CdTypeOnroerendeZaak>A</CdTypeOnroerendeZaak>
+                        <KadastraleAanduiding>
+                            <CdKadastraleGemeente>881</CdKadastraleGemeente>
+                            <KadastraleGemeentenaam>'s-Gravenhage</KadastraleGemeentenaam>
+                            <KadastraleSectie>BE</KadastraleSectie>
+                            <KadastraalPerceelnr>2839</KadastraalPerceelnr>
+                            <VolgnrKadastraalAppartementsrecht>1</VolgnrKadastraalAppartementsrecht>
+                        </KadastraleAanduiding>
+                        <OmsKadastraalObject>Bebouwd: Wonen (appartement)</OmsKadastraalObject>
+                        <ZakelijkRecht>
+                            <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
+                        </ZakelijkRecht>
+                        <LocatieOZ>
+                            <StraatadresBag>
+                                <Postcd>2583RR</Postcd>
+                                <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
+                                <Straatnaam>Tholensestraat</Straatnaam>
+                                <Huisnr>99</Huisnr>
+                            </StraatadresBag>
+                        </LocatieOZ>
+                        <PubliekrechtelijkeBeperking>
+                            <AantekeningKadastraalObject>
+                                <OmsAantekeningKadastraalObject>Wijziging t.a.v. de erfpachtvoorwaarden en/of -canon</OmsAantekeningKadastraalObject>
+                            </AantekeningKadastraalObject>
+                        </PubliekrechtelijkeBeperking>
+                        <BedrKoopsom>
+                            <CdMunteenheid>EUR</CdMunteenheid>
+                            <CdPositiefNegatief>+</CdPositiefNegatief>
+                            <WaardeBedr>19500000</WaardeBedr>
+                        </BedrKoopsom>
+                        <JaarAankoop>2017</JaarAankoop>
+                        <IndMeerGerechtigden>1</IndMeerGerechtigden>
+                    </OnroerendeZaak>
+                </Eigendom>
+            </ClientSuwi>
+        </smls:PersoonsInfoResponse>
+    </soapenv:Body>
+</soapenv:Envelope>

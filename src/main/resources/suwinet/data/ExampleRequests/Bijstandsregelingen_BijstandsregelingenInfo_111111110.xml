@@ -1,0 +1,8 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v05="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <v05:BijstandsregelingenInfo>
+            <Burgerservicenr>111111110</Burgerservicenr>
+        </v05:BijstandsregelingenInfo>
+    </soapenv:Body>
+</soapenv:Envelope>
