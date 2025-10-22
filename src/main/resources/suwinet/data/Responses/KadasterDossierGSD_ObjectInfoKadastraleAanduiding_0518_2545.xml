@@ -14,6 +14,12 @@
         <ZakelijkRecht>
             <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
         </ZakelijkRecht>
+        <PubliekrechtelijkeBeperking>
+            <AantekeningKadastraalObject>
+                <DatEAantekeningKadastraalObject>20221209</DatEAantekeningKadastraalObject>
+                <OmsAantekeningKadastraalObject>Milieubeschermingsmaatregel</OmsAantekeningKadastraalObject>
+            </AantekeningKadastraalObject>
+        </PubliekrechtelijkeBeperking>
         <LocatieOZ>
             <StraatadresBag>
                 <Postcd>2545CC</Postcd>

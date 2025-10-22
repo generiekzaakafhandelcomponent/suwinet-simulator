@@ -1,4 +1,4 @@
-# GZAC, simulation application for suwinet
+# Gemeente Den Haag, simulation application for suwinet
 
 This application is a microservice simulating Suwinet services. It is developed for test purposes.  The simulated service endpoints return predefined responses. Responses are uploaded as xml files to the resources folder of the repository. 
 The endpoint code is already generated based on Suwinet WSDLs.
@@ -30,13 +30,10 @@ The services baseurl is \<simulator-url\>/ws/, the following services are suppor
   7. \<simulator-url\>/ws/DUODossierPersoonGSD-v0300/v1 - DUOPersoonsInfo
 
 You can find example client requests in src/main/resources/suwinet/data/ExampleRequests
-The simulator uses basic authentication. the default port is 8090 (see src/main/resources/application.properties)
+The simulator uses basic authentication.
 
-### Test the content with GZAC plugin code
-For GZAC a plugin is developed to retrieve data from Suwinet. Service tasks are configured via process links, each supported Suwinet endpoint has its own plugin action.
-You can find an implementation in the generiekzaakafhandelcomponent repository https://github.com/generiekzaakafhandelcomponent/Plugins
+### Test content (with SoapUI)
 
-### Test the content with SoapUI
 Test requests are stored at src/main/resources/suwinet/data/ExampleRequests/
 
 SoapUI is an easy tool to test SOAP WS endpoints. When importing a WSDL in your SoapUI Project it will generate the requests for the available endpoints. 
@@ -46,7 +43,7 @@ The WSDL files are stored at src/main/resources/suwinet/Diensten/\<service\>/\<v
 
 The location of the responses is src/main/resources/suwinet/data/Responses/<BR>
 Based on the unique keys as **bsn**, **kenteken**, **Perceelnummer** in the request a xml response file is returned.
-The syntax of the response files are:
+The naming convention of the response files are:
 1. Kadaster - PersoonsInfo:<BR>KadasterDossierGSD_PersoonsInfo_\<Burgerservicenr\>.xml
 2. Kadaster - ObjectInfoKadastraleAanduiding:<BR>KadasterDossierGSD_ObjectInfoKadastraleAanduiding_\<CdKadastraleGemeente\>_\<KadastraalPerceelnr\>.xml
 3. UWV - UWVPersoonsIkvInfo:<BR>UWVDossierInkomstenGSD_UWVPersoonsIkvInfo_\<Burgerservicenr\>.xml

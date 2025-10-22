@@ -21,31 +21,20 @@
             </GeldigheidGegevensNationaliteit>
         </Nationaliteit>
         <DomicilieAdres>
-            <Postcd>2545CC</Postcd>
+            <Postcd>2511BT</Postcd>
             <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
-            <Straatnaam>Leyweg</Straatnaam>
-            <NaamOpenbareRuimte>Leyweg</NaamOpenbareRuimte>
-            <Huisnr>61</Huisnr>
+            <Straatnaam>Spui</Straatnaam>
+            <Huisnr>70</Huisnr>
             <IdentificatiecdVerblijfplaats>0530010002090227</IdentificatiecdVerblijfplaats>
             <IdentificatiecdNraanduiding>0530200002130217</IdentificatiecdNraanduiding>
-            <Huisletter>e</Huisletter>
+            <Huisletter>a</Huisletter>
             <Huisnrtoevoeging>Huis</Huisnrtoevoeging>
         </DomicilieAdres>
         <Verblijfstitel>
-            <CdVerblijfstitel>41</CdVerblijfstitel>
+            <CdVerblijfstitel>1</CdVerblijfstitel>
             <DatBVerblijfstitel>20120915</DatBVerblijfstitel>
             <DatEVerblijfstitel>20240915</DatEVerblijfstitel>
         </Verblijfstitel>
-        <Correspondentieadres>
-            <Postcd>5565RC</Postcd>
-            <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
-            <Straatnaam>Stratumseindstraat</Straatnaam>
-            <Huisnr>71</Huisnr>
-            <Huisletter>T</Huisletter>
-            <Huisnrtoevoeging>Huis</Huisnrtoevoeging>
-            <IdentificatiecdVerblijfplaats>0530010002090227</IdentificatiecdVerblijfplaats>
-            <IdentificatiecdNraanduiding>0530200002130217</IdentificatiecdNraanduiding>
-        </Correspondentieadres>
         <AangifteAdreshoudingBrp>
             <CdGemeenteVanInschrijving>0518</CdGemeenteVanInschrijving>
             <DatVanInschrijvingBijGemeente>19801023</DatVanInschrijvingBijGemeente>
