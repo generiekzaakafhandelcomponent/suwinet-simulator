@@ -5,10 +5,8 @@ import nl.bkwi.suwiml.diensten.bijstandsregelingen.v0500.BijstandsregelingenInfo
 
 import nl.bkwi.suwiml.diensten.bijstandsregelingen.v0500.BijstandsregelingenInfo_Type;
 import nl.bkwi.suwiml.diensten.bijstandsregelingen.v0500.ObjectFactory;
-import nl.bkwi.suwiml.diensten.brpdossierpersoongsd.v0200.AanvraagPersoonResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
@@ -42,11 +40,10 @@ public class BijstandsregelingenEndpoint extends SuwinetEndpoint {
 
     ObjectFactory objectFactory;
 
-    @Autowired
     public BijstandsregelingenEndpoint() {objectFactory = new ObjectFactory();}
 
 
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "AanvraagPersoon")
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "BijstandsregelingenInfo")
     @ResponsePayload
     public BijstandsregelingenInfoResponse getBijstandsregelingenInfo(@RequestPayload BijstandsregelingenInfo_Type request) throws JAXBException, SAXException, IOException {
 
@@ -56,7 +53,8 @@ public class BijstandsregelingenEndpoint extends SuwinetEndpoint {
         BijstandsregelingenInfoResponse response;
         if(resource == null) {
             response = objectFactory.createBijstandsregelingenInfoResponse();
-            addPersoonNietGevonden(response.getContent());
+
+            addNietGevonden(response.getContent());
         } else {
             response = (BijstandsregelingenInfoResponse) unmarshal(BijstandsregelingenInfoResponse.class,resource);
         }

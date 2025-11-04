@@ -25,8 +25,9 @@ import nl.bkwi.suwiml.fwi.v0205.FWI;
 @XmlRegistry
 public class ObjectFactory {
 
-    private static final QName _FWI_QNAME = new QName("http://bkwi.nl/SuwiML/FWI/v0205", "FWI");
     private static final QName _BijstandsregelingenInfoResponseClientSuwi_QNAME = new QName("", "ClientSuwi");
+
+    private static final QName _FWI_QNAME = new QName("http://bkwi.nl/SuwiML/FWI/v0205", "FWI");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: nl.bkwi.suwiml.diensten.bijstandsregelingen.v0500
@@ -378,16 +379,9 @@ public class ObjectFactory {
         return new JAXBElement<>(_BijstandsregelingenInfoResponseClientSuwi_QNAME, BijstandsregelingenInfoResponse.ClientSuwi.class, BijstandsregelingenInfoResponse.class, value);
     }
 
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link FWI }{@code >}
-     *
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link FWI }{@code >}
-     */
     @XmlElementDecl(namespace = "http://bkwi.nl/SuwiML/FWI/v0205", name = "FWI")
     public JAXBElement<FWI> createFWI(FWI value) {
         return new JAXBElement<>(_FWI_QNAME, FWI.class, null, value);
     }
+
 }

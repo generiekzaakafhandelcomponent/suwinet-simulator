@@ -72,4 +72,9 @@ public class SuwinetEndpoint {
         ObjectFactory objectFactory = new ObjectFactory();
         responseList.add(objectFactory.createNietsGevonden("Niet gevonden"));
     }
+
+    void addNietGevonden(List<JAXBElement<?>> responseList) {
+        var objectFactory = new ObjectFactory();
+        responseList.add(objectFactory.  createNietsGevonden("Niet gevonden"));
+    }
 }

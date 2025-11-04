@@ -24,6 +24,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
 @XmlRegistry
 public class ObjectFactory {
 
+    private static final QName _FWI_QNAME = new QName("http://bkwi.nl/SuwiML/FWI/v0205", "FWI");
     private static final QName _NietsGevonden_QNAME = new QName("http://bkwi.nl/SuwiML/FWI/v0205", "NietsGevonden");
     private static final QName _Fout_QNAME = new QName("http://bkwi.nl/SuwiML/FWI/v0205", "Fout");
     private static final QName _NietGerechtigd_QNAME = new QName("http://bkwi.nl/SuwiML/FWI/v0205", "NietGerechtigd");
