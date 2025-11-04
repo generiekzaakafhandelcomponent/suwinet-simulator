@@ -1,0 +1,983 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="c71fcf41-e408-4d9d-8cc5-6b025d1b74e2" activeEnvironment="Default" name="Bijstandsregelingen" resourceRoot="" soapui-version="5.9.1" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="8b859d98-9e23-470f-8d35-e8f1e9a0f6ff" wsaVersion="200508" name="BijstandsregelingenBinding" type="wsdl" bindingName="{http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500}BijstandsregelingenBinding" soapVersion="1_1" anonymous="optional" definition="file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Diensten/Bijstandsregelingen/v0500-b04/Bijstandsregelingen.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Diensten/Bijstandsregelingen/v0500-b04/Bijstandsregelingen.wsdl"><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Diensten/Bijstandsregelingen/v0500-b04/Bijstandsregelingen.wsdl</con:url><con:content><![CDATA[<!--edited with XMLSpy v2019 rel. 3 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<wsdl:definitions targetNamespace="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:smls="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500" xmlns:fwi="http://bkwi.nl/SuwiML/FWI/v0205" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:sp="http://schemas.xmlsoap.org/ws/2002/12/secext" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+  <wsdl:documentation>TLS 1.2 met cipher ECDHE-RSA-AES128-GCM-SHA256 
+
+		Elementen:
+ 
+		Het is niet toegestaan eigen header velden toe te voegen aan het bericht.
+
+		Timestamp
+		http://docs.oasis-open.org/wss/2004/01/oasis-200401-wsswssecurity-utility-1.0.xsd
+		wsu:Timestamp
+		wsu:Created is verplicht
+		wsu:Expires is optioneel
+
+		WS-Adressing: 
+		http://www.w3.org/2006/05/addressing/wsdl
+		Voor de richtlijnen zie: SuwiML Transactiestandaard versie 4.0
+
+		Digitale handtekening:
+		http://www.w3.org/2000/09/xmldsig#
+
+		Canonicalization
+		http://www.w3.org/2001/10/xml-exc-c14n#
+
+		Digest
+		SHA-2 minimaal SHA-224 of SHA-256
+		https://www.logius.nl/sites/default/files/public/bestanden/diensten/DigiKoppeling/Standaarden/Digikoppeling-Beveiligingsstandaarden-en-voorschriften.pdf
+		
+		Signature
+		SHA-2 minimaal SHA-224 of SHA-256
+		https://www.logius.nl/sites/default/files/public/bestanden/diensten/DigiKoppeling/Standaarden/Digikoppeling-Beveiligingsstandaarden-en-voorschriften.pdf
+
+		De volgende elementen dienen ondertekend worden:
+		- SOAP-Header (alle opgenomen header elementen)
+		- SOAP-Body
+		
+		https://www.logius.nl/sites/default/files/public/bestanden/diensten/DigiKoppeling/Standaarden/Digikoppeling-Koppelvlakstandaard-WUS.pdf
+		WB010: Publieke sleutel dat gebruikt is voor het signing proces dient meegeleverd te worden met het bericht via een ‘Direct security token’ reference.
+		Voor de richtlijnen zie: http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0.pdf
+		
+		Het gebruikte x.509 certificaat moet als binary security token meegeleverd worden.
+		http://docs.oasis-open.org/wss/2004/01/oasis-200401-wsswssecurity-secext-1.0.xsd
+		Voor de richtlijnen zie: 	http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0.pdf</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema targetNamespace="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500">
+      <xs:include schemaLocation="BodyAction.xsd"/>
+      <xs:include schemaLocation="BodyReaction.xsd"/>
+    </xs:schema>
+    <xs:schema targetNamespace="http://bkwi.nl/SuwiML/FWI/v0205">
+      <xs:include schemaLocation="../../../FWI/v0205/FWI.xsd"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="BijstandsregelingenInfo">
+    <wsdl:part name="parameters" element="smls:BijstandsregelingenInfo"/>
+  </wsdl:message>
+  <wsdl:message name="BijstandsregelingenInfoResponse">
+    <wsdl:part name="parameters" element="smls:BijstandsregelingenInfoResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AanvraagNietOk">
+    <wsdl:part name="parameters" element="fwi:Fout"/>
+  </wsdl:message>
+  <wsdl:portType name="BijstandsregelingenInfo">
+    <wsdl:operation name="BijstandsregelingenInfo">
+      <wsdl:input message="smls:BijstandsregelingenInfo" wsaw:Action="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen-v0500/BijstandsregelingenInfo"/>
+      <wsdl:output message="smls:BijstandsregelingenInfoResponse" wsaw:Action="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen-v0500/BijstandsregelingenInfoResponse"/>
+      <wsdl:fault name="AanvraagNietOk" message="smls:AanvraagNietOk" wsaw:Action="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen-v0500/Fout"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BijstandsregelingenBinding" type="smls:BijstandsregelingenInfo">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsaw:UsingAddressing wsdl:required="true"/>
+    <wsp:UsingPolicy wsdl:Required="true"/>
+    <wsp:Policy wsu:Id="SecurityPolicy">
+      <wsp:All>
+        <sp:SecurityToken>
+          <sp:TokenType>sp:X509v3</sp:TokenType>
+        </sp:SecurityToken>
+        <sp:SignedParts>
+          <sp:Header/>
+          <sp:Body/>
+        </sp:SignedParts>
+        <!--<sp:EncryptedParts>
+						<sp:Body/>
+					</sp:EncryptedParts>-->
+        <sp:TransportBinding>
+          <sp:IncludeTimeStamp/>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:Policy>
+    <wsdl:operation name="BijstandsregelingenInfo">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AanvraagNietOk">
+        <soap:fault name="AanvraagNietOk" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Diensten/Bijstandsregelingen/v0500-b04/BodyAction.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500" elementFormDefault="unqualified" attributeFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:sml="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns:smls="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500">
+  <!--16/01/2013 Een nieuwe versie Basisschema wordt in deze specs. toegepast.-->
+  <!--16/01/2013 De Header-v0500 wordt toegepast.-->
+  <!--26/06/2013 De structuur in BodyReaction wordt gelijkgetrokken aan de structuur van GSDDossierPersoon-v0500-->
+  <!--18/07/2014 Bericht GSDDossierPersoon is opgeknipt in 2 koppelvlakken: Bijstandsregelingen-v0500 en GSDDossierReintegratie-v0100-->
+  <!--10/07/2018 Specificatie wordt geconformeerd aan SuwiML Transactiestandaard versie 4.0-->
+  <!--23/10/2018 Bron binnen FWI maakt geen gebruik meer van KPV; daarom worden de Codelijsten voor KPV, die onderdeel zijn van de specs, verwijderd. Een nieuwe versie van FWI-v0205 wordt toegepast.-->
+  <!--Importeer het SuwiML basisschema.-->
+  <import namespace="http://bkwi.nl/SuwiML/Basisschema/v0801" schemaLocation="Include-sml.xsd"/>
+  <!--Definities voor de body structuur.-->
+  <element name="BijstandsregelingenInfo">
+    <complexType>
+      <sequence>
+        <element name="Burgerservicenr" type="sml:Burgerservicenr"/>
+      </sequence>
+    </complexType>
+  </element>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Diensten/Bijstandsregelingen/v0500-b04/Include-sml.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns="http://www.w3.org/2001/XMLSchema">
+  <!--Importeer de benodigde onderdelen uit het SuwiML basisschema.-->
+  <include schemaLocation="../../../Basisschema/v0801-b01/SimpleTypes/Burgerservicenr.xsd"/>
+  <include schemaLocation="../../../Basisschema/v0801-b01/SimpleTypes/Datum.xsd"/>
+  <include schemaLocation="../../../Basisschema/v0801-b01/SimpleTypes/NaamPersoonA200.xsd"/>
+  <include schemaLocation="../../../Basisschema/v0801-b01/SimpleTypes/NaamAdresNederlandAN24.xsd"/>
+  <include schemaLocation="../../../Basisschema/v0801-b01/SimpleTypes/NaamAdresNederlandAN40.xsd"/>
+  <include schemaLocation="../../../Basisschema/v0801-b01/SimpleTypes/NaamAdresNederlandAN70.xsd"/>
+  <include schemaLocation="../../../Basisschema/v0801-b01/SimpleTypes/NummerAdresNederlandN5.xsd"/>
+  <include schemaLocation="../../../Basisschema/v0801-b01/SimpleTypes/NummerAdresNederlandAN6.xsd"/>
+  <include schemaLocation="../../../Basisschema/v0801-b01/SimpleTypes/NummerN15.xsd"/>
+  <include schemaLocation="../../../Basisschema/v0801-b01/SimpleTypes/Postcd.xsd"/>
+  <include schemaLocation="../../../Basisschema/v0801-b01/SimpleTypes/OmschrijvingAN40.xsd"/>
+  <include schemaLocation="../../../Basisschema/v0801-b01/SimpleTypes/OmschrijvingAN100.xsd"/>
+  <include schemaLocation="../../../Basisschema/v0801-b01/ComplexTypes/StandaardBedr.xsd"/>
+  <include schemaLocation="../../../Basisschema/v0801-b01/SimpleTypes/Voorletters.xsd"/>
+  <include schemaLocation="../../../Basisschema/v0801-b01/SimpleTypes/AantalN2.xsd"/>
+  <include schemaLocation="../../../Basisschema/v0801-b01/TypedXsd/CdBeslissingOpAanvraagUitkering.xsd"/>
+  <include schemaLocation="../../../Basisschema/v0801-b01/TypedXsd/CdClassificatieBbz.xsd"/>
+  <include schemaLocation="../../../Basisschema/v0801-b01/TypedXsd/CdKolomSuwi.xsd"/>
+  <include schemaLocation="../../../Basisschema/v0801-b01/TypedXsd/CdPartijSuwi.xsd"/>
+  <include schemaLocation="../../../Basisschema/v0801-b01/TypedXsd/CdVestigingSuwi.xsd"/>
+  <include schemaLocation="../../../Basisschema/v0801-b01/TypedXsd/CdMunteenheid.xsd"/>
+  <include schemaLocation="../../../Basisschema/v0801-b01/CodedXsd/CdPeriode.xsd"/>
+  <include schemaLocation="../../../Basisschema/v0801-b01/CodedXsd/CdPositiefNegatief.xsd"/>
+  <include schemaLocation="../../../Basisschema/v0801-b01/TypedXsd/CdRedenVordering.xsd"/>
+  <include schemaLocation="../../../Basisschema/v0801-b01/TypedXsd/CdRelatieBewonerHuisvesting.xsd"/>
+  <include schemaLocation="../../../Basisschema/v0801-b01/TypedXsd/CdSrtKostenBijzBijstand.xsd"/>
+  <include schemaLocation="../../../Basisschema/v0801-b01/TypedXsd/CdSrtNormbedrag.xsd"/>
+  <include schemaLocation="../../../Basisschema/v0801-b01/TypedXsd/CdSrtOverigeInkomsten.xsd"/>
+  <include schemaLocation="../../../Basisschema/v0801-b01/TypedXsd/CdStatusVordering.xsd"/>
+  <include schemaLocation="../../../Basisschema/v0801-b01/TypedXsd/StdIndJN.xsd"/>
+  <include schemaLocation="../../../Basisschema/v0801-b01/TypedXsd/CdSzWet.xsd"/>
+  <include schemaLocation="../../../Basisschema/v0801-b01/TypedXsd/Geslacht.xsd"/>
+  <include schemaLocation="../../../Basisschema/v0801-b01/TypedXsd/Voorvoegsels.xsd"/>
+  <include schemaLocation="../../../Basisschema/v0801-b01/TypedXsd/CdLeefvorm.xsd"/>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Basisschema/v0801-b01/SimpleTypes/Burgerservicenr.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2012 (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<!--SuwiML Basisschema v0801-b01-->
+<xs:schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="Burgerservicenr">
+    <xs:restriction base="xs:string">
+      <xs:length value="9"/>
+      <xs:pattern value="\d*"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Basisschema/v0801-b01/SimpleTypes/Datum.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<!--SuwiML Basisschema v0801-b01-->
+<xs:schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="Datum">
+    <xs:restriction base="xs:string">
+      <xs:length value="8"/>
+      <xs:pattern value="(([0]{8})|([0]{4}((0[1-9])|(1[0-2]))((0[1-9])|([1-2][0-9])|(3[0-1])))|(([1-9][0-9]{3})|(0[1-9][0-9]{2})|(00[1-9][0-9])|(000[1-9]))((0[0-9])|(1[0-2]))((0[0-9])|([1-2][0-9])|(3[0-1])))"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Basisschema/v0801-b01/SimpleTypes/NaamPersoonA200.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<!--SuwiML Basisschema v0801-b01 2009-12-14T17:15:14.437+02:00-->
+<xs:schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="NaamPersoonA200">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="200"/>
+      <xs:pattern value="\D*"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Basisschema/v0801-b01/SimpleTypes/NaamAdresNederlandAN24.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2016 rel. 2 (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<xs:schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="NaamAdresNederlandAN24">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="24"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Basisschema/v0801-b01/SimpleTypes/NaamAdresNederlandAN40.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2016 rel. 2 (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns="http://www.w3.org/2001/XMLSchema">
+  <simpleType name="NaamAdresNederlandAN40">
+    <restriction base="string">
+      <maxLength value="40"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Basisschema/v0801-b01/SimpleTypes/NaamAdresNederlandAN70.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2016 rel. 2 (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<xs:schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="NaamAdresNederlandAN70">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="70"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Basisschema/v0801-b01/SimpleTypes/NummerAdresNederlandN5.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2016 rel. 2 (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<xs:schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="NummerAdresNederlandN5">
+    <xs:restriction base="xs:nonNegativeInteger">
+      <xs:totalDigits value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Basisschema/v0801-b01/SimpleTypes/NummerAdresNederlandAN6.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2016 rel. 2 (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<xs:schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="NummerAdresNederlandAN6">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="6"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Basisschema/v0801-b01/SimpleTypes/NummerN15.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<!--SuwiML Basisschema v0801-b01-->
+<xs:schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="NummerN15">
+    <xs:restriction base="xs:string">
+      <xs:length value="15"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Basisschema/v0801-b01/SimpleTypes/Postcd.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2016 rel. 2 (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<xs:schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="Postcd">
+    <xs:restriction base="xs:string">
+      <xs:length value="6"/>
+      <xs:pattern value="[1-9][0-9]{3}([a-z]|[A-Z]){2}"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Basisschema/v0801-b01/SimpleTypes/OmschrijvingAN40.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<!--SuwiML Basisschema v0801-b01-->
+<xs:schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="OmschrijvingAN40">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="40"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Basisschema/v0801-b01/SimpleTypes/OmschrijvingAN100.xsd</con:url><con:content><![CDATA[<!--SuwiML Basisschema v0801-b01-->
+<xs:schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="OmschrijvingAN100">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Basisschema/v0801-b01/ComplexTypes/StandaardBedr.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:sml="http://bkwi.nl/SuwiML/Basisschema/v0801">
+  <include schemaLocation="../CodedXsd/CdPeriode.xsd"/>
+  <include schemaLocation="../CodedXsd/CdPositiefNegatief.xsd"/>
+  <include schemaLocation="../SimpleTypes/WaardeBedr.xsd"/>
+  <include schemaLocation="../TypedXsd/CdMunteenheid.xsd"/>
+  <complexType name="StandaardBedr">
+    <sequence>
+      <element name="CdMunteenheid" type="sml:CdMunteenheid" minOccurs="0"/>
+      <element name="CdPositiefNegatief" type="sml:CdPositiefNegatief" minOccurs="0"/>
+      <element name="WaardeBedr" type="sml:WaardeBedr" minOccurs="0"/>
+      <element name="CdPeriodeEenheidGeldigheidBedr" type="sml:CdPeriode" minOccurs="0"/>
+    </sequence>
+  </complexType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Basisschema/v0801-b01/CodedXsd/CdPeriode.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<!--SuwiML Basisschema tabellen coded v0801-b01-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns="http://www.w3.org/2001/XMLSchema">
+  <!--CdPeriode v0801-b01 tabeldefinitie met codelijst-->
+  <simpleType name="CdPeriode">
+    <restriction base="string">
+      <enumeration value="01">
+        <annotation>
+          <documentation>Minuut</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="02">
+        <annotation>
+          <documentation>Uur</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="03">
+        <annotation>
+          <documentation>Dag</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="04">
+        <annotation>
+          <documentation>Week</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="05">
+        <annotation>
+          <documentation>4 weken</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="06">
+        <annotation>
+          <documentation>Maand</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="07">
+        <annotation>
+          <documentation>13 weken</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="08">
+        <annotation>
+          <documentation>Kwartaal</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="09">
+        <annotation>
+          <documentation>52 weken</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="10">
+        <annotation>
+          <documentation>Jaar</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="20">
+        <annotation>
+          <documentation>2 weken</documentation>
+        </annotation>
+      </enumeration>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Basisschema/v0801-b01/CodedXsd/CdPositiefNegatief.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<!--SuwiML Basisschema tabellen coded v0801-b01-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns="http://www.w3.org/2001/XMLSchema">
+  <!--CdPositiefNegatief v0801-b01 tabeldefinitie met codelijst-->
+  <simpleType name="CdPositiefNegatief">
+    <restriction base="string">
+      <enumeration value="+">
+        <annotation>
+          <documentation>Positief</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="-">
+        <annotation>
+          <documentation>Negatief</documentation>
+        </annotation>
+      </enumeration>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Basisschema/v0801-b01/SimpleTypes/WaardeBedr.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<!--SuwiML Basisschema v0801-b01 2009-12-14T17:15:14.437+02:00-->
+<xs:schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="WaardeBedr">
+    <xs:restriction base="xs:nonNegativeInteger">
+      <xs:totalDigits value="18"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Basisschema/v0801-b01/TypedXsd/CdMunteenheid.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<!--SuwiML Basisschema tabellen typed v0801-b01-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns="http://www.w3.org/2001/XMLSchema">
+  <!--CdMunteenheid v0801-b01 tabeldefinitie met type-aanduiding-->
+  <simpleType name="CdMunteenheid">
+    <restriction base="string">
+      <length value="3"/>
+      <pattern value="\D*"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Basisschema/v0801-b01/SimpleTypes/Voorletters.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2016 rel. 2 (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns="http://www.w3.org/2001/XMLSchema">
+  <simpleType name="Voorletters">
+    <restriction base="string">
+      <maxLength value="6"/>
+      <pattern value="([A-Z]{1,6})|[.]"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Basisschema/v0801-b01/SimpleTypes/AantalN2.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<!--SuwiML Basisschema v0801-b01-->
+<xs:schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="AantalN2">
+    <xs:restriction base="xs:nonNegativeInteger">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="99"/>
+      <xs:totalDigits value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Basisschema/v0801-b01/TypedXsd/CdBeslissingOpAanvraagUitkering.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<!--SuwiML Basisschema tabellen typed v0801-b01-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns="http://www.w3.org/2001/XMLSchema">
+  <!--CdBeslissingOpAanvraagUitkering v0801-b01 tabeldefinitie met type-aanduiding-->
+  <simpleType name="CdBeslissingOpAanvraagUitkering">
+    <restriction base="string">
+      <length value="2"/>
+      <pattern value="\d*"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Basisschema/v0801-b01/TypedXsd/CdClassificatieBbz.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<!--SuwiML Basisschema tabellen typed v0801-b01-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns="http://www.w3.org/2001/XMLSchema">
+  <!--CdClassificatieBbz v0801-b01 tabeldefinitie met type-aanduiding-->
+  <simpleType name="CdClassificatieBbz">
+    <restriction base="string">
+      <length value="1"/>
+      <pattern value="\d*"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Basisschema/v0801-b01/TypedXsd/CdKolomSuwi.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns="http://www.w3.org/2001/XMLSchema">
+  <!--CdKolomSuwi v0801-b01 tabeldefinitie met type-aanduiding-->
+  <simpleType name="CdKolomSuwi">
+    <restriction base="nonNegativeInteger">
+      <minInclusive value="0"/>
+      <maxInclusive value="99"/>
+      <totalDigits value="2"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Basisschema/v0801-b01/TypedXsd/CdPartijSuwi.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns="http://www.w3.org/2001/XMLSchema">
+  <!--CdPartijSuwi v0801-b01 tabeldefinitie met type-aanduiding-->
+  <simpleType name="CdPartijSuwi">
+    <restriction base="string">
+      <length value="4"/>
+      <pattern value="\d*"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Basisschema/v0801-b01/TypedXsd/CdVestigingSuwi.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns="http://www.w3.org/2001/XMLSchema">
+  <!--CdVestigingSuwi v0801-b01 tabeldefinitie met type-aanduiding-->
+  <simpleType name="CdVestigingSuwi">
+    <restriction base="string">
+      <length value="4"/>
+      <pattern value="\d*"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Basisschema/v0801-b01/TypedXsd/CdRedenVordering.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<!--SuwiML Basisschema tabellen typed v0801-b01-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns="http://www.w3.org/2001/XMLSchema">
+  <!--CdRedenVordering v0801-b01 tabeldefinitie met type-aanduiding-->
+  <simpleType name="CdRedenVordering">
+    <restriction base="string">
+      <length value="2"/>
+      <pattern value="\d*"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Basisschema/v0801-b01/TypedXsd/CdRelatieBewonerHuisvesting.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<!--SuwiML Basisschema tabellen typed v0801-b01-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns="http://www.w3.org/2001/XMLSchema">
+  <!--CdRelatieBewonerHuisvesting v0801-b01 tabeldefinitie met type-aanduiding-->
+  <simpleType name="CdRelatieBewonerHuisvesting">
+    <restriction base="nonNegativeInteger">
+      <minInclusive value="0"/>
+      <maxInclusive value="99"/>
+      <totalDigits value="2"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Basisschema/v0801-b01/TypedXsd/CdSrtKostenBijzBijstand.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<!--SuwiML Basisschema tabellen typed v0801-b01-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns="http://www.w3.org/2001/XMLSchema">
+  <!--CdSrtKostenBijzBijstand v0801-b01 tabeldefinitie met type-aanduiding-->
+  <simpleType name="CdSrtKostenBijzBijstand">
+    <restriction base="string">
+      <length value="2"/>
+      <pattern value="\d*"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Basisschema/v0801-b01/TypedXsd/CdSrtNormbedrag.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<!--SuwiML Basisschema tabellen typed v0801-b01-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns="http://www.w3.org/2001/XMLSchema">
+  <!--CdSrtNormbedrag v0801-b01 tabeldefinitie met type-aanduiding-->
+  <simpleType name="CdSrtNormbedrag">
+    <restriction base="string">
+      <length value="2"/>
+      <pattern value="\d*"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Basisschema/v0801-b01/TypedXsd/CdSrtOverigeInkomsten.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<!--SuwiML Basisschema tabellen typed v0801-b01-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns="http://www.w3.org/2001/XMLSchema">
+  <!--CdSrtOverigeInkomsten v0801-b01 tabeldefinitie met type-aanduiding-->
+  <simpleType name="CdSrtOverigeInkomsten">
+    <restriction base="nonNegativeInteger">
+      <minInclusive value="0"/>
+      <maxInclusive value="99"/>
+      <totalDigits value="2"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Basisschema/v0801-b01/TypedXsd/CdStatusVordering.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<!--SuwiML Basisschema tabellen typed v0801-b01-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns="http://www.w3.org/2001/XMLSchema">
+  <!--CdStatusVordering v0801-b01 tabeldefinitie met type-aanduiding-->
+  <simpleType name="CdStatusVordering">
+    <restriction base="string">
+      <length value="2"/>
+      <pattern value="\d*"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Basisschema/v0801-b01/TypedXsd/StdIndJN.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<!--SuwiML Basisschema tabellen typed v0801-b01-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns="http://www.w3.org/2001/XMLSchema">
+  <!--StdIndJN v0801-b01 tabeldefinitie met type-aanduiding-->
+  <simpleType name="StdIndJN">
+    <restriction base="string">
+      <length value="1"/>
+      <pattern value="\d*"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Basisschema/v0801-b01/TypedXsd/CdSzWet.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<!--SuwiML Basisschema tabellen typed v0801-b01-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns="http://www.w3.org/2001/XMLSchema">
+  <!--CdSzWet v0801-b01 tabeldefinitie met type-aanduiding-->
+  <simpleType name="CdSzWet">
+    <restriction base="string">
+      <maxLength value="5"/>
+      <pattern value="\D*"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Basisschema/v0801-b01/TypedXsd/Geslacht.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<!--SuwiML Basisschema tabellen typed v0801-b01-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns="http://www.w3.org/2001/XMLSchema">
+  <!--Geslacht v0801-b01 tabeldefinitie met type-aanduiding-->
+  <simpleType name="Geslacht">
+    <restriction base="string">
+      <length value="1"/>
+      <pattern value="\d*"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Basisschema/v0801-b01/TypedXsd/Voorvoegsels.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<!--SuwiML Basisschema tabellen typed v0801-b01-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns="http://www.w3.org/2001/XMLSchema">
+  <!--Voorvoegsels v0801-b01 tabeldefinitie met type-aanduiding-->
+  <simpleType name="Voorvoegsels">
+    <restriction base="string">
+      <maxLength value="10"/>
+      <pattern value="\D*"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Basisschema/v0801-b01/TypedXsd/CdLeefvorm.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<!--SuwiML Basisschema tabellen typed v0801-b01-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns="http://www.w3.org/2001/XMLSchema">
+  <!--CdLeefvorm v0801-b01 tabeldefinitie met type-aanduiding-->
+  <simpleType name="CdLeefvorm">
+    <restriction base="string">
+      <length value="2"/>
+      <pattern value="\d*"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Diensten/Bijstandsregelingen/v0500-b04/BodyReaction.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500" elementFormDefault="unqualified" attributeFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:sml="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns:smls="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500" xmlns:fwi="http://bkwi.nl/SuwiML/FWI/v0205">
+  <!--23/03/2010 Dit koppelvlak wordt "Bijstandsregelingen" genoemd, zodat de GSD-en later deze specs ook kunnen gebruiken.-->
+  <!--23/03/2010 Element "Voornamen" zit niet in de specs GSDDossierPersoon, wel het element "Voorletters". Element "Voorletters" is een afgeleid gegeven, daarom is het besloten dit gegeven niet meer in SGR 7.0 op te nemen. Het element "Voornamen" wordt in deze specs wel opgenomen als een optioneel element.-->
+  <!--23/03/2010 Gegevensgroep "Specifieke gegevens Bijzonder Bijstand" wordt in deze specs opgenomen, omdat het bij de Bijstandsregelingen valt.-->
+  <!--23/04/2010 Het element "fwi:NietsGevonden" is toegevoegd om te gebruiken indien het BSN niet gevonden wordt.-->
+  <!--16/01/2013 De elementen worden gevalideerd op basis van en gerelateerd aan Typed.-->
+  <!--16/01/2013 Uniformeren de FWI in BodyReaction.-->
+  <!--16/01/2013 Het formaat van "Woonplaatsnaam" en "Gemeentenaam" in entiteit Straatadres is aangepast conform de huidige standaard.-->
+  <!--16/01/2013 Het formaat van "IndVrijstellingArbeidsplicht" is aangepast conform SGR.-->
+  <!--16/01/2013 De wijzigingen in versie v0300 hebben betrekking op: het optioneel maken van "DatAanvraagUitkering"; het toevoegen van fraude-/recidive-gegevens: "IndRecidive"; "IndRobuusteIncassoToegepast"; "CdHoogteBestuurlijkeBoete"; "CdSrtSanctie" en "ParketnrJustitie" aan de entiteit "Vordering".-->
+  <!--16/01/2013 De wijzigingen in het kader van WWB-2012 worden op verzoek van SVB vooralsnog NIET doorgevoerd.-->
+  <!--26/06/2013 De structuur in BodyReaction wordt gelijkgetrokken aan de structuur van GSDDossierPersoon-v0500-->
+  <!--02/07/2013 Wijzigingen in de tag-namen: SpecifiekeGegevensBijstandUitk, CdAanleidingBijstandUitkering, CdAanleidingEindeBijstandUitk, InkomstenInvloedOpBijstandUitk, CdVrijstellingArbeidsplichtWwb, RedenMaatregelMbtBijstandUitk, CdRedenMaatregelMbtBijstandUitk, GevolgenMaatregelMbtBijstandUitk, InkomstenBijstandUitkering.-->
+  <!--02/07/2013 Fraude-gegevens worden "losgekoppeld" t.o.v. de Vordering-gegevens-->
+  <!--02/07/2013 De uitbreiding van gegevens t.b.v. de uitvoering van processen in het kader van Fraude-wet: DatOnherroepelijkVordering, CdRecidivetermijn, DatWaarschSchendInlichtingplicht.-->
+  <!--18/07/2014 Bericht GSDDossierPersoon is opgeknipt in 2 koppelvlakken: Bijstandsregelingen-v0500 en GSDDossierReintegratie-v0100-->
+  <!--18/07/2014 Bijstandsregelingen-v0500 bevat de wijzigingen: het opnieuw opnemen van element "CdLeefvorm" als onderdeel van ClientSuwi, het verwijderen van element "CdAanleidingBijstandUitkering" en element "CdNormGrondslag", het toevoegen van een nieuw element "AantKostendelers" in entiteit "SpecifiekeGegevensBijstandUitk", het wijzigen van tagelement "CdVrijstellingArbeidsplichtWwb" in "CdVrijstellingArbeidsplichtBijst", het toevoegen van een nieuw element "DatEVrijstellingArbeidsplicht" en element "CdRedenEVrijstArbeidsplichtBijst" in entiteit "VrijstellingArbeidsplicht", het vervangen van "Gezinslid" in "Partner" bij "AanvraagUitkering", "BijzondereBijstand" en "Uitkeringsverhouding", het wijzigen van formaat "ParketnrJustitie" en het opnemen van de nieuwe versie FWI-v0203.-->
+  <!--10/07/2018 Specificatie wordt geconformeerd aan SuwiML Transactiestandaard versie 4.0-->
+  <!--23/10/2018 Het schema "Bijstandsregelingen-Include.xsd" is aangepast in "Include-sml.xsd" t.b.v. de uniformiteit.-->
+  <!--23/10/2018 Bron binnen FWI maakt geen gebruik meer van KPV; daarom worden de Codelijsten voor KPV, die onderdeel zijn van de specs, verwijderd. Een nieuwe versie van FWI-v0205 wordt toegepast.-->
+  <!--Importeer het SuwiML basisschema.-->
+  <import namespace="http://bkwi.nl/SuwiML/Basisschema/v0801" schemaLocation="Include-sml.xsd"/>
+  <include schemaLocation="ComplexTypes/Bron.xsd"/>
+  <include schemaLocation="ComplexTypes/Straatadres.xsd"/>
+  <include schemaLocation="ComplexTypes/Partner.xsd"/>
+  <include schemaLocation="ComplexTypes/PartnerBijstand.xsd"/>
+  <include schemaLocation="TypedXsd/CdAanleidingEindeBijstandUitk.xsd"/>
+  <include schemaLocation="TypedXsd/CdClusterBijzBijstand.xsd"/>
+  <include schemaLocation="TypedXsd/CdHoogteBestuurlijkeBoete.xsd"/>
+  <include schemaLocation="TypedXsd/CdRecidivetermijn.xsd"/>
+  <include schemaLocation="TypedXsd/CdRedenEVrijstArbeidsplichtBijst.xsd"/>
+  <include schemaLocation="TypedXsd/CdRedenMaatregelMbtBijstandUitk.xsd"/>
+  <include schemaLocation="TypedXsd/CdSrtSanctie.xsd"/>
+  <include schemaLocation="TypedXsd/CdVrijstellingArbeidsplichtBijst.xsd"/>
+  <include schemaLocation="SimpleTypes/ParketnrJustitie.xsd"/>
+  <!--Importeer de FWI.-->
+  <import namespace="http://bkwi.nl/SuwiML/FWI/v0205" schemaLocation="../../../FWI/v0205/FWI.xsd"/>
+  <!--Definities voor de body structuur.-->
+  <element name="BijstandsregelingenInfoResponse">
+    <complexType>
+      <choice>
+        <sequence>
+          <element name="ClientSuwi">
+            <complexType>
+              <sequence>
+                <element name="Burgerservicenr" type="sml:Burgerservicenr"/>
+                <element name="Voornamen" type="sml:NaamPersoonA200" minOccurs="0"/>
+                <element name="Voorletters" type="sml:Voorletters" minOccurs="0"/>
+                <element name="Voorvoegsel" type="sml:Voorvoegsels" minOccurs="0"/>
+                <element name="SignificantDeelVanDeAchternaam" type="sml:NaamPersoonA200" minOccurs="0"/>
+                <element name="Geslacht" type="sml:Geslacht" minOccurs="0"/>
+                <element name="Geboortedat" type="sml:Datum" minOccurs="0"/>
+                <element name="CdLeefvorm" type="sml:CdLeefvorm" minOccurs="0"/>
+                <element name="DomicilieAdres" type="smls:Straatadres" minOccurs="0"/>
+                <element name="Huisvesting" minOccurs="0">
+                  <complexType>
+                    <sequence>
+                      <element name="CdRelatieBewonerHuisvesting" type="sml:CdRelatieBewonerHuisvesting"/>
+                    </sequence>
+                  </complexType>
+                </element>
+                <element name="SchendingInlichtingenplicht" minOccurs="0">
+                  <complexType>
+                    <sequence>
+                      <element name="DatWaarschSchendInlichtingplicht" type="sml:Datum"/>
+                    </sequence>
+                  </complexType>
+                </element>
+                <element name="DossierGsd" minOccurs="0">
+                  <complexType>
+                    <sequence>
+                      <element name="Dossiercd" type="sml:OmschrijvingAN40" minOccurs="0"/>
+                      <element name="DatOpnameGegevensInIbSysteem" type="sml:Datum" minOccurs="0"/>
+                    </sequence>
+                  </complexType>
+                </element>
+                <element name="Bron" type="smls:Bron" minOccurs="0"/>
+                <element name="AanvraagUitkering" minOccurs="0" maxOccurs="unbounded">
+                  <complexType>
+                    <sequence>
+                      <element name="DatAanvraagUitkering" type="sml:Datum" minOccurs="0"/>
+                      <element name="SzWet">
+                        <complexType>
+                          <sequence>
+                            <element name="CdSzWet" type="sml:CdSzWet"/>
+                          </sequence>
+                        </complexType>
+                      </element>
+                      <element name="BeslissingOpAanvraagUitkering" minOccurs="0">
+                        <complexType>
+                          <sequence>
+                            <element name="CdBeslissingOpAanvraagUitkering" type="sml:CdBeslissingOpAanvraagUitkering"/>
+                            <element name="DatDagtekeningBeslisOpAanvrUitk" type="sml:Datum" minOccurs="0"/>
+                          </sequence>
+                        </complexType>
+                      </element>
+                      <element name="PartnerAanvraagUitkering" minOccurs="0">
+                        <complexType>
+                          <complexContent>
+                            <extension base="smls:PartnerBijstand"/>
+                          </complexContent>
+                        </complexType>
+                      </element>
+                      <element name="Bron" type="smls:Bron"/>
+                    </sequence>
+                  </complexType>
+                </element>
+                <element name="Vordering" minOccurs="0" maxOccurs="unbounded">
+                  <complexType>
+                    <sequence>
+                      <element name="IdentificatienrVordering" type="sml:NummerN15" minOccurs="0"/>
+                      <element name="DatBesluitVordering" type="sml:Datum" minOccurs="0"/>
+                      <element name="CdRedenVordering" type="sml:CdRedenVordering" minOccurs="0"/>
+                      <element name="BedrAanvangVordering" type="sml:StandaardBedr" minOccurs="0"/>
+                      <element name="CdStatusVordering" type="sml:CdStatusVordering" minOccurs="0"/>
+                      <element name="BedrSaldoVordering" type="sml:StandaardBedr" minOccurs="0"/>
+                      <element name="DatOnherroepelijkVordering" type="sml:Datum" minOccurs="0"/>
+                      <element name="SzWet">
+                        <complexType>
+                          <sequence>
+                            <element name="CdSzWet" type="sml:CdSzWet"/>
+                          </sequence>
+                        </complexType>
+                      </element>
+                      <element name="PartnerVordering" minOccurs="0" maxOccurs="unbounded">
+                        <complexType>
+                          <complexContent>
+                            <extension base="smls:Partner"/>
+                          </complexContent>
+                        </complexType>
+                      </element>
+                      <element name="Fraude" minOccurs="0">
+                        <complexType>
+                          <sequence>
+                            <element name="IndRecidive" type="sml:StdIndJN" minOccurs="0"/>
+                            <element name="IndRobuusteIncassoToegepast" type="sml:StdIndJN" minOccurs="0"/>
+                            <element name="CdHoogteBestuurlijkeBoete" type="smls:CdHoogteBestuurlijkeBoete" minOccurs="0"/>
+                            <element name="CdSrtSanctie" type="smls:CdSrtSanctie" minOccurs="0"/>
+                            <element name="ParketnrJustitie" type="smls:ParketnrJustitie" minOccurs="0"/>
+                            <element name="CdRecidivetermijn" type="smls:CdRecidivetermijn" minOccurs="0"/>
+                          </sequence>
+                        </complexType>
+                      </element>
+                      <element name="Bron" type="smls:Bron"/>
+                    </sequence>
+                  </complexType>
+                </element>
+                <element name="SpecifiekeGegevensBijzBijstand" minOccurs="0" maxOccurs="unbounded">
+                  <complexType>
+                    <sequence>
+                      <element name="CdClusterBijzBijstand" type="smls:CdClusterBijzBijstand" minOccurs="0"/>
+                      <element name="OmsSrtKostenBijzBijstand" type="sml:OmschrijvingAN100" minOccurs="0"/>
+                      <element name="DatBetaalbaarBijzBijstand" type="sml:Datum" minOccurs="0"/>
+                      <element name="SzWet">
+                        <complexType>
+                          <sequence>
+                            <element name="CdSzWet" type="sml:CdSzWet"/>
+                          </sequence>
+                        </complexType>
+                      </element>
+                      <element name="PartnerBijzBijstand" minOccurs="0">
+                        <complexType>
+                          <complexContent>
+                            <extension base="smls:PartnerBijstand"/>
+                          </complexContent>
+                        </complexType>
+                      </element>
+                      <element name="Bron" type="smls:Bron"/>
+                    </sequence>
+                  </complexType>
+                </element>
+                <element name="Uitkeringsverhouding" minOccurs="0" maxOccurs="unbounded">
+                  <complexType>
+                    <sequence>
+                      <element name="DatBUitkeringsverhouding" type="sml:Datum"/>
+                      <element name="DatEUitkeringsverhouding" type="sml:Datum" minOccurs="0"/>
+                      <element name="SzWet">
+                        <complexType>
+                          <sequence>
+                            <element name="CdSzWet" type="sml:CdSzWet"/>
+                          </sequence>
+                        </complexType>
+                      </element>
+                      <element name="SpecifiekeGegevensBijstandUitk" minOccurs="0">
+                        <complexType>
+                          <sequence>
+                            <element name="CdAanleidingEindeBijstandUitk" type="smls:CdAanleidingEindeBijstandUitk" minOccurs="0"/>
+                            <element name="CdClassificatieBbz" type="sml:CdClassificatieBbz" minOccurs="0"/>
+                            <element name="AantKostendelers" type="sml:AantalN2" minOccurs="0"/>
+                          </sequence>
+                        </complexType>
+                      </element>
+                      <element name="InkomstenInvloedOpBijstandUitk" minOccurs="0" maxOccurs="unbounded">
+                        <complexType>
+                          <sequence>
+                            <element name="CdSrtOverigeInkomsten" type="sml:CdSrtOverigeInkomsten" minOccurs="0"/>
+                          </sequence>
+                        </complexType>
+                      </element>
+                      <element name="VrijstellingArbeidsplicht" minOccurs="0">
+                        <complexType>
+                          <sequence>
+                            <element name="CdVrijstellingArbeidsplichtBijst" type="smls:CdVrijstellingArbeidsplichtBijst"/>
+                            <element name="DatEVrijstellingArbeidsplicht" type="sml:Datum" minOccurs="0"/>
+                            <element name="CdRedenEVrijstArbeidsplichtBijst" type="smls:CdRedenEVrijstArbeidsplichtBijst" minOccurs="0"/>
+                          </sequence>
+                        </complexType>
+                      </element>
+                      <element name="PartnerUitkeringsverhouding" minOccurs="0">
+                        <complexType>
+                          <complexContent>
+                            <extension base="smls:PartnerBijstand"/>
+                          </complexContent>
+                        </complexType>
+                      </element>
+                      <element name="Uitkeringsperiode" maxOccurs="unbounded">
+                        <complexType>
+                          <sequence>
+                            <element name="DatBUitkeringsperiode" type="sml:Datum"/>
+                            <element name="DatEUitkeringsperiode" type="sml:Datum" minOccurs="0"/>
+                            <element name="MaatregelMbtUitkering" minOccurs="0" maxOccurs="unbounded">
+                              <complexType>
+                                <sequence>
+                                  <element name="DatBMaatregelMbtUitkering" type="sml:Datum"/>
+                                  <element name="DatEMaatregelMbtUitkering" type="sml:Datum" minOccurs="0"/>
+                                  <element name="RedenMaatregelMbtBijstandUitk" minOccurs="0">
+                                    <complexType>
+                                      <sequence>
+                                        <element name="CdRedenMaatregelMbtBijstandUitk" type="smls:CdRedenMaatregelMbtBijstandUitk" minOccurs="0"/>
+                                        <element name="GevolgenMaatregelMbtBijstandUitk" minOccurs="0">
+                                          <complexType>
+                                            <sequence>
+                                              <element name="BedrVerminderingUitkMbtMaatregel" type="sml:StandaardBedr"/>
+                                            </sequence>
+                                          </complexType>
+                                        </element>
+                                      </sequence>
+                                    </complexType>
+                                  </element>
+                                </sequence>
+                              </complexType>
+                            </element>
+                            <element name="InkomstenBijstandUitkering" minOccurs="0">
+                              <complexType>
+                                <sequence>
+                                  <element name="BedrTotaalInkomstenUitkering" type="sml:StandaardBedr" minOccurs="0"/>
+                                  <element name="BedrBetaalbaarGesteldeUitkering" type="sml:StandaardBedr" minOccurs="0"/>
+                                </sequence>
+                              </complexType>
+                            </element>
+                            <element name="Normbedrag" minOccurs="0" maxOccurs="unbounded">
+                              <complexType>
+                                <sequence>
+                                  <element name="CdSrtNormbedrag" type="sml:CdSrtNormbedrag"/>
+                                  <element name="CdMunteenheid" type="sml:CdMunteenheid" minOccurs="0"/>
+                                  <element name="WaardeBedr" type="sml:WaardeBedr"/>
+                                </sequence>
+                              </complexType>
+                            </element>
+                          </sequence>
+                        </complexType>
+                      </element>
+                      <element name="Bron" type="smls:Bron"/>
+                    </sequence>
+                  </complexType>
+                </element>
+              </sequence>
+            </complexType>
+          </element>
+          <element ref="fwi:FWI" minOccurs="0"/>
+        </sequence>
+        <element ref="fwi:FWI"/>
+        <element ref="fwi:NietsGevonden"/>
+      </choice>
+    </complexType>
+  </element>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/FWI/v0205/FWI.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/FWI/v0205" elementFormDefault="unqualified" attributeFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:fwi="http://bkwi.nl/SuwiML/FWI/v0205">
+  <!--Definities voor de Fault structuur.-->
+  <complexType name="FWI">
+    <sequence>
+      <choice maxOccurs="unbounded">
+        <element name="Fout" type="fwi:Melding"/>
+        <element name="Waarschuwing" type="fwi:Melding"/>
+        <element name="Informatie" type="fwi:Melding"/>
+      </choice>
+    </sequence>
+  </complexType>
+  <complexType name="Melding">
+    <sequence>
+      <element name="Code" type="string"/>
+      <element name="Tekst" type="string"/>
+      <element name="Detail" type="string" minOccurs="0" maxOccurs="unbounded"/>
+      <element name="Bron">
+        <complexType>
+          <sequence>
+            <element name="DN" type="string">
+              <annotation>
+                <documentation>DistinguishedName</documentation>
+              </annotation>
+            </element>
+          </sequence>
+        </complexType>
+      </element>
+    </sequence>
+  </complexType>
+  <element name="FWI" type="fwi:FWI"/>
+  <element name="Fout" type="fwi:Melding"/>
+  <element name="NietsGevonden"/>
+  <element name="NietGerechtigd"/>
+  <element name="NietVanToepassing"/>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Diensten/Bijstandsregelingen/v0500-b04/ComplexTypes/Bron.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500" elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:sml="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns:smls="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500">
+  <!--Importeer het SuwiML basisschema.-->
+  <import namespace="http://bkwi.nl/SuwiML/Basisschema/v0801" schemaLocation="../Include-sml.xsd"/>
+  <complexType name="Bron">
+    <sequence>
+      <element name="CdKolomSuwi" type="sml:CdKolomSuwi"/>
+      <element name="CdPartijSuwi" type="sml:CdPartijSuwi"/>
+      <element name="CdVestigingSuwi" type="sml:CdVestigingSuwi" minOccurs="0"/>
+    </sequence>
+  </complexType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Diensten/Bijstandsregelingen/v0500-b04/ComplexTypes/Straatadres.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500" elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:sml="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns:smls="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500">
+  <!--Importeer het SuwiML basisschema.-->
+  <import namespace="http://bkwi.nl/SuwiML/Basisschema/v0801" schemaLocation="../Include-sml.xsd"/>
+  <include schemaLocation="../SimpleTypes/NaamAdresNederlandAN80.xsd"/>
+  <complexType name="Straatadres">
+    <sequence>
+      <element name="Locatieoms" type="sml:NaamAdresNederlandAN70" minOccurs="0"/>
+      <element name="Postcd" type="sml:Postcd" minOccurs="0"/>
+      <element name="Woonplaatsnaam" type="smls:NaamAdresNederlandAN80" minOccurs="0"/>
+      <element name="Gemeentenaam" type="sml:NaamAdresNederlandAN40" minOccurs="0"/>
+      <element name="Straatnaam" type="sml:NaamAdresNederlandAN24" minOccurs="0"/>
+      <element name="Huisnr" type="sml:NummerAdresNederlandN5" minOccurs="0"/>
+      <element name="Huisnrtoevoeging" type="sml:NummerAdresNederlandAN6" minOccurs="0"/>
+    </sequence>
+  </complexType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Diensten/Bijstandsregelingen/v0500-b04/SimpleTypes/NaamAdresNederlandAN80.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500" xmlns="http://www.w3.org/2001/XMLSchema">
+  <simpleType name="NaamAdresNederlandAN80">
+    <restriction base="string">
+      <maxLength value="80"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Diensten/Bijstandsregelingen/v0500-b04/ComplexTypes/Partner.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500" elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:sml="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns:smls="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500">
+  <!--Importeer het SuwiML basisschema.-->
+  <import namespace="http://bkwi.nl/SuwiML/Basisschema/v0801" schemaLocation="../Include-sml.xsd"/>
+  <complexType name="Partner">
+    <sequence>
+      <element name="Burgerservicenr" type="sml:Burgerservicenr"/>
+    </sequence>
+  </complexType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Diensten/Bijstandsregelingen/v0500-b04/ComplexTypes/PartnerBijstand.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500" elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:sml="http://bkwi.nl/SuwiML/Basisschema/v0801" xmlns:smls="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500">
+  <!--Importeer het SuwiML basisschema.-->
+  <import namespace="http://bkwi.nl/SuwiML/Basisschema/v0801" schemaLocation="../Include-sml.xsd"/>
+  <complexType name="PartnerBijstand">
+    <sequence>
+      <element name="Burgerservicenr" type="sml:Burgerservicenr"/>
+      <element name="Voorletters" type="sml:Voorletters" minOccurs="0"/>
+      <element name="Voorvoegsel" type="sml:Voorvoegsels" minOccurs="0"/>
+      <element name="SignificantDeelVanDeAchternaam" type="sml:NaamPersoonA200" minOccurs="0"/>
+      <element name="Geboortedat" type="sml:Datum" minOccurs="0"/>
+    </sequence>
+  </complexType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Diensten/Bijstandsregelingen/v0500-b04/TypedXsd/CdAanleidingEindeBijstandUitk.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500" xmlns="http://www.w3.org/2001/XMLSchema">
+  <simpleType name="CdAanleidingEindeBijstandUitk">
+    <restriction base="string">
+      <length value="2"/>
+      <pattern value="\d*"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Diensten/Bijstandsregelingen/v0500-b04/TypedXsd/CdClusterBijzBijstand.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500" xmlns="http://www.w3.org/2001/XMLSchema">
+  <simpleType name="CdClusterBijzBijstand">
+    <restriction base="string">
+      <length value="1"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Diensten/Bijstandsregelingen/v0500-b04/TypedXsd/CdHoogteBestuurlijkeBoete.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500" xmlns="http://www.w3.org/2001/XMLSchema">
+  <simpleType name="CdHoogteBestuurlijkeBoete">
+    <restriction base="string">
+      <length value="1"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Diensten/Bijstandsregelingen/v0500-b04/TypedXsd/CdRecidivetermijn.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500" xmlns="http://www.w3.org/2001/XMLSchema">
+  <simpleType name="CdRecidivetermijn">
+    <restriction base="string">
+      <length value="1"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Diensten/Bijstandsregelingen/v0500-b04/TypedXsd/CdRedenEVrijstArbeidsplichtBijst.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500" xmlns="http://www.w3.org/2001/XMLSchema">
+  <simpleType name="CdRedenEVrijstArbeidsplichtBijst">
+    <restriction base="string">
+      <length value="2"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Diensten/Bijstandsregelingen/v0500-b04/TypedXsd/CdRedenMaatregelMbtBijstandUitk.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500" xmlns="http://www.w3.org/2001/XMLSchema">
+  <simpleType name="CdRedenMaatregelMbtBijstandUitk">
+    <restriction base="string">
+      <length value="2"/>
+      <pattern value="\d*"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Diensten/Bijstandsregelingen/v0500-b04/TypedXsd/CdSrtSanctie.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500" xmlns="http://www.w3.org/2001/XMLSchema">
+  <simpleType name="CdSrtSanctie">
+    <restriction base="string">
+      <length value="1"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Diensten/Bijstandsregelingen/v0500-b04/TypedXsd/CdVrijstellingArbeidsplichtBijst.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500" xmlns="http://www.w3.org/2001/XMLSchema">
+  <simpleType name="CdVrijstellingArbeidsplichtBijst">
+    <restriction base="string">
+      <length value="1"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/haiko/IdeaProjects/suwinet-simulator-ritense/src/main/resources/suwinet/Bijstandsregelingen/Diensten/Bijstandsregelingen/v0500-b04/SimpleTypes/ParketnrJustitie.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2018 rel. 2 (x64) (http://www.altova.com) by Shinta Hadiutomo (BKWI)-->
+<schema targetNamespace="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500" xmlns="http://www.w3.org/2001/XMLSchema">
+  <simpleType name="ParketnrJustitie">
+    <restriction base="string">
+      <maxLength value="15"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8090</con:endpoint></con:endpoints><con:operation id="2d0e8c8c-a681-4a69-9291-84d030e328db" isOneWay="false" action="" name="BijstandsregelingenInfo" bindingOperationName="BijstandsregelingenInfo" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="71ee63f4-e458-44cf-a820-f0496a0ef338" name="BijstandsRegelingenRequest" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@bind_address"/><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">true</con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/ws/Bijstandsregelingen-v0500</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v05="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <v05:BijstandsregelingenInfo>
+            <Burgerservicenr>111111110</Burgerservicenr>
+        </v05:BijstandsregelingenInfo>
+    </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>admin</con:username><con:password>admin</con:password><con:domain>localhost:8090</con:domain><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen-v0500/BijstandsregelingenInfo"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:endpointStrategy xsi:type="con:DefaultEndpointStrategy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:endpoint mode="OVERRIDE" username="admin" password="admin">http://localhost:8090</con:endpoint></con:endpointStrategy><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

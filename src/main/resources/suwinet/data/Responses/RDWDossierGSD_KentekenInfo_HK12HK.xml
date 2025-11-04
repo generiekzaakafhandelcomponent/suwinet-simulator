@@ -1,0 +1,33 @@
+<ns4:KentekenInfoResponse xmlns:ns3="http://bkwi.nl/SuwiML/FWI/v0205" xmlns:ns4="http://bkwi.nl/SuwiML/Diensten/RDWDossierGSD/v0200">
+    <ClientSuwi>
+        <Burgerservicenr>347910099</Burgerservicenr>
+        <Voorletters>A</Voorletters>
+        <SignificantDeelVanDeAchternaam>Janssen</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19720123</Geboortedat>
+        <RdwAdres>
+            <FeitelijkAdres>
+                <Straatadres>
+                    <Postcd>2525KG</Postcd>
+                    <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
+                    <Straatnaam>Fruitweg</Straatnaam>
+                    <Huisnr>27</Huisnr>
+                </Straatadres>
+            </FeitelijkAdres>
+        </RdwAdres>
+        <Aansprakelijke>
+            <Voertuig>
+                <CdSrtVoertuig>P</CdSrtVoertuig>
+                <KentekenVoertuig>HK12HK</KentekenVoertuig>
+                <MerkVoertuig>Suzuki</MerkVoertuig>
+                <TypeVoertuig>Swift</TypeVoertuig>
+                <HoofdkleurVoertuig>Grijs</HoofdkleurVoertuig>
+                <DatEersteInschrijvingVoertuigNat>20001215</DatEersteInschrijvingVoertuigNat>
+                <DatEersteInschrijvingVoertuigInt>20001215</DatEersteInschrijvingVoertuigInt>
+                <BedrBpm>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <WaardeBedr>685100</WaardeBedr>
+                </BedrBpm>
+            </Voertuig>
+        </Aansprakelijke>
+    </ClientSuwi>
+</ns4:KentekenInfoResponse>

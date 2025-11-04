@@ -1,0 +1,35 @@
+<ns3:PersoonsInfoResponse xmlns:ns3="http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300" xmlns:ns2="http://bkwi.nl/SuwiML/FWI/v0203">
+    <ClientSuwi>
+        <Burgerservicenr>347910099</Burgerservicenr>
+        <Voornamen>Anna</Voornamen>
+        <SignificantDeelVanDeAchternaam>Jansen</SignificantDeelVanDeAchternaam>
+        <Geslacht>2</Geslacht>
+        <Geboortedat>19730123</Geboortedat>
+        <DomicilieAdres>
+            <StraatadresBag>
+                <Postcd>2525KG</Postcd>
+                <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
+                <Straatnaam>Fruitweg</Straatnaam>
+                <Huisnr>27</Huisnr>
+            </StraatadresBag>
+        </DomicilieAdres>
+        <DatToestandKadaster>19950601</DatToestandKadaster>
+        <Eigendom>
+            <OnroerendeZaak>
+                <CdTypeOnroerendeZaak>P</CdTypeOnroerendeZaak>
+                <DatOntstaan>19950601</DatOntstaan>
+                <KadastraleAanduiding>
+                    <CdKadastraleGemeente>0518</CdKadastraleGemeente>
+                    <KadastraleGemeentenaam>'s-Gravenhage</KadastraleGemeentenaam>
+                    <KadastraleSectie>DD</KadastraleSectie>
+                    <KadastraalPerceelnr>11482</KadastraalPerceelnr>
+                </KadastraleAanduiding>
+                <OmsKadastraalObject>Bebouwd: Wonen (appartement)</OmsKadastraalObject>
+                <ZakelijkRecht>
+                    <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
+                </ZakelijkRecht>
+                <IndMeerGerechtigden>1</IndMeerGerechtigden>
+            </OnroerendeZaak>
+		</Eigendom>
+    </ClientSuwi>
+</ns3:PersoonsInfoResponse>

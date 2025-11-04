@@ -40,7 +40,6 @@ public class BRPDossierPersoonGSDEndpoint extends SuwinetEndpoint {
 
     ObjectFactory objectFactory;
 
-    @Autowired
     public BRPDossierPersoonGSDEndpoint() {objectFactory = new ObjectFactory();}
 
 

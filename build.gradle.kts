@@ -226,3 +226,25 @@ tasks.register("UWVDossierInkomstenGSDWsImport") {
         }
     }
 }
+
+tasks.register("BijstandsregelingenWsImport") {
+
+    doLast {
+        ant.withGroovyBuilder {
+            mkdir(suwinetSourceDir)
+            "taskdef"(
+                "name" to "wsimport",
+                "classname" to "com.sun.tools.ws.ant.WsImport",
+                "classpath" to configurations["jaxws"].asPath
+            )
+            "wsimport"(
+                "keep" to true,
+                "sourcedestdir" to suwinetSourceDir,
+                "wsdl" to "${projectDir}/src/main/resources/suwinet/Bijstandsregelingen/Diensten/Bijstandsregelingen/v0500-b04/Impl/BKWI.wsdl",
+                "verbose" to true
+            ) {
+                "xjcarg"("value" to "-XautoNameResolution")
+            }
+        }
+    }
+}

@@ -1,0 +1,12 @@
+_____            _             ____              _
+/  ___|          (_)           |  _ \            | |
+\ `--.  _ __  _ __ _ _ __   __ | |_) | ___   ___ | |_
+ `--. \| '_ \| '__| | '_ \ / _\|  _ < / _ \ / _ \| __|
+/\__/ /| |_) | |  | | | | | (_|| |_) | (_) | (_) | |_
+\____/ | .__/|_|  |_|_| |_|\__/|____/ \___/ \___/ \__|
+       | |
+       |_|
+
+Application: ${AnsiColor.BLUE}${spring.application.name}
+Spring Boot: ${AnsiColor.GREEN}${spring-boot.formatted-version}
+Profile: ${AnsiColor.RED}${spring.profiles.active:default}${AnsiColor.DEFAULT}

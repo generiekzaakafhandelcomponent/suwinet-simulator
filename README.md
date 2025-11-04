@@ -1,4 +1,4 @@
-# Gemeente Den Haag, simulation application for suwinet
+# Simulation application for suwinet
 
 This application is a microservice simulating Suwinet services. It is developed for test purposes.  The simulated service endpoints return predefined responses. Responses are uploaded as xml files to the resources folder of the repository. 
 The endpoint code is already generated based on Suwinet WSDLs.

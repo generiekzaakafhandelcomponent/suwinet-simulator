@@ -1,0 +1,33 @@
+<ns4:KentekenInfoResponse xmlns:ns3="http://bkwi.nl/SuwiML/FWI/v0205" xmlns:ns4="http://bkwi.nl/SuwiML/Diensten/RDWDossierGSD/v0200">
+    <ClientSuwi>
+        <Burgerservicenr>377549733</Burgerservicenr>
+        <Voorletters>K</Voorletters>
+        <SignificantDeelVanDeAchternaam>Janssen</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19700715</Geboortedat>
+        <RdwAdres>
+            <FeitelijkAdres>
+                <Straatadres>
+                    <Postcd>2525KG</Postcd>
+                    <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
+                    <Straatnaam>Fruitweg</Straatnaam>
+                    <Huisnr>27</Huisnr>
+                </Straatadres>
+            </FeitelijkAdres>
+        </RdwAdres>
+        <Aansprakelijke>
+            <Voertuig>
+                <CdSrtVoertuig>P</CdSrtVoertuig>
+                <KentekenVoertuig>LL11LL</KentekenVoertuig>
+                <MerkVoertuig>Toyota</MerkVoertuig>
+                <TypeVoertuig>Coralla</TypeVoertuig>
+                <HoofdkleurVoertuig>Blauw</HoofdkleurVoertuig>
+                <DatEersteInschrijvingVoertuigNat>20100325</DatEersteInschrijvingVoertuigNat>
+                <DatEersteInschrijvingVoertuigInt>20100325</DatEersteInschrijvingVoertuigInt>
+                <BedrBpm>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <WaardeBedr>685100</WaardeBedr>
+                </BedrBpm>
+            </Voertuig>
+        </Aansprakelijke>
+    </ClientSuwi>
+</ns4:KentekenInfoResponse>
