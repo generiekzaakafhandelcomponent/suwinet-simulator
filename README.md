@@ -27,7 +27,8 @@ The services baseurl is \<simulator-url\>/ws/, the following services are suppor
   4. \<simulator-url\>/ws/RDWDossierDigitaleDiensten-v0200/v1 - VoertuigbezitInfoPersoon
   5. \<simulator-url\>/ws/RDWDossierDigitaleDiensten-v0200/v1 - KentekenInfo
   6. \<simulator-url\>/ws/BRPDossierPersoonGSD-v0200/v1 - AanvraagPersoon
-  7. \<simulator-url\>/ws/DUODossierPersoonGSD-v0300/v1 - DUOPersoonsInfo
+  7. \<simulator-url\>/ws/DUODossierPersoonGSD-v0300/v1 - DUOPersoonsInfo 
+  8. \<simulator-url\>/ws/Bijstandsregelingen-v0500/v1 - BijstandsregelingenInfo
 
 You can find example client requests in src/main/resources/suwinet/data/ExampleRequests
 The simulator uses basic authentication.
@@ -51,6 +52,7 @@ The naming convention of the response files are:
 5. RDW - KentekenInfo:<BR>RDWDossierGSD_KentekenInfo_\<kenteken\>.xml
 6. BRP - AanvraagPersoon:<BR>BRPDossierPersoonGSD_AanvraagPersoon_\<Burgerservicenr\>.xml
 7. DUO - DUOPersoonsInfo:<BR>DUODossierPersoonGSD_DUOPersoonsInfo_\<Burgerservicenr\>.xml
+8. Bijstandsregelingen - Bijstandsregelingen:<BR>BijstandsregelingenInfo_\<Burgerservicenr\>.xml
 
 ### New WSDL endpoints
 
