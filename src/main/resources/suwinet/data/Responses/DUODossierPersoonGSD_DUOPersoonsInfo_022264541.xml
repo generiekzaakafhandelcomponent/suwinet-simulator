@@ -1,0 +1,155 @@
+<smls:DUOPersoonsInfoResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/DUODossierPersoonGSD/v0300">
+    <ClientSuwi>
+
+        <!-- DUO opleidingsinformatie van Nora Johansson (bsn: 022264541) - nieuw studieverloop -->
+        <Burgerservicenr>022264541</Burgerservicenr>
+        <IndStartkwalificatieDuo>1</IndStartkwalificatieDuo>
+
+        <!-- HAVO 2012 - 2017 -->
+        <Onderwijsovereenkomst>
+            <Brin>
+                <BrinNr>11AB</BrinNr>
+            </Brin>
+
+            <DatInschrijvingOpleiding>20120801</DatInschrijvingOpleiding>
+            <DatUitschrijvingOpleiding>20170715</DatUitschrijvingOpleiding>
+
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>20120801</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20130731</DatEDeelnameOpleiding>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>HAVO - leerjaar 1</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>VO-HAVO</CdNiveauOpleidingDuo>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>20130801</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20140731</DatEDeelnameOpleiding>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>HAVO - leerjaar 2</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>VO-HAVO</CdNiveauOpleidingDuo>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>20140801</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20150731</DatEDeelnameOpleiding>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>HAVO - leerjaar 3</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>VO-HAVO</CdNiveauOpleidingDuo>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>20150801</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20160731</DatEDeelnameOpleiding>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>HAVO - leerjaar 4</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>VO-HAVO</CdNiveauOpleidingDuo>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>20160801</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20170715</DatEDeelnameOpleiding>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>HAVO - eindexamenjaar</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>VO-HAVO</CdNiveauOpleidingDuo>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+
+        </Onderwijsovereenkomst>
+
+        <!-- HBO Bachelor Social Work (2017 - 2021) -->
+        <Onderwijsovereenkomst>
+            <Brin>
+                <BrinNr>19XY</BrinNr>
+            </Brin>
+
+            <DatInschrijvingOpleiding>20170901</DatInschrijvingOpleiding>
+            <DatUitschrijvingOpleiding>20210715</DatUitschrijvingOpleiding>
+
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>20170901</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20210715</DatEDeelnameOpleiding>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>HBO - Social Work</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>HBO-B</CdNiveauOpleidingDuo>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+
+        </Onderwijsovereenkomst>
+
+        <!-- HBO Master Jeugdzorg (2021 - 2023) -->
+        <Onderwijsovereenkomst>
+            <Brin>
+                <BrinNr>08QD</BrinNr>
+            </Brin>
+
+            <DatInschrijvingOpleiding>20210901</DatInschrijvingOpleiding>
+            <DatUitschrijvingOpleiding>20230630</DatUitschrijvingOpleiding>
+
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>20210901</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20230630</DatEDeelnameOpleiding>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>HBO - Master Jeugdzorg</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>HBO-M</CdNiveauOpleidingDuo>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+
+        </Onderwijsovereenkomst>
+
+        <!-- RESULTATEN -->
+
+        <!-- HAVO eindexamen -->
+        <ResultaatOpleidingGeregistrDuo>
+            <Brin>
+                <BrinNr>11AB</BrinNr>
+            </Brin>
+            <CdFaseOpleidingDuo>1</CdFaseOpleidingDuo>
+            <InhoudResultaatOpleidingDuo>
+                <NaamOpleidingKortDuo>HAVO</NaamOpleidingKortDuo>
+                <CdNiveauOpleidingDuo>VO-HAVO</CdNiveauOpleidingDuo>
+            </InhoudResultaatOpleidingDuo>
+            <ResultaatExamen>
+                <DatResultaatExamen>20170715</DatResultaatExamen>
+                <CdResultaatExamen>1</CdResultaatExamen>
+            </ResultaatExamen>
+        </ResultaatOpleidingGeregistrDuo>
+
+        <!-- Bachelor afgerond -->
+        <ResultaatOpleidingGeregistrDuo>
+            <Brin>
+                <BrinNr>19XY</BrinNr>
+            </Brin>
+            <CdFaseOpleidingDuo>2</CdFaseOpleidingDuo>
+            <InhoudResultaatOpleidingDuo>
+                <NaamOpleidingKortDuo>HBO Bachelor Social Work</NaamOpleidingKortDuo>
+                <CdNiveauOpleidingDuo>HBO-B</CdNiveauOpleidingDuo>
+            </InhoudResultaatOpleidingDuo>
+            <ResultaatExamen>
+                <DatResultaatExamen>20210715</DatResultaatExamen>
+                <CdResultaatExamen>3</CdResultaatExamen>
+            </ResultaatExamen>
+        </ResultaatOpleidingGeregistrDuo>
+
+        <!-- Master afgerond -->
+        <ResultaatOpleidingGeregistrDuo>
+            <Brin>
+                <BrinNr>08QD</BrinNr>
+            </Brin>
+            <CdFaseOpleidingDuo>3</CdFaseOpleidingDuo>
+            <InhoudResultaatOpleidingDuo>
+                <NaamOpleidingKortDuo>HBO Master Jeugdzorg</NaamOpleidingKortDuo>
+                <CdNiveauOpleidingDuo>HBO-M</CdNiveauOpleidingDuo>
+            </InhoudResultaatOpleidingDuo>
+            <ResultaatExamen>
+                <DatResultaatExamen>20230630</DatResultaatExamen>
+                <CdResultaatExamen>4</CdResultaatExamen>
+            </ResultaatExamen>
+        </ResultaatOpleidingGeregistrDuo>
+
+    </ClientSuwi>
+</smls:DUOPersoonsInfoResponse>

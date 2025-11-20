@@ -1,0 +1,69 @@
+<ns4:DUOStudiefinancieringInfoResponse xmlns:ns3="http://bkwi.nl/SuwiML/FWI/v0205"
+                                       xmlns:ns4="http://bkwi.nl/SuwiML/Diensten/DUODossierStudiefinancieringGSD/v0200">
+    <ClientSuwi>
+
+        <!-- DUO Stufi informatie van Nora Johansson (bsn: 022264541) -->
+        <Burgerservicenr>022264541</Burgerservicenr>
+
+        <!-- HBO Bachelor Social Work (inschrijving: 2017-09-01 t/m 2021-07-15) -->
+
+        <!-- Bachelor: studiejaar 2017-2018 -->
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20170901</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20180731</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>1</CdToekenningBasisbeursStufi>
+            <IndAanvullendeBeursStufi>1</IndAanvullendeBeursStufi>
+        </Studiefinanciering>
+
+        <!-- Bachelor: studiejaar 2018-2019 -->
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20180801</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20190731</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>1</CdToekenningBasisbeursStufi>
+            <IndAanvullendeBeursStufi>2</IndAanvullendeBeursStufi>
+        </Studiefinanciering>
+
+        <!-- Bachelor: studiejaar 2019-2020 -->
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20190801</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20200731</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>1</CdToekenningBasisbeursStufi>
+            <IndAanvullendeBeursStufi>2</IndAanvullendeBeursStufi>
+        </Studiefinanciering>
+
+        <!-- Bachelor: studiejaar 2020-2021 (laatste jaar tot en met maand na diplomering) -->
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20200801</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20210731</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>1</CdToekenningBasisbeursStufi>
+            <IndAanvullendeBeursStufi>2</IndAanvullendeBeursStufi>
+        </Studiefinanciering>
+
+        <!-- HBO Master Jeugdzorg (inschrijving: 2021-09-01 t/m 2023-06-30) -->
+
+        <!-- Master: najaar 2021 t/m zomer 2022 -->
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20210901</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20220731</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>1</CdToekenningBasisbeursStufi>
+            <IndAanvullendeBeursStufi>1</IndAanvullendeBeursStufi>
+        </Studiefinanciering>
+
+        <!-- Master: tweede deel 2022 -->
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20220801</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20221231</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>1</CdToekenningBasisbeursStufi>
+            <IndAanvullendeBeursStufi>2</IndAanvullendeBeursStufi>
+        </Studiefinanciering>
+
+        <!-- Master: afronding 2023 (tot einde maand van uitschrijving) -->
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20230101</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20230630</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>3</CdToekenningBasisbeursStufi>
+            <IndAanvullendeBeursStufi>1</IndAanvullendeBeursStufi>
+        </Studiefinanciering>
+
+    </ClientSuwi>
+</ns4:DUOStudiefinancieringInfoResponse>

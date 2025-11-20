@@ -1,0 +1,40 @@
+<ns4:KentekenInfoResponse xmlns:ns3="http://bkwi.nl/SuwiML/FWI/v0205"
+                          xmlns:ns4="http://bkwi.nl/SuwiML/Diensten/RDWDossierGSD/v0200">
+    <ClientSuwi>
+        
+         <!-- RDW Kentekeninfo van Motor van Lars Karlsson (bsn: 689735273) -->
+        <Burgerservicenr>689735273</Burgerservicenr>
+        <Voorletters>L</Voorletters>
+        <SignificantDeelVanDeAchternaam>Karlsson</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19990202</Geboortedat>
+
+        <RdwAdres>
+            <FeitelijkAdres>
+                <Straatadres>
+                    <Postcd>2511BT</Postcd>
+                    <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
+                    <Straatnaam>Spui</Straatnaam>
+                    <Huisnr>70</Huisnr>
+                </Straatadres>
+            </FeitelijkAdres>
+        </RdwAdres>
+
+        <Aansprakelijke>
+            <Voertuig>
+                <!-- M = motor (fictieve code) -->
+                <CdSrtVoertuig>M</CdSrtVoertuig>
+                <KentekenVoertuig>MT12GH</KentekenVoertuig>
+                <MerkVoertuig>YAMAHA</MerkVoertuig>
+                <TypeVoertuig>MT-07</TypeVoertuig>
+                <HoofdkleurVoertuig>ZWART</HoofdkleurVoertuig>
+                <!-- Motor uit 2017, Lars eigenaar vanaf 2018 -->
+                <DatEersteInschrijvingVoertuigNat>20170620</DatEersteInschrijvingVoertuigNat>
+                <DatEersteInschrijvingVoertuigInt>20170620</DatEersteInschrijvingVoertuigInt>
+                <BedrBpm>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <WaardeBedr>2150</WaardeBedr>
+                </BedrBpm>
+            </Voertuig>
+        </Aansprakelijke>
+    </ClientSuwi>
+</ns4:KentekenInfoResponse>

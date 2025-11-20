@@ -1,0 +1,178 @@
+<smls:UWVPersoonsIkvInfoResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/UWVDossierInkomstenGSD/v0200">
+    <ClientSuwi>
+        
+        <!-- Uwv inkomstenverhoudingen Lars Karlsson (bsn: 689735273) -->
+        <Burgerservicenr>689735273</Burgerservicenr>
+
+        <!-- 1. Werkgever in Den Haag: fulltime baan in de techniek -->
+        <Inkomstenverhouding>
+            <VolgnrIkv>1</VolgnrIkv>
+            <DatBIkv>20200101</DatBIkv>
+            <AdministratieveEenheid>
+                <NaamAdministratieveEenheid>TECHNISCH SERVICEPUNT DEN HAAG</NaamAdministratieveEenheid>
+                <Loonheffingennr>223344556L01</Loonheffingennr>
+                <RechtspersoonAdministratieveEenh>
+                    <FiNr>223344556</FiNr>
+                    <NaamRechtspersoon>TSN DEN HAAG B.V.</NaamRechtspersoon>
+                </RechtspersoonAdministratieveEenh>
+                <FeitelijkAdresAeh>
+                    <Straatadres>
+                        <Postcd>2491BD</Postcd>
+                        <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
+                        <Gemeentenaam>'s-Gravenhage</Gemeentenaam>
+                        <Straatnaam>Laan van Ypenburg</Straatnaam>
+                        <Huisnr>10</Huisnr>
+                    </Straatadres>
+                </FeitelijkAdresAeh>
+                <CorrespondentieadresAeh>
+                    <Straatadres>
+                        <Postcd>2491CA</Postcd>
+                        <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
+                        <Gemeentenaam>'s-Gravenhage</Gemeentenaam>
+                        <Straatnaam>Postbus</Straatnaam>
+                        <Huisnr>25</Huisnr>
+                    </Straatadres>
+                </CorrespondentieadresAeh>
+            </AdministratieveEenheid>
+            <Inkomstenperiode>
+                <DatBIkp>20200101</DatBIkp>
+                <DatEIkp>20211231</DatEIkp>
+                <CdSrtIkv>11</CdSrtIkv>
+                <CdTypeArbeidscontract>O</CdTypeArbeidscontract>
+                <CdInvloedVerzekeringsplicht>AB</CdInvloedVerzekeringsplicht>
+                <IndLoonheffingskortingToegepast>1</IndLoonheffingskortingToegepast>
+                <IndRegelmatigArbeidspatroon>1</IndRegelmatigArbeidspatroon>
+                <CdAardIkv>12</CdAardIkv>
+            </Inkomstenperiode>
+            <Inkomstenopgave>
+                <DatBIko>20210101</DatBIko>
+                <DatEIko>20210131</DatEIko>
+                <AantSvDagenIko>21</AantSvDagenIko>
+                <AantVerloondeUrenIko>168</AantVerloondeUrenIko>
+                <BedrBrutoloonSv>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>245000</WaardeBedr>
+                </BedrBrutoloonSv>
+                <BedrLoonLbPremieVolksverz>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>245000</WaardeBedr>
+                </BedrLoonLbPremieVolksverz>
+            </Inkomstenopgave>
+            <Inkomstenopgave>
+                <DatBIko>20210201</DatBIko>
+                <DatEIko>20210228</DatEIko>
+                <AantSvDagenIko>20</AantSvDagenIko>
+                <AantVerloondeUrenIko>160</AantVerloondeUrenIko>
+                <BedrBrutoloonSv>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>243500</WaardeBedr>
+                </BedrBrutoloonSv>
+                <BedrLoonLbPremieVolksverz>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>243500</WaardeBedr>
+                </BedrLoonLbPremieVolksverz>
+            </Inkomstenopgave>
+        </Inkomstenverhouding>
+
+        <!-- 2. UWV-uitkering (bijv. WIA na ziekte) -->
+        <Inkomstenverhouding>
+            <VolgnrIkv>2</VolgnrIkv>
+            <DatBIkv>20220101</DatBIkv>
+            <AdministratieveEenheid>
+                <NaamAdministratieveEenheid>UWV</NaamAdministratieveEenheid>
+                <Loonheffingennr>004444444L01</Loonheffingennr>
+                <RechtspersoonAdministratieveEenh>
+                    <FiNr>004444444</FiNr>
+                    <NaamRechtspersoon>UITVOERINGSINST. WERKNEMERSVERZEKERINGEN</NaamRechtspersoon>
+                </RechtspersoonAdministratieveEenh>
+                <FeitelijkAdresAeh>
+                    <Straatadres>
+                        <Postcd>1043BZ</Postcd>
+                        <Woonplaatsnaam>Amsterdam</Woonplaatsnaam>
+                        <Gemeentenaam>Amsterdam</Gemeentenaam>
+                        <Straatnaam>La Guardiaweg</Straatnaam>
+                        <Huisnr>116</Huisnr>
+                    </Straatadres>
+                </FeitelijkAdresAeh>
+            </AdministratieveEenheid>
+            <Inkomstenperiode>
+                <DatBIkp>20220101</DatBIkp>
+                <DatEIkp>20221231</DatEIkp>
+                <CdSrtIkv>53</CdSrtIkv>
+                <CdTypeArbeidscontract>U</CdTypeArbeidscontract>
+                <CdInvloedVerzekeringsplicht>AC</CdInvloedVerzekeringsplicht>
+                <IndLoonheffingskortingToegepast>1</IndLoonheffingskortingToegepast>
+                <CdAardIkv>13</CdAardIkv>
+            </Inkomstenperiode>
+            <Inkomstenopgave>
+                <DatBIko>20220401</DatBIko>
+                <DatEIko>20220430</DatEIko>
+                <AantSvDagenIko>30</AantSvDagenIko>
+                <AantVerloondeUrenIko>0</AantVerloondeUrenIko>
+                <BedrBrutoloonSv>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>180000</WaardeBedr>
+                </BedrBrutoloonSv>
+                <BedrLoonLbPremieVolksverz>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>180000</WaardeBedr>
+                </BedrLoonLbPremieVolksverz>
+            </Inkomstenopgave>
+        </Inkomstenverhouding>
+
+        <!-- 3. SVB-uitkering (Wlz) - exact gelijk aan SVB Lars: 20220101–20220131, 2600,00 bruto -->
+        <Inkomstenverhouding>
+            <VolgnrIkv>3</VolgnrIkv>
+            <DatBIkv>20220101</DatBIkv>
+            <AdministratieveEenheid>
+                <NaamAdministratieveEenheid>SOCIALE VERZEKERINGSBANK</NaamAdministratieveEenheid>
+                <Loonheffingennr>005555555L02</Loonheffingennr>
+                <RechtspersoonAdministratieveEenh>
+                    <FiNr>005555555</FiNr>
+                    <NaamRechtspersoon>SOCIALE VERZEKERINGSBANK</NaamRechtspersoon>
+                </RechtspersoonAdministratieveEenh>
+                <FeitelijkAdresAeh>
+                    <Straatadres>
+                        <Postcd>1180LA</Postcd>
+                        <Woonplaatsnaam>Amstelveen</Woonplaatsnaam>
+                        <Gemeentenaam>Amstelveen</Gemeentenaam>
+                        <Straatnaam>Postbus</Straatnaam>
+                        <Huisnr>1</Huisnr>
+                    </Straatadres>
+                </FeitelijkAdresAeh>
+            </AdministratieveEenheid>
+            <Inkomstenperiode>
+                <DatBIkp>20220101</DatBIkp>
+                <DatEIkp>20220131</DatEIkp>
+                <CdSrtIkv>85</CdSrtIkv>
+                <CdTypeArbeidscontract>U</CdTypeArbeidscontract>
+                <CdInvloedVerzekeringsplicht>AC</CdInvloedVerzekeringsplicht>
+                <CdAardIkv>15</CdAardIkv>
+            </Inkomstenperiode>
+            <Inkomstenopgave>
+                <DatBIko>20220101</DatBIko>
+                <DatEIko>20220131</DatEIko>
+                <AantSvDagenIko>31</AantSvDagenIko>
+                <AantVerloondeUrenIko>0</AantVerloondeUrenIko>
+                <BedrBrutoloonSv>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <!-- 2600,00 bruto in centen -->
+                    <WaardeBedr>260000</WaardeBedr>
+                </BedrBrutoloonSv>
+                <BedrLoonLbPremieVolksverz>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>260000</WaardeBedr>
+                </BedrLoonLbPremieVolksverz>
+            </Inkomstenopgave>
+        </Inkomstenverhouding>
+
+    </ClientSuwi>
+</smls:UWVPersoonsIkvInfoResponse>

@@ -1,0 +1,58 @@
+<ns3:ObjectInfoKadastraleAanduidingResponse xmlns:ns3="http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300" xmlns:ns2="http://bkwi.nl/SuwiML/FWI/v0203">
+    
+    <!-- Voormalige woning Utrecht van Nora Johansson (bsn: 022264541) -->
+    <OnroerendeZaak>
+        <DatToestandKadaster>20240215</DatToestandKadaster>
+        <CdTypeOnroerendeZaak>P</CdTypeOnroerendeZaak>
+        <DatOntstaan>20040901</DatOntstaan>
+
+        <KadastraleAanduiding>
+            <CdKadastraleGemeente>344</CdKadastraleGemeente>
+            <KadastraleGemeentenaam>Utrecht</KadastraleGemeentenaam>
+            <KadastraleSectie>K</KadastraleSectie>
+            <KadastraalPerceelnr>12873</KadastraalPerceelnr>
+        </KadastraleAanduiding>
+
+        <OmsKadastraalObject>Bebouwd: Wonen</OmsKadastraalObject>
+
+        <ZakelijkRecht>
+            <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
+        </ZakelijkRecht>
+
+        <PubliekrechtelijkeBeperking>
+            <AantekeningKadastraalObject>
+                <OmsAantekeningKadastraalObject>Geen beperkingen geregistreerd.</OmsAantekeningKadastraalObject>
+            </AantekeningKadastraalObject>
+        </PubliekrechtelijkeBeperking>
+
+        <BedrKoopsom>
+            <CdMunteenheid>EUR</CdMunteenheid>
+            <WaardeBedr>185000</WaardeBedr>
+        </BedrKoopsom>
+        <JaarAankoop>2004</JaarAankoop>
+
+        <WijzeVerkrijgingEigendom>
+            <CdWijzeVerkrijgingEigendom>H</CdWijzeVerkrijgingEigendom>
+            <DatVerkrijgingEigendom>20040901</DatVerkrijgingEigendom>
+        </WijzeVerkrijgingEigendom>
+
+        <IndMeerGerechtigden>1</IndMeerGerechtigden>
+
+        <Gerechtigde>
+            <NatuurlijkPersoon>
+                <Burgerservicenr>022264541</Burgerservicenr>
+                <Voornamen>Nora</Voornamen>
+                <SignificantDeelVanDeAchternaam>Johansson</SignificantDeelVanDeAchternaam>
+                <Geslacht>2</Geslacht>
+            </NatuurlijkPersoon>
+            <DomicilieAdres>
+                <StraatadresBag>
+                    <Postcd>2511BT</Postcd>
+                    <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
+                    <Straatnaam>Spui</Straatnaam>
+                    <Huisnr>70</Huisnr>
+                </StraatadresBag>
+            </DomicilieAdres>
+        </Gerechtigde>
+    </OnroerendeZaak>
+</ns3:ObjectInfoKadastraleAanduidingResponse>

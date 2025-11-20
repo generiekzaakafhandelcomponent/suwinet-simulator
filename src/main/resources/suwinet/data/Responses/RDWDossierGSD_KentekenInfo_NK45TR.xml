@@ -1,0 +1,40 @@
+<ns4:KentekenInfoResponse xmlns:ns3="http://bkwi.nl/SuwiML/FWI/v0205"
+                          xmlns:ns4="http://bkwi.nl/SuwiML/Diensten/RDWDossierGSD/v0200">
+    <ClientSuwi>
+        
+        <!-- RDW Kentekeninfo van Auto van Nora Johansson (bsn: 022264541) -->
+        <Burgerservicenr>022264541</Burgerservicenr>
+        <Voorletters>N</Voorletters>
+        <SignificantDeelVanDeAchternaam>Johansson</SignificantDeelVanDeAchternaam>
+        <Geboortedat>20000110</Geboortedat>
+
+        <RdwAdres>
+            <FeitelijkAdres>
+                <Straatadres>
+                    <Postcd>2511BT</Postcd>
+                    <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
+                    <Straatnaam>Spui</Straatnaam>
+                    <Huisnr>70</Huisnr>
+                </Straatadres>
+            </FeitelijkAdres>
+        </RdwAdres>
+
+        <Aansprakelijke>
+            <Voertuig>
+                <!-- P = personenauto (fictieve code) -->
+                <CdSrtVoertuig>P</CdSrtVoertuig>
+                <KentekenVoertuig>NK45TR</KentekenVoertuig>
+                <MerkVoertuig>VOLKSWAGEN</MerkVoertuig>
+                <TypeVoertuig>GOLF 1.5 TSI</TypeVoertuig>
+                <HoofdkleurVoertuig>BLAUW</HoofdkleurVoertuig>
+                <!-- Auto nieuw in 2020, Nora eigenaar vanaf 2021 -->
+                <DatEersteInschrijvingVoertuigNat>20200915</DatEersteInschrijvingVoertuigNat>
+                <DatEersteInschrijvingVoertuigInt>20200915</DatEersteInschrijvingVoertuigInt>
+                <BedrBpm>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <WaardeBedr>5420</WaardeBedr>
+                </BedrBpm>
+            </Voertuig>
+        </Aansprakelijke>
+    </ClientSuwi>
+</ns4:KentekenInfoResponse>

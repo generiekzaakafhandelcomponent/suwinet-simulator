@@ -1,0 +1,99 @@
+<ns3:PersoonsInfoResponse xmlns:ns3="http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300" xmlns:ns2="http://bkwi.nl/SuwiML/FWI/v0203">
+    
+    <!-- Kadasterinformatie van Nora Johansson (bsn: 022264541) -->
+    <ClientSuwi>
+        <Burgerservicenr>022264541</Burgerservicenr>
+        <Voornamen>Nora</Voornamen>
+        <SignificantDeelVanDeAchternaam>Johansson</SignificantDeelVanDeAchternaam>
+        <Geslacht>2</Geslacht>
+        <Geboortedat>19850312</Geboortedat>
+
+        <DomicilieAdres>
+            <StraatadresBag>
+                <Postcd>2511BT</Postcd>
+                <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
+                <Straatnaam>Spui</Straatnaam>
+                <Huisnr>70</Huisnr>
+            </StraatadresBag>
+        </DomicilieAdres>
+
+        <DatToestandKadaster>20240215</DatToestandKadaster>
+
+        <Eigendom>
+            <!-- Hoofdwoning Den Haag -->
+            <OnroerendeZaak>
+                <CdTypeOnroerendeZaak>P</CdTypeOnroerendeZaak>
+                <DatOntstaan>20200120</DatOntstaan>
+                <KadastraleAanduiding>
+                    <CdKadastraleGemeente>518</CdKadastraleGemeente>
+                    <KadastraleGemeentenaam>'s-Gravenhage</KadastraleGemeentenaam>
+                    <KadastraleSectie>AJ</KadastraleSectie>
+                    <KadastraalPerceelnr>38217</KadastraalPerceelnr>
+                </KadastraleAanduiding>
+                <OmsKadastraalObject>Bebouwd: Appartement</OmsKadastraalObject>
+                <ZakelijkRecht>
+                    <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
+                </ZakelijkRecht>
+                <LocatieOZ>
+                    <StraatadresBag>
+                        <Postcd>2511BT</Postcd>
+                        <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
+                        <Straatnaam>Spui</Straatnaam>
+                        <Huisnr>70</Huisnr>
+                    </StraatadresBag>
+                </LocatieOZ>
+                <PubliekrechtelijkeBeperking>
+                    <AantekeningKadastraalObject>
+                        <OmsAantekeningKadastraalObject>Geen beperkingen geregistreerd.</OmsAantekeningKadastraalObject>
+                    </AantekeningKadastraalObject>
+                </PubliekrechtelijkeBeperking>
+                <IndMeerGerechtigden>2</IndMeerGerechtigden>
+            </OnroerendeZaak>
+
+            <!-- Voormalige huurwoning in Utrecht (studententijd) -->
+            <OnroerendeZaak>
+                <CdTypeOnroerendeZaak>P</CdTypeOnroerendeZaak>
+                <DatOntstaan>20040901</DatOntstaan>
+                <KadastraleAanduiding>
+                    <CdKadastraleGemeente>344</CdKadastraleGemeente>
+                    <KadastraleGemeentenaam>Utrecht</KadastraleGemeentenaam>
+                    <KadastraleSectie>K</KadastraleSectie>
+                    <KadastraalPerceelnr>12873</KadastraalPerceelnr>
+                </KadastraleAanduiding>
+                <OmsKadastraalObject>Bebouwd: Wonen</OmsKadastraalObject>
+                <ZakelijkRecht>
+                    <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
+                </ZakelijkRecht>
+                <PubliekrechtelijkeBeperking>
+                    <AantekeningKadastraalObject>
+                        <OmsAantekeningKadastraalObject>Geen beperkingen geregistreerd.</OmsAantekeningKadastraalObject>
+                    </AantekeningKadastraalObject>
+                </PubliekrechtelijkeBeperking>
+                <IndMeerGerechtigden>1</IndMeerGerechtigden>
+            </OnroerendeZaak>
+
+            <!-- Parkeerplaats bij huidige woning -->
+            <OnroerendeZaak>
+                <CdTypeOnroerendeZaak>P</CdTypeOnroerendeZaak>
+                <DatOntstaan>20200120</DatOntstaan>
+                <KadastraleAanduiding>
+                    <CdKadastraleGemeente>518</CdKadastraleGemeente>
+                    <KadastraleGemeentenaam>'s-Gravenhage</KadastraleGemeentenaam>
+                    <KadastraleSectie>AJ</KadastraleSectie>
+                    <KadastraalPerceelnr>39218</KadastraalPerceelnr>
+                </KadastraleAanduiding>
+                <OmsKadastraalObject>Onbebouwd: Parkeerplaats</OmsKadastraalObject>
+                <ZakelijkRecht>
+                    <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
+                </ZakelijkRecht>
+                <PubliekrechtelijkeBeperking>
+                    <AantekeningKadastraalObject>
+                        <OmsAantekeningKadastraalObject>Geen beperkingen geregistreerd.</OmsAantekeningKadastraalObject>
+                    </AantekeningKadastraalObject>
+                </PubliekrechtelijkeBeperking>
+                <IndMeerGerechtigden>1</IndMeerGerechtigden>
+            </OnroerendeZaak>
+
+        </Eigendom>
+    </ClientSuwi>
+</ns3:PersoonsInfoResponse>

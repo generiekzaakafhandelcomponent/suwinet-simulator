@@ -1,0 +1,39 @@
+<ns4:KentekenInfoResponse xmlns:ns3="http://bkwi.nl/SuwiML/FWI/v0205"
+                          xmlns:ns4="http://bkwi.nl/SuwiML/Diensten/RDWDossierGSD/v0200">
+    <ClientSuwi>
+        
+        <!-- RDW Kentekeninfo van Auto van Lars Karlsson (bsn: 689735273) -->
+        <Burgerservicenr>689735273</Burgerservicenr>
+        <Voorletters>L</Voorletters>
+        <SignificantDeelVanDeAchternaam>Karlsson</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19990202</Geboortedat>
+
+        <RdwAdres>
+            <FeitelijkAdres>
+                <Straatadres>
+                    <Postcd>2511BT</Postcd>
+                    <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
+                    <Straatnaam>Spui</Straatnaam>
+                    <Huisnr>70</Huisnr>
+                </Straatadres>
+            </FeitelijkAdres>
+        </RdwAdres>
+
+        <Aansprakelijke>
+            <Voertuig>
+                <CdSrtVoertuig>P</CdSrtVoertuig>
+                <KentekenVoertuig>LS89KP</KentekenVoertuig>
+                <MerkVoertuig>TOYOTA</MerkVoertuig>
+                <TypeVoertuig>YARIS 1.3</TypeVoertuig>
+                <HoofdkleurVoertuig>GRIJS</HoofdkleurVoertuig>
+                <!-- Auto uit 2018, Lars eigenaar vanaf 2019 -->
+                <DatEersteInschrijvingVoertuigNat>20180310</DatEersteInschrijvingVoertuigNat>
+                <DatEersteInschrijvingVoertuigInt>20180310</DatEersteInschrijvingVoertuigInt>
+                <BedrBpm>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <WaardeBedr>3760</WaardeBedr>
+                </BedrBpm>
+            </Voertuig>
+        </Aansprakelijke>
+    </ClientSuwi>
+</ns4:KentekenInfoResponse>
