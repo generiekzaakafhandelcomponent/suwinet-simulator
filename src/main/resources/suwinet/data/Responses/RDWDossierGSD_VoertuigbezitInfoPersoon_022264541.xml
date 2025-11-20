@@ -1,0 +1,33 @@
+<smls:VoertuigbezitInfoPersoonResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/RDWDossierGSD/v0200">
+    <ClientSuwi>
+        
+        <!-- RDW voertuigbezitinfo van Nora Johansson (bsn: 022264541) -->
+        <Burgerservicenr>022264541</Burgerservicenr>
+        <Voorletters>N</Voorletters>
+        <SignificantDeelVanDeAchternaam>Johansson</SignificantDeelVanDeAchternaam>
+        <Geboortedat>20000110</Geboortedat>
+
+        <RdwAdres>
+            <FeitelijkAdres>
+                <Straatadres>
+                    <Postcd>2511BT</Postcd>
+                    <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
+                    <Straatnaam>Spui</Straatnaam>
+                    <Huisnr>70</Huisnr>
+                </Straatadres>
+            </FeitelijkAdres>
+        </RdwAdres>
+
+        <!-- Nora heeft één auto -->
+        <Aansprakelijke>
+            <DatRegistratieAansprakelijkheid>20211001</DatRegistratieAansprakelijkheid>
+            <Voertuig>
+                <KentekenVoertuig>NK45TR</KentekenVoertuig>
+                <StatusVoertuig>
+                    <CdStatusVoertuig>87</CdStatusVoertuig>
+                    <DatBStatusVoertuig>20211001</DatBStatusVoertuig>
+                </StatusVoertuig>
+            </Voertuig>
+        </Aansprakelijke>
+    </ClientSuwi>
+</smls:VoertuigbezitInfoPersoonResponse>

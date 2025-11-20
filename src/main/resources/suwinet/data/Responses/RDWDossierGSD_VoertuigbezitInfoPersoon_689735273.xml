@@ -1,0 +1,45 @@
+<smls:VoertuigbezitInfoPersoonResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/RDWDossierGSD/v0200">
+    <ClientSuwi>
+        
+        <!-- RDW voertuigbezitinfo van Lars Karlsson (bsn: 689735273) -->
+        <Burgerservicenr>689735273</Burgerservicenr>
+        <Voorletters>L</Voorletters>
+        <SignificantDeelVanDeAchternaam>Karlsson</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19990202</Geboortedat>
+
+        <RdwAdres>
+            <FeitelijkAdres>
+                <Straatadres>
+                    <Postcd>2511BT</Postcd>
+                    <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
+                    <Straatnaam>Spui</Straatnaam>
+                    <Huisnr>70</Huisnr>
+                </Straatadres>
+            </FeitelijkAdres>
+        </RdwAdres>
+
+        <!-- Auto van Lars -->
+        <Aansprakelijke>
+            <DatRegistratieAansprakelijkheid>20190401</DatRegistratieAansprakelijkheid>
+            <Voertuig>
+                <KentekenVoertuig>LS89KP</KentekenVoertuig>
+                <StatusVoertuig>
+                    <CdStatusVoertuig>87</CdStatusVoertuig>
+                    <DatBStatusVoertuig>20190401</DatBStatusVoertuig>
+                </StatusVoertuig>
+            </Voertuig>
+        </Aansprakelijke>
+
+        <!-- Motor van Lars -->
+        <Aansprakelijke>
+            <DatRegistratieAansprakelijkheid>20180701</DatRegistratieAansprakelijkheid>
+            <Voertuig>
+                <KentekenVoertuig>MT12GH</KentekenVoertuig>
+                <StatusVoertuig>
+                    <CdStatusVoertuig>87</CdStatusVoertuig>
+                    <DatBStatusVoertuig>20180701</DatBStatusVoertuig>
+                </StatusVoertuig>
+            </Voertuig>
+        </Aansprakelijke>
+    </ClientSuwi>
+</smls:VoertuigbezitInfoPersoonResponse>

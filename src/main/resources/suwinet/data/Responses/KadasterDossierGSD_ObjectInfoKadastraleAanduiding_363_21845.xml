@@ -1,0 +1,58 @@
+<ns3:ObjectInfoKadastraleAanduidingResponse xmlns:ns3="http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300" xmlns:ns2="http://bkwi.nl/SuwiML/FWI/v0203">
+    
+    <!-- Appartement van Lars Karlsson (bsn: 689735273) -->
+    <OnroerendeZaak>
+        <DatToestandKadaster>20240215</DatToestandKadaster>
+        <CdTypeOnroerendeZaak>P</CdTypeOnroerendeZaak>
+        <DatOntstaan>20070315</DatOntstaan>
+
+        <KadastraleAanduiding>
+            <CdKadastraleGemeente>363</CdKadastraleGemeente>
+            <KadastraleGemeentenaam>Amsterdam</KadastraleGemeentenaam>
+            <KadastraleSectie>N</KadastraleSectie>
+            <KadastraalPerceelnr>21845</KadastraalPerceelnr>
+        </KadastraleAanduiding>
+
+        <OmsKadastraalObject>Bebouwd: Appartement</OmsKadastraalObject>
+
+        <ZakelijkRecht>
+            <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
+        </ZakelijkRecht>
+
+        <PubliekrechtelijkeBeperking>
+            <AantekeningKadastraalObject>
+                <OmsAantekeningKadastraalObject>Er zijn geen beperkingen bekend in de Landelijke Voorziening WKPB.</OmsAantekeningKadastraalObject>
+            </AantekeningKadastraalObject>
+        </PubliekrechtelijkeBeperking>
+
+        <BedrKoopsom>
+            <CdMunteenheid>EUR</CdMunteenheid>
+            <WaardeBedr>210000</WaardeBedr>
+        </BedrKoopsom>
+        <JaarAankoop>2007</JaarAankoop>
+
+        <WijzeVerkrijgingEigendom>
+            <CdWijzeVerkrijgingEigendom>H</CdWijzeVerkrijgingEigendom>
+            <DatVerkrijgingEigendom>20070315</DatVerkrijgingEigendom>
+        </WijzeVerkrijgingEigendom>
+
+        <IndMeerGerechtigden>1</IndMeerGerechtigden>
+
+        <Gerechtigde>
+            <NatuurlijkPersoon>
+                <Burgerservicenr>689735273</Burgerservicenr>
+                <Voornamen>Lars</Voornamen>
+                <SignificantDeelVanDeAchternaam>Karlsson</SignificantDeelVanDeAchternaam>
+                <Geslacht>1</Geslacht>
+            </NatuurlijkPersoon>
+            <DomicilieAdres>
+                <StraatadresBag>
+                    <Postcd>2511BT</Postcd>
+                    <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
+                    <Straatnaam>Spui</Straatnaam>
+                    <Huisnr>70</Huisnr>
+                </StraatadresBag>
+            </DomicilieAdres>
+        </Gerechtigde>
+    </OnroerendeZaak>
+</ns3:ObjectInfoKadastraleAanduidingResponse>

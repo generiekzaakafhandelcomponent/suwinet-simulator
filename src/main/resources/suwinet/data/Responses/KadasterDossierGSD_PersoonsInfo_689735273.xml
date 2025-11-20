@@ -1,0 +1,100 @@
+<ns3:PersoonsInfoResponse xmlns:ns3="http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300" xmlns:ns2="http://bkwi.nl/SuwiML/FWI/v0203">
+    <ClientSuwi>
+        
+        <!-- Kadasterinformatie van Lars karlsson (bsn: 689735273) -->
+        <Burgerservicenr>689735273</Burgerservicenr>
+        <Voornamen>Lars</Voornamen>
+        <SignificantDeelVanDeAchternaam>Karlsson</SignificantDeelVanDeAchternaam>
+        <Geslacht>1</Geslacht>
+        <Geboortedat>19831102</Geboortedat>
+
+        <DomicilieAdres>
+            <StraatadresBag>
+                <Postcd>2511BT</Postcd>
+                <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
+                <Straatnaam>Spui</Straatnaam>
+                <Huisnr>70</Huisnr>
+            </StraatadresBag>
+        </DomicilieAdres>
+
+        <DatToestandKadaster>20240215</DatToestandKadaster>
+
+        <Eigendom>
+
+            <!-- Hoofdwoning samen met Nora -->
+            <OnroerendeZaak>
+                <CdTypeOnroerendeZaak>P</CdTypeOnroerendeZaak>
+                <DatOntstaan>20200120</DatOntstaan>
+                <KadastraleAanduiding>
+                    <CdKadastraleGemeente>518</CdKadastraleGemeente>
+                    <KadastraleGemeentenaam>'s-Gravenhage</KadastraleGemeentenaam>
+                    <KadastraleSectie>AJ</KadastraleSectie>
+                    <KadastraalPerceelnr>38217</KadastraalPerceelnr>
+                </KadastraleAanduiding>
+                <OmsKadastraalObject>Bebouwd: Appartement</OmsKadastraalObject>
+                <ZakelijkRecht>
+                    <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
+                </ZakelijkRecht>
+                <LocatieOZ>
+                    <StraatadresBag>
+                        <Postcd>2511BT</Postcd>
+                        <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
+                        <Straatnaam>Spui</Straatnaam>
+                        <Huisnr>70</Huisnr>
+                    </StraatadresBag>
+                </LocatieOZ>
+                <PubliekrechtelijkeBeperking>
+                    <AantekeningKadastraalObject>
+                        <OmsAantekeningKadastraalObject>Geen beperkingen geregistreerd.</OmsAantekeningKadastraalObject>
+                    </AantekeningKadastraalObject>
+                </PubliekrechtelijkeBeperking>
+                <IndMeerGerechtigden>2</IndMeerGerechtigden>
+            </OnroerendeZaak>
+
+            <!-- Appartement van vóór zijn verhuizing naar Den Haag (Amsterdam) -->
+            <OnroerendeZaak>
+                <CdTypeOnroerendeZaak>P</CdTypeOnroerendeZaak>
+                <DatOntstaan>20070315</DatOntstaan>
+                <KadastraleAanduiding>
+                    <CdKadastraleGemeente>363</CdKadastraleGemeente>
+                    <KadastraleGemeentenaam>Amsterdam</KadastraleGemeentenaam>
+                    <KadastraleSectie>N</KadastraleSectie>
+                    <KadastraalPerceelnr>21845</KadastraalPerceelnr>
+                </KadastraleAanduiding>
+                <OmsKadastraalObject>Bebouwd: Appartement</OmsKadastraalObject>
+                <ZakelijkRecht>
+                    <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
+                </ZakelijkRecht>
+                <PubliekrechtelijkeBeperking>
+                    <AantekeningKadastraalObject>
+                        <OmsAantekeningKadastraalObject>Geen beperkingen geregistreerd.</OmsAantekeningKadastraalObject>
+                    </AantekeningKadastraalObject>
+                </PubliekrechtelijkeBeperking>
+                <IndMeerGerechtigden>1</IndMeerGerechtigden>
+            </OnroerendeZaak>
+
+            <!-- Garagebox in Amsterdam -->
+            <OnroerendeZaak>
+                <CdTypeOnroerendeZaak>P</CdTypeOnroerendeZaak>
+                <DatOntstaan>20070315</DatOntstaan>
+                <KadastraleAanduiding>
+                    <CdKadastraleGemeente>363</CdKadastraleGemeente>
+                    <KadastraleGemeentenaam>Amsterdam</KadastraleGemeentenaam>
+                    <KadastraleSectie>N</KadastraleSectie>
+                    <KadastraalPerceelnr>21846</KadastraalPerceelnr>
+                </KadastraleAanduiding>
+                <OmsKadastraalObject>Bebouwd: Opslag/garage</OmsKadastraalObject>
+                <ZakelijkRecht>
+                    <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
+                </ZakelijkRecht>
+                <PubliekrechtelijkeBeperking>
+                    <AantekeningKadastraalObject>
+                        <OmsAantekeningKadastraalObject>Geen beperkingen geregistreerd.</OmsAantekeningKadastraalObject>
+                    </AantekeningKadastraalObject>
+                </PubliekrechtelijkeBeperking>
+                <IndMeerGerechtigden>1</IndMeerGerechtigden>
+            </OnroerendeZaak>
+
+        </Eigendom>
+    </ClientSuwi>
+</ns3:PersoonsInfoResponse>

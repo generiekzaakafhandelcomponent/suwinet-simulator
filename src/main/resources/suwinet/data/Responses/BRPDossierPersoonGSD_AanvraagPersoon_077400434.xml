@@ -1,0 +1,79 @@
+<brp:AanvraagPersoonResponse xmlns:brp="http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD/v0200">
+    <ClientSuwi>
+        
+        <!-- Zoon van Nora Johansson (bsn: 022264541) en Lars Karlsson (bsn: 689735273) -->
+        <Voornamen>Olan</Voornamen>
+        <SignificantDeelVanDeAchternaam>Karlsson</SignificantDeelVanDeAchternaam>
+        <Geboortedat>20120808</Geboortedat>
+        <Geslacht>1</Geslacht>
+        <Burgerservicenr>077400434</Burgerservicenr>
+        <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
+        <ANr>4976380199</ANr>
+        <AanduidingNaamgebruik>1</AanduidingNaamgebruik>
+
+        <CdGeboortegemeente>0518</CdGeboortegemeente>
+        <Geboorteland>6030</Geboorteland>
+
+        <GeldigheidGegevensPersoon>
+            <DatGeldigheidGegevens>20120808</DatGeldigheidGegevens>
+        </GeldigheidGegevensPersoon>
+
+        <Nationaliteit>
+            <CdNationaliteit>0001</CdNationaliteit>
+            <GeldigheidGegevensNationaliteit>
+                <DatGeldigheidGegevens>20120808</DatGeldigheidGegevens>
+            </GeldigheidGegevensNationaliteit>
+        </Nationaliteit>
+
+        <!-- Huidig woonadres: bij ouders op het Spui -->
+        <DomicilieAdres>
+            <Postcd>2511BT</Postcd>
+            <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
+            <Straatnaam>Spui</Straatnaam>
+            <NaamOpenbareRuimte>Spui</NaamOpenbareRuimte>
+            <Huisnr>70</Huisnr>
+        </DomicilieAdres>
+
+        <AangifteAdreshoudingBrp>
+            <CdGemeenteVanInschrijving>0518</CdGemeenteVanInschrijving>
+            <DatVanInschrijvingBijGemeente>20120808</DatVanInschrijvingBijGemeente>
+            <DatBAdreshoudingBrp>20120808</DatBAdreshoudingBrp>
+        </AangifteAdreshoudingBrp>
+
+        <!-- Geboorteadres = stadhuis Den Haag, op geboortedatum -->
+        <VerblijfplaatsHistorisch>
+            <DomicilieAdres>
+                <Postcd>2511BT</Postcd>
+                <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
+                <Straatnaam>Spui</Straatnaam>
+                <Huisnr>70</Huisnr>
+            </DomicilieAdres>
+            <AangifteAdreshoudingBrp>
+                <CdGemeenteVanInschrijving>0518</CdGemeenteVanInschrijving>
+                <DatVanInschrijvingBijGemeente>20120808</DatVanInschrijvingBijGemeente>
+                <DatBAdreshoudingBrp>20120808</DatBAdreshoudingBrp>
+            </AangifteAdreshoudingBrp>
+        </VerblijfplaatsHistorisch>
+
+        <!-- Ouders: Nora & Lars -->
+        <Ouder1>
+            <Voornamen>Nora</Voornamen>
+            <SignificantDeelVanDeAchternaam>Johansson</SignificantDeelVanDeAchternaam>
+            <Geboortedat>20000110</Geboortedat>
+            <Burgerservicenr>022264541</Burgerservicenr>
+            <DatBFamilierechtelijkeBetrekking>20120808</DatBFamilierechtelijkeBetrekking>
+        </Ouder1>
+        <Ouder2>
+            <Voornamen>Lars</Voornamen>
+            <SignificantDeelVanDeAchternaam>Karlsson</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19990202</Geboortedat>
+            <Burgerservicenr>689735273</Burgerservicenr>
+            <DatBFamilierechtelijkeBetrekking>20120808</DatBFamilierechtelijkeBetrekking>
+        </Ouder2>
+
+        <InschrijvingsgegevensBrp>
+            <CdGemeenteWaarPkZichBevindt>0518</CdGemeenteWaarPkZichBevindt>
+            <CdPkVolledigGeconverteerd>P</CdPkVolledigGeconverteerd>
+        </InschrijvingsgegevensBrp>
+    </ClientSuwi>
+</brp:AanvraagPersoonResponse>

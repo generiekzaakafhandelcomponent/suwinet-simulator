@@ -1,0 +1,49 @@
+<ns4:DUOStudiefinancieringInfoResponse xmlns:ns3="http://bkwi.nl/SuwiML/FWI/v0205"
+                                       xmlns:ns4="http://bkwi.nl/SuwiML/Diensten/DUODossierStudiefinancieringGSD/v0200">
+    <ClientSuwi>
+
+        <!-- DUO Stufi informatie van Lars Karlsson -->
+        <Burgerservicenr>689735273</Burgerservicenr>
+
+        <!-- Start MBO niveau 2: recht op studiefinanciering begint 1 september 2000 -->
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20000901</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20001231</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>1</CdToekenningBasisbeursStufi> <!-- basisbeurs BOL -->
+            <IndAanvullendeBeursStufi>1</IndAanvullendeBeursStufi>
+        </Studiefinanciering>
+
+        <!-- 1e helft 2001 -->
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20010101</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20010731</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>1</CdToekenningBasisbeursStufi>
+            <IndAanvullendeBeursStufi>2</IndAanvullendeBeursStufi>
+        </Studiefinanciering>
+
+        <!-- 2e helft 2001 -->
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20010801</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20011231</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>1</CdToekenningBasisbeursStufi>
+            <IndAanvullendeBeursStufi>2</IndAanvullendeBeursStufi>
+        </Studiefinanciering>
+
+        <!-- 2002: voortzetting MBO (met meer aanvullende beurs) -->
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20020101</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20021231</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>3</CdToekenningBasisbeursStufi> <!-- prestatiebeurs -->
+            <IndAanvullendeBeursStufi>1</IndAanvullendeBeursStufi>
+        </Studiefinanciering>
+
+        <!-- 2003: laatste halfjaar tot diplomering -->
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20030101</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20030731</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>3</CdToekenningBasisbeursStufi>
+            <IndAanvullendeBeursStufi>2</IndAanvullendeBeursStufi>
+        </Studiefinanciering>
+
+    </ClientSuwi>
+</ns4:DUOStudiefinancieringInfoResponse>
