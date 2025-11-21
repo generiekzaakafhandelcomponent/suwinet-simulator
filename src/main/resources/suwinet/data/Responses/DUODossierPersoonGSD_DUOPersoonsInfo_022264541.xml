@@ -5,18 +5,18 @@
         <Burgerservicenr>022264541</Burgerservicenr>
         <IndStartkwalificatieDuo>1</IndStartkwalificatieDuo>
 
-        <!-- HAVO 2012 - 2017 -->
+        <!-- HAVO 2000 - 2005 -->
         <Onderwijsovereenkomst>
             <Brin>
                 <BrinNr>11AB</BrinNr>
             </Brin>
 
-            <DatInschrijvingOpleiding>20120801</DatInschrijvingOpleiding>
-            <DatUitschrijvingOpleiding>20170715</DatUitschrijvingOpleiding>
+            <DatInschrijvingOpleiding>20000801</DatInschrijvingOpleiding>
+            <DatUitschrijvingOpleiding>20050715</DatUitschrijvingOpleiding>
 
             <DeelnameOpleidingGeregistrDuo>
-                <DatBDeelnameOpleiding>20120801</DatBDeelnameOpleiding>
-                <DatEDeelnameOpleiding>20130731</DatEDeelnameOpleiding>
+                <DatBDeelnameOpleiding>20000801</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20010731</DatEDeelnameOpleiding>
                 <InhoudDeelnameOpleidingDuo>
                     <NaamOpleidingKortDuo>HAVO - leerjaar 1</NaamOpleidingKortDuo>
                     <CdNiveauOpleidingDuo>VO-HAVO</CdNiveauOpleidingDuo>
@@ -24,8 +24,8 @@
             </DeelnameOpleidingGeregistrDuo>
 
             <DeelnameOpleidingGeregistrDuo>
-                <DatBDeelnameOpleiding>20130801</DatBDeelnameOpleiding>
-                <DatEDeelnameOpleiding>20140731</DatEDeelnameOpleiding>
+                <DatBDeelnameOpleiding>20010801</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20020731</DatEDeelnameOpleiding>
                 <InhoudDeelnameOpleidingDuo>
                     <NaamOpleidingKortDuo>HAVO - leerjaar 2</NaamOpleidingKortDuo>
                     <CdNiveauOpleidingDuo>VO-HAVO</CdNiveauOpleidingDuo>
@@ -33,8 +33,8 @@
             </DeelnameOpleidingGeregistrDuo>
 
             <DeelnameOpleidingGeregistrDuo>
-                <DatBDeelnameOpleiding>20140801</DatBDeelnameOpleiding>
-                <DatEDeelnameOpleiding>20150731</DatEDeelnameOpleiding>
+                <DatBDeelnameOpleiding>20020801</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20030731</DatEDeelnameOpleiding>
                 <InhoudDeelnameOpleidingDuo>
                     <NaamOpleidingKortDuo>HAVO - leerjaar 3</NaamOpleidingKortDuo>
                     <CdNiveauOpleidingDuo>VO-HAVO</CdNiveauOpleidingDuo>
@@ -42,8 +42,8 @@
             </DeelnameOpleidingGeregistrDuo>
 
             <DeelnameOpleidingGeregistrDuo>
-                <DatBDeelnameOpleiding>20150801</DatBDeelnameOpleiding>
-                <DatEDeelnameOpleiding>20160731</DatEDeelnameOpleiding>
+                <DatBDeelnameOpleiding>20030801</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20040731</DatEDeelnameOpleiding>
                 <InhoudDeelnameOpleidingDuo>
                     <NaamOpleidingKortDuo>HAVO - leerjaar 4</NaamOpleidingKortDuo>
                     <CdNiveauOpleidingDuo>VO-HAVO</CdNiveauOpleidingDuo>
@@ -51,8 +51,8 @@
             </DeelnameOpleidingGeregistrDuo>
 
             <DeelnameOpleidingGeregistrDuo>
-                <DatBDeelnameOpleiding>20160801</DatBDeelnameOpleiding>
-                <DatEDeelnameOpleiding>20170715</DatEDeelnameOpleiding>
+                <DatBDeelnameOpleiding>20040801</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20050715</DatEDeelnameOpleiding>
                 <InhoudDeelnameOpleidingDuo>
                     <NaamOpleidingKortDuo>HAVO - eindexamenjaar</NaamOpleidingKortDuo>
                     <CdNiveauOpleidingDuo>VO-HAVO</CdNiveauOpleidingDuo>
@@ -61,18 +61,18 @@
 
         </Onderwijsovereenkomst>
 
-        <!-- HBO Bachelor Social Work (2017 - 2021) -->
+        <!-- HBO Bachelor Social Work (2005 - 2009) -->
         <Onderwijsovereenkomst>
             <Brin>
                 <BrinNr>19XY</BrinNr>
             </Brin>
 
-            <DatInschrijvingOpleiding>20170901</DatInschrijvingOpleiding>
-            <DatUitschrijvingOpleiding>20210715</DatUitschrijvingOpleiding>
+            <DatInschrijvingOpleiding>20050901</DatInschrijvingOpleiding>
+            <DatUitschrijvingOpleiding>20090715</DatUitschrijvingOpleiding>
 
             <DeelnameOpleidingGeregistrDuo>
-                <DatBDeelnameOpleiding>20170901</DatBDeelnameOpleiding>
-                <DatEDeelnameOpleiding>20210715</DatEDeelnameOpleiding>
+                <DatBDeelnameOpleiding>20050901</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20090715</DatEDeelnameOpleiding>
                 <InhoudDeelnameOpleidingDuo>
                     <NaamOpleidingKortDuo>HBO - Social Work</NaamOpleidingKortDuo>
                     <CdNiveauOpleidingDuo>HBO-B</CdNiveauOpleidingDuo>
@@ -81,18 +81,18 @@
 
         </Onderwijsovereenkomst>
 
-        <!-- HBO Master Jeugdzorg (2021 - 2023) -->
+        <!-- HBO Master Jeugdzorg (2010 - 2012) -->
         <Onderwijsovereenkomst>
             <Brin>
                 <BrinNr>08QD</BrinNr>
             </Brin>
 
-            <DatInschrijvingOpleiding>20210901</DatInschrijvingOpleiding>
-            <DatUitschrijvingOpleiding>20230630</DatUitschrijvingOpleiding>
+            <DatInschrijvingOpleiding>20100901</DatInschrijvingOpleiding>
+            <DatUitschrijvingOpleiding>20120630</DatUitschrijvingOpleiding>
 
             <DeelnameOpleidingGeregistrDuo>
-                <DatBDeelnameOpleiding>20210901</DatBDeelnameOpleiding>
-                <DatEDeelnameOpleiding>20230630</DatEDeelnameOpleiding>
+                <DatBDeelnameOpleiding>20100901</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20120630</DatEDeelnameOpleiding>
                 <InhoudDeelnameOpleidingDuo>
                     <NaamOpleidingKortDuo>HBO - Master Jeugdzorg</NaamOpleidingKortDuo>
                     <CdNiveauOpleidingDuo>HBO-M</CdNiveauOpleidingDuo>
@@ -114,7 +114,7 @@
                 <CdNiveauOpleidingDuo>VO-HAVO</CdNiveauOpleidingDuo>
             </InhoudResultaatOpleidingDuo>
             <ResultaatExamen>
-                <DatResultaatExamen>20170715</DatResultaatExamen>
+                <DatResultaatExamen>20050715</DatResultaatExamen>
                 <CdResultaatExamen>1</CdResultaatExamen>
             </ResultaatExamen>
         </ResultaatOpleidingGeregistrDuo>
@@ -130,7 +130,7 @@
                 <CdNiveauOpleidingDuo>HBO-B</CdNiveauOpleidingDuo>
             </InhoudResultaatOpleidingDuo>
             <ResultaatExamen>
-                <DatResultaatExamen>20210715</DatResultaatExamen>
+                <DatResultaatExamen>20090715</DatResultaatExamen>
                 <CdResultaatExamen>3</CdResultaatExamen>
             </ResultaatExamen>
         </ResultaatOpleidingGeregistrDuo>
@@ -146,7 +146,7 @@
                 <CdNiveauOpleidingDuo>HBO-M</CdNiveauOpleidingDuo>
             </InhoudResultaatOpleidingDuo>
             <ResultaatExamen>
-                <DatResultaatExamen>20230630</DatResultaatExamen>
+                <DatResultaatExamen>20120630</DatResultaatExamen>
                 <CdResultaatExamen>4</CdResultaatExamen>
             </ResultaatExamen>
         </ResultaatOpleidingGeregistrDuo>
