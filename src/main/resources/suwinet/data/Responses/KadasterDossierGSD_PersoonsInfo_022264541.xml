@@ -43,11 +43,6 @@
                         <Huisnr>70</Huisnr>
                     </StraatadresBag>
                 </LocatieOZ>
-                <PubliekrechtelijkeBeperking>
-                    <AantekeningKadastraalObject>
-                        <OmsAantekeningKadastraalObject>Geen beperkingen geregistreerd.</OmsAantekeningKadastraalObject>
-                    </AantekeningKadastraalObject>
-                </PubliekrechtelijkeBeperking>
                 <IndMeerGerechtigden>2</IndMeerGerechtigden>
             </OnroerendeZaak>
 
@@ -66,11 +61,6 @@
                 <ZakelijkRecht>
                     <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
                 </ZakelijkRecht>
-                <PubliekrechtelijkeBeperking>
-                    <AantekeningKadastraalObject>
-                        <OmsAantekeningKadastraalObject>Geen beperkingen geregistreerd.</OmsAantekeningKadastraalObject>
-                    </AantekeningKadastraalObject>
-                </PubliekrechtelijkeBeperking>
                 <IndMeerGerechtigden>1</IndMeerGerechtigden>
             </OnroerendeZaak>
 
@@ -89,11 +79,6 @@
                 <ZakelijkRecht>
                     <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
                 </ZakelijkRecht>
-                <PubliekrechtelijkeBeperking>
-                    <AantekeningKadastraalObject>
-                        <OmsAantekeningKadastraalObject>Geen beperkingen geregistreerd.</OmsAantekeningKadastraalObject>
-                    </AantekeningKadastraalObject>
-                </PubliekrechtelijkeBeperking>
                 <IndMeerGerechtigden>1</IndMeerGerechtigden>
             </OnroerendeZaak>
 
