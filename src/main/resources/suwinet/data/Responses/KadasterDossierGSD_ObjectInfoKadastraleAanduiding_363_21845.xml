@@ -11,6 +11,7 @@
             <KadastraleGemeentenaam>Amsterdam</KadastraleGemeentenaam>
             <KadastraleSectie>N</KadastraleSectie>
             <KadastraalPerceelnr>21845</KadastraalPerceelnr>
+            <VolgnrKadastraalAppartementsrecht>1</VolgnrKadastraalAppartementsrecht>
         </KadastraleAanduiding>
 
         <OmsKadastraalObject>Bebouwd: Appartement</OmsKadastraalObject>

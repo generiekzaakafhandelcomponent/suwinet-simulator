@@ -30,6 +30,7 @@
                     <KadastraleGemeentenaam>'s-Gravenhage</KadastraleGemeentenaam>
                     <KadastraleSectie>AJ</KadastraleSectie>
                     <KadastraalPerceelnr>38217</KadastraalPerceelnr>
+                    <VolgnrKadastraalAppartementsrecht>1</VolgnrKadastraalAppartementsrecht>
                 </KadastraleAanduiding>
                 <OmsKadastraalObject>Bebouwd: Appartement</OmsKadastraalObject>
                 <ZakelijkRecht>
@@ -60,6 +61,7 @@
                     <KadastraleGemeentenaam>Amsterdam</KadastraleGemeentenaam>
                     <KadastraleSectie>N</KadastraleSectie>
                     <KadastraalPerceelnr>21845</KadastraalPerceelnr>
+                    <VolgnrKadastraalAppartementsrecht>1</VolgnrKadastraalAppartementsrecht>
                 </KadastraleAanduiding>
                 <OmsKadastraalObject>Bebouwd: Appartement</OmsKadastraalObject>
                 <ZakelijkRecht>
@@ -82,6 +84,7 @@
                     <KadastraleGemeentenaam>Amsterdam</KadastraleGemeentenaam>
                     <KadastraleSectie>N</KadastraleSectie>
                     <KadastraalPerceelnr>21846</KadastraalPerceelnr>
+                    <VolgnrKadastraalAppartementsrecht>1</VolgnrKadastraalAppartementsrecht>
                 </KadastraleAanduiding>
                 <OmsKadastraalObject>Bebouwd: Opslag/garage</OmsKadastraalObject>
                 <ZakelijkRecht>

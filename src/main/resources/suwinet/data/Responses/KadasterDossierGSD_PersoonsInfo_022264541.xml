@@ -29,6 +29,7 @@
                     <KadastraleGemeentenaam>'s-Gravenhage</KadastraleGemeentenaam>
                     <KadastraleSectie>AJ</KadastraleSectie>
                     <KadastraalPerceelnr>38217</KadastraalPerceelnr>
+                    <VolgnrKadastraalAppartementsrecht>1</VolgnrKadastraalAppartementsrecht>
                 </KadastraleAanduiding>
                 <OmsKadastraalObject>Bebouwd: Appartement</OmsKadastraalObject>
                 <ZakelijkRecht>
@@ -59,6 +60,7 @@
                     <KadastraleGemeentenaam>Utrecht</KadastraleGemeentenaam>
                     <KadastraleSectie>K</KadastraleSectie>
                     <KadastraalPerceelnr>12873</KadastraalPerceelnr>
+                    <VolgnrKadastraalAppartementsrecht>1</VolgnrKadastraalAppartementsrecht>
                 </KadastraleAanduiding>
                 <OmsKadastraalObject>Bebouwd: Wonen</OmsKadastraalObject>
                 <ZakelijkRecht>
@@ -81,6 +83,7 @@
                     <KadastraleGemeentenaam>'s-Gravenhage</KadastraleGemeentenaam>
                     <KadastraleSectie>AJ</KadastraleSectie>
                     <KadastraalPerceelnr>39218</KadastraalPerceelnr>
+                    <VolgnrKadastraalAppartementsrecht>1</VolgnrKadastraalAppartementsrecht>
                 </KadastraleAanduiding>
                 <OmsKadastraalObject>Onbebouwd: Parkeerplaats</OmsKadastraalObject>
                 <ZakelijkRecht>
