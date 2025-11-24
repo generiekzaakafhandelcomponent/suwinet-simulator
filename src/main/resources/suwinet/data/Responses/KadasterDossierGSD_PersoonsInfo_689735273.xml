@@ -30,6 +30,7 @@
                     <KadastraleGemeentenaam>'s-Gravenhage</KadastraleGemeentenaam>
                     <KadastraleSectie>AJ</KadastraleSectie>
                     <KadastraalPerceelnr>38217</KadastraalPerceelnr>
+                    <VolgnrKadastraalAppartementsrecht>1</VolgnrKadastraalAppartementsrecht>
                 </KadastraleAanduiding>
                 <OmsKadastraalObject>Bebouwd: Appartement</OmsKadastraalObject>
                 <ZakelijkRecht>
@@ -43,11 +44,6 @@
                         <Huisnr>70</Huisnr>
                     </StraatadresBag>
                 </LocatieOZ>
-                <PubliekrechtelijkeBeperking>
-                    <AantekeningKadastraalObject>
-                        <OmsAantekeningKadastraalObject>Geen beperkingen geregistreerd.</OmsAantekeningKadastraalObject>
-                    </AantekeningKadastraalObject>
-                </PubliekrechtelijkeBeperking>
                 <IndMeerGerechtigden>2</IndMeerGerechtigden>
             </OnroerendeZaak>
 
@@ -60,16 +56,12 @@
                     <KadastraleGemeentenaam>Amsterdam</KadastraleGemeentenaam>
                     <KadastraleSectie>N</KadastraleSectie>
                     <KadastraalPerceelnr>21845</KadastraalPerceelnr>
+                    <VolgnrKadastraalAppartementsrecht>1</VolgnrKadastraalAppartementsrecht>
                 </KadastraleAanduiding>
                 <OmsKadastraalObject>Bebouwd: Appartement</OmsKadastraalObject>
                 <ZakelijkRecht>
                     <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
                 </ZakelijkRecht>
-                <PubliekrechtelijkeBeperking>
-                    <AantekeningKadastraalObject>
-                        <OmsAantekeningKadastraalObject>Geen beperkingen geregistreerd.</OmsAantekeningKadastraalObject>
-                    </AantekeningKadastraalObject>
-                </PubliekrechtelijkeBeperking>
                 <IndMeerGerechtigden>1</IndMeerGerechtigden>
             </OnroerendeZaak>
 
@@ -82,16 +74,12 @@
                     <KadastraleGemeentenaam>Amsterdam</KadastraleGemeentenaam>
                     <KadastraleSectie>N</KadastraleSectie>
                     <KadastraalPerceelnr>21846</KadastraalPerceelnr>
+                    <VolgnrKadastraalAppartementsrecht>1</VolgnrKadastraalAppartementsrecht>
                 </KadastraleAanduiding>
                 <OmsKadastraalObject>Bebouwd: Opslag/garage</OmsKadastraalObject>
                 <ZakelijkRecht>
                     <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
                 </ZakelijkRecht>
-                <PubliekrechtelijkeBeperking>
-                    <AantekeningKadastraalObject>
-                        <OmsAantekeningKadastraalObject>Geen beperkingen geregistreerd.</OmsAantekeningKadastraalObject>
-                    </AantekeningKadastraalObject>
-                </PubliekrechtelijkeBeperking>
                 <IndMeerGerechtigden>1</IndMeerGerechtigden>
             </OnroerendeZaak>
 

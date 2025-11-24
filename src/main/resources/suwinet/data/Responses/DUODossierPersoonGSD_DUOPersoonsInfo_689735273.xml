@@ -14,7 +14,7 @@
 
             <!-- Lars begint iets eerder en sluit eerder af dan Nora -->
             <DatInschrijvingOpleiding>19960801</DatInschrijvingOpleiding>
-            <DatUitschrijvingOpleiding>20030731</DatUitschrijvingOpleiding>
+            <DatUitschrijvingOpleiding>20040630</DatUitschrijvingOpleiding>
 
             <!-- 1996-1998: Praktijkonderwijs -->
             <DeelnameOpleidingGeregistrDuo>
@@ -57,7 +57,7 @@
             <!-- 2000-2003: MBO niveau 2 (bijvoorbeeld Zorg & Welzijn) -->
             <DeelnameOpleidingGeregistrDuo>
                 <DatBDeelnameOpleiding>20000801</DatBDeelnameOpleiding>
-                <DatEDeelnameOpleiding>20030731</DatEDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20040630</DatEDeelnameOpleiding>
                 <InhoudDeelnameOpleidingDuo>
                     <NaamOpleidingKortDuo>MBO niveau 2 Zorg &amp; Welzijn</NaamOpleidingKortDuo>
                     <CdNiveauOpleidingDuo>MBO-4</CdNiveauOpleidingDuo>

@@ -29,6 +29,7 @@
                     <KadastraleGemeentenaam>'s-Gravenhage</KadastraleGemeentenaam>
                     <KadastraleSectie>AJ</KadastraleSectie>
                     <KadastraalPerceelnr>38217</KadastraalPerceelnr>
+                    <VolgnrKadastraalAppartementsrecht>1</VolgnrKadastraalAppartementsrecht>
                 </KadastraleAanduiding>
                 <OmsKadastraalObject>Bebouwd: Appartement</OmsKadastraalObject>
                 <ZakelijkRecht>
@@ -42,11 +43,6 @@
                         <Huisnr>70</Huisnr>
                     </StraatadresBag>
                 </LocatieOZ>
-                <PubliekrechtelijkeBeperking>
-                    <AantekeningKadastraalObject>
-                        <OmsAantekeningKadastraalObject>Geen beperkingen geregistreerd.</OmsAantekeningKadastraalObject>
-                    </AantekeningKadastraalObject>
-                </PubliekrechtelijkeBeperking>
                 <IndMeerGerechtigden>2</IndMeerGerechtigden>
             </OnroerendeZaak>
 
@@ -59,16 +55,12 @@
                     <KadastraleGemeentenaam>Utrecht</KadastraleGemeentenaam>
                     <KadastraleSectie>K</KadastraleSectie>
                     <KadastraalPerceelnr>12873</KadastraalPerceelnr>
+                    <VolgnrKadastraalAppartementsrecht>1</VolgnrKadastraalAppartementsrecht>
                 </KadastraleAanduiding>
                 <OmsKadastraalObject>Bebouwd: Wonen</OmsKadastraalObject>
                 <ZakelijkRecht>
                     <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
                 </ZakelijkRecht>
-                <PubliekrechtelijkeBeperking>
-                    <AantekeningKadastraalObject>
-                        <OmsAantekeningKadastraalObject>Geen beperkingen geregistreerd.</OmsAantekeningKadastraalObject>
-                    </AantekeningKadastraalObject>
-                </PubliekrechtelijkeBeperking>
                 <IndMeerGerechtigden>1</IndMeerGerechtigden>
             </OnroerendeZaak>
 
@@ -81,16 +73,12 @@
                     <KadastraleGemeentenaam>'s-Gravenhage</KadastraleGemeentenaam>
                     <KadastraleSectie>AJ</KadastraleSectie>
                     <KadastraalPerceelnr>39218</KadastraalPerceelnr>
+                    <VolgnrKadastraalAppartementsrecht>1</VolgnrKadastraalAppartementsrecht>
                 </KadastraleAanduiding>
                 <OmsKadastraalObject>Onbebouwd: Parkeerplaats</OmsKadastraalObject>
                 <ZakelijkRecht>
                     <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
                 </ZakelijkRecht>
-                <PubliekrechtelijkeBeperking>
-                    <AantekeningKadastraalObject>
-                        <OmsAantekeningKadastraalObject>Geen beperkingen geregistreerd.</OmsAantekeningKadastraalObject>
-                    </AantekeningKadastraalObject>
-                </PubliekrechtelijkeBeperking>
                 <IndMeerGerechtigden>1</IndMeerGerechtigden>
             </OnroerendeZaak>
 
