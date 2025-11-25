@@ -27,6 +27,15 @@
             </AantekeningKadastraalObject>
         </PubliekrechtelijkeBeperking>
 
+        <LocatieOZ>
+            <StraatadresBag>
+                <Postcd>1011PN</Postcd>
+                <Woonplaatsnaam>Amsterdam</Woonplaatsnaam>
+                <Straatnaam>Amstel</Straatnaam>
+                <Huisnr>1</Huisnr>
+            </StraatadresBag>
+        </LocatieOZ>
+        
         <BedrKoopsom>
             <CdMunteenheid>EUR</CdMunteenheid>
             <WaardeBedr>210000</WaardeBedr>

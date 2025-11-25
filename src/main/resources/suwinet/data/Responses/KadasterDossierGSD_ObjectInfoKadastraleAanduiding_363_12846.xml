@@ -27,6 +27,15 @@
             </AantekeningKadastraalObject>
         </PubliekrechtelijkeBeperking>
 
+        <LocatieOZ>
+            <StraatadresBag>
+                <Postcd>1093NG</Postcd>
+                <Woonplaatsnaam>Amsterdam</Woonplaatsnaam>
+                <Straatnaam>Oranje-Vrijstaatplein</Straatnaam>
+                <Huisnr>2</Huisnr>
+            </StraatadresBag>
+        </LocatieOZ>
+        
         <BedrKoopsom>
             <CdMunteenheid>EUR</CdMunteenheid>
             <WaardeBedr>35000</WaardeBedr>

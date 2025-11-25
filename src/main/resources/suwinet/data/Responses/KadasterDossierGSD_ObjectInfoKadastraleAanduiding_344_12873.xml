@@ -27,6 +27,15 @@
             </AantekeningKadastraalObject>
         </PubliekrechtelijkeBeperking>
 
+        <LocatieOZ>
+            <StraatadresBag>
+                <Postcd>3521AZ</Postcd>
+                <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+                <Straatnaam>Stadsplateau</Straatnaam>
+                <Huisnr>1</Huisnr>
+            </StraatadresBag>
+        </LocatieOZ>
+        
         <BedrKoopsom>
             <CdMunteenheid>EUR</CdMunteenheid>
             <WaardeBedr>185000</WaardeBedr>
