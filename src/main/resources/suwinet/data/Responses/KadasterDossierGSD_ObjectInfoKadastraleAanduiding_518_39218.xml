@@ -22,6 +22,7 @@
 
         <PubliekrechtelijkeBeperking>
             <AantekeningKadastraalObject>
+                <DatEAantekeningKadastraalObject>20300101</DatEAantekeningKadastraalObject>
                 <OmsAantekeningKadastraalObject>Geen beperkingen geregistreerd.</OmsAantekeningKadastraalObject>
             </AantekeningKadastraalObject>
         </PubliekrechtelijkeBeperking>
