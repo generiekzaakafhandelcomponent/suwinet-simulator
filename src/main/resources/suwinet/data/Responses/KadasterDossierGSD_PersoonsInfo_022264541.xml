@@ -43,6 +43,12 @@
                         <Huisnr>70</Huisnr>
                     </StraatadresBag>
                 </LocatieOZ>
+                <PubliekrechtelijkeBeperking>
+                    <AantekeningKadastraalObject>
+                        <DatEAantekeningKadastraalObject>20300101</DatEAantekeningKadastraalObject>
+                        <OmsAantekeningKadastraalObject>Geen beperkingen geregistreerd.</OmsAantekeningKadastraalObject>
+                    </AantekeningKadastraalObject>
+                </PubliekrechtelijkeBeperking>
                 <IndMeerGerechtigden>2</IndMeerGerechtigden>
             </OnroerendeZaak>
 
@@ -61,6 +67,12 @@
                 <ZakelijkRecht>
                     <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
                 </ZakelijkRecht>
+                <PubliekrechtelijkeBeperking>
+                    <AantekeningKadastraalObject>
+                        <DatEAantekeningKadastraalObject>20300101</DatEAantekeningKadastraalObject>
+                        <OmsAantekeningKadastraalObject>Geen beperkingen geregistreerd.</OmsAantekeningKadastraalObject>
+                    </AantekeningKadastraalObject>
+                </PubliekrechtelijkeBeperking>
                 <IndMeerGerechtigden>1</IndMeerGerechtigden>
             </OnroerendeZaak>
 
@@ -78,7 +90,13 @@
                 <OmsKadastraalObject>Onbebouwd: Parkeerplaats</OmsKadastraalObject>
                 <ZakelijkRecht>
                     <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
-                </ZakelijkRecht>
+                </ZakelijkRecht> 
+                <PubliekrechtelijkeBeperking>
+                    <AantekeningKadastraalObject>
+                        <DatEAantekeningKadastraalObject>20300101</DatEAantekeningKadastraalObject>
+                        <OmsAantekeningKadastraalObject>Geen beperkingen geregistreerd.</OmsAantekeningKadastraalObject>
+                    </AantekeningKadastraalObject>
+                </PubliekrechtelijkeBeperking>
                 <IndMeerGerechtigden>1</IndMeerGerechtigden>
             </OnroerendeZaak>
 
