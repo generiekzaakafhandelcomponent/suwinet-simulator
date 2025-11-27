@@ -1,0 +1,178 @@
+<bij:BijstandsregelingenInfoResponse xmlns:bij="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500">
+    <ClientSuwi>
+        <Burgerservicenr>689735273</Burgerservicenr>
+        <Voorletters>L.</Voorletters>
+        <Voorvoegsel></Voorvoegsel>
+        <SignificantDeelVanDeAchternaam>Karlsson</SignificantDeelVanDeAchternaam>
+        <Geslacht>m</Geslacht>
+        <Geboortedat>1983-11-02</Geboortedat>
+
+        <!-- AanvraagUitkering: PW, toegekend, periode van werkloosheid 2018 -->
+        <AanvraagUitkering>
+            <DatAanvraagUitkering>2018-05-12</DatAanvraagUitkering>
+            <SzWet>
+                <CdSzWet>PW</CdSzWet>
+            </SzWet>
+            <BeslissingOpAanvraagUitkering>
+                <CdBeslissingOpAanvraagUitkering>01</CdBeslissingOpAanvraagUitkering>
+                <DatDagtekeningBeslisOpAanvrUitk>2018-05-25</DatDagtekeningBeslisOpAanvrUitk>
+            </BeslissingOpAanvraagUitkering>
+            <PartnerAanvraagUitkering>
+                <Burgerservicenr>022264541</Burgerservicenr>
+                <Voorletters>N.</Voorletters>
+                <Voorvoegsel></Voorvoegsel>
+                <SignificantDeelVanDeAchternaam>Johansson</SignificantDeelVanDeAchternaam>
+                <Geboortedat>1985-03-12</Geboortedat>
+            </PartnerAanvraagUitkering>
+            <Bron>
+                <CdKolomSuwi>K401</CdKolomSuwi>
+                <CdPartijSuwi>P401</CdPartijSuwi>
+                <CdVestigingSuwi>V401</CdVestigingSuwi>
+            </Bron>
+        </AanvraagUitkering>
+
+        <!-- AanvraagUitkering: PW, toegekend, gezamenlijke aanvraag 2021 (symmetrisch met Nora) -->
+        <AanvraagUitkering>
+            <DatAanvraagUitkering>2021-08-10</DatAanvraagUitkering>
+            <SzWet>
+                <CdSzWet>PW</CdSzWet>
+            </SzWet>
+            <BeslissingOpAanvraagUitkering>
+                <CdBeslissingOpAanvraagUitkering>01</CdBeslissingOpAanvraagUitkering>
+                <DatDagtekeningBeslisOpAanvrUitk>2021-08-20</DatDagtekeningBeslisOpAanvrUitk>
+            </BeslissingOpAanvraagUitkering>
+            <PartnerAanvraagUitkering>
+                <Burgerservicenr>022264541</Burgerservicenr>
+                <Voorletters>N.</Voorletters>
+                <Voorvoegsel></Voorvoegsel>
+                <SignificantDeelVanDeAchternaam>Johansson</SignificantDeelVanDeAchternaam>
+                <Geboortedat>1985-03-12</Geboortedat>
+            </PartnerAanvraagUitkering>
+            <Bron>
+                <CdKolomSuwi>K407</CdKolomSuwi>
+                <CdPartijSuwi>P407</CdPartijSuwi>
+                <CdVestigingSuwi>V407</CdVestigingSuwi>
+            </Bron>
+        </AanvraagUitkering>
+
+        <!-- AanvraagUitkering: PW, afgewezen (vermogen/inkomen te hoog) -->
+        <AanvraagUitkering>
+            <DatAanvraagUitkering>2020-09-01</DatAanvraagUitkering>
+            <SzWet>
+                <CdSzWet>PW</CdSzWet>
+            </SzWet>
+            <BeslissingOpAanvraagUitkering>
+                <CdBeslissingOpAanvraagUitkering>02</CdBeslissingOpAanvraagUitkering>
+                <DatDagtekeningBeslisOpAanvrUitk>2020-09-14</DatDagtekeningBeslisOpAanvrUitk>
+            </BeslissingOpAanvraagUitkering>
+            <PartnerAanvraagUitkering>
+                <Burgerservicenr>022264541</Burgerservicenr>
+                <Voorletters>N.</Voorletters>
+                <Voorvoegsel></Voorvoegsel>
+                <SignificantDeelVanDeAchternaam>Johansson</SignificantDeelVanDeAchternaam>
+                <Geboortedat>1985-03-12</Geboortedat>
+            </PartnerAanvraagUitkering>
+            <Bron>
+                <CdKolomSuwi>K402</CdKolomSuwi>
+                <CdPartijSuwi>P402</CdPartijSuwi>
+                <CdVestigingSuwi>V402</CdVestigingSuwi>
+            </Bron>
+        </AanvraagUitkering>
+
+        <!-- Vordering: PW, met fraudecomponent (opzettelijk niet melden inkomsten) -->
+        <Vordering>
+            <IdentificatienrVordering>998877665544332</IdentificatienrVordering>
+            <DatBesluitVordering>2019-02-10</DatBesluitVordering>
+            <CdRedenVordering>01</CdRedenVordering>
+            <BedrAanvangVordering>3000.00</BedrAanvangVordering>
+            <CdStatusVordering>01</CdStatusVordering>
+            <BedrSaldoVordering>2100.00</BedrSaldoVordering>
+            <DatOnherroepelijkVordering>2019-06-01</DatOnherroepelijkVordering>
+            <SzWet>
+                <CdSzWet>PW</CdSzWet>
+            </SzWet>
+            <PartnerVordering>
+                <Burgerservicenr>022264541</Burgerservicenr>
+            </PartnerVordering>
+            <Fraude>
+                <IndRecidive>N</IndRecidive>
+                <IndRobuusteIncassoToegepast>J</IndRobuusteIncassoToegepast>
+                <CdHoogteBestuurlijkeBoete>02</CdHoogteBestuurlijkeBoete>
+                <CdSrtSanctie>01</CdSrtSanctie>
+                <ParketnrJustitie>45.123456</ParketnrJustitie>
+                <CdRecidivetermijn>01</CdRecidivetermijn>
+            </Fraude>
+            <Bron>
+                <CdKolomSuwi>K403</CdKolomSuwi>
+                <CdPartijSuwi>P403</CdPartijSuwi>
+                <CdVestigingSuwi>V403</CdVestigingSuwi>
+            </Bron>
+        </Vordering>
+
+        <!-- Vordering: PW, zonder fraude, kleine terugvordering energietoeslag -->
+        <Vordering>
+            <IdentificatienrVordering>445566778899001</IdentificatienrVordering>
+            <DatBesluitVordering>2022-06-20</DatBesluitVordering>
+            <CdRedenVordering>03</CdRedenVordering>
+            <BedrAanvangVordering>120.00</BedrAanvangVordering>
+            <CdStatusVordering>02</CdStatusVordering>
+            <BedrSaldoVordering>0.00</BedrSaldoVordering>
+            <SzWet>
+                <CdSzWet>PW</CdSzWet>
+            </SzWet>
+            <PartnerVordering>
+                <Burgerservicenr>022264541</Burgerservicenr>
+            </PartnerVordering>
+            <Bron>
+                <CdKolomSuwi>K404</CdKolomSuwi>
+                <CdPartijSuwi>P404</CdPartijSuwi>
+                <CdVestigingSuwi>V404</CdVestigingSuwi>
+            </Bron>
+        </Vordering>
+
+        <!-- Bijzondere bijstand: kleding en schoolkosten kinderen -->
+        <SpecifiekeGegevensBijzBijstand>
+            <CdClusterBijzBijstand>03</CdClusterBijzBijstand>
+            <OmsSrtKostenBijzBijstand>Kleding- en schoolkosten kinderen</OmsSrtKostenBijzBijstand>
+            <DatBetaalbaarBijzBijstand>2019-08-20</DatBetaalbaarBijzBijstand>
+            <SzWet>
+                <CdSzWet>PW</CdSzWet>
+            </SzWet>
+            <PartnerBijzBijstand>
+                <Burgerservicenr>022264541</Burgerservicenr>
+                <Voorletters>N.</Voorletters>
+                <Voorvoegsel></Voorvoegsel>
+                <SignificantDeelVanDeAchternaam>Johansson</SignificantDeelVanDeAchternaam>
+                <Geboortedat>1985-03-12</Geboortedat>
+            </PartnerBijzBijstand>
+            <Bron>
+                <CdKolomSuwi>K405</CdKolomSuwi>
+                <CdPartijSuwi>P405</CdPartijSuwi>
+                <CdVestigingSuwi>V405</CdVestigingSuwi>
+            </Bron>
+        </SpecifiekeGegevensBijzBijstand>
+
+        <!-- Bijzondere bijstand: woon-/energiekosten -->
+        <SpecifiekeGegevensBijzBijstand>
+            <CdClusterBijzBijstand>02</CdClusterBijzBijstand>
+            <OmsSrtKostenBijzBijstand>Eenmalige energietoeslag huishouden</OmsSrtKostenBijzBijstand>
+            <DatBetaalbaarBijzBijstand>2023-01-15</DatBetaalbaarBijzBijstand>
+            <SzWet>
+                <CdSzWet>PW</CdSzWet>
+            </SzWet>
+            <PartnerBijzBijstand>
+                <Burgerservicenr>022264541</Burgerservicenr>
+                <Voorletters>N.</Voorletters>
+                <Voorvoegsel></Voorvoegsel>
+                <SignificantDeelVanDeAchternaam>Johansson</SignificantDeelVanDeAchternaam>
+                <Geboortedat>1985-03-12</Geboortedat>
+            </PartnerBijzBijstand>
+            <Bron>
+                <CdKolomSuwi>K406</CdKolomSuwi>
+                <CdPartijSuwi>P406</CdPartijSuwi>
+                <CdVestigingSuwi>V406</CdVestigingSuwi>
+            </Bron>
+        </SpecifiekeGegevensBijzBijstand>
+
+    </ClientSuwi>
+</bij:BijstandsregelingenInfoResponse>
