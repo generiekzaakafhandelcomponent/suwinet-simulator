@@ -41,7 +41,7 @@
                 <DatEDeelnameOpleiding>19990731</DatEDeelnameOpleiding>
                 <InhoudDeelnameOpleidingDuo>
                     <NaamOpleidingKortDuo>Basisberoepsgerichte leerweg VMBO</NaamOpleidingKortDuo>
-                    <CdNiveauOpleidingDuo>VO-MBO</CdNiveauOpleidingDuo>
+                    <CdNiveauOpleidingDuo>VO-VMBO-BB</CdNiveauOpleidingDuo>
                 </InhoudDeelnameOpleidingDuo>
             </DeelnameOpleidingGeregistrDuo>
 
@@ -50,7 +50,7 @@
                 <DatEDeelnameOpleiding>20000731</DatEDeelnameOpleiding>
                 <InhoudDeelnameOpleidingDuo>
                     <NaamOpleidingKortDuo>Basisberoepsgerichte leerweg VMBO</NaamOpleidingKortDuo>
-                    <CdNiveauOpleidingDuo>VO-MBO</CdNiveauOpleidingDuo>
+                    <CdNiveauOpleidingDuo>VO-VMBO-BB</CdNiveauOpleidingDuo>
                 </InhoudDeelnameOpleidingDuo>
             </DeelnameOpleidingGeregistrDuo>
 
@@ -72,7 +72,7 @@
             <Brin>
                 <BrinNr>31ZX</BrinNr>
             </Brin>
-            <CdFaseOpleidingDuo>1</CdFaseOpleidingDuo>
+            <CdFaseOpleidingDuo>I</CdFaseOpleidingDuo>
             <InhoudResultaatOpleidingDuo>
                 <NaamOpleidingKortDuo>Praktijkonderwijs</NaamOpleidingKortDuo>
                 <CdNiveauOpleidingDuo>VO-PRO</CdNiveauOpleidingDuo>
@@ -80,7 +80,7 @@
             <ResultaatExamen>
                 <!-- Iets eerder dan bij Nora -->
                 <DatResultaatExamen>19980701</DatResultaatExamen>
-                <CdResultaatExamen>2</CdResultaatExamen>
+                <CdResultaatExamen>G</CdResultaatExamen>
             </ResultaatExamen>
         </ResultaatOpleidingGeregistrDuo>
 
@@ -89,14 +89,14 @@
             <Brin>
                 <BrinNr>31ZX</BrinNr>
             </Brin>
-            <CdFaseOpleidingDuo>2</CdFaseOpleidingDuo>
+            <CdFaseOpleidingDuo>I</CdFaseOpleidingDuo>
             <InhoudResultaatOpleidingDuo>
                 <NaamOpleidingKortDuo>Basisberoepsopleiding</NaamOpleidingKortDuo>
-                <CdNiveauOpleidingDuo>VO-MBO</CdNiveauOpleidingDuo>
+                <CdNiveauOpleidingDuo>VO-VMBO-BB</CdNiveauOpleidingDuo>
             </InhoudResultaatOpleidingDuo>
             <ResultaatExamen>
                 <DatResultaatExamen>20000715</DatResultaatExamen>
-                <CdResultaatExamen>3</CdResultaatExamen>
+                <CdResultaatExamen>G</CdResultaatExamen>
             </ResultaatExamen>
         </ResultaatOpleidingGeregistrDuo>
 
@@ -105,14 +105,14 @@
             <Brin>
                 <BrinNr>31ZX</BrinNr>
             </Brin>
-            <CdFaseOpleidingDuo>3</CdFaseOpleidingDuo>
+            <CdFaseOpleidingDuo>I</CdFaseOpleidingDuo>
             <InhoudResultaatOpleidingDuo>
                 <NaamOpleidingKortDuo>Middelbaar Beroepsonderwijs (niveau 2)</NaamOpleidingKortDuo>
                 <CdNiveauOpleidingDuo>MBO-4</CdNiveauOpleidingDuo>
             </InhoudResultaatOpleidingDuo>
             <ResultaatExamen>
                 <DatResultaatExamen>20040630</DatResultaatExamen>
-                <CdResultaatExamen>4</CdResultaatExamen>
+                <CdResultaatExamen>G</CdResultaatExamen>
             </ResultaatExamen>
         </ResultaatOpleidingGeregistrDuo>
 
