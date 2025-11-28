@@ -1,0 +1,146 @@
+<bij:BijstandsregelingenInfoResponse xmlns:bij="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500">
+    <ClientSuwi>
+        <Burgerservicenr>022264541</Burgerservicenr>
+        <Voorletters>N.</Voorletters>
+        <Voorvoegsel></Voorvoegsel>
+        <SignificantDeelVanDeAchternaam>Johansson</SignificantDeelVanDeAchternaam>
+        <Geslacht>v</Geslacht>
+        <Geboortedat>1985-03-12</Geboortedat>
+
+        <!-- AanvraagUitkering: PW, toegekend, met partner Lars -->
+        <AanvraagUitkering>
+            <DatAanvraagUitkering>2021-08-10</DatAanvraagUitkering>
+            <SzWet>
+                <CdSzWet>PW</CdSzWet>
+            </SzWet>
+            <BeslissingOpAanvraagUitkering>
+                <CdBeslissingOpAanvraagUitkering>01</CdBeslissingOpAanvraagUitkering>
+                <DatDagtekeningBeslisOpAanvrUitk>2021-08-20</DatDagtekeningBeslisOpAanvrUitk>
+            </BeslissingOpAanvraagUitkering>
+            <PartnerAanvraagUitkering>
+                <Burgerservicenr>689735273</Burgerservicenr>
+                <Voorletters>L.</Voorletters>
+                <Voorvoegsel></Voorvoegsel>
+                <SignificantDeelVanDeAchternaam>Karlsson</SignificantDeelVanDeAchternaam>
+                <Geboortedat>1983-11-02</Geboortedat>
+            </PartnerAanvraagUitkering>
+            <Bron>
+                <CdKolomSuwi>K101</CdKolomSuwi>
+                <CdPartijSuwi>P101</CdPartijSuwi>
+                <CdVestigingSuwi>V101</CdVestigingSuwi>
+            </Bron>
+        </AanvraagUitkering>
+
+        <!-- AanvraagUitkering: PW, afgewezen -->
+        <AanvraagUitkering>
+            <DatAanvraagUitkering>2019-03-15</DatAanvraagUitkering>
+            <SzWet>
+                <CdSzWet>PW</CdSzWet>
+            </SzWet>
+            <BeslissingOpAanvraagUitkering>
+                <CdBeslissingOpAanvraagUitkering>02</CdBeslissingOpAanvraagUitkering>
+                <DatDagtekeningBeslisOpAanvrUitk>2019-03-28</DatDagtekeningBeslisOpAanvrUitk>
+            </BeslissingOpAanvraagUitkering>
+            <PartnerAanvraagUitkering>
+                <Burgerservicenr>689735273</Burgerservicenr>
+                <Voorletters>L.</Voorletters>
+                <Voorvoegsel></Voorvoegsel>
+                <SignificantDeelVanDeAchternaam>Karlsson</SignificantDeelVanDeAchternaam>
+                <Geboortedat>1983-11-02</Geboortedat>
+            </PartnerAanvraagUitkering>
+            <Bron>
+                <CdKolomSuwi>K102</CdKolomSuwi>
+                <CdPartijSuwi>P102</CdPartijSuwi>
+                <CdVestigingSuwi>V102</CdVestigingSuwi>
+            </Bron>
+        </AanvraagUitkering>
+
+        <!-- Vordering: PW, lopend, nabetaling freelance inkomsten -->
+        <Vordering>
+            <IdentificatienrVordering>785412369874521</IdentificatienrVordering>
+            <DatBesluitVordering>2022-11-05</DatBesluitVordering>
+            <CdRedenVordering>02</CdRedenVordering>
+            <BedrAanvangVordering>1250.00</BedrAanvangVordering>
+            <CdStatusVordering>01</CdStatusVordering>
+            <BedrSaldoVordering>750.00</BedrSaldoVordering>
+            <DatOnherroepelijkVordering>2023-01-10</DatOnherroepelijkVordering>
+            <SzWet>
+                <CdSzWet>PW</CdSzWet>
+            </SzWet>
+            <PartnerVordering>
+                <Burgerservicenr>689735273</Burgerservicenr>
+            </PartnerVordering>
+            <Bron>
+                <CdKolomSuwi>K201</CdKolomSuwi>
+                <CdPartijSuwi>P201</CdPartijSuwi>
+                <CdVestigingSuwi>V201</CdVestigingSuwi>
+            </Bron>
+        </Vordering>
+
+        <!-- Vordering: PW, afgesloten, te veel verstrekte bijzondere bijstand -->
+        <Vordering>
+            <IdentificatienrVordering>654789321554789</IdentificatienrVordering>
+            <DatBesluitVordering>2020-10-18</DatBesluitVordering>
+            <CdRedenVordering>03</CdRedenVordering>
+            <BedrAanvangVordering>420.00</BedrAanvangVordering>
+            <CdStatusVordering>02</CdStatusVordering>
+            <BedrSaldoVordering>0.00</BedrSaldoVOrdering>
+            <SzWet>
+                <CdSzWet>PW</CdSzWet>
+            </SzWet>
+            <PartnerVordering>
+                <Burgerservicenr>689735273</Burgerservicenr>
+            </PartnerVordering>
+            <Bron>
+                <CdKolomSuwi>K202</CdKolomSuwi>
+                <CdPartijSuwi>P202</CdPartijSuwi>
+                <CdVestigingSuwi>V202</CdVestigingSuwi>
+            </Bron>
+        </Vordering>
+
+        <!-- Bijzondere bijstand: medische kosten kind (orthodontie) -->
+        <SpecifiekeGegevensBijzBijstand>
+            <CdClusterBijzBijstand>01</CdClusterBijzBijstand>
+            <OmsSrtKostenBijzBijstand>Orthodontiekosten kind</OmsSrtKostenBijzBijstand>
+            <DatBetaalbaarBijzBijstand>2023-06-15</DatBetaalbaarBijzBijstand>
+            <SzWet>
+                <CdSzWet>PW</CdSzWet>
+            </SzWet>
+            <PartnerBijzBijstand>
+                <Burgerservicenr>689735273</Burgerservicenr>
+                <Voorletters>L.</Voorletters>
+                <Voorvoegsel></Voorvoegsel>
+                <SignificantDeelVanDeAchternaam>Karlsson</SignificantDeelVanDeAchternaam>
+                <Geboortedat>1983-11-02</Geboortedat>
+            </PartnerBijzBijstand>
+            <Bron>
+                <CdKolomSuwi>K301</CdKolomSuwi>
+                <CdPartijSuwi>P301</CdPartijSuwi>
+                <CdVestigingSuwi>V301</CdVestigingSuwi>
+            </Bron>
+        </SpecifiekeGegevensBijzBijstand>
+
+        <!-- Bijzondere bijstand: woon-/energiekosten -->
+        <SpecifiekeGegevensBijzBijstand>
+            <CdClusterBijzBijstand>02</CdClusterBijzBijstand>
+            <OmsSrtKostenBijzBijstand>Energietoeslag hoge energielasten</OmsSrtKostenBijzBijstand>
+            <DatBetaalbaarBijzBijstand>2024-02-22</DatBetaalbaarBijzBijstand>
+            <SzWet>
+                <CdSzWet>PW</CdSzWet>
+            </SzWet>
+            <PartnerBijzBijstand>
+                <Burgerservicenr>689735273</Burgerservicenr>
+                <Voorletters>L.</Voorletters>
+                <Voorvoegsel></Voorvoegsel>
+                <SignificantDeelVanDeAchternaam>Karlsson</SignificantDeelVanDeAchternaam>
+                <Geboortedat>1983-11-02</Geboortedat>
+            </PartnerBijzBijstand>
+            <Bron>
+                <CdKolomSuwi>K302</CdKolomSuwi>
+                <CdPartijSuwi>P302</CdPartijSuwi>
+                <CdVestigingSuwi>V302</CdVestigingSuwi>
+            </Bron>
+        </SpecifiekeGegevensBijzBijstand>
+
+    </ClientSuwi>
+</bij:BijstandsregelingenInfoResponse>
