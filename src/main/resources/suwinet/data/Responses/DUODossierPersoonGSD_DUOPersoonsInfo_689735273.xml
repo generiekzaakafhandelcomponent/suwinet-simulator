@@ -1,7 +1,7 @@
 <smls:DUOPersoonsInfoResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/DUODossierPersoonGSD/v0300">
     <ClientSuwi>
         
-        <!-- DUO opleidingsinformatie van Lars Karlsson (bsn: 689735273) -->
+        <!-- DUO opleidingsinformatie van Lars Terphuis (bsn: 689735273) -->
         <Burgerservicenr>689735273</Burgerservicenr>
         <IndStartkwalificatieDuo>2</IndStartkwalificatieDuo>
 

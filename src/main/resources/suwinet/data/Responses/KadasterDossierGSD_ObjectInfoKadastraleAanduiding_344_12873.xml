@@ -1,6 +1,6 @@
 <ns3:ObjectInfoKadastraleAanduidingResponse xmlns:ns3="http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300" xmlns:ns2="http://bkwi.nl/SuwiML/FWI/v0203">
     
-    <!-- Voormalige woning Utrecht van Nora Johansson (bsn: 022264541) -->
+    <!-- Voormalige woning Utrecht van Nora van Wollingen (bsn: 022264541) -->
     <OnroerendeZaak>
         <DatToestandKadaster>20240215</DatToestandKadaster>
         <CdTypeOnroerendeZaak>P</CdTypeOnroerendeZaak>
@@ -27,6 +27,15 @@
             </AantekeningKadastraalObject>
         </PubliekrechtelijkeBeperking>
 
+        <LocatieOZ>
+            <StraatadresBag>
+                <Postcd>3521AZ</Postcd>
+                <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+                <Straatnaam>Stadsplateau</Straatnaam>
+                <Huisnr>1</Huisnr>
+            </StraatadresBag>
+        </LocatieOZ>
+        
         <BedrKoopsom>
             <CdMunteenheid>EUR</CdMunteenheid>
             <WaardeBedr>185000</WaardeBedr>
@@ -44,7 +53,7 @@
             <NatuurlijkPersoon>
                 <Burgerservicenr>022264541</Burgerservicenr>
                 <Voornamen>Nora</Voornamen>
-                <SignificantDeelVanDeAchternaam>Johansson</SignificantDeelVanDeAchternaam>
+                <SignificantDeelVanDeAchternaam>van Wollingen</SignificantDeelVanDeAchternaam>
                 <Geslacht>2</Geslacht>
             </NatuurlijkPersoon>
             <DomicilieAdres>

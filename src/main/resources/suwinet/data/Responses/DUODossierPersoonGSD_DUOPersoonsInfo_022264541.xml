@@ -1,7 +1,7 @@
 <smls:DUOPersoonsInfoResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/DUODossierPersoonGSD/v0300">
     <ClientSuwi>
 
-        <!-- DUO opleidingsinformatie van Nora Johansson (bsn: 022264541) - nieuw studieverloop -->
+        <!-- DUO opleidingsinformatie van Nora van Wollingen (bsn: 022264541) - nieuw studieverloop -->
         <Burgerservicenr>022264541</Burgerservicenr>
         <IndStartkwalificatieDuo>1</IndStartkwalificatieDuo>
 

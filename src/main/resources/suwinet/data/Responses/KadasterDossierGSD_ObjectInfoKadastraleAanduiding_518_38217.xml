@@ -1,6 +1,6 @@
 <ns3:ObjectInfoKadastraleAanduidingResponse xmlns:ns3="http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300" xmlns:ns2="http://bkwi.nl/SuwiML/FWI/v0203">
     
-    <!-- Hoofdverblijf van Nora Johansson (bsn: 022264541) én (bsn: 689735273) -->
+    <!-- Hoofdverblijf van Nora van Wollingen (bsn: 022264541) én Lars Terphuis (bsn: 689735273) -->
     <OnroerendeZaak>
         <DatToestandKadaster>20240215</DatToestandKadaster>
         <CdTypeOnroerendeZaak>P</CdTypeOnroerendeZaak>
@@ -54,7 +54,7 @@
             <NatuurlijkPersoon>
                 <Burgerservicenr>022264541</Burgerservicenr>
                 <Voornamen>Nora</Voornamen>
-                <SignificantDeelVanDeAchternaam>Johansson</SignificantDeelVanDeAchternaam>
+                <SignificantDeelVanDeAchternaam>van Wollingen</SignificantDeelVanDeAchternaam>
                 <Geslacht>2</Geslacht>
             </NatuurlijkPersoon>
             <DomicilieAdres>
@@ -71,7 +71,7 @@
             <NatuurlijkPersoon>
                 <Burgerservicenr>689735273</Burgerservicenr>
                 <Voornamen>Lars</Voornamen>
-                <SignificantDeelVanDeAchternaam>Karlsson</SignificantDeelVanDeAchternaam>
+                <SignificantDeelVanDeAchternaam>Terphuis</SignificantDeelVanDeAchternaam>
                 <Geslacht>1</Geslacht>
             </NatuurlijkPersoon>
             <DomicilieAdres>

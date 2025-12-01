@@ -1,6 +1,6 @@
 <ns3:ObjectInfoKadastraleAanduidingResponse xmlns:ns3="http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300" xmlns:ns2="http://bkwi.nl/SuwiML/FWI/v0203">
     
-    <!-- Appartement van Lars Terphuis (bsn: 689735273) -->
+    <!-- Garagebox van Lars Terphuis (bsn: 689735273) -->
     <OnroerendeZaak>
         <DatToestandKadaster>20240215</DatToestandKadaster>
         <CdTypeOnroerendeZaak>P</CdTypeOnroerendeZaak>
@@ -10,11 +10,11 @@
             <CdKadastraleGemeente>363</CdKadastraleGemeente>
             <KadastraleGemeentenaam>Amsterdam</KadastraleGemeentenaam>
             <KadastraleSectie>N</KadastraleSectie>
-            <KadastraalPerceelnr>21845</KadastraalPerceelnr>
+            <KadastraalPerceelnr>21846</KadastraalPerceelnr>
             <VolgnrKadastraalAppartementsrecht>1</VolgnrKadastraalAppartementsrecht>
         </KadastraleAanduiding>
 
-        <OmsKadastraalObject>Bebouwd: Appartement</OmsKadastraalObject>
+        <OmsKadastraalObject>Bebouwd: Opslag/garage</OmsKadastraalObject>
 
         <ZakelijkRecht>
             <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
@@ -29,16 +29,16 @@
 
         <LocatieOZ>
             <StraatadresBag>
-                <Postcd>1011PN</Postcd>
+                <Postcd>1093NG</Postcd>
                 <Woonplaatsnaam>Amsterdam</Woonplaatsnaam>
-                <Straatnaam>Amstel</Straatnaam>
-                <Huisnr>1</Huisnr>
+                <Straatnaam>Oranje-Vrijstaatplein</Straatnaam>
+                <Huisnr>2</Huisnr>
             </StraatadresBag>
         </LocatieOZ>
         
         <BedrKoopsom>
             <CdMunteenheid>EUR</CdMunteenheid>
-            <WaardeBedr>210000</WaardeBedr>
+            <WaardeBedr>35000</WaardeBedr>
         </BedrKoopsom>
         <JaarAankoop>2007</JaarAankoop>
 

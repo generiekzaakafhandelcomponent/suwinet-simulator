@@ -1,9 +1,9 @@
 <brp:AanvraagPersoonResponse xmlns:brp="http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD/v0200">
     <ClientSuwi>
         
-        <!-- Dochter van Nora Johansson (bsn: 022264541) en Lars Karlsson (bsn: 689735273) -->
-        <Voornamen>Nea</Voornamen>
-        <SignificantDeelVanDeAchternaam>Karlsson</SignificantDeelVanDeAchternaam>
+        <!-- Dochter van Nora van Wollingen (bsn: 022264541) en Lars Terphuis (bsn: 689735273) -->
+        <Voornamen>Fenna</Voornamen>
+        <SignificantDeelVanDeAchternaam>Terphuis</SignificantDeelVanDeAchternaam>
         <Geboortedat>20120808</Geboortedat>
         <Geslacht>2</Geslacht>
         <Burgerservicenr>556163771</Burgerservicenr>
@@ -58,15 +58,15 @@
         <!-- Ouders: Nora & Lars -->
         <Ouder1>
             <Voornamen>Nora</Voornamen>
-            <SignificantDeelVanDeAchternaam>Johansson</SignificantDeelVanDeAchternaam>
-            <Geboortedat>20000110</Geboortedat>
+            <SignificantDeelVanDeAchternaam>van Wollingen</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19850312</Geboortedat>
             <Burgerservicenr>022264541</Burgerservicenr>
             <DatBFamilierechtelijkeBetrekking>20120808</DatBFamilierechtelijkeBetrekking>
         </Ouder1>
         <Ouder2>
             <Voornamen>Lars</Voornamen>
-            <SignificantDeelVanDeAchternaam>Karlsson</SignificantDeelVanDeAchternaam>
-            <Geboortedat>19990202</Geboortedat>
+            <SignificantDeelVanDeAchternaam>Terphuis</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19831102</Geboortedat>
             <Burgerservicenr>689735273</Burgerservicenr>
             <DatBFamilierechtelijkeBetrekking>20120808</DatBFamilierechtelijkeBetrekking>
         </Ouder2>

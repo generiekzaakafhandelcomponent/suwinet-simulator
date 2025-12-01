@@ -1,10 +1,10 @@
 <smls:VoertuigbezitInfoPersoonResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/RDWDossierGSD/v0200">
     <ClientSuwi>
         
-        <!-- RDW voertuigbezitinfo van Nora Johansson (bsn: 022264541) -->
+        <!-- RDW voertuigbezitinfo van Nora van Wollingen (bsn: 022264541) -->
         <Burgerservicenr>022264541</Burgerservicenr>
         <Voorletters>N</Voorletters>
-        <SignificantDeelVanDeAchternaam>Johansson</SignificantDeelVanDeAchternaam>
+        <SignificantDeelVanDeAchternaam>van Wollingen</SignificantDeelVanDeAchternaam>
         <Geboortedat>20000110</Geboortedat>
 
         <RdwAdres>
@@ -24,7 +24,7 @@
             <Voertuig>
                 <KentekenVoertuig>NK45TR</KentekenVoertuig>
                 <StatusVoertuig>
-                    <CdStatusVoertuig>87</CdStatusVoertuig>
+                    <CdStatusVoertuig>91</CdStatusVoertuig>
                     <DatBStatusVoertuig>20211001</DatBStatusVoertuig>
                 </StatusVoertuig>
             </Voertuig>
