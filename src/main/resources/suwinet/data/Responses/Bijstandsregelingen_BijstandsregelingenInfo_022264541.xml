@@ -7,11 +7,11 @@
         <Geslacht>v</Geslacht>
         <Geboortedat>1985-03-12</Geboortedat>
 
-        <!-- AanvraagUitkering: PW, toegekend, met partner Lars -->
+        <!-- AanvraagUitkering: ABW, toegekend, met partner Lars -->
         <AanvraagUitkering>
             <DatAanvraagUitkering>2021-08-10</DatAanvraagUitkering>
             <SzWet>
-                <CdSzWet>PW</CdSzWet>
+                <CdSzWet>ABW</CdSzWet>
             </SzWet>
             <BeslissingOpAanvraagUitkering>
                 <CdBeslissingOpAanvraagUitkering>01</CdBeslissingOpAanvraagUitkering>
@@ -31,14 +31,14 @@
             </Bron>
         </AanvraagUitkering>
 
-        <!-- AanvraagUitkering: PW, afgewezen -->
+        <!-- AanvraagUitkering: ABW, afgewezen -->
         <AanvraagUitkering>
             <DatAanvraagUitkering>2019-03-15</DatAanvraagUitkering>
             <SzWet>
-                <CdSzWet>PW</CdSzWet>
+                <CdSzWet>ABW</CdSzWet>
             </SzWet>
             <BeslissingOpAanvraagUitkering>
-                <CdBeslissingOpAanvraagUitkering>02</CdBeslissingOpAanvraagUitkering>
+                <CdBeslissingOpAanvraagUitkering>04</CdBeslissingOpAanvraagUitkering>
                 <DatDagtekeningBeslisOpAanvrUitk>2019-03-28</DatDagtekeningBeslisOpAanvrUitk>
             </BeslissingOpAanvraagUitkering>
             <PartnerAanvraagUitkering>
@@ -55,17 +55,17 @@
             </Bron>
         </AanvraagUitkering>
 
-        <!-- Vordering: PW, lopend, nabetaling freelance inkomsten -->
+        <!-- Vordering: ABW, lopend, nabetaling freelance inkomsten -->
         <Vordering>
             <IdentificatienrVordering>785412369874521</IdentificatienrVordering>
             <DatBesluitVordering>2022-11-05</DatBesluitVordering>
-            <CdRedenVordering>02</CdRedenVordering>
+            <CdRedenVordering>13</CdRedenVordering>
             <BedrAanvangVordering>1250.00</BedrAanvangVordering>
-            <CdStatusVordering>01</CdStatusVordering>
+            <CdStatusVordering>51</CdStatusVordering>
             <BedrSaldoVordering>750.00</BedrSaldoVordering>
             <DatOnherroepelijkVordering>2023-01-10</DatOnherroepelijkVordering>
             <SzWet>
-                <CdSzWet>PW</CdSzWet>
+                <CdSzWet>ABW</CdSzWet>
             </SzWet>
             <PartnerVordering>
                 <Burgerservicenr>689735273</Burgerservicenr>
@@ -77,16 +77,16 @@
             </Bron>
         </Vordering>
 
-        <!-- Vordering: PW, afgesloten, te veel verstrekte bijzondere bijstand -->
+        <!-- Vordering: ABW, afgesloten, te veel verstrekte bijzondere bijstand -->
         <Vordering>
             <IdentificatienrVordering>654789321554789</IdentificatienrVordering>
             <DatBesluitVordering>2020-10-18</DatBesluitVordering>
-            <CdRedenVordering>03</CdRedenVordering>
+            <CdRedenVordering>11</CdRedenVordering>
             <BedrAanvangVordering>420.00</BedrAanvangVordering>
-            <CdStatusVordering>02</CdStatusVordering>
+            <CdStatusVordering>51</CdStatusVordering>
             <BedrSaldoVordering>0.00</BedrSaldoVOrdering>
             <SzWet>
-                <CdSzWet>PW</CdSzWet>
+                <CdSzWet>ABW</CdSzWet>
             </SzWet>
             <PartnerVordering>
                 <Burgerservicenr>689735273</Burgerservicenr>
@@ -100,11 +100,11 @@
 
         <!-- Bijzondere bijstand: medische kosten kind (orthodontie) -->
         <SpecifiekeGegevensBijzBijstand>
-            <CdClusterBijzBijstand>01</CdClusterBijzBijstand>
+            <CdClusterBijzBijstand>h</CdClusterBijzBijstand>
             <OmsSrtKostenBijzBijstand>Orthodontiekosten kind</OmsSrtKostenBijzBijstand>
             <DatBetaalbaarBijzBijstand>2023-06-15</DatBetaalbaarBijzBijstand>
             <SzWet>
-                <CdSzWet>PW</CdSzWet>
+                <CdSzWet>BB</CdSzWet>
             </SzWet>
             <PartnerBijzBijstand>
                 <Burgerservicenr>689735273</Burgerservicenr>
@@ -122,11 +122,11 @@
 
         <!-- Bijzondere bijstand: woon-/energiekosten -->
         <SpecifiekeGegevensBijzBijstand>
-            <CdClusterBijzBijstand>02</CdClusterBijzBijstand>
+            <CdClusterBijzBijstand>c</CdClusterBijzBijstand>
             <OmsSrtKostenBijzBijstand>Energietoeslag hoge energielasten</OmsSrtKostenBijzBijstand>
             <DatBetaalbaarBijzBijstand>2024-02-22</DatBetaalbaarBijzBijstand>
             <SzWet>
-                <CdSzWet>PW</CdSzWet>
+                <CdSzWet>BB</CdSzWet>
             </SzWet>
             <PartnerBijzBijstand>
                 <Burgerservicenr>689735273</Burgerservicenr>

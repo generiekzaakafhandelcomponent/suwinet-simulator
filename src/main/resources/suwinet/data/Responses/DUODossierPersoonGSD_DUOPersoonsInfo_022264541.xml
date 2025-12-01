@@ -75,7 +75,7 @@
                 <DatEDeelnameOpleiding>20090715</DatEDeelnameOpleiding>
                 <InhoudDeelnameOpleidingDuo>
                     <NaamOpleidingKortDuo>HBO - Social Work</NaamOpleidingKortDuo>
-                    <CdNiveauOpleidingDuo>HBO-B</CdNiveauOpleidingDuo>
+                    <CdNiveauOpleidingDuo>HBO-BA</CdNiveauOpleidingDuo>
                 </InhoudDeelnameOpleidingDuo>
             </DeelnameOpleidingGeregistrDuo>
 
@@ -95,7 +95,7 @@
                 <DatEDeelnameOpleiding>20120630</DatEDeelnameOpleiding>
                 <InhoudDeelnameOpleidingDuo>
                     <NaamOpleidingKortDuo>HBO - Master Jeugdzorg</NaamOpleidingKortDuo>
-                    <CdNiveauOpleidingDuo>HBO-M</CdNiveauOpleidingDuo>
+                    <CdNiveauOpleidingDuo>HBO-MA</CdNiveauOpleidingDuo>
                 </InhoudDeelnameOpleidingDuo>
             </DeelnameOpleidingGeregistrDuo>
 
@@ -115,7 +115,7 @@
             </InhoudResultaatOpleidingDuo>
             <ResultaatExamen>
                 <DatResultaatExamen>20050715</DatResultaatExamen>
-                <CdResultaatExamen>1</CdResultaatExamen>
+                <CdResultaatExamen>G</CdResultaatExamen>
             </ResultaatExamen>
         </ResultaatOpleidingGeregistrDuo>
 
@@ -127,11 +127,11 @@
             <CdFaseOpleidingDuo>2</CdFaseOpleidingDuo>
             <InhoudResultaatOpleidingDuo>
                 <NaamOpleidingKortDuo>HBO Bachelor Social Work</NaamOpleidingKortDuo>
-                <CdNiveauOpleidingDuo>HBO-B</CdNiveauOpleidingDuo>
+                <CdNiveauOpleidingDuo>HBO-BA</CdNiveauOpleidingDuo>
             </InhoudResultaatOpleidingDuo>
             <ResultaatExamen>
                 <DatResultaatExamen>20090715</DatResultaatExamen>
-                <CdResultaatExamen>3</CdResultaatExamen>
+                <CdResultaatExamen>C</CdResultaatExamen>
             </ResultaatExamen>
         </ResultaatOpleidingGeregistrDuo>
 
@@ -143,11 +143,11 @@
             <CdFaseOpleidingDuo>3</CdFaseOpleidingDuo>
             <InhoudResultaatOpleidingDuo>
                 <NaamOpleidingKortDuo>HBO Master Jeugdzorg</NaamOpleidingKortDuo>
-                <CdNiveauOpleidingDuo>HBO-M</CdNiveauOpleidingDuo>
+                <CdNiveauOpleidingDuo>HBO-MA</CdNiveauOpleidingDuo>
             </InhoudResultaatOpleidingDuo>
             <ResultaatExamen>
                 <DatResultaatExamen>20120630</DatResultaatExamen>
-                <CdResultaatExamen>4</CdResultaatExamen>
+                <CdResultaatExamen>G</CdResultaatExamen>
             </ResultaatExamen>
         </ResultaatOpleidingGeregistrDuo>
 
