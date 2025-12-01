@@ -1,9 +1,9 @@
 <brp:AanvraagPersoonResponse xmlns:brp="http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD/v0200">
     <ClientSuwi>
         
-        <!-- Partner van Lars Karlsson (bsn: 689735273), Ouder van Olan Karlsson (bsn: 077400434), Kjell Karlsson (bsn: 061692165), Nea Karlsson (bsn: 556163771) -->
+        <!-- Partner van Lars Terphuis (bsn: 689735273), Ouder van c Terphuis (bsn: 077400434), Bauke Terphuis (bsn: 061692165), Fenna Terphuis (bsn: 556163771) -->
         <Voornamen>Nora</Voornamen>
-        <SignificantDeelVanDeAchternaam>Johansson</SignificantDeelVanDeAchternaam>
+        <SignificantDeelVanDeAchternaam>van Wollingen</SignificantDeelVanDeAchternaam>
         <Geboortedat>19850312</Geboortedat>
         <Burgerservicenr>022264541</Burgerservicenr>
         <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
@@ -91,8 +91,8 @@
             <DatBFamilierechtelijkeBetrekking>20000110</DatBFamilierechtelijkeBetrekking>
         </Ouder1>
         <Ouder2>
-            <Voornamen>Finn</Voornamen>
-            <SignificantDeelVanDeAchternaam>Johansson</SignificantDeelVanDeAchternaam>
+            <Voornamen>Hugo</Voornamen>
+            <SignificantDeelVanDeAchternaam>van Wollingen</SignificantDeelVanDeAchternaam>
             <Geboortedat>19560315</Geboortedat>
             <DatBFamilierechtelijkeBetrekking>20000110</DatBFamilierechtelijkeBetrekking>
         </Ouder2>
@@ -100,7 +100,7 @@
             <DatHuwelijkssluiting>20160606</DatHuwelijkssluiting>
             <Partner>
                 <Voornamen>Lars</Voornamen>
-                <SignificantDeelVanDeAchternaam>Karlsson</SignificantDeelVanDeAchternaam>
+                <SignificantDeelVanDeAchternaam>Terphuis</SignificantDeelVanDeAchternaam>
                 <Geboortedat>19831102</Geboortedat>
                 <Burgerservicenr>689735273</Burgerservicenr>
                 <ANr>4504839246</ANr>
@@ -111,8 +111,8 @@
             <LandHuwelijkssluiting>6030</LandHuwelijkssluiting>
         </Huwelijk>
         <Kind>
-            <Voornamen>Kjell</Voornamen>
-            <SignificantDeelVanDeAchternaam>Karlsson</SignificantDeelVanDeAchternaam>
+            <Voornamen>Bauke</Voornamen>
+            <SignificantDeelVanDeAchternaam>Terphuis</SignificantDeelVanDeAchternaam>
             <Geboortedat>20100925</Geboortedat>
             <Burgerservicenr>061692165</Burgerservicenr>
             <ANr>8320968432</ANr>
@@ -121,8 +121,8 @@
             </GeldigheidGegevensKind>
         </Kind>
         <Kind>
-            <Voornamen>Olan</Voornamen>
-            <SignificantDeelVanDeAchternaam>Karlsson</SignificantDeelVanDeAchternaam>
+            <Voornamen>Olaf</Voornamen>
+            <SignificantDeelVanDeAchternaam>Terphuis</SignificantDeelVanDeAchternaam>
             <Geboortedat>20120808</Geboortedat>
             <Burgerservicenr>077400434</Burgerservicenr>
             <ANr>4976380199</ANr>
@@ -131,8 +131,8 @@
             </GeldigheidGegevensKind>
         </Kind>
         <Kind>
-            <Voornamen>Nea</Voornamen>
-            <SignificantDeelVanDeAchternaam>Karlsson</SignificantDeelVanDeAchternaam>
+            <Voornamen>Fenna</Voornamen>
+            <SignificantDeelVanDeAchternaam>Terphuis</SignificantDeelVanDeAchternaam>
             <Geboortedat>20120808</Geboortedat>
             <Burgerservicenr>556163771</Burgerservicenr>
             <ANr>9297986953</ANr>

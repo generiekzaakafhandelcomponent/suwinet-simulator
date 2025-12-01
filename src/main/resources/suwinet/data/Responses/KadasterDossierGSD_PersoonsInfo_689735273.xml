@@ -1,10 +1,10 @@
 <ns3:PersoonsInfoResponse xmlns:ns3="http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300" xmlns:ns2="http://bkwi.nl/SuwiML/FWI/v0203">
     <ClientSuwi>
         
-        <!-- Kadasterinformatie van Lars karlsson (bsn: 689735273) -->
+        <!-- Kadasterinformatie van Lars Terphuis (bsn: 689735273) -->
         <Burgerservicenr>689735273</Burgerservicenr>
         <Voornamen>Lars</Voornamen>
-        <SignificantDeelVanDeAchternaam>Karlsson</SignificantDeelVanDeAchternaam>
+        <SignificantDeelVanDeAchternaam>Terphuis</SignificantDeelVanDeAchternaam>
         <Geslacht>1</Geslacht>
         <Geboortedat>19831102</Geboortedat>
 

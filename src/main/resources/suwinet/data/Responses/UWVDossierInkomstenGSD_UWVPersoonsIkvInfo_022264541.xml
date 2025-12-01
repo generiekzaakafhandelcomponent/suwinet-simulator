@@ -1,7 +1,7 @@
 <smls:UWVPersoonsIkvInfoResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/UWVDossierInkomstenGSD/v0200">
     <ClientSuwi>
         
-        <!-- Uwv inkomstenverhoudingen Nora Johansson (bsn: 022264541) -->
+        <!-- Uwv inkomstenverhoudingen Nora van Wollingen (bsn: 022264541) -->
         <Burgerservicenr>022264541</Burgerservicenr>
 
         <!-- 1. Werkgever in Den Haag: parttime baan bij een winkel -->

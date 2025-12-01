@@ -1,7 +1,7 @@
 <smls:UWVPersoonsIkvInfoResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/UWVDossierInkomstenGSD/v0200">
     <ClientSuwi>
         
-        <!-- Uwv inkomstenverhoudingen Lars Karlsson (bsn: 689735273) -->
+        <!-- Uwv inkomstenverhoudingen Lars Terphuis (bsn: 689735273) -->
         <Burgerservicenr>689735273</Burgerservicenr>
 
         <!-- 1. Werkgever in Den Haag: fulltime baan in de techniek -->

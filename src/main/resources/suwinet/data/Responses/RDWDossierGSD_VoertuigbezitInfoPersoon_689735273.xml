@@ -1,10 +1,10 @@
 <smls:VoertuigbezitInfoPersoonResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/RDWDossierGSD/v0200">
     <ClientSuwi>
         
-        <!-- RDW voertuigbezitinfo van Lars Karlsson (bsn: 689735273) -->
+        <!-- RDW voertuigbezitinfo van Lars Terphuis (bsn: 689735273) -->
         <Burgerservicenr>689735273</Burgerservicenr>
         <Voorletters>L</Voorletters>
-        <SignificantDeelVanDeAchternaam>Karlsson</SignificantDeelVanDeAchternaam>
+        <SignificantDeelVanDeAchternaam>Terphuis</SignificantDeelVanDeAchternaam>
         <Geboortedat>19990202</Geboortedat>
 
         <RdwAdres>
@@ -24,7 +24,7 @@
             <Voertuig>
                 <KentekenVoertuig>LS89KP</KentekenVoertuig>
                 <StatusVoertuig>
-                    <CdStatusVoertuig>87</CdStatusVoertuig>
+                    <CdStatusVoertuig>91</CdStatusVoertuig>
                     <DatBStatusVoertuig>20190401</DatBStatusVoertuig>
                 </StatusVoertuig>
             </Voertuig>
@@ -36,7 +36,7 @@
             <Voertuig>
                 <KentekenVoertuig>MT12GH</KentekenVoertuig>
                 <StatusVoertuig>
-                    <CdStatusVoertuig>87</CdStatusVoertuig>
+                    <CdStatusVoertuig>91</CdStatusVoertuig>
                     <DatBStatusVoertuig>20180701</DatBStatusVoertuig>
                 </StatusVoertuig>
             </Voertuig>

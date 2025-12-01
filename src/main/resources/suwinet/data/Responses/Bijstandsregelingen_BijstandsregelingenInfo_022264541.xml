@@ -2,8 +2,8 @@
     <ClientSuwi>
         <Burgerservicenr>022264541</Burgerservicenr>
         <Voorletters>N.</Voorletters>
-        <Voorvoegsel></Voorvoegsel>
-        <SignificantDeelVanDeAchternaam>Johansson</SignificantDeelVanDeAchternaam>
+        <Voorvoegsel>van</Voorvoegsel>
+        <SignificantDeelVanDeAchternaam>Wollingen</SignificantDeelVanDeAchternaam>
         <Geslacht>v</Geslacht>
         <Geboortedat>1985-03-12</Geboortedat>
 
@@ -21,7 +21,7 @@
                 <Burgerservicenr>689735273</Burgerservicenr>
                 <Voorletters>L.</Voorletters>
                 <Voorvoegsel></Voorvoegsel>
-                <SignificantDeelVanDeAchternaam>Karlsson</SignificantDeelVanDeAchternaam>
+                <SignificantDeelVanDeAchternaam>Terphuis</SignificantDeelVanDeAchternaam>
                 <Geboortedat>1983-11-02</Geboortedat>
             </PartnerAanvraagUitkering>
             <Bron>
@@ -45,7 +45,7 @@
                 <Burgerservicenr>689735273</Burgerservicenr>
                 <Voorletters>L.</Voorletters>
                 <Voorvoegsel></Voorvoegsel>
-                <SignificantDeelVanDeAchternaam>Karlsson</SignificantDeelVanDeAchternaam>
+                <SignificantDeelVanDeAchternaam>Terphuis</SignificantDeelVanDeAchternaam>
                 <Geboortedat>1983-11-02</Geboortedat>
             </PartnerAanvraagUitkering>
             <Bron>
@@ -110,7 +110,7 @@
                 <Burgerservicenr>689735273</Burgerservicenr>
                 <Voorletters>L.</Voorletters>
                 <Voorvoegsel></Voorvoegsel>
-                <SignificantDeelVanDeAchternaam>Karlsson</SignificantDeelVanDeAchternaam>
+                <SignificantDeelVanDeAchternaam>Terphuis</SignificantDeelVanDeAchternaam>
                 <Geboortedat>1983-11-02</Geboortedat>
             </PartnerBijzBijstand>
             <Bron>
@@ -132,7 +132,7 @@
                 <Burgerservicenr>689735273</Burgerservicenr>
                 <Voorletters>L.</Voorletters>
                 <Voorvoegsel></Voorvoegsel>
-                <SignificantDeelVanDeAchternaam>Karlsson</SignificantDeelVanDeAchternaam>
+                <SignificantDeelVanDeAchternaam>Terphuis</SignificantDeelVanDeAchternaam>
                 <Geboortedat>1983-11-02</Geboortedat>
             </PartnerBijzBijstand>
             <Bron>

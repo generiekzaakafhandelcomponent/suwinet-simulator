@@ -2,10 +2,10 @@
                           xmlns:ns4="http://bkwi.nl/SuwiML/Diensten/RDWDossierGSD/v0200">
     <ClientSuwi>
         
-        <!-- RDW Kentekeninfo van Auto van Lars Karlsson (bsn: 689735273) -->
+        <!-- RDW Kentekeninfo van Auto van Lars Terphuis (bsn: 689735273) -->
         <Burgerservicenr>689735273</Burgerservicenr>
         <Voorletters>L</Voorletters>
-        <SignificantDeelVanDeAchternaam>Karlsson</SignificantDeelVanDeAchternaam>
+        <SignificantDeelVanDeAchternaam>Terphuis</SignificantDeelVanDeAchternaam>
         <Geboortedat>19990202</Geboortedat>
 
         <RdwAdres>
