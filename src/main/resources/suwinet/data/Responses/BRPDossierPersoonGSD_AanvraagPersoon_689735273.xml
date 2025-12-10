@@ -38,6 +38,7 @@
         <VerblijfplaatsHistorisch>
             <DomicilieAdres>
                 <Postcd>2545HA</Postcd>
+                <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
                 <Straatnaam>Leyweg</Straatnaam>
                 <Huisnr>813</Huisnr>
             </DomicilieAdres>
@@ -50,6 +51,7 @@
         <VerblijfplaatsHistorisch>
             <DomicilieAdres>
                 <Postcd>2521EC</Postcd>
+                <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
                 <Straatnaam>Slachthuisplein</Straatnaam>
                 <Huisnr>25</Huisnr>
             </DomicilieAdres>
@@ -62,6 +64,7 @@
         <VerblijfplaatsHistorisch>
             <DomicilieAdres>
                 <Postcd>2561EH</Postcd>
+                <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
                 <Straatnaam>Fahrenheitstraat</Straatnaam>
                 <Huisnr>190</Huisnr>
             </DomicilieAdres>
@@ -75,6 +78,7 @@
         <VerblijfplaatsHistorisch>
             <DomicilieAdres>
                 <Postcd>1011PN</Postcd>
+                <Woonplaatsnaam>Amsterdam</Woonplaatsnaam>
                 <Straatnaam>Amstel</Straatnaam>
                 <Huisnr>1</Huisnr>
             </DomicilieAdres>
