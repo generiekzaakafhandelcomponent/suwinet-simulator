@@ -40,6 +40,98 @@
             <DatVanInschrijvingBijGemeente>19801023</DatVanInschrijvingBijGemeente>
             <DatBAdreshoudingBrp>19801023</DatBAdreshoudingBrp>
         </AangifteAdreshoudingBrp>
+        <VerblijfplaatsHistorisch>
+            <Correspondentieadres>
+                <Postcd>2511BD</Postcd>
+                <Woonplaatsnaam>Den Haag</Woonplaatsnaam>
+                <Straatnaam>Lange Poten</Straatnaam>
+                <NaamOpenbareRuimte>Lange Poten</NaamOpenbareRuimte>
+                <Huisnr>4</Huisnr>
+            </Correspondentieadres>
+            <AangifteAdreshoudingBrp>
+                <CdGemeenteVanInschrijving>0771</CdGemeenteVanInschrijving>
+                <DatVanInschrijvingBijGemeente>20240501</DatVanInschrijvingBijGemeente>
+                <DatBAdreshoudingBrp>20240501</DatBAdreshoudingBrp>
+            </AangifteAdreshoudingBrp>
+        </VerblijfplaatsHistorisch>
+        <VerblijfplaatsHistorisch>
+            <Correspondentieadres>
+                <Postcd>3011AD</Postcd>
+                <Woonplaatsnaam>Rotterdam</Woonplaatsnaam>
+                <Straatnaam>Coolsingel</Straatnaam>
+                <NaamOpenbareRuimte>Coolsingel</NaamOpenbareRuimte>
+                <Huisnr>42</Huisnr>
+            </Correspondentieadres>
+            <AangifteAdreshoudingBrp>
+                <CdGemeenteVanInschrijving>1111</CdGemeenteVanInschrijving>
+                <DatVanInschrijvingBijGemeente>20220327</DatVanInschrijvingBijGemeente>
+                <DatBAdreshoudingBrp>20220327</DatBAdreshoudingBrp>
+            </AangifteAdreshoudingBrp>
+        </VerblijfplaatsHistorisch>
+        <VerblijfplaatsHistorisch>
+            <DomicilieAdres>
+                <Postcd>4286AA</Postcd>
+                <Woonplaatsnaam>Eethen</Woonplaatsnaam>
+                <Gemeentedeel>Eethen</Gemeentedeel>
+                <Straatnaam>Nieuwe Parklaan</Straatnaam>
+                <NaamOpenbareRuimte>Nieuwe Parklaan</NaamOpenbareRuimte>
+                <Huisnr>56</Huisnr>
+                <Huisletter>k</Huisletter>
+            </DomicilieAdres>
+            <AangifteAdreshoudingBrp>
+                <CdGemeenteVanInschrijving>0771</CdGemeenteVanInschrijving>
+                <DatVanInschrijvingBijGemeente>20000519</DatVanInschrijvingBijGemeente>
+                <DatBAdreshoudingBrp>20000519</DatBAdreshoudingBrp>
+            </AangifteAdreshoudingBrp>
+        </VerblijfplaatsHistorisch>
+        <VerblijfplaatsHistorisch>
+            <DomicilieAdres>
+                <Postcd>4266EB</Postcd>
+                <Woonplaatsnaam>Eethen</Woonplaatsnaam>
+                <Gemeentedeel>Eethen</Gemeentedeel>
+                <Straatnaam>Raadhuisstraat</Straatnaam>
+                <NaamOpenbareRuimte>Raadhuisstraat</NaamOpenbareRuimte>
+                <Huisnr>16</Huisnr>
+                <Huisletter>b</Huisletter>
+            </DomicilieAdres>
+            <AangifteAdreshoudingBrp>
+                <CdGemeenteVanInschrijving>0738</CdGemeenteVanInschrijving>
+                <DatVanInschrijvingBijGemeente>19730101</DatVanInschrijvingBijGemeente>
+                <DatBAdreshoudingBrp>19950101</DatBAdreshoudingBrp>
+            </AangifteAdreshoudingBrp>
+        </VerblijfplaatsHistorisch>
+        <VerblijfplaatsHistorisch>
+            <DomicilieAdres>
+                <Postcd>1079WZ</Postcd>
+                <Woonplaatsnaam>Amsterdam</Woonplaatsnaam>
+                <Straatnaam>Zomerdijkstraat</Straatnaam>
+                <NaamOpenbareRuimte>Zomerdijkstraat</NaamOpenbareRuimte>
+                <Huisnr>19</Huisnr>
+                <IdentificatiecdVerblijfplaats>0530010002090227</IdentificatiecdVerblijfplaats>
+                <IdentificatiecdNraanduiding>0530200002130217</IdentificatiecdNraanduiding>
+                <Huisletter>C</Huisletter>
+                <Huisnrtoevoeging>Huis</Huisnrtoevoeging>
+            </DomicilieAdres>
+            <AangifteAdreshoudingBrp>
+                <CdGemeenteVanInschrijving>0518</CdGemeenteVanInschrijving>
+                <DatVanInschrijvingBijGemeente>19990720</DatVanInschrijvingBijGemeente>
+                <DatBAdreshoudingBrp>19990720</DatBAdreshoudingBrp>
+            </AangifteAdreshoudingBrp>
+        </VerblijfplaatsHistorisch>
+        <VerblijfplaatsHistorisch>
+            <Correspondentieadres>
+                <Postcd>9712CA</Postcd>
+                <Woonplaatsnaam>Groningen</Woonplaatsnaam>
+                <Straatnaam>Vismarkt</Straatnaam>
+                <NaamOpenbareRuimte>Vismarkt</NaamOpenbareRuimte>
+                <Huisnr>12</Huisnr>
+            </Correspondentieadres>
+            <AangifteAdreshoudingBrp>
+                <CdGemeenteVanInschrijving>1111</CdGemeenteVanInschrijving>
+                <DatVanInschrijvingBijGemeente>19850219</DatVanInschrijvingBijGemeente>
+                <DatBAdreshoudingBrp>19850219</DatBAdreshoudingBrp>
+            </AangifteAdreshoudingBrp>
+        </VerblijfplaatsHistorisch>
         <Ouder1>
             <Voornamen>Eveline Johanna</Voornamen>
             <SignificantDeelVanDeAchternaam>Holthuizen</SignificantDeelVanDeAchternaam>
