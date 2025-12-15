@@ -24,8 +24,8 @@
                     <CdMunteenheid>EUR</CdMunteenheid>
                     <!-- 2.400,00 bruto per maand (in centen) -->
                     <WaardeBedr>240000</WaardeBedr>
-                    <!-- 6 = maand (conform voorbeeld) -->
-                    <CdUitkeringsperiode>6</CdUitkeringsperiode>
+                    <!-- 1 = maand (conform voorbeeld) -->
+                    <CdUitkeringsperiode>1</CdUitkeringsperiode>
                     <DatBBrutoUitkeringsbedr>20230901</DatBBrutoUitkeringsbedr>
                     <DatEBrutoUitkeringsbedr>20230930</DatEBrutoUitkeringsbedr>
                 </BrutoUitkeringsbedr>
@@ -34,7 +34,7 @@
                     <CdMunteenheid>EUR</CdMunteenheid>
                     <!-- 2.050,00 netto per maand (in centen) -->
                     <WaardeBedr>205000</WaardeBedr>
-                    <CdUitkeringsperiode>6</CdUitkeringsperiode>
+                    <CdUitkeringsperiode>1</CdUitkeringsperiode>
                     <DatBNettoUitkeringsbedr>20230901</DatBNettoUitkeringsbedr>
                     <DatENettoUitkeringsbedr>20230930</DatENettoUitkeringsbedr>
                 </NettoUitkeringsbedr>
