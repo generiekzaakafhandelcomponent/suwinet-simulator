@@ -54,6 +54,6 @@ public class BijstandsregelingenWebServiceConfig extends WsConfigurerAdapter {
         servlet.setApplicationContext(applicationContext);
 
         servlet.setTransformWsdlLocations(true);
-        return new ServletRegistrationBean<>(servlet, "/ws/Bijstandsregelingen-v0500/*");
+        return new ServletRegistrationBean<>(servlet, "/ws/Bijstandsregelingen-v0500");
     }
 }

@@ -60,6 +60,6 @@ public class KadasterWebServiceConfig extends WsConfigurerAdapter {
         MessageDispatcherServlet servlet = new MessageDispatcherServlet();
         servlet.setApplicationContext(applicationContext);
         servlet.setTransformWsdlLocations(true);
-        return new ServletRegistrationBean<>(servlet, "/ws/KadasterDossierGSD-v0300/*");
+        return new ServletRegistrationBean<>(servlet, "/ws/KadasterDossierGSD-v0300");
     }
 }

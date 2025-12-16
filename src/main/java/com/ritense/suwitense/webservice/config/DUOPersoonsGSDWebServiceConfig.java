@@ -54,6 +54,6 @@ public class DUOPersoonsGSDWebServiceConfig extends WsConfigurerAdapter {
         servlet.setApplicationContext(applicationContext);
 
         servlet.setTransformWsdlLocations(true);
-        return new ServletRegistrationBean<>(servlet, "/ws/DUODossierPersoonGSD-v0300/*");
+        return new ServletRegistrationBean<>(servlet, "/ws/DUODossierPersoonGSD-v0300");
     }
 }

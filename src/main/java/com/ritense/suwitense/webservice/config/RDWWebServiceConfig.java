@@ -54,6 +54,6 @@ public class RDWWebServiceConfig extends WsConfigurerAdapter {
         servlet.setApplicationContext(applicationContext);
 
         servlet.setTransformWsdlLocations(true);
-        return new ServletRegistrationBean<>(servlet, "/ws/RDWDossierGSD-v0200/*");
+        return new ServletRegistrationBean<>(servlet, "/ws/RDWDossierGSD-v0200");
     }
 }

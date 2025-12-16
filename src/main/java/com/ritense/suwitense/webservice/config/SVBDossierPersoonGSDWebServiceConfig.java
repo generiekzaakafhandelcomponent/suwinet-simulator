@@ -53,6 +53,6 @@ public class SVBDossierPersoonGSDWebServiceConfig extends WsConfigurerAdapter {
         MessageDispatcherServlet servlet = new MessageDispatcherServlet();
         servlet.setApplicationContext(applicationContext);
         servlet.setTransformWsdlLocations(true);
-        return new ServletRegistrationBean<>(servlet, "/ws/SVBDossierPersoonGSD-v0200/*");
+        return new ServletRegistrationBean<>(servlet, "/ws/SVBDossierPersoonGSD-v0200");
     }
 }

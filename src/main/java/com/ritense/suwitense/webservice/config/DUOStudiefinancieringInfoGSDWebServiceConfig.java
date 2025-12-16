@@ -54,6 +54,6 @@ public class DUOStudiefinancieringInfoGSDWebServiceConfig extends WsConfigurerAd
         servlet.setApplicationContext(applicationContext);
 
         servlet.setTransformWsdlLocations(true);
-        return new ServletRegistrationBean<>(servlet, "/ws/DUODossierStudiefinancieringGSD-v0200/*");
+        return new ServletRegistrationBean<>(servlet, "/ws/DUODossierStudiefinancieringGSD-v0200");
     }
 }
