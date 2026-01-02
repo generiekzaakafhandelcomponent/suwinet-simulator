@@ -5,7 +5,7 @@ on:
 
 env:
   GITHUB_REGISTRY: ghcr.io
-  DOCKER_IMAGE_NAME: suwinet-simulator-local
+  DOCKER_IMAGE_NAME: suwinet-simulator
   GITHUB_NAMESPACE: generiekzaakafhandelcomponent
 
 jobs:
