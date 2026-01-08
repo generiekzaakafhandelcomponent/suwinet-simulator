@@ -1,0 +1,87 @@
+<brp:AanvraagPersoonResponse xmlns:brp="http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD/v0200">
+    <ClientSuwi>
+
+        <!-- Kind van Elise Schouten (bsn: 999998493) en Johan Maren (bsn: 999993549) -->
+        <Voornamen>Koen</Voornamen>
+        <SignificantDeelVanDeAchternaam>Maren</SignificantDeelVanDeAchternaam>
+        <Geboortedat>20110314</Geboortedat>
+        <Burgerservicenr>999993203</Burgerservicenr>
+        <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
+        <ANr>1947358206</ANr>
+        <AanduidingNaamgebruik>3</AanduidingNaamgebruik>
+        <Geslacht>1</Geslacht>
+        <CdGeboortegemeente>0344</CdGeboortegemeente>
+        <Geboorteland>6030</Geboorteland>
+
+        <GeldigheidGegevensPersoon>
+            <DatGeldigheidGegevens>20110314</DatGeldigheidGegevens>
+        </GeldigheidGegevensPersoon>
+
+        <Nationaliteit>
+            <CdNationaliteit>0001</CdNationaliteit>
+            <GeldigheidGegevensNationaliteit>
+                <DatGeldigheidGegevens>20110314</DatGeldigheidGegevens>
+            </GeldigheidGegevensNationaliteit>
+        </Nationaliteit>
+
+        <!-- Huidig domicilieadres: gelijk aan Elise en Johan -->
+        <DomicilieAdres>
+            <Postcd>3521AZ</Postcd>
+            <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+            <Straatnaam>Stadsplateau</Straatnaam>
+            <NaamOpenbareRuimte>Stadsplateau</NaamOpenbareRuimte>
+            <Huisnr>1</Huisnr>
+            <IdentificatiecdVerblijfplaats>0344010000987654</IdentificatiecdVerblijfplaats>
+            <IdentificatiecdNraanduiding>0344200000987652</IdentificatiecdNraanduiding>
+        </DomicilieAdres>
+
+        <AangifteAdreshoudingBrp>
+            <CdGemeenteVanInschrijving>0344</CdGemeenteVanInschrijving>
+            <DatVanInschrijvingBijGemeente>20210318</DatVanInschrijvingBijGemeente>
+            <DatBAdreshoudingBrp>20210318</DatBAdreshoudingBrp>
+        </AangifteAdreshoudingBrp>
+
+        <!-- Enige historische verblijfplaats: gelijk aan woonadres, datum = geboortedatum -->
+        <VerblijfplaatsHistorisch>
+            <DomicilieAdres>
+                <Postcd>3521AZ</Postcd>
+                <Straatnaam>Stadsplateau</Straatnaam>
+                <Huisnr>1</Huisnr>
+            </DomicilieAdres>
+            <AangifteAdreshoudingBrp>
+                <CdGemeenteVanInschrijving>0344</CdGemeenteVanInschrijving>
+                <DatVanInschrijvingBijGemeente>20110314</DatVanInschrijvingBijGemeente>
+                <DatBAdreshoudingBrp>20110314</DatBAdreshoudingBrp>
+            </AangifteAdreshoudingBrp>
+        </VerblijfplaatsHistorisch>
+
+        <!-- Ouders: Elise (Ouder1) en Johan (Ouder2) met corresponderende data -->
+        <Ouder1>
+            <Voornamen>Elise</Voornamen>
+            <SignificantDeelVanDeAchternaam>Schouten</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19860423</Geboortedat>
+            <Burgerservicenr>999998493</Burgerservicenr>
+            <ANr>4859201743</ANr>
+            <CdGeboortegemeente>0344</CdGeboortegemeente>
+            <Geboorteland>6030</Geboorteland>
+            <DatBFamilierechtelijkeBetrekking>20110314</DatBFamilierechtelijkeBetrekking>
+        </Ouder1>
+
+        <Ouder2>
+            <Voornamen>Johan</Voornamen>
+            <SignificantDeelVanDeAchternaam>Maren</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19840709</Geboortedat>
+            <Burgerservicenr>999993549</Burgerservicenr>
+            <ANr>7036185920</ANr>
+            <CdGeboortegemeente>0363</CdGeboortegemeente>
+            <Geboorteland>6030</Geboorteland>
+            <DatBFamilierechtelijkeBetrekking>20110314</DatBFamilierechtelijkeBetrekking>
+        </Ouder2>
+
+        <InschrijvingsgegevensBrp>
+            <CdGemeenteWaarPkZichBevindt>0518</CdGemeenteWaarPkZichBevindt>
+            <CdPkVolledigGeconverteerd>P</CdPkVolledigGeconverteerd>
+        </InschrijvingsgegevensBrp>
+
+    </ClientSuwi>
+</brp:AanvraagPersoonResponse>

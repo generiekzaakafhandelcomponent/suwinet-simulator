@@ -1,0 +1,180 @@
+<smls:UWVPersoonsIkvInfoResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/UWVDossierInkomstenGSD/v0200">
+    <ClientSuwi>
+
+        <!-- Uwv inkomstenverhoudingen Elise Schouten (bsn: 999998493) -->
+        <Burgerservicenr>999998493</Burgerservicenr>
+
+        <!-- 1. Werkgever in Utrecht: fulltime baan in de techniek -->
+        <Inkomstenverhouding>
+            <VolgnrIkv>1</VolgnrIkv>
+            <DatBIkv>20200201</DatBIkv>
+            <AdministratieveEenheid>
+                <NaamAdministratieveEenheid>TECHNISCH SERVICEPUNT UTRECHT</NaamAdministratieveEenheid>
+                <Loonheffingennr>334455667L01</Loonheffingennr>
+                <RechtspersoonAdministratieveEenh>
+                    <FiNr>334455667</FiNr>
+                    <NaamRechtspersoon>TSU UTRECHT B.V.</NaamRechtspersoon>
+                </RechtspersoonAdministratieveEenh>
+                <FeitelijkAdresAeh>
+                    <Straatadres>
+                        <Postcd>3542AD</Postcd>
+                        <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+                        <Gemeentenaam>Utrecht</Gemeentenaam>
+                        <Straatnaam>Reactorweg</Straatnaam>
+                        <Huisnr>12</Huisnr>
+                    </Straatadres>
+                </FeitelijkAdresAeh>
+                <CorrespondentieadresAeh>
+                    <Straatadres>
+                        <Postcd>3500AE</Postcd>
+                        <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+                        <Gemeentenaam>Utrecht</Gemeentenaam>
+                        <Straatnaam>Postbus</Straatnaam>
+                        <Huisnr>140</Huisnr>
+                    </Straatadres>
+                </CorrespondentieadresAeh>
+            </AdministratieveEenheid>
+            <Inkomstenperiode>
+                <DatBIkp>20200201</DatBIkp>
+                <DatEIkp>20220131</DatEIkp>
+                <CdSrtIkv>11</CdSrtIkv>
+                <CdTypeArbeidscontract>O</CdTypeArbeidscontract>
+                <CdInvloedVerzekeringsplicht>AB</CdInvloedVerzekeringsplicht>
+                <IndLoonheffingskortingToegepast>1</IndLoonheffingskortingToegepast>
+                <IndRegelmatigArbeidspatroon>1</IndRegelmatigArbeidspatroon>
+                <CdAardIkv>12</CdAardIkv>
+            </Inkomstenperiode>
+
+            <Inkomstenopgave>
+                <DatBIko>20210301</DatBIko>
+                <DatEIko>20210331</DatEIko>
+                <AantSvDagenIko>23</AantSvDagenIko>
+                <AantVerloondeUrenIko>172</AantVerloondeUrenIko>
+                <BedrBrutoloonSv>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>252300</WaardeBedr>
+                </BedrBrutoloonSv>
+                <BedrLoonLbPremieVolksverz>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>252300</WaardeBedr>
+                </BedrLoonLbPremieVolksverz>
+            </Inkomstenopgave>
+
+            <Inkomstenopgave>
+                <DatBIko>20210401</DatBIko>
+                <DatEIko>20210430</DatEIko>
+                <AantSvDagenIko>20</AantSvDagenIko>
+                <AantVerloondeUrenIko>160</AantVerloondeUrenIko>
+                <BedrBrutoloonSv>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>248900</WaardeBedr>
+                </BedrBrutoloonSv>
+                <BedrLoonLbPremieVolksverz>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>248900</WaardeBedr>
+                </BedrLoonLbPremieVolksverz>
+            </Inkomstenopgave>
+        </Inkomstenverhouding>
+
+        <!-- 2. UWV-uitkering (bijv. WIA na ziekte) -->
+        <Inkomstenverhouding>
+            <VolgnrIkv>2</VolgnrIkv>
+            <DatBIkv>20220201</DatBIkv>
+            <AdministratieveEenheid>
+                <NaamAdministratieveEenheid>UWV</NaamAdministratieveEenheid>
+                <Loonheffingennr>004444444L01</Loonheffingennr>
+                <RechtspersoonAdministratieveEenh>
+                    <FiNr>004444444</FiNr>
+                    <NaamRechtspersoon>UITVOERINGSINST. WERKNEMERSVERZEKERINGEN</NaamRechtspersoon>
+                </RechtspersoonAdministratieveEenh>
+                <FeitelijkAdresAeh>
+                    <Straatadres>
+                        <Postcd>3521AL</Postcd>
+                        <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+                        <Gemeentenaam>Utrecht</Gemeentenaam>
+                        <Straatnaam>Weg der Verenigde Naties</Straatnaam>
+                        <Huisnr>73</Huisnr>
+                    </Straatadres>
+                </FeitelijkAdresAeh>
+            </AdministratieveEenheid>
+            <Inkomstenperiode>
+                <DatBIkp>20220201</DatBIkp>
+                <DatEIkp>20230131</DatEIkp>
+                <CdSrtIkv>53</CdSrtIkv>
+                <CdTypeArbeidscontract>U</CdTypeArbeidscontract>
+                <CdInvloedVerzekeringsplicht>AC</CdInvloedVerzekeringsplicht>
+                <IndLoonheffingskortingToegepast>1</IndLoonheffingskortingToegepast>
+                <CdAardIkv>13</CdAardIkv>
+            </Inkomstenperiode>
+            <Inkomstenopgave>
+                <DatBIko>20220501</DatBIko>
+                <DatEIko>20220531</DatEIko>
+                <AantSvDagenIko>31</AantSvDagenIko>
+                <AantVerloondeUrenIko>0</AantVerloondeUrenIko>
+                <BedrBrutoloonSv>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>186500</WaardeBedr>
+                </BedrBrutoloonSv>
+                <BedrLoonLbPremieVolksverz>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>186500</WaardeBedr>
+                </BedrLoonLbPremieVolksverz>
+            </Inkomstenopgave>
+        </Inkomstenverhouding>
+
+        <!-- 3. SVB-uitkering (Wlz) -->
+        <Inkomstenverhouding>
+            <VolgnrIkv>3</VolgnrIkv>
+            <DatBIkv>20220201</DatBIkv>
+            <AdministratieveEenheid>
+                <NaamAdministratieveEenheid>SOCIALE VERZEKERINGSBANK</NaamAdministratieveEenheid>
+                <Loonheffingennr>005555555L02</Loonheffingennr>
+                <RechtspersoonAdministratieveEenh>
+                    <FiNr>005555555</FiNr>
+                    <NaamRechtspersoon>SOCIALE VERZEKERINGSBANK</NaamRechtspersoon>
+                </RechtspersoonAdministratieveEenh>
+                <FeitelijkAdresAeh>
+                    <Straatadres>
+                        <Postcd>3527GB</Postcd>
+                        <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+                        <Gemeentenaam>Utrecht</Gemeentenaam>
+                        <Straatnaam>Europalaan</Straatnaam>
+                        <Huisnr>2</Huisnr>
+                    </Straatadres>
+                </FeitelijkAdresAeh>
+            </AdministratieveEenheid>
+            <Inkomstenperiode>
+                <DatBIkp>20220201</DatBIkp>
+                <DatEIkp>20220228</DatEIkp>
+                <CdSrtIkv>85</CdSrtIkv>
+                <CdTypeArbeidscontract>U</CdTypeArbeidscontract>
+                <CdInvloedVerzekeringsplicht>AC</CdInvloedVerzekeringsplicht>
+                <CdAardIkv>15</CdAardIkv>
+            </Inkomstenperiode>
+            <Inkomstenopgave>
+                <DatBIko>20220201</DatBIko>
+                <DatEIko>20220228</DatEIko>
+                <AantSvDagenIko>28</AantSvDagenIko>
+                <AantVerloondeUrenIko>0</AantVerloondeUrenIko>
+                <BedrBrutoloonSv>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <!-- 2685,00 bruto in centen -->
+                    <WaardeBedr>268500</WaardeBedr>
+                </BedrBrutoloonSv>
+                <BedrLoonLbPremieVolksverz>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>268500</WaardeBedr>
+                </BedrLoonLbPremieVolksverz>
+            </Inkomstenopgave>
+        </Inkomstenverhouding>
+
+    </ClientSuwi>
+</smls:UWVPersoonsIkvInfoResponse>

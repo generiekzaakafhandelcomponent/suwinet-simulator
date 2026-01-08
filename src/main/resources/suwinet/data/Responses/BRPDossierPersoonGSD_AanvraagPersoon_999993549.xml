@@ -1,0 +1,167 @@
+<brp:AanvraagPersoonResponse xmlns:brp="http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD/v0200">
+    <ClientSuwi>
+
+        <!-- Partner van Elise Schouten (bsn: 999998493),
+             Ouder van Koen Maren (bsn: 999993203),
+             Elsa Maren (bsn: 999993069),
+             Anna Maren (bsn: 999993173) -->
+        <Voornamen>Johan</Voornamen>
+        <SignificantDeelVanDeAchternaam>Maren</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19840709</Geboortedat>
+        <Burgerservicenr>999993549</Burgerservicenr>
+        <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
+        <ANr>7036185920</ANr>
+        <AanduidingNaamgebruik>3</AanduidingNaamgebruik>
+        <Geslacht>1</Geslacht>
+        <CdGeboortegemeente>0363</CdGeboortegemeente>
+        <Geboorteland>6030</Geboorteland>
+
+        <GeldigheidGegevensPersoon>
+            <DatGeldigheidGegevens>19840709</DatGeldigheidGegevens>
+        </GeldigheidGegevensPersoon>
+
+        <Nationaliteit>
+            <CdNationaliteit>0001</CdNationaliteit>
+            <GeldigheidGegevensNationaliteit>
+                <DatGeldigheidGegevens>20010214</DatGeldigheidGegevens>
+            </GeldigheidGegevensNationaliteit>
+        </Nationaliteit>
+
+        <DomicilieAdres>
+            <Postcd>3521AZ</Postcd>
+            <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+            <Straatnaam>Stadsplateau</Straatnaam>
+            <NaamOpenbareRuimte>Stadsplateau</NaamOpenbareRuimte>
+            <Huisnr>1</Huisnr>
+            <IdentificatiecdVerblijfplaats>0344010000987654</IdentificatiecdVerblijfplaats>
+            <IdentificatiecdNraanduiding>0344200000987652</IdentificatiecdNraanduiding>
+        </DomicilieAdres>
+
+        <AangifteAdreshoudingBrp>
+            <CdGemeenteVanInschrijving>0344</CdGemeenteVanInschrijving>
+            <DatVanInschrijvingBijGemeente>20210319</DatVanInschrijvingBijGemeente>
+            <DatBAdreshoudingBrp>20210319</DatBAdreshoudingBrp>
+        </AangifteAdreshoudingBrp>
+
+        <VerblijfplaatsHistorisch>
+            <DomicilieAdres>
+                <Postcd>2561EH</Postcd>
+                <Straatnaam>Fahrenheitstraat</Straatnaam>
+                <Huisnr>190</Huisnr>
+            </DomicilieAdres>
+            <AangifteAdreshoudingBrp>
+                <CdGemeenteVanInschrijving>0363</CdGemeenteVanInschrijving>
+                <DatVanInschrijvingBijGemeente>20120305</DatVanInschrijvingBijGemeente>
+                <DatBAdreshoudingBrp>20120305</DatBAdreshoudingBrp>
+            </AangifteAdreshoudingBrp>
+        </VerblijfplaatsHistorisch>
+
+        <VerblijfplaatsHistorisch>
+            <DomicilieAdres>
+                <Postcd>2521EC</Postcd>
+                <Straatnaam>Slachthuisplein</Straatnaam>
+                <Huisnr>25</Huisnr>
+            </DomicilieAdres>
+            <AangifteAdreshoudingBrp>
+                <CdGemeenteVanInschrijving>0518</CdGemeenteVanInschrijving>
+                <DatVanInschrijvingBijGemeente>20140921</DatVanInschrijvingBijGemeente>
+                <DatBAdreshoudingBrp>20140921</DatBAdreshoudingBrp>
+            </AangifteAdreshoudingBrp>
+        </VerblijfplaatsHistorisch>
+
+        <VerblijfplaatsHistorisch>
+            <DomicilieAdres>
+                <Postcd>2545HA</Postcd>
+                <Straatnaam>Leyweg</Straatnaam>
+                <Huisnr>813</Huisnr>
+            </DomicilieAdres>
+            <AangifteAdreshoudingBrp>
+                <CdGemeenteVanInschrijving>0518</CdGemeenteVanInschrijving>
+                <DatVanInschrijvingBijGemeente>20161201</DatVanInschrijvingBijGemeente>
+                <DatBAdreshoudingBrp>20161201</DatBAdreshoudingBrp>
+            </AangifteAdreshoudingBrp>
+        </VerblijfplaatsHistorisch>
+
+        <VerblijfplaatsHistorisch>
+            <DomicilieAdres>
+                <Postcd>2511BT</Postcd>
+                <Straatnaam>Spui</Straatnaam>
+                <Huisnr>70</Huisnr>
+            </DomicilieAdres>
+            <AangifteAdreshoudingBrp>
+                <CdGemeenteVanInschrijving>0518</CdGemeenteVanInschrijving>
+                <DatVanInschrijvingBijGemeente>20180210</DatVanInschrijvingBijGemeente>
+                <DatBAdreshoudingBrp>20180210</DatBAdreshoudingBrp>
+            </AangifteAdreshoudingBrp>
+        </VerblijfplaatsHistorisch>
+
+        <Ouder1>
+            <Voornamen>Maja</Voornamen>
+            <SignificantDeelVanDeAchternaam>Maren</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19580910</Geboortedat>
+            <DatBFamilierechtelijkeBetrekking>20010214</DatBFamilierechtelijkeBetrekking>
+        </Ouder1>
+
+        <Ouder2>
+            <Voornamen>Erik</Voornamen>
+            <SignificantDeelVanDeAchternaam>Maren</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19600105</Geboortedat>
+            <DatBFamilierechtelijkeBetrekking>20010214</DatBFamilierechtelijkeBetrekking>
+        </Ouder2>
+
+        <Huwelijk>
+            <DatHuwelijkssluiting>20080917</DatHuwelijkssluiting>
+            <Partner>
+                <Voornamen>Elise</Voornamen>
+                <SignificantDeelVanDeAchternaam>Schouten</SignificantDeelVanDeAchternaam>
+                <Geboortedat>19860423</Geboortedat>
+                <Burgerservicenr>999998493</Burgerservicenr>
+                <ANr>4859201743</ANr>
+                <CdGeboortegemeente>0344</CdGeboortegemeente>
+                <Geboorteland>6030</Geboorteland>
+            </Partner>
+            <CdGemeenteHuwelijkssluiting>0344</CdGemeenteHuwelijkssluiting>
+            <LandHuwelijkssluiting>6030</LandHuwelijkssluiting>
+        </Huwelijk>
+
+        <!-- Kinderen: 100% gelijk aan Elise-bestand -->
+        <Kind>
+            <Voornamen>Koen</Voornamen>
+            <SignificantDeelVanDeAchternaam>Maren</SignificantDeelVanDeAchternaam>
+            <Geboortedat>20110314</Geboortedat>
+            <Burgerservicenr>999993203</Burgerservicenr>
+            <ANr>1947358206</ANr>
+            <GeldigheidGegevensKind>
+                <DatGeldigheidGegevens>20110314</DatGeldigheidGegevens>
+            </GeldigheidGegevensKind>
+        </Kind>
+
+        <Kind>
+            <Voornamen>Elsa</Voornamen>
+            <SignificantDeelVanDeAchternaam>Maren</SignificantDeelVanDeAchternaam>
+            <Geboortedat>20131105</Geboortedat>
+            <Burgerservicenr>999993069</Burgerservicenr>
+            <ANr>5801264937</ANr>
+            <GeldigheidGegevensKind>
+                <DatGeldigheidGegevens>20131105</DatGeldigheidGegevens>
+            </GeldigheidGegevensKind>
+        </Kind>
+
+        <Kind>
+            <Voornamen>Anna</Voornamen>
+            <SignificantDeelVanDeAchternaam>Maren</SignificantDeelVanDeAchternaam>
+            <Geboortedat>20160219</Geboortedat>
+            <Burgerservicenr>999993173</Burgerservicenr>
+            <ANr>6294738150</ANr>
+            <GeldigheidGegevensKind>
+                <DatGeldigheidGegevens>20160219</DatGeldigheidGegevens>
+            </GeldigheidGegevensKind>
+        </Kind>
+
+        <InschrijvingsgegevensBrp>
+            <CdGemeenteWaarPkZichBevindt>0344</CdGemeenteWaarPkZichBevindt>
+            <CdPkVolledigGeconverteerd>P</CdPkVolledigGeconverteerd>
+        </InschrijvingsgegevensBrp>
+
+    </ClientSuwi>
+</brp:AanvraagPersoonResponse>

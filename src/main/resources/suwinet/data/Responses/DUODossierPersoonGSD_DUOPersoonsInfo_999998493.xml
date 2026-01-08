@@ -1,0 +1,118 @@
+<smls:DUOPersoonsInfoResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/DUODossierPersoonGSD/v0300">
+    <ClientSuwi>
+        
+        <!-- DUO opleidingsinformatie van Elise Schouten (bsn: 999998493) -->
+        <Burgerservicenr>999998493</Burgerservicenr>
+        <IndStartkwalificatieDuo>2</IndStartkwalificatieDuo>
+
+        <!-- Eerste traject: praktijkonderwijs en VMBO-achtige leerweg -->
+        <Onderwijsovereenkomst>
+            <Brin>
+                <BrinNr>31ZX</BrinNr>
+            </Brin>
+
+            <DatInschrijvingOpleiding>19960801</DatInschrijvingOpleiding>
+            <DatUitschrijvingOpleiding>20040630</DatUitschrijvingOpleiding>
+
+            <!-- 1996-1998: Praktijkonderwijs -->
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>19960801</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>19970731</DatEDeelnameOpleiding>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>Praktijkonderwijs</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>VO-PRO</CdNiveauOpleidingDuo>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>19970801</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>19980731</DatEDeelnameOpleiding>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>Praktijkonderwijs</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>VO-PRO</CdNiveauOpleidingDuo>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+
+            <!-- 1998-2000: Basisberoepsgerichte leerweg VMBO -->
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>19980801</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>19990731</DatEDeelnameOpleiding>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>Basisberoepsgerichte leerweg VMBO</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>VO-VMBO-BB</CdNiveauOpleidingDuo>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>19990801</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20000731</DatEDeelnameOpleiding>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>Basisberoepsgerichte leerweg VMBO</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>VO-VMBO-BB</CdNiveauOpleidingDuo>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+
+            <!-- 2000-2003: MBO niveau 2 (bijvoorbeeld Zorg & Welzijn) -->
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>20000801</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20040630</DatEDeelnameOpleiding>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>MBO niveau 2 Zorg &amp; Welzijn</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>MBO-4</CdNiveauOpleidingDuo>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+        </Onderwijsovereenkomst>
+
+        <!-- Resultaten sluiten aan op het afwijkende traject van Lars -->
+
+        <!-- Resultaat 1: afsluiting praktijkonderwijs -->
+        <ResultaatOpleidingGeregistrDuo>
+            <Brin>
+                <BrinNr>31ZX</BrinNr>
+            </Brin>
+            <CdFaseOpleidingDuo>I</CdFaseOpleidingDuo>
+            <InhoudResultaatOpleidingDuo>
+                <NaamOpleidingKortDuo>Praktijkonderwijs</NaamOpleidingKortDuo>
+                <CdNiveauOpleidingDuo>VO-PRO</CdNiveauOpleidingDuo>
+            </InhoudResultaatOpleidingDuo>
+            <ResultaatExamen>
+                <!-- Iets eerder dan bij Nora -->
+                <DatResultaatExamen>19980701</DatResultaatExamen>
+                <CdResultaatExamen>G</CdResultaatExamen>
+            </ResultaatExamen>
+        </ResultaatOpleidingGeregistrDuo>
+
+        <!-- Resultaat 2: afronding basisberoepsopleiding -->
+        <ResultaatOpleidingGeregistrDuo>
+            <Brin>
+                <BrinNr>31ZX</BrinNr>
+            </Brin>
+            <CdFaseOpleidingDuo>I</CdFaseOpleidingDuo>
+            <InhoudResultaatOpleidingDuo>
+                <NaamOpleidingKortDuo>Basisberoepsopleiding</NaamOpleidingKortDuo>
+                <CdNiveauOpleidingDuo>VO-VMBO-BB</CdNiveauOpleidingDuo>
+            </InhoudResultaatOpleidingDuo>
+            <ResultaatExamen>
+                <DatResultaatExamen>20000715</DatResultaatExamen>
+                <CdResultaatExamen>G</CdResultaatExamen>
+            </ResultaatExamen>
+        </ResultaatOpleidingGeregistrDuo>
+
+        <!-- Resultaat 3: afronding MBO niveau 2 -->
+        <ResultaatOpleidingGeregistrDuo>
+            <Brin>
+                <BrinNr>31ZX</BrinNr>
+            </Brin>
+            <CdFaseOpleidingDuo>I</CdFaseOpleidingDuo>
+            <InhoudResultaatOpleidingDuo>
+                <NaamOpleidingKortDuo>Middelbaar Beroepsonderwijs (niveau 2)</NaamOpleidingKortDuo>
+                <CdNiveauOpleidingDuo>MBO-4</CdNiveauOpleidingDuo>
+            </InhoudResultaatOpleidingDuo>
+            <ResultaatExamen>
+                <DatResultaatExamen>20040630</DatResultaatExamen>
+                <CdResultaatExamen>G</CdResultaatExamen>
+            </ResultaatExamen>
+        </ResultaatOpleidingGeregistrDuo>
+
+    </ClientSuwi>
+</smls:DUOPersoonsInfoResponse>

@@ -1,0 +1,43 @@
+<ns4:SVBPersoonsInfoResponse xmlns:ns3="http://bkwi.nl/SuwiML/FWI/v0205" xmlns:ns4="http://bkwi.nl/SuwiML/Diensten/SVBDossierPersoonGSD/v0200">
+    <ClientSuwi>
+        
+        <!-- SVBPersoons info van Johan Maren (bsn: 999993549)-->
+        <Burgerservicenr>999993549</Burgerservicenr>
+        <Voornamen>Johan</Voornamen>
+        <SignificantDeelVanDeAchternaam>Maren</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19840709</Geboortedat>
+        <Geslacht>1</Geslacht>
+
+        <!-- Eén Wlz-uitkering, één periode -->
+        <Uitkeringsverhouding>
+            <DatBUitkeringsverhouding>20210301</DatBUitkeringsverhouding>
+            <DatEUitkeringsverhouding>20210331</DatEUitkeringsverhouding>
+            <SzWet>
+                <CdSzWet>WLZ</CdSzWet>
+            </SzWet>
+
+            <Uitkeringsperiode>
+                <DatBUitkeringsperiode>20210301</DatBUitkeringsperiode>
+                <DatEUitkeringsperiode>20210331</DatEUitkeringsperiode>
+
+                <BrutoUitkeringsbedr>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <!-- 2.500,00 bruto per maand (in centen) -->
+                    <WaardeBedr>250000</WaardeBedr>
+                    <CdUitkeringsperiode>1</CdUitkeringsperiode>
+                    <DatBBrutoUitkeringsbedr>20210301</DatBBrutoUitkeringsbedr>
+                    <DatEBrutoUitkeringsbedr>20210331</DatEBrutoUitkeringsbedr>
+                </BrutoUitkeringsbedr>
+
+                <NettoUitkeringsbedr>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <!-- 2.100,00 netto per maand (in centen) -->
+                    <WaardeBedr>210000</WaardeBedr>
+                    <CdUitkeringsperiode>1</CdUitkeringsperiode>
+                    <DatBNettoUitkeringsbedr>20210301</DatBNettoUitkeringsbedr>
+                    <DatENettoUitkeringsbedr>20210331</DatENettoUitkeringsbedr>
+                </NettoUitkeringsbedr>
+            </Uitkeringsperiode>
+        </Uitkeringsverhouding>
+    </ClientSuwi>
+</ns4:SVBPersoonsInfoResponse>
