@@ -1,0 +1,146 @@
+<bij:BijstandsregelingenInfoResponse xmlns:bij="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500">
+    <ClientSuwi>
+        <Burgerservicenr>999993549</Burgerservicenr>
+        <Voorletters>J.</Voorletters>
+        <Voorvoegsel></Voorvoegsel>
+        <SignificantDeelVanDeAchternaam>Maren</SignificantDeelVanDeAchternaam>
+        <Geslacht>m</Geslacht>
+        <Geboortedat>1984-07-09</Geboortedat>
+
+        <!-- AanvraagUitkering: ABW, toegekend, met partner Elise -->
+        <AanvraagUitkering>
+            <DatAanvraagUitkering>2021-08-12</DatAanvraagUitkering>
+            <SzWet>
+                <CdSzWet>ABW</CdSzWet>
+            </SzWet>
+            <BeslissingOpAanvraagUitkering>
+                <CdBeslissingOpAanvraagUitkering>01</CdBeslissingOpAanvraagUitkering>
+                <DatDagtekeningBeslisOpAanvrUitk>2021-08-24</DatDagtekeningBeslisOpAanvrUitk>
+            </BeslissingOpAanvraagUitkering>
+            <PartnerAanvraagUitkering>
+                <Burgerservicenr>999998493</Burgerservicenr>
+                <Voorletters>E.</Voorletters>
+                <Voorvoegsel></Voorvoegsel>
+                <SignificantDeelVanDeAchternaam>Schouten</SignificantDeelVanDeAchternaam>
+                <Geboortedat>1986-04-23</Geboortedat>
+            </PartnerAanvraagUitkering>
+            <Bron>
+                <CdKolomSuwi>K101</CdKolomSuwi>
+                <CdPartijSuwi>P101</CdPartijSuwi>
+                <CdVestigingSuwi>V101</CdVestigingSuwi>
+            </Bron>
+        </AanvraagUitkering>
+
+        <!-- AanvraagUitkering: ABW, afgewezen -->
+        <AanvraagUitkering>
+            <DatAanvraagUitkering>2019-03-18</DatAanvraagUitkering>
+            <SzWet>
+                <CdSzWet>ABW</CdSzWet>
+            </SzWet>
+            <BeslissingOpAanvraagUitkering>
+                <CdBeslissingOpAanvraagUitkering>04</CdBeslissingOpAanvraagUitkering>
+                <DatDagtekeningBeslisOpAanvrUitk>2019-03-29</DatDagtekeningBeslisOpAanvrUitk>
+            </BeslissingOpAanvraagUitkering>
+            <PartnerAanvraagUitkering>
+                <Burgerservicenr>999998493</Burgerservicenr>
+                <Voorletters>E.</Voorletters>
+                <Voorvoegsel></Voorvoegsel>
+                <SignificantDeelVanDeAchternaam>Schouten</SignificantDeelVanDeAchternaam>
+                <Geboortedat>1986-04-23</Geboortedat>
+            </PartnerAanvraagUitkering>
+            <Bron>
+                <CdKolomSuwi>K102</CdKolomSuwi>
+                <CdPartijSuwi>P102</CdPartijSuwi>
+                <CdVestigingSuwi>V102</CdVestigingSuwi>
+            </Bron>
+        </AanvraagUitkering>
+
+        <!-- Vordering: ABW, lopend, nabetaling freelance inkomsten -->
+        <Vordering>
+            <IdentificatienrVordering>785412369874521</IdentificatienrVordering>
+            <DatBesluitVordering>2022-11-09</DatBesluitVordering>
+            <CdRedenVordering>13</CdRedenVordering>
+            <BedrAanvangVordering>1325.00</BedrAanvangVordering>
+            <CdStatusVordering>51</CdStatusVordering>
+            <BedrSaldoVordering>695.00</BedrSaldoVordering>
+            <DatOnherroepelijkVordering>2023-01-18</DatOnherroepelijkVordering>
+            <SzWet>
+                <CdSzWet>ABW</CdSzWet>
+            </SzWet>
+            <PartnerVordering>
+                <Burgerservicenr>999998493</Burgerservicenr>
+            </PartnerVordering>
+            <Bron>
+                <CdKolomSuwi>K201</CdKolomSuwi>
+                <CdPartijSuwi>P201</CdPartijSuwi>
+                <CdVestigingSuwi>V201</CdVestigingSuwi>
+            </Bron>
+        </Vordering>
+
+        <!-- Vordering: ABW, afgesloten, te veel verstrekte bijzondere bijstand -->
+        <Vordering>
+            <IdentificatienrVordering>654789321554789</IdentificatienrVordering>
+            <DatBesluitVordering>2020-10-22</DatBesluitVordering>
+            <CdRedenVordering>11</CdRedenVordering>
+            <BedrAanvangVordering>395.00</BedrAanvangVordering>
+            <CdStatusVordering>51</CdStatusVordering>
+            <BedrSaldoVordering>0.00</BedrSaldoVordering>
+            <SzWet>
+                <CdSzWet>ABW</CdSzWet>
+            </SzWet>
+            <PartnerVordering>
+                <Burgerservicenr>999998493</Burgerservicenr>
+            </PartnerVordering>
+            <Bron>
+                <CdKolomSuwi>K202</CdKolomSuwi>
+                <CdPartijSuwi>P202</CdPartijSuwi>
+                <CdVestigingSuwi>V202</CdVestigingSuwi>
+            </Bron>
+        </Vordering>
+
+        <!-- Bijzondere bijstand: medische kosten kind (orthodontie) -->
+        <SpecifiekeGegevensBijzBijstand>
+            <CdClusterBijzBijstand>h</CdClusterBijzBijstand>
+            <OmsSrtKostenBijzBijstand>Orthodontiekosten kind</OmsSrtKostenBijzBijstand>
+            <DatBetaalbaarBijzBijstand>2023-06-20</DatBetaalbaarBijzBijstand>
+            <SzWet>
+                <CdSzWet>BB</CdSzWet>
+            </SzWet>
+            <PartnerBijzBijstand>
+                <Burgerservicenr>999998493</Burgerservicenr>
+                <Voorletters>E.</Voorletters>
+                <Voorvoegsel></Voorvoegsel>
+                <SignificantDeelVanDeAchternaam>Schouten</SignificantDeelVanDeAchternaam>
+                <Geboortedat>1986-04-23</Geboortedat>
+            </PartnerBijzBijstand>
+            <Bron>
+                <CdKolomSuwi>K301</CdKolomSuwi>
+                <CdPartijSuwi>P301</CdPartijSuwi>
+                <CdVestigingSuwi>V301</CdVestigingSuwi>
+            </Bron>
+        </SpecifiekeGegevensBijzBijstand>
+
+        <!-- Bijzondere bijstand: woon-/energiekosten -->
+        <SpecifiekeGegevensBijzBijstand>
+            <CdClusterBijzBijstand>c</CdClusterBijzBijstand>
+            <OmsSrtKostenBijzBijstand>Energietoeslag hoge energielasten</OmsSrtKostenBijzBijstand>
+            <DatBetaalbaarBijzBijstand>2024-02-26</DatBetaalbaarBijzBijstand>
+            <SzWet>
+                <CdSzWet>BB</CdSzWet>
+            </SzWet>
+            <PartnerBijzBijstand>
+                <Burgerservicenr>999998493</Burgerservicenr>
+                <Voorletters>E.</Voorletters>
+                <Voorvoegsel></Voorvoegsel>
+                <SignificantDeelVanDeAchternaam>Schouten</SignificantDeelVanDeAchternaam>
+                <Geboortedat>1986-04-23</Geboortedat>
+            </PartnerBijzBijstand>
+            <Bron>
+                <CdKolomSuwi>K302</CdKolomSuwi>
+                <CdPartijSuwi>P302</CdPartijSuwi>
+                <CdVestigingSuwi>V302</CdVestigingSuwi>
+            </Bron>
+        </SpecifiekeGegevensBijzBijstand>
+
+    </ClientSuwi>
+</bij:BijstandsregelingenInfoResponse>

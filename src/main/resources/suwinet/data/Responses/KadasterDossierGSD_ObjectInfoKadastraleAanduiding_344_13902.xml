@@ -1,0 +1,69 @@
+<ns3:ObjectInfoKadastraleAanduidingResponse xmlns:ns3="http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300" xmlns:ns2="http://bkwi.nl/SuwiML/FWI/v0203">
+
+    <!-- Voormalige woning Utrecht van Nora van Wollingen (bsn: 022264541) -->
+    <OnroerendeZaak>
+        <DatToestandKadaster>20240215</DatToestandKadaster>
+        <CdTypeOnroerendeZaak>P</CdTypeOnroerendeZaak>
+        <DatOntstaan>20090801</DatOntstaan>
+
+        <KadastraleAanduiding>
+            <CdKadastraleGemeente>0344</CdKadastraleGemeente>
+            <KadastraleGemeentenaam>Utrecht</KadastraleGemeentenaam>
+            <KadastraleSectie>K</KadastraleSectie>
+            <KadastraalPerceelnr>13902</KadastraalPerceelnr>
+            <VolgnrKadastraalAppartementsrecht>1</VolgnrKadastraalAppartementsrecht>
+        </KadastraleAanduiding>
+
+        <OmsKadastraalObject>Bebouwd: Wonen</OmsKadastraalObject>
+
+        <ZakelijkRecht>
+            <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
+        </ZakelijkRecht>
+
+        <PubliekrechtelijkeBeperking>
+            <AantekeningKadastraalObject>
+                <DatEAantekeningKadastraalObject>20300101</DatEAantekeningKadastraalObject>
+                <OmsAantekeningKadastraalObject>Geen beperkingen geregistreerd.</OmsAantekeningKadastraalObject>
+            </AantekeningKadastraalObject>
+        </PubliekrechtelijkeBeperking>
+
+        <LocatieOZ>
+            <StraatadresBag>
+                <Postcd>3512XA</Postcd>
+                <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+                <Straatnaam>Agnietenstraat</Straatnaam>
+                <Huisnr>1</Huisnr>
+            </StraatadresBag>
+        </LocatieOZ>
+
+        <BedrKoopsom>
+            <CdMunteenheid>EUR</CdMunteenheid>
+            <WaardeBedr>310000</WaardeBedr>
+        </BedrKoopsom>
+        <JaarAankoop>2009</JaarAankoop>
+
+        <WijzeVerkrijgingEigendom>
+            <CdWijzeVerkrijgingEigendom>H</CdWijzeVerkrijgingEigendom>
+            <DatVerkrijgingEigendom>20090801</DatVerkrijgingEigendom>
+        </WijzeVerkrijgingEigendom>
+
+        <IndMeerGerechtigden>1</IndMeerGerechtigden>
+
+        <Gerechtigde>
+            <NatuurlijkPersoon>
+                <Burgerservicenr>999998493</Burgerservicenr>
+                <Voornamen>Elise</Voornamen>
+                <SignificantDeelVanDeAchternaam>Schouten</SignificantDeelVanDeAchternaam>
+                <Geslacht>2</Geslacht>
+            </NatuurlijkPersoon>
+            <DomicilieAdres>
+                <StraatadresBag>
+                    <Postcd>3521AZ</Postcd>
+                    <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+                    <Straatnaam>Stadsplateau</Straatnaam>
+                    <Huisnr>1</Huisnr>
+                </StraatadresBag>
+            </DomicilieAdres>
+        </Gerechtigde>
+    </OnroerendeZaak>
+</ns3:ObjectInfoKadastraleAanduidingResponse>

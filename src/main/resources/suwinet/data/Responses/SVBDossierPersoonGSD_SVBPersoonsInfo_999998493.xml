@@ -1,0 +1,44 @@
+<ns4:SVBPersoonsInfoResponse xmlns:ns3="http://bkwi.nl/SuwiML/FWI/v0205" xmlns:ns4="http://bkwi.nl/SuwiML/Diensten/SVBDossierPersoonGSD/v0200">
+    <ClientSuwi>
+        
+        <!-- SVBPersoons info van Elise Schouten (bsn: 999998493)-->
+        <Burgerservicenr>999998493</Burgerservicenr>
+        <Voornamen>Elise</Voornamen>
+        <SignificantDeelVanDeAchternaam>Schouten</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19860423</Geboortedat>
+        <Geslacht>2</Geslacht>
+
+        <!-- Eén Wlz-uitkering, één periode -->
+        <Uitkeringsverhouding>
+            <DatBUitkeringsverhouding>20220701</DatBUitkeringsverhouding>
+            <DatEUitkeringsverhouding>20220930</DatEUitkeringsverhouding>
+            <SzWet>
+                <CdSzWet>WLZ</CdSzWet>
+            </SzWet>
+
+            <Uitkeringsperiode>
+                <DatBUitkeringsperiode>20220701</DatBUitkeringsperiode>
+                <DatEUitkeringsperiode>20220930</DatEUitkeringsperiode>
+
+                <BrutoUitkeringsbedr>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <!-- 2.200,00 bruto per maand (in centen) -->
+                    <WaardeBedr>220000</WaardeBedr>
+                    <!-- 3 = maand (conform voorbeeld) -->
+                    <CdUitkeringsperiode>3</CdUitkeringsperiode>
+                    <DatBBrutoUitkeringsbedr>20220701</DatBBrutoUitkeringsbedr>
+                    <DatEBrutoUitkeringsbedr>20220930</DatEBrutoUitkeringsbedr>
+                </BrutoUitkeringsbedr>
+
+                <NettoUitkeringsbedr>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <!-- 1.950,00 netto per maand (in centen) -->
+                    <WaardeBedr>195000</WaardeBedr>
+                    <CdUitkeringsperiode>3</CdUitkeringsperiode>
+                    <DatBNettoUitkeringsbedr>20220701</DatBNettoUitkeringsbedr>
+                    <DatENettoUitkeringsbedr>20220930</DatENettoUitkeringsbedr>
+                </NettoUitkeringsbedr>
+            </Uitkeringsperiode>
+        </Uitkeringsverhouding>
+    </ClientSuwi>
+</ns4:SVBPersoonsInfoResponse>

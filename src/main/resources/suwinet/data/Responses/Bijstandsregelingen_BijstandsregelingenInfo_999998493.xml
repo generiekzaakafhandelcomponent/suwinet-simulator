@@ -1,0 +1,178 @@
+<bij:BijstandsregelingenInfoResponse xmlns:bij="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500">
+    <ClientSuwi>
+        <Burgerservicenr>999998493</Burgerservicenr>
+        <Voorletters>E.</Voorletters>
+        <Voorvoegsel></Voorvoegsel>
+        <SignificantDeelVanDeAchternaam>Schouten</SignificantDeelVanDeAchternaam>
+        <Geslacht>v</Geslacht>
+        <Geboortedat>1986-04-23</Geboortedat>
+
+        <!-- AanvraagUitkering: ABW, toegekend, periode van werkloosheid 2018 -->
+        <AanvraagUitkering>
+            <DatAanvraagUitkering>2018-05-14</DatAanvraagUitkering>
+            <SzWet>
+                <CdSzWet>ABW</CdSzWet>
+            </SzWet>
+            <BeslissingOpAanvraagUitkering>
+                <CdBeslissingOpAanvraagUitkering>01</CdBeslissingOpAanvraagUitkering>
+                <DatDagtekeningBeslisOpAanvrUitk>2018-05-28</DatDagtekeningBeslisOpAanvrUitk>
+            </BeslissingOpAanvraagUitkering>
+            <PartnerAanvraagUitkering>
+                <Burgerservicenr>999993549</Burgerservicenr>
+                <Voorletters>J.</Voorletters>
+                <Voorvoegsel></Voorvoegsel>
+                <SignificantDeelVanDeAchternaam>Maren</SignificantDeelVanDeAchternaam>
+                <Geboortedat>1984-07-09</Geboortedat>
+            </PartnerAanvraagUitkering>
+            <Bron>
+                <CdKolomSuwi>K401</CdKolomSuwi>
+                <CdPartijSuwi>P401</CdPartijSuwi>
+                <CdVestigingSuwi>V401</CdVestigingSuwi>
+            </Bron>
+        </AanvraagUitkering>
+
+        <!-- AanvraagUitkering: ABW, toegekend, gezamenlijke aanvraag 2021 (symmetrisch met Johan) -->
+        <AanvraagUitkering>
+            <DatAanvraagUitkering>2021-08-12</DatAanvraagUitkering>
+            <SzWet>
+                <CdSzWet>ABW</CdSzWet>
+            </SzWet>
+            <BeslissingOpAanvraagUitkering>
+                <CdBeslissingOpAanvraagUitkering>01</CdBeslissingOpAanvraagUitkering>
+                <DatDagtekeningBeslisOpAanvrUitk>2021-08-24</DatDagtekeningBeslisOpAanvrUitk>
+            </BeslissingOpAanvraagUitkering>
+            <PartnerAanvraagUitkering>
+                <Burgerservicenr>999993549</Burgerservicenr>
+                <Voorletters>J.</Voorletters>
+                <Voorvoegsel></Voorvoegsel>
+                <SignificantDeelVanDeAchternaam>Maren</SignificantDeelVanDeAchternaam>
+                <Geboortedat>1984-07-09</Geboortedat>
+            </PartnerAanvraagUitkering>
+            <Bron>
+                <CdKolomSuwi>K407</CdKolomSuwi>
+                <CdPartijSuwi>P407</CdPartijSuwi>
+                <CdVestigingSuwi>V407</CdVestigingSuwi>
+            </Bron>
+        </AanvraagUitkering>
+
+        <!-- AanvraagUitkering: ABW, afgewezen (vermogen/inkomen te hoog) -->
+        <AanvraagUitkering>
+            <DatAanvraagUitkering>2020-09-03</DatAanvraagUitkering>
+            <SzWet>
+                <CdSzWet>ABW</CdSzWet>
+            </SzWet>
+            <BeslissingOpAanvraagUitkering>
+                <CdBeslissingOpAanvraagUitkering>04</CdBeslissingOpAanvraagUitkering>
+                <DatDagtekeningBeslisOpAanvrUitk>2020-09-16</DatDagtekeningBeslisOpAanvrUitk>
+            </BeslissingOpAanvraagUitkering>
+            <PartnerAanvraagUitkering>
+                <Burgerservicenr>999993549</Burgerservicenr>
+                <Voorletters>J.</Voorletters>
+                <Voorvoegsel></Voorvoegsel>
+                <SignificantDeelVanDeAchternaam>Maren</SignificantDeelVanDeAchternaam>
+                <Geboortedat>1984-07-09</Geboortedat>
+            </PartnerAanvraagUitkering>
+            <Bron>
+                <CdKolomSuwi>K402</CdKolomSuwi>
+                <CdPartijSuwi>P402</CdPartijSuwi>
+                <CdVestigingSuwi>V402</CdVestigingSuwi>
+            </Bron>
+        </AanvraagUitkering>
+
+        <!-- Vordering: ABW, met fraudecomponent (opzettelijk niet melden inkomsten) -->
+        <Vordering>
+            <IdentificatienrVordering>998877665544332</IdentificatienrVordering>
+            <DatBesluitVordering>2019-02-14</DatBesluitVordering>
+            <CdRedenVordering>13</CdRedenVordering>
+            <BedrAanvangVordering>2875.00</BedrAanvangVordering>
+            <CdStatusVordering>51</CdStatusVordering>
+            <BedrSaldoVordering>1980.00</BedrSaldoVordering>
+            <DatOnherroepelijkVordering>2019-06-10</DatOnherroepelijkVordering>
+            <SzWet>
+                <CdSzWet>ABW</CdSzWet>
+            </SzWet>
+            <PartnerVordering>
+                <Burgerservicenr>999993549</Burgerservicenr>
+            </PartnerVordering>
+            <Fraude>
+                <IndRecidive>N</IndRecidive>
+                <IndRobuusteIncassoToegepast>J</IndRobuusteIncassoToegepast>
+                <CdHoogteBestuurlijkeBoete>01</CdHoogteBestuurlijkeBoete>
+                <CdSrtSanctie>01</CdSrtSanctie>
+                <ParketnrJustitie>45.234567</ParketnrJustitie>
+                <CdRecidivetermijn>01</CdRecidivetermijn>
+            </Fraude>
+            <Bron>
+                <CdKolomSuwi>K403</CdKolomSuwi>
+                <CdPartijSuwi>P403</CdPartijSuwi>
+                <CdVestigingSuwi>V403</CdVestigingSuwi>
+            </Bron>
+        </Vordering>
+
+        <!-- Vordering: AWB, zonder fraude, kleine terugvordering energietoeslag -->
+        <Vordering>
+            <IdentificatienrVordering>445566778899001</IdentificatienrVordering>
+            <DatBesluitVordering>2022-06-23</DatBesluitVordering>
+            <CdRedenVordering>11</CdRedenVordering>
+            <BedrAanvangVordering>135.00</BedrAanvangVordering>
+            <CdStatusVordering>51</CdStatusVordering>
+            <BedrSaldoVordering>0.00</BedrSaldoVordering>
+            <SzWet>
+                <CdSzWet>AWB</CdSzWet>
+            </SzWet>
+            <PartnerVordering>
+                <Burgerservicenr>999993549</Burgerservicenr>
+            </PartnerVordering>
+            <Bron>
+                <CdKolomSuwi>K404</CdKolomSuwi>
+                <CdPartijSuwi>P404</CdPartijSuwi>
+                <CdVestigingSuwi>V404</CdVestigingSuwi>
+            </Bron>
+        </Vordering>
+
+        <!-- Bijzondere bijstand: kleding en schoolkosten kinderen -->
+        <SpecifiekeGegevensBijzBijstand>
+            <CdClusterBijzBijstand>b</CdClusterBijzBijstand>
+            <OmsSrtKostenBijzBijstand>Kleding- en schoolkosten kinderen</OmsSrtKostenBijzBijstand>
+            <DatBetaalbaarBijzBijstand>2019-08-27</DatBetaalbaarBijzBijstand>
+            <SzWet>
+                <CdSzWet>BB</CdSzWet>
+            </SzWet>
+            <PartnerBijzBijstand>
+                <Burgerservicenr>999993549</Burgerservicenr>
+                <Voorletters>J.</Voorletters>
+                <Voorvoegsel></Voorvoegsel>
+                <SignificantDeelVanDeAchternaam>Maren</SignificantDeelVanDeAchternaam>
+                <Geboortedat>1984-07-09</Geboortedat>
+            </PartnerBijzBijstand>
+            <Bron>
+                <CdKolomSuwi>K405</CdKolomSuwi>
+                <CdPartijSuwi>P405</CdPartijSuwi>
+                <CdVestigingSuwi>V405</CdVestigingSuwi>
+            </Bron>
+        </SpecifiekeGegevensBijzBijstand>
+
+        <!-- Bijzondere bijstand: woon-/energiekosten -->
+        <SpecifiekeGegevensBijzBijstand>
+            <CdClusterBijzBijstand>c</CdClusterBijzBijstand>
+            <OmsSrtKostenBijzBijstand>Eenmalige energietoeslag huishouden</OmsSrtKostenBijzBijstand>
+            <DatBetaalbaarBijzBijstand>2023-01-19</DatBetaalbaarBijzBijstand>
+            <SzWet>
+                <CdSzWet>BB</CdSzWet>
+            </SzWet>
+            <PartnerBijzBijstand>
+                <Burgerservicenr>999993549</Burgerservicenr>
+                <Voorletters>J.</Voorletters>
+                <Voorvoegsel></Voorvoegsel>
+                <SignificantDeelVanDeAchternaam>Maren</SignificantDeelVanDeAchternaam>
+                <Geboortedat>1984-07-09</Geboortedat>
+            </PartnerBijzBijstand>
+            <Bron>
+                <CdKolomSuwi>K406</CdKolomSuwi>
+                <CdPartijSuwi>P406</CdPartijSuwi>
+                <CdVestigingSuwi>V406</CdVestigingSuwi>
+            </Bron>
+        </SpecifiekeGegevensBijzBijstand>
+
+    </ClientSuwi>
+</bij:BijstandsregelingenInfoResponse>

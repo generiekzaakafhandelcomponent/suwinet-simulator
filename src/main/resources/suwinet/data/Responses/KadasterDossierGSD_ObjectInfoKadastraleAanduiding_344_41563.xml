@@ -1,0 +1,69 @@
+<ns3:ObjectInfoKadastraleAanduidingResponse xmlns:ns3="http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300" xmlns:ns2="http://bkwi.nl/SuwiML/FWI/v0203">
+
+    <!-- Parkeerplaats van Elise Schouten (bsn: 999998493) -->
+    <OnroerendeZaak>
+        <DatToestandKadaster>20240215</DatToestandKadaster>
+        <CdTypeOnroerendeZaak>P</CdTypeOnroerendeZaak>
+        <DatOntstaan>20210120</DatOntstaan>
+
+        <KadastraleAanduiding>
+            <CdKadastraleGemeente>0344</CdKadastraleGemeente>
+            <KadastraleGemeentenaam>Utrecht</KadastraleGemeentenaam>
+            <KadastraleSectie>AJ</KadastraleSectie>
+            <KadastraalPerceelnr>41563</KadastraalPerceelnr>
+            <VolgnrKadastraalAppartementsrecht>1</VolgnrKadastraalAppartementsrecht>
+        </KadastraleAanduiding>
+
+        <OmsKadastraalObject>Onbebouwd: Parkeerplaats</OmsKadastraalObject>
+
+        <ZakelijkRecht>
+            <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
+        </ZakelijkRecht>
+
+        <PubliekrechtelijkeBeperking>
+            <AantekeningKadastraalObject>
+                <DatEAantekeningKadastraalObject>20300101</DatEAantekeningKadastraalObject>
+                <OmsAantekeningKadastraalObject>Geen beperkingen geregistreerd.</OmsAantekeningKadastraalObject>
+            </AantekeningKadastraalObject>
+        </PubliekrechtelijkeBeperking>
+
+        <LocatieOZ>
+            <StraatadresBag>
+                <Postcd>3521AZ</Postcd>
+                <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+                <Straatnaam>Stadsplateau</Straatnaam>
+                <Huisnr>1</Huisnr>
+            </StraatadresBag>
+        </LocatieOZ>
+
+        <BedrKoopsom>
+            <CdMunteenheid>EUR</CdMunteenheid>
+            <WaardeBedr>42000</WaardeBedr>
+        </BedrKoopsom>
+        <JaarAankoop>2021</JaarAankoop>
+
+        <WijzeVerkrijgingEigendom>
+            <CdWijzeVerkrijgingEigendom>H</CdWijzeVerkrijgingEigendom>
+            <DatVerkrijgingEigendom>20210120</DatVerkrijgingEigendom>
+        </WijzeVerkrijgingEigendom>
+
+        <IndMeerGerechtigden>1</IndMeerGerechtigden>
+
+        <Gerechtigde>
+            <NatuurlijkPersoon>
+                <Burgerservicenr>999998493</Burgerservicenr>
+                <Voornamen>Elise</Voornamen>
+                <SignificantDeelVanDeAchternaam>Schouten</SignificantDeelVanDeAchternaam>
+                <Geslacht>2</Geslacht>
+            </NatuurlijkPersoon>
+            <DomicilieAdres>
+                <StraatadresBag>
+                    <Postcd>3521AZ</Postcd>
+                    <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+                    <Straatnaam>Stadsplateau</Straatnaam>
+                    <Huisnr>1</Huisnr>
+                </StraatadresBag>
+            </DomicilieAdres>
+        </Gerechtigde>
+    </OnroerendeZaak>
+</ns3:ObjectInfoKadastraleAanduidingResponse>
