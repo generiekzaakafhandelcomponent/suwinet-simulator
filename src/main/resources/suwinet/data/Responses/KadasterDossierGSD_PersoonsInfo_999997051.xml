@@ -1,0 +1,42 @@
+<ns3:PersoonsInfoResponse xmlns:ns3="http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300" xmlns:ns2="http://bkwi.nl/SuwiML/FWI/v0203">
+    <ClientSuwi>
+        <Burgerservicenr>999997051</Burgerservicenr>
+        <Voornamen>Pieter Jan</Voornamen>
+        <Voorvoegsel>van der</Voorvoegsel>
+        <SignificantDeelVanDeAchternaam>Berg</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19850314</Geboortedat>
+        <Geslacht>2</Geslacht>
+        <Geboortedat>19600720</Geboortedat>
+        <DomicilieAdres>
+            <StraatadresBag>
+                <Postcd>8012TB</Postcd>
+                <Woonplaatsnaam>ZWOLLE</Woonplaatsnaam>
+                <Straatnaam>Van der Laenstraat</Straatnaam>
+                <Huisnr>121</Huisnr>
+            </StraatadresBag>
+        </DomicilieAdres>
+        <DatToestandKadaster>20170317</DatToestandKadaster>
+        <Eigendom>
+            <OnroerendeZaak>
+                <CdTypeOnroerendeZaak>P</CdTypeOnroerendeZaak>
+                <DatOntstaan>19890615</DatOntstaan>
+                <KadastraleAanduiding>
+                    <CdKadastraleGemeente>1189</CdKadastraleGemeente>
+                    <KadastraleGemeentenaam>Zwolle</KadastraleGemeentenaam>
+                    <KadastraleSectie>DD</KadastraleSectie>
+                    <KadastraalPerceelnr>11482</KadastraalPerceelnr>
+                </KadastraleAanduiding>
+                <OmsKadastraalObject>Bebouwd: Wonen</OmsKadastraalObject>
+                <ZakelijkRecht>
+                    <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
+                </ZakelijkRecht>
+                <PubliekrechtelijkeBeperking>
+                    <AantekeningKadastraalObject>
+                        <OmsAantekeningKadastraalObject>Er zijn geen beperkingen bekend in de Landelijke Voorziening WKPB.</OmsAantekeningKadastraalObject>
+                    </AantekeningKadastraalObject>
+                </PubliekrechtelijkeBeperking>
+                <IndMeerGerechtigden>1</IndMeerGerechtigden>
+            </OnroerendeZaak>
+        </Eigendom>
+    </ClientSuwi>
+</ns3:PersoonsInfoResponse>
