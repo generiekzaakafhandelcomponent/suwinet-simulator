@@ -25,9 +25,9 @@
                 <Geboortedat>19850312</Geboortedat>
             </PartnerAanvraagUitkering>
             <Bron>
-                <CdKolomSuwi>K401</CdKolomSuwi>
+                <CdKolomSuwi>1</CdKolomSuwi>
                 <CdPartijSuwi>P401</CdPartijSuwi>
-                <CdVestigingSuwi>V401</CdVestigingSuwi>
+                <CdVestigingSuwi></CdVestigingSuwi>
             </Bron>
         </AanvraagUitkering>
 
@@ -49,7 +49,7 @@
                 <Geboortedat>19850312</Geboortedat>
             </PartnerAanvraagUitkering>
             <Bron>
-                <CdKolomSuwi>K407</CdKolomSuwi>
+                <CdKolomSuwi>7</CdKolomSuwi>
                 <CdPartijSuwi>P407</CdPartijSuwi>
                 <CdVestigingSuwi>V407</CdVestigingSuwi>
             </Bron>
@@ -73,9 +73,9 @@
                 <Geboortedat>19850312</Geboortedat>
             </PartnerAanvraagUitkering>
             <Bron>
-                <CdKolomSuwi>K402</CdKolomSuwi>
+                <CdKolomSuwi>2</CdKolomSuwi>
                 <CdPartijSuwi>P402</CdPartijSuwi>
-                <CdVestigingSuwi>V402</CdVestigingSuwi>
+                <CdVestigingSuwi></CdVestigingSuwi>
             </Bron>
         </AanvraagUitkering>
 
@@ -103,9 +103,9 @@
                 <CdRecidivetermijn>01</CdRecidivetermijn>
             </Fraude>
             <Bron>
-                <CdKolomSuwi>K403</CdKolomSuwi>
+                <CdKolomSuwi>3</CdKolomSuwi>
                 <CdPartijSuwi>P403</CdPartijSuwi>
-                <CdVestigingSuwi>V403</CdVestigingSuwi>
+                <CdVestigingSuwi></CdVestigingSuwi>
             </Bron>
         </Vordering>
 
@@ -124,9 +124,9 @@
                 <Burgerservicenr>022264541</Burgerservicenr>
             </PartnerVordering>
             <Bron>
-                <CdKolomSuwi>K404</CdKolomSuwi>
+                <CdKolomSuwi>4</CdKolomSuwi>
                 <CdPartijSuwi>P404</CdPartijSuwi>
-                <CdVestigingSuwi>V404</CdVestigingSuwi>
+                <CdVestigingSuwi></CdVestigingSuwi>
             </Bron>
         </Vordering>
 
@@ -146,9 +146,9 @@
                 <Geboortedat>19850312</Geboortedat>
             </PartnerBijzBijstand>
             <Bron>
-                <CdKolomSuwi>K405</CdKolomSuwi>
+                <CdKolomSuwi>5</CdKolomSuwi>
                 <CdPartijSuwi>P405</CdPartijSuwi>
-                <CdVestigingSuwi>V405</CdVestigingSuwi>
+                <CdVestigingSuwi></CdVestigingSuwi>
             </Bron>
         </SpecifiekeGegevensBijzBijstand>
 
@@ -168,9 +168,9 @@
                 <Geboortedat>19850312</Geboortedat>
             </PartnerBijzBijstand>
             <Bron>
-                <CdKolomSuwi>K406</CdKolomSuwi>
+                <CdKolomSuwi>6</CdKolomSuwi>
                 <CdPartijSuwi>P406</CdPartijSuwi>
-                <CdVestigingSuwi>V406</CdVestigingSuwi>
+                <CdVestigingSuwi></CdVestigingSuwi>
             </Bron>
         </SpecifiekeGegevensBijzBijstand>
 

@@ -1,9 +1,9 @@
 <bij:BijstandsregelingenInfoResponse xmlns:bij="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500">
     <ClientSuwi>
         <Burgerservicenr>999991954</Burgerservicenr>
-        <Voorletters>E.</Voorletters>
+        <Voorletters>S.</Voorletters>
         <Voorvoegsel></Voorvoegsel>
-        <SignificantDeelVanDeAchternaam>Schouten</SignificantDeelVanDeAchternaam>
+        <SignificantDeelVanDeAchternaam>Kooyman</SignificantDeelVanDeAchternaam>
         <Geslacht>v</Geslacht>
         <Geboortedat>19860423</Geboortedat>
 
@@ -25,9 +25,9 @@
                 <Geboortedat>19840709</Geboortedat>
             </PartnerAanvraagUitkering>
             <Bron>
-                <CdKolomSuwi>K401</CdKolomSuwi>
+                <CdKolomSuwi>1</CdKolomSuwi>
                 <CdPartijSuwi>P401</CdPartijSuwi>
-                <CdVestigingSuwi>V401</CdVestigingSuwi>
+                <CdVestigingSuwi></CdVestigingSuwi>
             </Bron>
         </AanvraagUitkering>
 
@@ -49,7 +49,7 @@
                 <Geboortedat>19840709</Geboortedat>
             </PartnerAanvraagUitkering>
             <Bron>
-                <CdKolomSuwi>K407</CdKolomSuwi>
+                <CdKolomSuwi>407</CdKolomSuwi>
                 <CdPartijSuwi>P407</CdPartijSuwi>
                 <CdVestigingSuwi>V407</CdVestigingSuwi>
             </Bron>
@@ -124,9 +124,9 @@
                 <Burgerservicenr>999993549</Burgerservicenr>
             </PartnerVordering>
             <Bron>
-                <CdKolomSuwi>K404</CdKolomSuwi>
+                <CdKolomSuwi>404</CdKolomSuwi>
                 <CdPartijSuwi>P404</CdPartijSuwi>
-                <CdVestigingSuwi>V404</CdVestigingSuwi>
+                <CdVestigingSuwi></CdVestigingSuwi>
             </Bron>
         </Vordering>
 
@@ -146,9 +146,9 @@
                 <Geboortedat>19840709</Geboortedat>
             </PartnerBijzBijstand>
             <Bron>
-                <CdKolomSuwi>K405</CdKolomSuwi>
+                <CdKolomSuwi>405</CdKolomSuwi>
                 <CdPartijSuwi>P405</CdPartijSuwi>
-                <CdVestigingSuwi>V405</CdVestigingSuwi>
+                <CdVestigingSuwi></CdVestigingSuwi>
             </Bron>
         </SpecifiekeGegevensBijzBijstand>
 
@@ -168,9 +168,9 @@
                 <Geboortedat>19840709</Geboortedat>
             </PartnerBijzBijstand>
             <Bron>
-                <CdKolomSuwi>K406</CdKolomSuwi>
+                <CdKolomSuwi>406</CdKolomSuwi>
                 <CdPartijSuwi>P406</CdPartijSuwi>
-                <CdVestigingSuwi>V406</CdVestigingSuwi>
+                <CdVestigingSuwi></CdVestigingSuwi>
             </Bron>
         </SpecifiekeGegevensBijzBijstand>
 

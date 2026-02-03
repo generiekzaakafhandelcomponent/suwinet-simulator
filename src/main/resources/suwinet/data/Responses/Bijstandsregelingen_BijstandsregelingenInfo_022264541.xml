@@ -25,9 +25,9 @@
                 <Geboortedat>19831102</Geboortedat>
             </PartnerAanvraagUitkering>
             <Bron>
-                <CdKolomSuwi>K101</CdKolomSuwi>
+                <CdKolomSuwi>101</CdKolomSuwi>
                 <CdPartijSuwi>P101</CdPartijSuwi>
-                <CdVestigingSuwi>V101</CdVestigingSuwi>
+                <CdVestigingSuwi></CdVestigingSuwi>
             </Bron>
         </AanvraagUitkering>
 
@@ -49,9 +49,9 @@
                 <Geboortedat>19831102</Geboortedat>
             </PartnerAanvraagUitkering>
             <Bron>
-                <CdKolomSuwi>K102</CdKolomSuwi>
+                <CdKolomSuwi>102</CdKolomSuwi>
                 <CdPartijSuwi>P102</CdPartijSuwi>
-                <CdVestigingSuwi>V102</CdVestigingSuwi>
+                <CdVestigingSuwi></CdVestigingSuwi>
             </Bron>
         </AanvraagUitkering>
 
@@ -71,7 +71,7 @@
                 <Burgerservicenr>689735273</Burgerservicenr>
             </PartnerVordering>
             <Bron>
-                <CdKolomSuwi>K201</CdKolomSuwi>
+                <CdKolomSuwi>201</CdKolomSuwi>
                 <CdPartijSuwi>P201</CdPartijSuwi>
                 <CdVestigingSuwi>V201</CdVestigingSuwi>
             </Bron>
@@ -92,7 +92,7 @@
                 <Burgerservicenr>689735273</Burgerservicenr>
             </PartnerVordering>
             <Bron>
-                <CdKolomSuwi>K202</CdKolomSuwi>
+                <CdKolomSuwi>202</CdKolomSuwi>
                 <CdPartijSuwi>P202</CdPartijSuwi>
                 <CdVestigingSuwi>V202</CdVestigingSuwi>
             </Bron>
@@ -114,7 +114,7 @@
                 <Geboortedat>19831102</Geboortedat>
             </PartnerBijzBijstand>
             <Bron>
-                <CdKolomSuwi>K301</CdKolomSuwi>
+                <CdKolomSuwi>301</CdKolomSuwi>
                 <CdPartijSuwi>P301</CdPartijSuwi>
                 <CdVestigingSuwi>V301</CdVestigingSuwi>
             </Bron>
@@ -136,7 +136,7 @@
                 <Geboortedat>19831102</Geboortedat>
             </PartnerBijzBijstand>
             <Bron>
-                <CdKolomSuwi>K302</CdKolomSuwi>
+                <CdKolomSuwi>302</CdKolomSuwi>
                 <CdPartijSuwi>P302</CdPartijSuwi>
                 <CdVestigingSuwi>V302</CdVestigingSuwi>
             </Bron>
