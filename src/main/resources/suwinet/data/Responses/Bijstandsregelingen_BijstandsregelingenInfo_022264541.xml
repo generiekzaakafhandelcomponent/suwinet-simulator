@@ -5,24 +5,24 @@
         <Voorvoegsel>van</Voorvoegsel>
         <SignificantDeelVanDeAchternaam>Wollingen</SignificantDeelVanDeAchternaam>
         <Geslacht>v</Geslacht>
-        <Geboortedat>1985-03-12</Geboortedat>
+        <Geboortedat>19850312</Geboortedat>
 
         <!-- AanvraagUitkering: ABW, toegekend, met partner Lars -->
         <AanvraagUitkering>
-            <DatAanvraagUitkering>2021-08-10</DatAanvraagUitkering>
+            <DatAanvraagUitkering>20210810</DatAanvraagUitkering>
             <SzWet>
                 <CdSzWet>ABW</CdSzWet>
             </SzWet>
             <BeslissingOpAanvraagUitkering>
                 <CdBeslissingOpAanvraagUitkering>01</CdBeslissingOpAanvraagUitkering>
-                <DatDagtekeningBeslisOpAanvrUitk>2021-08-20</DatDagtekeningBeslisOpAanvrUitk>
+                <DatDagtekeningBeslisOpAanvrUitk>20210820</DatDagtekeningBeslisOpAanvrUitk>
             </BeslissingOpAanvraagUitkering>
             <PartnerAanvraagUitkering>
                 <Burgerservicenr>689735273</Burgerservicenr>
                 <Voorletters>L.</Voorletters>
                 <Voorvoegsel></Voorvoegsel>
                 <SignificantDeelVanDeAchternaam>Terphuis</SignificantDeelVanDeAchternaam>
-                <Geboortedat>1983-11-02</Geboortedat>
+                <Geboortedat>19831102</Geboortedat>
             </PartnerAanvraagUitkering>
             <Bron>
                 <CdKolomSuwi>K101</CdKolomSuwi>
@@ -33,20 +33,20 @@
 
         <!-- AanvraagUitkering: ABW, afgewezen -->
         <AanvraagUitkering>
-            <DatAanvraagUitkering>2019-03-15</DatAanvraagUitkering>
+            <DatAanvraagUitkering>20190315</DatAanvraagUitkering>
             <SzWet>
                 <CdSzWet>ABW</CdSzWet>
             </SzWet>
             <BeslissingOpAanvraagUitkering>
                 <CdBeslissingOpAanvraagUitkering>04</CdBeslissingOpAanvraagUitkering>
-                <DatDagtekeningBeslisOpAanvrUitk>2019-03-28</DatDagtekeningBeslisOpAanvrUitk>
+                <DatDagtekeningBeslisOpAanvrUitk>20190328</DatDagtekeningBeslisOpAanvrUitk>
             </BeslissingOpAanvraagUitkering>
             <PartnerAanvraagUitkering>
                 <Burgerservicenr>689735273</Burgerservicenr>
                 <Voorletters>L.</Voorletters>
                 <Voorvoegsel></Voorvoegsel>
                 <SignificantDeelVanDeAchternaam>Terphuis</SignificantDeelVanDeAchternaam>
-                <Geboortedat>1983-11-02</Geboortedat>
+                <Geboortedat>19831102</Geboortedat>
             </PartnerAanvraagUitkering>
             <Bron>
                 <CdKolomSuwi>K102</CdKolomSuwi>
@@ -58,7 +58,7 @@
         <!-- Vordering: ABW, lopend, nabetaling freelance inkomsten -->
         <Vordering>
             <IdentificatienrVordering>785412369874521</IdentificatienrVordering>
-            <DatBesluitVordering>2022-11-05</DatBesluitVordering>
+            <DatBesluitVordering>20221105</DatBesluitVordering>
             <CdRedenVordering>13</CdRedenVordering>
             <BedrAanvangVordering>1250.00</BedrAanvangVordering>
             <CdStatusVordering>51</CdStatusVordering>
@@ -80,11 +80,11 @@
         <!-- Vordering: ABW, afgesloten, te veel verstrekte bijzondere bijstand -->
         <Vordering>
             <IdentificatienrVordering>654789321554789</IdentificatienrVordering>
-            <DatBesluitVordering>2020-10-18</DatBesluitVordering>
+            <DatBesluitVordering>20201018</DatBesluitVordering>
             <CdRedenVordering>11</CdRedenVordering>
             <BedrAanvangVordering>420.00</BedrAanvangVordering>
             <CdStatusVordering>51</CdStatusVordering>
-            <BedrSaldoVordering>0.00</BedrSaldoVOrdering>
+            <BedrSaldoVordering>0.00</BedrSaldoVordering>
             <SzWet>
                 <CdSzWet>ABW</CdSzWet>
             </SzWet>
@@ -102,7 +102,7 @@
         <SpecifiekeGegevensBijzBijstand>
             <CdClusterBijzBijstand>h</CdClusterBijzBijstand>
             <OmsSrtKostenBijzBijstand>Orthodontiekosten kind</OmsSrtKostenBijzBijstand>
-            <DatBetaalbaarBijzBijstand>2023-06-15</DatBetaalbaarBijzBijstand>
+            <DatBetaalbaarBijzBijstand>20230615</DatBetaalbaarBijzBijstand>
             <SzWet>
                 <CdSzWet>BB</CdSzWet>
             </SzWet>
@@ -111,7 +111,7 @@
                 <Voorletters>L.</Voorletters>
                 <Voorvoegsel></Voorvoegsel>
                 <SignificantDeelVanDeAchternaam>Terphuis</SignificantDeelVanDeAchternaam>
-                <Geboortedat>1983-11-02</Geboortedat>
+                <Geboortedat>19831102</Geboortedat>
             </PartnerBijzBijstand>
             <Bron>
                 <CdKolomSuwi>K301</CdKolomSuwi>
@@ -124,7 +124,7 @@
         <SpecifiekeGegevensBijzBijstand>
             <CdClusterBijzBijstand>c</CdClusterBijzBijstand>
             <OmsSrtKostenBijzBijstand>Energietoeslag hoge energielasten</OmsSrtKostenBijzBijstand>
-            <DatBetaalbaarBijzBijstand>2024-02-22</DatBetaalbaarBijzBijstand>
+            <DatBetaalbaarBijzBijstand>20240222</DatBetaalbaarBijzBijstand>
             <SzWet>
                 <CdSzWet>BB</CdSzWet>
             </SzWet>
@@ -133,7 +133,7 @@
                 <Voorletters>L.</Voorletters>
                 <Voorvoegsel></Voorvoegsel>
                 <SignificantDeelVanDeAchternaam>Terphuis</SignificantDeelVanDeAchternaam>
-                <Geboortedat>1983-11-02</Geboortedat>
+                <Geboortedat>19831102</Geboortedat>
             </PartnerBijzBijstand>
             <Bron>
                 <CdKolomSuwi>K302</CdKolomSuwi>
