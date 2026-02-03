@@ -5,24 +5,24 @@
         <Voorvoegsel></Voorvoegsel>
         <SignificantDeelVanDeAchternaam>Terphuis</SignificantDeelVanDeAchternaam>
         <Geslacht>m</Geslacht>
-        <Geboortedat>1983-11-02</Geboortedat>
+        <Geboortedat>19831102</Geboortedat>
 
         <!-- AanvraagUitkering: ABW, toegekend, periode van werkloosheid 2018 -->
         <AanvraagUitkering>
-            <DatAanvraagUitkering>2018-05-12</DatAanvraagUitkering>
+            <DatAanvraagUitkering>20180512</DatAanvraagUitkering>
             <SzWet>
                 <CdSzWet>ABW</CdSzWet>
             </SzWet>
             <BeslissingOpAanvraagUitkering>
                 <CdBeslissingOpAanvraagUitkering>01</CdBeslissingOpAanvraagUitkering>
-                <DatDagtekeningBeslisOpAanvrUitk>2018-05-25</DatDagtekeningBeslisOpAanvrUitk>
+                <DatDagtekeningBeslisOpAanvrUitk>20180525</DatDagtekeningBeslisOpAanvrUitk>
             </BeslissingOpAanvraagUitkering>
             <PartnerAanvraagUitkering>
                 <Burgerservicenr>022264541</Burgerservicenr>
                 <Voorletters>N.</Voorletters>
                 <Voorvoegsel></Voorvoegsel>
                 <SignificantDeelVanDeAchternaam>van Wollingen</SignificantDeelVanDeAchternaam>
-                <Geboortedat>1985-03-12</Geboortedat>
+                <Geboortedat>19850312</Geboortedat>
             </PartnerAanvraagUitkering>
             <Bron>
                 <CdKolomSuwi>K401</CdKolomSuwi>
@@ -33,20 +33,20 @@
 
         <!-- AanvraagUitkering: ABW, toegekend, gezamenlijke aanvraag 2021 (symmetrisch met Nora) -->
         <AanvraagUitkering>
-            <DatAanvraagUitkering>2021-08-10</DatAanvraagUitkering>
+            <DatAanvraagUitkering>20210810</DatAanvraagUitkering>
             <SzWet>
                 <CdSzWet>ABW</CdSzWet>
             </SzWet>
             <BeslissingOpAanvraagUitkering>
                 <CdBeslissingOpAanvraagUitkering>01</CdBeslissingOpAanvraagUitkering>
-                <DatDagtekeningBeslisOpAanvrUitk>2021-08-20</DatDagtekeningBeslisOpAanvrUitk>
+                <DatDagtekeningBeslisOpAanvrUitk>20210820</DatDagtekeningBeslisOpAanvrUitk>
             </BeslissingOpAanvraagUitkering>
             <PartnerAanvraagUitkering>
                 <Burgerservicenr>022264541</Burgerservicenr>
                 <Voorletters>N.</Voorletters>
                 <Voorvoegsel></Voorvoegsel>
                 <SignificantDeelVanDeAchternaam>van Wollingen</SignificantDeelVanDeAchternaam>
-                <Geboortedat>1985-03-12</Geboortedat>
+                <Geboortedat>19850312</Geboortedat>
             </PartnerAanvraagUitkering>
             <Bron>
                 <CdKolomSuwi>K407</CdKolomSuwi>
@@ -57,20 +57,20 @@
 
         <!-- AanvraagUitkering: ABW, afgewezen (vermogen/inkomen te hoog) -->
         <AanvraagUitkering>
-            <DatAanvraagUitkering>2020-09-01</DatAanvraagUitkering>
+            <DatAanvraagUitkering>20200901</DatAanvraagUitkering>
             <SzWet>
                 <CdSzWet>ABW</CdSzWet>
             </SzWet>
             <BeslissingOpAanvraagUitkering>
                 <CdBeslissingOpAanvraagUitkering>04</CdBeslissingOpAanvraagUitkering>
-                <DatDagtekeningBeslisOpAanvrUitk>2020-09-14</DatDagtekeningBeslisOpAanvrUitk>
+                <DatDagtekeningBeslisOpAanvrUitk>20200914</DatDagtekeningBeslisOpAanvrUitk>
             </BeslissingOpAanvraagUitkering>
             <PartnerAanvraagUitkering>
                 <Burgerservicenr>022264541</Burgerservicenr>
                 <Voorletters>N.</Voorletters>
                 <Voorvoegsel></Voorvoegsel>
                 <SignificantDeelVanDeAchternaam>van Wollingen</SignificantDeelVanDeAchternaam>
-                <Geboortedat>1985-03-12</Geboortedat>
+                <Geboortedat>19850312</Geboortedat>
             </PartnerAanvraagUitkering>
             <Bron>
                 <CdKolomSuwi>K402</CdKolomSuwi>
@@ -82,12 +82,12 @@
         <!-- Vordering: ABW, met fraudecomponent (opzettelijk niet melden inkomsten) -->
         <Vordering>
             <IdentificatienrVordering>998877665544332</IdentificatienrVordering>
-            <DatBesluitVordering>2019-02-10</DatBesluitVordering>
+            <DatBesluitVordering>20190210</DatBesluitVordering>
             <CdRedenVordering>13</CdRedenVordering>
             <BedrAanvangVordering>3000.00</BedrAanvangVordering>
             <CdStatusVordering>51</CdStatusVordering>
             <BedrSaldoVordering>2100.00</BedrSaldoVordering>
-            <DatOnherroepelijkVordering>2019-06-01</DatOnherroepelijkVordering>
+            <DatOnherroepelijkVordering>20190601</DatOnherroepelijkVordering>
             <SzWet>
                 <CdSzWet>ABW</CdSzWet>
             </SzWet>
@@ -112,7 +112,7 @@
         <!-- Vordering: AWB, zonder fraude, kleine terugvordering energietoeslag -->
         <Vordering>
             <IdentificatienrVordering>445566778899001</IdentificatienrVordering>
-            <DatBesluitVordering>2022-06-20</DatBesluitVordering>
+            <DatBesluitVordering>20220620</DatBesluitVordering>
             <CdRedenVordering>11</CdRedenVordering>
             <BedrAanvangVordering>120.00</BedrAanvangVordering>
             <CdStatusVordering>51</CdStatusVordering>
@@ -134,7 +134,7 @@
         <SpecifiekeGegevensBijzBijstand>
             <CdClusterBijzBijstand>b</CdClusterBijzBijstand>
             <OmsSrtKostenBijzBijstand>Kleding- en schoolkosten kinderen</OmsSrtKostenBijzBijstand>
-            <DatBetaalbaarBijzBijstand>2019-08-20</DatBetaalbaarBijzBijstand>
+            <DatBetaalbaarBijzBijstand>20190820</DatBetaalbaarBijzBijstand>
             <SzWet>
                 <CdSzWet>BB</CdSzWet>
             </SzWet>
@@ -143,7 +143,7 @@
                 <Voorletters>N.</Voorletters>
                 <Voorvoegsel></Voorvoegsel>
                 <SignificantDeelVanDeAchternaam>van Wollingen</SignificantDeelVanDeAchternaam>
-                <Geboortedat>1985-03-12</Geboortedat>
+                <Geboortedat>19850312</Geboortedat>
             </PartnerBijzBijstand>
             <Bron>
                 <CdKolomSuwi>K405</CdKolomSuwi>
@@ -165,7 +165,7 @@
                 <Voorletters>N.</Voorletters>
                 <Voorvoegsel></Voorvoegsel>
                 <SignificantDeelVanDeAchternaam>van Wollingen</SignificantDeelVanDeAchternaam>
-                <Geboortedat>1985-03-12</Geboortedat>
+                <Geboortedat>19850312</Geboortedat>
             </PartnerBijzBijstand>
             <Bron>
                 <CdKolomSuwi>K406</CdKolomSuwi>

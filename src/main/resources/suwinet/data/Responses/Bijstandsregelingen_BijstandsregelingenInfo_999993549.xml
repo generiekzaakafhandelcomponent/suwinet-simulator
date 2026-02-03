@@ -5,24 +5,24 @@
         <Voorvoegsel></Voorvoegsel>
         <SignificantDeelVanDeAchternaam>Maren</SignificantDeelVanDeAchternaam>
         <Geslacht>m</Geslacht>
-        <Geboortedat>1984-07-09</Geboortedat>
+        <Geboortedat>19840709</Geboortedat>
 
         <!-- AanvraagUitkering: ABW, toegekend, met partner Elise -->
         <AanvraagUitkering>
-            <DatAanvraagUitkering>2021-08-12</DatAanvraagUitkering>
+            <DatAanvraagUitkering>20210812</DatAanvraagUitkering>
             <SzWet>
                 <CdSzWet>ABW</CdSzWet>
             </SzWet>
             <BeslissingOpAanvraagUitkering>
                 <CdBeslissingOpAanvraagUitkering>01</CdBeslissingOpAanvraagUitkering>
-                <DatDagtekeningBeslisOpAanvrUitk>2021-08-24</DatDagtekeningBeslisOpAanvrUitk>
+                <DatDagtekeningBeslisOpAanvrUitk>20210824</DatDagtekeningBeslisOpAanvrUitk>
             </BeslissingOpAanvraagUitkering>
             <PartnerAanvraagUitkering>
                 <Burgerservicenr>999998493</Burgerservicenr>
                 <Voorletters>E.</Voorletters>
                 <Voorvoegsel></Voorvoegsel>
                 <SignificantDeelVanDeAchternaam>Schouten</SignificantDeelVanDeAchternaam>
-                <Geboortedat>1986-04-23</Geboortedat>
+                <Geboortedat>19860423</Geboortedat>
             </PartnerAanvraagUitkering>
             <Bron>
                 <CdKolomSuwi>K101</CdKolomSuwi>
@@ -33,20 +33,20 @@
 
         <!-- AanvraagUitkering: ABW, afgewezen -->
         <AanvraagUitkering>
-            <DatAanvraagUitkering>2019-03-18</DatAanvraagUitkering>
+            <DatAanvraagUitkering>20190318</DatAanvraagUitkering>
             <SzWet>
                 <CdSzWet>ABW</CdSzWet>
             </SzWet>
             <BeslissingOpAanvraagUitkering>
                 <CdBeslissingOpAanvraagUitkering>04</CdBeslissingOpAanvraagUitkering>
-                <DatDagtekeningBeslisOpAanvrUitk>2019-03-29</DatDagtekeningBeslisOpAanvrUitk>
+                <DatDagtekeningBeslisOpAanvrUitk>20190329</DatDagtekeningBeslisOpAanvrUitk>
             </BeslissingOpAanvraagUitkering>
             <PartnerAanvraagUitkering>
                 <Burgerservicenr>999998493</Burgerservicenr>
                 <Voorletters>E.</Voorletters>
                 <Voorvoegsel></Voorvoegsel>
                 <SignificantDeelVanDeAchternaam>Schouten</SignificantDeelVanDeAchternaam>
-                <Geboortedat>1986-04-23</Geboortedat>
+                <Geboortedat>19860423</Geboortedat>
             </PartnerAanvraagUitkering>
             <Bron>
                 <CdKolomSuwi>K102</CdKolomSuwi>
@@ -58,12 +58,12 @@
         <!-- Vordering: ABW, lopend, nabetaling freelance inkomsten -->
         <Vordering>
             <IdentificatienrVordering>785412369874521</IdentificatienrVordering>
-            <DatBesluitVordering>2022-11-09</DatBesluitVordering>
+            <DatBesluitVordering>20221109</DatBesluitVordering>
             <CdRedenVordering>13</CdRedenVordering>
             <BedrAanvangVordering>1325.00</BedrAanvangVordering>
             <CdStatusVordering>51</CdStatusVordering>
             <BedrSaldoVordering>695.00</BedrSaldoVordering>
-            <DatOnherroepelijkVordering>2023-01-18</DatOnherroepelijkVordering>
+            <DatOnherroepelijkVordering>20230118</DatOnherroepelijkVordering>
             <SzWet>
                 <CdSzWet>ABW</CdSzWet>
             </SzWet>
@@ -80,7 +80,7 @@
         <!-- Vordering: ABW, afgesloten, te veel verstrekte bijzondere bijstand -->
         <Vordering>
             <IdentificatienrVordering>654789321554789</IdentificatienrVordering>
-            <DatBesluitVordering>2020-10-22</DatBesluitVordering>
+            <DatBesluitVordering>20201022</DatBesluitVordering>
             <CdRedenVordering>11</CdRedenVordering>
             <BedrAanvangVordering>395.00</BedrAanvangVordering>
             <CdStatusVordering>51</CdStatusVordering>
@@ -102,7 +102,7 @@
         <SpecifiekeGegevensBijzBijstand>
             <CdClusterBijzBijstand>h</CdClusterBijzBijstand>
             <OmsSrtKostenBijzBijstand>Orthodontiekosten kind</OmsSrtKostenBijzBijstand>
-            <DatBetaalbaarBijzBijstand>2023-06-20</DatBetaalbaarBijzBijstand>
+            <DatBetaalbaarBijzBijstand>20230620</DatBetaalbaarBijzBijstand>
             <SzWet>
                 <CdSzWet>BB</CdSzWet>
             </SzWet>
@@ -111,7 +111,7 @@
                 <Voorletters>E.</Voorletters>
                 <Voorvoegsel></Voorvoegsel>
                 <SignificantDeelVanDeAchternaam>Schouten</SignificantDeelVanDeAchternaam>
-                <Geboortedat>1986-04-23</Geboortedat>
+                <Geboortedat>19860423</Geboortedat>
             </PartnerBijzBijstand>
             <Bron>
                 <CdKolomSuwi>K301</CdKolomSuwi>
@@ -124,7 +124,7 @@
         <SpecifiekeGegevensBijzBijstand>
             <CdClusterBijzBijstand>c</CdClusterBijzBijstand>
             <OmsSrtKostenBijzBijstand>Energietoeslag hoge energielasten</OmsSrtKostenBijzBijstand>
-            <DatBetaalbaarBijzBijstand>2024-02-26</DatBetaalbaarBijzBijstand>
+            <DatBetaalbaarBijzBijstand>20240226</DatBetaalbaarBijzBijstand>
             <SzWet>
                 <CdSzWet>BB</CdSzWet>
             </SzWet>
@@ -133,7 +133,7 @@
                 <Voorletters>E.</Voorletters>
                 <Voorvoegsel></Voorvoegsel>
                 <SignificantDeelVanDeAchternaam>Schouten</SignificantDeelVanDeAchternaam>
-                <Geboortedat>1986-04-23</Geboortedat>
+                <Geboortedat>19860423</Geboortedat>
             </PartnerBijzBijstand>
             <Bron>
                 <CdKolomSuwi>K302</CdKolomSuwi>
