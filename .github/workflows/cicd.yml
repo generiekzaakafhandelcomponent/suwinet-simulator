@@ -3,6 +3,10 @@ name: Build and Push Docker Image
 on:
   workflow_dispatch:
 
+permissions:
+  packages: write
+  contents: read
+
 env:
   GITHUB_REGISTRY: ghcr.io
   DOCKER_IMAGE_NAME: suwinet-simulator
