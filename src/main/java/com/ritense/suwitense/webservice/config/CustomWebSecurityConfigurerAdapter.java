@@ -16,6 +16,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.*;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+
 import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
@@ -45,8 +47,12 @@ public class CustomWebSecurityConfigurerAdapter {
 
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf().disable().authorizeHttpRequests((authorize) ->
-            authorize.anyRequest().authenticated()).httpBasic(withDefaults()
+        http.csrf().disable().authorizeHttpRequests((authorize) -> authorize
+                .requestMatchers(
+                        new AntPathRequestMatcher("/actuator/health")
+                ).permitAll()
+                .anyRequest().authenticated())
+                .httpBasic(withDefaults()
         );
 
         return http.build();
