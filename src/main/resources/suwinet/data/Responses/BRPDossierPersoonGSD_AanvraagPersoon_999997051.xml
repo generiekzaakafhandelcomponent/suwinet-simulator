@@ -1,9 +1,8 @@
 <brp:AanvraagPersoonResponse xmlns:brp="http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD/v0200">
     <ClientSuwi>
-        <Voornamen>Pieter Jan</Voornamen>
-        <Voorvoegsel>van der</Voorvoegsel>
-        <SignificantDeelVanDeAchternaam>Berg</SignificantDeelVanDeAchternaam>
-        <Geboortedat>19850314</Geboortedat>
+        <Voornamen>Alma Milena</Voornamen>
+        <SignificantDeelVanDeAchternaam>Lata Vishwanathan lyer</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19630911</Geboortedat>
         <Burgerservicenr>999997051</Burgerservicenr>
         <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
         <ANr>3576273796</ANr>
