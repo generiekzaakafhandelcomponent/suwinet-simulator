@@ -1,10 +1,9 @@
 <ns3:PersoonsInfoResponse xmlns:ns3="http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300" xmlns:ns2="http://bkwi.nl/SuwiML/FWI/v0203">
     <ClientSuwi>
         <Burgerservicenr>999997051</Burgerservicenr>
-        <Voornamen>Pieter Jan</Voornamen>
-        <Voorvoegsel>van der</Voorvoegsel>
-        <SignificantDeelVanDeAchternaam>Berg</SignificantDeelVanDeAchternaam>
-        <Geboortedat>19850314</Geboortedat>
+        <Voornamen>Alma Milena</Voornamen>
+        <SignificantDeelVanDeAchternaam>Lata Vishwanathan lyer</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19630911</Geboortedat>
         <Geslacht>2</Geslacht>
         <Geboortedat>19600720</Geboortedat>
         <DomicilieAdres>
