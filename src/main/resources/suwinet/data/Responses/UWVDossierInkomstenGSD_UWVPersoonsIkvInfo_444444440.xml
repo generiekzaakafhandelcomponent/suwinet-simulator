@@ -4,6 +4,7 @@
         <Inkomstenverhouding>
             <VolgnrIkv>1</VolgnrIkv>
             <DatBIkv>20101201</DatBIkv>
+            <DatEIkv>20151130</DatEIkv>
             <AdministratieveEenheid>
                 <NaamAdministratieveEenheid>T SCHILDERTJE</NaamAdministratieveEenheid>
                 <Loonheffingennr>001002041L02</Loonheffingennr>
@@ -3473,7 +3474,8 @@
         </Inkomstenverhouding>
         <Inkomstenverhouding>
             <VolgnrIkv>2</VolgnrIkv>
-            <DatBIkv>20250301</DatBIkv>
+            <DatBIkv>20250101</DatBIkv>
+            <DatEIkv>20250630</DatEIkv>
             <AdministratieveEenheid>
                 <NaamAdministratieveEenheid>GPL01-FTG01</NaamAdministratieveEenheid>
                 <Loonheffingennr>803516666L01</Loonheffingennr>
@@ -6921,6 +6923,7 @@
         <Inkomstenverhouding>
             <VolgnrIkv>2</VolgnrIkv>
             <DatBIkv>20250301</DatBIkv>
+            <DatEIkv>20250331</DatEIkv>
             <AdministratieveEenheid>
                 <Loonheffingennr>810220350L02</Loonheffingennr>
                 <DatBAdministratieveEenheid>20110802</DatBAdministratieveEenheid>
