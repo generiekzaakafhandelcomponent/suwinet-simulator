@@ -5,7 +5,7 @@ The endpoint code is already generated based on Suwinet WSDLs.
 
 ### Requirements
 
-- Java version 17
+- Java version 17  
 
 ### Environment variables
 
