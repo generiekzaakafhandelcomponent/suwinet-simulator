@@ -5,7 +5,7 @@
                 <Geboortedat>19770025</Geboortedat>
                 <Burgerservicenr>241001420</Burgerservicenr>
                 <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
-                <ANr>9000000005</ANr>
+                <ANr>3169618172</ANr>
                 <AanduidingNaamgebruik>1</AanduidingNaamgebruik>
                 <Geslacht>1</Geslacht>
                 <CdGeboortegemeente>0518</CdGeboortegemeente>
@@ -78,7 +78,7 @@
                     <SignificantDeelVanDeAchternaam>Peters</SignificantDeelVanDeAchternaam>
                     <Geboortedat>19580724</Geboortedat>
                     <Burgerservicenr>241111420</Burgerservicenr>
-                    <ANr>6000000001</ANr>
+                    <ANr>5239614761</ANr>
                     <DatBFamilierechtelijkeBetrekking>00000000</DatBFamilierechtelijkeBetrekking>
                 </Ouder1>
                 <Ouder2>
@@ -86,7 +86,7 @@
                     <SignificantDeelVanDeAchternaam>Peters</SignificantDeelVanDeAchternaam>
                     <Geboortedat>19570404</Geboortedat>
                     <Burgerservicenr>241221420</Burgerservicenr>
-                    <ANr>3000000001</ANr>
+                    <ANr>8368506964</ANr>
                     <DatBFamilierechtelijkeBetrekking>00000000</DatBFamilierechtelijkeBetrekking>
                 </Ouder2>
                 <Huwelijk>
@@ -96,7 +96,7 @@
                         <SignificantDeelVanDeAchternaam>Kloos</SignificantDeelVanDeAchternaam>
                         <Geboortedat>19770718</Geboortedat>
                         <Burgerservicenr>241331420</Burgerservicenr>
-                        <ANr>5000000004</ANr>
+                        <ANr>2390757434</ANr>
                         <Geboorteplaats>Konya</Geboorteplaats>
                         <Geboorteland>6043</Geboorteland>
                     </Partner>
@@ -107,13 +107,13 @@
                     <DatHuwelijkssluiting>19960902</DatHuwelijkssluiting>
                     <Partner>
                         <Burgerservicenr>241331420</Burgerservicenr>
-                        <ANr>5000000004</ANr>
+                        <ANr>1697423084</ANr>
                     </Partner>
                 </HuwelijkHistorisch>
                 <HuwelijkHistorisch>
                     <DatHuwelijkssluiting>19960902</DatHuwelijkssluiting>
                     <Partner>
-                        <ANr>5000000004</ANr>
+                        <ANr>3217425270</ANr>
                     </Partner>
                 </HuwelijkHistorisch>
                 <Kind>
@@ -121,7 +121,7 @@
                     <SignificantDeelVanDeAchternaam>Peters</SignificantDeelVanDeAchternaam>
                     <Geboortedat>20160510</Geboortedat>
                     <Burgerservicenr>241441420</Burgerservicenr>
-                    <ANr>3000000000</ANr>
+                    <ANr>6080751809</ANr>
                     <GeldigheidGegevensKind>
                         <DatGeldigheidGegevens>20160510</DatGeldigheidGegevens>
                     </GeldigheidGegevensKind>
@@ -131,7 +131,7 @@
                     <SignificantDeelVanDeAchternaam>Peters</SignificantDeelVanDeAchternaam>
                     <Geboortedat>20140707</Geboortedat>
                     <Burgerservicenr>241551420</Burgerservicenr>
-                    <ANr>2000000006</ANr>
+                    <ANr>9245246156</ANr>
                     <GeldigheidGegevensKind>
                         <DatGeldigheidGegevens>20140707</DatGeldigheidGegevens>
                     </GeldigheidGegevensKind>
@@ -141,7 +141,7 @@
                     <SignificantDeelVanDeAchternaam>Peters</SignificantDeelVanDeAchternaam>
                     <Geboortedat>20000225</Geboortedat>
                     <Burgerservicenr>241661420</Burgerservicenr>
-                    <ANr>7000000001</ANr>
+                    <ANr>9185209631</ANr>
                     <GeldigheidGegevensKind>
                         <DatGeldigheidGegevens>20000303</DatGeldigheidGegevens>
                     </GeldigheidGegevensKind>
