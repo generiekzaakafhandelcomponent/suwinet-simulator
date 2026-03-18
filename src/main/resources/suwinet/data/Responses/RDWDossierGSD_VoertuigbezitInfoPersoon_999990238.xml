@@ -1,0 +1,29 @@
+<smls:VoertuigbezitInfoPersoonResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/RDWDossierGSD/v0200">
+    <ClientSuwi>
+        <Burgerservicenr>999990238</Burgerservicenr>
+        <Voorletters>S</Voorletters>
+        <SignificantDeelVanDeAchternaam>Bruinhard</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19930506</Geboortedat>
+        <RdwAdres>
+            <FeitelijkAdres>
+                <Straatadres>
+                    <Postcd>3572NE</Postcd>
+                    <Woonplaatsnaam>UTRECHT</Woonplaatsnaam>
+                    <Straatnaam>Karel Doormanlaan</Straatnaam>
+                    <Huisnr>55</Huisnr>
+                    <Huisletter>A</Huisletter>
+                </Straatadres>
+            </FeitelijkAdres>
+        </RdwAdres>
+        <Aansprakelijke>
+            <DatRegistratieAansprakelijkheid>20230501</DatRegistratieAansprakelijkheid>
+            <Voertuig>
+                <KentekenVoertuig>853PML2</KentekenVoertuig>
+                <StatusVoertuig>
+                    <CdStatusVoertuig>87</CdStatusVoertuig>
+                    <DatBStatusVoertuig>20230501</DatBStatusVoertuig>
+                </StatusVoertuig>
+            </Voertuig>
+        </Aansprakelijke>
+    </ClientSuwi>
+</smls:VoertuigbezitInfoPersoonResponse>

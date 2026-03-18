@@ -1,0 +1,72 @@
+<smls:UWVPersoonsIkvInfoResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/UWVDossierInkomstenGSD/v0200">
+    <ClientSuwi>
+
+        <!-- Uwv inkomstenverhoudingen Stephanie Bruinhard (bsn: 999990238) -->
+        <Burgerservicenr>999990238</Burgerservicenr>
+
+        <!-- 1. Werkgever in Utrecht: administratief medewerker -->
+        <Inkomstenverhouding>
+            <VolgnrIkv>1</VolgnrIkv>
+            <DatBIkv>20200101</DatBIkv>
+            <AdministratieveEenheid>
+                <NaamAdministratieveEenheid>ADMINISTRATIEKANTOOR UTRECHT</NaamAdministratieveEenheid>
+                <Loonheffingennr>123456789L01</Loonheffingennr>
+                <RechtspersoonAdministratieveEenh>
+                    <FiNr>123456789</FiNr>
+                    <NaamRechtspersoon>UTRECHT SERVICES B.V.</NaamRechtspersoon>
+                </RechtspersoonAdministratieveEenh>
+                <FeitelijkAdresAeh>
+                    <Straatadres>
+                        <Postcd>3521AL</Postcd>
+                        <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+                        <Gemeentenaam>Utrecht</Gemeentenaam>
+                        <Straatnaam>Croeselaan</Straatnaam>
+                        <Huisnr>1</Huisnr>
+                    </Straatadres>
+                </FeitelijkAdresAeh>
+            </AdministratieveEenheid>
+            <Inkomstenperiode>
+                <DatBIkp>20200101</DatBIkp>
+                <CdSrtIkv>11</CdSrtIkv>
+                <CdTypeArbeidscontract>B</CdTypeArbeidscontract>
+                <IndLoonheffingskortingToegepast>1</IndLoonheffingskortingToegepast>
+                <IndRegelmatigArbeidspatroon>1</IndRegelmatigArbeidspatroon>
+                <CdAardIkv>12</CdAardIkv>
+            </Inkomstenperiode>
+
+            <Inkomstenopgave>
+                <DatBIko>20230801</DatBIko>
+                <DatEIko>20230831</DatEIko>
+                <AantSvDagenIko>21</AantSvDagenIko>
+                <AantVerloondeUrenIko>160</AantVerloondeUrenIko>
+                <BedrBrutoloonSv>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>250000</WaardeBedr>
+                </BedrBrutoloonSv>
+                <BedrLoonLbPremieVolksverz>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>250000</WaardeBedr>
+                </BedrLoonLbPremieVolksverz>
+            </Inkomstenopgave>
+            <Inkomstenopgave>
+                <DatBIko>20230901</DatBIko>
+                <DatEIko>20230930</DatEIko>
+                <AantSvDagenIko>20</AantSvDagenIko>
+                <AantVerloondeUrenIko>160</AantVerloondeUrenIko>
+                <BedrBrutoloonSv>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>250000</WaardeBedr>
+                </BedrBrutoloonSv>
+                <BedrLoonLbPremieVolksverz>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>250000</WaardeBedr>
+                </BedrLoonLbPremieVolksverz>
+            </Inkomstenopgave>
+        </Inkomstenverhouding>
+
+    </ClientSuwi>
+</smls:UWVPersoonsIkvInfoResponse>
