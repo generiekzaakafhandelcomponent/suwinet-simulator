@@ -1,0 +1,59 @@
+<bij:BijstandsregelingenInfoResponse xmlns:bij="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500">
+    <ClientSuwi>
+        <Burgerservicenr>999990238</Burgerservicenr>
+        <Voorletters>S.</Voorletters>
+        <Voorvoegsel></Voorvoegsel>
+        <SignificantDeelVanDeAchternaam>Bruinhard</SignificantDeelVanDeAchternaam>
+        <Geslacht>v</Geslacht>
+        <Geboortedat>19930506</Geboortedat>
+
+        <!-- AanvraagUitkering: ABW, toegekend, periode van werkloosheid 2018 -->
+        <AanvraagUitkering>
+            <DatAanvraagUitkering>20150814</DatAanvraagUitkering>
+            <SzWet>
+                <CdSzWet>ABW</CdSzWet>
+            </SzWet>
+            <BeslissingOpAanvraagUitkering>
+                <CdBeslissingOpAanvraagUitkering>01</CdBeslissingOpAanvraagUitkering>
+                <DatDagtekeningBeslisOpAanvrUitk>20150828</DatDagtekeningBeslisOpAanvrUitk>
+            </BeslissingOpAanvraagUitkering>
+            <Bron>
+                <CdKolomSuwi>K401</CdKolomSuwi>
+                <CdPartijSuwi>P401</CdPartijSuwi>
+                <CdVestigingSuwi>V401</CdVestigingSuwi>
+            </Bron>
+        </AanvraagUitkering>
+
+        <!-- AanvraagUitkering: ABW, toegekend, gezamenlijke aanvraag 2021 (symmetrisch met Johan) -->
+        <AanvraagUitkering>
+            <DatAanvraagUitkering>20210812</DatAanvraagUitkering>
+            <SzWet>
+                <CdSzWet>ABW</CdSzWet>
+            </SzWet>
+            <BeslissingOpAanvraagUitkering>
+                <CdBeslissingOpAanvraagUitkering>01</CdBeslissingOpAanvraagUitkering>
+                <DatDagtekeningBeslisOpAanvrUitk>20210824</DatDagtekeningBeslisOpAanvrUitk>
+            </BeslissingOpAanvraagUitkering>
+            <Bron>
+                <CdKolomSuwi>K407</CdKolomSuwi>
+                <CdPartijSuwi>P407</CdPartijSuwi>
+                <CdVestigingSuwi>V407</CdVestigingSuwi>
+            </Bron>
+        </AanvraagUitkering>
+
+        <!-- Bijzondere bijstand: kleding en schoolkosten kinderen -->
+        <SpecifiekeGegevensBijzBijstand>
+            <CdClusterBijzBijstand>b</CdClusterBijzBijstand>
+            <OmsSrtKostenBijzBijstand>Kleding- en schoolkosten kinderen</OmsSrtKostenBijzBijstand>
+            <DatBetaalbaarBijzBijstand>20230827</DatBetaalbaarBijzBijstand>
+            <SzWet>
+                <CdSzWet>BB</CdSzWet>
+            </SzWet>
+            <Bron>
+                <CdKolomSuwi>K405</CdKolomSuwi>
+                <CdPartijSuwi>P405</CdPartijSuwi>
+                <CdVestigingSuwi>V405</CdVestigingSuwi>
+            </Bron>
+        </SpecifiekeGegevensBijzBijstand>
+    </ClientSuwi>
+</bij:BijstandsregelingenInfoResponse>
