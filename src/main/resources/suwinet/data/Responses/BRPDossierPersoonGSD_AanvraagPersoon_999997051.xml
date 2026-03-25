@@ -88,21 +88,21 @@
                 <Huisnr>44</Huisnr>
             </DomicilieAdres>
             <AangifteAdreshoudingBrp>
-            <CdGemeenteVanInschrijving>1111</CdGemeenteVanInschrijving>
-            <DatVanInschrijvingBijGemeente>20260128</DatVanInschrijvingBijGemeente>
-            <DatBAdreshoudingBrp>20260128</DatBAdreshoudingBrp>
+                <CdGemeenteVanInschrijving>1111</CdGemeenteVanInschrijving>
+                <DatVanInschrijvingBijGemeente>20260128</DatVanInschrijvingBijGemeente>
+                <DatBAdreshoudingBrp>20260128</DatBAdreshoudingBrp>
             </AangifteAdreshoudingBrp>
         </VerblijfplaatsHistorisch>
         <DomicilieAdres>
-            <Postcd>1079WZ</Postcd>
-            <Woonplaatsnaam>Amsterdam</Woonplaatsnaam>
-            <Straatnaam>Zomerdijkstraat</Straatnaam>
-            <NaamOpenbareRuimte>Zomerdijkstraat</NaamOpenbareRuimte>
-            <Huisnr>19</Huisnr>
-            <IdentificatiecdVerblijfplaats>0530010002090227</IdentificatiecdVerblijfplaats>
-            <IdentificatiecdNraanduiding>0530200002130217</IdentificatiecdNraanduiding>
-            <Huisletter>C</Huisletter>
-            <Huisnrtoevoeging>Huis</Huisnrtoevoeging>
+            <Postcd>2595AK</Postcd>
+            <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
+            <Straatnaam>Koningin Marialaan</Straatnaam>
+            <NaamOpenbareRuimte>Koningin Marialaan</NaamOpenbareRuimte>
+            <Huisnr>12</Huisnr>
+            <IdentificatiecdVerblijfplaats>0518010000612345</IdentificatiecdVerblijfplaats>
+            <IdentificatiecdNraanduiding>0518200000612346</IdentificatiecdNraanduiding>
+            <Huisletter>B</Huisletter>
+            <Huisnrtoevoeging>HS</Huisnrtoevoeging>
         </DomicilieAdres>
         <AangifteAdreshoudingBrp>
             <CdGemeenteVanInschrijving>0363</CdGemeenteVanInschrijving>
