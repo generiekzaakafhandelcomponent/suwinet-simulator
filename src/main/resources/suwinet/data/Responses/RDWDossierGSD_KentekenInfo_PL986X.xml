@@ -1,0 +1,37 @@
+<ns4:KentekenInfoResponse xmlns:ns4="http://bkwi.nl/SuwiML/Diensten/RDWDossierGSD/v0200">
+    <ClientSuwi>
+
+        <Burgerservicenr>999992879</Burgerservicenr>
+        <SignificantDeelVanDeAchternaam>Smit</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19780612</Geboortedat>
+
+        <RdwAdres>
+            <FeitelijkAdres>
+                <Straatadres>
+                    <Postcd>3544NG</Postcd>
+                    <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+                    <Straatnaam>Belcampostraat</Straatnaam>
+                    <Huisnr>10</Huisnr>
+                </Straatadres>
+            </FeitelijkAdres>
+        </RdwAdres>
+
+        <Aansprakelijke>
+            <Voertuig>
+                <CdSrtVoertuig>P</CdSrtVoertuig>
+                <KentekenVoertuig>PL986X</KentekenVoertuig>
+                <MerkVoertuig>VOLKSWAGEN</MerkVoertuig>
+                <TypeVoertuig>GOLF 1.6 TDI</TypeVoertuig>
+                <HoofdkleurVoertuig>BLAUW</HoofdkleurVoertuig>
+                <!-- Auto uit 2012, Lonneke eigenaar vanaf 2013 -->
+                <DatEersteInschrijvingVoertuigNat>20120415</DatEersteInschrijvingVoertuigNat>
+                <DatEersteInschrijvingVoertuigInt>20120415</DatEersteInschrijvingVoertuigInt>
+                <BedrBpm>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <WaardeBedr>1200</WaardeBedr>
+                </BedrBpm>
+            </Voertuig>
+        </Aansprakelijke>
+
+    </ClientSuwi>
+</ns4:KentekenInfoResponse>
