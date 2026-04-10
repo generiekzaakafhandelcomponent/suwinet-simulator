@@ -55,16 +55,12 @@
             </Bron>
         </AanvraagUitkering>
 
-        <!-- AanvraagUitkering: ABW, afgewezen (vermogen/inkomen te hoog) -->
+        <!-- AanvraagUitkering: wachtend op beslissing -->
         <AanvraagUitkering>
             <DatAanvraagUitkering>20200901</DatAanvraagUitkering>
             <SzWet>
                 <CdSzWet>ABW</CdSzWet>
             </SzWet>
-            <BeslissingOpAanvraagUitkering>
-                <CdBeslissingOpAanvraagUitkering>04</CdBeslissingOpAanvraagUitkering>
-                <DatDagtekeningBeslisOpAanvrUitk>20200914</DatDagtekeningBeslisOpAanvrUitk>
-            </BeslissingOpAanvraagUitkering>
             <PartnerAanvraagUitkering>
                 <Burgerservicenr>022264541</Burgerservicenr>
                 <Voorletters>N.</Voorletters>
