@@ -1,0 +1,50 @@
+<brp:AanvraagPersoonResponse xmlns:brp="http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD/v0200">
+    <ClientSuwi>
+        <Voornamen>Leonie Keesje</Voornamen>
+        <SignificantDeelVanDeAchternaam>Brouwers</SignificantDeelVanDeAchternaam>
+        <Geboortedat>20061225</Geboortedat>
+        <Burgerservicenr>999994487</Burgerservicenr>
+        <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
+        <ANr>7935404714</ANr>
+        <AanduidingNaamgebruik>1</AanduidingNaamgebruik>
+        <Geslacht>2</Geslacht>
+        <CdGeboortegemeente>0363</CdGeboortegemeente>
+        <Geboorteland>6030</Geboorteland>
+        <GeldigheidGegevensPersoon>
+            <DatGeldigheidGegevens>20260201</DatGeldigheidGegevens>
+        </GeldigheidGegevensPersoon>
+
+        <Nationaliteit>
+            <CdNationaliteit>0001</CdNationaliteit>
+            <GeldigheidGegevensNationaliteit>
+                <DatGeldigheidGegevens>20260201</DatGeldigheidGegevens>
+            </GeldigheidGegevensNationaliteit>
+        </Nationaliteit>
+        <DomicilieAdres>
+            <Postcd>3544NG</Postcd>
+            <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+            <Straatnaam>Belcampostraat</Straatnaam>
+            <Huisnr>10</Huisnr>
+            <Huisletter/>
+            <Huisnrtoevoeging/>
+            <IdentificatiecdVerblijfplaats>0530010002090227</IdentificatiecdVerblijfplaats>
+            <IdentificatiecdNraanduiding>0530200002130217</IdentificatiecdNraanduiding>
+        </DomicilieAdres>
+
+        <Ouder1>
+            <Voornamen>Lonneke</Voornamen>
+            <Voorvoegsel/>
+            <SignificantDeelVanDeAchternaam>Smit</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19780612</Geboortedat>
+            <Burgerservicenr>999992879</Burgerservicenr>
+        </Ouder1>
+
+        <Ouder2>
+            <Voornamen>Jan-Kees</Voornamen>
+            <Voorvoegsel/>
+            <SignificantDeelVanDeAchternaam>Brouwers</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19780331</Geboortedat>
+            <Burgerservicenr>999993355</Burgerservicenr>
+        </Ouder2>
+    </ClientSuwi>
+</brp:AanvraagPersoonResponse>
