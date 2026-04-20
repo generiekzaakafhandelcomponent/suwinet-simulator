@@ -9,7 +9,6 @@
         <!--Zero or more repetitions:-->
         <Uitkeringsverhouding>
             <DatBUitkeringsverhouding>20190301</DatBUitkeringsverhouding>
-            <DatEUitkeringsverhouding>20190531</DatEUitkeringsverhouding>
             <SzWet>
                 <CdSzWet>AIO</CdSzWet>
             </SzWet>
@@ -169,6 +168,7 @@
                     <WaardeBedr>89300</WaardeBedr>
                     <CdUitkeringsperiode>6</CdUitkeringsperiode>
                     <DatBNettoUitkeringsbedr>20210101</DatBNettoUitkeringsbedr>
+                    <DatENettoUitkeringsbedr>20210131</DatENettoUitkeringsbedr>
                 </NettoUitkeringsbedr>
             </Uitkeringsperiode>
 
