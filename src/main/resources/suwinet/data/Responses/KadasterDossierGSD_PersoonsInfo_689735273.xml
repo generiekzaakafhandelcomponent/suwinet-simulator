@@ -26,7 +26,7 @@
                 <CdTypeOnroerendeZaak>P</CdTypeOnroerendeZaak>
                 <DatOntstaan>20200120</DatOntstaan>
                 <KadastraleAanduiding>
-                    <CdKadastraleGemeente>518</CdKadastraleGemeente>
+                    <CdKadastraleGemeente>0518</CdKadastraleGemeente>
                     <KadastraleGemeentenaam>'s-Gravenhage</KadastraleGemeentenaam>
                     <KadastraleSectie>AJ</KadastraleSectie>
                     <KadastraalPerceelnr>38217</KadastraalPerceelnr>
@@ -58,7 +58,7 @@
                 <CdTypeOnroerendeZaak>P</CdTypeOnroerendeZaak>
                 <DatOntstaan>20070315</DatOntstaan>
                 <KadastraleAanduiding>
-                    <CdKadastraleGemeente>363</CdKadastraleGemeente>
+                    <CdKadastraleGemeente>0363</CdKadastraleGemeente>
                     <KadastraleGemeentenaam>Amsterdam</KadastraleGemeentenaam>
                     <KadastraleSectie>N</KadastraleSectie>
                     <KadastraalPerceelnr>21845</KadastraalPerceelnr>
@@ -82,7 +82,7 @@
                 <CdTypeOnroerendeZaak>P</CdTypeOnroerendeZaak>
                 <DatOntstaan>20070315</DatOntstaan>
                 <KadastraleAanduiding>
-                    <CdKadastraleGemeente>363</CdKadastraleGemeente>
+                    <CdKadastraleGemeente>0363</CdKadastraleGemeente>
                     <KadastraleGemeentenaam>Amsterdam</KadastraleGemeentenaam>
                     <KadastraleSectie>N</KadastraleSectie>
                     <KadastraalPerceelnr>21846</KadastraalPerceelnr>
