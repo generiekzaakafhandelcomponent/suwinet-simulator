@@ -25,7 +25,7 @@
                 <CdTypeOnroerendeZaak>P</CdTypeOnroerendeZaak>
                 <DatOntstaan>20200120</DatOntstaan>
                 <KadastraleAanduiding>
-                    <CdKadastraleGemeente>518</CdKadastraleGemeente>
+                    <CdKadastraleGemeente>0518</CdKadastraleGemeente>
                     <KadastraleGemeentenaam>'s-Gravenhage</KadastraleGemeentenaam>
                     <KadastraleSectie>AJ</KadastraleSectie>
                     <KadastraalPerceelnr>38217</KadastraalPerceelnr>
@@ -57,7 +57,7 @@
                 <CdTypeOnroerendeZaak>P</CdTypeOnroerendeZaak>
                 <DatOntstaan>20040901</DatOntstaan>
                 <KadastraleAanduiding>
-                    <CdKadastraleGemeente>344</CdKadastraleGemeente>
+                    <CdKadastraleGemeente>0344</CdKadastraleGemeente>
                     <KadastraleGemeentenaam>Utrecht</KadastraleGemeentenaam>
                     <KadastraleSectie>K</KadastraleSectie>
                     <KadastraalPerceelnr>12873</KadastraalPerceelnr>
@@ -81,7 +81,7 @@
                 <CdTypeOnroerendeZaak>P</CdTypeOnroerendeZaak>
                 <DatOntstaan>20200120</DatOntstaan>
                 <KadastraleAanduiding>
-                    <CdKadastraleGemeente>518</CdKadastraleGemeente>
+                    <CdKadastraleGemeente>0518</CdKadastraleGemeente>
                     <KadastraleGemeentenaam>'s-Gravenhage</KadastraleGemeentenaam>
                     <KadastraleSectie>AJ</KadastraleSectie>
                     <KadastraalPerceelnr>39218</KadastraalPerceelnr>
