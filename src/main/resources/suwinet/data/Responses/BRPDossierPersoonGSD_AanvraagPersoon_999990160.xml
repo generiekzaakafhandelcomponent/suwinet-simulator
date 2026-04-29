@@ -1,0 +1,65 @@
+<brp:AanvraagPersoonResponse xmlns:brp="http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD/v0200">
+    <ClientSuwi>
+        <Voornamen>Hendrik Jan</Voornamen>
+        <Voorvoegsel>de</Voorvoegsel>
+        <SignificantDeelVanDeAchternaam>Brink</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19711213</Geboortedat>
+        <Burgerservicenr>999990160</Burgerservicenr>
+        <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
+        <ANr>7349182056</ANr>
+        <AanduidingNaamgebruik>1</AanduidingNaamgebruik>
+        <Geslacht>1</Geslacht>
+        <CdGeboortegemeente>0344</CdGeboortegemeente>
+        <Geboorteland>6030</Geboorteland>
+
+        <GeldigheidGegevensPersoon>
+            <DatGeldigheidGegevens>20250210</DatGeldigheidGegevens>
+        </GeldigheidGegevensPersoon>
+
+        <Nationaliteit>
+            <CdNationaliteit>0001</CdNationaliteit>
+            <GeldigheidGegevensNationaliteit>
+                <DatGeldigheidGegevens>20250210</DatGeldigheidGegevens>
+            </GeldigheidGegevensNationaliteit>
+        </Nationaliteit>
+
+        <DomicilieAdres>
+            <Postcd>3511AB</Postcd>
+            <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+            <Straatnaam>Oudegracht</Straatnaam>
+            <Huisnr>3</Huisnr>
+            <IdentificatiecdVerblijfplaats>0344010001234567</IdentificatiecdVerblijfplaats>
+            <IdentificatiecdNraanduiding>0344200001234567</IdentificatiecdNraanduiding>
+            <Huisletter>A</Huisletter>
+            <Huisnrtoevoeging/>
+        </DomicilieAdres>
+
+        <AangifteAdreshoudingBrp>
+            <CdGemeenteVanInschrijving>0344</CdGemeenteVanInschrijving>
+            <DatVanInschrijvingBijGemeente>20180501</DatVanInschrijvingBijGemeente>
+            <DatBAdreshoudingBrp>20180501</DatBAdreshoudingBrp>
+        </AangifteAdreshoudingBrp>
+
+        <Ouder1>
+            <Voornamen>Marianne</Voornamen>
+            <Voorvoegsel>van</Voorvoegsel>
+            <SignificantDeelVanDeAchternaam>Brink</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19490507</Geboortedat>
+            <Burgerservicenr>999994013</Burgerservicenr>
+            <ANr>4628017394</ANr>
+            <DatBFamilierechtelijkeBetrekking>19711213</DatBFamilierechtelijkeBetrekking>
+        </Ouder1>
+
+        <Ouder2>
+            <Voornamen>Johannes</Voornamen>
+            <Voorvoegsel>de</Voorvoegsel>
+            <SignificantDeelVanDeAchternaam>Brink</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19470319</Geboortedat>
+            <Burgerservicenr>999994293</Burgerservicenr>
+            <ANr>8195304762</ANr>
+            <DatBFamilierechtelijkeBetrekking>19711213</DatBFamilierechtelijkeBetrekking>
+        </Ouder2>
+
+        <InschrijvingsgegevensBrp/>
+    </ClientSuwi>
+</brp:AanvraagPersoonResponse>

@@ -2,7 +2,7 @@
     <soapenv:Header/>
     <soapenv:Body>
         <v03:ObjectInfoKadastraleAanduiding>
-            <CdKadastraleGemeente>633</CdKadastraleGemeente>
+            <CdKadastraleGemeente>0633</CdKadastraleGemeente>
             <KadastraleGemeentenaam>Naarden</KadastraleGemeentenaam>
             <KadastraleSectie>A</KadastraleSectie>
             <KadastraalPerceelnr>2535</KadastraalPerceelnr>
