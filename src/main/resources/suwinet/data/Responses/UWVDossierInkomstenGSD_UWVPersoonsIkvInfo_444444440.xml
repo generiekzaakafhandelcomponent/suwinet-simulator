@@ -3416,19 +3416,19 @@
                 </BedrRechtstreeksBetAlimentatie>
             </Inkomstenopgave>
             <Inkomstenopgave>
-                <DatBIko>20231001</DatBIko>
-                <DatEIko>20231031</DatEIko>
+                <DatBIko>20260401</DatBIko>
+                <DatEIko>20260430</DatEIko>
                 <AantSvDagenIko>20</AantSvDagenIko>
                 <AantVerloondeUrenIko>160</AantVerloondeUrenIko>
                 <BedrBrutoloonSv>
                     <CdMunteenheid>EUR</CdMunteenheid>
                     <CdPositiefNegatief>+</CdPositiefNegatief>
-                    <WaardeBedr>142800</WaardeBedr>
+                    <WaardeBedr>111100</WaardeBedr>
                 </BedrBrutoloonSv>
                 <BedrLoonLbPremieVolksverz>
                     <CdMunteenheid>EUR</CdMunteenheid>
                     <CdPositiefNegatief>+</CdPositiefNegatief>
-                    <WaardeBedr>149940</WaardeBedr>
+                    <WaardeBedr>111100</WaardeBedr>
                 </BedrLoonLbPremieVolksverz>
                 <BedrIngehoudenLbPremieVolksverz>
                     <CdMunteenheid>EUR</CdMunteenheid>
@@ -3438,7 +3438,7 @@
                 <BedrVakantietoeslag>
                     <CdMunteenheid>EUR</CdMunteenheid>
                     <CdPositiefNegatief>+</CdPositiefNegatief>
-                    <WaardeBedr>0</WaardeBedr>
+                    <WaardeBedr>12001</WaardeBedr>
                 </BedrVakantietoeslag>
                 <BedrOpgbRechtVakantietoeslag>
                     <CdMunteenheid>EUR</CdMunteenheid>
