@@ -5,7 +5,7 @@
         <SignificantDeelVanDeAchternaam>Lata Vishwanathan lyer</SignificantDeelVanDeAchternaam>
         <Geboortedat>19630911</Geboortedat>
         <Geslacht>2</Geslacht>
-        <!--Zero or more repetitions:-->
+        <!-- Zero or more repetitions: -->
         <Uitkeringsverhouding>
             <DatBUitkeringsverhouding>20190301</DatBUitkeringsverhouding>
             <DatEUitkeringsverhouding>20190531</DatEUitkeringsverhouding>
@@ -30,7 +30,6 @@
                     <DatENettoUitkeringsbedr>20190331</DatENettoUitkeringsbedr>
                 </NettoUitkeringsbedr>
             </Uitkeringsperiode>
-
             <Uitkeringsperiode>
                 <DatBUitkeringsperiode>20190401</DatBUitkeringsperiode>
                 <DatEUitkeringsperiode>20190430</DatEUitkeringsperiode>
@@ -50,7 +49,6 @@
                 </NettoUitkeringsbedr>
             </Uitkeringsperiode>
         </Uitkeringsverhouding>
-
         <Uitkeringsverhouding>
             <DatBUitkeringsverhouding>20200901</DatBUitkeringsverhouding>
             <DatEUitkeringsverhouding>20230831</DatEUitkeringsverhouding>
@@ -75,7 +73,6 @@
                     <DatENettoUitkeringsbedr>20200930</DatENettoUitkeringsbedr>
                 </NettoUitkeringsbedr>
             </Uitkeringsperiode>
-
             <Uitkeringsperiode>
                 <DatBUitkeringsperiode>20201001</DatBUitkeringsperiode>
                 <DatEUitkeringsperiode>20201031</DatEUitkeringsperiode>
@@ -94,7 +91,6 @@
                     <DatENettoUitkeringsbedr>20201031</DatENettoUitkeringsbedr>
                 </NettoUitkeringsbedr>
             </Uitkeringsperiode>
-
             <Uitkeringsperiode>
                 <DatBUitkeringsperiode>20201101</DatBUitkeringsperiode>
                 <DatEUitkeringsperiode>20201130</DatEUitkeringsperiode>
@@ -113,7 +109,68 @@
                     <DatENettoUitkeringsbedr>20201130</DatENettoUitkeringsbedr>
                 </NettoUitkeringsbedr>
             </Uitkeringsperiode>
-
+        </Uitkeringsverhouding>
+        <!--  Toegevoegd door "Recente inkomsten"  -->
+        <Uitkeringsverhouding>
+            <DatBUitkeringsverhouding>20260301</DatBUitkeringsverhouding>
+            <DatEUitkeringsverhouding>20260531</DatEUitkeringsverhouding>
+            <SzWet>
+                <CdSzWet>AOW</CdSzWet>
+            </SzWet>
+            <Uitkeringsperiode>
+                <DatBUitkeringsperiode>20260301</DatBUitkeringsperiode>
+                <DatEUitkeringsperiode>20260331</DatEUitkeringsperiode>
+                <BrutoUitkeringsbedr>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <WaardeBedr>240000</WaardeBedr>
+                    <CdUitkeringsperiode>1</CdUitkeringsperiode>
+                    <DatBBrutoUitkeringsbedr>20260301</DatBBrutoUitkeringsbedr>
+                    <DatEBrutoUitkeringsbedr>20260331</DatEBrutoUitkeringsbedr>
+                </BrutoUitkeringsbedr>
+                <NettoUitkeringsbedr>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <WaardeBedr>205000</WaardeBedr>
+                    <CdUitkeringsperiode>1</CdUitkeringsperiode>
+                    <DatBNettoUitkeringsbedr>20260301</DatBNettoUitkeringsbedr>
+                    <DatENettoUitkeringsbedr>20260331</DatENettoUitkeringsbedr>
+                </NettoUitkeringsbedr>
+            </Uitkeringsperiode>
+            <Uitkeringsperiode>
+                <DatBUitkeringsperiode>20260401</DatBUitkeringsperiode>
+                <DatEUitkeringsperiode>20260430</DatEUitkeringsperiode>
+                <BrutoUitkeringsbedr>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <WaardeBedr>240000</WaardeBedr>
+                    <CdUitkeringsperiode>1</CdUitkeringsperiode>
+                    <DatBBrutoUitkeringsbedr>20260401</DatBBrutoUitkeringsbedr>
+                    <DatEBrutoUitkeringsbedr>20260430</DatEBrutoUitkeringsbedr>
+                </BrutoUitkeringsbedr>
+                <NettoUitkeringsbedr>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <WaardeBedr>205000</WaardeBedr>
+                    <CdUitkeringsperiode>1</CdUitkeringsperiode>
+                    <DatBNettoUitkeringsbedr>20260401</DatBNettoUitkeringsbedr>
+                    <DatENettoUitkeringsbedr>20260430</DatENettoUitkeringsbedr>
+                </NettoUitkeringsbedr>
+            </Uitkeringsperiode>
+            <Uitkeringsperiode>
+                <DatBUitkeringsperiode>20260501</DatBUitkeringsperiode>
+                <DatEUitkeringsperiode>20260531</DatEUitkeringsperiode>
+                <BrutoUitkeringsbedr>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <WaardeBedr>240000</WaardeBedr>
+                    <CdUitkeringsperiode>1</CdUitkeringsperiode>
+                    <DatBBrutoUitkeringsbedr>20260501</DatBBrutoUitkeringsbedr>
+                    <DatEBrutoUitkeringsbedr>20260531</DatEBrutoUitkeringsbedr>
+                </BrutoUitkeringsbedr>
+                <NettoUitkeringsbedr>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <WaardeBedr>205000</WaardeBedr>
+                    <CdUitkeringsperiode>1</CdUitkeringsperiode>
+                    <DatBNettoUitkeringsbedr>20260501</DatBNettoUitkeringsbedr>
+                    <DatENettoUitkeringsbedr>20260531</DatENettoUitkeringsbedr>
+                </NettoUitkeringsbedr>
+            </Uitkeringsperiode>
         </Uitkeringsverhouding>
     </ClientSuwi>
 </ns4:SVBPersoonsInfoResponse>
