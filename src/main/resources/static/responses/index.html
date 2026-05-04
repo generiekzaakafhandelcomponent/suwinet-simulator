@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Suwinet response editor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/mdn-like.min.css">
+</head>
+<body>
+<header class="topbar">
+    <h1>Suwinet responses</h1>
+    <div class="mode-switch" role="tablist">
+        <button class="mode-btn active" data-mode="persons" type="button">Personen</button>
+        <button class="mode-btn" data-mode="files" type="button">Bestanden</button>
+    </div>
+    <span class="basedir" id="basedir" title="Configurable via simulator.responses.path"></span>
+    <span class="spacer"></span>
+    <button id="reload" type="button">Herlaad index</button>
+</header>
+
+<main class="layout">
+    <aside class="left-pane">
+        <div class="filters">
+            <input id="search" type="search" placeholder="Zoek (BSN, naam, kenteken, bestand...)"/>
+            <span class="result-count" id="result-count"></span>
+        </div>
+        <div class="table-wrap" id="files-wrap" hidden>
+            <table id="files-table">
+                <thead>
+                <tr class="sort-row">
+                    <th data-sort="dienst">Dienst</th>
+                    <th data-sort="operatie">Operatie</th>
+                    <th data-sort="sleutel">Sleutel</th>
+                    <th data-sort="naam">Naam</th>
+                    <th data-sort="geboortedat">Geboren</th>
+                    <th data-sort="postcd">Postcode</th>
+                    <th data-sort="woonplaatsnaam">Woonplaats</th>
+                    <th data-sort="extra">Extra</th>
+                </tr>
+                <tr class="filter-row">
+                    <th data-col-filter="dienst"></th>
+                    <th data-col-filter="operatie"></th>
+                    <th data-col-filter="sleutel"></th>
+                    <th data-col-filter="naam"></th>
+                    <th data-col-filter="geboortedat"></th>
+                    <th data-col-filter="postcd"></th>
+                    <th data-col-filter="woonplaatsnaam"></th>
+                    <th data-col-filter="extra"></th>
+                </tr>
+                </thead>
+                <tbody id="files-tbody"></tbody>
+            </table>
+        </div>
+        <div class="table-wrap" id="persons-wrap">
+            <table id="persons-table">
+                <thead>
+                <tr class="sort-row">
+                    <th data-sort-p="bsn">BSN</th>
+                    <th data-sort-p="naam">Naam</th>
+                    <th data-sort-p="geboortedat">Geboren</th>
+                    <th data-sort-p="woonplaatsnaam">Woonplaats</th>
+                    <th data-sort-p="diensten">Diensten</th>
+                </tr>
+                <tr class="filter-row">
+                    <th data-col-filter-p="bsn"></th>
+                    <th data-col-filter-p="naam"></th>
+                    <th data-col-filter-p="geboortedat"></th>
+                    <th data-col-filter-p="woonplaatsnaam"></th>
+                    <th data-col-filter-p="diensten"></th>
+                </tr>
+                </thead>
+                <tbody id="persons-tbody"></tbody>
+            </table>
+        </div>
+    </aside>
+
+    <div class="resize-handle" id="resize-handle" title="Sleep om de breedte aan te passen (dubbelklik om te resetten)"></div>
+
+    <section class="right-pane" id="right-pane">
+        <div class="empty-state" id="empty-state">
+            Selecteer een persoon links.
+        </div>
+
+        <!-- File detail (existing) -->
+        <div class="detail" id="detail" hidden>
+            <div class="detail-header">
+                <div>
+                    <div class="detail-filename" id="detail-filename"></div>
+                    <div class="detail-sub" id="detail-sub"></div>
+                </div>
+                <div class="actions">
+                    <span class="dirty-indicator" id="dirty-indicator" hidden>● gewijzigd</span>
+                    <span class="status" id="status"></span>
+                    <button id="toggle-raw-btn" type="button" title="Raw XML tonen/verbergen">XML tonen</button>
+                    <button id="toggle-list-btn" type="button" title="Bestandenlijst tonen/verbergen">⇔ Volledig scherm</button>
+                    <button id="save-btn" type="button" disabled>Opslaan</button>
+                </div>
+            </div>
+            <div class="detail-body raw-collapsed" id="detail-body">
+                <div class="form-pane" id="form-pane">
+                    <div class="in-file-search-bar" id="form-search-bar">
+                        <input id="form-search" type="search" placeholder="Zoek in formulier…" autocomplete="off"/>
+                        <button type="button" id="form-search-prev" title="Vorige (Shift+Enter)">↑</button>
+                        <button type="button" id="form-search-next" title="Volgende (Enter)">↓</button>
+                        <span class="in-file-search-count" id="form-search-count"></span>
+                        <button type="button" id="form-search-clear" title="Wis zoekopdracht" hidden>×</button>
+                    </div>
+                    <div class="form-fields" id="form-fields"></div>
+                </div>
+                <div class="raw-resize-handle" id="raw-resize-handle"
+                     title="Sleep om de breedte aan te passen (dubbelklik om te resetten)"></div>
+                <div class="raw-pane" id="raw-pane">
+                    <div class="raw-pane-header">
+                        <span class="raw-pane-title">Raw XML</span>
+                        <div class="in-file-search-bar" id="raw-search-bar">
+                            <input id="raw-search" type="search" placeholder="Zoek in XML…" autocomplete="off"/>
+                            <button type="button" id="raw-search-prev" title="Vorige (Shift+Enter)">↑</button>
+                            <button type="button" id="raw-search-next" title="Volgende (Enter)">↓</button>
+                            <span class="in-file-search-count" id="raw-search-count"></span>
+                            <button type="button" id="raw-search-clear" title="Wis zoekopdracht" hidden>×</button>
+                        </div>
+                    </div>
+                    <textarea id="raw-editor"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Person detail -->
+        <div class="person-detail" id="person-detail" hidden>
+            <div class="detail-header">
+                <div>
+                    <div class="detail-filename" id="person-name"></div>
+                    <div class="detail-sub" id="person-sub"></div>
+                </div>
+                <div class="actions">
+                    <button id="copy-person-btn" type="button" class="primary-btn">Persoon kopiëren</button>
+                </div>
+            </div>
+            <div class="person-body" id="person-body"></div>
+        </div>
+
+        <!-- Template: 'Recente inkomsten toevoegen' panel cloned into person-body -->
+        <template id="quick-income-template">
+            <div class="quick-income">
+                <div class="quick-income-heading">Recente inkomsten toevoegen</div>
+                <p class="muted small quick-income-intro">
+                    Voegt een blok met de laatste N maanden toe (datums relatief aan vandaag),
+                    zodat GZAC de regels als "recent" classificeert via <code>datumEindOpgave</code>
+                    resp. <code>datumEindUitkeringsperiode</code>.
+                </p>
+                <div class="quick-income-form">
+                    <label>Type
+                        <select data-qi="type">
+                            <option value="loondienst">Loondienst (UWV)</option>
+                            <option value="uwvuitkering">UWV-uitkering</option>
+                            <option value="onbekend">Onbekend (UWV)</option>
+                            <option value="svbuitkering">SVB-uitkering</option>
+                        </select>
+                    </label>
+                    <label>Aantal maanden
+                        <input type="number" data-qi="months" min="1" max="12" value="3"/>
+                    </label>
+                    <label data-qi-werkgever-row>Werkgever
+                        <input type="text" data-qi="werkgever"/>
+                    </label>
+                    <label>Bruto € / maand
+                        <input type="number" data-qi="bruto" min="0" step="0.01" value="2000.00"/>
+                    </label>
+                    <label data-qi-netto-row>Netto € / maand
+                        <input type="number" data-qi="netto" min="0" step="0.01" value="2050.00"/>
+                    </label>
+                </div>
+                <div class="quick-income-status" data-qi="status"></div>
+                <div class="quick-income-actions">
+                    <button type="button" class="primary-btn" data-qi="submit">Toevoegen</button>
+                </div>
+            </div>
+        </template>
+    </section>
+</main>
+
+<!-- Copy modal -->
+<div class="modal-backdrop" id="copy-modal" hidden>
+    <div class="modal">
+        <div class="modal-header">
+            <h2>Persoon kopiëren</h2>
+            <button class="modal-close" type="button" id="copy-modal-close">×</button>
+        </div>
+        <div class="modal-body">
+            <div class="modal-source" id="copy-source"></div>
+            <div class="form-section section-identity">
+                <h3>👤 Identiteit</h3>
+                <div class="form-field-wide">
+                    <label>Doel-BSN
+                        <span class="hint" id="bsn-validation"></span>
+                    </label>
+                    <div class="inline-input">
+                        <input id="copy-bsn" type="text" placeholder="bv. 999991234"/>
+                        <button type="button" id="copy-bsn-gen" class="secondary-btn">Genereer test-BSN</button>
+                    </div>
+                </div>
+                <label class="checkbox-line">
+                    <input type="checkbox" id="copy-anr-toggle"/>
+                    A-nummer aanpassen
+                </label>
+                <div class="form-field-wide indent" id="copy-anr-row" hidden>
+                    <label>Nieuw A-nummer</label>
+                    <input id="copy-anr" type="text" placeholder="10 cijfers"/>
+                </div>
+                <label class="checkbox-line">
+                    <input type="checkbox" id="copy-name-toggle"/>
+                    Naam aanpassen
+                </label>
+                <div class="form-grid indent" id="copy-name-rows" hidden>
+                    <label>Voornamen<input id="copy-voornamen" type="text"/></label>
+                    <label>Voorvoegsel<input id="copy-voorvoegsel" type="text"/></label>
+                    <label>Achternaam<input id="copy-achternaam" type="text"/></label>
+                </div>
+            </div>
+            <div class="form-section section-address">
+                <h3>🏠 Adres (verplicht)</h3>
+                <div class="form-grid">
+                    <label>Stad
+                        <input id="copy-stad" list="cities-datalist" autocomplete="off"/>
+                        <datalist id="cities-datalist"></datalist>
+                    </label>
+                    <label>Gemeentecode
+                        <input id="copy-gemeentecode" type="text" maxlength="4"/>
+                    </label>
+                    <label>Straat<input id="copy-straat" type="text"/></label>
+                    <label>Huisnummer<input id="copy-huisnr" type="text"/></label>
+                    <label>Postcode<input id="copy-postcd" type="text" maxlength="6"/></label>
+                </div>
+                <p class="muted small">
+                    Historische adressen krijgen dezelfde postcode-cijfers met letters AA/BB/CC,
+                    Kerkstraat / Dorpstraat / Schoolstraat als straatnaam, en hetzelfde huisnummer.
+                </p>
+            </div>
+            <div class="form-section section-files">
+                <h3>📁 Bestanden meekopiëren</h3>
+                <div class="files-checklist" id="copy-files"></div>
+            </div>
+            <div class="form-section section-conflict">
+                <h3>⚠️ Bij conflict (doelbestand bestaat al)</h3>
+                <label class="radio-line">
+                    <input type="radio" name="conflict" value="ABORT" checked/>
+                    Afbreken (laat me eerst beslissen)
+                </label>
+                <label class="radio-line">
+                    <input type="radio" name="conflict" value="SKIP"/>
+                    Bestaande overslaan, alleen nieuwe schrijven
+                </label>
+                <label class="radio-line">
+                    <input type="radio" name="conflict" value="OVERWRITE"/>
+                    Overschrijven
+                </label>
+            </div>
+            <div class="form-section unchanged-list">
+                <strong>Niet aangepast:</strong>
+                geboortedatum, geboortegemeente, nationaliteit, partner, kinderen, ouders,
+                werkgever-info, voertuigen, eigendommen.
+            </div>
+        </div>
+        <div class="modal-footer">
+            <span class="status" id="copy-status"></span>
+            <button type="button" class="secondary-btn" id="copy-cancel">Annuleren</button>
+            <button type="button" class="primary-btn" id="copy-submit">Kopieer</button>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/xml/xml.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/search/searchcursor.min.js"></script>
+<script src="cities.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

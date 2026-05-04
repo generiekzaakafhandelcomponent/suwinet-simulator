@@ -54,6 +54,14 @@ The naming convention of the response files are:
 7. DUO - DUOPersoonsInfo:<BR>DUODossierPersoonGSD_DUOPersoonsInfo_\<Burgerservicenr\>.xml
 8. Bijstandsregelingen - Bijstandsregelingen:<BR>BijstandsregelingenInfo_\<Burgerservicenr\>.xml
 
+### Response editor
+
+The project also includes a browser-based editor for the response XML files. After starting the simulator, the editor is available at `<simulator-url>/responses/`.
+
+* Backend: `src/main/java/com/ritense/suwitense/webservice/responseeditor/`
+* Frontend: `src/main/resources/static/responses/`
+* Files written by the editor land in the path configured by `simulator.responses.path` in `application.properties` (defaults to `src/main/resources/suwinet/data/Responses`).
+
 ### New WSDL endpoints
 
 Add other WSDLs to add additional endpoints, a wsimport task defined in the build.gradle.kts e.g. **RDWWsImport** will generate the code.
