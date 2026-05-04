@@ -1,10 +1,8 @@
 <smls:UWVPersoonsIkvInfoResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/UWVDossierInkomstenGSD/v0200">
     <ClientSuwi>
-        
-        <!-- Uwv inkomstenverhoudingen Nora van Wollingen (bsn: 022264541) -->
+        <!--   Uwv inkomstenverhoudingen Nora van Wollingen (bsn: 022264541)   -->
         <Burgerservicenr>022264541</Burgerservicenr>
-
-        <!-- 1. Werkgever in Den Haag: parttime baan bij een winkel -->
+        <!--   1. Werkgever in Den Haag: parttime baan bij een winkel   -->
         <Inkomstenverhouding>
             <VolgnrIkv>1</VolgnrIkv>
             <DatBIkv>20210901</DatBIkv>
@@ -43,8 +41,7 @@
                 <IndRegelmatigArbeidspatroon>1</IndRegelmatigArbeidspatroon>
                 <CdAardIkv>12</CdAardIkv>
             </Inkomstenperiode>
-
-            <!-- twee loonmaanden ter illustratie -->
+            <!--   twee loonmaanden ter illustratie   -->
             <Inkomstenopgave>
                 <DatBIko>20220101</DatBIko>
                 <DatEIko>20220131</DatEIko>
@@ -78,8 +75,7 @@
                 </BedrLoonLbPremieVolksverz>
             </Inkomstenopgave>
         </Inkomstenverhouding>
-
-        <!-- 2. UWV-uitkering (bijv. WW na einde bijbaan) -->
+        <!--   2. UWV-uitkering (bijv. WW na einde bijbaan)   -->
         <Inkomstenverhouding>
             <VolgnrIkv>2</VolgnrIkv>
             <DatBIkv>20220901</DatBIkv>
@@ -126,8 +122,7 @@
                 </BedrLoonLbPremieVolksverz>
             </Inkomstenopgave>
         </Inkomstenverhouding>
-
-        <!-- 3. SVB-uitkering (Wlz) - exact gelijk aan SVB Nora: 20230901–20230930, 2400,00 bruto -->
+        <!--   3. SVB-uitkering (Wlz) - exact gelijk aan SVB Nora: 20230901–20230930, 2400,00 bruto   -->
         <Inkomstenverhouding>
             <VolgnrIkv>3</VolgnrIkv>
             <DatBIkv>20230901</DatBIkv>
@@ -164,7 +159,7 @@
                 <BedrBrutoloonSv>
                     <CdMunteenheid>EUR</CdMunteenheid>
                     <CdPositiefNegatief>+</CdPositiefNegatief>
-                    <!-- 2400,00 bruto in centen -->
+                    <!--   2400,00 bruto in centen   -->
                     <WaardeBedr>240000</WaardeBedr>
                 </BedrBrutoloonSv>
                 <BedrLoonLbPremieVolksverz>
@@ -174,6 +169,165 @@
                 </BedrLoonLbPremieVolksverz>
             </Inkomstenopgave>
         </Inkomstenverhouding>
-
+        <!--   Toegevoegd door "Recente inkomsten"   -->
+        <Inkomstenverhouding>
+            <VolgnrIkv>4</VolgnrIkv>
+            <DatBIkv>20260301</DatBIkv>
+            <DatEIkv>20260531</DatEIkv>
+            <AdministratieveEenheid>
+                <NaamAdministratieveEenheid>VOORBEELD WERKGEVER B.V.</NaamAdministratieveEenheid>
+                <Loonheffingennr>999888777L01</Loonheffingennr>
+                <RechtspersoonAdministratieveEenh>
+                    <FiNr>999888777</FiNr>
+                    <NaamRechtspersoon>VOORBEELD WERKGEVER B.V.</NaamRechtspersoon>
+                </RechtspersoonAdministratieveEenh>
+                <FeitelijkAdresAeh>
+                    <Straatadres>
+                        <Postcd>1000AA</Postcd>
+                        <Woonplaatsnaam>Amsterdam</Woonplaatsnaam>
+                        <Gemeentenaam>Amsterdam</Gemeentenaam>
+                        <Straatnaam>Voorbeeldstraat</Straatnaam>
+                        <Huisnr>1</Huisnr>
+                    </Straatadres>
+                </FeitelijkAdresAeh>
+            </AdministratieveEenheid>
+            <Inkomstenperiode>
+                <DatBIkp>20260301</DatBIkp>
+                <DatEIkp>20260531</DatEIkp>
+                <CdSrtIkv>11</CdSrtIkv>
+                <CdTypeArbeidscontract>B</CdTypeArbeidscontract>
+                <IndLoonheffingskortingToegepast>1</IndLoonheffingskortingToegepast>
+                <IndRegelmatigArbeidspatroon>1</IndRegelmatigArbeidspatroon>
+                <CdAardIkv>12</CdAardIkv>
+            </Inkomstenperiode>
+            <Inkomstenopgave>
+                <DatBIko>20260301</DatBIko>
+                <DatEIko>20260331</DatEIko>
+                <AantSvDagenIko>31</AantSvDagenIko>
+                <AantVerloondeUrenIko>160</AantVerloondeUrenIko>
+                <BedrBrutoloonSv>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>100000</WaardeBedr>
+                </BedrBrutoloonSv>
+                <BedrLoonLbPremieVolksverz>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>100000</WaardeBedr>
+                </BedrLoonLbPremieVolksverz>
+            </Inkomstenopgave>
+            <Inkomstenopgave>
+                <DatBIko>20260401</DatBIko>
+                <DatEIko>20260430</DatEIko>
+                <AantSvDagenIko>30</AantSvDagenIko>
+                <AantVerloondeUrenIko>160</AantVerloondeUrenIko>
+                <BedrBrutoloonSv>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>100000</WaardeBedr>
+                </BedrBrutoloonSv>
+                <BedrLoonLbPremieVolksverz>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>100000</WaardeBedr>
+                </BedrLoonLbPremieVolksverz>
+            </Inkomstenopgave>
+            <Inkomstenopgave>
+                <DatBIko>20260501</DatBIko>
+                <DatEIko>20260531</DatEIko>
+                <AantSvDagenIko>31</AantSvDagenIko>
+                <AantVerloondeUrenIko>160</AantVerloondeUrenIko>
+                <BedrBrutoloonSv>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>100000</WaardeBedr>
+                </BedrBrutoloonSv>
+                <BedrLoonLbPremieVolksverz>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>100000</WaardeBedr>
+                </BedrLoonLbPremieVolksverz>
+            </Inkomstenopgave>
+        </Inkomstenverhouding>
+        <!--  Toegevoegd door "Recente inkomsten"  -->
+        <Inkomstenverhouding>
+            <VolgnrIkv>5</VolgnrIkv>
+            <DatBIkv>20260301</DatBIkv>
+            <DatEIkv>20260531</DatEIkv>
+            <AdministratieveEenheid>
+                <NaamAdministratieveEenheid>UWV</NaamAdministratieveEenheid>
+                <Loonheffingennr>004444444L01</Loonheffingennr>
+                <RechtspersoonAdministratieveEenh>
+                    <FiNr>004444444</FiNr>
+                    <NaamRechtspersoon>UWV</NaamRechtspersoon>
+                </RechtspersoonAdministratieveEenh>
+                <FeitelijkAdresAeh>
+                    <Straatadres>
+                        <Postcd>1043BZ</Postcd>
+                        <Woonplaatsnaam>Amsterdam</Woonplaatsnaam>
+                        <Gemeentenaam>Amsterdam</Gemeentenaam>
+                        <Straatnaam>La Guardiaweg</Straatnaam>
+                        <Huisnr>116</Huisnr>
+                    </Straatadres>
+                </FeitelijkAdresAeh>
+            </AdministratieveEenheid>
+            <Inkomstenperiode>
+                <DatBIkp>20260301</DatBIkp>
+                <DatEIkp>20260531</DatEIkp>
+                <CdSrtIkv>31</CdSrtIkv>
+                <CdTypeArbeidscontract>U</CdTypeArbeidscontract>
+                <CdInvloedVerzekeringsplicht>AB</CdInvloedVerzekeringsplicht>
+                <IndLoonheffingskortingToegepast>1</IndLoonheffingskortingToegepast>
+                <CdAardIkv>13</CdAardIkv>
+            </Inkomstenperiode>
+            <Inkomstenopgave>
+                <DatBIko>20260301</DatBIko>
+                <DatEIko>20260331</DatEIko>
+                <AantSvDagenIko>31</AantSvDagenIko>
+                <AantVerloondeUrenIko>0</AantVerloondeUrenIko>
+                <BedrBrutoloonSv>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>150000</WaardeBedr>
+                </BedrBrutoloonSv>
+                <BedrLoonLbPremieVolksverz>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>150000</WaardeBedr>
+                </BedrLoonLbPremieVolksverz>
+            </Inkomstenopgave>
+            <Inkomstenopgave>
+                <DatBIko>20260401</DatBIko>
+                <DatEIko>20260430</DatEIko>
+                <AantSvDagenIko>30</AantSvDagenIko>
+                <AantVerloondeUrenIko>0</AantVerloondeUrenIko>
+                <BedrBrutoloonSv>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>150000</WaardeBedr>
+                </BedrBrutoloonSv>
+                <BedrLoonLbPremieVolksverz>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>150000</WaardeBedr>
+                </BedrLoonLbPremieVolksverz>
+            </Inkomstenopgave>
+            <Inkomstenopgave>
+                <DatBIko>20260501</DatBIko>
+                <DatEIko>20260531</DatEIko>
+                <AantSvDagenIko>31</AantSvDagenIko>
+                <AantVerloondeUrenIko>0</AantVerloondeUrenIko>
+                <BedrBrutoloonSv>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>150000</WaardeBedr>
+                </BedrBrutoloonSv>
+                <BedrLoonLbPremieVolksverz>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>150000</WaardeBedr>
+                </BedrLoonLbPremieVolksverz>
+            </Inkomstenopgave>
+        </Inkomstenverhouding>
     </ClientSuwi>
 </smls:UWVPersoonsIkvInfoResponse>
