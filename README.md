@@ -18,6 +18,38 @@ The endpoint code is already generated based on Suwinet WSDLs.
 
 * run the `bootRun` gradle task
 
+### Use this simulator in a gzac project
+
+A typical gzac project (e.g. `gzac-sd-zgw-backend`) ships with a Suwinet
+simulator running as a container in its `docker-compose.yml`, exposed on host
+port `8090`. Example:
+
+```yaml
+suwinet-simulator:
+    container_name: gzac-suwinet-simulator
+    image: ghcr.io/generiekzaakafhandelcomponent/suwinet-simulator:<tag>
+    ports:
+        - "8090:8090"
+    environment:
+        - SUWINET_USER=user
+        - SUWINET_PASSWORD=pwd
+```
+
+To point gzac at your local build of this simulator instead of the dockerized
+one:
+
+1. Stop the container so port `8090` is free:
+   ```sh
+   docker compose stop suwinet-simulator
+   ```
+   (or `docker stop gzac-suwinet-simulator`).
+2. Match the credentials gzac uses. Set `SUWINET_USER` / `SUWINET_PASSWORD` for
+   the `bootRun` task to the same values as the docker service (`user` / `pwd`
+   in the example above).
+3. Start this simulator with `./gradlew bootRun`. It binds to `8090`, so any
+   gzac component already configured against `localhost:8090` will now hit your
+   local build.
+
 ### Simulated service endpoints:
 
 The services baseurl is \<simulator-url\>/ws/, the following services are supported: 
