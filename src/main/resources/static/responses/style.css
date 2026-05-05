@@ -305,6 +305,7 @@ table#files-table {
     display: flex;
     flex-direction: column;
     background: #fff;
+    container-type: inline-size;
 }
 
 .empty-state {
@@ -330,7 +331,24 @@ table#files-table {
     padding: 12px 16px;
     border-bottom: 1px solid #d0d7de;
     gap: 12px;
+    position: relative;
 }
+
+/* Hamburger replaces the action row when the right pane is too narrow.
+   Toggled via container query on .right-pane (see below). */
+.hamburger-btn {
+    display: none;
+    background: #f6f8fa;
+    color: #1f2328;
+    border: 1px solid #d0d7de;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.hamburger-btn:hover { background: #eaeef2; }
 
 .detail-filename {
     font-weight: 600;
@@ -404,6 +422,40 @@ table#files-table {
 
 #toggle-list-btn:hover,
 #toggle-raw-btn:hover { background: #eaeef2; }
+
+/* When the right pane is narrow, hide the inline actions row and expose the
+   hamburger. The actions then become a dropdown that anchors to the header. */
+@container (max-width: 720px) {
+    .detail-header .hamburger-btn { display: inline-block; }
+
+    .detail-header .actions {
+        display: none;
+        position: absolute;
+        top: calc(100% + 4px);
+        right: 16px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        padding: 10px;
+        background: #fff;
+        border: 1px solid #d0d7de;
+        border-radius: 6px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        z-index: 30;
+        min-width: 200px;
+    }
+
+    .detail-header .actions.open { display: flex; }
+
+    .detail-header .actions > button { width: 100%; text-align: left; }
+
+    .detail-header .actions > .status,
+    .detail-header .actions > .dirty-indicator,
+    .detail-header .actions > .git-indicator {
+        max-width: none;
+        text-align: center;
+    }
+}
 
 /* ---- Detail body: side-by-side form + raw ---- */
 
@@ -482,6 +534,21 @@ table#files-table {
 
 .raw-pane-header .in-file-search-bar {
     flex: 1;
+}
+
+.dynamic-date-insert {
+    flex: 0 0 auto;
+    padding: 3px 6px;
+    border: 1px solid #d0d7de;
+    border-radius: 4px;
+    font-size: 11px;
+    background: #fff;
+    color: #1f2328;
+    cursor: pointer;
+}
+
+.dynamic-date-insert:hover {
+    border-color: #8c959f;
 }
 
 .form-pane > .in-file-search-bar {
@@ -1072,6 +1139,49 @@ table#files-table {
 
 .secondary-btn:hover { background: #eaeef2; }
 
+/* ---- Validation banner ---- */
+
+.validation-banner {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin: 0 16px 8px;
+    padding: 10px 14px;
+    background: #fff8e1;
+    border: 1px solid #f0c674;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+.validation-banner-icon {
+    font-size: 18px;
+    line-height: 1.2;
+    color: #b08800;
+}
+
+.validation-banner-body { flex: 1; }
+
+.validation-banner-title {
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #5c4400;
+}
+
+.validation-banner-issues {
+    margin: 0;
+    padding-left: 20px;
+    color: #5c4400;
+}
+
+.validation-banner-issues li { margin: 2px 0; }
+
+.validation-banner-actions {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
 /* ---- Quick income panel (in person detail) ---- */
 
 .quick-income {
@@ -1339,3 +1449,474 @@ table#files-table {
 
 .hint.success { color: #1a7f37; }
 .hint.error { color: #cf222e; }
+
+.conflict-list {
+    max-height: 220px;
+    overflow: auto;
+    margin: 8px 0 14px;
+    padding: 8px 12px 8px 28px;
+    background: #f6f8fa;
+    border: 1px solid #d0d7de;
+    border-radius: 4px;
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 11px;
+}
+
+.conflict-list li { margin: 1px 0; }
+
+/* ---- Git status indicators ---- */
+
+.git-pill {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 8px;
+    border-radius: 50%;
+    vertical-align: middle;
+    flex-shrink: 0;
+}
+.git-pill.git-modified { background: #bc4c00; } /* amber — modified t.o.v. HEAD */
+.git-pill.git-added    { background: #1a7f37; } /* green — new/added */
+.git-pill.git-deleted  { background: #cf222e; } /* red — deleted */
+
+.git-indicator {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+.git-indicator::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-right: 6px;
+    background: currentColor;
+}
+.git-indicator.git-modified { color: #8a3800; background: #fff1e5; border: 1px solid #bc4c00; }
+.git-indicator.git-added    { color: #0f5527; background: #dafbe1; border: 1px solid #1a7f37; }
+.git-indicator.git-deleted  { color: #82071e; background: #ffebe9; border: 1px solid #cf222e; }
+
+/* ---- Diff pane (replaces raw editor when active) ---- */
+
+.diff-pane {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    overflow: hidden;
+}
+.diff-empty {
+    padding: 8px 12px;
+    color: #656d76;
+    font-style: italic;
+    font-size: 12px;
+    border-bottom: 1px solid #eaeef2;
+}
+.diff-empty:empty { display: none; }
+.diff-content {
+    flex: 1;
+    overflow: auto;
+    margin: 0;
+    padding: 0;
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 12px;
+    line-height: 1.45;
+    background: #fff;
+}
+.diff-line {
+    padding: 0 8px;
+    white-space: pre;
+    border-left: 3px solid transparent;
+}
+.diff-line.diff-add  { background: #e6ffec; border-left-color: #1a7f37; color: #0f5527; }
+.diff-line.diff-rem  { background: #ffebe9; border-left-color: #cf222e; color: #82071e; }
+.diff-line.diff-ctx  { color: #57606a; }
+.diff-line.diff-hunk {
+    background: #ddf4ff;
+    color: #0969da;
+    font-weight: 600;
+    margin: 6px 0 2px;
+    border-left-color: #0969da;
+}
+
+/* ===================== Test feature ===================== */
+
+.modal.modal-wide { width: 960px; }
+
+/* Test pane (third "Test" tab in topbar) */
+.test-pane {
+    flex: 1;
+    overflow: auto;
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.test-form-card {
+    background: #fff;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    padding: 18px 20px;
+    max-width: 720px;
+}
+.test-form-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 4px;
+}
+.test-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 12px;
+}
+.test-form-grid label,
+.test-key-fields label {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    color: #57606a;
+    gap: 4px;
+}
+.test-form-grid select,
+.test-key-fields input {
+    padding: 6px 8px;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    font-size: 13px;
+    background: #fff;
+}
+.test-key-fields {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin-top: 12px;
+}
+.test-form-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+}
+.test-form-result { max-width: 1100px; }
+.test-form-result:empty { display: none; }
+
+/* Single result rendering (used in modal, person panel, and test mode) */
+.test-result {
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    background: #fff;
+    margin-top: 12px;
+    overflow: hidden;
+}
+.test-result-wrap + .test-result-wrap { margin-top: 0; }
+.test-result-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border-bottom: 1px solid #d0d7de;
+    background: #f6f8fa;
+    flex-wrap: wrap;
+}
+.test-result-title { flex: 1; font-size: 13px; }
+.test-result-title code {
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    background: #eaeef2;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+.test-result-meta { font-size: 11px; }
+.test-meta-line {
+    padding: 6px 14px;
+    font-size: 12px;
+    color: #57606a;
+    border-bottom: 1px solid #eaeef2;
+}
+.test-meta-line code {
+    background: #f6f8fa;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: 11px;
+}
+.test-error {
+    padding: 10px 14px;
+    background: #ffebe9;
+    color: #82071e;
+    font-size: 12px;
+    border-bottom: 1px solid #ffcfc9;
+    white-space: pre-wrap;
+}
+.test-result-loading {
+    padding: 20px;
+    text-align: center;
+    color: #57606a;
+    font-size: 13px;
+}
+
+/* Tabs inside a test result */
+.test-result-tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid #d0d7de;
+    background: #f6f8fa;
+}
+.test-result-tabs button {
+    background: transparent;
+    border: 0;
+    border-right: 1px solid #d0d7de;
+    border-bottom: 2px solid transparent;
+    padding: 8px 16px;
+    font-size: 12px;
+    color: #57606a;
+    cursor: pointer;
+}
+.test-result-tabs button:hover { background: #eaeef2; color: #1f2328; }
+.test-result-tabs button.active {
+    background: #fff;
+    color: #1f2328;
+    border-bottom-color: #0969da;
+    font-weight: 600;
+}
+.test-result-tab-content {
+    max-height: 480px;
+    overflow: auto;
+}
+.test-pre {
+    margin: 0;
+    padding: 12px 14px;
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 12px;
+    line-height: 1.5;
+    background: #fff;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+/* Diff lines (test-diff*) — own classes so they don't collide with the git-diff styling above */
+.test-diff {
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 12px;
+    line-height: 1.45;
+    background: #fff;
+    padding: 8px 0;
+}
+.test-diff-line {
+    padding: 0 12px;
+    white-space: pre;
+    border-left: 3px solid transparent;
+}
+.test-diff-line.test-diff-eq  { color: #57606a; }
+.test-diff-line.test-diff-add { background: #e6ffec; border-left-color: #1a7f37; color: #0f5527; }
+.test-diff-line.test-diff-del { background: #ffebe9; border-left-color: #cf222e; color: #82071e; }
+.test-diff-empty {
+    padding: 14px;
+    font-size: 13px;
+}
+.test-diff-empty.success { color: #1a7f37; font-weight: 500; }
+
+/* Status badges + summary pills */
+.test-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    background: #eaeef2;
+    color: #1f2328;
+}
+.test-status-match,    .test-summary-match    { background: #dafbe1; color: #0f5527; }
+.test-status-mismatch, .test-summary-mismatch { background: #fff8c5; color: #7d4e00; }
+.test-status-not-found,.test-summary-not-found{ background: #ffebe9; color: #82071e; }
+.test-status-no-file,  .test-summary-no-file  { background: #ddf4ff; color: #0a3069; }
+.test-status-ok,       .test-summary-ok       { background: #dafbe1; color: #0f5527; }
+.test-status-fail,     .test-summary-fail     { background: #ffebe9; color: #82071e; font-weight: 700; }
+
+.test-summary-pill {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-right: 6px;
+}
+.test-results-summary {
+    padding: 8px 0 12px;
+    border-bottom: 1px solid #eaeef2;
+    margin-bottom: 8px;
+}
+.test-results-list .test-result + .test-result { margin-top: 8px; }
+
+/* Person test panel — inserted at the top of person-body */
+.person-test-panel {
+    margin-bottom: 16px;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    background: #f6f8fa;
+    overflow: hidden;
+}
+.person-test-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-bottom: 1px solid #d0d7de;
+    background: #fff;
+}
+.person-test-header h3 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+.person-test-header .person-test-close { margin-left: auto; }
+.person-test-body { padding: 12px 16px; }
+
+/* ===================== Responsive ===================== */
+/* The right-pane has `container-type: inline-size`, so we use container queries
+   for anything that should adapt to the *pane* width (which depends on whether
+   the file-list is collapsed). Viewport @media queries are reserved for things
+   that span the whole window (topbar, modals). */
+
+/* --- Detail-header: prevent long filenames from blowing the layout --- */
+.detail-header > div:first-child {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.detail-header .detail-filename {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* --- Form-fields stack label-above-input when the right-pane is narrow --- */
+@container (max-width: 900px) {
+    .form-field {
+        grid-template-columns: 1fr auto;
+        align-items: start;
+        row-gap: 2px;
+    }
+
+    .form-field > label {
+        grid-column: 1 / -1;
+    }
+}
+
+/* --- Side-by-side form + raw XML stacks vertically when the pane is narrow.
+       (Only applies when the user has actually opened the raw XML pane.) --- */
+@container (max-width: 720px) {
+    .detail-body:not(.raw-collapsed) {
+        flex-direction: column;
+    }
+
+    .detail-body:not(.raw-collapsed) .form-pane,
+    .detail-body:not(.raw-collapsed) .raw-pane {
+        width: 100%;
+        min-width: 0;
+        flex: 1 1 0;
+    }
+
+    .detail-body:not(.raw-collapsed) .raw-resize-handle {
+        display: none;
+    }
+}
+
+/* --- Person-detail has no hamburger, so the existing
+       `@container (max-width: 720px) { .detail-header .actions { display: none } }`
+       rule would hide its buttons. Override: keep them visible and let them wrap. --- */
+@container (max-width: 720px) {
+    #person-detail .detail-header {
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    #person-detail .detail-header > div:first-child {
+        flex: 1 1 100%;
+    }
+
+    #person-detail .detail-header .actions {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+        padding: 0;
+        min-width: 0;
+        gap: 8px;
+    }
+
+    #person-detail .detail-header .actions > button {
+        width: auto;
+        text-align: center;
+    }
+}
+
+/* --- Test-pane (third "Test" tab): collapse the 2-col service/operation grid --- */
+@container (max-width: 720px) {
+    .test-form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Validation banner: actions onto their own row when narrow --- */
+@container (max-width: 720px) {
+    .validation-banner {
+        flex-wrap: wrap;
+    }
+
+    .validation-banner-actions {
+        flex-basis: 100%;
+        justify-content: flex-end;
+    }
+}
+
+/* --- Quick-income status row inside person-body: already auto-fit-min(160px),
+       no extra rules needed. --- */
+
+/* --- Topbar: viewport-based (spans the whole window) --- */
+@media (max-width: 1280px) {
+    .topbar .basedir { display: none; }
+}
+
+@media (max-width: 1024px) {
+    .topbar {
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 8px 12px;
+    }
+
+    .topbar h1 {
+        font-size: 14px;
+    }
+
+    .topbar .spacer { flex-basis: 100%; height: 0; }
+
+    .mode-switch .mode-btn {
+        padding: 4px 10px;
+        font-size: 11px;
+    }
+}
+
+/* --- Modal grids collapse to single column on narrow viewports --- */
+@media (max-width: 600px) {
+    .modal .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-footer {
+        flex-wrap: wrap;
+    }
+}

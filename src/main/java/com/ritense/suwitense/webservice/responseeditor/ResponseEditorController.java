@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -21,10 +22,21 @@ public class ResponseEditorController {
 
     private final ResponseFileService service;
     private final PersonCloneService cloneService;
+    private final GitService gitService;
+    private final ResponseTestService testService;
+    private final ServiceCatalog catalog;
 
-    public ResponseEditorController(ResponseFileService service, PersonCloneService cloneService) {
+    public ResponseEditorController(
+            ResponseFileService service,
+            PersonCloneService cloneService,
+            GitService gitService,
+            ResponseTestService testService,
+            ServiceCatalog catalog) {
         this.service = service;
         this.cloneService = cloneService;
+        this.gitService = gitService;
+        this.testService = testService;
+        this.catalog = catalog;
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
@@ -42,6 +54,21 @@ public class ResponseEditorController {
         return Map.of("bsn", BsnUtil.generateTestBsn());
     }
 
+    @GetMapping(value = "/git-status", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Map<String, Object> gitStatus() {
+        return Map.of(
+                "available", gitService.isAvailable(),
+                "statuses", gitService.status()
+        );
+    }
+
+    @GetMapping(value = "/git-diff/{filename:.+}", produces = MediaType.TEXT_PLAIN_VALUE)
+    public ResponseEntity<String> gitDiff(@PathVariable String filename) {
+        return gitService.unifiedDiff(filename)
+                .map(diff -> ResponseEntity.ok().contentType(MediaType.TEXT_PLAIN).body(diff))
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
     @PostMapping(value = "/clone", consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> clone(@RequestBody CloneRequest request) throws IOException {
@@ -54,6 +81,51 @@ public class ResponseEditorController {
                     "conflicts", e.conflicts()
             ));
         }
+    }
+
+    /** Catalog of testable operations + key shapes — drives the "Test"-mode dropdowns. */
+    @GetMapping(value = "/test/catalog", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Map<String, Object> testCatalog() {
+        List<Map<String, Object>> ops = catalog.all().stream()
+                .map(o -> {
+                    List<Map<String, String>> keys = o.keys().stream()
+                            .map(k -> Map.of(
+                                    "elementName", k.elementName(),
+                                    "label", k.label(),
+                                    "type", k.type().name(),
+                                    "hint", k.hint()
+                            ))
+                            .toList();
+                    Map<String, Object> m = new LinkedHashMap<>();
+                    m.put("dienst", o.dienst());
+                    m.put("operatie", o.operatie());
+                    m.put("namespace", o.namespace());
+                    m.put("endpointPath", o.endpointPath());
+                    m.put("keys", keys);
+                    return m;
+                })
+                .toList();
+        return Map.of("operations", ops);
+    }
+
+    /** Run a single SOAP test. Body: {@code {dienst, operatie, keys: [...], compareToFile?: bool}}. */
+    @PostMapping(value = "/test", consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public TestResult test(@RequestBody TestRunRequest req) {
+        boolean compare = req.compareToFile == null || req.compareToFile;
+        return testService.test(req.dienst, req.operatie, req.keys, compare);
+    }
+
+    /**
+     * Run every BSN-keyed operation against one BSN. Body: {@code {bsn, compareToFile?: bool}}.
+     * Returns one {@link TestResult} per operation.
+     */
+    @PostMapping(value = "/test/person", consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public Map<String, Object> testPerson(@RequestBody PersonTestRequest req) {
+        boolean compare = req.compareToFile == null || req.compareToFile;
+        List<TestResult> results = testService.testAllForBsn(req.bsn, compare);
+        return Map.of("bsn", req.bsn, "results", results);
     }
 
     @GetMapping(value = "/{filename:.+}", produces = MediaType.APPLICATION_XML_VALUE)
@@ -73,23 +145,27 @@ public class ResponseEditorController {
         return ResponseEntity.status(201).build();
     }
 
-    @ExceptionHandler(ResponseFileService.ResponseFileNotFoundException.class)
-    public ResponseEntity<Map<String, String>> handleNotFound(ResponseFileService.ResponseFileNotFoundException e) {
-        return ResponseEntity.status(404).body(Map.of("error", e.getMessage()));
-    }
-
-    @ExceptionHandler(ResponseFileService.ResponseFileExistsException.class)
-    public ResponseEntity<Map<String, String>> handleExists(ResponseFileService.ResponseFileExistsException e) {
-        return ResponseEntity.status(409).body(Map.of("error", e.getMessage()));
-    }
-
-    @ExceptionHandler(ResponseFileService.InvalidXmlException.class)
-    public ResponseEntity<Map<String, String>> handleInvalid(ResponseFileService.InvalidXmlException e) {
-        return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
+    @ExceptionHandler(ApiException.class)
+    public ResponseEntity<Map<String, String>> handleApi(ApiException e) {
+        return ResponseEntity.status(e.status()).body(Map.of("error", e.getMessage()));
     }
 
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<Map<String, String>> handleIllegal(IllegalArgumentException e) {
         return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
+    }
+
+    /** Request body for {@link #test}. */
+    public static class TestRunRequest {
+        public String dienst;
+        public String operatie;
+        public List<String> keys;
+        public Boolean compareToFile;
+    }
+
+    /** Request body for {@link #testPerson}. */
+    public static class PersonTestRequest {
+        public String bsn;
+        public Boolean compareToFile;
     }
 }

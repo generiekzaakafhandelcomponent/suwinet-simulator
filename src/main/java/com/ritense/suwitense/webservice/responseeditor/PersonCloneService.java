@@ -10,7 +10,6 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
-import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -28,31 +27,11 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 @Service
 public class PersonCloneService {
 
     private static final Logger logger = LoggerFactory.getLogger(PersonCloneService.class);
-
-    /** Containers we never descend into when mutating persoon-fields. */
-    private static final Set<String> SUB_ENTITY_CONTAINERS = Set.of(
-            "Inkomstenverhouding",
-            "Partner",
-            "PartnerAanvraagUitkering",
-            "Kind",
-            "Ouder1",
-            "Ouder2",
-            "Huwelijk",
-            "PersoonAdministratieveEenheid",
-            "RechtspersoonAdministratieveEenh",
-            "AdministratieveEenheid",
-            "Aansprakelijke",
-            "AanvraagUitkering",
-            "BeslissingOpAanvraagUitkering",
-            "Eigendom",
-            "OnroerendeZaak"
-    );
 
     /** Street names cycled across historical addresses. */
     private static final String[] HIST_STREETS = { "Kerkstraat", "Dorpstraat", "Schoolstraat" };
@@ -63,12 +42,7 @@ public class PersonCloneService {
 
     public PersonCloneService(ResponseFileService responseFileService) {
         this.responseFileService = responseFileService;
-        this.builderFactory = DocumentBuilderFactory.newInstance();
-        this.builderFactory.setNamespaceAware(true);
-        try {
-            this.builderFactory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
-            this.builderFactory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
-        } catch (ParserConfigurationException ignored) {}
+        this.builderFactory = SecureXml.hardenedDocumentBuilderFactory();
         this.transformerFactory = TransformerFactory.newInstance();
     }
 
@@ -296,7 +270,7 @@ public class PersonCloneService {
             if (n.getNodeType() != Node.ELEMENT_NODE) continue;
             Element child = (Element) n;
             String name = child.getLocalName();
-            if (SUB_ENTITY_CONTAINERS.contains(name)) continue;
+            if (SuwiSubEntities.MUTATION.contains(name)) continue;
             if (skipHistorical && "VerblijfplaatsHistorisch".equals(name)) continue;
             walkSkippingSubEntities(child, skipHistorical, visitor);
         }

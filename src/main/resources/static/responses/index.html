@@ -15,6 +15,7 @@
     <div class="mode-switch" role="tablist">
         <button class="mode-btn active" data-mode="persons" type="button">Personen</button>
         <button class="mode-btn" data-mode="files" type="button">Bestanden</button>
+        <button class="mode-btn" data-mode="test" type="button">Test</button>
     </div>
     <span class="basedir" id="basedir" title="Configurable via simulator.responses.path"></span>
     <span class="spacer"></span>
@@ -91,12 +92,28 @@
                     <div class="detail-filename" id="detail-filename"></div>
                     <div class="detail-sub" id="detail-sub"></div>
                 </div>
-                <div class="actions">
+                <button class="hamburger-btn" id="actions-hamburger" type="button"
+                        aria-label="Acties" aria-expanded="false" aria-controls="file-actions">☰</button>
+                <div class="actions" id="file-actions">
                     <span class="dirty-indicator" id="dirty-indicator" hidden>● gewijzigd</span>
+                    <span class="git-indicator" id="git-indicator" hidden></span>
                     <span class="status" id="status"></span>
+                    <button id="toggle-diff-btn" type="button" title="Toon git-diff t.o.v. HEAD" hidden>Diff tonen</button>
                     <button id="toggle-raw-btn" type="button" title="Raw XML tonen/verbergen">XML tonen</button>
                     <button id="toggle-list-btn" type="button" title="Bestandenlijst tonen/verbergen">⇔ Volledig scherm</button>
+                    <button id="test-file-btn" type="button" title="Roundtrip-test: SOAP-call naar simulator + diff t.o.v. deze file">Test</button>
                     <button id="save-btn" type="button" disabled>Opslaan</button>
+                </div>
+            </div>
+            <div class="validation-banner" id="validation-banner" hidden>
+                <div class="validation-banner-icon">⚠</div>
+                <div class="validation-banner-body">
+                    <div class="validation-banner-title">Mogelijke problemen gevonden</div>
+                    <ul class="validation-banner-issues" id="validation-banner-issues"></ul>
+                </div>
+                <div class="validation-banner-actions">
+                    <button type="button" id="validation-fix-btn" class="primary-btn">Automatisch oplossen</button>
+                    <button type="button" id="validation-dismiss-btn" class="secondary-btn">Negeren</button>
                 </div>
             </div>
             <div class="detail-body raw-collapsed" id="detail-body">
@@ -115,6 +132,19 @@
                 <div class="raw-pane" id="raw-pane">
                     <div class="raw-pane-header">
                         <span class="raw-pane-title">Raw XML</span>
+                        <select id="dynamic-date-insert" class="dynamic-date-insert" title="Voeg een DynamicDate-comment toe op de cursorpositie. De volgende datum wordt bij elk request vervangen door today + offset.">
+                            <option value="" selected>+ DynamicDate…</option>
+                            <option value="today">today (vandaag)</option>
+                            <option value="today - 1 week">today − 1 week</option>
+                            <option value="today - 1 month">today − 1 maand</option>
+                            <option value="today - 2 months">today − 2 maanden</option>
+                            <option value="today - 3 months">today − 3 maanden</option>
+                            <option value="today - 6 months">today − 6 maanden</option>
+                            <option value="today - 1 year">today − 1 jaar</option>
+                            <option value="today + 1 month">today + 1 maand</option>
+                            <option value="today + 1 year">today + 1 jaar</option>
+                            <option value="__custom__">Anders…</option>
+                        </select>
                         <div class="in-file-search-bar" id="raw-search-bar">
                             <input id="raw-search" type="search" placeholder="Zoek in XML…" autocomplete="off"/>
                             <button type="button" id="raw-search-prev" title="Vorige (Shift+Enter)">↑</button>
@@ -124,6 +154,10 @@
                         </div>
                     </div>
                     <textarea id="raw-editor"></textarea>
+                    <div class="diff-pane" id="diff-pane" hidden>
+                        <div class="diff-empty" id="diff-empty"></div>
+                        <pre class="diff-content" id="diff-content"></pre>
+                    </div>
                 </div>
             </div>
         </div>
@@ -136,10 +170,37 @@
                     <div class="detail-sub" id="person-sub"></div>
                 </div>
                 <div class="actions">
+                    <button id="test-person-btn" type="button" class="secondary-btn" title="Test alle BSN-diensten voor deze persoon">Test alle diensten</button>
                     <button id="copy-person-btn" type="button" class="primary-btn">Persoon kopiëren</button>
                 </div>
             </div>
             <div class="person-body" id="person-body"></div>
+        </div>
+
+        <!-- Test mode: ad-hoc SOAP test form -->
+        <div class="test-pane" id="test-pane" hidden>
+            <div class="test-form-card">
+                <h2 class="test-form-title">Roundtrip-test</h2>
+                <p class="muted small">Stuur een SOAP-request naar de simulator en vergelijk de response met de XML op disk.</p>
+                <div class="test-form-grid">
+                    <label>Service
+                        <select id="test-dienst"></select>
+                    </label>
+                    <label>Operatie
+                        <select id="test-operatie"></select>
+                    </label>
+                </div>
+                <div class="test-key-fields" id="test-key-fields"></div>
+                <div class="test-form-actions">
+                    <label class="checkbox-line">
+                        <input type="checkbox" id="test-compare-toggle" checked/>
+                        Vergelijk met file op disk
+                    </label>
+                    <button type="button" id="test-run-btn" class="primary-btn">Verzenden</button>
+                    <span class="status" id="test-form-status"></span>
+                </div>
+            </div>
+            <div class="test-form-result" id="test-form-result"></div>
         </div>
 
         <!-- Template: 'Recente inkomsten toevoegen' panel cloned into person-body -->
@@ -157,20 +218,36 @@
                             <option value="loondienst">Loondienst (UWV)</option>
                             <option value="uwvuitkering">UWV-uitkering</option>
                             <option value="onbekend">Onbekend (UWV)</option>
+                            <option value="pensioen">Pensioen (UWV)</option>
                             <option value="svbuitkering">SVB-uitkering</option>
+                            <option value="studiefinanciering">Studiefinanciering (DUO)</option>
                         </select>
                     </label>
                     <label>Aantal maanden
                         <input type="number" data-qi="months" min="1" max="12" value="3"/>
                     </label>
+                    <label data-qi-svbregeling-row hidden>SVB-regeling
+                        <select data-qi="svbregeling">
+                            <option value="AOW">AOW (ouderdomspensioen)</option>
+                            <option value="ANW">ANW (nabestaanden)</option>
+                            <option value="AIO">AIO (aanvullende inkomensvoorziening ouderen)</option>
+                            <option value="WLZ">WLZ (PGB)</option>
+                        </select>
+                    </label>
                     <label data-qi-werkgever-row>Werkgever
                         <input type="text" data-qi="werkgever"/>
                     </label>
-                    <label>Bruto € / maand
+                    <label data-qi-bruto-row>Bruto € / maand
                         <input type="number" data-qi="bruto" min="0" step="0.01" value="2000.00"/>
                     </label>
                     <label data-qi-netto-row>Netto € / maand
                         <input type="number" data-qi="netto" min="0" step="0.01" value="2050.00"/>
+                    </label>
+                    <label data-qi-alimentatie-ingehouden-row>Alimentatie ingehouden € / maand (optioneel)
+                        <input type="number" data-qi="alimentatie-ingehouden" min="0" step="0.01" value=""/>
+                    </label>
+                    <label data-qi-alimentatie-rechtstreeks-row>Alimentatie rechtstreeks € / maand (optioneel)
+                        <input type="number" data-qi="alimentatie-rechtstreeks" min="0" step="0.01" value=""/>
                     </label>
                 </div>
                 <div class="quick-income-status" data-qi="status"></div>
@@ -268,6 +345,42 @@
             <span class="status" id="copy-status"></span>
             <button type="button" class="secondary-btn" id="copy-cancel">Annuleren</button>
             <button type="button" class="primary-btn" id="copy-submit">Kopieer</button>
+        </div>
+    </div>
+</div>
+
+<!-- Conflict modal: shown when the clone-call returns 409 with conflicting filenames -->
+<div class="modal-backdrop" id="conflict-modal" hidden>
+    <div class="modal">
+        <div class="modal-header">
+            <h2>Conflicten gevonden</h2>
+            <button class="modal-close" type="button" id="conflict-modal-close">×</button>
+        </div>
+        <div class="modal-body">
+            <p>De volgende bestanden bestaan al voor de doel-BSN:</p>
+            <ul class="conflict-list" id="conflict-list"></ul>
+            <p>Wat wil je doen?</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="secondary-btn" id="conflict-cancel">Annuleren</button>
+            <button type="button" class="secondary-btn" id="conflict-skip">Bestaande overslaan</button>
+            <button type="button" class="primary-btn" id="conflict-overwrite">Overschrijven</button>
+        </div>
+    </div>
+</div>
+
+<!-- Test result modal: shown after running a single SOAP test from the file-detail "Test" button -->
+<div class="modal-backdrop" id="test-result-modal" hidden>
+    <div class="modal modal-wide">
+        <div class="modal-header">
+            <h2 id="test-result-modal-title">Test resultaat</h2>
+            <button class="modal-close" type="button" id="test-result-modal-close">×</button>
+        </div>
+        <div class="modal-body">
+            <div id="test-result-modal-body"></div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="primary-btn" id="test-result-modal-ok">Sluiten</button>
         </div>
     </div>
 </div>

@@ -62,6 +62,37 @@ The project also includes a browser-based editor for the response XML files. Aft
 * Frontend: `src/main/resources/static/responses/`
 * Files written by the editor land in the path configured by `simulator.responses.path` in `application.properties` (defaults to `src/main/resources/suwinet/data/Responses`).
 
+#### Validation checks (UWV-inkomsten files only)
+
+When you open a `UWVDossierInkomstenGSD_UWVPersoonsIkvInfo_*.xml` file, the editor inspects it and shows a warning banner above the form when one of these is true:
+
+* Two or more `<Inkomstenverhouding>` records share the same `<VolgnrIkv>`. In GZAC every record from the first duplicate onwards may be silently dropped (records are indexed on this value).
+* `<PeriodeGegevensleveringIko>` is missing.
+* `<DatBPeriode>` lies after the earliest `<DatBIko>` / `<DatBIkp>` in the file, or `<DatEPeriode>` lies before the last `<DatEIko>` / `<DatEIkp>`.
+
+The **"Automatisch oplossen"** button:
+
+* Renumbers `VolgnrIkv` sequentially `1..N` in document order.
+* Creates or updates `<PeriodeGegevensleveringIko>` so that `DatBPeriode` matches the earliest data date and `DatEPeriode` matches the latest, capped to today. `99991231`-style open-ended markers are ignored.
+
+Changes are pushed into the raw editor + form but not saved — review and click **Opslaan** to persist.
+
+#### Auto-updates on edit
+
+Adding a "Recente inkomsten" block via the person-detail panel automatically recomputes `<PeriodeGegevensleveringIko>` so the newly added months fall inside the delivery period.
+
+These rules are UWV-inkomsten-only because `<PeriodeGegevensleveringIko>` is only defined in the UWV `BodyReaction.xsd` (see Ontology below) — there is no equivalent in SVB / DUO / BRP / Bijstandsregelingen / Kadaster / RDW.
+
+### Ontology / SuwiML basisschema
+
+The "ontology" Suwinet works against is the BKWI SuwiML basisschema, distributed as XSD files inside this repo:
+
+* Per service: `src/main/resources/suwinet/<Dienst>/Basisschema/v0801-b01/` (SimpleTypes, ComplexTypes, TypedXsd) — defines reusable types like `BSN`, `Datum`, `VolgnrIkv`, `Loonheffingennr`, `SofiNr`.
+* Per service body / response: `src/main/resources/suwinet/<Dienst>/Diensten/<Dienst>/<version>/BodyReaction.xsd` — defines the response shape for that service, including service-specific elements like UWV's `<PeriodeGegevensleveringIko>`.
+* Generated JAXB classes (do not edit): `src/main/java/nl/bkwi/suwiml/...`
+
+When you wonder *"is this element name a general SuwiML thing or service-specific?"*, check the basisschema first — anything defined there is shared across services.
+
 ### New WSDL endpoints
 
 Add other WSDLs to add additional endpoints, a wsimport task defined in the build.gradle.kts e.g. **RDWWsImport** will generate the code.

@@ -6,39 +6,49 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.DefaultResourceLoader;
 import org.springframework.core.io.Resource;
-import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
-import org.springframework.core.io.support.ResourcePatternResolver;
+import org.springframework.core.io.ResourceLoader;
 import org.xml.sax.SAXException;
 
 import javax.xml.XMLConstants;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.reflect.Type;
-import java.nio.file.NotDirectoryException;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Stream;
 
 public class SuwinetEndpoint {
 
     Logger logger = LoggerFactory.getLogger(SuwinetEndpoint.class);
 
-    @Value("classpath:suwinet/data/Responses/*")
-    private Resource[] resources;
+    /*
+     * De Response Editor schrijft XML naar het pad uit `simulator.responses.path`,
+     * maar deze endpoint las de responses voorheen alleen uit de classpath
+     * (`@Value("classpath:suwinet/data/Responses/*")`, eenmalig ingelezen bij
+     * startup). Daardoor zagen SOAP-clients (zoals GZAC) editor-wijzigingen
+     * pas terug na een rebuild + restart, en alleen als de classpath uit
+     * dezelfde worktree kwam als waar de editor naartoe schreef.
+     *
+     * We resolven het pad nu dynamisch per request via DefaultResourceLoader,
+     * met dezelfde classpath-locatie als default — dus backwards-compatible
+     * voor wie de override niet zet. Een `simulator.responses.path` op een
+     * filesystem-pad wordt automatisch met `file:` geprefixed.
+     */
+    @Value("${simulator.responses.path:classpath:suwinet/data/Responses}")
+    private String responsesPath;
 
-    Resource readResponseDirectory(String filenameFilter) throws IOException {
+    private final ResourceLoader resourceLoader = new DefaultResourceLoader();
 
-        Optional<Resource> first = Arrays.stream(resources)
-                .filter(resource -> resource.getFilename().equals(filenameFilter))
-                .findFirst();
-
-        return first.isPresent() ? first.get() : null;
+    Resource readResponseDirectory(String filename) throws IOException {
+        String base = responsesPath.endsWith("/") ? responsesPath : responsesPath + "/";
+        String location = base + filename;
+        if (!location.startsWith("classpath:") && !location.startsWith("file:")) {
+            location = "file:" + location;
+        }
+        Resource resource = resourceLoader.getResource(location);
+        return resource.exists() ? resource : null;
     }
     Object unmarshal(Type xmlClass, Resource resource) {
         try {

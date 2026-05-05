@@ -11,7 +11,6 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
-import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -57,44 +56,12 @@ public class ResponseFileService {
             "kadastraalperceelnr"
     );
 
-    /**
-     * Sub-entity containers we do NOT descend into for index metadata extraction.
-     * These represent OTHER persons or entities (employer, partner, child, parent,
-     * historical address, ...) — their fields would otherwise leak into the
-     * index columns of the queried persoon and be misleading.
-     */
-    private static final Set<String> SUB_ENTITY_CONTAINERS = Set.of(
-            "Inkomstenverhouding",
-            "Partner",
-            "PartnerAanvraagUitkering",
-            "Kind",
-            "Ouder1",
-            "Ouder2",
-            "Huwelijk",
-            "PersoonAdministratieveEenheid",
-            "RechtspersoonAdministratieveEenh",
-            "AdministratieveEenheid",
-            "Aansprakelijke",
-            "VerblijfplaatsHistorisch",
-            "AanvraagUitkering",
-            "BeslissingOpAanvraagUitkering",
-            "Eigendom",
-            "OnroerendeZaak"
-    );
-
     private final Path baseDir;
     private final DocumentBuilderFactory documentBuilderFactory;
 
     public ResponseFileService(@Value("${simulator.responses.path}") String responsesPath) {
         this.baseDir = Paths.get(responsesPath).toAbsolutePath().normalize();
-        this.documentBuilderFactory = DocumentBuilderFactory.newInstance();
-        this.documentBuilderFactory.setNamespaceAware(true);
-        try {
-            this.documentBuilderFactory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
-            this.documentBuilderFactory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
-        } catch (ParserConfigurationException e) {
-            logger.warn("Could not harden XML parser: {}", e.getMessage());
-        }
+        this.documentBuilderFactory = SecureXml.hardenedDocumentBuilderFactory();
     }
 
     @PostConstruct
@@ -170,31 +137,31 @@ public class ResponseFileService {
     }
 
     public void write(String filename, String xml) throws IOException {
-        if (xml == null || xml.isBlank()) {
-            throw new InvalidXmlException("Empty payload");
-        }
-        validateWellFormed(xml);
-        Path file = resolveSafe(filename);
-        if (!Files.isRegularFile(file)) {
-            throw new ResponseFileNotFoundException(filename);
-        }
-        Path tmp = file.resolveSibling(file.getFileName() + ".tmp");
-        Files.writeString(tmp, xml, StandardCharsets.UTF_8);
-        Files.move(tmp, file, StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.ATOMIC_MOVE);
+        writeAtomic(filename, xml, /* mustExist */ true);
     }
 
     public void create(String filename, String xml) throws IOException {
+        writeAtomic(filename, xml, /* mustExist */ false);
+    }
+
+    private void writeAtomic(String filename, String xml, boolean mustExist) throws IOException {
         if (xml == null || xml.isBlank()) {
             throw new InvalidXmlException("Empty payload");
         }
         validateWellFormed(xml);
         Path file = resolveSafe(filename);
-        if (Files.exists(file)) {
+        if (mustExist && !Files.isRegularFile(file)) {
+            throw new ResponseFileNotFoundException(filename);
+        }
+        if (!mustExist && Files.exists(file)) {
             throw new ResponseFileExistsException(filename);
         }
         Path tmp = file.resolveSibling(file.getFileName() + ".tmp");
         Files.writeString(tmp, xml, StandardCharsets.UTF_8);
-        Files.move(tmp, file, StandardCopyOption.ATOMIC_MOVE);
+        StandardCopyOption[] options = mustExist
+                ? new StandardCopyOption[]{StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.ATOMIC_MOVE}
+                : new StandardCopyOption[]{StandardCopyOption.ATOMIC_MOVE};
+        Files.move(tmp, file, options);
     }
 
     private Path resolveSafe(String filename) {
@@ -284,7 +251,7 @@ public class ResponseFileService {
                     out.put(key, text.trim());
                 }
             }
-            if (!SUB_ENTITY_CONTAINERS.contains(localName)) {
+            if (!SuwiSubEntities.INDEX.contains(localName)) {
                 walk(child, out);
             }
         }
@@ -299,21 +266,21 @@ public class ResponseFileService {
         }
     }
 
-    public static class ResponseFileNotFoundException extends RuntimeException {
+    public static class ResponseFileNotFoundException extends ApiException {
         public ResponseFileNotFoundException(String filename) {
-            super("Not found: " + filename);
+            super(404, "Not found: " + filename);
         }
     }
 
-    public static class ResponseFileExistsException extends RuntimeException {
+    public static class ResponseFileExistsException extends ApiException {
         public ResponseFileExistsException(String filename) {
-            super("Already exists: " + filename);
+            super(409, "Already exists: " + filename);
         }
     }
 
-    public static class InvalidXmlException extends RuntimeException {
+    public static class InvalidXmlException extends ApiException {
         public InvalidXmlException(String message) {
-            super(message);
+            super(400, message);
         }
     }
 }
