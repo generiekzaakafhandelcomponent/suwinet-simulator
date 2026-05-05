@@ -6,7 +6,7 @@
         <Burgerservicenr>999990111</Burgerservicenr>
         <Voornamen>Danny</Voornamen>
         <SignificantDeelVanDeAchternaam>Dynamisch</SignificantDeelVanDeAchternaam>
-        <Geboortedat>19900404</Geboortedat>
         <Geslacht>1</Geslacht>
+        <Geboortedat>19900404</Geboortedat>
     </ClientSuwi>
 </ns4:SVBPersoonsInfoResponse>

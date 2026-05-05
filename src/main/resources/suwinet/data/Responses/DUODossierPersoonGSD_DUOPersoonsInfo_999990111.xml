@@ -33,8 +33,8 @@
                 <CdNiveauOpleidingDuo>VO-HAVO</CdNiveauOpleidingDuo>
             </InhoudResultaatOpleidingDuo>
             <ResultaatExamen>
-                <DatResultaatExamen>20090715</DatResultaatExamen>
                 <CdResultaatExamen>G</CdResultaatExamen>
+                <DatResultaatExamen>20090715</DatResultaatExamen>
             </ResultaatExamen>
         </ResultaatOpleidingGeregistrDuo>
     </ClientSuwi>
