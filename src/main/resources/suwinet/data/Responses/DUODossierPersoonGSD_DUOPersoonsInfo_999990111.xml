@@ -1,0 +1,41 @@
+<smls:DUOPersoonsInfoResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/DUODossierPersoonGSD/v0300">
+    <ClientSuwi>
+
+        <!-- Demo-persoon "Danny Dynamisch" (bsn: 999990111).
+             Eenvoudige opleidingshistorie: HAVO afgerond. -->
+        <Burgerservicenr>999990111</Burgerservicenr>
+        <IndStartkwalificatieDuo>1</IndStartkwalificatieDuo>
+
+        <Onderwijsovereenkomst>
+            <Brin>
+                <BrinNr>11AB</BrinNr>
+            </Brin>
+            <DatInschrijvingOpleiding>20040801</DatInschrijvingOpleiding>
+            <DatUitschrijvingOpleiding>20090715</DatUitschrijvingOpleiding>
+
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>20040801</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20090715</DatEDeelnameOpleiding>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>HAVO</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>VO-HAVO</CdNiveauOpleidingDuo>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+        </Onderwijsovereenkomst>
+
+        <ResultaatOpleidingGeregistrDuo>
+            <Brin>
+                <BrinNr>11AB</BrinNr>
+            </Brin>
+            <CdFaseOpleidingDuo>1</CdFaseOpleidingDuo>
+            <InhoudResultaatOpleidingDuo>
+                <NaamOpleidingKortDuo>HAVO</NaamOpleidingKortDuo>
+                <CdNiveauOpleidingDuo>VO-HAVO</CdNiveauOpleidingDuo>
+            </InhoudResultaatOpleidingDuo>
+            <ResultaatExamen>
+                <DatResultaatExamen>20090715</DatResultaatExamen>
+                <CdResultaatExamen>G</CdResultaatExamen>
+            </ResultaatExamen>
+        </ResultaatOpleidingGeregistrDuo>
+    </ClientSuwi>
+</smls:DUOPersoonsInfoResponse>

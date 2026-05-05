@@ -1,0 +1,24 @@
+<ns3:PersoonsInfoResponse xmlns:ns3="http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300" xmlns:ns2="http://bkwi.nl/SuwiML/FWI/v0203">
+
+    <!-- Demo-persoon "Danny Dynamisch" (bsn: 999990111).
+         Geen onroerende eigendommen geregistreerd (Danny huurt). -->
+    <ClientSuwi>
+        <Burgerservicenr>999990111</Burgerservicenr>
+        <Voornamen>Danny</Voornamen>
+        <SignificantDeelVanDeAchternaam>Dynamisch</SignificantDeelVanDeAchternaam>
+        <Geslacht>1</Geslacht>
+        <Geboortedat>19900404</Geboortedat>
+
+        <DomicilieAdres>
+            <StraatadresBag>
+                <Postcd>2511AB</Postcd>
+                <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
+                <Straatnaam>Datumstraat</Straatnaam>
+                <Huisnr>1</Huisnr>
+            </StraatadresBag>
+        </DomicilieAdres>
+
+        <!-- DynamicDate: today -->
+        <DatToestandKadaster>20240701</DatToestandKadaster>
+    </ClientSuwi>
+</ns3:PersoonsInfoResponse>

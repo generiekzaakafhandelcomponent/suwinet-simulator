@@ -1,5 +1,6 @@
 package com.ritense.suwitense.webservice.endpoint;
 
+import com.ritense.suwitense.webservice.DynamicDateProcessor;
 import jakarta.xml.bind.*;
 import nl.bkwi.suwiml.fwi.v0205.ObjectFactory;
 import org.slf4j.Logger;
@@ -14,9 +15,12 @@ import org.xml.sax.SAXException;
 import javax.xml.XMLConstants;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.lang.reflect.Type;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 public class SuwinetEndpoint {
@@ -55,13 +59,25 @@ public class SuwinetEndpoint {
             Class<?> clazz = com.fasterxml.jackson.databind.type.TypeFactory.rawClass(xmlClass);
             JAXBContext context = JAXBContext.newInstance(clazz);
             Unmarshaller un = context.createUnmarshaller();
-            return un.unmarshal(resource.getInputStream());
+            return un.unmarshal(applyDynamicDates(resource));
         } catch (JAXBException e) {
             e.printStackTrace();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
         return null;
+    }
+
+    private InputStream applyDynamicDates(Resource resource) throws IOException {
+        try (InputStream raw = resource.getInputStream()) {
+            byte[] bytes = raw.readAllBytes();
+            String xml = new String(bytes, StandardCharsets.UTF_8);
+            String processed = DynamicDateProcessor.process(xml);
+            if (processed == xml) {
+                return new ByteArrayInputStream(bytes);
+            }
+            return new ByteArrayInputStream(processed.getBytes(StandardCharsets.UTF_8));
+        }
     }
 
     <T> String printPayload(final T response, Class[] contextClasses, final ClassPathResource actionSchema) throws JAXBException, SAXException, IOException {
