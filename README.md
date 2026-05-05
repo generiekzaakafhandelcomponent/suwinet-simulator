@@ -54,6 +54,36 @@ The naming convention of the response files are:
 7. DUO - DUOPersoonsInfo:<BR>DUODossierPersoonGSD_DUOPersoonsInfo_\<Burgerservicenr\>.xml
 8. Bijstandsregelingen - Bijstandsregelingen:<BR>BijstandsregelingenInfo_\<Burgerservicenr\>.xml
 
+### Dynamic dates in responses
+
+For test scenarios where you want a response to keep showing dates relative to "today" (e.g. always include income from the last 3 months), mark a date with a `DynamicDate` comment. At request time the simulator substitutes the value of the element directly after the comment with `today + offset`. The file on disk is **not** rewritten — only the in-memory copy used to serve that one response.
+
+Place the comment directly before the element whose value should be replaced:
+
+```xml
+<!-- DynamicDate: today - 2 months -->
+<DatEIkv>20240131</DatEIkv>
+```
+
+The date inside the element acts as documentation (handy when reviewing diffs); it gets overwritten at request time.
+
+Supported syntax:
+
+```xml
+<!-- DynamicDate: today -->                     <!-- vandaag -->
+<!-- DynamicDate: today - 90 days -->           <!-- 90 dagen geleden -->
+<!-- DynamicDate: today - 2 months -->          <!-- 2 maanden geleden -->
+<!-- DynamicDate: today + 1 year -->            <!-- over een jaar -->
+```
+
+Units: `day(s)`, `week(s)`, `month(s)`, `year(s)`. The keyword `DynamicDate` and the units are case-insensitive.
+
+Both date formats found in SUWInet responses are supported and preserved on substitution:
+- `YYYYMMDD` (compact, e.g. `20260304`)
+- `YYYY-MM-DD` (ISO-dashed, e.g. `2026-03-04`)
+
+Files (and elements) without a `DynamicDate` comment pass through untouched, so the feature is fully opt-in.
+
 ### New WSDL endpoints
 
 Add other WSDLs to add additional endpoints, a wsimport task defined in the build.gradle.kts e.g. **RDWWsImport** will generate the code.

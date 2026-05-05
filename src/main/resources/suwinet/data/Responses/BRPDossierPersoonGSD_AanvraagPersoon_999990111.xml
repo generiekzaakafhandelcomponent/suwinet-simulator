@@ -1,0 +1,45 @@
+<brp:AanvraagPersoonResponse xmlns:brp="http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD/v0200">
+    <ClientSuwi>
+
+        <!-- Demo-persoon "Danny Dynamisch" (bsn: 999990111).
+             Gebruikt voor het tonen van de DynamicDate-functionaliteit:
+             zie UWV-response voor maandopgaves met rollende datums. -->
+        <Voornamen>Danny</Voornamen>
+        <SignificantDeelVanDeAchternaam>Dynamisch</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19900404</Geboortedat>
+        <Burgerservicenr>999990111</Burgerservicenr>
+        <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
+        <ANr>9990111000</ANr>
+        <AanduidingNaamgebruik>1</AanduidingNaamgebruik>
+        <Geslacht>1</Geslacht>
+        <CdGeboortegemeente>0518</CdGeboortegemeente>
+        <Geboorteland>6030</Geboorteland>
+        <GeldigheidGegevensPersoon>
+            <DatGeldigheidGegevens>19900404</DatGeldigheidGegevens>
+        </GeldigheidGegevensPersoon>
+        <Nationaliteit>
+            <CdNationaliteit>0001</CdNationaliteit>
+            <GeldigheidGegevensNationaliteit>
+                <DatGeldigheidGegevens>19900404</DatGeldigheidGegevens>
+            </GeldigheidGegevensNationaliteit>
+        </Nationaliteit>
+        <DomicilieAdres>
+            <Postcd>2511AB</Postcd>
+            <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
+            <Straatnaam>Datumstraat</Straatnaam>
+            <NaamOpenbareRuimte>Datumstraat</NaamOpenbareRuimte>
+            <Huisnr>1</Huisnr>
+            <IdentificatiecdVerblijfplaats>0518010000111111</IdentificatiecdVerblijfplaats>
+            <IdentificatiecdNraanduiding>0518200000111111</IdentificatiecdNraanduiding>
+        </DomicilieAdres>
+        <AangifteAdreshoudingBrp>
+            <CdGemeenteVanInschrijving>0518</CdGemeenteVanInschrijving>
+            <DatVanInschrijvingBijGemeente>20240101</DatVanInschrijvingBijGemeente>
+            <DatBAdreshoudingBrp>20240101</DatBAdreshoudingBrp>
+        </AangifteAdreshoudingBrp>
+        <InschrijvingsgegevensBrp>
+            <CdGemeenteWaarPkZichBevindt>0518</CdGemeenteWaarPkZichBevindt>
+            <CdPkVolledigGeconverteerd>P</CdPkVolledigGeconverteerd>
+        </InschrijvingsgegevensBrp>
+    </ClientSuwi>
+</brp:AanvraagPersoonResponse>
