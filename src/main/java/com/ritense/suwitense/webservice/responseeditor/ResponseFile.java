@@ -8,6 +8,7 @@ public record ResponseFile(
         String operatie,
         String sleutel,
         boolean isRequest,
-        Map<String, String> metadata
+        Map<String, String> metadata,
+        String content
 ) {
 }

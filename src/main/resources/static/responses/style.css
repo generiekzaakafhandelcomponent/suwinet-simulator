@@ -23,9 +23,9 @@ body {
     align-items: center;
     gap: 16px;
     padding: 10px 16px;
-    background: #1f2328;
+    background: #1d3a6b;
     color: #fff;
-    border-bottom: 1px solid #1b1f24;
+    border-bottom: 1px solid #163060;
 }
 
 .topbar h1 {
@@ -33,26 +33,43 @@ body {
     font-weight: 600;
     margin: 0;
 }
+.topbar h1 .title-link {
+    color: inherit;
+    text-decoration: none;
+}
+.topbar h1 .title-link:hover {
+    text-decoration: none;
+}
 
 .topbar .basedir {
     font-size: 11px;
-    color: #adbac7;
+    color: rgba(255,255,255,0.45);
     font-family: "SF Mono", Menlo, Consolas, monospace;
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    direction: rtl;
+    cursor: default;
 }
 
 .topbar .spacer { flex: 1; }
 
-.topbar button {
-    background: #2d333b;
+.topbar button:not(.mode-btn) {
+    background: transparent;
     color: #fff;
-    border: 1px solid #444c56;
+    border: 1px solid rgba(255,255,255,0.28);
     padding: 5px 12px;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 12px;
+    font-family: inherit;
 }
 
-.topbar button:hover { background: #373e47; }
+.topbar button:not(.mode-btn):hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.5);
+}
 
 .layout {
     --left-pane-width: 45%;
@@ -217,7 +234,7 @@ table#files-table {
     max-height: 320px;
     overflow-y: auto;
     z-index: 50;
-    font-size: 10px;
+    font-size: 12px;
     font-family: inherit;
     color: #1f2328;
     min-width: 160px;
@@ -229,7 +246,32 @@ table#files-table {
     cursor: pointer;
     white-space: nowrap;
     line-height: 1.4;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
+
+.autocomplete-hint {
+    font-size: 9px;
+    padding: 1px 5px;
+    border-radius: 10px;
+    background: #eaeef2;
+    color: #57606a;
+    flex-shrink: 0;
+}
+.autocomplete-hint.dienst-brp      { background: #f4e8fc; }
+.autocomplete-hint.dienst-uwv      { background: #e0effd; }
+.autocomplete-hint.dienst-duo      { background: #defaea; }
+.autocomplete-hint.dienst-kadaster { background: #fde7cd; }
+.autocomplete-hint.dienst-rdw      { background: #fde7e5; }
+.autocomplete-hint.dienst-svb      { background: #d8edf1; }
+.autocomplete-hint.dienst-bijstand { background: #fdf3c8; }
+.autocomplete-hint.ac-hint-field   { background: #e8f0fe; }
+.autocomplete-hint.ac-hint-section { background: #ede8f5; }
+.autocomplete-hint.ac-hint-tag     { background: #e6f4ea; }
+.autocomplete-hint.ac-hint-attr    { background: #fef5e0; }
+.autocomplete-hint.ac-hint-persoon { background: #fce8f3; }
+.autocomplete-hint.ac-hint-value   { background: #f0f4e8; }
 
 .autocomplete-item:hover,
 .autocomplete-item.highlighted {
@@ -371,15 +413,14 @@ table#files-table {
 .dirty-indicator {
     display: inline-block;
     padding: 3px 10px;
-    background: #fff8c5;
-    color: #7d4e00;
-    border: 1px solid #d4a72c;
+    background: #fef3c7;
+    color: #92400e;
+    border: 1px solid #f59e0b;
     border-radius: 12px;
     font-size: 10px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.4px;
-    box-shadow: 0 0 0 2px rgba(212, 167, 44, 0.15);
 }
 
 .status {
@@ -395,37 +436,69 @@ table#files-table {
 .status.error { color: #cf222e; }
 .status.success { color: #1a7f37; }
 
+/* Segmented toggle control */
+.btn-group {
+    display: flex;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #d0d7de;
+}
+
+.btn-group > button {
+    background: #f6f8fa;
+    color: #374151;
+    border: none;
+    border-right: 1px solid #d0d7de;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: inherit;
+    font-weight: 500;
+    margin: 0;
+    white-space: nowrap;
+    transition: background 0.1s;
+}
+
+.btn-group > button:last-child { border-right: none; }
+.btn-group > button:hover { background: #eaeef2; }
+.btn-group > button.active { background: #e8ecf2; color: #1d3a6b; font-weight: 600; }
+
+/* Secondary action button */
+#test-file-btn {
+    background: #f6f8fa;
+    color: #374151;
+    border: 1px solid #d0d7de;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: inherit;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+#test-file-btn:hover { background: #eaeef2; }
+
+/* Primary save button — HF navy */
 #save-btn {
-    background: #1f883d;
+    background: #1d3a6b;
     color: #fff;
     border: 0;
-    padding: 6px 14px;
-    border-radius: 4px;
+    padding: 6px 16px;
+    border-radius: 6px;
     cursor: pointer;
     font-weight: 600;
     font-size: 12px;
+    font-family: inherit;
+    white-space: nowrap;
 }
 
-#save-btn:hover:not(:disabled) { background: #1a7f37; }
-#save-btn:disabled { background: #94d3a2; cursor: not-allowed; }
-
-#toggle-list-btn,
-#toggle-raw-btn {
-    background: #f6f8fa;
-    color: #1f2328;
-    border: 1px solid #d0d7de;
-    padding: 6px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 12px;
-}
-
-#toggle-list-btn:hover,
-#toggle-raw-btn:hover { background: #eaeef2; }
+#save-btn:hover:not(:disabled) { background: #163060; }
+#save-btn:disabled { background: #8aacdf; cursor: not-allowed; }
 
 /* When the right pane is narrow, hide the inline actions row and expose the
    hamburger. The actions then become a dropdown that anchors to the header. */
-@container (max-width: 720px) {
+@container (max-width: 900px) {
     .detail-header .hamburger-btn { display: inline-block; }
 
     .detail-header .actions {
@@ -448,6 +521,21 @@ table#files-table {
     .detail-header .actions.open { display: flex; }
 
     .detail-header .actions > button { width: 100%; text-align: left; }
+
+    .detail-header .actions > .btn-group {
+        flex-direction: column;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+
+    .detail-header .actions > .btn-group > button {
+        width: 100%;
+        text-align: left;
+        border-right: none;
+        border-bottom: 1px solid #d0d7de;
+    }
+
+    .detail-header .actions > .btn-group > button:last-child { border-bottom: none; }
 
     .detail-header .actions > .status,
     .detail-header .actions > .dirty-indicator,
@@ -536,20 +624,125 @@ table#files-table {
     flex: 1;
 }
 
-.dynamic-date-insert {
+.raw-history-btns {
+    display: flex;
+    gap: 2px;
     flex: 0 0 auto;
+}
+
+.raw-history-btn {
+    padding: 2px 7px;
+    border: 1px solid #d0d7de;
+    border-radius: 4px;
+    background: #fff;
+    color: #1f2328;
+    font-size: 13px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.raw-history-btn:hover:not(:disabled) { border-color: #8c959f; background: #f3f4f6; }
+.raw-history-btn:disabled { opacity: 0.35; cursor: default; }
+
+.dyndate-wrap {
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.dyndate-btn {
+    padding: 3px 8px;
+    border: 1px solid #d0d7de;
+    border-radius: 4px;
+    background: #fff;
+    color: #1f2328;
+    font-size: 11px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.dyndate-btn:hover { border-color: #8c959f; }
+.dyndate-btn.active { background: #f3f4f6; border-color: #8c959f; }
+
+.dyndate-panel {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    z-index: 200;
+    background: #fff;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(140,149,159,.2);
+    width: 300px;
+    overflow: hidden;
+}
+
+.dyndate-hint {
+    padding: 8px 12px;
+    font-size: 11px;
+    color: #656d76;
+    background: #f6f8fa;
+    border-bottom: 1px solid #d0d7de;
+    line-height: 1.5;
+}
+
+.dyndate-options {
+    display: flex;
+    flex-direction: column;
+}
+
+.dyndate-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 12px;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 12px;
+    color: #1f2328;
+    width: 100%;
+}
+.dyndate-option:hover { background: #f3f4f6; }
+.dyndate-option-label { flex: 1; }
+.dyndate-option-preview {
+    color: #656d76;
+    font-size: 11px;
+    font-variant-numeric: tabular-nums;
+}
+
+.dyndate-custom-row {
+    display: flex;
+    gap: 4px;
+    padding: 8px 10px;
+    border-top: 1px solid #d0d7de;
+    background: #f6f8fa;
+}
+
+.dyndate-custom-input {
+    flex: 1;
+    min-width: 0;
     padding: 3px 6px;
     border: 1px solid #d0d7de;
     border-radius: 4px;
     font-size: 11px;
-    background: #fff;
-    color: #1f2328;
-    cursor: pointer;
+    font-family: monospace;
+}
+.dyndate-custom-input:focus {
+    outline: none;
+    border-color: #0969da;
+    box-shadow: 0 0 0 2px rgba(9,105,218,.15);
 }
 
-.dynamic-date-insert:hover {
-    border-color: #8c959f;
+.dyndate-custom-submit {
+    padding: 3px 8px;
+    border: 1px solid #d0d7de;
+    border-radius: 4px;
+    background: #fff;
+    font-size: 11px;
+    cursor: pointer;
+    white-space: nowrap;
 }
+.dyndate-custom-submit:hover { background: #f3f4f6; border-color: #8c959f; }
 
 .form-pane > .in-file-search-bar {
     flex: 0 0 auto;
@@ -605,6 +798,26 @@ table#files-table {
 }
 
 .in-file-search-count.no-match { color: #cf222e; }
+
+/* ---- Form search: alleen resultaten tonen ---- */
+
+.form-fields.search-only .form-field:not(.search-hit) {
+    display: none;
+}
+.form-fields.search-only .form-card.search-faded,
+.form-fields.search-only .form-list.search-faded {
+    display: none;
+}
+
+.form-search-only-label {
+    font-size: 11px;
+    color: #57606a;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+    cursor: pointer;
+}
 
 /* ---- Form-pane search hit styles ---- */
 
@@ -995,27 +1208,26 @@ table#files-table {
 
 .mode-switch {
     display: flex;
-    background: #2d333b;
-    border-radius: 6px;
-    overflow: hidden;
-    border: 1px solid #444c56;
+    gap: 6px;
 }
 
 .mode-btn {
     background: transparent;
-    color: #adbac7;
+    color: #fff;
     border: 0;
-    padding: 5px 14px;
-    font-size: 12px;
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-size: 13px;
     cursor: pointer;
     font-weight: 500;
+    font-family: inherit;
 }
 
-.mode-btn:hover { background: #373e47; color: #fff; }
+.mode-btn:hover { background: rgba(255,255,255,0.22); color: #fff; }
 
 .mode-btn.active {
-    background: #0969da;
-    color: #fff;
+    background: #fff;
+    color: #1d3a6b;
     font-weight: 600;
 }
 
@@ -1062,6 +1274,80 @@ table#files-table {
 
 /* ---- Person detail ---- */
 
+.person-header-search {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+    max-width: 280px;
+}
+
+.person-header-search input[type="search"] {
+    flex: 1;
+    padding: 5px 10px;
+    border: 1px solid #d0d7de;
+    border-radius: 4px;
+    font-size: 12px;
+    font-family: inherit;
+    background: #fff;
+    color: #1f2328;
+    min-width: 0;
+}
+
+.person-header-search input[type="search"]:focus {
+    outline: none;
+    border-color: #0969da;
+    box-shadow: 0 0 0 2px rgba(9, 105, 218, 0.15);
+}
+
+.person-search-count {
+    font-size: 11px;
+    color: #656d76;
+    white-space: nowrap;
+}
+
+.person-search-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 6px 3px 10px;
+    background: #dbeafe;
+    border: 1px solid #93c5fd;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #1e40af;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.person-search-chip-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.person-search-chip-clear {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: 15px;
+    line-height: 1;
+    color: #60a5fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.person-search-chip-clear:hover {
+    background: #bfdbfe;
+    color: #1d4ed8;
+}
+
 .person-detail {
     flex: 1;
     display: flex;
@@ -1073,6 +1359,45 @@ table#files-table {
     flex: 1;
     overflow: auto;
     padding: 16px 20px;
+}
+
+.partner-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #656d76;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+}
+
+.partner-line-label {
+    font-weight: 600;
+    color: #1f2328;
+}
+
+.partner-line-text {
+    color: #1f2328;
+}
+
+.partner-line-bsn {
+    color: #656d76;
+}
+
+.partner-line-link {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    font-size: 13px;
+    color: #0969da;
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+}
+
+.partner-line-link:hover {
+    text-decoration-color: currentColor;
 }
 
 .person-files-heading {
@@ -1094,6 +1419,40 @@ table#files-table {
     margin-bottom: 6px;
     cursor: pointer;
     background: #fff;
+}
+
+.person-file-row.person-file-search-hit {
+    background: #fff8c5;
+    border-color: #d4a72c;
+    flex-wrap: wrap;
+    gap: 4px 8px;
+}
+
+.search-match-hint {
+    font-size: 11px;
+    color: #856404;
+    background: #fde68a;
+    border: 1px solid #d4a72c;
+    border-radius: 4px;
+    padding: 1px 6px;
+    margin-left: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 320px;
+}
+
+.search-match-hint mark {
+    background: #f59e0b;
+    color: #1f2328;
+    border-radius: 2px;
+    padding: 0 1px;
+    font-weight: 600;
+}
+
+.person-file-row.person-file-search-hit:hover {
+    background: #ffd33d;
+    border-color: #0969da;
 }
 
 .person-file-row:hover {
@@ -1498,9 +1857,9 @@ table#files-table {
     margin-right: 6px;
     background: currentColor;
 }
-.git-indicator.git-modified { color: #8a3800; background: #fff1e5; border: 1px solid #bc4c00; }
-.git-indicator.git-added    { color: #0f5527; background: #dafbe1; border: 1px solid #1a7f37; }
-.git-indicator.git-deleted  { color: #82071e; background: #ffebe9; border: 1px solid #cf222e; }
+.git-indicator.git-modified { color: #92400e; background: #fef3c7; border: 1px solid #f59e0b; }
+.git-indicator.git-added    { color: #065f46; background: #d1fae5; border: 1px solid #10b981; }
+.git-indicator.git-deleted  { color: #991b1b; background: #fee2e2; border: 1px solid #dc2626; }
 
 /* ---- Diff pane (replaces raw editor when active) ---- */
 
@@ -1833,9 +2192,9 @@ table#files-table {
 }
 
 /* --- Person-detail has no hamburger, so the existing
-       `@container (max-width: 720px) { .detail-header .actions { display: none } }`
+       `@container (max-width: 900px) { .detail-header .actions { display: none } }`
        rule would hide its buttons. Override: keep them visible and let them wrap. --- */
-@container (max-width: 720px) {
+@container (max-width: 900px) {
     #person-detail .detail-header {
         flex-wrap: wrap;
         align-items: flex-start;

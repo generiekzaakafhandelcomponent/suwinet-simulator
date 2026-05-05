@@ -97,10 +97,7 @@ public class GitService {
         if (!available) return Optional.empty();
         validateFilename(filename);
         try {
-            // -b / --ignore-space-change: skips noise from XML round-trip whitespace
-            // changes (e.g. spacing inside comments) while still showing real content edits
-            // and added/removed lines.
-            ExecResult r = exec("diff", "--no-color", "--ignore-space-change", "HEAD", "--", filename);
+            ExecResult r = exec("diff", "--no-color", "HEAD", "--", filename);
             if (r.exitCode != 0) {
                 logger.debug("git diff returned exit={} for {}: {}", r.exitCode, filename, r.stderr);
                 return Optional.empty();

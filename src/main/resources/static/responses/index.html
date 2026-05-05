@@ -2,7 +2,7 @@
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <title>Suwinet response editor</title>
+    <title>Suwinet Sim Editor</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
@@ -11,11 +11,10 @@
 </head>
 <body>
 <header class="topbar">
-    <h1>Suwinet responses</h1>
+    <h1><a href="/responses/" class="title-link">Suwinet Sim Editor</a></h1>
     <div class="mode-switch" role="tablist">
         <button class="mode-btn active" data-mode="persons" type="button">Personen</button>
         <button class="mode-btn" data-mode="files" type="button">Bestanden</button>
-        <button class="mode-btn" data-mode="test" type="button">Test</button>
     </div>
     <span class="basedir" id="basedir" title="Configurable via simulator.responses.path"></span>
     <span class="spacer"></span>
@@ -98,9 +97,11 @@
                     <span class="dirty-indicator" id="dirty-indicator" hidden>● gewijzigd</span>
                     <span class="git-indicator" id="git-indicator" hidden></span>
                     <span class="status" id="status"></span>
-                    <button id="toggle-diff-btn" type="button" title="Toon git-diff t.o.v. HEAD" hidden>Diff tonen</button>
-                    <button id="toggle-raw-btn" type="button" title="Raw XML tonen/verbergen">XML tonen</button>
-                    <button id="toggle-list-btn" type="button" title="Bestandenlijst tonen/verbergen">⇔ Volledig scherm</button>
+                    <div class="btn-group">
+                        <button id="toggle-diff-btn" type="button" title="Git-diff t.o.v. HEAD tonen/verbergen" hidden>Diff</button>
+                        <button id="toggle-list-btn" type="button" title="Bestandenlijst tonen/verbergen" class="active">Lijst</button>
+                        <button id="toggle-raw-btn" type="button" title="Raw XML tonen/verbergen">XML</button>
+                    </div>
                     <button id="test-file-btn" type="button" title="Roundtrip-test: SOAP-call naar simulator + diff t.o.v. deze file">Test</button>
                     <button id="save-btn" type="button" disabled>Opslaan</button>
                 </div>
@@ -124,6 +125,9 @@
                         <button type="button" id="form-search-next" title="Volgende (Enter)">↓</button>
                         <span class="in-file-search-count" id="form-search-count"></span>
                         <button type="button" id="form-search-clear" title="Wis zoekopdracht" hidden>×</button>
+                        <label class="form-search-only-label" id="form-search-only-wrap" hidden>
+                            <input type="checkbox" id="form-search-only"/> Alleen resultaten
+                        </label>
                     </div>
                     <div class="form-fields" id="form-fields"></div>
                 </div>
@@ -132,19 +136,21 @@
                 <div class="raw-pane" id="raw-pane">
                     <div class="raw-pane-header">
                         <span class="raw-pane-title">Raw XML</span>
-                        <select id="dynamic-date-insert" class="dynamic-date-insert" title="Voeg een DynamicDate-comment toe op de cursorpositie. De volgende datum wordt bij elk request vervangen door today + offset.">
-                            <option value="" selected>+ DynamicDate…</option>
-                            <option value="today">today (vandaag)</option>
-                            <option value="today - 1 week">today − 1 week</option>
-                            <option value="today - 1 month">today − 1 maand</option>
-                            <option value="today - 2 months">today − 2 maanden</option>
-                            <option value="today - 3 months">today − 3 maanden</option>
-                            <option value="today - 6 months">today − 6 maanden</option>
-                            <option value="today - 1 year">today − 1 jaar</option>
-                            <option value="today + 1 month">today + 1 maand</option>
-                            <option value="today + 1 year">today + 1 jaar</option>
-                            <option value="__custom__">Anders…</option>
-                        </select>
+                        <div class="raw-history-btns">
+                            <button type="button" id="raw-undo-btn" class="raw-history-btn" title="Ongedaan maken (Ctrl+Z)" disabled>↩</button>
+                            <button type="button" id="raw-redo-btn" class="raw-history-btn" title="Opnieuw (Ctrl+Shift+Z)" disabled>↪</button>
+                        </div>
+                        <div class="dyndate-wrap" id="dyndate-wrap">
+                            <button type="button" id="dyndate-btn" class="dyndate-btn">Datum invullen ▾</button>
+                            <div class="dyndate-panel" id="dyndate-panel" hidden>
+                                <div class="dyndate-hint">Zet de cursor op de regel van de datum die je dynamisch wilt maken, en kies hieronder een offset. De simulator berekent de datum bij elk verzoek opnieuw.</div>
+                                <div class="dyndate-options" id="dyndate-options"></div>
+                                <div class="dyndate-custom-row">
+                                    <input type="text" id="dyndate-custom-input" class="dyndate-custom-input" placeholder="today − 3 weeks" autocomplete="off" />
+                                    <button type="button" id="dyndate-custom-submit" class="dyndate-custom-submit">Invoegen</button>
+                                </div>
+                            </div>
+                        </div>
                         <div class="in-file-search-bar" id="raw-search-bar">
                             <input id="raw-search" type="search" placeholder="Zoek in XML…" autocomplete="off"/>
                             <button type="button" id="raw-search-prev" title="Vorige (Shift+Enter)">↑</button>
@@ -169,38 +175,20 @@
                     <div class="detail-filename" id="person-name"></div>
                     <div class="detail-sub" id="person-sub"></div>
                 </div>
+                <div class="person-header-search">
+                    <div class="person-search-chip" id="person-search-chip" hidden>
+                        <span class="person-search-chip-text" id="person-search-chip-text"></span>
+                        <button class="person-search-chip-clear" id="person-search-chip-clear" type="button" aria-label="Zoekopdracht wissen">×</button>
+                    </div>
+                    <input id="person-search" type="search" placeholder="Zoek in bestanden…" autocomplete="off"/>
+                    <span class="person-search-count" id="person-search-count" hidden></span>
+                </div>
                 <div class="actions">
                     <button id="test-person-btn" type="button" class="secondary-btn" title="Test alle BSN-diensten voor deze persoon">Test alle diensten</button>
                     <button id="copy-person-btn" type="button" class="primary-btn">Persoon kopiëren</button>
                 </div>
             </div>
             <div class="person-body" id="person-body"></div>
-        </div>
-
-        <!-- Test mode: ad-hoc SOAP test form -->
-        <div class="test-pane" id="test-pane" hidden>
-            <div class="test-form-card">
-                <h2 class="test-form-title">Roundtrip-test</h2>
-                <p class="muted small">Stuur een SOAP-request naar de simulator en vergelijk de response met de XML op disk.</p>
-                <div class="test-form-grid">
-                    <label>Service
-                        <select id="test-dienst"></select>
-                    </label>
-                    <label>Operatie
-                        <select id="test-operatie"></select>
-                    </label>
-                </div>
-                <div class="test-key-fields" id="test-key-fields"></div>
-                <div class="test-form-actions">
-                    <label class="checkbox-line">
-                        <input type="checkbox" id="test-compare-toggle" checked/>
-                        Vergelijk met file op disk
-                    </label>
-                    <button type="button" id="test-run-btn" class="primary-btn">Verzenden</button>
-                    <span class="status" id="test-form-status"></span>
-                </div>
-            </div>
-            <div class="test-form-result" id="test-form-result"></div>
         </div>
 
         <!-- Template: 'Recente inkomsten toevoegen' panel cloned into person-body -->

@@ -110,6 +110,26 @@
         GeldigheidGegevensNationaliteit: 'nationality',
     };
 
+    /** Maps lowercase metadata field names (from ResponseFileService) to a visual category. */
+    const METADATA_FIELD_CATEGORY = {
+        burgerservicenr: 'identity',
+        voornamen: 'identity',
+        voorletters: 'identity',
+        voorvoegsel: 'identity',
+        significantdeelvandeachternaam: 'identity',
+        geboortedat: 'identity',
+        geslacht: 'identity',
+        naam_uit_brp: 'identity',
+        postcd: 'address',
+        woonplaatsnaam: 'address',
+        straatnaam: 'address',
+        huisnr: 'address',
+        cdkadastralegemeente: 'property',
+        kadastraalperceelnr: 'property',
+        kentekenvoertuig: 'vehicle',
+        merkvoertuig: 'vehicle',
+    };
+
     const CATEGORY_ICONS = {
         identity: '👤',
         family: '👪',
@@ -177,12 +197,12 @@
         const code = state.gitStatuses[filename];
         if (!code) return null;
         const trimmed = code.trim();
-        if (trimmed === '??') return { cls: 'added', title: 'Niet getrackt (nieuw bestand)' };
-        if (trimmed.startsWith('A')) return { cls: 'added', title: 'Toegevoegd (staged)' };
+        if (trimmed === '??') return { cls: 'added', title: 'Nieuw' };
+        if (trimmed.startsWith('A')) return { cls: 'added', title: 'Toegevoegd' };
         if (trimmed.startsWith('D') || trimmed.endsWith('D')) return { cls: 'deleted', title: 'Verwijderd' };
         if (trimmed.startsWith('R')) return { cls: 'modified', title: 'Hernoemd' };
         // M, MM, AM, etc.
-        return { cls: 'modified', title: 'Gewijzigd t.o.v. HEAD' };
+        return { cls: 'modified', title: 'Gewijzigd' };
     }
 
     // Holds XML element references whose form-card / list-item should render collapsed.
@@ -204,6 +224,45 @@
         return set.has(name);
     }
 
+    /* ---------- Hash routing ---------- */
+
+    function syncHash() {
+        const { mode, selected, selectedPerson } = state;
+        let hash = '#' + mode;
+        if (mode === 'files' && selected && !document.getElementById('detail').hidden) {
+            hash += '/' + encodeURIComponent(selected);
+        } else if (mode === 'persons' && selectedPerson && !document.getElementById('person-detail').hidden) {
+            hash += '/' + encodeURIComponent(selectedPerson);
+        }
+        const searchVal = document.getElementById('search')?.value || '';
+        if (searchVal) hash += '?' + new URLSearchParams({ q: searchVal });
+        history.replaceState(null, '', hash);
+    }
+
+    async function applyHash() {
+        const raw = location.hash.slice(1);
+        if (!raw) return;
+        const qIdx = raw.indexOf('?');
+        const path = qIdx === -1 ? raw : raw.slice(0, qIdx);
+        const q = qIdx === -1 ? '' : new URLSearchParams(raw.slice(qIdx + 1)).get('q') || '';
+        const slashIdx = path.indexOf('/');
+        const mode = slashIdx === -1 ? path : path.slice(0, slashIdx);
+        const encoded = slashIdx === -1 ? null : path.slice(slashIdx + 1);
+        const value = encoded ? decodeURIComponent(encoded) : null;
+        if (q) {
+            const searchEl = document.getElementById('search');
+            searchEl.value = q;
+            state.search = q.toLowerCase();
+        }
+        if (mode === 'files') {
+            setMode('files');
+            if (value && state.all.find(f => f.filename === value)) await selectFile(value);
+        } else if (mode === 'persons') {
+            setMode('persons');
+            if (value && state.persons.find(p => p.bsn === value)) selectPerson(value);
+        }
+    }
+
     /* ---------- Init ---------- */
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -216,11 +275,16 @@
             tabSize: 4,
         });
         state.editor.on('change', onRawEditorChange);
+        state.editor.on('change', updateUndoRedoButtons);
+
+        document.getElementById('raw-undo-btn').addEventListener('click', () => { state.editor.undo(); state.editor.focus(); });
+        document.getElementById('raw-redo-btn').addEventListener('click', () => { state.editor.redo(); state.editor.focus(); });
 
         document.getElementById('reload').addEventListener('click', loadIndex);
         document.getElementById('search').addEventListener('input', e => {
             state.search = e.target.value.toLowerCase();
             applyFilter();
+            syncHash();
         });
         document.querySelectorAll('#files-table thead tr.sort-row th').forEach(th => {
             th.addEventListener('click', () => toggleSort(th.dataset.sort));
@@ -258,31 +322,114 @@
         initRawResizer();
         initCopyModal();
         setupAutocompletePopup();
+        attachAutocomplete(document.getElementById('search'), searchAutocompleteValues);
+        attachAutocomplete(document.getElementById('person-search'), personSearchAutocompleteValues);
         initFormSearch();
         initRawSearch();
         initActionsHamburger();
-        initDynamicDateInsert();
+        initDynamicDatePanel();
 
-        loadIndex();
+        loadIndex().then(applyHash);
     });
 
-    /* ---------- DynamicDate insert helper (raw editor) ---------- */
+    /* ---------- Undo / Redo buttons ---------- */
 
-    function initDynamicDateInsert() {
-        const select = document.getElementById('dynamic-date-insert');
-        if (!select) return;
-        select.addEventListener('change', () => {
-            let expr = select.value;
-            select.value = '';
+    function updateUndoRedoButtons() {
+        const hist = state.editor.historySize();
+        document.getElementById('raw-undo-btn').disabled = hist.undo === 0;
+        document.getElementById('raw-redo-btn').disabled = hist.redo === 0;
+    }
+
+    /* ---------- Datum invullen (raw editor) ---------- */
+
+    const DYNDATE_OPTIONS = [
+        { expr: 'today',           label: 'Vandaag' },
+        { expr: 'today - 1 week',  label: '1 week geleden' },
+        { expr: 'today - 1 month', label: '1 maand geleden' },
+        { expr: 'today - 2 months',label: '2 maanden geleden' },
+        { expr: 'today - 3 months',label: '3 maanden geleden' },
+        { expr: 'today - 6 months',label: '6 maanden geleden' },
+        { expr: 'today - 1 year',  label: '1 jaar geleden' },
+        { expr: 'today + 1 month', label: 'Over 1 maand' },
+        { expr: 'today + 1 year',  label: 'Over 1 jaar' },
+    ];
+
+    function parseDyndateExpr(expr) {
+        if (expr === 'today') return new Date();
+        const m = expr.match(/today\s*([+-])\s*(\d+)\s*(day|week|month|year)s?/);
+        if (!m) return null;
+        const n = parseInt(m[2]) * (m[1] === '+' ? 1 : -1);
+        const d = new Date();
+        if (m[3] === 'day')   d.setDate(d.getDate() + n);
+        if (m[3] === 'week')  d.setDate(d.getDate() + n * 7);
+        if (m[3] === 'month') d.setMonth(d.getMonth() + n);
+        if (m[3] === 'year')  d.setFullYear(d.getFullYear() + n);
+        return d;
+    }
+
+    function formatDyndatePreview(d) {
+        return d.toLocaleDateString('nl-NL', { day: 'numeric', month: 'short', year: 'numeric' });
+    }
+
+    function initDynamicDatePanel() {
+        const btn        = document.getElementById('dyndate-btn');
+        const panel      = document.getElementById('dyndate-panel');
+        const optionsEl  = document.getElementById('dyndate-options');
+        const customIn   = document.getElementById('dyndate-custom-input');
+        const customBtn  = document.getElementById('dyndate-custom-submit');
+        if (!btn || !panel) return;
+
+        DYNDATE_OPTIONS.forEach(({ expr, label }) => {
+            const b = document.createElement('button');
+            b.type = 'button';
+            b.className = 'dyndate-option';
+            b.innerHTML = `<span class="dyndate-option-label">${label}</span><span class="dyndate-option-preview"></span>`;
+            b.addEventListener('click', () => { close(); insertDynamicDateComment(expr); });
+            optionsEl.appendChild(b);
+        });
+
+        function refreshPreviews() {
+            optionsEl.querySelectorAll('.dyndate-option').forEach((b, i) => {
+                const d = parseDyndateExpr(DYNDATE_OPTIONS[i].expr);
+                b.querySelector('.dyndate-option-preview').textContent = d ? formatDyndatePreview(d) : '';
+            });
+        }
+
+        function open() {
+            refreshPreviews();
+            panel.hidden = false;
+            btn.classList.add('active');
+        }
+
+        function close() {
+            panel.hidden = true;
+            btn.classList.remove('active');
+        }
+
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            panel.hidden ? open() : close();
+        });
+
+        function tryInsertCustom() {
+            const expr = customIn.value.trim();
             if (!expr) return;
-            if (expr === '__custom__') {
-                expr = (prompt(
-                    'DynamicDate expressie (bijv. "today - 4 months", "today + 2 weeks"):',
-                    'today - 1 month'
-                ) || '').trim();
-                if (!expr) return;
-            }
+            close();
             insertDynamicDateComment(expr);
+            customIn.value = '';
+        }
+
+        customBtn.addEventListener('click', tryInsertCustom);
+        customIn.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter')  { e.preventDefault(); tryInsertCustom(); }
+            if (e.key === 'Escape') close();
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!panel.hidden && !document.getElementById('dyndate-wrap').contains(e.target)) close();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !panel.hidden) { close(); state.editor && state.editor.focus(); }
         });
     }
 
@@ -292,12 +439,9 @@
         const cursor = cm.getCursor();
         const lineText = cm.getLine(cursor.line) || '';
         const indent = (lineText.match(/^\s*/) || [''])[0];
-        const atLineStart = cursor.ch <= indent.length;
-        const comment = `<!-- DynamicDate: ${expr} -->`;
-        const insertion = atLineStart
-            ? `${comment}\n${indent}`
-            : `\n${indent}${comment}\n${indent}`;
-        cm.replaceRange(insertion, cursor);
+        // Always insert as a new line *before* the current line so the comment
+        // never lands mid-value regardless of where the cursor is on the line.
+        cm.replaceRange(`${indent}<!-- DynamicDate: ${expr} -->\n`, { line: cursor.line, ch: 0 });
         cm.focus();
     }
 
@@ -434,6 +578,9 @@
     /* ---------- Index ---------- */
 
     async function loadIndex() {
+        const btn = document.getElementById('reload');
+        const originalText = btn ? btn.textContent : null;
+        if (btn) { btn.textContent = 'Herladen…'; btn.disabled = true; }
         try {
             const res = await fetch(API, { headers: { Accept: 'application/json' } });
             if (!res.ok) throw new Error(res.status + ' ' + res.statusText);
@@ -443,11 +590,18 @@
             }
             state.all = data.files;
             state.persons = groupByBsn(state.all);
-            document.getElementById('basedir').textContent = data.baseDir || '';
+            const basedirEl = document.getElementById('basedir');
+            basedirEl.textContent = data.baseDir || '';
+            basedirEl.title = data.baseDir || '';
             await loadGitStatus();
             populateColumnFilters();
             applyFilter();
+            if (btn) {
+                btn.textContent = 'Klaar ✓';
+                setTimeout(() => { btn.textContent = originalText; btn.disabled = false; }, 1500);
+            }
         } catch (e) {
+            if (btn) { btn.textContent = originalText; btn.disabled = false; }
             alert('Kon index niet laden: ' + e.message);
         }
     }
@@ -787,7 +941,7 @@
                 renderAutocomplete();
                 e.preventDefault();
             } else if (e.key === 'Enter' && autocomplete.idx >= 0 && matches[autocomplete.idx]) {
-                input.value = matches[autocomplete.idx];
+                input.value = matches[autocomplete.idx].value;
                 input.dispatchEvent(new Event('input', { bubbles: true }));
                 hideAutocomplete();
                 e.preventDefault();
@@ -810,21 +964,27 @@
             ? autocomplete.values() : autocomplete.values;
         if (!values) return [];
         const q = autocomplete.input.value.toLowerCase();
-        return values.filter(v => v.toLowerCase().includes(q));
+        return values
+            .map(v => typeof v === 'string' ? {value: v} : v)
+            .filter(v => v.value.toLowerCase().includes(q));
     }
 
     function renderAutocomplete() {
         const popup = autocomplete.popup;
         if (!popup || !autocomplete.input) return;
         const matches = currentAutocompleteMatches();
-        if (!matches.length) {
+        if (matches.length === 0) {
             popup.hidden = true;
             return;
         }
-        const limit = Math.min(matches.length, 200);
+        const q = autocomplete.input.value;
+        const limit = q.length < 3 ? Math.min(matches.length, 8) : Math.min(matches.length, 200);
         popup.innerHTML = matches.slice(0, limit).map((v, i) =>
             `<div class="autocomplete-item${i === autocomplete.idx ? ' highlighted' : ''}" `
-            + `data-value="${escapeAttr(v)}">${escapeText(v)}</div>`
+            + `data-value="${escapeAttr(v.value)}">`
+            + escapeText(v.value)
+            + (v.label ? `<span class="autocomplete-hint ${v.cls || ''}">${escapeText(v.label)}</span>` : '')
+            + `</div>`
         ).join('');
         const rect = autocomplete.input.getBoundingClientRect();
         popup.style.left = rect.left + 'px';
@@ -843,6 +1003,89 @@
         autocomplete.idx = -1;
     }
 
+    function searchAutocompleteValues() {
+        const map = new Map(); // value → {diensten: Set, icon: string}
+        const add = (value, dienst, icon = '') => {
+            if (!value) return;
+            if (!map.has(value)) map.set(value, {diensten: new Set(), icon: ''});
+            const entry = map.get(value);
+            if (dienst) entry.diensten.add(dienst);
+            if (icon && !entry.icon) entry.icon = icon;
+        };
+        for (const f of state.all) {
+            const d = f.dienst || '';
+            if (f.dienst) add(f.dienst, f.dienst);
+            for (const [k, v] of Object.entries(f.metadata || {})) {
+                if (!k.startsWith('_') && v) {
+                    const cat = METADATA_FIELD_CATEGORY[k];
+                    add(v, d, cat ? CATEGORY_ICONS[cat] : '');
+                }
+            }
+            if (f.sleutel) add(f.sleutel, d);
+        }
+        const fileItems = [...map.entries()]
+            .map(([value, {diensten, icon}]) => {
+                const ds = [...diensten].filter(Boolean);
+                const shorts = [...new Set(ds.map(shortDienst))];
+                const shortLabel = shorts.slice(0, 2).join(', ') + (shorts.length > 2 ? ` +${shorts.length - 2}` : '');
+                const label = icon ? (shortLabel ? `${icon} ${shortLabel}` : icon) : shortLabel;
+                const cls = ds.length === 1 ? dienstClass(ds[0]) : '';
+                return {value, label, cls};
+            });
+        const seen = new Set(fileItems.map(i => i.value));
+        const personItems = [];
+        for (const p of state.persons) {
+            if (p.naam && !seen.has(p.naam)) {
+                personItems.push({value: p.naam, label: `${CATEGORY_ICONS.identity} persoon`, cls: 'ac-hint-persoon'});
+                seen.add(p.naam);
+            }
+        }
+        return [...fileItems, ...personItems]
+            .sort((a, b) => a.value.localeCompare(b.value, undefined, {sensitivity: 'base'}));
+    }
+
+    function personSearchAutocompleteValues() {
+        if (!state.selectedPerson) return [];
+        const p = state.persons.find(x => x.bsn === state.selectedPerson);
+        if (!p) return [];
+        const map = new Map(); // value → {diensten: Set, icon: string}
+        const add = (value, dienst, icon = '') => {
+            if (!value) return;
+            if (!map.has(value)) map.set(value, {diensten: new Set(), icon: ''});
+            const entry = map.get(value);
+            if (dienst) entry.diensten.add(dienst);
+            if (icon && !entry.icon) entry.icon = icon;
+        };
+        for (const filename of p.files) {
+            const f = state.all.find(x => x.filename === filename);
+            if (!f) continue;
+            const d = f.dienst || '';
+            if (f.dienst) add(f.dienst, f.dienst);
+            if (f.operatie) add(f.operatie, d);
+            for (const [k, v] of Object.entries(f.metadata || {})) {
+                if (!k.startsWith('_') && v) {
+                    const cat = METADATA_FIELD_CATEGORY[k];
+                    add(v, d, cat ? CATEGORY_ICONS[cat] : '');
+                }
+            }
+        }
+        const fileItems = [...map.entries()]
+            .map(([value, {diensten, icon}]) => {
+                const ds = [...diensten].filter(Boolean);
+                const shorts = [...new Set(ds.map(shortDienst))];
+                const shortLabel = shorts.slice(0, 2).join(', ') + (shorts.length > 2 ? ` +${shorts.length - 2}` : '');
+                const label = icon ? (shortLabel ? `${icon} ${shortLabel}` : icon) : shortLabel;
+                const cls = ds.length === 1 ? dienstClass(ds[0]) : '';
+                return {value, label, cls};
+            });
+        const seen = new Set(fileItems.map(i => i.value));
+        const personItems = [];
+        if (p.naam && !seen.has(p.naam)) personItems.push({value: p.naam, label: `${CATEGORY_ICONS.identity} persoon`, cls: 'ac-hint-persoon'});
+        if (p.bsn && !seen.has(p.bsn)) personItems.push({value: p.bsn, label: `${CATEGORY_ICONS.identity} bsn`, cls: 'ac-hint-persoon'});
+        return [...fileItems, ...personItems]
+            .sort((a, b) => a.value.localeCompare(b.value, undefined, {sensitivity: 'base'}));
+    }
+
     function applyFilter() {
         const q = state.search;
         state.filtered = state.all.filter(f => {
@@ -859,7 +1102,8 @@
             if (!q) return true;
             const haystack = [
                 f.filename, f.dienst, f.operatie, f.sleutel,
-                ...Object.values(f.metadata || {})
+                ...Object.values(f.metadata || {}),
+                f.content || ''
             ].join(' ').toLowerCase();
             return haystack.includes(q);
         });
@@ -884,11 +1128,18 @@
                 }
             }
             if (!q) return true;
-            return [p.bsn, p.naam, p.woonplaatsnaam || '', p.geboortedat || '', ...p.files]
+            return [p.bsn, p.naam, p.woonplaatsnaam || '', p.geboortedat || '', ...p.files, p._content || '']
                 .join(' ').toLowerCase().includes(q);
         });
         sortFilteredPersons();
         renderPersonsTable();
+
+        if (state.mode === 'persons' && state.filteredPersons.length === 1) {
+            const hasFilter = state.search || Object.values(state.personColFilters).some(v => v);
+            if (hasFilter && state.selectedPerson !== state.filteredPersons[0].bsn) {
+                selectPerson(state.filteredPersons[0].bsn);
+            }
+        }
 
         const total = state.mode === 'persons' ? state.persons.length : state.all.length;
         const shown = state.mode === 'persons' ? state.filteredPersons.length : state.filtered.length;
@@ -992,6 +1243,48 @@
 
     /* ---------- Detail: load / select ---------- */
 
+    function highlightTerm(text, ql) {
+        const idx = text.toLowerCase().indexOf(ql);
+        if (idx < 0) return escapeText(text);
+        return escapeText(text.substring(0, idx))
+            + '<mark>' + escapeText(text.substring(idx, idx + ql.length)) + '</mark>'
+            + escapeText(text.substring(idx + ql.length));
+    }
+
+    function buildSearchMatchHint(file, ql) {
+        // Prefer a clean metadata match (e.g. "postcd: 2511BT")
+        for (const [k, v] of Object.entries(file.metadata || {})) {
+            if (!k.startsWith('_') && v && v.toLowerCase().includes(ql)) {
+                return `<span class="search-match-hint">${escapeText(k)}: ${highlightTerm(v, ql)}</span>`;
+            }
+        }
+        // Fall back to a short text snippet from raw XML content
+        const content = file.content || '';
+        const idx = content.toLowerCase().indexOf(ql);
+        if (idx < 0) return '';
+        const start = Math.max(0, idx - 25);
+        const end = Math.min(content.length, idx + ql.length + 25);
+        const raw = content.substring(start, end).replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+        const prefix = start > 0 ? '…' : '';
+        const suffix = end < content.length ? '…' : '';
+        return `<span class="search-match-hint">${prefix}${highlightTerm(raw, ql)}${suffix}</span>`;
+    }
+
+    function syncFormSearchFromGlobal() {
+        const q = state.search;
+        const input = document.getElementById('form-search');
+        if (!input) return;
+        if (!q) return;
+        const person = state.persons.find(p => p.bsn === state.selectedPerson);
+        const ql = q.toLowerCase();
+        const isPersonHit = person && [person.bsn, person.naam || '', person.woonplaatsnaam || '', person.geboortedat || '']
+            .some(v => v.toLowerCase().includes(ql));
+        if (!isPersonHit) {
+            input.value = q;
+            formSearch.query = q;
+        }
+    }
+
     async function selectFile(filename) {
         if (state.loadedXml !== null && state.editor.getValue() !== state.loadedXml) {
             if (!confirm('Niet-opgeslagen wijzigingen worden weggegooid. Doorgaan?')) return;
@@ -1000,6 +1293,7 @@
         renderTable();
         document.getElementById('empty-state').hidden = true;
         document.getElementById('detail').hidden = false;
+        syncHash();
         const file = state.all.find(f => f.filename === filename);
         document.getElementById('detail-filename').textContent = filename;
         document.getElementById('detail-sub').textContent = file
@@ -1015,10 +1309,15 @@
             state.loadedXml = xml;
             state.dom = parseXmlOrNull(xml);
             setRawEditorValue(xml);
+            syncFormSearchFromGlobal();
             renderForm();
             setDirty(false);
-            setStatus('', '');
-            maybeShowValidationBanner();
+            if (!state.dom) {
+                setStatus('Raw XML is niet well-formed', 'error');
+            } else {
+                setStatus('', '');
+                await maybeShowValidationBanner();
+            }
             updateGitHeaderForSelection();
             // Refresh CodeMirror in case the pane just appeared
             setTimeout(() => state.editor.refresh(), 0);
@@ -1042,17 +1341,25 @@
     function toggleList() {
         const layout = document.querySelector('.layout');
         const collapsed = layout.classList.toggle('list-collapsed');
-        document.getElementById('toggle-list-btn').textContent =
-            collapsed ? '⇔ Toon lijst' : '⇔ Volledig scherm';
+        document.getElementById('toggle-list-btn').classList.toggle('active', !collapsed);
         if (state.editor) setTimeout(() => state.editor.refresh(), 0);
     }
 
     function toggleRaw() {
         const body = document.getElementById('detail-body');
         const collapsed = body.classList.toggle('raw-collapsed');
-        document.getElementById('toggle-raw-btn').textContent =
-            collapsed ? 'XML tonen' : 'XML verbergen';
-        if (state.editor && !collapsed) setTimeout(() => state.editor.refresh(), 0);
+        document.getElementById('toggle-raw-btn').classList.toggle('active', !collapsed);
+        if (state.editor && !collapsed) {
+            setTimeout(() => state.editor.refresh(), 0);
+            const globalQ = document.getElementById('search')?.value || '';
+            if (globalQ && !rawSearch.query) {
+                const rawInput = document.getElementById('raw-search');
+                rawInput.value = globalQ;
+                rawSearch.query = globalQ;
+                document.getElementById('raw-search-clear').hidden = false;
+                applyRawSearch();
+            }
+        }
     }
 
     /* ---------- Git diff view ---------- */
@@ -1085,14 +1392,14 @@
         const diffBtn = document.getElementById('toggle-diff-btn');
         const rawBtn = document.getElementById('toggle-raw-btn');
         state.diffVisible = !state.diffVisible;
-        diffBtn.textContent = state.diffVisible ? 'Diff verbergen' : 'Diff tonen';
+        diffBtn.classList.toggle('active', state.diffVisible);
 
         if (state.diffVisible) {
             // Diff lives inside the raw column, so we force it open and remember
             // its pre-diff state to restore on close.
             state.rawWasCollapsedBeforeDiff = body.classList.contains('raw-collapsed');
             body.classList.remove('raw-collapsed');
-            rawBtn.textContent = 'XML verbergen';
+            rawBtn.classList.add('active');
             if (rawTextarea) rawTextarea.style.display = 'none';
             diffPane.hidden = false;
             await loadDiffForSelected();
@@ -1101,7 +1408,7 @@
             if (rawTextarea) rawTextarea.style.display = '';
             if (state.rawWasCollapsedBeforeDiff) {
                 body.classList.add('raw-collapsed');
-                rawBtn.textContent = 'XML tonen';
+                rawBtn.classList.remove('active');
             }
             state.rawWasCollapsedBeforeDiff = false;
             if (state.editor) setTimeout(() => state.editor.refresh(), 0);
@@ -1588,7 +1895,7 @@
     function serializeNode(node, indent) {
         const pad = '    '.repeat(indent);
         if (node.nodeType === 8) {
-            return pad + '<!-- ' + node.nodeValue + ' -->';
+            return pad + '<!-- ' + node.nodeValue.trim() + ' -->';
         }
         if (node.nodeType !== 1) return '';
 
@@ -1663,22 +1970,14 @@
             b.classList.toggle('active', b.dataset.mode === mode));
         document.getElementById('files-wrap').hidden = mode !== 'files';
         document.getElementById('persons-wrap').hidden = mode !== 'persons';
-        // Test mode hides the table area entirely; the right-pane shows only the test form.
-        const inTest = mode === 'test';
-        document.querySelector('.left-pane').hidden = inTest;
-        document.getElementById('resize-handle').hidden = inTest;
-        document.getElementById('test-pane').hidden = !inTest;
         // Reset right pane
         document.getElementById('detail').hidden = true;
         document.getElementById('person-detail').hidden = true;
-        document.getElementById('empty-state').hidden = inTest;
-        if (!inTest) {
-            document.getElementById('empty-state').textContent = mode === 'persons'
-                ? 'Selecteer een persoon links.'
-                : 'Selecteer een bestand links.';
-        }
-        if (inTest) onEnterTestMode();
+        document.getElementById('empty-state').textContent = mode === 'persons'
+            ? 'Selecteer een persoon links.'
+            : 'Selecteer een bestand links.';
         applyFilter();
+        syncHash();
     }
 
     function groupByBsn(files) {
@@ -1694,9 +1993,13 @@
                     geboortedat: '',
                     woonplaatsnaam: '',
                     postcd: '',
+                    partnerNaam: '',
+                    partnerGeboortedat: '',
+                    partnerBsn: '',
                     files: [],
                     diensten: [],
                     _diensten: new Set(),
+                    _content: '',
                 });
             }
             const p = map.get(bsn);
@@ -1705,13 +2008,20 @@
                 p._diensten.add(f.dienst);
                 p.diensten.push(f.dienst);
             }
-            if (!p.naam) {
+            if (!p.naam || (!p._naamFromVoornamen && m.voornamen)) {
                 const own = naam(f);
-                if (own) p.naam = own;
+                if (own) {
+                    p.naam = own;
+                    p._naamFromVoornamen = !!m.voornamen;
+                }
             }
             if (!p.geboortedat && m.geboortedat) p.geboortedat = m.geboortedat;
             if (!p.woonplaatsnaam && m.woonplaatsnaam) p.woonplaatsnaam = m.woonplaatsnaam;
             if (!p.postcd && m.postcd) p.postcd = m.postcd;
+            if (!p.partnerNaam && m.partner_significantdeelvandeachternaam) p.partnerNaam = m.partner_significantdeelvandeachternaam;
+            if (!p.partnerGeboortedat && m.partner_geboortedat) p.partnerGeboortedat = m.partner_geboortedat;
+            if (!p.partnerBsn && m.partner_burgerservicenr) p.partnerBsn = m.partner_burgerservicenr;
+            if (f.content) p._content += f.content;
         }
         return Array.from(map.values());
     }
@@ -1803,6 +2113,62 @@
         return map[d] || d;
     }
 
+    function renderPersonFileRows(bsn, q) {
+        const p = state.persons.find(x => x.bsn === bsn);
+        const list = document.getElementById('person-file-list');
+        if (!p || !list) return;
+        list.innerHTML = '';
+
+        const ql = q ? q.toLowerCase() : '';
+        const matches = [];
+        for (const filename of p.files.slice().sort()) {
+            const file = state.all.find(f => f.filename === filename);
+            if (ql) {
+                const inSimple = filename.toLowerCase().includes(ql)
+                    || (file && (file.dienst || '').toLowerCase().includes(ql))
+                    || (file && (file.operatie || '').toLowerCase().includes(ql))
+                    || (file && Object.values(file.metadata || {}).some(v => v && v.toLowerCase().includes(ql)));
+                const inContent = file && file.content && file.content.toLowerCase().includes(ql);
+                if (!inSimple && !inContent) continue;
+            }
+            matches.push({filename, file});
+        }
+
+        const heading = document.createElement('div');
+        heading.className = 'person-files-heading';
+        heading.textContent = ql
+            ? `${matches.length} van ${p.files.length} bestanden`
+            : `${p.files.length} bestanden`;
+        list.appendChild(heading);
+
+        const countEl = document.getElementById('person-search-count');
+        if (ql) {
+            countEl.textContent = `${matches.length} / ${p.files.length}`;
+            countEl.hidden = false;
+        } else {
+            countEl.hidden = true;
+        }
+
+        for (const {filename, file} of matches) {
+            const row = document.createElement('div');
+            const inContent = ql && file && file.content && file.content.toLowerCase().includes(ql);
+            row.className = 'person-file-row' + (inContent ? ' person-file-search-hit' : '');
+            const rowBadge = gitBadgeFor(filename);
+            const rowGit = rowBadge ? `<span class="git-pill git-${rowBadge.cls}" title="${escapeAttr(rowBadge.title)}" aria-label="${escapeAttr(rowBadge.title)}"></span>` : '';
+            const matchHint = inContent ? buildSearchMatchHint(file, ql) : '';
+            row.innerHTML = `${rowGit}<span class="dienst-pill ${dienstClass(file ? file.dienst : '')}">${escapeText(file ? file.dienst : '')}</span>
+                <span class="person-file-op">${escapeText(file ? file.operatie : '')}</span>
+                <span class="person-file-name">${escapeText(filename)}</span>
+                ${file && file.isRequest ? '<span class="request-pill">request</span>' : ''}
+                ${matchHint}`;
+            row.addEventListener('click', () => {
+                setMode('files');
+                selectFile(filename);
+            });
+            list.appendChild(row);
+        }
+    }
+
     function selectPerson(bsn) {
         state.selectedPerson = bsn;
         const p = state.persons.find(x => x.bsn === bsn);
@@ -1811,6 +2177,7 @@
         document.getElementById('empty-state').hidden = true;
         document.getElementById('detail').hidden = true;
         document.getElementById('person-detail').hidden = false;
+        syncHash();
 
         document.getElementById('person-name').textContent = p.naam || `BSN ${p.bsn}`;
         document.getElementById('person-sub').textContent =
@@ -1818,30 +2185,95 @@
 
         const body = document.getElementById('person-body');
         body.innerHTML = '';
+        body.appendChild(buildPartnerLine(p));
         const list = document.createElement('div');
         list.className = 'person-files';
-        const heading = document.createElement('div');
-        heading.className = 'person-files-heading';
-        heading.textContent = `${p.files.length} bestanden`;
-        list.appendChild(heading);
-        for (const filename of p.files.slice().sort()) {
-            const file = state.all.find(f => f.filename === filename);
-            const row = document.createElement('div');
-            row.className = 'person-file-row';
-            const rowBadge = gitBadgeFor(filename);
-            const rowGit = rowBadge ? `<span class="git-pill git-${rowBadge.cls}" title="${escapeAttr(rowBadge.title)}" aria-label="${escapeAttr(rowBadge.title)}"></span>` : '';
-            row.innerHTML = `${rowGit}<span class="dienst-pill ${dienstClass(file ? file.dienst : '')}">${escapeText(file ? file.dienst : '')}</span>
-                <span class="person-file-op">${escapeText(file ? file.operatie : '')}</span>
-                <span class="person-file-name">${escapeText(filename)}</span>
-                ${file && file.isRequest ? '<span class="request-pill">request</span>' : ''}`;
-            row.addEventListener('click', () => {
-                setMode('files');
-                selectFile(filename);
-            });
-            list.appendChild(row);
-        }
+        list.id = 'person-file-list';
         body.appendChild(list);
         body.appendChild(buildQuickIncomePanel(p));
+
+        // Auto-populate person search from global search when it's a content-level hit
+        const personSearchInput = document.getElementById('person-search');
+        const chip = document.getElementById('person-search-chip');
+        const chipText = document.getElementById('person-search-chip-text');
+        const chipClear = document.getElementById('person-search-chip-clear');
+        const globalQ = document.getElementById('search')?.value || '';
+        const globalQl = globalQ.toLowerCase();
+        const isPersonHit = globalQl && [p.bsn, p.naam || '', p.woonplaatsnaam || '', p.geboortedat || '']
+            .some(v => v.toLowerCase().includes(globalQl));
+        const autoFill = (globalQ && !isPersonHit) ? globalQ : '';
+
+        const showChip = (value) => {
+            chipText.textContent = value;
+            chip.hidden = false;
+            personSearchInput.hidden = true;
+            personSearchInput.value = value;
+        };
+
+        const clearChip = () => {
+            chip.hidden = true;
+            personSearchInput.hidden = false;
+            personSearchInput.value = '';
+            personSearchInput.focus();
+            renderPersonFileRows(bsn, '');
+        };
+
+        chipClear.onclick = clearChip;
+
+        if (autoFill) {
+            showChip(autoFill);
+        } else {
+            chip.hidden = true;
+            personSearchInput.hidden = false;
+            personSearchInput.value = '';
+        }
+
+        renderPersonFileRows(bsn, autoFill || personSearchInput.value);
+
+        personSearchInput.oninput = () => renderPersonFileRows(bsn, personSearchInput.value);
+    }
+
+    /* ==================== Partner-regel ==================== */
+
+    function buildPartnerLine(p) {
+        const wrap = document.createElement('div');
+        if (!p.partnerNaam && !p.partnerBsn) return wrap;
+
+        wrap.className = 'partner-line';
+
+        const label = document.createElement('span');
+        label.className = 'partner-line-label';
+        label.textContent = 'Partner';
+        wrap.appendChild(label);
+
+        const parts = [];
+        if (p.partnerNaam) parts.push(p.partnerNaam);
+        if (p.partnerGeboortedat) parts.push(formatDate(p.partnerGeboortedat));
+
+        const text = document.createElement('span');
+        text.className = 'partner-line-text';
+        text.textContent = parts.join(' · ');
+        wrap.appendChild(text);
+
+        if (p.partnerBsn) {
+            const bsnSpan = document.createElement('span');
+            bsnSpan.className = 'partner-line-bsn';
+            const partnerExists = state.persons.find(x => x.bsn === p.partnerBsn);
+            if (partnerExists) {
+                const link = document.createElement('button');
+                link.type = 'button';
+                link.className = 'partner-line-link';
+                link.textContent = `BSN ${p.partnerBsn} →`;
+                link.title = 'Ga naar deze persoon';
+                link.onclick = () => selectPerson(p.partnerBsn);
+                bsnSpan.appendChild(link);
+            } else {
+                bsnSpan.textContent = `BSN ${p.partnerBsn}`;
+            }
+            wrap.appendChild(bsnSpan);
+        }
+
+        return wrap;
     }
 
     /* ==================== Recente inkomsten toevoegen ==================== */
@@ -2503,12 +2935,24 @@
         return null;
     }
 
-    function maybeShowValidationBanner() {
-        if (!state.dom || !isUwvIkvDoc(state.dom)) {
-            hideValidationBanner();
-            return;
+    async function maybeShowValidationBanner() {
+        const issues = [];
+        if (state.dom && isUwvIkvDoc(state.dom)) {
+            issues.push(...validateUwvIkv(state.dom).map(i => ({ ...i, fixable: true })));
         }
-        const issues = validateUwvIkv(state.dom);
+        if (state.selected) {
+            try {
+                const res = await fetch(`${API}/${encodeURIComponent(state.selected)}/schema-issues`);
+                if (res.ok) {
+                    const data = await res.json();
+                    for (const i of (data.issues || [])) {
+                        issues.push({ message: i.message, fixable: false });
+                    }
+                }
+            } catch (e) {
+                // schema-validatie niet beschikbaar, stille fout
+            }
+        }
         if (!issues.length) {
             hideValidationBanner();
             return;
@@ -2524,6 +2968,8 @@
             li.textContent = issue.message;
             list.appendChild(li);
         }
+        const hasFixable = issues.some(i => i.fixable !== false);
+        document.getElementById('validation-fix-btn').hidden = !hasFixable;
         document.getElementById('validation-banner').hidden = false;
     }
 
@@ -2532,7 +2978,7 @@
         if (banner) banner.hidden = true;
     }
 
-    function applyValidationAutoFix() {
+    async function applyValidationAutoFix() {
         if (!state.dom) return;
         const fixes = autoFixUwvIkv(state.dom);
         if (!fixes.length) {
@@ -2542,7 +2988,7 @@
         }
         pushDomToRaw();
         setStatus('Fixes toegepast (nog niet opgeslagen): ' + fixes.join('; '), 'success');
-        maybeShowValidationBanner();
+        await maybeShowValidationBanner();
     }
 
     /* ==================== Copy modaal ==================== */
@@ -2840,25 +3286,43 @@
             onMove: formSearchMove,
             trim: true,
         });
+        document.getElementById('form-search-only').addEventListener('change', e => {
+            const fields = document.getElementById('form-fields');
+            if (fields) fields.classList.toggle('search-only', e.target.checked);
+        });
         updateFormSearchCount();
     }
 
     function refreshFormSearch() {
-        const labels = new Set();
+        const map = new Map();
         document.querySelectorAll('#form-fields .form-field > label').forEach(label => {
             const first = label.firstChild;
             const friendlyTxt = first && first.nodeType === 3 ? (first.nodeValue || '').trim() : '';
-            if (friendlyTxt) labels.add(friendlyTxt);
+            if (friendlyTxt && !map.has(friendlyTxt))
+                map.set(friendlyTxt, {value: friendlyTxt, label: 'veld', cls: 'ac-hint-field'});
             const fn = label.querySelector('.field-name');
-            if (fn && fn.textContent.trim()) labels.add(fn.textContent.trim());
+            const fnTxt = fn && fn.textContent.trim();
+            if (fnTxt && !map.has(fnTxt))
+                map.set(fnTxt, {value: fnTxt, label: 'veld', cls: 'ac-hint-field'});
         });
         document.querySelectorAll('#form-fields .form-card-header, #form-fields .form-list-header').forEach(h => {
-            const txt = h.textContent.trim().replace(/^▾\s*/, '').replace(/\s+\d+$/, '').trim();
-            if (txt) labels.add(txt);
+            const parts = [];
+            h.childNodes.forEach(node => {
+                const t = node.textContent.trim();
+                if (t && t !== '▾') parts.push(t);
+            });
+            const txt = parts.join(' ').replace(/\s+\d+$/, '').trim();
+            if (txt && !map.has(txt))
+                map.set(txt, {value: txt, label: 'sectie', cls: 'ac-hint-section'});
+        });
+        document.querySelectorAll('#form-fields .form-field input').forEach(input => {
+            const v = input.value.trim();
+            if (v && !map.has(v))
+                map.set(v, {value: v, label: 'waarde', cls: 'ac-hint-value'});
         });
         formSearch.labels.length = 0;
-        for (const l of labels) formSearch.labels.push(l);
-        formSearch.labels.sort((a, b) => a.localeCompare(b, 'nl'));
+        for (const item of [...map.values()].sort((a, b) => a.value.localeCompare(b.value, 'nl')))
+            formSearch.labels.push(item);
 
         applyFormSearch();
         refreshRawSearchVocab();
@@ -2944,11 +3408,16 @@
         const count = document.getElementById('form-search-count');
         const prev = document.getElementById('form-search-prev');
         const next = document.getElementById('form-search-next');
+        const onlyWrap = document.getElementById('form-search-only-wrap');
         const total = formSearch.matches.length;
+        if (onlyWrap) onlyWrap.hidden = !formSearch.query;
         if (!formSearch.query) {
             count.textContent = '';
             count.classList.remove('no-match');
             prev.disabled = next.disabled = true;
+            const fields = document.getElementById('form-fields');
+            if (fields) fields.classList.remove('search-only');
+            if (document.getElementById('form-search-only')) document.getElementById('form-search-only').checked = false;
             return;
         }
         if (total === 0) {
@@ -2983,20 +3452,22 @@
     }
 
     function refreshRawSearchVocab() {
-        const names = new Set();
+        const tags = new Set();
+        const attrs = new Set();
         if (state.dom) {
             const all = state.dom.getElementsByTagName('*');
             for (let i = 0; i < all.length; i++) {
                 const el = all[i];
-                if (el.localName) names.add(el.localName);
+                if (el.localName) tags.add(el.localName);
                 for (const a of Array.from(el.attributes)) {
-                    if (a.name) names.add(a.name);
+                    if (a.name) attrs.add(a.name);
                 }
             }
         }
         rawSearch.names.length = 0;
-        for (const n of names) rawSearch.names.push(n);
-        rawSearch.names.sort((a, b) => a.localeCompare(b, 'nl'));
+        const tagItems = [...tags].sort((a, b) => a.localeCompare(b, 'nl')).map(n => ({value: n, label: 'tag', cls: 'ac-hint-tag'}));
+        const attrItems = [...attrs].sort((a, b) => a.localeCompare(b, 'nl')).map(n => ({value: n, label: 'attr', cls: 'ac-hint-attr'}));
+        for (const item of [...tagItems, ...attrItems]) rawSearch.names.push(item);
     }
 
     function clearRawMarks() {
@@ -3241,21 +3712,70 @@
         });
     }
 
-    function renderTestResultsList(results, container) {
+    function buildMismatchReport(results, bsn) {
+        const mismatches = results.filter(r => r.outcome === 'MISMATCH');
+        const lines = [];
+        lines.push(`Suwinet Simulator — Verschil-rapport`);
+        lines.push(`BSN: ${bsn}`);
+        lines.push(`Datum: ${new Date().toISOString()}`);
+        lines.push(`Aantal mismatches: ${mismatches.length}`);
+        mismatches.forEach((r, i) => {
+            lines.push('');
+            lines.push('='.repeat(72));
+            lines.push(`[${i + 1}] ${r.dienst} · ${r.operatie} · ${(r.keyValues || []).join(' / ')}`);
+            lines.push(`    HTTP ${r.httpStatus} · ${r.durationMs}ms`);
+            if (r.errorMessage) lines.push(`    Fout: ${r.errorMessage}`);
+            lines.push('');
+            lines.push('--- DIFF (- verwacht / + response) ---');
+            const ops = lineDiff(r.expectedXml || '', r.actualXml || '');
+            ops.forEach(o => {
+                if (o.type === 'del') lines.push('- ' + o.text);
+                else if (o.type === 'add') lines.push('+ ' + o.text);
+            });
+            lines.push('');
+            lines.push('--- VERWACHT (bestand op disk) ---');
+            lines.push(r.expectedXml || '(geen)');
+            lines.push('');
+            lines.push('--- RESPONSE (van SOAP) ---');
+            lines.push(r.actualXml || '(geen)');
+            lines.push('');
+            lines.push('--- REQUEST ---');
+            lines.push(r.requestEnvelope || '(geen)');
+        });
+        return lines.join('\n');
+    }
+
+    function renderTestResultsList(results, container, bsn) {
         container.innerHTML = '';
-        if (!results.length) {
+        const visible = results.filter(r => r.outcome !== 'NIET_GEVONDEN');
+        if (!visible.length) {
             container.innerHTML = '<div class="test-result-empty muted">Geen resultaten.</div>';
             return;
         }
-        const counts = results.reduce((m, r) => (m[r.outcome] = (m[r.outcome] || 0) + 1, m), {});
-        const summary = Object.entries(counts).map(([k, v]) => {
+        const counts = visible.reduce((m, r) => (m[r.outcome] = (m[r.outcome] || 0) + 1, m), {});
+        const summaryPills = Object.entries(counts).map(([k, v]) => {
             const meta = OUTCOME_META[k] || OUTCOME_META.OK;
             return `<span class="test-summary-pill test-summary-${meta.cls}">${meta.icon} ${meta.label}: ${v}</span>`;
         }).join(' ');
+        const hasMismatches = visible.some(r => r.outcome === 'MISMATCH');
+        const downloadBtn = hasMismatches
+            ? `<button type="button" class="secondary-btn test-download-btn" style="margin-left:auto">⬇ Download foutrapport</button>`
+            : '';
         const wrap = document.createElement('div');
         wrap.className = 'test-results-list';
-        wrap.innerHTML = `<div class="test-results-summary">${summary}</div>`;
-        results.forEach(r => {
+        wrap.innerHTML = `<div class="test-results-summary">${summaryPills}${downloadBtn}</div>`;
+        if (hasMismatches) {
+            wrap.querySelector('.test-download-btn').addEventListener('click', () => {
+                const text = buildMismatchReport(results, bsn || '');
+                const blob = new Blob([text], { type: 'text/plain' });
+                const a = document.createElement('a');
+                a.href = URL.createObjectURL(blob);
+                a.download = `suwinet-verschil-${bsn || 'onbekend'}-${new Date().toISOString().slice(0,19).replace(/:/g,'-')}.txt`;
+                a.click();
+                URL.revokeObjectURL(a.href);
+            });
+        }
+        visible.forEach(r => {
             const child = document.createElement('div');
             child.className = 'test-result-wrap';
             renderTestResult(r, child);
@@ -3337,79 +3857,10 @@
 
         try {
             const results = await runPersonTest(bsn, true);
-            renderTestResultsList(results, panel.querySelector('.person-test-body'));
+            renderTestResultsList(results, panel.querySelector('.person-test-body'), bsn);
         } catch (e) {
             panel.querySelector('.person-test-body').innerHTML =
                 `<div class="test-error">${escapeText(e.message)}</div>`;
-        }
-    }
-
-    /* --- (C) Test-mode: ad-hoc form met alle catalog-operations --- */
-
-    async function onEnterTestMode() {
-        let ops;
-        try {
-            ops = await loadTestCatalog();
-        } catch (e) {
-            document.getElementById('test-form-status').textContent = 'Catalog laden mislukt: ' + e.message;
-            return;
-        }
-        const dienstSelect = document.getElementById('test-dienst');
-        if (!dienstSelect.options.length) {
-            const unique = [...new Set(ops.map(o => o.dienst))];
-            dienstSelect.innerHTML = unique
-                .map(d => `<option value="${escapeAttr(d)}">${escapeText(d)}</option>`).join('');
-            refreshTestOperatieDropdown();
-        }
-    }
-
-    function refreshTestOperatieDropdown() {
-        const dienst = document.getElementById('test-dienst').value;
-        const ops = (TEST.catalog || []).filter(o => o.dienst === dienst);
-        const opSelect = document.getElementById('test-operatie');
-        opSelect.innerHTML = ops
-            .map(o => `<option value="${escapeAttr(o.operatie)}">${escapeText(o.operatie)}</option>`)
-            .join('');
-        refreshTestKeyFields();
-    }
-
-    function refreshTestKeyFields() {
-        const dienst = document.getElementById('test-dienst').value;
-        const operatie = document.getElementById('test-operatie').value;
-        const op = findCatalogOp(dienst, operatie);
-        const container = document.getElementById('test-key-fields');
-        if (!op) { container.innerHTML = ''; return; }
-        container.innerHTML = op.keys.map((k, i) => `
-            <label>${escapeText(k.label)}
-                <input type="text" data-key-index="${i}" placeholder="${escapeAttr(k.hint || '')}"/>
-            </label>
-        `).join('');
-    }
-
-    async function onRunAdHocTest() {
-        const dienst = document.getElementById('test-dienst').value;
-        const operatie = document.getElementById('test-operatie').value;
-        const inputs = document.querySelectorAll('#test-key-fields input[data-key-index]');
-        const keys = Array.from(inputs).map(i => i.value.trim());
-        const status = document.getElementById('test-form-status');
-        if (keys.length === 0 || keys.some(k => !k)) {
-            status.textContent = 'Vul alle sleutels in.';
-            status.className = 'status error';
-            return;
-        }
-        const compare = document.getElementById('test-compare-toggle').checked;
-        status.textContent = '⏳ Verzenden…';
-        status.className = 'status';
-        const result = document.getElementById('test-form-result');
-        result.innerHTML = '';
-        try {
-            const r = await runSingleTest(dienst, operatie, keys, compare);
-            renderTestResult(r, result);
-            status.textContent = '';
-            status.className = 'status';
-        } catch (e) {
-            status.textContent = e.message;
-            status.className = 'status error';
         }
     }
 
@@ -3422,12 +3873,6 @@
         if (closeBtn) closeBtn.addEventListener('click', closeTestResultModal);
         const okBtn = document.getElementById('test-result-modal-ok');
         if (okBtn) okBtn.addEventListener('click', closeTestResultModal);
-        const dSel = document.getElementById('test-dienst');
-        if (dSel) dSel.addEventListener('change', refreshTestOperatieDropdown);
-        const oSel = document.getElementById('test-operatie');
-        if (oSel) oSel.addEventListener('change', refreshTestKeyFields);
-        const runBtn = document.getElementById('test-run-btn');
-        if (runBtn) runBtn.addEventListener('click', onRunAdHocTest);
     }
 
     document.addEventListener('DOMContentLoaded', wireTestUi);

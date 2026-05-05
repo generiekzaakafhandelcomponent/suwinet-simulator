@@ -4,6 +4,7 @@ import jakarta.annotation.PostConstruct;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -14,8 +15,11 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -50,18 +54,46 @@ public class ResponseFileService {
             "woonplaatsnaam",
             "straatnaam",
             "huisnr",
-            "kentekenvoertuig",
-            "merkvoertuig",
             "cdkadastralegemeente",
             "kadastraalperceelnr"
+    );
+
+    /**
+     * Fields extracted by a deep walk that ignores SuwiSubEntities.INDEX barriers.
+     * Used for vehicle-specific values that always appear inside <Aansprakelijke>.
+     */
+    private static final Set<String> DEEP_FIELDS = Set.of(
+            "kentekenvoertuig",
+            "merkvoertuig"
+    );
+
+    /** Partner fields extracted from Huwelijk/Partner, stored with "partner_" prefix. */
+    private static final Set<String> PARTNER_FIELDS = Set.of(
+            "significantdeelvandeachternaam",
+            "geboortedat",
+            "burgerservicenr"
     );
 
     private final Path baseDir;
     private final DocumentBuilderFactory documentBuilderFactory;
 
     public ResponseFileService(@Value("${simulator.responses.path}") String responsesPath) {
-        this.baseDir = Paths.get(responsesPath).toAbsolutePath().normalize();
+        this.baseDir = resolvePath(responsesPath);
         this.documentBuilderFactory = SecureXml.hardenedDocumentBuilderFactory();
+    }
+
+    private static Path resolvePath(String responsesPath) {
+        try {
+            if (responsesPath.startsWith("classpath:")) {
+                return new ClassPathResource(responsesPath.substring("classpath:".length())).getFile().toPath().normalize();
+            }
+            if (responsesPath.startsWith("file:")) {
+                return Paths.get(new URI(responsesPath)).normalize();
+            }
+            return Paths.get(responsesPath).toAbsolutePath().normalize();
+        } catch (IOException | URISyntaxException e) {
+            throw new RuntimeException("Cannot resolve responses path: " + responsesPath, e);
+        }
     }
 
     @PostConstruct
@@ -201,13 +233,20 @@ public class ResponseFileService {
                 }
             }
         }
+        String content = null;
+        try {
+            content = Files.readString(path, StandardCharsets.UTF_8);
+        } catch (IOException e) {
+            logger.debug("Could not read content of {}: {}", filename, e.getMessage());
+        }
         return new ResponseFile(
                 filename,
                 parsed.dienst,
                 parsed.operatie,
                 parsed.sleutel,
                 parsed.isRequest,
-                metadata
+                metadata,
+                content
         );
     }
 
@@ -235,7 +274,60 @@ public class ResponseFileService {
         }
         Map<String, String> out = new LinkedHashMap<>();
         walk(doc.getDocumentElement(), out);
+        extractDeep(doc.getDocumentElement(), out);
+        extractPartner(doc.getDocumentElement(), out);
         return out;
+    }
+
+    /** Extracts partner fields from the first Huwelijk/Partner subtree, stored with "partner_" prefix. */
+    private void extractPartner(Node root, Map<String, String> out) {
+        NodeList children = root.getChildNodes();
+        for (int i = 0; i < children.getLength(); i++) {
+            Node child = children.item(i);
+            if (child.getNodeType() != Node.ELEMENT_NODE) continue;
+            String localName = child.getLocalName() != null ? child.getLocalName() : child.getNodeName();
+            if ("Huwelijk".equals(localName)) {
+                NodeList huwelijkChildren = child.getChildNodes();
+                for (int j = 0; j < huwelijkChildren.getLength(); j++) {
+                    Node hc = huwelijkChildren.item(j);
+                    if (hc.getNodeType() != Node.ELEMENT_NODE) continue;
+                    String hcName = hc.getLocalName() != null ? hc.getLocalName() : hc.getNodeName();
+                    if ("Partner".equals(hcName)) {
+                        NodeList partnerChildren = hc.getChildNodes();
+                        for (int k = 0; k < partnerChildren.getLength(); k++) {
+                            Node pc = partnerChildren.item(k);
+                            if (pc.getNodeType() != Node.ELEMENT_NODE) continue;
+                            String key = (pc.getLocalName() != null ? pc.getLocalName() : pc.getNodeName())
+                                    .toLowerCase(Locale.ROOT);
+                            if (PARTNER_FIELDS.contains(key)) {
+                                String text = pc.getTextContent();
+                                if (text != null && !text.isBlank()) {
+                                    out.putIfAbsent("partner_" + key, text.trim());
+                                }
+                            }
+                        }
+                        return;
+                    }
+                }
+            }
+            extractPartner(child, out);
+        }
+    }
+
+    /** Traverses the full DOM tree without honouring INDEX barriers, extracting only DEEP_FIELDS. */
+    private void extractDeep(Node node, Map<String, String> out) {
+        NodeList children = node.getChildNodes();
+        for (int i = 0; i < children.getLength(); i++) {
+            Node child = children.item(i);
+            if (child.getNodeType() != Node.ELEMENT_NODE) continue;
+            String key = (child.getLocalName() != null ? child.getLocalName() : child.getNodeName())
+                    .toLowerCase(Locale.ROOT);
+            if (DEEP_FIELDS.contains(key) && !out.containsKey(key)) {
+                String text = child.getTextContent();
+                if (text != null && !text.isBlank()) out.put(key, text.trim());
+            }
+            extractDeep(child, out);
+        }
     }
 
     private void walk(Node node, Map<String, String> out) {

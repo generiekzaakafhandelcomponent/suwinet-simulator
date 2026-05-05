@@ -44,6 +44,15 @@ tasks.withType<KotlinCompile> {
     }
 }
 
+tasks.withType<Test> {
+    useJUnitPlatform()
+}
+
+tasks.named<org.springframework.boot.gradle.tasks.run.BootRun>("bootRun") {
+    workingDir = projectDir
+    systemProperty("simulator.responses.path", "$projectDir/src/main/resources/suwinet/data/Responses")
+}
+
 
 tasks.register("RDWWsImport") {
     doLast {

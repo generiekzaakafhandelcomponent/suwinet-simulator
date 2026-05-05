@@ -25,18 +25,21 @@ public class ResponseEditorController {
     private final GitService gitService;
     private final ResponseTestService testService;
     private final ServiceCatalog catalog;
+    private final XsdValidationService xsdValidator;
 
     public ResponseEditorController(
             ResponseFileService service,
             PersonCloneService cloneService,
             GitService gitService,
             ResponseTestService testService,
-            ServiceCatalog catalog) {
+            ServiceCatalog catalog,
+            XsdValidationService xsdValidator) {
         this.service = service;
         this.cloneService = cloneService;
         this.gitService = gitService;
         this.testService = testService;
         this.catalog = catalog;
+        this.xsdValidator = xsdValidator;
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
@@ -126,6 +129,14 @@ public class ResponseEditorController {
         boolean compare = req.compareToFile == null || req.compareToFile;
         List<TestResult> results = testService.testAllForBsn(req.bsn, compare);
         return Map.of("bsn", req.bsn, "results", results);
+    }
+
+    @GetMapping(value = "/{filename:.+}/schema-issues", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Map<String, Object> schemaIssues(@PathVariable String filename) throws IOException {
+        String dienst = filename.contains("_") ? filename.split("_")[0] : "";
+        String xml = service.read(filename);
+        List<XsdValidationService.Issue> issues = xsdValidator.validate(dienst, xml);
+        return Map.of("issues", issues);
     }
 
     @GetMapping(value = "/{filename:.+}", produces = MediaType.APPLICATION_XML_VALUE)
