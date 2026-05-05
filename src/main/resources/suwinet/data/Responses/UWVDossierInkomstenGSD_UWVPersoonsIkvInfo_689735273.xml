@@ -1,10 +1,8 @@
 <smls:UWVPersoonsIkvInfoResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/UWVDossierInkomstenGSD/v0200">
     <ClientSuwi>
-        
-        <!-- Uwv inkomstenverhoudingen Lars Terphuis (bsn: 689735273) -->
+        <!--  Uwv inkomstenverhoudingen Lars Terphuis (bsn: 689735273)  -->
         <Burgerservicenr>689735273</Burgerservicenr>
-
-        <!-- 1. Werkgever in Den Haag: fulltime baan in de techniek -->
+        <!--  1. Werkgever in Den Haag: fulltime baan in de techniek  -->
         <Inkomstenverhouding>
             <VolgnrIkv>1</VolgnrIkv>
             <DatBIkv>20200101</DatBIkv>
@@ -77,8 +75,7 @@
                 </BedrLoonLbPremieVolksverz>
             </Inkomstenopgave>
         </Inkomstenverhouding>
-
-        <!-- 2. UWV-uitkering (bijv. WIA na ziekte) -->
+        <!--  2. UWV-uitkering (bijv. WIA na ziekte)  -->
         <Inkomstenverhouding>
             <VolgnrIkv>2</VolgnrIkv>
             <DatBIkv>20220101</DatBIkv>
@@ -125,8 +122,7 @@
                 </BedrLoonLbPremieVolksverz>
             </Inkomstenopgave>
         </Inkomstenverhouding>
-
-        <!-- 3. SVB-uitkering (Wlz) - exact gelijk aan SVB Lars: 20220101–20220131, 2600,00 bruto -->
+        <!--  3. SVB-uitkering (Wlz) - exact gelijk aan SVB Lars: 20220101–20220131, 2600,00 bruto  -->
         <Inkomstenverhouding>
             <VolgnrIkv>3</VolgnrIkv>
             <DatBIkv>20220101</DatBIkv>
@@ -163,7 +159,7 @@
                 <BedrBrutoloonSv>
                     <CdMunteenheid>EUR</CdMunteenheid>
                     <CdPositiefNegatief>+</CdPositiefNegatief>
-                    <!-- 2600,00 bruto in centen -->
+                    <!--  2600,00 bruto in centen  -->
                     <WaardeBedr>260000</WaardeBedr>
                 </BedrBrutoloonSv>
                 <BedrLoonLbPremieVolksverz>
@@ -173,6 +169,81 @@
                 </BedrLoonLbPremieVolksverz>
             </Inkomstenopgave>
         </Inkomstenverhouding>
-
+        <!--  Toegevoegd door "Recente inkomsten"  -->
+        <Inkomstenverhouding>
+            <VolgnrIkv>4</VolgnrIkv>
+            <DatBIkv>20260301</DatBIkv>
+            <DatEIkv>20260531</DatEIkv>
+            <AdministratieveEenheid>
+                <NaamAdministratieveEenheid>ONBEKENDE BRON</NaamAdministratieveEenheid>
+                <Loonheffingennr>000000000L00</Loonheffingennr>
+                <RechtspersoonAdministratieveEenh>
+                    <FiNr>000000000</FiNr>
+                    <NaamRechtspersoon>ONBEKENDE BRON</NaamRechtspersoon>
+                </RechtspersoonAdministratieveEenh>
+                <FeitelijkAdresAeh>
+                    <Straatadres>
+                        <Postcd>0000AA</Postcd>
+                        <Woonplaatsnaam>Onbekend</Woonplaatsnaam>
+                        <Gemeentenaam>Onbekend</Gemeentenaam>
+                        <Straatnaam>Onbekend</Straatnaam>
+                        <Huisnr>0</Huisnr>
+                    </Straatadres>
+                </FeitelijkAdresAeh>
+            </AdministratieveEenheid>
+            <Inkomstenperiode>
+                <DatBIkp>20260301</DatBIkp>
+                <DatEIkp>20260531</DatEIkp>
+                <CdSrtIkv>00</CdSrtIkv>
+            </Inkomstenperiode>
+            <Inkomstenopgave>
+                <DatBIko>20260301</DatBIko>
+                <DatEIko>20260331</DatEIko>
+                <AantSvDagenIko>31</AantSvDagenIko>
+                <AantVerloondeUrenIko>0</AantVerloondeUrenIko>
+                <BedrBrutoloonSv>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>150000</WaardeBedr>
+                </BedrBrutoloonSv>
+                <BedrLoonLbPremieVolksverz>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>150000</WaardeBedr>
+                </BedrLoonLbPremieVolksverz>
+            </Inkomstenopgave>
+            <Inkomstenopgave>
+                <DatBIko>20260401</DatBIko>
+                <DatEIko>20260430</DatEIko>
+                <AantSvDagenIko>30</AantSvDagenIko>
+                <AantVerloondeUrenIko>0</AantVerloondeUrenIko>
+                <BedrBrutoloonSv>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>150000</WaardeBedr>
+                </BedrBrutoloonSv>
+                <BedrLoonLbPremieVolksverz>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>150000</WaardeBedr>
+                </BedrLoonLbPremieVolksverz>
+            </Inkomstenopgave>
+            <Inkomstenopgave>
+                <DatBIko>20260501</DatBIko>
+                <DatEIko>20260531</DatEIko>
+                <AantSvDagenIko>31</AantSvDagenIko>
+                <AantVerloondeUrenIko>0</AantVerloondeUrenIko>
+                <BedrBrutoloonSv>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>150000</WaardeBedr>
+                </BedrBrutoloonSv>
+                <BedrLoonLbPremieVolksverz>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>150000</WaardeBedr>
+                </BedrLoonLbPremieVolksverz>
+            </Inkomstenopgave>
+        </Inkomstenverhouding>
     </ClientSuwi>
 </smls:UWVPersoonsIkvInfoResponse>

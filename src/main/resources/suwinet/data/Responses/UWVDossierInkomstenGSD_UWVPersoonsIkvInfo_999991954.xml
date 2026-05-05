@@ -6903,7 +6903,7 @@
                 <DatBIkp>20110101</DatBIkp>
                 <DatEIkp>99991231</DatEIkp>
                 <CdSrtIkv>40</CdSrtIkv>
-                <!--NON PAYED JOB-->
+                <!-- NON PAYED JOB -->
                 <IndLoonheffingskortingToegepast>1</IndLoonheffingskortingToegepast>
             </Inkomstenperiode>
             <SectorRisicogroepIkv>
@@ -10296,11 +10296,11 @@
                 </FeitelijkAdresAeh>
             </AdministratieveEenheid>
             <Inkomstenperiode>
-                <!--FIKO-->
+                <!-- FIKO -->
                 <DatBIkp>20110101</DatBIkp>
                 <DatEIkp>99991231</DatEIkp>
                 <CdSrtIkv>23</CdSrtIkv>
-                <!--PENSION-->
+                <!-- PENSION -->
                 <IndLoonheffingskortingToegepast>1</IndLoonheffingskortingToegepast>
             </Inkomstenperiode>
             <SectorRisicogroepIkv>
@@ -13669,6 +13669,86 @@
                     <CdPositiefNegatief>+</CdPositiefNegatief>
                     <WaardeBedr>24500</WaardeBedr>
                 </BedrRechtstreeksBetAlimentatie>
+            </Inkomstenopgave>
+        </Inkomstenverhouding>
+        <!--  Toegevoegd door "Recente inkomsten"  -->
+        <Inkomstenverhouding>
+            <VolgnrIkv>3</VolgnrIkv>
+            <DatBIkv>20260301</DatBIkv>
+            <DatEIkv>20260531</DatEIkv>
+            <AdministratieveEenheid>
+                <NaamAdministratieveEenheid>New Side Restaurant</NaamAdministratieveEenheid>
+                <Loonheffingennr>999888777L01</Loonheffingennr>
+                <RechtspersoonAdministratieveEenh>
+                    <FiNr>999888777</FiNr>
+                    <NaamRechtspersoon>New Side Restaurant</NaamRechtspersoon>
+                </RechtspersoonAdministratieveEenh>
+                <FeitelijkAdresAeh>
+                    <Straatadres>
+                        <Postcd>1000AA</Postcd>
+                        <Woonplaatsnaam>Amsterdam</Woonplaatsnaam>
+                        <Gemeentenaam>Amsterdam</Gemeentenaam>
+                        <Straatnaam>Voorbeeldstraat</Straatnaam>
+                        <Huisnr>1</Huisnr>
+                    </Straatadres>
+                </FeitelijkAdresAeh>
+            </AdministratieveEenheid>
+            <Inkomstenperiode>
+                <DatBIkp>20260301</DatBIkp>
+                <DatEIkp>20260531</DatEIkp>
+                <CdSrtIkv>11</CdSrtIkv>
+                <CdTypeArbeidscontract>B</CdTypeArbeidscontract>
+                <IndLoonheffingskortingToegepast>1</IndLoonheffingskortingToegepast>
+                <IndRegelmatigArbeidspatroon>1</IndRegelmatigArbeidspatroon>
+                <CdAardIkv>12</CdAardIkv>
+            </Inkomstenperiode>
+            <Inkomstenopgave>
+                <DatBIko>20260301</DatBIko>
+                <DatEIko>20260331</DatEIko>
+                <AantSvDagenIko>31</AantSvDagenIko>
+                <AantVerloondeUrenIko>160</AantVerloondeUrenIko>
+                <BedrBrutoloonSv>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>200000</WaardeBedr>
+                </BedrBrutoloonSv>
+                <BedrLoonLbPremieVolksverz>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>200000</WaardeBedr>
+                </BedrLoonLbPremieVolksverz>
+            </Inkomstenopgave>
+            <Inkomstenopgave>
+                <DatBIko>20260401</DatBIko>
+                <DatEIko>20260430</DatEIko>
+                <AantSvDagenIko>30</AantSvDagenIko>
+                <AantVerloondeUrenIko>160</AantVerloondeUrenIko>
+                <BedrBrutoloonSv>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>200000</WaardeBedr>
+                </BedrBrutoloonSv>
+                <BedrLoonLbPremieVolksverz>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>200000</WaardeBedr>
+                </BedrLoonLbPremieVolksverz>
+            </Inkomstenopgave>
+            <Inkomstenopgave>
+                <DatBIko>20260501</DatBIko>
+                <DatEIko>20260531</DatEIko>
+                <AantSvDagenIko>31</AantSvDagenIko>
+                <AantVerloondeUrenIko>160</AantVerloondeUrenIko>
+                <BedrBrutoloonSv>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>200000</WaardeBedr>
+                </BedrBrutoloonSv>
+                <BedrLoonLbPremieVolksverz>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>200000</WaardeBedr>
+                </BedrLoonLbPremieVolksverz>
             </Inkomstenopgave>
         </Inkomstenverhouding>
     </ClientSuwi>
