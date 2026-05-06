@@ -71,7 +71,8 @@ public class ResponseFileService {
     private static final Set<String> PARTNER_FIELDS = Set.of(
             "significantdeelvandeachternaam",
             "geboortedat",
-            "burgerservicenr"
+            "burgerservicenr",
+            "geslacht"
     );
 
     private final Path baseDir;

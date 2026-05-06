@@ -1,5 +1,6 @@
 package com.ritense.suwitense.webservice.responseeditor;
 
+import com.ritense.suwitense.webservice.responseeditor.XsdValidationService.Issue;
 import java.util.List;
 
 /**
@@ -32,12 +33,15 @@ public record TestResult(
         String actualXml,
         String expectedXml,
         String requestEnvelope,
-        String errorMessage
+        String errorMessage,
+        List<Issue> schemaIssues
 ) {
 
     public enum Outcome {
         /** File matched and canonicalized response equals canonicalized file. */
         MATCH,
+        /** File matched but contains XSD schema violations. */
+        SCHEMA_ISSUES,
         /** Response came back fine but differs from the file on disk. */
         MISMATCH,
         /** Simulator returned its NietsGevonden body — request didn't resolve to a file. */
@@ -58,7 +62,7 @@ public record TestResult(
                 op.dienst(), op.operatie(), keyValues,
                 0, durationMs, Outcome.TRANSPORT_FAILURE,
                 false, op.filenameFor(keyValues), false, null,
-                null, null, null, errorMessage
+                null, null, null, errorMessage, List.of()
         );
     }
 
@@ -68,7 +72,7 @@ public record TestResult(
                 op.dienst(), op.operatie(), keyValues,
                 statusCode, durationMs, Outcome.HTTP_FAILURE,
                 false, op.filenameFor(keyValues), false, null,
-                body, null, null, "HTTP " + statusCode
+                body, null, null, "HTTP " + statusCode, List.of()
         );
     }
 }

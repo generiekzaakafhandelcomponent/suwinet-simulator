@@ -9,9 +9,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
 import java.io.IOException;
+import java.io.UncheckedIOException;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -131,8 +134,52 @@ public class ResponseEditorController {
         return Map.of("bsn", req.bsn, "results", results);
     }
 
+    /** Test every response file on disk. Body: {@code {compareToFile?: bool}} (optional). */
+    @PostMapping(value = "/test/all", consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public Map<String, Object> testAll(@RequestBody(required = false) AllTestRequest req) {
+        boolean compare = req == null || req.compareToFile == null || req.compareToFile;
+        List<TestResult> results = testService.testAll(compare);
+        return Map.of("results", results, "count", results.size());
+    }
+
+    /**
+     * Stream every response-file test as Server-Sent Events so the frontend can render results
+     * progressively. Each event is named {@code result} (JSON-serialized {@link TestResult});
+     * a final {@code done} event signals completion.
+     */
+    @GetMapping(value = "/test/all/stream", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public SseEmitter testAllStream(@RequestParam(defaultValue = "true") boolean compareToFile) {
+        SseEmitter emitter = new SseEmitter(300_000L);
+        new Thread(() -> {
+            try {
+                testService.testAllStream(compareToFile,
+                        total -> {
+                            try {
+                                emitter.send(SseEmitter.event().name("total").data(total));
+                            } catch (IOException e) {
+                                throw new UncheckedIOException(e);
+                            }
+                        },
+                        result -> {
+                            try {
+                                emitter.send(SseEmitter.event().name("result").data(result));
+                            } catch (IOException e) {
+                                throw new UncheckedIOException(e);
+                            }
+                        });
+                emitter.send(SseEmitter.event().name("done").data(""));
+                emitter.complete();
+            } catch (Exception e) {
+                emitter.completeWithError(e);
+            }
+        }).start();
+        return emitter;
+    }
+
     @GetMapping(value = "/{filename:.+}/schema-issues", produces = MediaType.APPLICATION_JSON_VALUE)
     public Map<String, Object> schemaIssues(@PathVariable String filename) throws IOException {
+        if (filename.endsWith("-request.xml")) return Map.of("issues", List.of());
         String dienst = filename.contains("_") ? filename.split("_")[0] : "";
         String xml = service.read(filename);
         List<XsdValidationService.Issue> issues = xsdValidator.validate(dienst, xml);
@@ -177,6 +224,11 @@ public class ResponseEditorController {
     /** Request body for {@link #testPerson}. */
     public static class PersonTestRequest {
         public String bsn;
+        public Boolean compareToFile;
+    }
+
+    /** Request body for {@link #testAll}. */
+    public static class AllTestRequest {
         public Boolean compareToFile;
     }
 }

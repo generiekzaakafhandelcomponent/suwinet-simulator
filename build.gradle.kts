@@ -50,7 +50,6 @@ tasks.withType<Test> {
 
 tasks.named<org.springframework.boot.gradle.tasks.run.BootRun>("bootRun") {
     workingDir = projectDir
-    systemProperty("simulator.responses.path", "$projectDir/src/main/resources/suwinet/data/Responses")
 }
 
 

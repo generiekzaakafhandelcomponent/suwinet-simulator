@@ -25,6 +25,9 @@ import java.util.Base64;
 import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
+import java.util.function.Consumer;
+import java.util.function.IntConsumer;
+import java.util.stream.Stream;
 
 /**
  * Fires a SOAP request against the simulator's own {@code /ws/...} endpoints and reports back
@@ -45,6 +48,7 @@ public class ResponseTestService {
 
     private final ServiceCatalog catalog;
     private final ResponseFileService fileService;
+    private final XsdValidationService xsdValidator;
     private final HttpClient http;
     private final XmlCanonicalizer canonicalizer;
     private final DocumentBuilderFactory builderFactory;
@@ -56,11 +60,13 @@ public class ResponseTestService {
     public ResponseTestService(
             ServiceCatalog catalog,
             ResponseFileService fileService,
+            XsdValidationService xsdValidator,
             @Value("${simulator.username}") String username,
             @Value("${simulator.password}") String password,
             @Value("${server.port:8090}") int port) {
         this.catalog = catalog;
         this.fileService = fileService;
+        this.xsdValidator = xsdValidator;
         this.username = username;
         this.password = password;
         this.port = port;
@@ -149,16 +155,21 @@ public class ResponseTestService {
 
         boolean fileExists = false;
         Boolean match = null;
-        if (compareToFile && !nietGevonden) {
+        List<XsdValidationService.Issue> schemaIssues = List.of();
+
+        if (!nietGevonden) {
             try {
                 expectedXml = fileService.read(expectedFilename);
                 fileExists = true;
-                expectedCanonical = canonicalizer.canonicalize(expectedXml);
-                match = canonicalEquals(expectedCanonical, actualCanonical);
+                schemaIssues = xsdValidator.validate(op.dienst(), expectedXml);
+                if (compareToFile) {
+                    expectedCanonical = canonicalizer.canonicalize(expectedXml);
+                    match = canonicalEquals(expectedCanonical, actualCanonical);
+                }
             } catch (ResponseFileService.ResponseFileNotFoundException nf) {
                 fileExists = false;
             } catch (Exception e) {
-                logger.warn("Canonicalize expected failed for {}: {}", expectedFilename, e.getMessage());
+                logger.warn("File processing failed for {}: {}", expectedFilename, e.getMessage());
             }
         }
 
@@ -166,7 +177,7 @@ public class ResponseTestService {
                 op.dienst(), op.operatie(), keyValues,
                 resp.statusCode(),
                 durationMs,
-                /* outcome */ deriveOutcome(nietGevonden, match, fileExists, compareToFile),
+                /* outcome */ deriveOutcome(nietGevonden, match, fileExists, compareToFile, schemaIssues),
                 /* nietGevonden */ nietGevonden,
                 /* expectedFile */ expectedFilename,
                 /* expectedFileExists */ fileExists,
@@ -174,7 +185,8 @@ public class ResponseTestService {
                 /* actualXml */ actualCanonical,
                 /* expectedXml */ expectedCanonical,
                 /* requestEnvelope */ envelope,
-                /* errorMessage */ null
+                /* errorMessage */ null,
+                /* schemaIssues */ schemaIssues
         );
     }
 
@@ -190,6 +202,60 @@ public class ResponseTestService {
         return catalog.bsnOperations().stream()
                 .map(op -> test(op.dienst(), op.operatie(), List.of(bsn), compareToFile))
                 .toList();
+    }
+
+    /**
+     * Run a test for every response file on disk (all persons, all services).
+     * Results are returned in file-listing order; request files are skipped.
+     */
+    public List<TestResult> testAll(boolean compareToFile) {
+        List<ResponseFile> files;
+        try {
+            files = fileService.list();
+        } catch (Exception e) {
+            throw new RuntimeException("Kon response-bestanden niet ophalen", e);
+        }
+        return files.stream()
+                .filter(f -> !f.isRequest())
+                .flatMap(f -> {
+                    try {
+                        var opOpt = catalog.matchFile(f.dienst(), f.operatie());
+                        if (opOpt.isEmpty()) return Stream.empty();
+                        var op = opOpt.get();
+                        var keys = catalog.splitSleutel(op, f.sleutel());
+                        return Stream.of(test(op.dienst(), op.operatie(), keys, compareToFile));
+                    } catch (Exception e) {
+                        logger.warn("testAll: sla {} over: {}", f.filename(), e.getMessage());
+                        return Stream.empty();
+                    }
+                })
+                .toList();
+    }
+
+    /**
+     * Like {@link #testAll} but calls {@code onResult} for each result as it arrives,
+     * so callers can stream results incrementally instead of waiting for the full list.
+     */
+    public void testAllStream(boolean compareToFile, IntConsumer onTotal, Consumer<TestResult> onResult) {
+        List<ResponseFile> files;
+        try {
+            files = fileService.list();
+        } catch (Exception e) {
+            throw new RuntimeException("Kon response-bestanden niet ophalen", e);
+        }
+        List<ResponseFile> testable = files.stream().filter(f -> !f.isRequest()).toList();
+        onTotal.accept(testable.size());
+        testable.forEach(f -> {
+            try {
+                var opOpt = catalog.matchFile(f.dienst(), f.operatie());
+                if (opOpt.isEmpty()) return;
+                var op = opOpt.get();
+                var keys = catalog.splitSleutel(op, f.sleutel());
+                onResult.accept(test(op.dienst(), op.operatie(), keys, compareToFile));
+            } catch (Exception e) {
+                logger.warn("testAllStream: sla {} over: {}", f.filename(), e.getMessage());
+            }
+        });
     }
 
     /* ---------- internals ---------- */
@@ -288,11 +354,14 @@ public class ResponseTestService {
     }
 
     private TestResult.Outcome deriveOutcome(
-            boolean nietGevonden, Boolean match, boolean fileExists, boolean compareRequested) {
+            boolean nietGevonden, Boolean match, boolean fileExists,
+            boolean compareRequested, List<XsdValidationService.Issue> schemaIssues) {
         if (nietGevonden) return TestResult.Outcome.NIET_GEVONDEN;
-        if (!compareRequested) return TestResult.Outcome.OK;
-        if (!fileExists) return TestResult.Outcome.NO_EXPECTED_FILE;
-        if (Boolean.TRUE.equals(match)) return TestResult.Outcome.MATCH;
-        return TestResult.Outcome.MISMATCH;
+        if (compareRequested) {
+            if (!fileExists) return TestResult.Outcome.NO_EXPECTED_FILE;
+            if (!Boolean.TRUE.equals(match)) return TestResult.Outcome.MISMATCH;
+        }
+        if (!schemaIssues.isEmpty()) return TestResult.Outcome.SCHEMA_ISSUES;
+        return compareRequested ? TestResult.Outcome.MATCH : TestResult.Outcome.OK;
     }
 }

@@ -59,7 +59,7 @@ public class GitService {
     public Map<String, String> status() {
         if (!available) return Map.of();
         try {
-            ExecResult r = exec("status", "--porcelain", "--", ".");
+            ExecResult r = exec("status", "--porcelain", "--untracked-files=all", "--", ".");
             if (r.exitCode != 0) {
                 logger.warn("git status failed (exit={}): {}", r.exitCode, r.stderr);
                 return Map.of();

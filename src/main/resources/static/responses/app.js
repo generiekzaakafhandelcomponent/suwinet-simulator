@@ -343,32 +343,180 @@
     /* ---------- Datum invullen (raw editor) ---------- */
 
     const DYNDATE_OPTIONS = [
-        { expr: 'today',           label: 'Vandaag' },
-        { expr: 'today - 1 week',  label: '1 week geleden' },
-        { expr: 'today - 1 month', label: '1 maand geleden' },
-        { expr: 'today - 2 months',label: '2 maanden geleden' },
-        { expr: 'today - 3 months',label: '3 maanden geleden' },
-        { expr: 'today - 6 months',label: '6 maanden geleden' },
-        { expr: 'today - 1 year',  label: '1 jaar geleden' },
-        { expr: 'today + 1 month', label: 'Over 1 maand' },
-        { expr: 'today + 1 year',  label: 'Over 1 jaar' },
+        { expr: 'today',                    label: 'Vandaag' },
+        { expr: 'today - 1 week',           label: '1 week geleden' },
+        { expr: 'today - 1 month',          label: '1 maand geleden' },
+        { expr: 'today - 2 months',         label: '2 maanden geleden' },
+        { expr: 'today - 3 months',         label: '3 maanden geleden' },
+        { expr: 'today - 6 months',         label: '6 maanden geleden' },
+        { expr: 'today - 1 year',           label: '1 jaar geleden' },
+        { expr: 'today + 1 month',          label: 'Over 1 maand' },
+        { expr: 'today + 1 year',           label: 'Over 1 jaar' },
+        null,
+        { expr: 'startOfMonth',             label: '1e van deze maand' },
+        { expr: 'endOfMonth',               label: 'Laatste dag deze maand' },
+        { expr: 'startOfMonth - 1 month',   label: '1e van vorige maand' },
+        { expr: 'endOfMonth - 1 month',     label: 'Laatste dag vorige maand' },
+        { expr: 'startOfMonth - 2 months',  label: '1e van 2 maanden geleden' },
+        { expr: 'endOfMonth - 2 months',    label: 'Laatste dag 2 maanden geleden' },
+        { expr: 'startOfMonth + 1 month',   label: '1e van volgende maand' },
+        { expr: 'endOfMonth + 1 month',     label: 'Laatste dag volgende maand' },
     ];
 
     function parseDyndateExpr(expr) {
-        if (expr === 'today') return new Date();
-        const m = expr.match(/today\s*([+-])\s*(\d+)\s*(day|week|month|year)s?/);
-        if (!m) return null;
-        const n = parseInt(m[2]) * (m[1] === '+' ? 1 : -1);
-        const d = new Date();
-        if (m[3] === 'day')   d.setDate(d.getDate() + n);
-        if (m[3] === 'week')  d.setDate(d.getDate() + n * 7);
-        if (m[3] === 'month') d.setMonth(d.getMonth() + n);
-        if (m[3] === 'year')  d.setFullYear(d.getFullYear() + n);
+        const anchorMatch = expr.match(/^(today|startOfMonth|endOfMonth)/i);
+        if (!anchorMatch) return null;
+        const anchor = anchorMatch[1].toLowerCase();
+        const off = expr.match(/([+-])\s*(\d+)\s*(day|week|month|year)s?/i);
+        let d = new Date();
+        if (off) {
+            const n = parseInt(off[2]) * (off[1] === '+' ? 1 : -1);
+            if (off[3].toLowerCase() === 'day')   d.setDate(d.getDate() + n);
+            if (off[3].toLowerCase() === 'week')  d.setDate(d.getDate() + n * 7);
+            if (off[3].toLowerCase() === 'month') d.setMonth(d.getMonth() + n);
+            if (off[3].toLowerCase() === 'year')  d.setFullYear(d.getFullYear() + n);
+        }
+        if (anchor === 'startofmonth') d.setDate(1);
+        if (anchor === 'endofmonth') d = new Date(d.getFullYear(), d.getMonth() + 1, 0);
         return d;
     }
 
     function formatDyndatePreview(d) {
         return d.toLocaleDateString('nl-NL', { day: 'numeric', month: 'short', year: 'numeric' });
+    }
+
+    function getExistingDyndateComment(xmlEl) {
+        let prev = xmlEl.previousSibling;
+        while (prev) {
+            if (prev.nodeType === 8) {
+                const m = prev.nodeValue.trim().match(/^DynamicDate:\s*(.+)$/i);
+                return m ? { node: prev, expr: m[1].trim() } : null;
+            }
+            if (prev.nodeType === 3 && /^\s*$/.test(prev.nodeValue)) {
+                prev = prev.previousSibling;
+            } else {
+                return null;
+            }
+        }
+        return null;
+    }
+
+    function setDyndateForEl(xmlEl, exprOrNull) {
+        const existing = getExistingDyndateComment(xmlEl);
+        if (exprOrNull === null) {
+            if (existing) existing.node.parentNode.removeChild(existing.node);
+        } else {
+            const commentVal = ` DynamicDate: ${exprOrNull} `;
+            if (existing) {
+                existing.node.nodeValue = commentVal;
+            } else {
+                const comment = xmlEl.ownerDocument.createComment(commentVal);
+                xmlEl.parentNode.insertBefore(comment, xmlEl);
+            }
+        }
+        pushDomToRaw();
+        const formPane = document.getElementById('form-pane');
+        const savedScroll = formPane ? formPane.scrollTop : 0;
+        renderForm();
+        if (formPane) formPane.scrollTop = savedScroll;
+    }
+
+    let _formDyndateDropdown = null;
+    let _formDyndateCloseListener = null;
+
+    function closeFormDyndateDropdown() {
+        if (_formDyndateDropdown) { _formDyndateDropdown.remove(); _formDyndateDropdown = null; }
+        if (_formDyndateCloseListener) {
+            document.removeEventListener('click', _formDyndateCloseListener);
+            _formDyndateCloseListener = null;
+        }
+    }
+
+    function openFormDyndateDropdown(xmlEl, anchorEl) {
+        closeFormDyndateDropdown();
+        const existing = getExistingDyndateComment(xmlEl);
+
+        const dropdown = document.createElement('div');
+        dropdown.className = 'form-dyndate-dropdown';
+        _formDyndateDropdown = dropdown;
+
+        DYNDATE_OPTIONS.forEach((opt) => {
+            if (opt === null) {
+                const sep = document.createElement('div');
+                sep.className = 'form-dyndate-sep';
+                dropdown.appendChild(sep);
+                return;
+            }
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'form-dyndate-option';
+            if (existing && existing.expr.toLowerCase() === opt.expr.toLowerCase()) btn.classList.add('active');
+            const labelEl = document.createElement('span');
+            labelEl.className = 'form-dyndate-option-label';
+            labelEl.textContent = opt.label;
+            const previewEl = document.createElement('span');
+            previewEl.className = 'form-dyndate-option-preview';
+            const d = parseDyndateExpr(opt.expr);
+            previewEl.textContent = d ? formatDyndatePreview(d) : '';
+            btn.appendChild(labelEl);
+            btn.appendChild(previewEl);
+            btn.addEventListener('click', () => { closeFormDyndateDropdown(); setDyndateForEl(xmlEl, opt.expr); });
+            dropdown.appendChild(btn);
+        });
+
+        if (existing) {
+            const sep = document.createElement('div');
+            sep.className = 'form-dyndate-sep';
+            dropdown.appendChild(sep);
+            const removeBtn = document.createElement('button');
+            removeBtn.type = 'button';
+            removeBtn.className = 'form-dyndate-option form-dyndate-remove';
+            removeBtn.textContent = 'Verwijder dynamische datum';
+            removeBtn.addEventListener('click', () => { closeFormDyndateDropdown(); setDyndateForEl(xmlEl, null); });
+            dropdown.appendChild(removeBtn);
+        }
+
+        const customSep = document.createElement('div');
+        customSep.className = 'form-dyndate-sep';
+        dropdown.appendChild(customSep);
+        const customRow = document.createElement('div');
+        customRow.className = 'form-dyndate-custom-row';
+        const customInput = document.createElement('input');
+        customInput.type = 'text';
+        customInput.className = 'form-dyndate-custom-input';
+        customInput.placeholder = 'bv. startOfMonth - 3 months';
+        customInput.value = existing ? existing.expr : '';
+        const customSubmit = document.createElement('button');
+        customSubmit.type = 'button';
+        customSubmit.className = 'form-dyndate-custom-submit';
+        customSubmit.textContent = existing ? 'Bijwerken' : 'Invoegen';
+        function tryCustom() {
+            const expr = customInput.value.trim();
+            if (expr) { closeFormDyndateDropdown(); setDyndateForEl(xmlEl, expr); }
+        }
+        customSubmit.addEventListener('click', tryCustom);
+        customInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter')  { e.preventDefault(); tryCustom(); }
+            if (e.key === 'Escape') { e.stopPropagation(); closeFormDyndateDropdown(); }
+        });
+        customRow.appendChild(customInput);
+        customRow.appendChild(customSubmit);
+        dropdown.appendChild(customRow);
+
+        document.body.appendChild(dropdown);
+        const rect = anchorEl.getBoundingClientRect();
+        const dropW = 280;
+        const left = Math.min(rect.left + window.scrollX, window.innerWidth - dropW - 8);
+        dropdown.style.top  = (rect.bottom + window.scrollY + 4) + 'px';
+        dropdown.style.left = Math.max(8, left) + 'px';
+
+        _formDyndateCloseListener = (e) => {
+            if (!dropdown.contains(e.target) && e.target !== anchorEl) closeFormDyndateDropdown();
+        };
+        setTimeout(() => document.addEventListener('click', _formDyndateCloseListener), 0);
+        document.addEventListener('keydown', function esc(e) {
+            if (e.key === 'Escape') { closeFormDyndateDropdown(); document.removeEventListener('keydown', esc); }
+        });
     }
 
     function initDynamicDatePanel() {
@@ -379,18 +527,26 @@
         const customBtn  = document.getElementById('dyndate-custom-submit');
         if (!btn || !panel) return;
 
-        DYNDATE_OPTIONS.forEach(({ expr, label }) => {
+        DYNDATE_OPTIONS.forEach((opt) => {
+            if (opt === null) {
+                const sep = document.createElement('div');
+                sep.className = 'dyndate-sep';
+                optionsEl.appendChild(sep);
+                return;
+            }
             const b = document.createElement('button');
             b.type = 'button';
             b.className = 'dyndate-option';
-            b.innerHTML = `<span class="dyndate-option-label">${label}</span><span class="dyndate-option-preview"></span>`;
-            b.addEventListener('click', () => { close(); insertDynamicDateComment(expr); });
+            b.innerHTML = `<span class="dyndate-option-label">${opt.label}</span><span class="dyndate-option-preview"></span>`;
+            b.addEventListener('click', () => { close(); insertDynamicDateComment(opt.expr); });
             optionsEl.appendChild(b);
         });
 
         function refreshPreviews() {
-            optionsEl.querySelectorAll('.dyndate-option').forEach((b, i) => {
-                const d = parseDyndateExpr(DYNDATE_OPTIONS[i].expr);
+            const buttons = Array.from(optionsEl.querySelectorAll('.dyndate-option'));
+            const opts = DYNDATE_OPTIONS.filter(o => o !== null);
+            buttons.forEach((b, i) => {
+                const d = parseDyndateExpr(opts[i].expr);
                 b.querySelector('.dyndate-option-preview').textContent = d ? formatDyndatePreview(d) : '';
             });
         }
@@ -1581,9 +1737,18 @@
         const container = document.createElement('div');
         for (const group of groupConsecutive(parentEl)) {
             if (group.type === 'comment') {
+                const isDyndate = /^\s*DynamicDate:/i.test(group.node.nodeValue);
                 const c = document.createElement('div');
-                c.className = 'form-comment';
+                c.className = isDyndate ? 'form-comment form-comment--dyndate' : 'form-comment';
                 c.textContent = '<!-- ' + group.node.nodeValue.trim() + ' -->';
+                if (isDyndate) {
+                    let nextXmlEl = group.node.nextSibling;
+                    while (nextXmlEl && nextXmlEl.nodeType !== 1) nextXmlEl = nextXmlEl.nextSibling;
+                    if (nextXmlEl) {
+                        c.title = 'Klik om te bewerken';
+                        c.addEventListener('click', () => openFormDyndateDropdown(nextXmlEl, c));
+                    }
+                }
                 container.appendChild(c);
             } else if (group.items.length === 1) {
                 container.appendChild(renderSingle(group.items[0], parentEl, depth));
@@ -1786,8 +1951,9 @@
     }
 
     function renderLeafField(el, labelOverride) {
+        const isDate = DATE_FIELD_PATTERN.test(el.localName);
         const row = document.createElement('div');
-        row.className = 'form-field';
+        row.className = isDate ? 'form-field form-field--date' : 'form-field';
 
         const label = document.createElement('label');
         label.textContent = labelOverride || friendly(el.localName);
@@ -1810,15 +1976,36 @@
         });
         row.appendChild(input);
 
+        // For date fields, the ⏱ button sits between the input and the hint
+        // so the action is adjacent to the field it modifies.
+        let dyndateBtn = null;
+        if (isDate) {
+            const existingDyndate = getExistingDyndateComment(el);
+            dyndateBtn = document.createElement('button');
+            dyndateBtn.type = 'button';
+            dyndateBtn.className = 'form-dyndate-btn' + (existingDyndate ? ' active' : '');
+            dyndateBtn.title = existingDyndate
+                ? `Dynamische datum: ${existingDyndate.expr}`
+                : 'Dynamische datum instellen';
+            dyndateBtn.textContent = '⏱';
+            dyndateBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openFormDyndateDropdown(el, dyndateBtn);
+            });
+            row.appendChild(dyndateBtn);
+        }
+
         const hint = document.createElement('span');
         hint.className = 'hint';
+        const hintText = document.createTextNode('');
+        hint.appendChild(hintText);
         row.appendChild(hint);
         function updateHint() {
             const v = input.value;
-            if (DATE_FIELD_PATTERN.test(el.localName) && /^\d{8}$/.test(v)) {
-                hint.textContent = formatDate(v);
+            if (isDate && /^\d{8}$/.test(v)) {
+                hintText.nodeValue = formatDate(v);
             } else {
-                hint.textContent = '';
+                hintText.nodeValue = '';
             }
         }
         function updateValidation() {
@@ -1993,9 +2180,11 @@
                     geboortedat: '',
                     woonplaatsnaam: '',
                     postcd: '',
+                    geslacht: '',
                     partnerNaam: '',
                     partnerGeboortedat: '',
                     partnerBsn: '',
+                    partnerGeslacht: '',
                     files: [],
                     diensten: [],
                     _diensten: new Set(),
@@ -2015,12 +2204,14 @@
                     p._naamFromVoornamen = !!m.voornamen;
                 }
             }
+            if (!p.geslacht && m.geslacht) p.geslacht = m.geslacht;
             if (!p.geboortedat && m.geboortedat) p.geboortedat = m.geboortedat;
             if (!p.woonplaatsnaam && m.woonplaatsnaam) p.woonplaatsnaam = m.woonplaatsnaam;
             if (!p.postcd && m.postcd) p.postcd = m.postcd;
             if (!p.partnerNaam && m.partner_significantdeelvandeachternaam) p.partnerNaam = m.partner_significantdeelvandeachternaam;
             if (!p.partnerGeboortedat && m.partner_geboortedat) p.partnerGeboortedat = m.partner_geboortedat;
             if (!p.partnerBsn && m.partner_burgerservicenr) p.partnerBsn = m.partner_burgerservicenr;
+            if (!p.partnerGeslacht && m.partner_geslacht) p.partnerGeslacht = m.partner_geslacht;
             if (f.content) p._content += f.content;
         }
         return Array.from(map.values());
@@ -2179,7 +2370,7 @@
         document.getElementById('person-detail').hidden = false;
         syncHash();
 
-        document.getElementById('person-name').textContent = p.naam || `BSN ${p.bsn}`;
+        document.getElementById('person-name').innerHTML = `<span aria-hidden="true">👤</span> ` + escapeText(p.naam || `BSN ${p.bsn}`);
         document.getElementById('person-sub').textContent =
             `BSN ${p.bsn} · ${formatDate(p.geboortedat)} · ${p.woonplaatsnaam || ''}`.replace(/ · $/, '');
 
@@ -2252,7 +2443,7 @@
 
         const text = document.createElement('span');
         text.className = 'partner-line-text';
-        text.textContent = parts.join(' · ');
+        text.innerHTML = `<span aria-hidden="true">👤</span> ${escapeText(parts.join(' · '))}`;
         wrap.appendChild(text);
 
         if (p.partnerBsn) {
@@ -2946,7 +3137,7 @@
                 if (res.ok) {
                     const data = await res.json();
                     for (const i of (data.issues || [])) {
-                        issues.push({ message: i.message, fixable: false });
+                        issues.push({ message: i.message, hint: i.hint || null, fixable: false });
                     }
                 }
             } catch (e) {
@@ -2966,6 +3157,12 @@
         for (const issue of issues) {
             const li = document.createElement('li');
             li.textContent = issue.message;
+            if (issue.hint) {
+                const hint = document.createElement('div');
+                hint.className = 'schema-issue-hint';
+                hint.textContent = issue.hint;
+                li.appendChild(hint);
+            }
             list.appendChild(li);
         }
         const hasFixable = issues.some(i => i.fixable !== false);
@@ -3565,13 +3762,14 @@
     };
 
     const OUTCOME_META = {
-        MATCH:             { icon: '✓', cls: 'match',     label: 'Match' },
-        MISMATCH:          { icon: '⚠', cls: 'mismatch',  label: 'Verschil' },
-        NIET_GEVONDEN:     { icon: '✗', cls: 'not-found', label: 'Niet gevonden' },
-        NO_EXPECTED_FILE:  { icon: '?', cls: 'no-file',   label: 'Geen file' },
-        OK:                { icon: '✓', cls: 'ok',        label: 'OK' },
-        HTTP_FAILURE:      { icon: '!', cls: 'fail',      label: 'HTTP fout' },
-        TRANSPORT_FAILURE: { icon: '!', cls: 'fail',      label: 'Verbinding mislukt' },
+        MATCH:             { icon: '✓', cls: 'match',        label: 'Match' },
+        SCHEMA_ISSUES:     { icon: '⚠', cls: 'schema-issues', label: 'XSD-fouten' },
+        MISMATCH:          { icon: '⚠', cls: 'mismatch',     label: 'Verschil' },
+        NIET_GEVONDEN:     { icon: '✗', cls: 'not-found',    label: 'Niet gevonden' },
+        NO_EXPECTED_FILE:  { icon: '?', cls: 'no-file',      label: 'Geen file' },
+        OK:                { icon: '✓', cls: 'ok',           label: 'OK' },
+        HTTP_FAILURE:      { icon: '!', cls: 'fail',         label: 'HTTP fout' },
+        TRANSPORT_FAILURE: { icon: '!', cls: 'fail',         label: 'Verbinding mislukt' },
     };
 
     async function loadTestCatalog() {
@@ -3678,6 +3876,14 @@
             : '';
         const expectedDisplay = result.expectedXml
             || (result.expectedFileExists ? '(leeg)' : '(geen file op disk)');
+        const schemaIssues = result.schemaIssues || [];
+        const schemaBlock = schemaIssues.length
+            ? `<div class="test-schema-issues"><strong>XSD-fouten in bestand:</strong><ul>${schemaIssues.map(i => {
+                const msg = typeof i === 'string' ? i : i.message;
+                const hint = typeof i === 'object' && i.hint ? i.hint : null;
+                return `<li>${escapeText(msg)}${hint ? `<div class="schema-issue-hint">${escapeText(hint)}</div>` : ''}</li>`;
+              }).join('')}</ul></div>`
+            : '';
         container.innerHTML = `
             <div class="test-result test-result-${meta.cls}" data-id="${id}">
                 <div class="test-result-header">
@@ -3686,6 +3892,7 @@
                     <span class="test-result-meta muted small">HTTP ${result.httpStatus} · ${result.durationMs}ms</span>
                 </div>
                 ${errorBlock}
+                ${schemaBlock}
                 ${fileLine}
                 <div class="test-result-tabs">
                     <button type="button" data-tab="diff" class="active">Diff</button>
@@ -3864,11 +4071,88 @@
         }
     }
 
+    function onTestAllClick() {
+        const btn = document.getElementById('test-all-btn');
+        if (btn) { btn.disabled = true; btn.textContent = '⏳ Bezig…'; }
+        const rightPane = document.getElementById('right-pane');
+        let panel = rightPane.querySelector('.all-test-panel');
+        if (panel) panel.remove();
+        panel = document.createElement('div');
+        panel.className = 'all-test-panel person-test-panel';
+        panel.innerHTML = `
+            <div class="person-test-header">
+                <h3>Test alle bestanden</h3>
+                <span class="muted small">SOAP-roundtrip + XSD-validatie voor alle response-bestanden</span>
+                <button type="button" class="secondary-btn all-test-close">Sluiten</button>
+            </div>
+            <div class="all-test-body person-test-body"></div>`;
+        rightPane.prepend(panel);
+
+        const body = panel.querySelector('.all-test-body');
+        const progressEl = document.createElement('div');
+        progressEl.className = 'test-result-loading';
+        progressEl.textContent = '⏳ Test loopt…';
+        body.appendChild(progressEl);
+        const progressWrap = document.createElement('div');
+        progressWrap.className = 'test-progress-wrap';
+        const progressBar = document.createElement('div');
+        progressBar.className = 'test-progress-bar';
+        progressWrap.appendChild(progressBar);
+        body.appendChild(progressWrap);
+
+        let total = null;
+        const results = [];
+        let sse = new EventSource(`${API}/test/all/stream?compareToFile=true`);
+
+        panel.querySelector('.all-test-close').addEventListener('click', () => {
+            if (sse) { sse.close(); sse = null; }
+            panel.remove();
+        });
+
+        sse.addEventListener('total', (e) => {
+            total = parseInt(e.data, 10);
+            progressEl.textContent = `⏳ Test loopt — 0 van ${total}…`;
+        });
+
+        sse.addEventListener('result', (e) => {
+            const result = JSON.parse(e.data);
+            results.push(result);
+            const pct = total ? Math.round(results.length / total * 100) : 0;
+            progressBar.style.width = `${pct}%`;
+            progressEl.textContent = total
+                ? `⏳ Test loopt — ${results.length} van ${total}…`
+                : `⏳ Test loopt — ${results.length} resultaten ontvangen…`;
+        });
+
+        sse.addEventListener('done', () => {
+            sse.close();
+            sse = null;
+            renderTestResultsList(results, body, null);
+            if (btn) { btn.disabled = false; btn.textContent = 'Test alle bestanden'; }
+        });
+
+        sse.onerror = () => {
+            if (!sse) return;
+            sse.close();
+            sse = null;
+            if (results.length > 0) {
+                renderTestResultsList(results, body, null);
+                body.insertAdjacentHTML('afterbegin',
+                    `<div class="test-error" style="margin-bottom:8px">Verbinding verbroken na ${results.length} resultaten.</div>`);
+            } else {
+                body.innerHTML = `<div class="test-error">Verbinding verbroken — kon test niet starten.</div>`;
+            }
+            if (btn) { btn.disabled = false; btn.textContent = 'Test alle bestanden'; }
+        };
+    }
+
     function wireTestUi() {
         const fileBtn = document.getElementById('test-file-btn');
         if (fileBtn) fileBtn.addEventListener('click', onTestFileClick);
         const personBtn = document.getElementById('test-person-btn');
         if (personBtn) personBtn.addEventListener('click', onTestPersonClick);
+        const allBtn = document.getElementById('test-all-btn');
+        if (allBtn) allBtn.addEventListener('click', onTestAllClick);
         const closeBtn = document.getElementById('test-result-modal-close');
         if (closeBtn) closeBtn.addEventListener('click', closeTestResultModal);
         const okBtn = document.getElementById('test-result-modal-ok');
