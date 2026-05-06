@@ -90,6 +90,40 @@ Response XML-bestanden mogen **geen** SOAP envelope bevatten. De simulator's `Su
 
 ---
 
+## 6. Ongeldige elementen in `<Ouder>`-blokken (BRP)
+
+`<CdGeboortegemeente>` en `<Geboorteland>` zijn niet gedefinieerd in het XSD-type voor Ouder. JAXB strips ze bij serialiseren, waardoor de opgeslagen file afwijkt van de daadwerkelijke response.
+
+Getroffen bestand: `BRPDossierPersoonGSD_AanvraagPersoon_999993203.xml`
+
+Deze velden zijn wél geldig op persoonsniveau (top-level `ClientSuwi`), maar niet binnen `<Ouder1>` of `<Ouder2>`.
+
+---
+
+## 7. Verkeerd elementtype in DUODossierStudiefinancieringGSD
+
+`DUODossierStudiefinancieringGSD` verwacht `<Studiefinanciering>`-blokken met de subelementen `DatBToekenningsperiodeStufi`, `DatEToekenningsperiodeStufi`, `CdToekenningBasisbeursStufi`, `IndAanvullendeBeursStufi`. Elementen als `<IndStartkwalificatieDuo>`, `<Onderwijsovereenkomst>` en `<ResultaatOpleidingGeregistrDuo>` horen bij een ander DUO-service en worden door JAXB genegeerd, waarna de response alleen `<Burgerservicenr>` bevat.
+
+Getroffen bestand: `DUODossierStudiefinancieringGSD_DUOStudiefinancieringInfo_999998493.xml`
+
+---
+
+## 8. Verkeerde volgorde `<PubliekrechtelijkeBeperking>` in Kadaster
+
+`<PubliekrechtelijkeBeperking>` stond vóór `<LocatieOZ>` maar moet erna komen (na `</LocatieOZ>`). JAXB serialiseert op XSD-volgorde waardoor de beperking anders gepositioneerd wordt dan in de opgeslagen file.
+
+Getroffen bestanden (perceelcode): 0277_12051, 0344_12873, 0344_13902, 0344_41562, 0344_41563, 0363_12846, 0363_21845, 0363_23110, 0363_23111, 0518_2545, 0518_38217, 0518_39218, 0633_2535, 1189_11482, 1189_43970, 1189_43980
+
+---
+
+## 9. Lowercase adressubelementen in `PersoonAdministratieveEenheid` (UWV)
+
+Binnen `<FeitelijkAdresPersoonAeh>` en `<CorrespondentieadresPersoonAeh>` moeten adressubelementen gekapitaliseerd zijn (`<Straatnaam>`, `<Huisnummer>`, `<Huisletter>`, `<Postcode>`, `<Woonplaats>`, `<Gemeente>`, `<Land>`, `<Postbusnummer>`). Lowercase varianten worden door JAXB niet herkend; de containers worden leeg geretourneerd.
+
+Getroffen bestand: `UWVDossierInkomstenGSD_UWVPersoonsIkvInfo_444444440.xml`
+
+---
+
 ## Algemeen advies voor nieuwe bestanden
 
 - Volg de XSD-elementvolgorde strikt — afwijkingen zijn niet zichtbaar als fout maar geven false-positive diffs.

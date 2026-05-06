@@ -3862,6 +3862,15 @@
         }).join('') + '</div>';
     }
 
+    function renderSchemaIssue(i) {
+        const msg = (i && typeof i === 'object') ? (i.message || '') : String(i || '');
+        const hint = (i && typeof i === 'object' && i.hint) ? i.hint : null;
+        let html = '<li>' + escapeText(msg);
+        if (hint) html += '<div class="schema-issue-hint">' + escapeText(hint) + '</div>';
+        html += '</li>';
+        return html;
+    }
+
     let testResultIdSeq = 0;
 
     function renderTestResult(result, container) {
@@ -3878,11 +3887,9 @@
             || (result.expectedFileExists ? '(leeg)' : '(geen file op disk)');
         const schemaIssues = result.schemaIssues || [];
         const schemaBlock = schemaIssues.length
-            ? `<div class="test-schema-issues"><strong>XSD-fouten in bestand:</strong><ul>${schemaIssues.map(i => {
-                const msg = typeof i === 'string' ? i : i.message;
-                const hint = typeof i === 'object' && i.hint ? i.hint : null;
-                return `<li>${escapeText(msg)}${hint ? `<div class="schema-issue-hint">${escapeText(hint)}</div>` : ''}</li>`;
-              }).join('')}</ul></div>`
+            ? '<div class="test-schema-issues"><strong>XSD-fouten in bestand:</strong><ul>'
+                + schemaIssues.map(renderSchemaIssue).join('')
+                + '</ul></div>'
             : '';
         container.innerHTML = `
             <div class="test-result test-result-${meta.cls}" data-id="${id}">

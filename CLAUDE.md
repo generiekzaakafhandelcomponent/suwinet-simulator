@@ -27,3 +27,14 @@ git worktree add ../<andere-checkout> <andere-branch>
 ```
 
 De editor schrijft dan XML in die andere worktree, klaar om daar te committen.
+
+## Content fixes documenteren
+
+Wanneer je een inhoudelijk of structureel probleem in een response XML-bestand ontdekt en corrigeert, voeg je het altijd toe aan [`content-issues.md`](content-issues.md) in dezelfde repo. Dit geldt voor:
+
+- verkeerde elementvolgorde (XSD sequence)
+- ongeldige elementen voor het betreffende service-type
+- onjuiste waardecoderingen of datatypes
+- elk ander patroon dat leidt tot een afwijking tussen de opgeslagen file en de daadwerkelijke SOAP-response
+
+Beschrijf het patroon, de reden (wat doet JAXB ermee?), en de getroffen bestanden.
