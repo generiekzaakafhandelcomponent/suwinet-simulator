@@ -1,0 +1,105 @@
+<ns3:PersoonsInfoResponse xmlns:ns3="http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300" xmlns:ns2="http://bkwi.nl/SuwiML/FWI/v0203">
+
+    <!-- Kadasterinformatie van Elise Schouten (bsn: 999998493) -->
+    <ClientSuwi>
+        <Burgerservicenr>999998493</Burgerservicenr>
+        <Voornamen>Elise</Voornamen>
+        <SignificantDeelVanDeAchternaam>Schouten</SignificantDeelVanDeAchternaam>
+        <Geslacht>2</Geslacht>
+        <Geboortedat>19860423</Geboortedat>
+
+        <DomicilieAdres>
+            <StraatadresBag>
+                <Postcd>3521AZ</Postcd>
+                <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+                <Straatnaam>Stadsplateau</Straatnaam>
+                <Huisnr>1</Huisnr>
+            </StraatadresBag>
+        </DomicilieAdres>
+
+        <DatToestandKadaster>20230316</DatToestandKadaster>
+
+        <Eigendom>
+            <!-- Hoofdwoning Utrecht -->
+            <OnroerendeZaak>
+                <CdTypeOnroerendeZaak>P</CdTypeOnroerendeZaak>
+                <DatOntstaan>20210221</DatOntstaan>
+                <KadastraleAanduiding>
+                    <CdKadastraleGemeente>0344</CdKadastraleGemeente>
+                    <KadastraleGemeentenaam>Utrecht</KadastraleGemeentenaam>
+                    <KadastraleSectie>AJ</KadastraleSectie>
+                    <KadastraalPerceelnr>41562</KadastraalPerceelnr>
+                    <VolgnrKadastraalAppartementsrecht>1</VolgnrKadastraalAppartementsrecht>
+                </KadastraleAanduiding>
+                <OmsKadastraalObject>Bebouwd: Appartement</OmsKadastraalObject>
+                <ZakelijkRecht>
+                    <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
+                </ZakelijkRecht>
+                <LocatieOZ>
+                    <StraatadresBag>
+                        <Postcd>3521AZ</Postcd>
+                        <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+                        <Straatnaam>Stadsplateau</Straatnaam>
+                        <Huisnr>1</Huisnr>
+                    </StraatadresBag>
+                </LocatieOZ>
+                <PubliekrechtelijkeBeperking>
+                    <AantekeningKadastraalObject>
+                        <DatEAantekeningKadastraalObject>20230316</DatEAantekeningKadastraalObject>
+                        <OmsAantekeningKadastraalObject>Geen beperkingen geregistreerd.</OmsAantekeningKadastraalObject>
+                    </AantekeningKadastraalObject>
+                </PubliekrechtelijkeBeperking>
+                <IndMeerGerechtigden>2</IndMeerGerechtigden>
+            </OnroerendeZaak>
+
+            <!-- Voormalige woning in Utrecht (studententijd) -->
+            <OnroerendeZaak>
+                <CdTypeOnroerendeZaak>P</CdTypeOnroerendeZaak>
+                <DatOntstaan>20050801</DatOntstaan>
+                <KadastraleAanduiding>
+                    <CdKadastraleGemeente>0344</CdKadastraleGemeente>
+                    <KadastraleGemeentenaam>Utrecht</KadastraleGemeentenaam>
+                    <KadastraleSectie>K</KadastraleSectie>
+                    <KadastraalPerceelnr>13902</KadastraalPerceelnr>
+                    <VolgnrKadastraalAppartementsrecht>1</VolgnrKadastraalAppartementsrecht>
+                </KadastraleAanduiding>
+                <OmsKadastraalObject>Bebouwd: Wonen</OmsKadastraalObject>
+                <ZakelijkRecht>
+                    <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
+                </ZakelijkRecht>
+                <PubliekrechtelijkeBeperking>
+                    <AantekeningKadastraalObject>
+                        <DatEAantekeningKadastraalObject>20230316</DatEAantekeningKadastraalObject>
+                        <OmsAantekeningKadastraalObject>Geen beperkingen geregistreerd.</OmsAantekeningKadastraalObject>
+                    </AantekeningKadastraalObject>
+                </PubliekrechtelijkeBeperking>
+                <IndMeerGerechtigden>1</IndMeerGerechtigden>
+            </OnroerendeZaak>
+
+            <!-- Parkeerplaats bij huidige woning -->
+            <OnroerendeZaak>
+                <CdTypeOnroerendeZaak>P</CdTypeOnroerendeZaak>
+                <DatOntstaan>20200120</DatOntstaan>
+                <KadastraleAanduiding>
+                    <CdKadastraleGemeente>0344</CdKadastraleGemeente>
+                    <KadastraleGemeentenaam>Utrecht</KadastraleGemeentenaam>
+                    <KadastraleSectie>AJ</KadastraleSectie>
+                    <KadastraalPerceelnr>41563</KadastraalPerceelnr>
+                    <VolgnrKadastraalAppartementsrecht>2</VolgnrKadastraalAppartementsrecht>
+                </KadastraleAanduiding>
+                <OmsKadastraalObject>Onbebouwd: Parkeerplaats</OmsKadastraalObject>
+                <ZakelijkRecht>
+                    <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
+                </ZakelijkRecht>
+                <PubliekrechtelijkeBeperking>
+                    <AantekeningKadastraalObject>
+                        <DatEAantekeningKadastraalObject>20230316</DatEAantekeningKadastraalObject>
+                        <OmsAantekeningKadastraalObject>Geen beperkingen geregistreerd.</OmsAantekeningKadastraalObject>
+                    </AantekeningKadastraalObject>
+                </PubliekrechtelijkeBeperking>
+                <IndMeerGerechtigden>1</IndMeerGerechtigden>
+            </OnroerendeZaak>
+
+        </Eigendom>
+    </ClientSuwi>
+</ns3:PersoonsInfoResponse>

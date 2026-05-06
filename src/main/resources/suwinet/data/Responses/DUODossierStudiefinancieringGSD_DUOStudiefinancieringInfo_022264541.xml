@@ -1,0 +1,69 @@
+<ns4:DUOStudiefinancieringInfoResponse xmlns:ns3="http://bkwi.nl/SuwiML/FWI/v0205"
+                                       xmlns:ns4="http://bkwi.nl/SuwiML/Diensten/DUODossierStudiefinancieringGSD/v0200">
+    <ClientSuwi>
+
+        <!-- DUO Stufi informatie van Nora van Wollingen (bsn: 022264541) -->
+        <Burgerservicenr>022264541</Burgerservicenr>
+
+        <!-- HBO Bachelor Social Work (inschrijving: 2005-09-01 t/m 2009-07-15) -->
+
+        <!-- Bachelor: studiejaar 2005-2006 -->
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20050901</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20060731</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>1</CdToekenningBasisbeursStufi>
+            <IndAanvullendeBeursStufi>1</IndAanvullendeBeursStufi>
+        </Studiefinanciering>
+
+        <!-- Bachelor: studiejaar 2006-2007 -->
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20060801</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20070731</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>1</CdToekenningBasisbeursStufi>
+            <IndAanvullendeBeursStufi>2</IndAanvullendeBeursStufi>
+        </Studiefinanciering>
+
+        <!-- Bachelor: studiejaar 2007-2008 -->
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20070801</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20080731</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>1</CdToekenningBasisbeursStufi>
+            <IndAanvullendeBeursStufi>2</IndAanvullendeBeursStufi>
+        </Studiefinanciering>
+
+        <!-- Bachelor: studiejaar 2008-2009 (laatste jaar tot en met maand na diplomering) -->
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20080801</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20090731</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>1</CdToekenningBasisbeursStufi>
+            <IndAanvullendeBeursStufi>2</IndAanvullendeBeursStufi>
+        </Studiefinanciering>
+
+        <!-- HBO Master Jeugdzorg (inschrijving: 2010-09-01 t/m 2012-06-30) -->
+
+        <!-- Master: najaar 2010 t/m zomer 2011 -->
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20100901</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20110731</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>1</CdToekenningBasisbeursStufi>
+            <IndAanvullendeBeursStufi>1</IndAanvullendeBeursStufi>
+        </Studiefinanciering>
+
+        <!-- Master: tweede deel 2011 -->
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20110801</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20111231</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>1</CdToekenningBasisbeursStufi>
+            <IndAanvullendeBeursStufi>2</IndAanvullendeBeursStufi>
+        </Studiefinanciering>
+
+        <!-- Master: afronding 2012 (tot einde maand van uitschrijving) -->
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20120101</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20120630</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>3</CdToekenningBasisbeursStufi>
+            <IndAanvullendeBeursStufi>1</IndAanvullendeBeursStufi>
+        </Studiefinanciering>
+
+    </ClientSuwi>
+</ns4:DUOStudiefinancieringInfoResponse>

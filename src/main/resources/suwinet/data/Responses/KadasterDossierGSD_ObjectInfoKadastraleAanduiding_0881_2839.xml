@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Header xmlns:wsa="http://www.w3.org/2005/08/addressing">
+        <wsse:Security soapenv:mustUnderstand="1"
+            xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+            <wsu:Timestamp wsu:Id="TS-F840763AE6BCEF3E4B17273530483601507285">
+                <wsu:Created>2024-09-26T12:17:28.360Z</wsu:Created>
+                <wsu:Expires>2024-09-26T12:22:28.360Z</wsu:Expires>
+            </wsu:Timestamp>
+            <wsse11:SignatureConfirmation
+                Value="wTsUm/Q=="
+                wsu:Id="SC-01507286" xmlns:wsse11="http://docs.oasis-open.org/wss/oasis-wss-wssecurity-secext-1.1.xsd"/>
+            <wsse:BinarySecurityToken
+                EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary"
+                ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3" wsu:Id="X509-F8407287">MIIHpwaGC4bg==</wsse:BinarySecurityToken>
+            <ds:Signature
+                Id="SIG-F8495" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+                <ds:SignedInfo>
+                    <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                        <ec:InclusiveNamespaces PrefixList="wsa soapenv" xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                    </ds:CanonicalizationMethod>
+                    <ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+                    <ds:Reference URI="#Id-1210">
+                        <ds:Transforms>
+                            <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                                <ec:InclusiveNamespaces PrefixList="" xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                            </ds:Transform>
+                        </ds:Transforms>
+                        <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                        <ds:DigestValue>SFfJ0=</ds:DigestValue>
+                    </ds:Reference>
+                    <ds:Reference URI="#id-F0">
+                        <ds:Transforms>
+                            <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                                <ec:InclusiveNamespaces
+                                    PrefixList="soapenv" xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                            </ds:Transform>
+                        </ds:Transforms>
+                        <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                        <ds:DigestValue>YcpbNjU=</ds:DigestValue>
+                    </ds:Reference>
+                    <ds:Reference URI="#id-F7291">
+                        <ds:Transforms>
+                            <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                                <ec:InclusiveNamespaces
+                                    PrefixList="soapenv" xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                            </ds:Transform>
+                        </ds:Transforms>
+                        <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                        <ds:DigestValue>lmaII=</ds:DigestValue>
+                    </ds:Reference>
+                    <ds:Reference URI="#id-F2">
+                        <ds:Transforms>
+                            <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                                <ec:InclusiveNamespaces
+                                    PrefixList="soapenv" xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                            </ds:Transform>
+                        </ds:Transforms>
+                        <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                        <ds:DigestValue>xiTwBfdHBY=</ds:DigestValue>
+                    </ds:Reference>
+                    <ds:Reference URI="#id-F3">
+                        <ds:Transforms>
+                            <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                                <ec:InclusiveNamespaces
+                                    PrefixList="soapenv" xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                            </ds:Transform>
+                        </ds:Transforms>
+                        <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                        <ds:DigestValue>hDTAik=</ds:DigestValue>
+                    </ds:Reference>
+                    <ds:Reference URI="#id-F94">
+                        <ds:Transforms>
+                            <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                                <ec:InclusiveNamespaces
+                                    PrefixList="soapenv" xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                            </ds:Transform>
+                        </ds:Transforms>
+                        <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                        <ds:DigestValue>xmEa7j3I=</ds:DigestValue>
+                    </ds:Reference>
+                    <ds:Reference URI="#TS-F285">
+                        <ds:Transforms>
+                            <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                                <ec:InclusiveNamespaces
+                                    PrefixList="wsse wsa soapenv" xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                            </ds:Transform>
+                        </ds:Transforms>
+                        <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                        <ds:DigestValue>LPB22I=</ds:DigestValue>
+                    </ds:Reference>
+                    <ds:Reference URI="#SC-F840763A6">
+                        <ds:Transforms>
+                            <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                                <ec:InclusiveNamespaces
+                                    PrefixList="wsse wsa soapenv" xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                            </ds:Transform>
+                        </ds:Transforms>
+                        <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                        <ds:DigestValue>JEMTtTNKJhTsY=</ds:DigestValue>
+                    </ds:Reference>
+                </ds:SignedInfo>
+                <ds:SignatureValue>KX3PiA+knM3Hs=</ds:SignatureValue>
+                <ds:KeyInfo Id="KI-F84288">
+                    <wsse:SecurityTokenReference wsu:Id="STR-F87289">
+                        <wsse:Reference
+                            URI="#X509-287" ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3"/>
+                    </wsse:SecurityTokenReference>
+                </ds:KeyInfo>
+            </ds:Signature>
+        </wsse:Security>
+        <wsa:To wsu:Id="id-F8290" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">https://wsgateway-extern.denhaag.nl?oin=00000004124485341000</wsa:To>
+        <wsa:From wsu:Id="id-F1" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+            <wsa:Address>https://suwibroker.suwinet.nl/suwibroker/soap/KadasterDossierGSD-v0300?oin=00000004168307291000</wsa:Address>
+        </wsa:From>
+        <wsa:MessageID
+            wsu:Id="id-F82" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">urn:uuid:aa4bceb8-64dd-462e-8e74-2d30d876382d</wsa:MessageID>
+        <wsa:Action wsu:Id="id-F8407293" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD-v0300/Fout</wsa:Action>
+        <wsa:RelatesTo
+            wsu:Id="id-F894" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">MessageId-082d96cc-ee5b-aaa6-e39c-07ce06df7f29</wsa:RelatesTo>
+    </soapenv:Header>
+    <soapenv:Body wsu:Id="Id-1218292740" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+        <soapenv:Fault>
+            <faultcode>soapenv:Server-SUWIML-0000</faultcode>
+            <faultstring>Unexpected error during sending message out</faultstring>
+            <detail/>
+        </soapenv:Fault>
+    </soapenv:Body>
+</soapenv:Envelope>

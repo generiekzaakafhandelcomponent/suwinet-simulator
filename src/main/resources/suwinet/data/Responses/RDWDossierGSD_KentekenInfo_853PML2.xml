@@ -1,0 +1,56 @@
+<ns4:KentekenInfoResponse xmlns:ns3="http://bkwi.nl/SuwiML/FWI/v0205" xmlns:ns4="http://bkwi.nl/SuwiML/Diensten/RDWDossierGSD/v0200">
+    <ClientSuwi>
+        <Burgerservicenr>999990238</Burgerservicenr>
+        <Voorletters>S</Voorletters>
+        <SignificantDeelVanDeAchternaam>Bruinhard</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19930506</Geboortedat>
+        <RdwAdres>
+            <FeitelijkAdres>
+                <Straatadres>
+                    <Postcd>3572NE</Postcd>
+                    <Woonplaatsnaam>UTRECHT</Woonplaatsnaam>
+                    <Straatnaam>Karel Doormanlaan</Straatnaam>
+                    <Huisnr>55</Huisnr>
+                    <Huisletter>A</Huisletter>
+                </Straatadres>
+            </FeitelijkAdres>
+        </RdwAdres>
+        <Aansprakelijke>
+            <DatRegistratieAansprakelijkheid>20230501</DatRegistratieAansprakelijkheid>
+            <TijdBAansprakelijkheid>10000000</TijdBAansprakelijkheid>
+            <Voertuig>
+                <CdSrtVoertuig>P</CdSrtVoertuig>
+                <KentekenVoertuig>853PML2</KentekenVoertuig>
+                <MerkVoertuig>VOLKSWAGEN</MerkVoertuig>
+                <TypeVoertuig>VOLKSWAGEN POLO</TypeVoertuig>
+                <HoofdkleurVoertuig>BLAUW</HoofdkleurVoertuig>
+                <DatEersteInschrijvingVoertuigNat>20200315</DatEersteInschrijvingVoertuigNat>
+                <DatEersteInschrijvingVoertuigInt>20200315</DatEersteInschrijvingVoertuigInt>
+                <BedrBpm>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <WaardeBedr>250000</WaardeBedr>
+                </BedrBpm>
+                <Keuring>
+                    <DatEGeldigheidApk>20260315</DatEGeldigheidApk>
+                </Keuring>
+                <Verzekering>
+                    <CdSrtDekking>WAM</CdSrtDekking>
+                    <Polisnr>VW999990238</Polisnr>
+                    <DatBVerzekering>20230501</DatBVerzekering>
+                    <Verzekeringsmaatschappij>
+                        <CdVerzekeringsmaatschappijRdw>0123</CdVerzekeringsmaatschappijRdw>
+                        <NaamVerzekeringsmaatschappijRdw>ALLIANZ</NaamVerzekeringsmaatschappijRdw>
+                        <AdresVerzekeringsmaatschappijRdw>
+                            <Straatadres>
+                                <Postcd>1000AA</Postcd>
+                                <Woonplaatsnaam>AMSTERDAM</Woonplaatsnaam>
+                                <Straatnaam>Coolsingel</Straatnaam>
+                                <Huisnr>1</Huisnr>
+                            </Straatadres>
+                        </AdresVerzekeringsmaatschappijRdw>
+                    </Verzekeringsmaatschappij>
+                </Verzekering>
+            </Voertuig>
+        </Aansprakelijke>
+    </ClientSuwi>
+</ns4:KentekenInfoResponse>

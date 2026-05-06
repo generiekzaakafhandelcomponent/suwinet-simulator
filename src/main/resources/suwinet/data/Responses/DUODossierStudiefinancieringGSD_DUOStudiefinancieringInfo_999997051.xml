@@ -1,0 +1,24 @@
+<ns4:DUOStudiefinancieringInfoResponse xmlns:ns3="http://bkwi.nl/SuwiML/FWI/v0205"
+                                       xmlns:ns4="http://bkwi.nl/SuwiML/Diensten/DUODossierStudiefinancieringGSD/v0200">
+    <ClientSuwi>
+        <Burgerservicenr>999997051</Burgerservicenr>
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20240901</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20241231</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>3</CdToekenningBasisbeursStufi>
+            <IndAanvullendeBeursStufi>1</IndAanvullendeBeursStufi>
+        </Studiefinanciering>
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20250101</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20250331</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>3</CdToekenningBasisbeursStufi>
+            <IndAanvullendeBeursStufi>1</IndAanvullendeBeursStufi>
+        </Studiefinanciering>
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20250401</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20250831</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>3</CdToekenningBasisbeursStufi>
+            <IndAanvullendeBeursStufi>2</IndAanvullendeBeursStufi>
+        </Studiefinanciering>
+    </ClientSuwi>
+</ns4:DUOStudiefinancieringInfoResponse>

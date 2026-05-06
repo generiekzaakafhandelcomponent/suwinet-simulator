@@ -1,0 +1,154 @@
+<bij:BijstandsregelingenInfoResponse xmlns:bij="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500">
+    <ClientSuwi>
+        <Burgerservicenr>022264541</Burgerservicenr>
+        <Voorletters>N</Voorletters>
+        <Voorvoegsel>van</Voorvoegsel>
+        <SignificantDeelVanDeAchternaam>Wollingen</SignificantDeelVanDeAchternaam>
+        <Geslacht>2</Geslacht>
+        <Geboortedat>19850312</Geboortedat>
+
+        <!-- AanvraagUitkering: ABW, toegekend, met partner Lars -->
+        <AanvraagUitkering>
+            <DatAanvraagUitkering>20210810</DatAanvraagUitkering>
+            <SzWet>
+                <CdSzWet>ABW</CdSzWet>
+            </SzWet>
+            <BeslissingOpAanvraagUitkering>
+                <CdBeslissingOpAanvraagUitkering>01</CdBeslissingOpAanvraagUitkering>
+                <DatDagtekeningBeslisOpAanvrUitk>20210820</DatDagtekeningBeslisOpAanvrUitk>
+            </BeslissingOpAanvraagUitkering>
+            <PartnerAanvraagUitkering>
+                <Burgerservicenr>689735273</Burgerservicenr>
+                <Voorletters>L</Voorletters>
+                <Voorvoegsel></Voorvoegsel>
+                <SignificantDeelVanDeAchternaam>Terphuis</SignificantDeelVanDeAchternaam>
+                <Geboortedat>19831102</Geboortedat>
+            </PartnerAanvraagUitkering>
+            <Bron>
+                <CdKolomSuwi>1</CdKolomSuwi>
+                <CdPartijSuwi>0101</CdPartijSuwi>
+                <CdVestigingSuwi></CdVestigingSuwi>
+            </Bron>
+        </AanvraagUitkering>
+
+        <!-- AanvraagUitkering: ABW, afgewezen -->
+        <AanvraagUitkering>
+            <DatAanvraagUitkering>20190315</DatAanvraagUitkering>
+            <SzWet>
+                <CdSzWet>ABW</CdSzWet>
+            </SzWet>
+            <BeslissingOpAanvraagUitkering>
+                <CdBeslissingOpAanvraagUitkering>04</CdBeslissingOpAanvraagUitkering>
+                <DatDagtekeningBeslisOpAanvrUitk>20190328</DatDagtekeningBeslisOpAanvrUitk>
+            </BeslissingOpAanvraagUitkering>
+            <PartnerAanvraagUitkering>
+                <Burgerservicenr>689735273</Burgerservicenr>
+                <Voorletters>L</Voorletters>
+                <Voorvoegsel></Voorvoegsel>
+                <SignificantDeelVanDeAchternaam>Terphuis</SignificantDeelVanDeAchternaam>
+                <Geboortedat>19831102</Geboortedat>
+            </PartnerAanvraagUitkering>
+            <Bron>
+                <CdKolomSuwi>2</CdKolomSuwi>
+                <CdPartijSuwi>0102</CdPartijSuwi>
+                <CdVestigingSuwi></CdVestigingSuwi>
+            </Bron>
+        </AanvraagUitkering>
+
+        <!-- Vordering: ABW, lopend, nabetaling freelance inkomsten -->
+        <Vordering>
+            <IdentificatienrVordering>785412369874521</IdentificatienrVordering>
+            <DatBesluitVordering>20221105</DatBesluitVordering>
+            <CdRedenVordering>13</CdRedenVordering>
+            <BedrAanvangVordering>
+                <WaardeBedr>125000</WaardeBedr>
+            </BedrAanvangVordering>
+            <CdStatusVordering>51</CdStatusVordering>
+            <BedrSaldoVordering>
+                <WaardeBedr>75000</WaardeBedr>
+            </BedrSaldoVordering>
+            <DatOnherroepelijkVordering>2023-01-10</DatOnherroepelijkVordering>
+            <SzWet>
+                <CdSzWet>ABW</CdSzWet>
+            </SzWet>
+            <PartnerVordering>
+                <Burgerservicenr>689735273</Burgerservicenr>
+            </PartnerVordering>
+            <Bron>
+                <CdKolomSuwi>3</CdKolomSuwi>
+                <CdPartijSuwi>0201</CdPartijSuwi>
+                <CdVestigingSuwi>0201</CdVestigingSuwi>
+            </Bron>
+        </Vordering>
+
+        <!-- Vordering: ABW, afgesloten, te veel verstrekte bijzondere bijstand -->
+        <Vordering>
+            <IdentificatienrVordering>654789321554789</IdentificatienrVordering>
+            <DatBesluitVordering>20201018</DatBesluitVordering>
+            <CdRedenVordering>11</CdRedenVordering>
+            <BedrAanvangVordering>
+                <WaardeBedr>42000</WaardeBedr>
+            </BedrAanvangVordering>
+            <CdStatusVordering>51</CdStatusVordering>
+            <BedrSaldoVordering>
+                <WaardeBedr>0</WaardeBedr>
+            </BedrSaldoVordering>
+            <SzWet>
+                <CdSzWet>ABW</CdSzWet>
+            </SzWet>
+            <PartnerVordering>
+                <Burgerservicenr>689735273</Burgerservicenr>
+            </PartnerVordering>
+            <Bron>
+                <CdKolomSuwi>4</CdKolomSuwi>
+                <CdPartijSuwi>0202</CdPartijSuwi>
+                <CdVestigingSuwi>0202</CdVestigingSuwi>
+            </Bron>
+        </Vordering>
+
+        <!-- Bijzondere bijstand: medische kosten kind (orthodontie) -->
+        <SpecifiekeGegevensBijzBijstand>
+            <CdClusterBijzBijstand>h</CdClusterBijzBijstand>
+            <OmsSrtKostenBijzBijstand>Orthodontiekosten kind</OmsSrtKostenBijzBijstand>
+            <DatBetaalbaarBijzBijstand>20230615</DatBetaalbaarBijzBijstand>
+            <SzWet>
+                <CdSzWet>BB</CdSzWet>
+            </SzWet>
+            <PartnerBijzBijstand>
+                <Burgerservicenr>689735273</Burgerservicenr>
+                <Voorletters>L</Voorletters>
+                <Voorvoegsel></Voorvoegsel>
+                <SignificantDeelVanDeAchternaam>Terphuis</SignificantDeelVanDeAchternaam>
+                <Geboortedat>19831102</Geboortedat>
+            </PartnerBijzBijstand>
+            <Bron>
+                <CdKolomSuwi>5</CdKolomSuwi>
+                <CdPartijSuwi>0301</CdPartijSuwi>
+                <CdVestigingSuwi>0301</CdVestigingSuwi>
+            </Bron>
+        </SpecifiekeGegevensBijzBijstand>
+
+        <!-- Bijzondere bijstand: woon-/energiekosten -->
+        <SpecifiekeGegevensBijzBijstand>
+            <CdClusterBijzBijstand>c</CdClusterBijzBijstand>
+            <OmsSrtKostenBijzBijstand>Energietoeslag hoge energielasten</OmsSrtKostenBijzBijstand>
+            <DatBetaalbaarBijzBijstand>20240222</DatBetaalbaarBijzBijstand>
+            <SzWet>
+                <CdSzWet>BB</CdSzWet>
+            </SzWet>
+            <PartnerBijzBijstand>
+                <Burgerservicenr>689735273</Burgerservicenr>
+                <Voorletters>L</Voorletters>
+                <Voorvoegsel></Voorvoegsel>
+                <SignificantDeelVanDeAchternaam>Terphuis</SignificantDeelVanDeAchternaam>
+                <Geboortedat>19831102</Geboortedat>
+            </PartnerBijzBijstand>
+            <Bron>
+                <CdKolomSuwi>6</CdKolomSuwi>
+                <CdPartijSuwi>0302</CdPartijSuwi>
+                <CdVestigingSuwi>0302</CdVestigingSuwi>
+            </Bron>
+        </SpecifiekeGegevensBijzBijstand>
+
+    </ClientSuwi>
+</bij:BijstandsregelingenInfoResponse>

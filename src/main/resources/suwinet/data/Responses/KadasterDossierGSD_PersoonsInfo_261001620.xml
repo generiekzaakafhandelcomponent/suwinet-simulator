@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns3:PersoonsInfoResponse xmlns:ns3="http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300" xmlns:ns2="http://bkwi.nl/SuwiML/FWI/v0203">
+    <ClientSuwi>
+        <Burgerservicenr>261001620</Burgerservicenr>
+        <Voornamen>Jan</Voornamen>
+        <SignificantDeelVanDeAchternaam>Klaassen</SignificantDeelVanDeAchternaam>
+        <Geslacht>1</Geslacht>
+        <Geboortedat>19720911</Geboortedat>
+        <DomicilieAdres>
+            <StraatadresBag>
+                <Postcd>2583RR</Postcd>
+                <Woonplaatsnaam>'S-GRAVENHAGE</Woonplaatsnaam>
+                <Straatnaam>Tholensestraat</Straatnaam>
+                <Huisnr>99</Huisnr>
+            </StraatadresBag>
+        </DomicilieAdres>
+        <Eigendom>
+            <OnroerendeZaak>
+                <CdTypeOnroerendeZaak>A</CdTypeOnroerendeZaak>
+                <KadastraleAanduiding>
+                    <CdKadastraleGemeente>0881</CdKadastraleGemeente>
+                    <KadastraleGemeentenaam>'s-Gravenhage</KadastraleGemeentenaam>
+                    <KadastraleSectie>BE</KadastraleSectie>
+                    <KadastraalPerceelnr>2839</KadastraalPerceelnr>
+                    <VolgnrKadastraalAppartementsrecht>1</VolgnrKadastraalAppartementsrecht>
+                </KadastraleAanduiding>
+                <OmsKadastraalObject>Bebouwd: Wonen (appartement)</OmsKadastraalObject>
+                <ZakelijkRecht>
+                    <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
+                </ZakelijkRecht>
+                <LocatieOZ>
+                    <StraatadresBag>
+                        <Postcd>2583RR</Postcd>
+                        <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
+                        <Straatnaam>Tholensestraat</Straatnaam>
+                        <Huisnr>99</Huisnr>
+                    </StraatadresBag>
+                </LocatieOZ>
+                <PubliekrechtelijkeBeperking>
+                    <AantekeningKadastraalObject>
+                        <OmsAantekeningKadastraalObject>Wijziging t.a.v. de erfpachtvoorwaarden en/of -canon</OmsAantekeningKadastraalObject>
+                    </AantekeningKadastraalObject>
+                </PubliekrechtelijkeBeperking>
+                <BedrKoopsom>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>19500000</WaardeBedr>
+                </BedrKoopsom>
+                <JaarAankoop>2017</JaarAankoop>
+                <IndMeerGerechtigden>1</IndMeerGerechtigden>
+            </OnroerendeZaak>
+        </Eigendom>
+    </ClientSuwi>
+</ns3:PersoonsInfoResponse>

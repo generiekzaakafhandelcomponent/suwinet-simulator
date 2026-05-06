@@ -1,0 +1,182 @@
+<bij:BijstandsregelingenInfoResponse xmlns:bij="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500">
+    <ClientSuwi>
+        <Burgerservicenr>689735273</Burgerservicenr>
+        <Voorletters>L</Voorletters>
+        <Voorvoegsel></Voorvoegsel>
+        <SignificantDeelVanDeAchternaam>Terphuis</SignificantDeelVanDeAchternaam>
+        <Geslacht>1</Geslacht>
+        <Geboortedat>19831102</Geboortedat>
+
+        <!-- AanvraagUitkering: ABW, toegekend, periode van werkloosheid 2018 -->
+        <AanvraagUitkering>
+            <DatAanvraagUitkering>20180512</DatAanvraagUitkering>
+            <SzWet>
+                <CdSzWet>ABW</CdSzWet>
+            </SzWet>
+            <BeslissingOpAanvraagUitkering>
+                <CdBeslissingOpAanvraagUitkering>01</CdBeslissingOpAanvraagUitkering>
+                <DatDagtekeningBeslisOpAanvrUitk>20180525</DatDagtekeningBeslisOpAanvrUitk>
+            </BeslissingOpAanvraagUitkering>
+            <PartnerAanvraagUitkering>
+                <Burgerservicenr>022264541</Burgerservicenr>
+                <Voorletters>N</Voorletters>
+                <Voorvoegsel></Voorvoegsel>
+                <SignificantDeelVanDeAchternaam>van Wollingen</SignificantDeelVanDeAchternaam>
+                <Geboortedat>19850312</Geboortedat>
+            </PartnerAanvraagUitkering>
+            <Bron>
+                <CdKolomSuwi>1</CdKolomSuwi>
+                <CdPartijSuwi>0401</CdPartijSuwi>
+                <CdVestigingSuwi></CdVestigingSuwi>
+            </Bron>
+        </AanvraagUitkering>
+
+        <!-- AanvraagUitkering: ABW, toegekend, gezamenlijke aanvraag 2021 (symmetrisch met Nora) -->
+        <AanvraagUitkering>
+            <DatAanvraagUitkering>20210810</DatAanvraagUitkering>
+            <SzWet>
+                <CdSzWet>ABW</CdSzWet>
+            </SzWet>
+            <BeslissingOpAanvraagUitkering>
+                <CdBeslissingOpAanvraagUitkering>01</CdBeslissingOpAanvraagUitkering>
+                <DatDagtekeningBeslisOpAanvrUitk>20210820</DatDagtekeningBeslisOpAanvrUitk>
+            </BeslissingOpAanvraagUitkering>
+            <PartnerAanvraagUitkering>
+                <Burgerservicenr>022264541</Burgerservicenr>
+                <Voorletters>N</Voorletters>
+                <Voorvoegsel></Voorvoegsel>
+                <SignificantDeelVanDeAchternaam>van Wollingen</SignificantDeelVanDeAchternaam>
+                <Geboortedat>19850312</Geboortedat>
+            </PartnerAanvraagUitkering>
+            <Bron>
+                <CdKolomSuwi>7</CdKolomSuwi>
+                <CdPartijSuwi>0407</CdPartijSuwi>
+                <CdVestigingSuwi>0407</CdVestigingSuwi>
+            </Bron>
+        </AanvraagUitkering>
+
+        <!-- AanvraagUitkering: wachtend op beslissing -->
+        <AanvraagUitkering>
+            <DatAanvraagUitkering>20200901</DatAanvraagUitkering>
+            <SzWet>
+                <CdSzWet>ABW</CdSzWet>
+            </SzWet>
+            <PartnerAanvraagUitkering>
+                <Burgerservicenr>022264541</Burgerservicenr>
+                <Voorletters>N</Voorletters>
+                <Voorvoegsel></Voorvoegsel>
+                <SignificantDeelVanDeAchternaam>van Wollingen</SignificantDeelVanDeAchternaam>
+                <Geboortedat>19850312</Geboortedat>
+            </PartnerAanvraagUitkering>
+            <Bron>
+                <CdKolomSuwi>2</CdKolomSuwi>
+                <CdPartijSuwi>0402</CdPartijSuwi>
+                <CdVestigingSuwi></CdVestigingSuwi>
+            </Bron>
+        </AanvraagUitkering>
+
+        <!-- Vordering: ABW, met fraudecomponent (opzettelijk niet melden inkomsten) -->
+        <Vordering>
+            <IdentificatienrVordering>998877665544332</IdentificatienrVordering>
+            <DatBesluitVordering>20190210</DatBesluitVordering>
+            <CdRedenVordering>13</CdRedenVordering>
+            <BedrAanvangVordering>
+                <WaardeBedr>300000</WaardeBedr>
+            </BedrAanvangVordering>
+            <CdStatusVordering>51</CdStatusVordering>
+            <BedrSaldoVordering>
+                <WaardeBedr>210000</WaardeBedr>
+            </BedrSaldoVordering>
+            <DatOnherroepelijkVordering>20190601</DatOnherroepelijkVordering>
+            <SzWet>
+                <CdSzWet>ABW</CdSzWet>
+            </SzWet>
+            <PartnerVordering>
+                <Burgerservicenr>022264541</Burgerservicenr>
+            </PartnerVordering>
+            <Fraude>
+                <IndRecidive>0</IndRecidive>
+                <IndRobuusteIncassoToegepast>1</IndRobuusteIncassoToegepast>
+                <CdHoogteBestuurlijkeBoete>1</CdHoogteBestuurlijkeBoete>
+                <CdSrtSanctie>1</CdSrtSanctie>
+                <ParketnrJustitie>45.123456</ParketnrJustitie>
+                <CdRecidivetermijn>1</CdRecidivetermijn>
+            </Fraude>
+            <Bron>
+                <CdKolomSuwi>3</CdKolomSuwi>
+                <CdPartijSuwi>0403</CdPartijSuwi>
+                <CdVestigingSuwi></CdVestigingSuwi>
+            </Bron>
+        </Vordering>
+
+        <!-- Vordering: AWB, zonder fraude, kleine terugvordering energietoeslag -->
+        <Vordering>
+            <IdentificatienrVordering>445566778899001</IdentificatienrVordering>
+            <DatBesluitVordering>20220620</DatBesluitVordering>
+            <CdRedenVordering>11</CdRedenVordering>
+            <BedrAanvangVordering>
+                <WaardeBedr>12000</WaardeBedr>
+            </BedrAanvangVordering>
+            <CdStatusVordering>51</CdStatusVordering>
+            <BedrSaldoVordering>
+                <WaardeBedr>0</WaardeBedr>
+            </BedrSaldoVordering>
+            <SzWet>
+                <CdSzWet>AWB</CdSzWet>
+            </SzWet>
+            <PartnerVordering>
+                <Burgerservicenr>022264541</Burgerservicenr>
+            </PartnerVordering>
+            <Bron>
+                <CdKolomSuwi>4</CdKolomSuwi>
+                <CdPartijSuwi>0404</CdPartijSuwi>
+                <CdVestigingSuwi></CdVestigingSuwi>
+            </Bron>
+        </Vordering>
+
+        <!-- Bijzondere bijstand: kleding en schoolkosten kinderen -->
+        <SpecifiekeGegevensBijzBijstand>
+            <CdClusterBijzBijstand>b</CdClusterBijzBijstand>
+            <OmsSrtKostenBijzBijstand>Kleding- en schoolkosten kinderen</OmsSrtKostenBijzBijstand>
+            <DatBetaalbaarBijzBijstand>20190820</DatBetaalbaarBijzBijstand>
+            <SzWet>
+                <CdSzWet>BB</CdSzWet>
+            </SzWet>
+            <PartnerBijzBijstand>
+                <Burgerservicenr>022264541</Burgerservicenr>
+                <Voorletters>N</Voorletters>
+                <Voorvoegsel></Voorvoegsel>
+                <SignificantDeelVanDeAchternaam>van Wollingen</SignificantDeelVanDeAchternaam>
+                <Geboortedat>19850312</Geboortedat>
+            </PartnerBijzBijstand>
+            <Bron>
+                <CdKolomSuwi>5</CdKolomSuwi>
+                <CdPartijSuwi>0405</CdPartijSuwi>
+                <CdVestigingSuwi></CdVestigingSuwi>
+            </Bron>
+        </SpecifiekeGegevensBijzBijstand>
+
+        <!-- Bijzondere bijstand: woon-/energiekosten -->
+        <SpecifiekeGegevensBijzBijstand>
+            <CdClusterBijzBijstand>c</CdClusterBijzBijstand>
+            <OmsSrtKostenBijzBijstand>Eenmalige energietoeslag huishouden</OmsSrtKostenBijzBijstand>
+            <DatBetaalbaarBijzBijstand>20230115</DatBetaalbaarBijzBijstand>
+            <SzWet>
+                <CdSzWet>BB</CdSzWet>
+            </SzWet>
+            <PartnerBijzBijstand>
+                <Burgerservicenr>022264541</Burgerservicenr>
+                <Voorletters>N</Voorletters>
+                <Voorvoegsel></Voorvoegsel>
+                <SignificantDeelVanDeAchternaam>van Wollingen</SignificantDeelVanDeAchternaam>
+                <Geboortedat>19850312</Geboortedat>
+            </PartnerBijzBijstand>
+            <Bron>
+                <CdKolomSuwi>6</CdKolomSuwi>
+                <CdPartijSuwi>0406</CdPartijSuwi>
+                <CdVestigingSuwi></CdVestigingSuwi>
+            </Bron>
+        </SpecifiekeGegevensBijzBijstand>
+
+    </ClientSuwi>
+</bij:BijstandsregelingenInfoResponse>

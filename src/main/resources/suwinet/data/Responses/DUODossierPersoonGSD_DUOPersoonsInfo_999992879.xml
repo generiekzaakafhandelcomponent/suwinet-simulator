@@ -1,0 +1,41 @@
+<smls:DUOPersoonsInfoResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/DUODossierPersoonGSD/v0300">
+	<ClientSuwi>
+		<Burgerservicenr>999992879</Burgerservicenr>
+		<IndStartkwalificatieDuo>1</IndStartkwalificatieDuo>
+		<Onderwijsovereenkomst>
+			<Brin>
+				<BrinNr>21PB</BrinNr>
+			</Brin>
+			<DatInschrijvingOpleiding>20100801</DatInschrijvingOpleiding>
+			<DatUitschrijvingOpleiding>20160731</DatUitschrijvingOpleiding>
+
+			<DeelnameOpleidingGeregistrDuo>
+				<DatBDeelnameOpleiding>20100801</DatBDeelnameOpleiding>
+				<DatEDeelnameOpleiding>20110731</DatEDeelnameOpleiding>
+				<InhoudDeelnameOpleidingDuo>
+					<NaamOpleidingKortDuo>Praktijkonderwijs</NaamOpleidingKortDuo>
+					<CdNiveauOpleidingDuo>VO-PRO</CdNiveauOpleidingDuo>
+				</InhoudDeelnameOpleidingDuo>
+			</DeelnameOpleidingGeregistrDuo>
+
+			<DeelnameOpleidingGeregistrDuo>
+				<DatBDeelnameOpleiding>20110801</DatBDeelnameOpleiding>
+				<DatEDeelnameOpleiding>20120731</DatEDeelnameOpleiding>
+				<InhoudDeelnameOpleidingDuo>
+					<NaamOpleidingKortDuo>Praktijkonderwijs</NaamOpleidingKortDuo>
+					<CdNiveauOpleidingDuo>VO-PRO</CdNiveauOpleidingDuo>
+				</InhoudDeelnameOpleidingDuo>
+			</DeelnameOpleidingGeregistrDuo>
+
+			<DeelnameOpleidingGeregistrDuo>
+				<DatBDeelnameOpleiding>20120901</DatBDeelnameOpleiding>
+				<DatEDeelnameOpleiding>20160731</DatEDeelnameOpleiding>
+				<InhoudDeelnameOpleidingDuo>
+					<NaamOpleidingKortDuo>Universiteit Utrecht</NaamOpleidingKortDuo>
+					<CdNiveauOpleidingDuo>HBO-BA</CdNiveauOpleidingDuo>
+				</InhoudDeelnameOpleidingDuo>
+			</DeelnameOpleidingGeregistrDuo>
+
+		</Onderwijsovereenkomst>
+	</ClientSuwi>
+</smls:DUOPersoonsInfoResponse>

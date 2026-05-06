@@ -1,0 +1,39 @@
+<ns4:KentekenInfoResponse xmlns:ns3="http://bkwi.nl/SuwiML/FWI/v0205"
+                          xmlns:ns4="http://bkwi.nl/SuwiML/Diensten/RDWDossierGSD/v0200">
+    <ClientSuwi>
+
+        <!-- RDW Kentekeninfo van Auto van Elise Schouten (bsn: 999993549) -->
+        <Burgerservicenr>999998493</Burgerservicenr>
+        <Voorletters>E</Voorletters>
+        <SignificantDeelVanDeAchternaam>Schouten</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19860423</Geboortedat>
+
+        <RdwAdres>
+            <FeitelijkAdres>
+                <Straatadres>
+                    <Postcd>3521AZ</Postcd>
+                    <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+                    <Straatnaam>Stadsplateau</Straatnaam>
+                    <Huisnr>1</Huisnr>
+                </Straatadres>
+            </FeitelijkAdres>
+        </RdwAdres>
+
+        <Aansprakelijke>
+            <Voertuig>
+                <CdSrtVoertuig>P</CdSrtVoertuig>
+                <KentekenVoertuig>FR23QW</KentekenVoertuig>
+                <MerkVoertuig>OPEL</MerkVoertuig>
+                <TypeVoertuig>ASTRA F</TypeVoertuig>
+                <HoofdkleurVoertuig>WIT</HoofdkleurVoertuig>
+
+                <DatEersteInschrijvingVoertuigNat>20171014</DatEersteInschrijvingVoertuigNat>
+                <DatEersteInschrijvingVoertuigInt>20171014</DatEersteInschrijvingVoertuigInt>
+                <BedrBpm>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <WaardeBedr>3250</WaardeBedr>
+                </BedrBpm>
+            </Voertuig>
+        </Aansprakelijke>
+    </ClientSuwi>
+</ns4:KentekenInfoResponse>

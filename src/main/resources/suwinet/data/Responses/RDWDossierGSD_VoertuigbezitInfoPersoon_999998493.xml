@@ -1,0 +1,32 @@
+<smls:VoertuigbezitInfoPersoonResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/RDWDossierGSD/v0200">
+    <ClientSuwi>
+
+        <!-- RDW voertuigbezitinfo van Johan Maren (bsn: 999993549) -->
+        <Burgerservicenr>999998493</Burgerservicenr>
+        <Voorletters>E</Voorletters>
+        <SignificantDeelVanDeAchternaam>Schouten</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19860423</Geboortedat>
+
+        <RdwAdres>
+            <FeitelijkAdres>
+                <Straatadres>
+                    <Postcd>3521AZ</Postcd>
+                    <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+                    <Straatnaam>Stadsplateau</Straatnaam>
+                    <Huisnr>1</Huisnr>
+                </Straatadres>
+            </FeitelijkAdres>
+        </RdwAdres>
+
+        <Aansprakelijke>
+            <DatRegistratieAansprakelijkheid>20181111</DatRegistratieAansprakelijkheid>
+            <Voertuig>
+                <KentekenVoertuig>FR23QW</KentekenVoertuig>
+                <StatusVoertuig>
+                    <CdStatusVoertuig>91</CdStatusVoertuig>
+                    <DatBStatusVoertuig>20181111</DatBStatusVoertuig>
+                </StatusVoertuig>
+            </Voertuig>
+        </Aansprakelijke>
+    </ClientSuwi>
+</smls:VoertuigbezitInfoPersoonResponse>

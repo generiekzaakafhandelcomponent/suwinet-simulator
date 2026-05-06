@@ -1,0 +1,12 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Body>
+        <ns2:ObjectInfoKadastraleAanduiding
+            xmlns:ns2="http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300" xmlns:ns3="http://bkwi.nl/SuwiML/FWI/v0205">
+            <CdKadastraleGemeente>881</CdKadastraleGemeente>
+            <KadastraleGemeentenaam>881</KadastraleGemeentenaam>
+            <KadastraleSectie>BE</KadastraleSectie>
+            <KadastraalPerceelnr>2839</KadastraalPerceelnr>
+            <VolgnrKadastraalAppartementsrecht>1</VolgnrKadastraalAppartementsrecht>
+        </ns2:ObjectInfoKadastraleAanduiding>
+    </soap:Body>
+</soap:Envelope>
