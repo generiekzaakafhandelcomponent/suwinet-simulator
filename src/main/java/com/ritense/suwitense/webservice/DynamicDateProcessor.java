@@ -2,12 +2,14 @@ package com.ritense.suwitense.webservice;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.TemporalAdjusters;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Substitutes {@code <!-- DynamicDate: today [+|- N day|week|month|year(s)] -->}
+ * Substitutes {@code <!-- DynamicDate: ANCHOR [+|- N day|week|month|year(s)] -->}
  * markers with a computed date in the value of the immediately following XML element.
+ * Supported anchors: {@code today}, {@code startOfMonth}, {@code endOfMonth}.
  *
  * The original date value's format is preserved: {@code YYYYMMDD} stays compact,
  * {@code YYYY-MM-DD} stays ISO-dashed.
@@ -17,7 +19,7 @@ public final class DynamicDateProcessor {
     private static final Pattern QUICK_CHECK = Pattern.compile("DynamicDate", Pattern.CASE_INSENSITIVE);
 
     private static final Pattern PATTERN = Pattern.compile(
-            "<!--\\s*DynamicDate:\\s*today" +
+            "<!--\\s*DynamicDate:\\s*(today|startOfMonth|endOfMonth)" +
                     "(?:\\s*([+-])\\s*(\\d+)\\s*(day|week|month|year)s?)?" +
                     "\\s*-->" +
                     "(?:\\s*<[^/!?][^>]*>)" +
@@ -41,10 +43,11 @@ public final class DynamicDateProcessor {
         Matcher m = PATTERN.matcher(xml);
         StringBuilder out = new StringBuilder(xml.length());
         while (m.find()) {
-            String sign = m.group(1);
-            String amountStr = m.group(2);
-            String unit = m.group(3);
-            String originalDate = m.group(4);
+            String anchor = m.group(1);
+            String sign = m.group(2);
+            String amountStr = m.group(3);
+            String unit = m.group(4);
+            String originalDate = m.group(5);
 
             LocalDate target = today;
             if (sign != null) {
@@ -66,6 +69,14 @@ public final class DynamicDateProcessor {
                         target = today.plusYears(amount);
                         break;
                 }
+            }
+            switch (anchor.toLowerCase()) {
+                case "startofmonth":
+                    target = target.withDayOfMonth(1);
+                    break;
+                case "endofmonth":
+                    target = target.with(TemporalAdjusters.lastDayOfMonth());
+                    break;
             }
             DateTimeFormatter fmt = originalDate.contains("-") ? ISO : COMPACT;
             String replacement = m.group(0).substring(0, m.group(0).length() - originalDate.length())

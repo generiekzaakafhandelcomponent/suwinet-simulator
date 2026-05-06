@@ -92,4 +92,40 @@ class DynamicDateProcessorTest {
     void handlesNullInput() {
         assertEquals(null, DynamicDateProcessor.process(null, TODAY));
     }
+
+    @Test
+    void substitutesStartOfCurrentMonth() {
+        String xml = "<a><!-- DynamicDate: startOfMonth --><Datum>20240115</Datum></a>";
+        String expected = "<a><!-- DynamicDate: startOfMonth --><Datum>20260501</Datum></a>";
+        assertEquals(expected, DynamicDateProcessor.process(xml, TODAY));
+    }
+
+    @Test
+    void substitutesEndOfCurrentMonth() {
+        String xml = "<a><!-- DynamicDate: endOfMonth --><Datum>20240115</Datum></a>";
+        String expected = "<a><!-- DynamicDate: endOfMonth --><Datum>20260531</Datum></a>";
+        assertEquals(expected, DynamicDateProcessor.process(xml, TODAY));
+    }
+
+    @Test
+    void substitutesStartOfPreviousMonth() {
+        String xml = "<a><!-- DynamicDate: startOfMonth - 1 month --><Datum>20240115</Datum></a>";
+        String expected = "<a><!-- DynamicDate: startOfMonth - 1 month --><Datum>20260401</Datum></a>";
+        assertEquals(expected, DynamicDateProcessor.process(xml, TODAY));
+    }
+
+    @Test
+    void substitutesEndOfPreviousMonth() {
+        String xml = "<a><!-- DynamicDate: endOfMonth - 1 month --><Datum>20240115</Datum></a>";
+        String expected = "<a><!-- DynamicDate: endOfMonth - 1 month --><Datum>20260430</Datum></a>";
+        assertEquals(expected, DynamicDateProcessor.process(xml, TODAY));
+    }
+
+    @Test
+    void substitutesEndOfMonthHandlesFebruary() {
+        LocalDate feb = LocalDate.of(2026, 2, 10);
+        String xml = "<a><!-- DynamicDate: endOfMonth --><Datum>20240115</Datum></a>";
+        String expected = "<a><!-- DynamicDate: endOfMonth --><Datum>20260228</Datum></a>";
+        assertEquals(expected, DynamicDateProcessor.process(xml, feb));
+    }
 }
