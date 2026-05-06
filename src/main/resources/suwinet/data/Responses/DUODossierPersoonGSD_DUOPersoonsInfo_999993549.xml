@@ -116,6 +116,7 @@
             <ResultaatExamen>
                 <CdResultaatExamen>G</CdResultaatExamen>
                 <DatResultaatExamen>20050701</DatResultaatExamen>
+                <JaarAfgelegdExamen>2005</JaarAfgelegdExamen>
             </ResultaatExamen>
         </ResultaatOpleidingGeregistrDuo>
 
@@ -132,6 +133,7 @@
             <ResultaatExamen>
                 <CdResultaatExamen>C</CdResultaatExamen>
                 <DatResultaatExamen>20090630</DatResultaatExamen>
+                <JaarAfgelegdExamen>2009</JaarAfgelegdExamen>
             </ResultaatExamen>
         </ResultaatOpleidingGeregistrDuo>
 
@@ -148,6 +150,7 @@
             <ResultaatExamen>
                 <CdResultaatExamen>G</CdResultaatExamen>
                 <DatResultaatExamen>20120615</DatResultaatExamen>
+                <JaarAfgelegdExamen>2012</JaarAfgelegdExamen>
             </ResultaatExamen>
         </ResultaatOpleidingGeregistrDuo>
 

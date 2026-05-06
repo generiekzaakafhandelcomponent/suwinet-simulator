@@ -101,6 +101,7 @@
 			<ResultaatExamen>
 				<CdResultaatExamen>2</CdResultaatExamen>
 				<DatResultaatExamen>20200115</DatResultaatExamen>
+				<JaarAfgelegdExamen>2020</JaarAfgelegdExamen>
 			</ResultaatExamen>
 		</ResultaatOpleidingGeregistrDuo>
 		<ResultaatOpleidingGeregistrDuo>
@@ -115,6 +116,7 @@
 			<ResultaatExamen>
 				<CdResultaatExamen>3</CdResultaatExamen>
 				<DatResultaatExamen>20210220</DatResultaatExamen>
+				<JaarAfgelegdExamen>2021</JaarAfgelegdExamen>
 			</ResultaatExamen>
 		</ResultaatOpleidingGeregistrDuo>
 		<ResultaatOpleidingGeregistrDuo>
@@ -129,6 +131,7 @@
 			<ResultaatExamen>
 				<CdResultaatExamen>4</CdResultaatExamen>
 				<DatResultaatExamen>20220529</DatResultaatExamen>
+				<JaarAfgelegdExamen>2022</JaarAfgelegdExamen>
 			</ResultaatExamen>
 		</ResultaatOpleidingGeregistrDuo>
 	</ClientSuwi>

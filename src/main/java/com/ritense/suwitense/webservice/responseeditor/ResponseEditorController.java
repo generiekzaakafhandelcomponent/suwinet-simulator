@@ -177,6 +177,20 @@ public class ResponseEditorController {
         return emitter;
     }
 
+    /**
+     * Overwrite an existing response file with the actual SOAP response body. Intended for the
+     * "accept actual" flow in the test UI: the test round-trip already produced the JAXB-serialized
+     * XML; this endpoint persists it as the new stored response.
+     */
+    @PostMapping(value = "/{filename:.+}/accept-actual", consumes = MediaType.APPLICATION_XML_VALUE)
+    public ResponseEntity<Void> acceptActual(@PathVariable String filename, @RequestBody String xml) throws IOException {
+        if (filename.endsWith("-request.xml")) {
+            throw new ApiException(400, "accept-actual is niet van toepassing op request-bestanden");
+        }
+        service.write(filename, xml);
+        return ResponseEntity.noContent().build();
+    }
+
     @GetMapping(value = "/{filename:.+}/schema-issues", produces = MediaType.APPLICATION_JSON_VALUE)
     public Map<String, Object> schemaIssues(@PathVariable String filename) throws IOException {
         if (filename.endsWith("-request.xml")) return Map.of("issues", List.of());

@@ -42,14 +42,20 @@ public class XsdValidationService {
         "starting with element '(?:\\{[^}]*\\})?([^']+)'"
     );
 
-    // Value 'X' is not facet-valid with respect to pattern/maxLength '...' for type 'T'
+    // Value 'X' [with length = 'N' ]is not facet-valid with respect to pattern/maxLength '...' for type 'T'
+    // The optional "with length = 'N'" part appears for cvc-length-valid messages.
     private static final Pattern FACET_VIOLATION = Pattern.compile(
-        "Value '([^']*)' is not facet-valid with respect to (?:pattern|maxLength|minLength|length) '[^']*' for type '([^']*)'"
+        "Value '([^']*)' (?:with [^']*'[^']*' )?is not facet-valid with respect to (?:pattern|maxLength|minLength|length) '[^']*' for type '([^']*)'"
     );
 
     // Value 'X' is not a valid value of/for the (union|atomic) type 'T'
     private static final Pattern NOT_VALID_VALUE = Pattern.compile(
         "Value '([^']*)' is not a valid value"
+    );
+
+    // cvc-type.3.1.3: The value 'X' of element 'ElemName' is not valid.
+    private static final Pattern TYPE_ERROR_ELEM = Pattern.compile(
+        "The value '([^']*)' of element '([^']*)' is not valid"
     );
 
     private final Map<String, Optional<Schema>> schemaCache = new ConcurrentHashMap<>();
@@ -62,17 +68,35 @@ public class XsdValidationService {
         Optional<Schema> schema = schemaCache.computeIfAbsent(dienst, this::loadSchema);
         if (schema.isEmpty()) return List.of();
 
-        List<Issue> issues = new ArrayList<>();
+        List<SAXParseException> raw = new ArrayList<>();
         try {
             var validator = schema.get().newValidator();
             validator.setErrorHandler(new org.xml.sax.ErrorHandler() {
                 @Override public void warning(SAXParseException e) {}
-                @Override public void error(SAXParseException e) { issues.add(format(e)); }
-                @Override public void fatalError(SAXParseException e) { issues.add(format(e)); }
+                @Override public void error(SAXParseException e) { raw.add(e); }
+                @Override public void fatalError(SAXParseException e) { raw.add(e); }
             });
             validator.validate(new StreamSource(new StringReader(xml)));
         } catch (Exception e) {
             logger.debug("XSD validation error for {}: {}", dienst, e.getMessage());
+        }
+
+        // Process errors in pairs: a specific cvc-*-valid error is always followed by a
+        // cvc-type.3.1.3 message that names the element. Pair them so we can include the
+        // element name in the readable message.
+        List<Issue> issues = new ArrayList<>();
+        for (int i = 0; i < raw.size(); i++) {
+            String elementName = null;
+            if (i + 1 < raw.size()) {
+                String next = raw.get(i + 1).getMessage();
+                if (next != null && next.startsWith("cvc-type.3.1.3:")) {
+                    Matcher m = TYPE_ERROR_ELEM.matcher(next);
+                    if (m.find()) elementName = m.group(2);
+                    i++; // consume the follow-up
+                }
+            }
+            Issue issue = format(raw.get(i), elementName);
+            if (issue != null) issues.add(issue);
         }
         return issues;
     }
@@ -90,9 +114,12 @@ public class XsdValidationService {
         }
     }
 
-    private static Issue format(SAXParseException e) {
+    private static Issue format(SAXParseException e, String elementName) {
         String raw = e.getMessage();
         if (raw == null) return new Issue("Onbekende schemafout");
+
+        // cvc-type.3.1.3 is altijd een navolger van een specifiekere cvc-*-valid fout — wordt apart geconsumeerd
+        if (raw.startsWith("cvc-type.3.1.3:")) return null;
 
         // Verkeerde elementvolgorde of onbekend element
         Matcher m = INVALID_ELEM.matcher(raw);
@@ -115,7 +142,7 @@ public class XsdValidationService {
         if (facet.find()) {
             String value = facet.group(1);
             String type = facet.group(2).toLowerCase();
-            return facetHint(value, type);
+            return withElement(facetHint(value, type), elementName);
         }
 
         // Ongeldig type (bijv. nonNegativeInteger met letter-prefix)
@@ -123,17 +150,39 @@ public class XsdValidationService {
         if (nv.find()) {
             String value = nv.group(1);
             if (value.matches("[A-Za-z]\\d+")) {
-                return new Issue(
+                return withElement(new Issue(
                     "Waarde '" + value + "' is ongeldig (letter-prefix niet toegestaan).",
                     "Verwijder de letter en gebruik alleen het cijfergedeelte: '" + value.substring(1) + "'."
-                );
+                ), elementName);
             }
         }
 
         return new Issue(raw);
     }
 
+    private static Issue withElement(Issue issue, String elementName) {
+        if (elementName == null || elementName.isBlank()) return issue;
+        return new Issue("<" + elementName + "> — " + issue.message(), issue.hint());
+    }
+
     private static Issue facetHint(String value, String typeLower) {
+        // Lege verplichte waarde
+        if (value.isEmpty()) {
+            return new Issue(
+                "Veld is leeg maar vereist een waarde.",
+                "Het element staat in het bestand maar heeft geen inhoud. Vul een geldige waarde in, of verwijder het lege element."
+            );
+        }
+
+        // ISO-datumformaat (YYYY-MM-DD) waar JJJJMMDD verwacht wordt
+        if (value.matches("\\d{4}-\\d{2}-\\d{2}")) {
+            String compact = value.replace("-", "");
+            return new Issue(
+                "Datum '" + value + "' heeft een ongeldig formaat.",
+                "Suwinet gebruikt het formaat JJJJMMDD (8 cijfers, zonder koppeltekens). Gebruik '" + compact + "'."
+            );
+        }
+
         // J/N voor ja/nee-velden (StdIndJN)
         if ((value.equals("J") || value.equals("N")) && typeLower.contains("indjn")) {
             return new Issue(

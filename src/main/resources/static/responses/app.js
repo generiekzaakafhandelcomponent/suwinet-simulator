@@ -3873,6 +3873,30 @@
 
     let testResultIdSeq = 0;
 
+    async function acceptActual(filename, actualXml, statusEl) {
+        statusEl.textContent = 'Opslaan…';
+        statusEl.className = 'test-accept-status';
+        try {
+            const res = await fetch(`${API}/${encodeURIComponent(filename)}/accept-actual`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/xml; charset=utf-8' },
+                body: actualXml,
+            });
+            if (!res.ok) {
+                const t = await res.text().catch(() => '');
+                statusEl.textContent = `Fout: HTTP ${res.status}${t ? ' — ' + t : ''}`;
+                statusEl.className = 'test-accept-status test-accept-error';
+            } else {
+                statusEl.textContent = 'Opgeslagen.';
+                statusEl.className = 'test-accept-status test-accept-ok';
+                loadGitStatus();
+            }
+        } catch (e) {
+            statusEl.textContent = `Fout: ${e.message}`;
+            statusEl.className = 'test-accept-status test-accept-error';
+        }
+    }
+
     function renderTestResult(result, container) {
         const meta = OUTCOME_META[result.outcome] || OUTCOME_META.OK;
         const id = 'tr-' + (++testResultIdSeq);
@@ -3891,6 +3915,16 @@
                 + schemaIssues.map(renderSchemaIssue).join('')
                 + '</ul></div>'
             : '';
+        const canAccept = result.outcome === 'MISMATCH'
+            && result.expectedFileExists
+            && result.actualXml;
+        const acceptBar = canAccept
+            ? `<div class="test-accept-bar">
+                <span class="muted small">De diff hierboven toont wat er verandert.</span>
+                <button type="button" class="test-accept-btn">Sla response op als bestand</button>
+                <span class="test-accept-status"></span>
+               </div>`
+            : '';
         container.innerHTML = `
             <div class="test-result test-result-${meta.cls}" data-id="${id}">
                 <div class="test-result-header">
@@ -3907,7 +3941,7 @@
                     <button type="button" data-tab="expected">Verwacht</button>
                     <button type="button" data-tab="request">Request</button>
                 </div>
-                <div class="test-result-tab-content" data-tab-content="diff">${renderDiff(result.expectedXml, result.actualXml)}</div>
+                <div class="test-result-tab-content" data-tab-content="diff">${renderDiff(result.expectedXml, result.actualXml)}${acceptBar}</div>
                 <div class="test-result-tab-content" data-tab-content="actual" hidden><pre class="test-pre">${escapeText(result.actualXml || '(leeg)')}</pre></div>
                 <div class="test-result-tab-content" data-tab-content="expected" hidden><pre class="test-pre">${escapeText(expectedDisplay)}</pre></div>
                 <div class="test-result-tab-content" data-tab-content="request" hidden><pre class="test-pre">${escapeText(result.requestEnvelope || '')}</pre></div>
@@ -3924,6 +3958,24 @@
                 });
             });
         });
+        if (canAccept) {
+            const root = container.querySelector(`[data-id="${id}"]`);
+            const acceptBtn = root.querySelector('.test-accept-btn');
+            const statusEl = root.querySelector('.test-accept-status');
+            let confirmed = false;
+            acceptBtn.addEventListener('click', () => {
+                if (!confirmed) {
+                    confirmed = true;
+                    acceptBtn.textContent = 'Bevestig opslaan';
+                    acceptBtn.classList.add('test-accept-btn-confirm');
+                    statusEl.textContent = `Overschrijft: ${result.expectedFile}`;
+                    statusEl.className = 'test-accept-status test-accept-warn';
+                } else {
+                    acceptBtn.disabled = true;
+                    acceptActual(result.expectedFile, result.actualXml, statusEl);
+                }
+            });
+        }
     }
 
     function buildMismatchReport(results, bsn) {

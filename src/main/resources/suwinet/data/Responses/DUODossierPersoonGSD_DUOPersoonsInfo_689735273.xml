@@ -81,6 +81,7 @@
                 <!-- Iets eerder dan bij Nora -->
                 <CdResultaatExamen>G</CdResultaatExamen>
                 <DatResultaatExamen>19980701</DatResultaatExamen>
+                <JaarAfgelegdExamen>1998</JaarAfgelegdExamen>
             </ResultaatExamen>
         </ResultaatOpleidingGeregistrDuo>
 
@@ -97,6 +98,7 @@
             <ResultaatExamen>
                 <CdResultaatExamen>G</CdResultaatExamen>
                 <DatResultaatExamen>20000715</DatResultaatExamen>
+                <JaarAfgelegdExamen>2000</JaarAfgelegdExamen>
             </ResultaatExamen>
         </ResultaatOpleidingGeregistrDuo>
 
@@ -113,6 +115,7 @@
             <ResultaatExamen>
                 <CdResultaatExamen>G</CdResultaatExamen>
                 <DatResultaatExamen>20040630</DatResultaatExamen>
+                <JaarAfgelegdExamen>2004</JaarAfgelegdExamen>
             </ResultaatExamen>
         </ResultaatOpleidingGeregistrDuo>
 

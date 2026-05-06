@@ -124,6 +124,24 @@ Getroffen bestand: `UWVDossierInkomstenGSD_UWVPersoonsIkvInfo_444444440.xml`
 
 ---
 
+## 10. Ontbrekend verplicht element `JaarAfgelegdExamen` in `ResultaatExamen` (DUO)
+
+Het XSD-type `ResultaatExamen` in `DUODossierPersoonGSD` definieert drie verplichte subelementen in vaste volgorde:
+
+```xml
+<ResultaatExamen>
+    <CdResultaatExamen>G</CdResultaatExamen>
+    <DatResultaatExamen>20050715</DatResultaatExamen>   <!-- minOccurs="0" -->
+    <JaarAfgelegdExamen>2005</JaarAfgelegdExamen>        <!-- verplicht -->
+</ResultaatExamen>
+```
+
+`JaarAfgelegdExamen` is type `JaartalN4` (4-cijferig jaar) en staat niet op `minOccurs="0"`. Zonder dit element geeft de XSD-validator `cvc-complex-type.2.4.b: The content of element 'ResultaatExamen' is not complete. One of '{JaarAfgelegdExamen}' is expected.` De waarde is gelijk aan de eerste vier cijfers van `DatResultaatExamen`.
+
+Getroffen bestanden (BSN): 689735273, 999991954, 022264541, 999998493, 999993549
+
+---
+
 ## Algemeen advies voor nieuwe bestanden
 
 - Volg de XSD-elementvolgorde strikt — afwijkingen zijn niet zichtbaar als fout maar geven false-positive diffs.

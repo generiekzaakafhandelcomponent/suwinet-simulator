@@ -1,5 +1,6 @@
 package com.ritense.suwitense.webservice.responseeditor;
 
+import com.ritense.suwitense.webservice.DynamicDateProcessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -163,7 +164,7 @@ public class ResponseTestService {
                 fileExists = true;
                 schemaIssues = xsdValidator.validate(op.dienst(), expectedXml);
                 if (compareToFile) {
-                    expectedCanonical = canonicalizer.canonicalize(expectedXml);
+                    expectedCanonical = canonicalizer.canonicalize(DynamicDateProcessor.process(expectedXml));
                     match = canonicalEquals(expectedCanonical, actualCanonical);
                 }
             } catch (ResponseFileService.ResponseFileNotFoundException nf) {
