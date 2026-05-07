@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <ns3:PersoonsInfoResponse xmlns:ns3="http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300" xmlns:ns2="http://bkwi.nl/SuwiML/FWI/v0203">
     <ClientSuwi>
         <Burgerservicenr>261001620</Burgerservicenr>

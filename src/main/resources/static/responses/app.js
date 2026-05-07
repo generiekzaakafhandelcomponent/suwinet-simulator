@@ -181,6 +181,7 @@
         persons: [],
         filteredPersons: [],
         selectedPerson: null,
+        fromPersonBsn: null,
         personSortKey: 'naam',
         personSortDir: 'asc',
         colFilters: Object.fromEntries(FILE_COL_KEYS.map(k => [k, ''])),
@@ -189,7 +190,9 @@
         personColFilterMode: Object.fromEntries(PERSON_COL_KEYS.map(k => [k, 'select'])),
         gitAvailable: false,
         gitStatuses: {}, // filename -> two-char porcelain code (e.g. " M", "??", "A ")
+        wsOnlyFiles: new Set(), // filenames whose git diff is whitespace-only
         diffVisible: false,
+        ignoreWhitespace: false,
     };
 
     /** Maps a porcelain status to {cls, title}. Returns null for clean files. */
@@ -266,6 +269,8 @@
     /* ---------- Init ---------- */
 
     document.addEventListener('DOMContentLoaded', () => {
+        if (window.lucide) lucide.createIcons();
+
         state.editor = CodeMirror.fromTextArea(document.getElementById('raw-editor'), {
             mode: 'application/xml',
             lineNumbers: true,
@@ -293,6 +298,7 @@
         document.getElementById('toggle-list-btn').addEventListener('click', toggleList);
         document.getElementById('toggle-raw-btn').addEventListener('click', toggleRaw);
         document.getElementById('toggle-diff-btn').addEventListener('click', toggleDiff);
+        document.getElementById('diff-ignore-ws-btn').addEventListener('click', toggleIgnoreWhitespace);
         document.querySelectorAll('.mode-btn').forEach(btn => {
             btn.addEventListener('click', () => setMode(btn.dataset.mode));
         });
@@ -1448,8 +1454,30 @@
         state.selected = filename;
         renderTable();
         document.getElementById('empty-state').hidden = true;
+        document.getElementById('person-detail').hidden = true;
         document.getElementById('detail').hidden = false;
         syncHash();
+
+        const breadcrumb = document.getElementById('detail-breadcrumb');
+        if (state.fromPersonBsn) {
+            const fromBsn = state.fromPersonBsn;
+            const person = state.persons.find(p => p.bsn === fromBsn);
+            const label = person ? (person.naam || `BSN ${person.bsn}`) : `BSN ${fromBsn}`;
+            breadcrumb.innerHTML = '';
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'breadcrumb-back-btn';
+            btn.textContent = `← ${label}`;
+            btn.addEventListener('click', () => {
+                state.fromPersonBsn = null;
+                selectPerson(fromBsn);
+            });
+            breadcrumb.appendChild(btn);
+            breadcrumb.hidden = false;
+        } else {
+            breadcrumb.hidden = true;
+        }
+
         const file = state.all.find(f => f.filename === filename);
         document.getElementById('detail-filename').textContent = filename;
         document.getElementById('detail-sub').textContent = file
@@ -1520,6 +1548,71 @@
 
     /* ---------- Git diff view ---------- */
 
+    /** Refreshes only the git-indicator badge text/class/tooltip for the selected file. */
+    function refreshGitIndicator() {
+        const indicator = document.getElementById('git-indicator');
+        if (!indicator || indicator.hidden) return;
+        const badge = state.selected ? gitBadgeFor(state.selected) : null;
+        if (!badge) return;
+        const isWs = state.wsOnlyFiles.has(state.selected);
+        if (isWs) {
+            indicator.textContent = 'Witruimte';
+            indicator.className = 'git-indicator git-ws-only';
+            indicator.title = 'Alleen witruimte-wijzigingen (spaties, inspringing, regeleinden) — geen inhoudelijk verschil';
+        } else {
+            indicator.textContent = badge.title;
+            indicator.className = `git-indicator git-${badge.cls}`;
+            indicator.title = badge.title;
+        }
+    }
+
+    /** Updates git-pills for all person rows whose files include filename. */
+    function updatePersonPillsForFilename(filename) {
+        const tbody = document.getElementById('persons-tbody');
+        if (!tbody) return;
+        tbody.querySelectorAll('tr[data-bsn]').forEach(tr => {
+            const p = state.persons.find(x => x.bsn === tr.dataset.bsn);
+            if (!p || !p.files.includes(filename)) return;
+            const badge = personGitBadge(p);
+            const pill = tr.querySelector('.git-pill');
+            if (badge) {
+                if (pill) {
+                    pill.className = `git-pill git-${badge.cls}`;
+                    pill.title = badge.title;
+                    pill.setAttribute('aria-label', badge.title);
+                } else {
+                    const span = document.createElement('span');
+                    span.className = `git-pill git-${badge.cls}`;
+                    span.title = badge.title;
+                    span.setAttribute('aria-label', badge.title);
+                    tr.querySelector('td').prepend(span);
+                }
+            } else if (pill) {
+                pill.remove();
+            }
+        });
+    }
+
+    /** Updates the git-pill of a single file row in the file list, using cached wsOnlyFiles info. */
+    function updateFilePillForFilename(filename) {
+        const rows = document.querySelectorAll('#files-tbody tr[data-filename]');
+        const tr = Array.from(rows).find(r => r.dataset.filename === filename);
+        if (!tr) return;
+        const badge = gitBadgeFor(filename);
+        if (!badge) return;
+        const isWs = state.wsOnlyFiles.has(filename);
+        const cls = isWs ? 'git-ws-only' : `git-${badge.cls}`;
+        const title = isWs
+            ? 'Alleen witruimte-wijzigingen (spaties, inspringing) — geen inhoudelijk verschil'
+            : badge.title;
+        const pill = tr.querySelector('.git-pill');
+        if (pill) {
+            pill.className = `git-pill ${cls}`;
+            pill.title = title;
+            pill.setAttribute('aria-label', title);
+        }
+    }
+
     /**
      * Updates header indicator + Diff-button visibility for the currently selected file.
      * Also collapses the diff pane back to raw if a clean file becomes selected.
@@ -1530,9 +1623,8 @@
         const badge = state.selected ? gitBadgeFor(state.selected) : null;
         if (badge) {
             indicator.hidden = false;
-            indicator.textContent = badge.title;
-            indicator.className = `git-indicator git-${badge.cls}`;
             diffBtn.hidden = false;
+            refreshGitIndicator();
             if (state.diffVisible) loadDiffForSelected();
         } else {
             indicator.hidden = true;
@@ -1571,6 +1663,12 @@
         }
     }
 
+    function toggleIgnoreWhitespace() {
+        state.ignoreWhitespace = !state.ignoreWhitespace;
+        document.getElementById('diff-ignore-ws-btn').classList.toggle('active', state.ignoreWhitespace);
+        if (state.diffVisible) loadDiffForSelected();
+    }
+
     async function loadDiffForSelected() {
         const filename = state.selected;
         const empty = document.getElementById('diff-empty');
@@ -1602,7 +1700,22 @@
                 empty.textContent = 'Geen wijzigingen t.o.v. HEAD.';
                 return;
             }
-            content.innerHTML = renderUnifiedDiff(diff);
+            const { html: rendered, wsOnly } = renderUnifiedDiff(diff, state.ignoreWhitespace);
+            if (wsOnly) {
+                state.wsOnlyFiles.add(filename);
+            } else {
+                state.wsOnlyFiles.delete(filename);
+            }
+            refreshGitIndicator();
+            updateFilePillForFilename(filename);
+            updatePersonPillsForFilename(filename);
+            if (!rendered.trim()) {
+                empty.textContent = wsOnly
+                    ? 'Alleen witruimte-wijzigingen (verborgen door filter).'
+                    : 'Geen wijzigingen t.o.v. HEAD.';
+            } else {
+                content.innerHTML = rendered;
+            }
         } catch (e) {
             empty.textContent = 'Kon diff niet laden: ' + e.message;
         }
@@ -1617,32 +1730,90 @@
      * ("diff --git ...", "index ...", "--- a/...", "+++ b/...") and shows hunk headers
      * as a separator. Recognised line prefixes: '+' add, '-' delete, ' ' context,
      * '@@' hunk, '\\' (no newline marker — ignored).
+     * When ignoreWhitespace is true, hunks whose only changes are blank lines or
+     * lines that differ solely in whitespace are omitted.
      */
-    function renderUnifiedDiff(diff) {
+    function renderUnifiedDiff(diff, ignoreWhitespace = false) {
         const lines = diff.split('\n');
-        const out = [];
-        for (const raw of lines) {
-            if (!raw && out.length === 0) continue;
-            if (raw.startsWith('diff --git') || raw.startsWith('index ')
+
+        function isHeaderLine(raw) {
+            return raw.startsWith('diff --git') || raw.startsWith('index ')
                 || raw.startsWith('--- ') || raw.startsWith('+++ ')
                 || raw.startsWith('new file mode') || raw.startsWith('deleted file mode')
                 || raw.startsWith('similarity index') || raw.startsWith('rename ')
-                || raw.startsWith('\\ No newline')) {
-                continue;
-            }
+                || raw.startsWith('\\ No newline');
+        }
+
+        // Parse into typed tokens
+        const parsed = [];
+        for (const raw of lines) {
+            if (!raw && parsed.length === 0) continue;
+            if (isHeaderLine(raw)) continue;
             if (raw.startsWith('@@')) {
-                out.push(`<div class="diff-line diff-hunk">${escapeText(raw)}</div>`);
-                continue;
-            }
-            if (raw.startsWith('+')) {
-                out.push(`<div class="diff-line diff-add">${escapeText(raw)}</div>`);
+                parsed.push({ type: 'hunk', raw });
+            } else if (raw.startsWith('+')) {
+                parsed.push({ type: 'add', raw, content: raw.slice(1) });
             } else if (raw.startsWith('-')) {
-                out.push(`<div class="diff-line diff-rem">${escapeText(raw)}</div>`);
+                parsed.push({ type: 'rem', raw, content: raw.slice(1) });
             } else {
-                out.push(`<div class="diff-line diff-ctx">${escapeText(raw || ' ')}</div>`);
+                parsed.push({ type: 'ctx', raw });
             }
         }
-        return out.join('');
+
+        // Annotate rem/add groups: mark each token as wsOnly when the group only differs in whitespace.
+        let hasChanges = false;
+        let allChangesAreWs = true;
+        const annotated = [];
+        let i = 0;
+        while (i < parsed.length) {
+            if (parsed[i].type === 'rem' || parsed[i].type === 'add') {
+                const rems = [];
+                const adds = [];
+                while (i < parsed.length && parsed[i].type === 'rem') rems.push(parsed[i++]);
+                while (i < parsed.length && parsed[i].type === 'add') adds.push(parsed[i++]);
+                hasChanges = true;
+                const ws = isWhitespaceOnlyChange(rems, adds);
+                if (!ws) allChangesAreWs = false;
+                for (const t of [...rems, ...adds]) annotated.push({ ...t, wsOnly: ws });
+            } else {
+                annotated.push(parsed[i++]);
+            }
+        }
+
+        const wsOnly = hasChanges && allChangesAreWs;
+
+        // Build HTML; ws-only groups get muted dashed styling or are hidden when ignoreWhitespace is on.
+        const out = [];
+        for (let j = 0; j < annotated.length; j++) {
+            const t = annotated[j];
+            if (t.type === 'hunk') {
+                const hasVisible = annotated.slice(j + 1).some(
+                    l => (l.type === 'add' || l.type === 'rem') && !(ignoreWhitespace && l.wsOnly)
+                );
+                if (hasVisible) out.push(`<div class="diff-line diff-hunk">${escapeText(t.raw)}</div>`);
+            } else if (t.type === 'add') {
+                if (ignoreWhitespace && t.wsOnly) continue;
+                const cls = t.wsOnly ? 'diff-ws-add' : 'diff-add';
+                out.push(`<div class="diff-line ${cls}">${escapeText(t.raw)}</div>`);
+            } else if (t.type === 'rem') {
+                if (ignoreWhitespace && t.wsOnly) continue;
+                const cls = t.wsOnly ? 'diff-ws-rem' : 'diff-rem';
+                out.push(`<div class="diff-line ${cls}">${escapeText(t.raw)}</div>`);
+            } else {
+                out.push(`<div class="diff-line diff-ctx">${escapeText(t.raw || ' ')}</div>`);
+            }
+        }
+
+        return { html: out.join(''), wsOnly };
+    }
+
+    function isWhitespaceOnlyChange(rems, adds) {
+        const all = [...rems, ...adds];
+        if (all.every(l => l.content.trim() === '')) return true;
+        if (rems.length === adds.length && rems.length > 0) {
+            return rems.every((r, idx) => r.content.trim() === adds[idx].content.trim());
+        }
+        return false;
     }
 
     /* ---------- Raw <-> Form sync ---------- */
@@ -2153,6 +2324,7 @@
     function setMode(mode) {
         hideAutocomplete();
         state.mode = mode;
+        state.fromPersonBsn = null;
         document.querySelectorAll('.mode-btn').forEach(b =>
             b.classList.toggle('active', b.dataset.mode === mode));
         document.getElementById('files-wrap').hidden = mode !== 'files';
@@ -2274,16 +2446,25 @@
     function personGitBadge(p) {
         if (!state.gitAvailable || !p.files) return null;
         let any = null, hasModified = false, hasAdded = false, hasDeleted = false;
+        let modifiedCount = 0, wsOnlyModifiedCount = 0;
         for (const fn of p.files) {
             const b = gitBadgeFor(fn);
             if (!b) continue;
             any = b;
-            if (b.cls === 'modified') hasModified = true;
-            else if (b.cls === 'added') hasAdded = true;
+            if (b.cls === 'modified') {
+                hasModified = true;
+                modifiedCount++;
+                if (state.wsOnlyFiles.has(fn)) wsOnlyModifiedCount++;
+            } else if (b.cls === 'added') hasAdded = true;
             else if (b.cls === 'deleted') hasDeleted = true;
         }
         if (!any) return null;
-        if (hasModified) return { cls: 'modified', title: 'Eén of meer bestanden gewijzigd' };
+        if (hasModified) {
+            if (modifiedCount > 0 && modifiedCount === wsOnlyModifiedCount) {
+                return { cls: 'ws-only', title: 'Alleen witruimte-wijzigingen (spaties, inspringing) — geen inhoudelijk verschil' };
+            }
+            return { cls: 'modified', title: 'Eén of meer bestanden gewijzigd' };
+        }
         if (hasAdded) return { cls: 'added', title: 'Nieuwe bestanden' };
         if (hasDeleted) return { cls: 'deleted', title: 'Verwijderde bestanden' };
         return any;
@@ -2353,7 +2534,7 @@
                 ${file && file.isRequest ? '<span class="request-pill">request</span>' : ''}
                 ${matchHint}`;
             row.addEventListener('click', () => {
-                setMode('files');
+                state.fromPersonBsn = bsn;
                 selectFile(filename);
             });
             list.appendChild(row);
@@ -3761,6 +3942,15 @@
         catalogPromise: null,
     };
 
+    const ISSUE_OUTCOMES = new Set(['MISMATCH', 'SCHEMA_ISSUES', 'HTTP_FAILURE', 'TRANSPORT_FAILURE']);
+
+    /* --- All-test drawer state --- */
+    let allTestSse     = null;
+    let allTestResults = [];
+    let allTestTotal   = null;
+    let allTestStatus  = 'idle'; // 'idle' | 'running' | 'done'
+    let allTestBtnOriginalHtml = null;
+
     const OUTCOME_META = {
         MATCH:             { icon: '✓', cls: 'match',        label: 'Match' },
         SCHEMA_ISSUES:     { icon: '⚠', cls: 'schema-issues', label: 'XSD-fouten' },
@@ -3843,7 +4033,18 @@
         return out;
     }
 
-    function renderDiff(expected, actual) {
+    function lineDiffIsWhitespaceOnly(ops) {
+        const changed = ops.filter(o => o.type !== 'eq');
+        if (changed.length === 0) return false;
+        const dels = ops.filter(o => o.type === 'del');
+        const adds = ops.filter(o => o.type === 'add');
+        if (dels.length === adds.length && dels.length > 0) {
+            return dels.every((d, i) => d.text.trim() === adds[i].text.trim());
+        }
+        return changed.every(o => o.text.trim() === '');
+    }
+
+    function renderDiff(expected, actual, wsOnly = false) {
         if (!expected && !actual) {
             return '<div class="test-diff-empty muted">Geen content om te diffen.</div>';
         }
@@ -3855,9 +4056,17 @@
         if (ops.every(o => o.type === 'eq')) {
             return '<div class="test-diff-empty success">✓ Identiek (na canonicalisatie)</div>';
         }
-        return '<div class="test-diff">' + ops.map(o => {
-            const cls = o.type === 'eq' ? 'eq' : (o.type === 'add' ? 'add' : 'del');
-            const prefix = o.type === 'eq' ? '  ' : (o.type === 'add' ? '+ ' : '- ');
+        const banner = wsOnly
+            ? '<div class="test-diff-ws-banner" title="Inhoud is identiek na het weghalen van witruimte">Alleen witruimte-verschillen (spaties, inspringing, regeleinden) — inhoud is identiek</div>'
+            : '';
+        return banner + '<div class="test-diff">' + ops.map(o => {
+            if (o.type === 'eq') {
+                return `<div class="test-diff-line test-diff-eq">${escapeText('  ' + o.text)}</div>`;
+            }
+            const cls = wsOnly
+                ? (o.type === 'add' ? 'ws-add' : 'ws-del')
+                : (o.type === 'add' ? 'add' : 'del');
+            const prefix = o.type === 'add' ? '+ ' : '- ';
             return `<div class="test-diff-line test-diff-${cls}">${escapeText(prefix + o.text)}</div>`;
         }).join('') + '</div>';
     }
@@ -3899,6 +4108,14 @@
 
     function renderTestResult(result, container) {
         const meta = OUTCOME_META[result.outcome] || OUTCOME_META.OK;
+        const wsOnly = result.outcome === 'MISMATCH' && !!result.expectedXml && !!result.actualXml
+            && lineDiffIsWhitespaceOnly(lineDiff(result.expectedXml, result.actualXml));
+        const effectiveMeta = wsOnly
+            ? { icon: '~', cls: 'ws-mismatch', label: 'Witruimte' }
+            : meta;
+        const badgeTooltip = wsOnly
+            ? 'Alle verschillen zijn witruimte (spaties, inspringing, regeleinden) — inhoud is identiek'
+            : result.outcome;
         const id = 'tr-' + (++testResultIdSeq);
         const keyDesc = (result.keyValues || []).join(' / ');
         const errorBlock = result.errorMessage
@@ -3915,33 +4132,45 @@
                 + schemaIssues.map(renderSchemaIssue).join('')
                 + '</ul></div>'
             : '';
-        const canAccept = result.outcome === 'MISMATCH'
+        const canAccept = (result.outcome === 'MISMATCH' || result.outcome === 'SCHEMA_ISSUES')
             && result.expectedFileExists
             && result.actualXml;
-        const acceptBar = canAccept
-            ? `<div class="test-accept-bar">
-                <span class="muted small">De diff hierboven toont wat er verandert.</span>
-                <button type="button" class="test-accept-btn">Sla response op als bestand</button>
-                <span class="test-accept-status"></span>
-               </div>`
-            : '';
+        const fixBar = (() => {
+            if (canAccept) {
+                const note = result.outcome === 'SCHEMA_ISSUES'
+                    ? 'Lost volgordeproblemen op; ontbrekende verplichte velden moeten handmatig worden gefixd.'
+                    : 'Schrijft de actuele JAXB-response naar het bestand.';
+                return `<div class="test-fix-bar test-fix-available">
+                    <span class="test-fix-label"><strong>Fix beschikbaar</strong> — ${escapeText(note)}</span>
+                    <button type="button" class="test-accept-btn">Sla response op als bestand</button>
+                    <span class="test-accept-status"></span>
+                </div>`;
+            }
+            if (result.outcome === 'HTTP_FAILURE' || result.outcome === 'TRANSPORT_FAILURE') {
+                return `<div class="test-fix-bar test-fix-none">
+                    <span class="test-fix-label">Geen automatische fix beschikbaar. Download het rapport om te analyseren.</span>
+                </div>`;
+            }
+            return '';
+        })();
         container.innerHTML = `
-            <div class="test-result test-result-${meta.cls}" data-id="${id}">
+            <div class="test-result test-result-${effectiveMeta.cls}" data-id="${id}">
                 <div class="test-result-header">
-                    <span class="test-status test-status-${meta.cls}" title="${escapeAttr(result.outcome)}">${meta.icon} ${meta.label}</span>
+                    <span class="test-status test-status-${effectiveMeta.cls}" title="${escapeAttr(badgeTooltip)}">${effectiveMeta.icon} ${effectiveMeta.label}</span>
                     <span class="test-result-title">${escapeText(result.dienst)} · ${escapeText(result.operatie)} · <code>${escapeText(keyDesc)}</code></span>
                     <span class="test-result-meta muted small">HTTP ${result.httpStatus} · ${result.durationMs}ms</span>
                 </div>
                 ${errorBlock}
                 ${schemaBlock}
                 ${fileLine}
+                ${fixBar}
                 <div class="test-result-tabs">
                     <button type="button" data-tab="diff" class="active">Diff</button>
                     <button type="button" data-tab="actual">Response</button>
                     <button type="button" data-tab="expected">Verwacht</button>
                     <button type="button" data-tab="request">Request</button>
                 </div>
-                <div class="test-result-tab-content" data-tab-content="diff">${renderDiff(result.expectedXml, result.actualXml)}${acceptBar}</div>
+                <div class="test-result-tab-content" data-tab-content="diff">${renderDiff(result.expectedXml, result.actualXml, wsOnly)}</div>
                 <div class="test-result-tab-content" data-tab-content="actual" hidden><pre class="test-pre">${escapeText(result.actualXml || '(leeg)')}</pre></div>
                 <div class="test-result-tab-content" data-tab-content="expected" hidden><pre class="test-pre">${escapeText(expectedDisplay)}</pre></div>
                 <div class="test-result-tab-content" data-tab-content="request" hidden><pre class="test-pre">${escapeText(result.requestEnvelope || '')}</pre></div>
@@ -3978,32 +4207,39 @@
         }
     }
 
-    function buildMismatchReport(results, bsn) {
-        const mismatches = results.filter(r => r.outcome === 'MISMATCH');
+    function buildIssueReport(results, bsn) {
+        const issues = results.filter(r => ISSUE_OUTCOMES.has(r.outcome));
         const lines = [];
-        lines.push(`Suwinet Simulator — Verschil-rapport`);
+        lines.push(`Suwinet Simulator — Testrapport`);
         lines.push(`BSN: ${bsn}`);
         lines.push(`Datum: ${new Date().toISOString()}`);
-        lines.push(`Aantal mismatches: ${mismatches.length}`);
-        mismatches.forEach((r, i) => {
+        lines.push(`Problemen: ${issues.length}`);
+        issues.forEach((r, i) => {
             lines.push('');
             lines.push('='.repeat(72));
             lines.push(`[${i + 1}] ${r.dienst} · ${r.operatie} · ${(r.keyValues || []).join(' / ')}`);
-            lines.push(`    HTTP ${r.httpStatus} · ${r.durationMs}ms`);
+            lines.push(`    Uitkomst: ${r.outcome} | HTTP ${r.httpStatus} · ${r.durationMs}ms`);
             if (r.errorMessage) lines.push(`    Fout: ${r.errorMessage}`);
-            lines.push('');
-            lines.push('--- DIFF (- verwacht / + response) ---');
-            const ops = lineDiff(r.expectedXml || '', r.actualXml || '');
-            ops.forEach(o => {
-                if (o.type === 'del') lines.push('- ' + o.text);
-                else if (o.type === 'add') lines.push('+ ' + o.text);
-            });
-            lines.push('');
-            lines.push('--- VERWACHT (bestand op disk) ---');
-            lines.push(r.expectedXml || '(geen)');
-            lines.push('');
-            lines.push('--- RESPONSE (van SOAP) ---');
-            lines.push(r.actualXml || '(geen)');
+            if ((r.schemaIssues || []).length) {
+                lines.push('');
+                lines.push('--- XSD-FOUTEN ---');
+                r.schemaIssues.forEach(s => lines.push('  ' + s));
+            }
+            if (r.outcome === 'MISMATCH') {
+                lines.push('');
+                lines.push('--- DIFF (- verwacht / + response) ---');
+                const ops = lineDiff(r.expectedXml || '', r.actualXml || '');
+                ops.forEach(o => {
+                    if (o.type === 'del') lines.push('- ' + o.text);
+                    else if (o.type === 'add') lines.push('+ ' + o.text);
+                });
+                lines.push('');
+                lines.push('--- VERWACHT (bestand op disk) ---');
+                lines.push(r.expectedXml || '(geen)');
+                lines.push('');
+                lines.push('--- RESPONSE (van SOAP) ---');
+                lines.push(r.actualXml || '(geen)');
+            }
             lines.push('');
             lines.push('--- REQUEST ---');
             lines.push(r.requestEnvelope || '(geen)');
@@ -4011,9 +4247,16 @@
         return lines.join('\n');
     }
 
+    const OUTCOME_SORT_PRIORITY = {
+        HTTP_FAILURE: 0, TRANSPORT_FAILURE: 0,
+        MISMATCH: 1, SCHEMA_ISSUES: 1,
+    };
+
     function renderTestResultsList(results, container, bsn) {
         container.innerHTML = '';
-        const visible = results.filter(r => r.outcome !== 'NIET_GEVONDEN');
+        const visible = results
+            .filter(r => r.outcome !== 'NIET_GEVONDEN')
+            .sort((a, b) => (OUTCOME_SORT_PRIORITY[a.outcome] ?? 2) - (OUTCOME_SORT_PRIORITY[b.outcome] ?? 2));
         if (!visible.length) {
             container.innerHTML = '<div class="test-result-empty muted">Geen resultaten.</div>';
             return;
@@ -4023,24 +4266,20 @@
             const meta = OUTCOME_META[k] || OUTCOME_META.OK;
             return `<span class="test-summary-pill test-summary-${meta.cls}">${meta.icon} ${meta.label}: ${v}</span>`;
         }).join(' ');
-        const hasMismatches = visible.some(r => r.outcome === 'MISMATCH');
-        const downloadBtn = hasMismatches
-            ? `<button type="button" class="secondary-btn test-download-btn" style="margin-left:auto">⬇ Download foutrapport</button>`
-            : '';
+        const hasIssues = visible.some(r => ISSUE_OUTCOMES.has(r.outcome));
+        const downloadBtn = `<button type="button" class="secondary-btn test-download-btn" style="margin-left:auto">⬇ Download rapport</button>`;
         const wrap = document.createElement('div');
         wrap.className = 'test-results-list';
         wrap.innerHTML = `<div class="test-results-summary">${summaryPills}${downloadBtn}</div>`;
-        if (hasMismatches) {
-            wrap.querySelector('.test-download-btn').addEventListener('click', () => {
-                const text = buildMismatchReport(results, bsn || '');
-                const blob = new Blob([text], { type: 'text/plain' });
-                const a = document.createElement('a');
-                a.href = URL.createObjectURL(blob);
-                a.download = `suwinet-verschil-${bsn || 'onbekend'}-${new Date().toISOString().slice(0,19).replace(/:/g,'-')}.txt`;
-                a.click();
-                URL.revokeObjectURL(a.href);
-            });
-        }
+        wrap.querySelector('.test-download-btn').addEventListener('click', () => {
+            const text = buildIssueReport(results, bsn || '');
+            const blob = new Blob([text], { type: 'text/plain' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = `suwinet-rapport-${bsn || 'onbekend'}-${new Date().toISOString().slice(0,19).replace(/:/g,'-')}.txt`;
+            a.click();
+            URL.revokeObjectURL(a.href);
+        });
         visible.forEach(r => {
             const child = document.createElement('div');
             child.className = 'test-result-wrap';
@@ -4130,79 +4369,137 @@
         }
     }
 
-    function onTestAllClick() {
+    function updateTestAllBtn() {
         const btn = document.getElementById('test-all-btn');
-        if (btn) { btn.disabled = true; btn.textContent = '⏳ Bezig…'; }
-        const rightPane = document.getElementById('right-pane');
-        let panel = rightPane.querySelector('.all-test-panel');
-        if (panel) panel.remove();
-        panel = document.createElement('div');
-        panel.className = 'all-test-panel person-test-panel';
-        panel.innerHTML = `
-            <div class="person-test-header">
-                <h3>Test alle bestanden</h3>
-                <span class="muted small">SOAP-roundtrip + XSD-validatie voor alle response-bestanden</span>
-                <button type="button" class="secondary-btn all-test-close">Sluiten</button>
-            </div>
-            <div class="all-test-body person-test-body"></div>`;
-        rightPane.prepend(panel);
-
-        const body = panel.querySelector('.all-test-body');
-        const progressEl = document.createElement('div');
-        progressEl.className = 'test-result-loading';
-        progressEl.textContent = '⏳ Test loopt…';
-        body.appendChild(progressEl);
-        const progressWrap = document.createElement('div');
-        progressWrap.className = 'test-progress-wrap';
-        const progressBar = document.createElement('div');
-        progressBar.className = 'test-progress-bar';
-        progressWrap.appendChild(progressBar);
-        body.appendChild(progressWrap);
-
-        let total = null;
-        const results = [];
-        let sse = new EventSource(`${API}/test/all/stream?compareToFile=true`);
-
-        panel.querySelector('.all-test-close').addEventListener('click', () => {
-            if (sse) { sse.close(); sse = null; }
-            panel.remove();
-        });
-
-        sse.addEventListener('total', (e) => {
-            total = parseInt(e.data, 10);
-            progressEl.textContent = `⏳ Test loopt — 0 van ${total}…`;
-        });
-
-        sse.addEventListener('result', (e) => {
-            const result = JSON.parse(e.data);
-            results.push(result);
-            const pct = total ? Math.round(results.length / total * 100) : 0;
-            progressBar.style.width = `${pct}%`;
-            progressEl.textContent = total
-                ? `⏳ Test loopt — ${results.length} van ${total}…`
-                : `⏳ Test loopt — ${results.length} resultaten ontvangen…`;
-        });
-
-        sse.addEventListener('done', () => {
-            sse.close();
-            sse = null;
-            renderTestResultsList(results, body, null);
-            if (btn) { btn.disabled = false; btn.textContent = 'Test alle bestanden'; }
-        });
-
-        sse.onerror = () => {
-            if (!sse) return;
-            sse.close();
-            sse = null;
-            if (results.length > 0) {
-                renderTestResultsList(results, body, null);
-                body.insertAdjacentHTML('afterbegin',
-                    `<div class="test-error" style="margin-bottom:8px">Verbinding verbroken na ${results.length} resultaten.</div>`);
+        if (!btn) return;
+        if (allTestBtnOriginalHtml === null) allTestBtnOriginalHtml = btn.innerHTML;
+        btn.classList.remove('state-running', 'state-done-errors', 'state-done-ok');
+        if (allTestStatus === 'idle') {
+            btn.innerHTML = allTestBtnOriginalHtml;
+            btn.title = 'Test alle response-bestanden: SOAP-roundtrip + XSD-validatie';
+            if (window.lucide) lucide.createIcons({ nodes: [btn] });
+        } else if (allTestStatus === 'running') {
+            const done = allTestResults.length;
+            const label = allTestTotal ? `${done}/${allTestTotal}` : `${done}`;
+            btn.innerHTML = `<span class="topbar-spinner"></span>${label} getest`;
+            btn.classList.add('state-running');
+            btn.title = 'Test loopt — klik om te bekijken';
+        } else {
+            const issues = allTestResults.filter(r => ISSUE_OUTCOMES.has(r.outcome));
+            if (issues.length > 0) {
+                btn.innerHTML = `<span style="font-size:13px;line-height:1">⚠</span>${issues.length} ${issues.length === 1 ? 'fout' : 'fouten'}`;
+                btn.classList.add('state-done-errors');
+                btn.title = `${issues.length} bestanden met problemen — klik om te bekijken`;
             } else {
-                body.innerHTML = `<div class="test-error">Verbinding verbroken — kon test niet starten.</div>`;
+                btn.innerHTML = `<span style="font-size:13px;line-height:1">✓</span>Alles OK`;
+                btn.classList.add('state-done-ok');
+                btn.title = 'Alle tests geslaagd — klik om te bekijken';
             }
-            if (btn) { btn.disabled = false; btn.textContent = 'Test alle bestanden'; }
+        }
+    }
+
+    function showAllTestDrawer() {
+        const drawer = document.getElementById('all-test-drawer');
+        if (drawer) drawer.classList.add('is-visible');
+    }
+
+    function hideAllTestDrawer() {
+        const drawer = document.getElementById('all-test-drawer');
+        if (drawer) drawer.classList.remove('is-visible');
+    }
+
+    function updateAllTestDrawerProgress() {
+        const label = document.getElementById('all-test-progress-label');
+        const track = document.getElementById('all-test-progress-track');
+        const bar   = document.getElementById('all-test-progress-bar');
+        const body  = document.getElementById('all-test-drawer-body');
+        if (!label || !track || !bar || !body) return;
+
+        const done  = allTestResults.length;
+        const total = allTestTotal;
+        label.textContent = total ? `${done} van ${total}…` : `${done} resultaten…`;
+        label.hidden = false;
+        track.hidden = !total;
+        if (total) bar.style.width = `${Math.round(done / total * 100)}%`;
+
+        if (!body.querySelector('.all-test-running-msg')) {
+            body.innerHTML = '<div class="test-result-loading all-test-running-msg">⏳ Test loopt…</div>';
+        }
+    }
+
+    function startAllTests() {
+        if (allTestSse) { allTestSse.close(); allTestSse = null; }
+        allTestResults = [];
+        allTestTotal   = null;
+        allTestStatus  = 'running';
+
+        const rerunBtn = document.getElementById('all-test-rerun-btn');
+        const label    = document.getElementById('all-test-progress-label');
+        const track    = document.getElementById('all-test-progress-track');
+        const body     = document.getElementById('all-test-drawer-body');
+        if (rerunBtn) rerunBtn.hidden = true;
+        if (label)    label.hidden = true;
+        if (track)    track.hidden = true;
+        if (body)     body.innerHTML = '<div class="test-result-loading">⏳ Test loopt…</div>';
+
+        showAllTestDrawer();
+        updateTestAllBtn();
+
+        allTestSse = new EventSource(`${API}/test/all/stream?compareToFile=true`);
+
+        allTestSse.addEventListener('total', (e) => {
+            allTestTotal = parseInt(e.data, 10);
+            updateAllTestDrawerProgress();
+            updateTestAllBtn();
+        });
+
+        allTestSse.addEventListener('result', (e) => {
+            allTestResults.push(JSON.parse(e.data));
+            updateAllTestDrawerProgress();
+            updateTestAllBtn();
+        });
+
+        allTestSse.addEventListener('done', () => {
+            allTestSse.close(); allTestSse = null;
+            allTestStatus = 'done';
+            const rerun = document.getElementById('all-test-rerun-btn');
+            const lbl   = document.getElementById('all-test-progress-label');
+            const trk   = document.getElementById('all-test-progress-track');
+            if (rerun) rerun.hidden = false;
+            if (lbl)   lbl.hidden = true;
+            if (trk)   trk.hidden = true;
+            renderTestResultsList(allTestResults, document.getElementById('all-test-drawer-body'), null);
+            updateTestAllBtn();
+        });
+
+        allTestSse.onerror = () => {
+            if (!allTestSse) return;
+            allTestSse.close(); allTestSse = null;
+            allTestStatus = 'done';
+            const rerun = document.getElementById('all-test-rerun-btn');
+            const lbl   = document.getElementById('all-test-progress-label');
+            const trk   = document.getElementById('all-test-progress-track');
+            const bdy   = document.getElementById('all-test-drawer-body');
+            if (rerun) rerun.hidden = false;
+            if (lbl)   lbl.hidden = true;
+            if (trk)   trk.hidden = true;
+            if (allTestResults.length > 0) {
+                renderTestResultsList(allTestResults, bdy, null);
+                bdy.insertAdjacentHTML('afterbegin',
+                    `<div class="test-error" style="margin-bottom:8px">Verbinding verbroken na ${allTestResults.length} resultaten.</div>`);
+            } else {
+                if (bdy) bdy.innerHTML = `<div class="test-error">Verbinding verbroken — kon test niet starten.</div>`;
+            }
+            updateTestAllBtn();
         };
+    }
+
+    function onTestAllClick() {
+        if (allTestStatus === 'idle') {
+            startAllTests();
+        } else {
+            showAllTestDrawer();
+        }
     }
 
     function wireTestUi() {
@@ -4216,7 +4513,48 @@
         if (closeBtn) closeBtn.addEventListener('click', closeTestResultModal);
         const okBtn = document.getElementById('test-result-modal-ok');
         if (okBtn) okBtn.addEventListener('click', closeTestResultModal);
+
+        const drawerCloseBtn = document.getElementById('all-test-close-btn');
+        if (drawerCloseBtn) drawerCloseBtn.addEventListener('click', hideAllTestDrawer);
+
+        const rerunBtn = document.getElementById('all-test-rerun-btn');
+        if (rerunBtn) rerunBtn.addEventListener('click', () => {
+            allTestStatus = 'idle';
+            startAllTests();
+        });
     }
 
-    document.addEventListener('DOMContentLoaded', wireTestUi);
+    function wireDrawerResize() {
+        const handle = document.getElementById('all-test-resize-handle');
+        const drawer = document.getElementById('all-test-drawer');
+        if (!handle || !drawer) return;
+
+        let startY = 0;
+        let startH = 0;
+
+        handle.addEventListener('mousedown', (e) => {
+            e.preventDefault();
+            startY = e.clientY;
+            startH = drawer.offsetHeight;
+            handle.classList.add('dragging');
+            document.body.style.userSelect = 'none';
+            document.body.style.cursor = 'ns-resize';
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (!handle.classList.contains('dragging')) return;
+            const delta = startY - e.clientY;
+            const newH = Math.min(Math.max(startH + delta, 120), window.innerHeight - 60);
+            drawer.style.height = `${newH}px`;
+        });
+
+        document.addEventListener('mouseup', () => {
+            if (!handle.classList.contains('dragging')) return;
+            handle.classList.remove('dragging');
+            document.body.style.userSelect = '';
+            document.body.style.cursor = '';
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => { wireTestUi(); wireDrawerResize(); });
 })();

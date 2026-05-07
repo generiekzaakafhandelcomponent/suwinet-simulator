@@ -74,7 +74,9 @@ Getroffen bestanden (BSN): 022264541, 689735273, 111111110, 999991322, 999991954
 
 ---
 
-## 4. Ongeldig element in RDW Straatadres
+## 4. Ongeldige elementen in adresblokken
+
+### RDW Straatadres — `<Huisletter>`
 
 `<Huisletter>` bestaat niet in het RDW XSD-schema voor `Straatadres`. De simulator strippte het element bij serialiseren, waardoor de opgeslagen file afweek van de daadwerkelijke response.
 
@@ -82,11 +84,19 @@ Getroffen bestand: `RDWDossierGSD_VoertuigbezitInfoPersoon_999990238.xml`
 
 Het element is wél geldig in BRP `DomicilieAdres`.
 
+### Kadaster `LocatieOZ` — `<Straatadres>`
+
+`<Straatadres>` is geen geldig kind van `LocatieOZ` in het Kadaster XSD. JAXB serialiseert `<LocatieOZ/>` (leeg). Het geldige adresblok heet `<StraatadresBag>`.
+
+Getroffen bestand: `KadasterDossierGSD_ObjectInfoKadastraleAanduiding_0881_2839.xml` (synthetisch aangemaakt bij vervanging van de SOAP-faultfile; `<Straatadres>` al direct gecorrigeerd naar `<LocatieOZ/>`).
+
 ---
 
 ## 5. SOAP envelope in response-bestanden
 
 Response XML-bestanden mogen **geen** SOAP envelope bevatten. De simulator's `SuwinetEndpoint.unmarshal()` verwacht een bare response-element (bijv. `<ns3:PersoonsInfoResponse xmlns:ns3="...">`). Een `<soapenv:Envelope>` als root geeft een stille JAXB-fout, waarna de simulator HTTP 500 teruggeeft met `obj parameter must not be null`.
+
+Getroffen bestand: `KadasterDossierGSD_ObjectInfoKadastraleAanduiding_0881_2839.xml` — bevatte een volledige SOAP envelope met een `soapenv:Fault` (action: `KadasterDossierGSD-v0300/Fout`), een echte foutresponse van de productie-API. Vervangen door een synthetisch bare response-element.
 
 ---
 

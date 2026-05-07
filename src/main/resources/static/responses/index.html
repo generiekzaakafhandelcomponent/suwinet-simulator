@@ -13,13 +13,13 @@
 <header class="topbar">
     <h1><a href="/responses/" class="title-link">Suwinet Sim Editor</a></h1>
     <div class="mode-switch" role="tablist">
-        <button class="mode-btn active" data-mode="persons" type="button">Personen</button>
-        <button class="mode-btn" data-mode="files" type="button">Bestanden</button>
+        <button class="mode-btn active" data-mode="persons" type="button"><i data-lucide="users" width="14" height="14" stroke-width="2" style="display:block"></i>Personen</button>
+        <button class="mode-btn" data-mode="files" type="button"><i data-lucide="folder-open" width="14" height="14" stroke-width="2" style="display:block"></i>Bestanden</button>
     </div>
     <span class="basedir" id="basedir" title="Configurable via simulator.responses.path"></span>
     <span class="spacer"></span>
-    <button id="test-all-btn" type="button" title="Test alle response-bestanden: SOAP-roundtrip + XSD-validatie">Test alle bestanden</button>
-    <button id="reload" type="button">Herlaad index</button>
+    <button id="test-all-btn" type="button" title="Test alle response-bestanden: SOAP-roundtrip + XSD-validatie"><i data-lucide="play" width="14" height="14" stroke-width="2" style="display:block"></i>Test alle bestanden</button>
+    <button id="reload" type="button"><i data-lucide="refresh-cw" width="14" height="14" stroke-width="2" style="display:block"></i>Herlaad index</button>
 </header>
 
 <main class="layout">
@@ -89,13 +89,14 @@
         <div class="detail" id="detail" hidden>
             <div class="detail-header">
                 <div>
+                    <div class="detail-breadcrumb" id="detail-breadcrumb" hidden></div>
                     <div class="detail-filename" id="detail-filename"></div>
                     <div class="detail-sub" id="detail-sub"></div>
                 </div>
                 <button class="hamburger-btn" id="actions-hamburger" type="button"
                         aria-label="Acties" aria-expanded="false" aria-controls="file-actions">☰</button>
                 <div class="actions" id="file-actions">
-                    <span class="dirty-indicator" id="dirty-indicator" hidden>● gewijzigd</span>
+                    <span class="dirty-indicator" id="dirty-indicator" hidden>● niet opgeslagen</span>
                     <span class="git-indicator" id="git-indicator" hidden></span>
                     <span class="status" id="status"></span>
                     <div class="btn-group">
@@ -162,6 +163,9 @@
                     </div>
                     <textarea id="raw-editor"></textarea>
                     <div class="diff-pane" id="diff-pane" hidden>
+                        <div class="diff-toolbar">
+                            <button type="button" id="diff-ignore-ws-btn" title="Verberg wijzigingen die alleen witruimte betreffen">Negeer witruimte</button>
+                        </div>
                         <div class="diff-empty" id="diff-empty"></div>
                         <pre class="diff-content" id="diff-content"></pre>
                     </div>
@@ -374,6 +378,26 @@
     </div>
 </div>
 
+<!-- All-tests drawer (persistent bottom panel) -->
+<div id="all-test-drawer" class="all-test-drawer">
+    <div id="all-test-resize-handle" class="all-test-resize-handle" title="Sleep om hoogte aan te passen"></div>
+    <div class="all-test-drawer-header">
+        <div class="all-test-drawer-title-area">
+            <span class="all-test-drawer-title">Test alle bestanden</span>
+            <span id="all-test-progress-label" class="all-test-progress-label" hidden></span>
+            <div id="all-test-progress-track" class="all-test-progress-track" hidden>
+                <div id="all-test-progress-bar" class="all-test-progress-bar"></div>
+            </div>
+        </div>
+        <div class="all-test-drawer-actions">
+            <button type="button" id="all-test-rerun-btn" class="secondary-btn" hidden>Opnieuw testen</button>
+            <button type="button" id="all-test-close-btn" class="all-test-drawer-close" aria-label="Sluiten">×</button>
+        </div>
+    </div>
+    <div id="all-test-drawer-body" class="all-test-drawer-body"></div>
+</div>
+
+<script src="lucide.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/xml/xml.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/search/searchcursor.min.js"></script>

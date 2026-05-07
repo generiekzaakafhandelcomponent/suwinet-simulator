@@ -1,3 +1,5 @@
+Doe geen wijzigingen totdat je 95% zeker bent van wat er gebouwd moet worden. Stel eerst vragen.
+
 # Response editor
 
 Deze branch (`feature/response-editor`) voegt een browser-based editor toe voor de response XML files. Niet gemerged naar `main`.

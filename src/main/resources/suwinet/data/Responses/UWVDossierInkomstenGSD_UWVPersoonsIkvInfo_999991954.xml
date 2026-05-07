@@ -4,7 +4,7 @@
         <Inkomstenverhouding>
             <VolgnrIkv>1</VolgnrIkv>
             <DatBIkv>20101201</DatBIkv>
-            <DatEIkv>20110131</DatEIkv>
+            <DatEIkv>20110134</DatEIkv>
             <AdministratieveEenheid>
                 <NaamAdministratieveEenheid>T SCHILDERTJE</NaamAdministratieveEenheid>
                 <Loonheffingennr>001002041L02</Loonheffingennr>
@@ -13681,7 +13681,7 @@
                 <Loonheffingennr>999888777L01</Loonheffingennr>
                 <RechtspersoonAdministratieveEenh>
                     <FiNr>999888777</FiNr>
-                    <NaamRechtspersoon>New Side Restaurant</NaamRechtspersoon>
+                    <NaamRechtspersoon>New Side Restaurant 2</NaamRechtspersoon>
                 </RechtspersoonAdministratieveEenh>
                 <FeitelijkAdresAeh>
                     <Straatadres>
@@ -13755,6 +13755,6 @@
     </ClientSuwi>
     <PeriodeGegevensleveringIko>
         <DatBPeriode>20100101</DatBPeriode>
-        <DatEPeriode>20260506</DatEPeriode>
+        <DatEPeriode>20260507</DatEPeriode>
     </PeriodeGegevensleveringIko>
 </smls:UWVPersoonsIkvInfoResponse>
