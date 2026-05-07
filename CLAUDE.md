@@ -1,4 +1,4 @@
-Doe geen wijzigingen totdat je 95% zeker bent van wat er gebouwd moet worden. Stel eerst vragen.
+> **Werkinstructie:** Doe geen wijzigingen totdat je 95% zeker bent van wat er gebouwd moet worden. Stel eerst vragen.
 
 # Response editor
 

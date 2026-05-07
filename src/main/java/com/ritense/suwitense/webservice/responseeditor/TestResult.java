@@ -14,7 +14,8 @@ import java.util.List;
  * @param expectedFileExists whether {@link #expectedFile} actually exists on disk
  * @param match             {@code null} when no comparison was requested or possible; otherwise
  *                          true when canonicalized expected matches canonicalized actual
- * @param actualXml         response body (single root element, canonicalized) — null on failure
+ * @param actualXml         response body (single root element, canonicalized) — used for diff display; null on failure
+ * @param rawActualXml      response body as-is from the SOAP Body (namespaces intact) — used for accept-actual write-back; null on failure
  * @param expectedXml       canonicalized contents of {@link #expectedFile} — null when not compared
  * @param requestEnvelope   the SOAP envelope we sent (for "show me what was tested")
  * @param errorMessage      transport-error / non-2xx body, populated for HTTP/TRANSPORT failures
@@ -31,6 +32,7 @@ public record TestResult(
         boolean expectedFileExists,
         Boolean match,
         String actualXml,
+        String rawActualXml,
         String expectedXml,
         String requestEnvelope,
         String errorMessage,
@@ -62,7 +64,7 @@ public record TestResult(
                 op.dienst(), op.operatie(), keyValues,
                 0, durationMs, Outcome.TRANSPORT_FAILURE,
                 false, op.filenameFor(keyValues), false, null,
-                null, null, null, errorMessage, List.of()
+                null, null, null, null, errorMessage, List.of()
         );
     }
 
@@ -72,7 +74,7 @@ public record TestResult(
                 op.dienst(), op.operatie(), keyValues,
                 statusCode, durationMs, Outcome.HTTP_FAILURE,
                 false, op.filenameFor(keyValues), false, null,
-                body, null, null, "HTTP " + statusCode, List.of()
+                body, null, null, null, "HTTP " + statusCode, List.of()
         );
     }
 }

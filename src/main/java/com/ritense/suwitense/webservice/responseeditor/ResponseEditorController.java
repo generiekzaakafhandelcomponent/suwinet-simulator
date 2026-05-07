@@ -118,8 +118,8 @@ public class ResponseEditorController {
     @PostMapping(value = "/test", consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public TestResult test(@RequestBody TestRunRequest req) {
-        boolean compare = req.compareToFile == null || req.compareToFile;
-        return testService.test(req.dienst, req.operatie, req.keys, compare);
+        boolean compare = req.compareToFile() == null || req.compareToFile();
+        return testService.test(req.dienst(), req.operatie(), req.keys(), compare);
     }
 
     /**
@@ -129,16 +129,16 @@ public class ResponseEditorController {
     @PostMapping(value = "/test/person", consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public Map<String, Object> testPerson(@RequestBody PersonTestRequest req) {
-        boolean compare = req.compareToFile == null || req.compareToFile;
-        List<TestResult> results = testService.testAllForBsn(req.bsn, compare);
-        return Map.of("bsn", req.bsn, "results", results);
+        boolean compare = req.compareToFile() == null || req.compareToFile();
+        List<TestResult> results = testService.testAllForBsn(req.bsn(), compare);
+        return Map.of("bsn", req.bsn(), "results", results);
     }
 
     /** Test every response file on disk. Body: {@code {compareToFile?: bool}} (optional). */
     @PostMapping(value = "/test/all", consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public Map<String, Object> testAll(@RequestBody(required = false) AllTestRequest req) {
-        boolean compare = req == null || req.compareToFile == null || req.compareToFile;
+        boolean compare = req == null || req.compareToFile() == null || req.compareToFile();
         List<TestResult> results = testService.testAll(compare);
         return Map.of("results", results, "count", results.size());
     }
@@ -228,21 +228,11 @@ public class ResponseEditorController {
     }
 
     /** Request body for {@link #test}. */
-    public static class TestRunRequest {
-        public String dienst;
-        public String operatie;
-        public List<String> keys;
-        public Boolean compareToFile;
-    }
+    public record TestRunRequest(String dienst, String operatie, List<String> keys, Boolean compareToFile) {}
 
     /** Request body for {@link #testPerson}. */
-    public static class PersonTestRequest {
-        public String bsn;
-        public Boolean compareToFile;
-    }
+    public record PersonTestRequest(String bsn, Boolean compareToFile) {}
 
     /** Request body for {@link #testAll}. */
-    public static class AllTestRequest {
-        public Boolean compareToFile;
-    }
+    public record AllTestRequest(Boolean compareToFile) {}
 }

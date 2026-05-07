@@ -7,6 +7,8 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+
+import java.util.function.Consumer;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
@@ -172,16 +174,11 @@ public class PersonCloneService {
 
     /** Replace text content of any &lt;Burgerservicenr&gt; whose text equals sourceBsn, anywhere in the doc. */
     private void replaceBsn(Node node, String sourceBsn, String targetBsn) {
-        if (node.getNodeType() == Node.ELEMENT_NODE) {
-            Element el = (Element) node;
+        walkAll(node, el -> {
             if ("Burgerservicenr".equals(el.getLocalName()) && sourceBsn.equals(el.getTextContent().trim())) {
                 setText(el, targetBsn);
             }
-        }
-        NodeList kids = node.getChildNodes();
-        for (int i = 0; i < kids.getLength(); i++) {
-            replaceBsn(kids.item(i), sourceBsn, targetBsn);
-        }
+        });
     }
 
     /**
@@ -257,12 +254,23 @@ public class PersonCloneService {
         return out;
     }
 
+    /** Walk every Element node in the subtree rooted at node, without any skipping. */
+    private void walkAll(Node node, Consumer<Element> visitor) {
+        if (node.getNodeType() == Node.ELEMENT_NODE) {
+            visitor.accept((Element) node);
+        }
+        NodeList kids = node.getChildNodes();
+        for (int i = 0; i < kids.getLength(); i++) {
+            walkAll(kids.item(i), visitor);
+        }
+    }
+
     /**
      * Walk the subtree rooted at start, invoking the visitor on each Element.
      * Skips descending into SUB_ENTITY_CONTAINERS, and (when skipHistorical=true) into VerblijfplaatsHistorisch.
      */
     private void walkSkippingSubEntities(Element start, boolean skipHistorical,
-                                          java.util.function.Consumer<Element> visitor) {
+                                          Consumer<Element> visitor) {
         visitor.accept(start);
         NodeList kids = start.getChildNodes();
         for (int i = 0; i < kids.getLength(); i++) {

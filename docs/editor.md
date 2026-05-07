@@ -51,24 +51,66 @@ git worktree add ../<andere-checkout> <andere-branch>
 ```
 src/main/
 ├── java/…/webservice/responseeditor/   ← Spring Boot backend
-│   ├── ResponseEditorController.java   ← REST endpoints
-│   ├── ResponseFileService.java        ← lees/schrijf XML op disk
-│   ├── PersonCloneService.java         ← persoon kopiëren (BSN-swap)
-│   ├── GitService.java                 ← git status + diff
-│   ├── ResponseTestService.java        ← SOAP roundtrip testen
-│   ├── XsdValidationService.java       ← XSD-validatie per dienst
-│   ├── ServiceCatalog.java             ← bekende operaties + sleutelschema's
-│   └── SecureXml.java / XmlCanonicalizer.java / BsnUtil.java / …
-└── resources/static/responses/        ← frontend (plain HTML/CSS/JS)
-    ├── index.html
-    ├── app.js
+│   ├── ResponseEditorController.java   ← REST endpoints + SSE streaming
+│   ├── ResponseFileService.java        ← lees/schrijf XML op disk, metadata-extractie
+│   ├── ResponseTestService.java        ← SOAP roundtrip testen via localhost loopback
+│   ├── PersonCloneService.java         ← persoon kopiëren (BSN-swap, DOM-walk)
+│   ├── GitService.java                 ← git status + unified diff vs HEAD
+│   ├── XsdValidationService.java       ← XSD-validatie per dienst, Dutch hints
+│   ├── ServiceCatalog.java             ← hardcoded catalog: 10 operaties + sleutelschema's
+│   ├── XmlCanonicalizer.java           ← strip namespaces/prefixes → canonical vergelijking
+│   ├── SecureXml.java                  ← XXE-hardening voor DocumentBuilderFactory
+│   ├── SuwiSubEntities.java            ← container-namen om over te slaan bij DOM-walk
+│   ├── BsnUtil.java                    ← elfproef-validatie + testBSN-generatie
+│   ├── ApiException.java               ← exception met HTTP-statuscode
+│   └── ResponseFile / TestResult / CloneRequest / CloneResult  ← records/DTOs
+└── resources/static/responses/        ← frontend (plain HTML/CSS/JS, geen bouwstap)
+    ├── index.html                      ← SPA-shell: layout, tabellen, modals, CodeMirror CDN
+    ├── app.js                          ← entry point: modules wiren, hash-navigatie, init
+    ├── state.js                        ← centrale mutable state (files, persons, selectie, sort)
+    ├── routing.js                      ← URL-hash ← state synchronisatie
+    ├── filter.js                       ← index laden, personen/bestanden tabel, search + filters
+    ├── editor.js                       ← bestandsdetail: formulier, CodeMirror, diff, dyndate
+    ├── persons.js                      ← persoonsdetail + clone-modal (elfproef, adres, bestanden)
+    ├── xml.js                          ← DOM parse/serialize, elementboom-walk, metadatacategorieën
+    ├── autocomplete.js                 ← dropdown-autocomplete (toetsenbordnavigatie)
+    ├── constants.js                    ← API-URLs, veldlabels, regex, Suwinet-elementmappings
     ├── style.css
-    └── cities.js                       ← autocomplete-lijst steden
+    └── cities.js                       ← statische stedenlijst voor adres-autocomplete
 ```
 
-De backend is een Spring Boot `@RestController` op `/admin/responses`. De frontend is statische HTML zonder bouwstap — geen bundler, geen framework. Interactie verloopt via `fetch()`.
+De backend is een Spring Boot `@RestController` op `/admin/responses`. De frontend is statische HTML zonder bouwstap — geen bundler, geen framework. Interactie verloopt via `fetch()` en SSE.
 
 XML-bestanden worden gelezen en geschreven op het pad in de property `simulator.responses.path` (default: `src/main/resources/suwinet/data/Responses`).
+
+### Dataflow
+
+```
+Browser (SPA)
+  └── filter.js  → GET /admin/responses              (index: alle bestanden + metadata)
+  └── editor.js  → GET /admin/responses/{file}       (raw XML)
+                 → PUT /admin/responses/{file}        (opslaan)
+                 → GET /admin/responses/{file}/schema-issues
+                 → GET /admin/responses/git-diff/{file}
+  └── persons.js → POST /admin/responses/clone
+  └── test-knoppen
+                 → POST /admin/responses/test/person
+                 → GET  /admin/responses/test/all/stream  (SSE)
+
+ResponseFileService  ←→  disk (simulator.responses.path)
+ResponseTestService  ←→  localhost:8090/ws/*  (in-process loopback SOAP)
+GitService           ←→  git CLI
+```
+
+### Belangrijkste ontwerpkeuzes
+
+| Keuze | Reden |
+|---|---|
+| Atomisch schrijven (temp + move) | Voorkomt half-geschreven XML bij crash of concurrent request |
+| `SuwiSubEntities`-barrières bij DOM-walk | Voorkomt dat Partner/Kind/Ouder-velden worden overschreven bij clone |
+| Canonical XML bij testvergelijking | Cosmetische verschillen (whitespace, prefixen) leiden niet tot false MISMATCH |
+| In-process loopback SOAP | Geen aparte testinfrastructuur nodig; test dezelfde code-path als productie |
+| Hash-routing | Bookmarkbare URL per modus + selectie + zoekterm |
 
 ---
 
@@ -98,14 +140,24 @@ Alle endpoints leven onder `/admin/responses`.
 
 ## Frontend structuur
 
+De frontend is opgesplitst in losse ES-modules. `app.js` importeert alles en wiert de callbacks om circulaire afhankelijkheden te doorbreken.
+
 | Bestand | Verantwoordelijkheid |
 |---|---|
-| `index.html` | Markup: layout, twee tabellen, modals, templates |
-| `app.js` | Alle logica: data fetching, renderen, CodeMirror-integratie, test-UI, kopieer-flow |
+| `index.html` | SPA-shell: layout, twee tabellen (personen/bestanden), modals, CodeMirror 5 via CDN |
+| `app.js` | Entry point: modules laden, event listeners koppelen, hash-navigatie, CodeMirror init |
+| `state.js` | Centrale mutable state: files, persons, geselecteerd bestand, BSN-lookup, sort/filter |
+| `routing.js` | `syncHash()` — schrijft huidige modus + selectie + zoekterm naar URL-hash |
+| `filter.js` | Index ophalen, personen- en bestanden-tabel opbouwen, zoeken + kolomfilters |
+| `editor.js` | Bestandsdetail: formulier uit XML, CodeMirror, diff-weergave, dynamische datum-panel, in-file zoeken |
+| `persons.js` | Persoonsdetail, clone-modal (elfproef, naam/adres/bestanden kiezen), conflict-modal |
+| `xml.js` | DOM parse/serialize, elementboom-walk met metadatacategorieën, UWV-inkomensfix |
+| `autocomplete.js` | Dropdown-autocomplete met pijltjestoets/enter/escape |
+| `constants.js` | API-URLs, veldlabels, regex-patronen, Suwinet-element→label mappings |
 | `style.css` | Alle stijlen (geen externe CSS behalve CodeMirror via CDN) |
-| `cities.js` | Statische lijst van Nederlandse steden voor autocomplete in de kopieer-modal |
+| `cities.js` | Statische lijst van Nederlandse steden voor adres-autocomplete in de clone-modal |
 
-De editor gebruikt **CodeMirror 5** (v5.65.16) voor XML-bewerking, geladen via CDN. Er is geen buildstap — `app.js` is één groot vanilla JS-bestand.
+De editor gebruikt **CodeMirror 5** (v5.65.16) voor XML-bewerking, geladen via CDN. Er is geen buildstap — de modules zijn vanilla JS zonder transpiler.
 
 ---
 

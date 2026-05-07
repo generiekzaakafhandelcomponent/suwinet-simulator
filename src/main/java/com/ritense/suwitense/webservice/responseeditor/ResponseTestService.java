@@ -184,6 +184,7 @@ public class ResponseTestService {
                 /* expectedFileExists */ fileExists,
                 /* match */ match,
                 /* actualXml */ actualCanonical,
+                /* rawActualXml */ inner,
                 /* expectedXml */ expectedCanonical,
                 /* requestEnvelope */ envelope,
                 /* errorMessage */ null,
