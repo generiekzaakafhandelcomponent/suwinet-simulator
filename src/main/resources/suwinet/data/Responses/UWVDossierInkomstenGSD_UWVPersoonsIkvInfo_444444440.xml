@@ -3443,7 +3443,7 @@
                 <BedrOpgbRechtVakantietoeslag>
                     <CdMunteenheid>EUR</CdMunteenheid>
                     <CdPositiefNegatief>+</CdPositiefNegatief>
-                    <WaardeBedr>0</WaardeBedr>
+                    <WaardeBedr>3</WaardeBedr>
                 </BedrOpgbRechtVakantietoeslag>
                 <BedrExtraPrdSalaris>
                     <CdMunteenheid>EUR</CdMunteenheid>
