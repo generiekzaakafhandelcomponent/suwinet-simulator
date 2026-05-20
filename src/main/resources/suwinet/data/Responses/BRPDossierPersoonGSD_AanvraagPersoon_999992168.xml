@@ -1,0 +1,63 @@
+<brp:AanvraagPersoonResponse xmlns:brp="http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD/v0200">
+    <ClientSuwi>
+        <Voornamen>Sjaak</Voornamen>
+        <Voorvoegsel/>
+        <SignificantDeelVanDeAchternaam>Ontevreden</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19881205</Geboortedat>
+        <Burgerservicenr>999992168</Burgerservicenr>
+        <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
+
+        <ANr>7349182650</ANr>
+
+        <AanduidingNaamgebruik>1</AanduidingNaamgebruik>
+        <Geslacht>1</Geslacht>
+        <CdGeboortegemeente>0344</CdGeboortegemeente>
+        <Geboorteland>6030</Geboorteland>
+
+        <GeldigheidGegevensPersoon>
+            <DatGeldigheidGegevens>20250301</DatGeldigheidGegevens>
+        </GeldigheidGegevensPersoon>
+
+        <Nationaliteit>
+            <CdNationaliteit>0001</CdNationaliteit>
+
+            <GeldigheidGegevensNationaliteit>
+                <DatGeldigheidGegevens>20250301</DatGeldigheidGegevens>
+            </GeldigheidGegevensNationaliteit>
+        </Nationaliteit>
+
+        <DomicilieAdres>
+            <Postcd>3528BG</Postcd>
+            <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+            <Straatnaam>Groenewoudsedijk</Straatnaam>
+            <Huisnr>51</Huisnr>
+            <Huisletter/>
+        </DomicilieAdres>
+
+        <AangifteAdreshoudingBrp>
+            <CdGemeenteVanInschrijving>0344</CdGemeenteVanInschrijving>
+            <DatVanInschrijvingBijGemeente>20180110</DatVanInschrijvingBijGemeente>
+            <DatBAdreshoudingBrp>20180110</DatBAdreshoudingBrp>
+        </AangifteAdreshoudingBrp>
+
+        <Ouder1>
+            <Voornamen>Pieter</Voornamen>
+            <SignificantDeelVanDeAchternaam>Ontevreden</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19600418</Geboortedat>
+            <Burgerservicenr>999995873</Burgerservicenr>
+            <ANr>5182947360</ANr>
+            <DatBFamilierechtelijkeBetrekking>19881205</DatBFamilierechtelijkeBetrekking>
+        </Ouder1>
+
+        <Ouder2>
+            <Voornamen>Maria</Voornamen>
+            <SignificantDeelVanDeAchternaam>Bakker</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19630527</Geboortedat>
+            <Burgerservicenr>999996281</Burgerservicenr>
+            <ANr>6402819537</ANr>
+            <DatBFamilierechtelijkeBetrekking>19881205</DatBFamilierechtelijkeBetrekking>
+        </Ouder2>
+
+        <InschrijvingsgegevensBrp/>
+    </ClientSuwi>
+</brp:AanvraagPersoonResponse>

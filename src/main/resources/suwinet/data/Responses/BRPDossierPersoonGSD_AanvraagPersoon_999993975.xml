@@ -1,0 +1,63 @@
+<brp:AanvraagPersoonResponse xmlns:brp="http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD/v0200">
+    <ClientSuwi>
+        <Voornamen>Freya</Voornamen>
+        <Voorvoegsel/>
+        <SignificantDeelVanDeAchternaam>Beemsterboer</SignificantDeelVanDeAchternaam>
+        <Geboortedat>20081220</Geboortedat>
+        <Burgerservicenr>999993975</Burgerservicenr>
+        <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
+
+        <ANr>7394826150</ANr>
+
+        <AanduidingNaamgebruik>1</AanduidingNaamgebruik>
+        <Geslacht>2</Geslacht>
+        <CdGeboortegemeente>0599</CdGeboortegemeente>
+        <Geboorteland>6030</Geboorteland>
+
+        <GeldigheidGegevensPersoon>
+            <DatGeldigheidGegevens>20250301</DatGeldigheidGegevens>
+        </GeldigheidGegevensPersoon>
+
+        <Nationaliteit>
+            <CdNationaliteit>0001</CdNationaliteit>
+
+            <GeldigheidGegevensNationaliteit>
+                <DatGeldigheidGegevens>20250301</DatGeldigheidGegevens>
+            </GeldigheidGegevensNationaliteit>
+        </Nationaliteit>
+
+        <DomicilieAdres>
+            <Postcd>3083RX</Postcd>
+            <Woonplaatsnaam>Rotterdam</Woonplaatsnaam>
+            <Straatnaam>Ebenhaëzerstraat</Straatnaam>
+            <Huisnr>3</Huisnr>
+            <Huisletter/>
+        </DomicilieAdres>
+
+        <AangifteAdreshoudingBrp>
+            <CdGemeenteVanInschrijving>0599</CdGemeenteVanInschrijving>
+            <DatVanInschrijvingBijGemeente>20191001</DatVanInschrijvingBijGemeente>
+            <DatBAdreshoudingBrp>20191001</DatBAdreshoudingBrp>
+        </AangifteAdreshoudingBrp>
+
+        <Ouder1>
+            <Voornamen>Dirk</Voornamen>
+            <SignificantDeelVanDeAchternaam>Beemsterboer</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19820314</Geboortedat>
+            <Burgerservicenr>999994827</Burgerservicenr>
+            <ANr>4819267350</ANr>
+            <DatBFamilierechtelijkeBetrekking>20081220</DatBFamilierechtelijkeBetrekking>
+        </Ouder1>
+
+        <Ouder2>
+            <Voornamen>Marieke</Voornamen>
+            <SignificantDeelVanDeAchternaam>Beemsterboer</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19850609</Geboortedat>
+            <Burgerservicenr>999995314</Burgerservicenr>
+            <ANr>6251948370</ANr>
+            <DatBFamilierechtelijkeBetrekking>20081220</DatBFamilierechtelijkeBetrekking>
+        </Ouder2>
+
+        <InschrijvingsgegevensBrp/>
+    </ClientSuwi>
+</brp:AanvraagPersoonResponse>
