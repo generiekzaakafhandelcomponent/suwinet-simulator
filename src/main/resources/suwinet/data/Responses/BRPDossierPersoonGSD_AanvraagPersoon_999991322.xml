@@ -61,7 +61,18 @@
             <ANr>9356019650</ANr>
             <DatBFamilierechtelijkeBetrekking>19650310</DatBFamilierechtelijkeBetrekking>
         </Ouder2>
-        <InschrijvingsgegevensBrp/>
+        <Huwelijk>
+            <Partner>
+                <Voornamen>Henk</Voornamen>
+                <Voorvoegsel>de</Voorvoegsel>
+                <SignificantDeelVanDeAchternaam>Jansen</SignificantDeelVanDeAchternaam>
+                <Geboortedat>19600720</Geboortedat>
+                <Burgerservicenr>111111110</Burgerservicenr>
+                <CdGeboortegemeente>0363</CdGeboortegemeente>
+                <Geboorteplaats>'s-Gravenhage</Geboorteplaats>
+                <Geboorteland>6030</Geboorteland>
+            </Partner>
+        </Huwelijk>
         <Kind>
             <Voornamen>Catharina-Amalia Carmen woont thuis</Voornamen>
             <Voorvoegsel>de</Voorvoegsel>
@@ -112,17 +123,6 @@
                 <CdAdellijkeTitelPredikaat>G</CdAdellijkeTitelPredikaat>
             </Titulatuur>
         </Kind>
-        <Huwelijk>
-            <Partner>
-                <Voornamen>Henk</Voornamen>
-                <Voorvoegsel>de</Voorvoegsel>
-                <SignificantDeelVanDeAchternaam>Jansen</SignificantDeelVanDeAchternaam>
-                <Geboortedat>19600720</Geboortedat>
-                <Burgerservicenr>111111110</Burgerservicenr>
-                <CdGeboortegemeente>0363</CdGeboortegemeente>
-                <Geboorteplaats>'s-Gravenhage</Geboorteplaats>
-                <Geboorteland>6030</Geboorteland>
-            </Partner>
-        </Huwelijk>
+        <InschrijvingsgegevensBrp/>
     </ClientSuwi>
 </brp:AanvraagPersoonResponse>
