@@ -119,6 +119,11 @@
                 <DatBAdreshoudingBrp>18991210</DatBAdreshoudingBrp>
             </AangifteAdreshoudingBrp>
         </VerblijfplaatsHistorisch>
+        <Verblijfstitel>
+            <CdVerblijfstitel>41</CdVerblijfstitel>
+            <DatBVerblijfstitel>20120915</DatBVerblijfstitel>
+            <DatEVerblijfstitel>20240915</DatEVerblijfstitel>
+        </Verblijfstitel>
         <DomicilieAdres>
             <Postcd>1079WZ</Postcd>
             <Woonplaatsnaam>Amsterdam</Woonplaatsnaam>
