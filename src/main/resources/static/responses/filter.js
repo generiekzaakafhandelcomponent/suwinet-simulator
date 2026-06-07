@@ -15,10 +15,9 @@ export async function loadIndex() {
     const btn = document.getElementById('reload');
     const originalText = btn ? btn.textContent : null;
     if (btn) { btn.textContent = 'Herladen…'; btn.disabled = true; }
+    showLoading();
     try {
-        const res = await fetch(API, { headers: { Accept: 'application/json' } });
-        if (!res.ok) throw new Error(res.status + ' ' + res.statusText);
-        const data = await res.json();
+        const data = await fetchIndexStreaming();
         if (!Array.isArray(data.files)) {
             throw new Error('Onverwachte index-respons: "files" ontbreekt of is geen array');
         }
@@ -37,6 +36,81 @@ export async function loadIndex() {
     } catch (e) {
         if (btn) { btn.textContent = originalText; btn.disabled = false; }
         alert('Kon index niet laden: ' + e.message);
+    } finally {
+        hideLoading();
+    }
+}
+
+/**
+ * Fetches the index via the SSE /stream endpoint so we can render real per-file progress.
+ * Resolves with the same {baseDir, count, files} payload as the plain JSON endpoint.
+ * Falls back to a plain fetch when EventSource is unavailable or the stream errors before
+ * delivering the index.
+ */
+function fetchIndexStreaming() {
+    return new Promise((resolve, reject) => {
+        if (typeof EventSource === 'undefined') {
+            fetchIndexPlain().then(resolve, reject);
+            return;
+        }
+        const es = new EventSource(`${API}/stream`);
+        let total = 0;
+        let settled = false;
+        es.addEventListener('total', e => {
+            total = parseInt(e.data, 10) || 0;
+            updateLoading(0, total);
+        });
+        es.addEventListener('progress', e => {
+            updateLoading(parseInt(e.data, 10) || 0, total);
+        });
+        es.addEventListener('index', e => {
+            settled = true;
+            es.close();
+            try {
+                updateLoading(total, total);
+                resolve(JSON.parse(e.data));
+            } catch (err) {
+                reject(err);
+            }
+        });
+        es.onerror = () => {
+            if (settled) return;
+            settled = true;
+            es.close();
+            // Stream broke before the index arrived — fall back to the plain endpoint.
+            fetchIndexPlain().then(resolve, reject);
+        };
+    });
+}
+
+function fetchIndexPlain() {
+    return fetch(API, { headers: { Accept: 'application/json' } }).then(res => {
+        if (!res.ok) throw new Error(res.status + ' ' + res.statusText);
+        return res.json();
+    });
+}
+
+function showLoading() {
+    const overlay = document.getElementById('loading-overlay');
+    if (overlay) overlay.hidden = false;
+    updateLoading(0, 0);
+}
+
+function hideLoading() {
+    const overlay = document.getElementById('loading-overlay');
+    if (overlay) overlay.hidden = true;
+}
+
+function updateLoading(done, total) {
+    const bar = document.getElementById('loading-bar');
+    const label = document.getElementById('loading-label');
+    if (total > 0) {
+        const pct = Math.min(100, Math.round((done / total) * 100));
+        if (bar) bar.style.width = pct + '%';
+        if (label) label.textContent = `${done} / ${total} bestanden (${pct}%)`;
+    } else {
+        if (bar) bar.style.width = '0%';
+        if (label) label.textContent = 'Voorbereiden…';
     }
 }
 

@@ -55,6 +55,47 @@ public class ResponseEditorController {
         );
     }
 
+    /**
+     * Streaming variant of {@link #list()}: parsing all response files takes a noticeable
+     * moment, so this emits "total" up front and a "progress" event per parsed file, then a
+     * final "index" event with the same payload as {@link #list()}. Lets the UI show a real
+     * progress bar instead of an empty table. Falls back to {@link #list()} when EventSource
+     * is unavailable client-side.
+     */
+    @GetMapping(value = "/stream", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public SseEmitter listStream() {
+        SseEmitter emitter = new SseEmitter(300_000L);
+        new Thread(() -> {
+            try {
+                List<ResponseFile> files = service.list(
+                        total -> {
+                            try {
+                                emitter.send(SseEmitter.event().name("total").data(total));
+                            } catch (IOException e) {
+                                throw new UncheckedIOException(e);
+                            }
+                        },
+                        done -> {
+                            try {
+                                emitter.send(SseEmitter.event().name("progress").data(done));
+                            } catch (IOException e) {
+                                throw new UncheckedIOException(e);
+                            }
+                        });
+                emitter.send(SseEmitter.event().name("index").data(Map.of(
+                        "baseDir", service.baseDir().toString(),
+                        "count", files.size(),
+                        "files", files
+                )));
+                emitter.send(SseEmitter.event().name("done").data(""));
+                emitter.complete();
+            } catch (Exception e) {
+                emitter.completeWithError(e);
+            }
+        }).start();
+        return emitter;
+    }
+
     @GetMapping(value = "/test-bsn", produces = MediaType.APPLICATION_JSON_VALUE)
     public Map<String, String> generateTestBsn() {
         return Map.of("bsn", BsnUtil.generateTestBsn());

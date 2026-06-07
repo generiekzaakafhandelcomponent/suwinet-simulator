@@ -25,12 +25,14 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.IntConsumer;
 import java.util.stream.Stream;
 
 @Service
@@ -107,7 +109,19 @@ public class ResponseFileService {
     }
 
     public List<ResponseFile> list() throws IOException {
+        return list(null, null);
+    }
+
+    /**
+     * Builds the index while reporting progress, so a client can render a real progress bar
+     * instead of staring at an empty table while all files are parsed server-side.
+     *
+     * @param onTotal    called once with the number of files to parse (may be null)
+     * @param onProgress called after each file is summarized, with the running count (may be null)
+     */
+    public List<ResponseFile> list(IntConsumer onTotal, IntConsumer onProgress) throws IOException {
         if (!Files.isDirectory(baseDir)) {
+            if (onTotal != null) onTotal.accept(0);
             return List.of();
         }
         List<Path> all;
@@ -117,11 +131,16 @@ public class ResponseFileService {
                     .filter(p -> p.getFileName().toString().toLowerCase(Locale.ROOT).endsWith(".xml"))
                     .toList();
         }
+        if (onTotal != null) onTotal.accept(all.size());
         Map<String, String> brpNames = buildBrpNameLookup(all);
-        return all.stream()
-                .map(p -> summarize(p, brpNames))
-                .sorted((a, b) -> a.filename().compareToIgnoreCase(b.filename()))
-                .toList();
+        List<ResponseFile> out = new ArrayList<>(all.size());
+        int done = 0;
+        for (Path p : all) {
+            out.add(summarize(p, brpNames));
+            if (onProgress != null) onProgress.accept(++done);
+        }
+        out.sort((a, b) -> a.filename().compareToIgnoreCase(b.filename()));
+        return out;
     }
 
     private Map<String, String> buildBrpNameLookup(List<Path> files) {

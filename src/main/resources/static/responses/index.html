@@ -10,6 +10,15 @@
           href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/mdn-like.min.css">
 </head>
 <body>
+<div id="loading-overlay" class="loading-overlay" hidden>
+    <div class="loading-card">
+        <div class="loading-title">Response-bestanden laden…</div>
+        <div class="loading-track">
+            <div id="loading-bar" class="loading-bar"></div>
+        </div>
+        <div id="loading-label" class="loading-label">Voorbereiden…</div>
+    </div>
+</div>
 <header class="topbar">
     <h1><a href="/responses/" class="title-link">Suwinet Sim Editor</a></h1>
     <div class="mode-switch" role="tablist">
