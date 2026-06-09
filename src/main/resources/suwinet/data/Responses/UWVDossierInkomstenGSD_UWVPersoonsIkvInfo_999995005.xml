@@ -1,0 +1,30 @@
+<smls:UWVPersoonsIkvInfoResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/UWVDossierInkomstenGSD/v0200">
+    <ClientSuwi>
+        <Burgerservicenr>999995005</Burgerservicenr>
+        <Inkomstenverhouding>
+            <VolgnrIkv>1</VolgnrIkv>
+            <DatBIkv>20240608</DatBIkv>
+            <AdministratieveEenheid>
+                <NaamAdministratieveEenheid>FLEXPOOL WESTLAND</NaamAdministratieveEenheid>
+                <Loonheffingennr>305272763L01</Loonheffingennr>
+                <RechtspersoonAdministratieveEenh>
+                    <FiNr>305272763</FiNr>
+                    <NaamRechtspersoon>FLEXPOOL WESTLAND</NaamRechtspersoon>
+                </RechtspersoonAdministratieveEenh>
+            </AdministratieveEenheid>
+            <Inkomstenperiode>
+                <DatBIkp>20260501</DatBIkp>
+                <DatEIkp>20260531</DatEIkp>
+                <IndLoonheffingskortingToegepast>1</IndLoonheffingskortingToegepast>
+            </Inkomstenperiode>
+            <Inkomstenopgave>
+                <DatBIko>20260501</DatBIko>
+                <DatEIko>20260531</DatEIko>
+                <AantVerloondeUrenIko>52</AantVerloondeUrenIko>
+                <BedrBrutoloonSv>
+                    <WaardeBedr>758</WaardeBedr>
+                </BedrBrutoloonSv>
+            </Inkomstenopgave>
+        </Inkomstenverhouding>
+    </ClientSuwi>
+</smls:UWVPersoonsIkvInfoResponse>

@@ -1,0 +1,27 @@
+<brp:AanvraagPersoonResponse xmlns:brp="http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD/v0200">
+    <ClientSuwi>
+        <Voornamen>Adriana</Voornamen>
+        <SignificantDeelVanDeAchternaam>Kowalska</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19960814</Geboortedat>
+        <Burgerservicenr>999995005</Burgerservicenr>
+        <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
+        <AanduidingNaamgebruik>1</AanduidingNaamgebruik>
+        <Geslacht>2</Geslacht>
+        <Geboorteland>6028</Geboorteland>
+        <Nationaliteit>
+            <CdNationaliteit>0072</CdNationaliteit>
+        </Nationaliteit>
+        <DomicilieAdres>
+            <Postcd>3514AB</Postcd>
+            <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+            <Straatnaam>Schoolstraat</Straatnaam>
+            <NaamOpenbareRuimte>Schoolstraat</NaamOpenbareRuimte>
+            <Huisnr>12</Huisnr>
+        </DomicilieAdres>
+        <Kind>
+            <Voornamen>Mia</Voornamen>
+            <SignificantDeelVanDeAchternaam>Kowalska</SignificantDeelVanDeAchternaam>
+            <Geboortedat>20200309</Geboortedat>
+        </Kind>
+    </ClientSuwi>
+</brp:AanvraagPersoonResponse>

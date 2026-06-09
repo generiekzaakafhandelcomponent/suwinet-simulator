@@ -1,0 +1,44 @@
+<ns4:DUOStudiefinancieringInfoResponse xmlns:ns4="http://bkwi.nl/SuwiML/Diensten/DUODossierStudiefinancieringGSD/v0200" xmlns:ns3="http://bkwi.nl/SuwiML/FWI/v0205">
+    <ClientSuwi>
+        <!-- DUO Stufi informatie van Elise Schouten (bsn: 999998493) -->
+        <Burgerservicenr>999999667</Burgerservicenr>
+        <!-- HBO Bachelor Lifesciences (2006-2010): 4 studiejaren -->
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20060901</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20070731</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>1</CdToekenningBasisbeursStufi>
+            <IndAanvullendeBeursStufi>1</IndAanvullendeBeursStufi>
+        </Studiefinanciering>
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20070801</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20080731</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>1</CdToekenningBasisbeursStufi>
+            <IndAanvullendeBeursStufi>1</IndAanvullendeBeursStufi>
+        </Studiefinanciering>
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20080801</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20090731</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>1</CdToekenningBasisbeursStufi>
+            <IndAanvullendeBeursStufi>1</IndAanvullendeBeursStufi>
+        </Studiefinanciering>
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20090801</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20100731</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>1</CdToekenningBasisbeursStufi>
+            <IndAanvullendeBeursStufi>2</IndAanvullendeBeursStufi>
+        </Studiefinanciering>
+        <!-- HBO Master Biochemie (2011-2013): 2 studiejaren -->
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20110801</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20120731</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>1</CdToekenningBasisbeursStufi>
+            <IndAanvullendeBeursStufi>2</IndAanvullendeBeursStufi>
+        </Studiefinanciering>
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20120801</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20130731</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>0</CdToekenningBasisbeursStufi>
+            <IndAanvullendeBeursStufi>2</IndAanvullendeBeursStufi>
+        </Studiefinanciering>
+    </ClientSuwi>
+</ns4:DUOStudiefinancieringInfoResponse>

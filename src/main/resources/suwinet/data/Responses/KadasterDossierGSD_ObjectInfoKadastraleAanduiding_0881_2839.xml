@@ -1,4 +1,4 @@
-<ns3:ObjectInfoKadastraleAanduidingResponse xmlns:ns3="http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300" xmlns:ns2="http://bkwi.nl/SuwiML/FWI/v0203">
+<ObjectInfoKadastraleAanduidingResponse>
   <OnroerendeZaak>
     <DatToestandKadaster>20240926</DatToestandKadaster>
     <CdTypeOnroerendeZaak>P</CdTypeOnroerendeZaak>
@@ -15,4 +15,4 @@
     </ZakelijkRecht>
     <LocatieOZ/>
   </OnroerendeZaak>
-</ns3:ObjectInfoKadastraleAanduidingResponse>
+</ObjectInfoKadastraleAanduidingResponse>

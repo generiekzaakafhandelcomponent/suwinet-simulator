@@ -1,0 +1,23 @@
+<brp:AanvraagPersoonResponse xmlns:brp="http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD/v0200">
+    <ClientSuwi>
+        <Voornamen>Layla</Voornamen>
+        <SignificantDeelVanDeAchternaam>El Idrissi</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19890218</Geboortedat>
+        <Burgerservicenr>999990020</Burgerservicenr>
+        <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
+        <AanduidingNaamgebruik>1</AanduidingNaamgebruik>
+        <Geslacht>2</Geslacht>
+        <Geboorteland>6030</Geboorteland>
+        <Nationaliteit>
+            <CdNationaliteit>0001</CdNationaliteit>
+        </Nationaliteit>
+        <DomicilieAdres>
+            <Postcd>2512AX</Postcd>
+            <Woonplaatsnaam>Den Haag</Woonplaatsnaam>
+            <Straatnaam>Wagenstraat</Straatnaam>
+            <NaamOpenbareRuimte>Wagenstraat</NaamOpenbareRuimte>
+            <Huisnr>102</Huisnr>
+            <Huisnrtoevoeging>C</Huisnrtoevoeging>
+        </DomicilieAdres>
+    </ClientSuwi>
+</brp:AanvraagPersoonResponse>

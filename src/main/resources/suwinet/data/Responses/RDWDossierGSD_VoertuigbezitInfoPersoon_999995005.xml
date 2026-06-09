@@ -1,0 +1,3 @@
+<d:VoertuigbezitInfoPersoonResponse xmlns:d="http://bkwi.nl/SuwiML/Diensten/RDWDossierGSD/v0200" xmlns:fwi="http://bkwi.nl/SuwiML/FWI/v0205">
+    <fwi:NietsGevonden/>
+</d:VoertuigbezitInfoPersoonResponse>

@@ -1,0 +1,3 @@
+<d:PersoonsInfoResponse xmlns:d="http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300" xmlns:fwi="http://bkwi.nl/SuwiML/FWI/v0205">
+    <fwi:NietsGevonden/>
+</d:PersoonsInfoResponse>

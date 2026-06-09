@@ -1,0 +1,23 @@
+<brp:AanvraagPersoonResponse xmlns:brp="http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD/v0200">
+    <ClientSuwi>
+        <Voornamen>Petra</Voornamen>
+        <SignificantDeelVanDeAchternaam>Janssen</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19800125</Geboortedat>
+        <Burgerservicenr>999990044</Burgerservicenr>
+        <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
+        <AanduidingNaamgebruik>1</AanduidingNaamgebruik>
+        <Geslacht>2</Geslacht>
+        <Geboorteland>6030</Geboorteland>
+        <Nationaliteit>
+            <CdNationaliteit>0001</CdNationaliteit>
+        </Nationaliteit>
+        <DomicilieAdres>
+            <Postcd>2562GR</Postcd>
+            <Woonplaatsnaam>Den Haag</Woonplaatsnaam>
+            <Straatnaam>Weimarstraat</Straatnaam>
+            <NaamOpenbareRuimte>Weimarstraat</NaamOpenbareRuimte>
+            <Huisnr>67</Huisnr>
+            <Huisletter>B</Huisletter>
+        </DomicilieAdres>
+    </ClientSuwi>
+</brp:AanvraagPersoonResponse>

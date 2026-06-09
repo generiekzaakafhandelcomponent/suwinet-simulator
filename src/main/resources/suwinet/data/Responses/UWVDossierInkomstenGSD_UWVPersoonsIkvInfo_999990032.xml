@@ -1,0 +1,26 @@
+<smls:UWVPersoonsIkvInfoResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/UWVDossierInkomstenGSD/v0200">
+    <ClientSuwi>
+        <Burgerservicenr>999990032</Burgerservicenr>
+        <Inkomstenverhouding>
+            <VolgnrIkv>1</VolgnrIkv>
+            <DatBIkv>19910301</DatBIkv>
+            <DatEIkv>20260301</DatEIkv>
+            <AdministratieveEenheid>
+                <NaamAdministratieveEenheid>EEN GROOTHANDEL IN BOUWMATERIALEN</NaamAdministratieveEenheid>
+                <Loonheffingennr>705373383L01</Loonheffingennr>
+                <RechtspersoonAdministratieveEenh>
+                    <FiNr>705373383</FiNr>
+                    <NaamRechtspersoon>EEN GROOTHANDEL IN BOUWMATERIALEN</NaamRechtspersoon>
+                </RechtspersoonAdministratieveEenh>
+            </AdministratieveEenheid>
+            <Inkomstenperiode>
+                <DatBIkp>19910301</DatBIkp>
+                <DatEIkp>20260301</DatEIkp>
+            </Inkomstenperiode>
+            <Inkomstenopgave>
+                <DatBIko>20260201</DatBIko>
+                <DatEIko>20260301</DatEIko>
+            </Inkomstenopgave>
+        </Inkomstenverhouding>
+    </ClientSuwi>
+</smls:UWVPersoonsIkvInfoResponse>

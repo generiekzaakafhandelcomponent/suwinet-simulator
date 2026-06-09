@@ -1,0 +1,22 @@
+<brp:AanvraagPersoonResponse xmlns:brp="http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD/v0200">
+    <ClientSuwi>
+        <Voornamen>Hendrik Jan</Voornamen>
+        <SignificantDeelVanDeAchternaam>Bakker</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19640730</Geboortedat>
+        <Burgerservicenr>999990032</Burgerservicenr>
+        <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
+        <AanduidingNaamgebruik>1</AanduidingNaamgebruik>
+        <Geslacht>1</Geslacht>
+        <Geboorteland>6030</Geboorteland>
+        <Nationaliteit>
+            <CdNationaliteit>0001</CdNationaliteit>
+        </Nationaliteit>
+        <DomicilieAdres>
+            <Postcd>2563AW</Postcd>
+            <Woonplaatsnaam>Den Haag</Woonplaatsnaam>
+            <Straatnaam>Laan van Meerdervoort</Straatnaam>
+            <NaamOpenbareRuimte>Laan van Meerdervoort</NaamOpenbareRuimte>
+            <Huisnr>412</Huisnr>
+        </DomicilieAdres>
+    </ClientSuwi>
+</brp:AanvraagPersoonResponse>
