@@ -140,6 +140,27 @@
                 <DatBAdreshoudingBrp>18991210</DatBAdreshoudingBrp>
             </AangifteAdreshoudingBrp>
         </VerblijfplaatsHistorisch>
+        <Verblijfstitel>
+            <CdVerblijfstitel>41</CdVerblijfstitel>
+            <DatBVerblijfstitel>20120915</DatBVerblijfstitel>
+            <DatEVerblijfstitel>20240915</DatEVerblijfstitel>
+        </Verblijfstitel>
+        <DomicilieAdres>
+            <Postcd>1079WZ</Postcd>
+            <Woonplaatsnaam>Amsterdam</Woonplaatsnaam>
+            <Straatnaam>Zomerdijkstraat</Straatnaam>
+            <NaamOpenbareRuimte>Zomerdijkstraat</NaamOpenbareRuimte>
+            <Huisnr>19</Huisnr>
+            <IdentificatiecdVerblijfplaats>0530010002090227</IdentificatiecdVerblijfplaats>
+            <IdentificatiecdNraanduiding>0530200002130217</IdentificatiecdNraanduiding>
+            <Huisletter>C</Huisletter>
+            <Huisnrtoevoeging>Huis</Huisnrtoevoeging>
+        </DomicilieAdres>
+        <AangifteAdreshoudingBrp>
+            <CdGemeenteVanInschrijving>0363</CdGemeenteVanInschrijving>
+            <DatVanInschrijvingBijGemeente>19650310</DatVanInschrijvingBijGemeente>
+            <DatBAdreshoudingBrp>19650310</DatBAdreshoudingBrp>
+        </AangifteAdreshoudingBrp>
         <Ouder1>
             <Voornamen>Eveline Johanna</Voornamen>
             <SignificantDeelVanDeAchternaam>Holthuizen</SignificantDeelVanDeAchternaam>
@@ -160,6 +181,7 @@
             <Partner>
                 <Voornamen>Sierra</Voornamen>
                 <Voorvoegsel></Voorvoegsel>
+                <Voorvoegsel/>
                 <SignificantDeelVanDeAchternaam>Kooyman</SignificantDeelVanDeAchternaam>
                 <Geboortedat>19801023</Geboortedat>
                 <Burgerservicenr>999991954</Burgerservicenr>

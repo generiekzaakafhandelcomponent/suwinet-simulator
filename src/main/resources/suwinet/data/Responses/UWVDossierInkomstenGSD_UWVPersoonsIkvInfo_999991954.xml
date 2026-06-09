@@ -13682,6 +13682,17 @@
                 <RechtspersoonAdministratieveEenh>
                     <FiNr>999888777</FiNr>
                     <NaamRechtspersoon>New Side Restaurant 2</NaamRechtspersoon>
+        <!--  Toegevoegd door "Recente inkomsten"  -->
+        <Inkomstenverhouding>
+            <VolgnrIkv>3</VolgnrIkv>
+            <DatBIkv>20260301</DatBIkv>
+            <DatEIkv>20260531</DatEIkv>
+            <AdministratieveEenheid>
+                <NaamAdministratieveEenheid>New Side Restaurant</NaamAdministratieveEenheid>
+                <Loonheffingennr>999888777L01</Loonheffingennr>
+                <RechtspersoonAdministratieveEenh>
+                    <FiNr>999888777</FiNr>
+                    <NaamRechtspersoon>New Side Restaurant</NaamRechtspersoon>
                 </RechtspersoonAdministratieveEenh>
                 <FeitelijkAdresAeh>
                     <Straatadres>

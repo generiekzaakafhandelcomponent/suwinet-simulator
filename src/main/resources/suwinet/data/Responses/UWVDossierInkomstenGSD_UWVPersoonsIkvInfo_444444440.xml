@@ -3024,8 +3024,8 @@
                 </BedrRechtstreeksBetAlimentatie>
             </Inkomstenopgave>
             <Inkomstenopgave>
-                <DatBIko>20230301</DatBIko>
-                <DatEIko>20230331</DatEIko>
+                <DatBIko>20260101</DatBIko>
+                <DatEIko>20260131</DatEIko>
                 <AantSvDagenIko>20</AantSvDagenIko>
                 <AantVerloondeUrenIko>160</AantVerloondeUrenIko>
                 <BedrBrutoloonSv>
@@ -3080,8 +3080,8 @@
                 </BedrRechtstreeksBetAlimentatie>
             </Inkomstenopgave>
             <Inkomstenopgave>
-                <DatBIko>20230401</DatBIko>
-                <DatEIko>20230430</DatEIko>
+                <DatBIko>20260401</DatBIko>
+                <DatEIko>20260430</DatEIko>
                 <AantSvDagenIko>20</AantSvDagenIko>
                 <AantVerloondeUrenIko>160</AantVerloondeUrenIko>
                 <BedrBrutoloonSv>
@@ -3136,8 +3136,8 @@
                 </BedrRechtstreeksBetAlimentatie>
             </Inkomstenopgave>
             <Inkomstenopgave>
-                <DatBIko>20230501</DatBIko>
-                <DatEIko>20230531</DatEIko>
+                <DatBIko>20250930</DatBIko>
+                <DatEIko>20250901</DatEIko>
                 <AantSvDagenIko>20</AantSvDagenIko>
                 <AantVerloondeUrenIko>160</AantVerloondeUrenIko>
                 <BedrBrutoloonSv>
@@ -3192,8 +3192,8 @@
                 </BedrRechtstreeksBetAlimentatie>
             </Inkomstenopgave>
             <Inkomstenopgave>
-                <DatBIko>20230601</DatBIko>
-                <DatEIko>20230630</DatEIko>
+                <DatBIko>20251101</DatBIko>
+                <DatEIko>20251130</DatEIko>
                 <AantSvDagenIko>20</AantSvDagenIko>
                 <AantVerloondeUrenIko>160</AantVerloondeUrenIko>
                 <BedrBrutoloonSv>
@@ -3248,8 +3248,8 @@
                 </BedrRechtstreeksBetAlimentatie>
             </Inkomstenopgave>
             <Inkomstenopgave>
-                <DatBIko>20230701</DatBIko>
-                <DatEIko>20230731</DatEIko>
+                <DatBIko>20260201</DatBIko>
+                <DatEIko>20260228</DatEIko>
                 <AantSvDagenIko>20</AantSvDagenIko>
                 <AantVerloondeUrenIko>160</AantVerloondeUrenIko>
                 <BedrBrutoloonSv>
@@ -3304,8 +3304,8 @@
                 </BedrRechtstreeksBetAlimentatie>
             </Inkomstenopgave>
             <Inkomstenopgave>
-                <DatBIko>20230801</DatBIko>
-                <DatEIko>20230831</DatEIko>
+                <DatBIko>20260301</DatBIko>
+                <DatEIko>20260331</DatEIko>
                 <AantSvDagenIko>20</AantSvDagenIko>
                 <AantVerloondeUrenIko>160</AantVerloondeUrenIko>
                 <BedrBrutoloonSv>
@@ -3360,8 +3360,8 @@
                 </BedrRechtstreeksBetAlimentatie>
             </Inkomstenopgave>
             <Inkomstenopgave>
-                <DatBIko>20230901</DatBIko>
-                <DatEIko>20230930</DatEIko>
+                <DatBIko>20260501</DatBIko>
+                <DatEIko>20260531</DatEIko>
                 <AantSvDagenIko>20</AantSvDagenIko>
                 <AantVerloondeUrenIko>160</AantVerloondeUrenIko>
                 <BedrBrutoloonSv>
@@ -3443,7 +3443,7 @@
                 <BedrOpgbRechtVakantietoeslag>
                     <CdMunteenheid>EUR</CdMunteenheid>
                     <CdPositiefNegatief>+</CdPositiefNegatief>
-                    <WaardeBedr>0</WaardeBedr>
+                    <WaardeBedr>3</WaardeBedr>
                 </BedrOpgbRechtVakantietoeslag>
                 <BedrExtraPrdSalaris>
                     <CdMunteenheid>EUR</CdMunteenheid>
