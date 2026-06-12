@@ -1,0 +1,47 @@
+<smls:UWVPersoonsIkvInfoResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/UWVDossierInkomstenGSD/v0200">
+    <ClientSuwi>
+        <Burgerservicenr>999990068</Burgerservicenr>
+        <Inkomstenverhouding>
+            <VolgnrIkv>1</VolgnrIkv>
+            <DatBIkv>20180420</DatBIkv>
+            <DatEIkv>20260420</DatEIkv>
+            <AdministratieveEenheid>
+                <NaamAdministratieveEenheid>VOORMALIG WERKGEVER</NaamAdministratieveEenheid>
+                <Loonheffingennr>208300136L01</Loonheffingennr>
+                <RechtspersoonAdministratieveEenh>
+                    <FiNr>208300136</FiNr>
+                    <NaamRechtspersoon>VOORMALIG WERKGEVER</NaamRechtspersoon>
+                </RechtspersoonAdministratieveEenh>
+                <FeitelijkAdresAeh>
+                    <Straatadres>
+                        <Postcd>2515BT</Postcd>
+                        <Woonplaatsnaam>DEN HAAG</Woonplaatsnaam>
+                        <Gemeentenaam>DEN HAAG</Gemeentenaam>
+                        <Straatnaam>Stationsplein</Straatnaam>
+                        <Huisnr>37</Huisnr>
+                    </Straatadres>
+                </FeitelijkAdresAeh>
+            </AdministratieveEenheid>
+            <Inkomstenperiode>
+                <DatBIkp>20180420</DatBIkp>
+                <DatEIkp>20260420</DatEIkp>
+                <CdSrtIkv>15</CdSrtIkv>
+                <CdTypeArbeidscontract>B</CdTypeArbeidscontract>
+                <IndLoonheffingskortingToegepast>1</IndLoonheffingskortingToegepast>
+                <IndRegelmatigArbeidspatroon>1</IndRegelmatigArbeidspatroon>
+                <IndLoonIsMedeAowAlleenstaande>2</IndLoonIsMedeAowAlleenstaande>
+                <IndLoonInclusiefWajongUitkering>2</IndLoonInclusiefWajongUitkering>
+                <CdAardIkv>01</CdAardIkv>
+            </Inkomstenperiode>
+            <SectorRisicogroepIkv>
+                <SectorBeroepsEnBedrijfsleven>
+                    <CdSector>045</CdSector>
+                </SectorBeroepsEnBedrijfsleven>
+            </SectorRisicogroepIkv>
+            <Inkomstenopgave>
+                <DatBIko>20260320</DatBIko>
+                <DatEIko>20260420</DatEIko>
+            </Inkomstenopgave>
+        </Inkomstenverhouding>
+    </ClientSuwi>
+</smls:UWVPersoonsIkvInfoResponse>

@@ -1,0 +1,35 @@
+<smls:UWVPersoonsIkvInfoResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/UWVDossierInkomstenGSD/v0200">
+    <ClientSuwi>
+        <Burgerservicenr>999991024</Burgerservicenr>
+        <Inkomstenverhouding>
+            <VolgnrIkv>1</VolgnrIkv>
+            <!-- DynamicDate: today - 2 years -->
+            <DatBIkv>20240610</DatBIkv>
+            <AdministratieveEenheid>
+                <NaamAdministratieveEenheid>EVENTCREW HAAGLANDEN</NaamAdministratieveEenheid>
+                <Loonheffingennr>694583256L01</Loonheffingennr>
+                <RechtspersoonAdministratieveEenh>
+                    <FiNr>694583256</FiNr>
+                    <NaamRechtspersoon>EVENTCREW HAAGLANDEN</NaamRechtspersoon>
+                </RechtspersoonAdministratieveEenh>
+            </AdministratieveEenheid>
+            <Inkomstenperiode>
+                <!-- DynamicDate: startOfMonth - 1 month -->
+                <DatBIkp>20260501</DatBIkp>
+                <!-- DynamicDate: endOfMonth - 1 month -->
+                <DatEIkp>20260531</DatEIkp>
+                <IndLoonheffingskortingToegepast>0</IndLoonheffingskortingToegepast>
+            </Inkomstenperiode>
+            <Inkomstenopgave>
+                <!-- DynamicDate: startOfMonth - 1 month -->
+                <DatBIko>20260501</DatBIko>
+                <!-- DynamicDate: endOfMonth - 1 month -->
+                <DatEIko>20260531</DatEIko>
+                <AantVerloondeUrenIko>26</AantVerloondeUrenIko>
+                <BedrBrutoloonSv>
+                    <WaardeBedr>160</WaardeBedr>
+                </BedrBrutoloonSv>
+            </Inkomstenopgave>
+        </Inkomstenverhouding>
+    </ClientSuwi>
+</smls:UWVPersoonsIkvInfoResponse>

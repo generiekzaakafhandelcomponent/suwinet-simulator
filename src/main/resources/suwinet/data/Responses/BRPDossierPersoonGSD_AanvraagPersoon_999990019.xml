@@ -5,6 +5,7 @@
         <Geboortedat>19870903</Geboortedat>
         <Burgerservicenr>999990019</Burgerservicenr>
         <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
+        <ANr>6012128459</ANr>
         <AanduidingNaamgebruik>1</AanduidingNaamgebruik>
         <Geslacht>1</Geslacht>
         <Geboorteland>5005</Geboorteland>
@@ -13,8 +14,10 @@
         </Nationaliteit>
         <Verblijfstitel>
             <CdVerblijfstitel>41</CdVerblijfstitel>
-            <DatBVerblijfstitel>20230606</DatBVerblijfstitel>
-            <DatEVerblijfstitel>20280606</DatEVerblijfstitel>
+            <!-- DynamicDate: today - 3 years -->
+            <DatBVerblijfstitel>20230610</DatBVerblijfstitel>
+            <!-- DynamicDate: today + 2 years -->
+            <DatEVerblijfstitel>20280610</DatEVerblijfstitel>
         </Verblijfstitel>
         <DomicilieAdres>
             <Postcd>2512AX</Postcd>

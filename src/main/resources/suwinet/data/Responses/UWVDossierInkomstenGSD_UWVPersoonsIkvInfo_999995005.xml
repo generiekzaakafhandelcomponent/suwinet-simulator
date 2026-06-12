@@ -3,7 +3,8 @@
         <Burgerservicenr>999995005</Burgerservicenr>
         <Inkomstenverhouding>
             <VolgnrIkv>1</VolgnrIkv>
-            <DatBIkv>20240608</DatBIkv>
+            <!-- DynamicDate: today - 2 years -->
+            <DatBIkv>20240610</DatBIkv>
             <AdministratieveEenheid>
                 <NaamAdministratieveEenheid>FLEXPOOL WESTLAND</NaamAdministratieveEenheid>
                 <Loonheffingennr>305272763L01</Loonheffingennr>
@@ -11,14 +12,38 @@
                     <FiNr>305272763</FiNr>
                     <NaamRechtspersoon>FLEXPOOL WESTLAND</NaamRechtspersoon>
                 </RechtspersoonAdministratieveEenh>
+                <FeitelijkAdresAeh>
+                    <Straatadres>
+                        <Postcd>3012KD</Postcd>
+                        <Woonplaatsnaam>ROTTERDAM</Woonplaatsnaam>
+                        <Gemeentenaam>ROTTERDAM</Gemeentenaam>
+                        <Straatnaam>Westblaak</Straatnaam>
+                        <Huisnr>64</Huisnr>
+                    </Straatadres>
+                </FeitelijkAdresAeh>
             </AdministratieveEenheid>
             <Inkomstenperiode>
+                <!-- DynamicDate: startOfMonth - 1 month -->
                 <DatBIkp>20260501</DatBIkp>
+                <!-- DynamicDate: endOfMonth - 1 month -->
                 <DatEIkp>20260531</DatEIkp>
+                <CdSrtIkv>15</CdSrtIkv>
+                <CdTypeArbeidscontract>B</CdTypeArbeidscontract>
                 <IndLoonheffingskortingToegepast>1</IndLoonheffingskortingToegepast>
+                <IndRegelmatigArbeidspatroon>1</IndRegelmatigArbeidspatroon>
+                <IndLoonIsMedeAowAlleenstaande>2</IndLoonIsMedeAowAlleenstaande>
+                <IndLoonInclusiefWajongUitkering>2</IndLoonInclusiefWajongUitkering>
+                <CdAardIkv>11</CdAardIkv>
             </Inkomstenperiode>
+            <SectorRisicogroepIkv>
+                <SectorBeroepsEnBedrijfsleven>
+                    <CdSector>045</CdSector>
+                </SectorBeroepsEnBedrijfsleven>
+            </SectorRisicogroepIkv>
             <Inkomstenopgave>
+                <!-- DynamicDate: startOfMonth - 1 month -->
                 <DatBIko>20260501</DatBIko>
+                <!-- DynamicDate: endOfMonth - 1 month -->
                 <DatEIko>20260531</DatEIko>
                 <AantVerloondeUrenIko>52</AantVerloondeUrenIko>
                 <BedrBrutoloonSv>

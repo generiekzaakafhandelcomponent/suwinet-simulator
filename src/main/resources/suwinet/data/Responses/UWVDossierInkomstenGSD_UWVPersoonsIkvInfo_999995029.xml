@@ -1,0 +1,26 @@
+<smls:UWVPersoonsIkvInfoResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/UWVDossierInkomstenGSD/v0200">
+    <ClientSuwi>
+        <Burgerservicenr>999995029</Burgerservicenr>
+        <Inkomstenverhouding>
+            <VolgnrIkv>1</VolgnrIkv>
+            <DatBIkv>20110415</DatBIkv>
+            <DatEIkv>20260415</DatEIkv>
+            <AdministratieveEenheid>
+                <NaamAdministratieveEenheid>EEN HAAGS VERVOERSBEDRIJF</NaamAdministratieveEenheid>
+                <Loonheffingennr>982547380L01</Loonheffingennr>
+                <RechtspersoonAdministratieveEenh>
+                    <FiNr>982547380</FiNr>
+                    <NaamRechtspersoon>EEN HAAGS VERVOERSBEDRIJF</NaamRechtspersoon>
+                </RechtspersoonAdministratieveEenh>
+            </AdministratieveEenheid>
+            <Inkomstenperiode>
+                <DatBIkp>20110415</DatBIkp>
+                <DatEIkp>20260415</DatEIkp>
+            </Inkomstenperiode>
+            <Inkomstenopgave>
+                <DatBIko>20260315</DatBIko>
+                <DatEIko>20260415</DatEIko>
+            </Inkomstenopgave>
+        </Inkomstenverhouding>
+    </ClientSuwi>
+</smls:UWVPersoonsIkvInfoResponse>
