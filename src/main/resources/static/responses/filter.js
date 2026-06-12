@@ -11,11 +11,17 @@ import { attachAutocomplete, hideAutocomplete } from './autocomplete.js';
 let _autoSelectPerson = null;
 export function setAutoSelectPersonCallback(fn) { _autoSelectPerson = fn; }
 
-export async function loadIndex() {
+/**
+ * Reloads the full index. Pass {quiet:true} for the auto-refresh poll: it skips the loading
+ * overlay, the reload-button animation and the error alert (rethrows instead) so a background
+ * refresh never flashes UI over the user. The current selection and open editor are untouched —
+ * loadIndex only rebuilds the file/person lists.
+ */
+export async function loadIndex({ quiet = false } = {}) {
     const btn = document.getElementById('reload');
     const originalText = btn ? btn.textContent : null;
-    if (btn) { btn.textContent = 'Herladen…'; btn.disabled = true; }
-    showLoading();
+    if (!quiet && btn) { btn.textContent = 'Herladen…'; btn.disabled = true; }
+    if (!quiet) showLoading();
     try {
         const data = await fetchIndexStreaming();
         if (!Array.isArray(data.files)) {
@@ -29,16 +35,54 @@ export async function loadIndex() {
         await loadGitStatus();
         populateColumnFilters();
         applyFilter();
-        if (btn) {
+        if (!quiet && btn) {
             btn.textContent = 'Klaar ✓';
             setTimeout(() => { btn.textContent = originalText; btn.disabled = false; }, 1500);
         }
     } catch (e) {
-        if (btn) { btn.textContent = originalText; btn.disabled = false; }
+        if (!quiet && btn) { btn.textContent = originalText; btn.disabled = false; }
+        if (quiet) throw e;
         alert('Kon index niet laden: ' + e.message);
     } finally {
-        hideLoading();
+        if (!quiet) hideLoading();
     }
+}
+
+// --- Auto-refresh: poll a cheap directory signature and reload the index when it changes, so a
+// push from persona-lab (or any other writer) shows up without a manual reload. -------------------
+const SIGNATURE_POLL_MS = 4000;
+let lastSignature = null;
+let pollTimer = null;
+
+async function fetchSignature() {
+    const res = await fetch(`${API}/signature`, { headers: { Accept: 'application/json' } });
+    if (!res.ok) throw new Error(res.status + ' ' + res.statusText);
+    const sig = await res.json();
+    return `${sig.count}:${sig.latest}`;
+}
+
+async function pollSignature() {
+    if (document.hidden) return; // niet pollen op een verborgen tab; bij terugkeer pakt de volgende tick het op
+    let sig;
+    try {
+        sig = await fetchSignature();
+    } catch (e) {
+        return; // simulator even onbereikbaar — stil overslaan, volgende tick probeert opnieuw
+    }
+    if (sig === lastSignature) return;
+    lastSignature = sig;
+    try {
+        await loadIndex({ quiet: true });
+    } catch (e) {
+        // stille reload mislukte; de reload-knop blijft beschikbaar voor de gebruiker
+    }
+}
+
+/** Starts the background poll. Primes the baseline first so it never reloads on the very first tick. */
+export async function startAutoRefresh() {
+    if (pollTimer) return;
+    try { lastSignature = await fetchSignature(); } catch (e) { /* baseline volgt bij de eerste geslaagde tick */ }
+    pollTimer = setInterval(pollSignature, SIGNATURE_POLL_MS);
 }
 
 /**

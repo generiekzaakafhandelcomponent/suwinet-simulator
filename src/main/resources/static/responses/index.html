@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Suwinet Sim Editor</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <!-- Carbon Design System (gevendord): Plex-fonts → gecompileerde Carbon-styles → app-laag -->
+    <link rel="stylesheet" href="vendor/plex/plex.css">
+    <link rel="stylesheet" href="vendor/carbon/carbon.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/mdn-like.min.css">
 </head>
-<body>
+<body class="cds--g10">
 <div id="loading-overlay" class="loading-overlay" hidden>
     <div class="loading-card">
         <div class="loading-title">Response-bestanden laden…</div>
@@ -19,37 +23,42 @@
         <div id="loading-label" class="loading-label">Voorbereiden…</div>
     </div>
 </div>
-<header class="topbar">
-    <!-- Logo-mark = app-switcher (spiegel van persona-lab): klik op het logo opent een menu
-         met verbonden apps; hier de teruglink naar persona-lab. Chevron signaleert het menu. -->
-    <div class="app-switcher" id="app-switcher">
-        <button type="button" class="app-switcher-btn" id="app-switcher-btn"
-                aria-haspopup="true" aria-expanded="false" aria-label="Wissel van app" title="Wissel van app">
-            <span class="brand-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a3 3 0 0 0 -3 3v12a3 3 0 0 0 3 3"/><path d="M6 3a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3"/><path d="M13 7h7a1 1 0 0 1 1 1v8a1 1 0 0 1 -1 1h-7"/><path d="M5 7h-1a1 1 0 0 0 -1 1v8a1 1 0 0 0 1 1h1"/><path d="M17 12h.01"/><path d="M13 12h.01"/></svg></span>
-            <span class="app-switcher-name">Suwinet Editor</span>
-            <svg class="app-switcher-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+<!-- Carbon UI Shell header (g100-zone) — zelfde patroon als persona-lab's fragments/nav.html.
+     De app-switcher volgt het Carbon-switcherpatroon: grid-knop rechts, uitklappend rechterpaneel
+     met de teruglink naar Persona Lab. -->
+<header class="cds--header cds--g100" aria-label="Suwinet Editor">
+    <a class="cds--header__name" href="./">
+        <span class="cds--header__name--prefix">Ritense&nbsp;</span>Suwinet&nbsp;Editor
+    </a>
+    <nav class="cds--header__nav" aria-label="Weergave">
+        <ul class="cds--header__menu-bar">
+            <li><button class="mode-btn active" data-mode="persons" type="button"><i data-lucide="users" width="14" height="14" stroke-width="2" style="display:block"></i>Personen</button></li>
+            <li><button class="mode-btn" data-mode="files" type="button"><i data-lucide="folder-open" width="14" height="14" stroke-width="2" style="display:block"></i>Bestanden</button></li>
+        </ul>
+    </nav>
+    <div class="cds--header__global">
+        <span class="basedir" id="basedir" title="Configurable via simulator.responses.path"></span>
+        <button id="test-all-btn" class="header-btn" type="button" title="Test alle response-bestanden: SOAP-roundtrip + XSD-validatie"><i data-lucide="play" width="14" height="14" stroke-width="2" style="display:block"></i>Test alle bestanden</button>
+        <button id="reload" class="header-btn" type="button"><i data-lucide="refresh-cw" width="14" height="14" stroke-width="2" style="display:block"></i>Herlaad index</button>
+        <button type="button" class="cds--header__action" id="app-switcher-btn"
+                aria-haspopup="true" aria-expanded="false" aria-controls="app-switcher-menu"
+                aria-label="Wissel van app" title="Wissel van app">
+            <svg viewBox="0 0 20 20" width="20" height="20" fill="currentColor"><circle cx="3.5" cy="3.5" r="1.5"/><circle cx="10" cy="3.5" r="1.5"/><circle cx="16.5" cy="3.5" r="1.5"/><circle cx="3.5" cy="10" r="1.5"/><circle cx="10" cy="10" r="1.5"/><circle cx="16.5" cy="10" r="1.5"/><circle cx="3.5" cy="16.5" r="1.5"/><circle cx="10" cy="16.5" r="1.5"/><circle cx="16.5" cy="16.5" r="1.5"/></svg>
         </button>
-        <div class="app-switcher-menu" id="app-switcher-menu" role="menu" hidden>
-            <div class="app-switcher-head">Verbonden apps</div>
-            <a class="app-item" role="menuitem" href="http://localhost:5003/personas-page">
-                <span class="app-item-tile">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.192 9h6.616a2 2 0 0 1 1.992 2.183l-.567 6.182a4 4 0 0 1 -3.983 3.635h-1.5a4 4 0 0 1 -3.983 -3.635l-.567 -6.182a2 2 0 0 1 1.992 -2.183"/><path d="M15 13h.01"/><path d="M18 13h.01"/><path d="M15 16.5c1 .667 2 .667 3 0"/><path d="M8.632 15.982a4.037 4.037 0 0 1 -.382 .018h-1.5a4 4 0 0 1 -3.983 -3.635l-.567 -6.182a2 2 0 0 1 1.992 -2.183h6.616a2 2 0 0 1 2 2"/><path d="M6 8h.01"/><path d="M9 8h.01"/><path d="M6 12c.764 -.51 1.528 -.63 2.291 -.36"/></svg>
-                </span>
-                <span class="app-item-text">
+    </div>
+    <div class="cds--header-panel" id="app-switcher-menu" role="menu" aria-label="Verbonden apps">
+        <ul class="cds--switcher" role="none">
+            <li class="cds--switcher__item" role="none">
+                <span class="app-switcher-head">Verbonden apps</span>
+            </li>
+            <li class="cds--switcher__item" role="none">
+                <a class="cds--switcher__item-link app-item" role="menuitem" href="http://localhost:5003/personas-page">
                     <span class="app-item-name">Persona Lab</span>
                     <span class="app-item-host">localhost:5003</span>
-                </span>
-            </a>
-        </div>
+                </a>
+            </li>
+        </ul>
     </div>
-    <div class="mode-switch" role="tablist">
-        <button class="mode-btn active" data-mode="persons" type="button"><i data-lucide="users" width="14" height="14" stroke-width="2" style="display:block"></i>Personen</button>
-        <button class="mode-btn" data-mode="files" type="button"><i data-lucide="folder-open" width="14" height="14" stroke-width="2" style="display:block"></i>Bestanden</button>
-    </div>
-    <span class="basedir" id="basedir" title="Configurable via simulator.responses.path"></span>
-    <span class="spacer"></span>
-    <button id="test-all-btn" type="button" title="Test alle response-bestanden: SOAP-roundtrip + XSD-validatie"><i data-lucide="play" width="14" height="14" stroke-width="2" style="display:block"></i>Test alle bestanden</button>
-    <button id="reload" type="button"><i data-lucide="refresh-cw" width="14" height="14" stroke-width="2" style="display:block"></i>Herlaad index</button>
 </header>
 
 <main class="layout">
@@ -434,24 +443,23 @@
 <script src="cities.js"></script>
 <script type="module" src="app.js"></script>
 <script>
-    // App-switcher: open/sluit het menu; sluit bij klik-buiten of Escape.
+    // App-switcher (Carbon-patroon, zoals persona-lab): grid-knop toggelt het
+    // rechterpaneel via class; sluit bij klik-buiten of Escape.
     (function () {
-        var wrap = document.getElementById('app-switcher');
-        if (!wrap) return;
         var btn = document.getElementById('app-switcher-btn');
         var menu = document.getElementById('app-switcher-menu');
+        if (!btn || !menu) return;
+        function isOpen() { return menu.classList.contains('cds--header-panel--expanded'); }
+        function open() { menu.classList.add('cds--header-panel--expanded'); btn.setAttribute('aria-expanded', 'true'); }
+        function close() { menu.classList.remove('cds--header-panel--expanded'); btn.setAttribute('aria-expanded', 'false'); }
         btn.addEventListener('click', function (e) {
             e.stopPropagation();
-            var open = menu.hidden;
-            menu.hidden = !open;
-            btn.setAttribute('aria-expanded', String(open));
+            isOpen() ? close() : open();
         });
         document.addEventListener('click', function (e) {
-            if (!wrap.contains(e.target)) { menu.hidden = true; btn.setAttribute('aria-expanded', 'false'); }
+            if (!menu.contains(e.target) && !btn.contains(e.target)) close();
         });
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') { menu.hidden = true; btn.setAttribute('aria-expanded', 'false'); }
-        });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
     })();
 </script>
 </body>

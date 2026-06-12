@@ -3,7 +3,7 @@ import { state } from './state.js';
 import {
     loadIndex, loadGitStatus, applyFilter, toggleSort, togglePersonSort,
     setAutoSelectPersonCallback, searchAutocompleteValues, personSearchAutocompleteValues,
-    populateColumnFilters, setSelectFileCallback,
+    populateColumnFilters, setSelectFileCallback, startAutoRefresh,
 } from './filter.js';
 import {
     initResizer, initRawResizer, initActionsHamburger, updateUndoRedoButtons,
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('raw-undo-btn').addEventListener('click', () => { state.editor.undo(); state.editor.focus(); });
     document.getElementById('raw-redo-btn').addEventListener('click', () => { state.editor.redo(); state.editor.focus(); });
 
-    document.getElementById('reload').addEventListener('click', loadIndex);
+    document.getElementById('reload').addEventListener('click', () => loadIndex());
     document.getElementById('search').addEventListener('input', e => {
         state.search = e.target.value.toLowerCase();
         applyFilter();
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initActionsHamburger();
     initDynamicDatePanel();
 
-    loadIndex().then(applyHash);
+    loadIndex().then(applyHash).then(startAutoRefresh);
 
     wireTestUi();
     wireDrawerResize();
