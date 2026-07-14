@@ -1,0 +1,63 @@
+<brp:AanvraagPersoonResponse xmlns:brp="http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD/v0200">
+    <ClientSuwi>
+        <Voornamen>Sanne</Voornamen>
+        <Voorvoegsel/>
+        <SignificantDeelVanDeAchternaam>Dijkstra</SignificantDeelVanDeAchternaam>
+        <Geboortedat>20010613</Geboortedat>
+        <Burgerservicenr>888884187</Burgerservicenr>
+        <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
+
+        <ANr>7452938160</ANr>
+
+        <AanduidingNaamgebruik>1</AanduidingNaamgebruik>
+        <Geslacht>2</Geslacht>
+        <CdGeboortegemeente>0344</CdGeboortegemeente>
+        <Geboorteland>6030</Geboorteland>
+
+        <GeldigheidGegevensPersoon>
+            <DatGeldigheidGegevens>20250601</DatGeldigheidGegevens>
+        </GeldigheidGegevensPersoon>
+
+        <Nationaliteit>
+            <CdNationaliteit>0001</CdNationaliteit>
+
+            <GeldigheidGegevensNationaliteit>
+                <DatGeldigheidGegevens>20250601</DatGeldigheidGegevens>
+            </GeldigheidGegevensNationaliteit>
+        </Nationaliteit>
+
+        <DomicilieAdres>
+            <Postcd>3514TV</Postcd>
+            <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+            <Straatnaam>1e Spechtstraat</Straatnaam>
+            <Huisnr>22</Huisnr>
+            <Huisletter/>
+        </DomicilieAdres>
+
+        <AangifteAdreshoudingBrp>
+            <CdGemeenteVanInschrijving>0344</CdGemeenteVanInschrijving>
+            <DatVanInschrijvingBijGemeente>20220901</DatVanInschrijvingBijGemeente>
+            <DatBAdreshoudingBrp>20220901</DatBAdreshoudingBrp>
+        </AangifteAdreshoudingBrp>
+
+        <Ouder1>
+            <Voornamen>Thomas</Voornamen>
+            <SignificantDeelVanDeAchternaam>Dijkstra</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19700315</Geboortedat>
+            <Burgerservicenr>888885015</Burgerservicenr>
+            <ANr>2847561930</ANr>
+            <DatBFamilierechtelijkeBetrekking>20010613</DatBFamilierechtelijkeBetrekking>
+        </Ouder1>
+
+        <Ouder2>
+            <Voornamen>Marieke</Voornamen>
+            <SignificantDeelVanDeAchternaam>Bakker</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19730622</Geboortedat>
+            <Burgerservicenr>888886019</Burgerservicenr>
+            <ANr>9163740582</ANr>
+            <DatBFamilierechtelijkeBetrekking>20010613</DatBFamilierechtelijkeBetrekking>
+        </Ouder2>
+
+        <InschrijvingsgegevensBrp/>
+    </ClientSuwi>
+</brp:AanvraagPersoonResponse>
