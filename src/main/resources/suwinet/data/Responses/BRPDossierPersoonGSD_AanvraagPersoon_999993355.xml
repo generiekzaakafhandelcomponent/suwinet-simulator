@@ -57,14 +57,6 @@
             <ANr>4817265039</ANr>
             <DatBFamilierechtelijkeBetrekking>19780331</DatBFamilierechtelijkeBetrekking>
         </Ouder2>
-        <InschrijvingsgegevensBrp/>
-        <Kind>
-            <Voornamen>Leonie Keesje</Voornamen>
-            <Voorvoegsel/>
-            <SignificantDeelVanDeAchternaam>Brouwers</SignificantDeelVanDeAchternaam>
-            <Geboortedat>20061225</Geboortedat>
-            <Burgerservicenr>999994487</Burgerservicenr>
-        </Kind>
         <Huwelijk>
             <Partner>
                 <Voornamen>Lonneke</Voornamen>
@@ -77,5 +69,13 @@
                 <Geboorteland>6030</Geboorteland>
             </Partner>
         </Huwelijk>
+        <Kind>
+            <Voornamen>Leonie Keesje</Voornamen>
+            <Voorvoegsel/>
+            <SignificantDeelVanDeAchternaam>Brouwers</SignificantDeelVanDeAchternaam>
+            <Geboortedat>20061225</Geboortedat>
+            <Burgerservicenr>999994487</Burgerservicenr>
+        </Kind>
+        <InschrijvingsgegevensBrp/>
     </ClientSuwi>
 </brp:AanvraagPersoonResponse>

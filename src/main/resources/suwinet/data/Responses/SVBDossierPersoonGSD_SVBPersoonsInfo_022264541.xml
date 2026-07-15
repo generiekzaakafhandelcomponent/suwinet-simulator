@@ -6,8 +6,8 @@
         <Burgerservicenr>022264541</Burgerservicenr>
         <Voornamen>Nora</Voornamen>
         <SignificantDeelVanDeAchternaam>van Wollingen</SignificantDeelVanDeAchternaam>
-        <Geboortedat>20000110</Geboortedat>
         <Geslacht>2</Geslacht>
+        <Geboortedat>20000110</Geboortedat>
 
         <!-- Eén Wlz-uitkering, één periode -->
         <Uitkeringsverhouding>

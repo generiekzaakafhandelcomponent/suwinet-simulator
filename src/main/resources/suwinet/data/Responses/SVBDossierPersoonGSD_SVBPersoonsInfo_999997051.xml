@@ -3,8 +3,8 @@
         <Burgerservicenr>999997051</Burgerservicenr>
         <Voornamen>Alma Milena</Voornamen>
         <SignificantDeelVanDeAchternaam>Lata Vishwanathan lyer</SignificantDeelVanDeAchternaam>
-        <Geboortedat>19630911</Geboortedat>
         <Geslacht>2</Geslacht>
+        <Geboortedat>19630911</Geboortedat>
         <!-- Zero or more repetitions: -->
         <Uitkeringsverhouding>
             <DatBUitkeringsverhouding>20190301</DatBUitkeringsverhouding>

@@ -14,12 +14,6 @@
         <ZakelijkRecht>
             <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
         </ZakelijkRecht>
-        <PubliekrechtelijkeBeperking>
-            <AantekeningKadastraalObject>
-                <DatEAantekeningKadastraalObject>19670709</DatEAantekeningKadastraalObject>
-                <OmsAantekeningKadastraalObject>Beschermd natuurgebied</OmsAantekeningKadastraalObject>
-            </AantekeningKadastraalObject>
-        </PubliekrechtelijkeBeperking>
         <LocatieOZ>
             <StraatadresBag>
                 <Postcd>8436BS</Postcd>
@@ -28,6 +22,12 @@
                 <Huisnr>43</Huisnr>
             </StraatadresBag>
         </LocatieOZ>
+        <PubliekrechtelijkeBeperking>
+            <AantekeningKadastraalObject>
+                <DatEAantekeningKadastraalObject>19670709</DatEAantekeningKadastraalObject>
+                <OmsAantekeningKadastraalObject>Beschermd natuurgebied</OmsAantekeningKadastraalObject>
+            </AantekeningKadastraalObject>
+        </PubliekrechtelijkeBeperking>
         <BedrKoopsom>
             <CdMunteenheid>EUR</CdMunteenheid>
             <WaardeBedr>7525000</WaardeBedr>

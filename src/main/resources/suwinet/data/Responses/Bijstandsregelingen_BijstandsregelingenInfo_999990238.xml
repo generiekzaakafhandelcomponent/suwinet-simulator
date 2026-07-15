@@ -1,10 +1,10 @@
 <bij:BijstandsregelingenInfoResponse xmlns:bij="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500">
     <ClientSuwi>
         <Burgerservicenr>999990238</Burgerservicenr>
-        <Voorletters>S.</Voorletters>
+        <Voorletters>S</Voorletters>
         <Voorvoegsel></Voorvoegsel>
         <SignificantDeelVanDeAchternaam>Bruinhard</SignificantDeelVanDeAchternaam>
-        <Geslacht>v</Geslacht>
+        <Geslacht>2</Geslacht>
         <Geboortedat>19930506</Geboortedat>
 
         <!-- AanvraagUitkering: ABW, toegekend, periode van werkloosheid 2018 -->
@@ -18,9 +18,9 @@
                 <DatDagtekeningBeslisOpAanvrUitk>20150828</DatDagtekeningBeslisOpAanvrUitk>
             </BeslissingOpAanvraagUitkering>
             <Bron>
-                <CdKolomSuwi>K401</CdKolomSuwi>
-                <CdPartijSuwi>P401</CdPartijSuwi>
-                <CdVestigingSuwi>V401</CdVestigingSuwi>
+                <CdKolomSuwi>1</CdKolomSuwi>
+                <CdPartijSuwi>0401</CdPartijSuwi>
+                <CdVestigingSuwi>0401</CdVestigingSuwi>
             </Bron>
         </AanvraagUitkering>
 
@@ -35,9 +35,9 @@
                 <DatDagtekeningBeslisOpAanvrUitk>20210824</DatDagtekeningBeslisOpAanvrUitk>
             </BeslissingOpAanvraagUitkering>
             <Bron>
-                <CdKolomSuwi>K407</CdKolomSuwi>
-                <CdPartijSuwi>P407</CdPartijSuwi>
-                <CdVestigingSuwi>V407</CdVestigingSuwi>
+                <CdKolomSuwi>2</CdKolomSuwi>
+                <CdPartijSuwi>0407</CdPartijSuwi>
+                <CdVestigingSuwi>0407</CdVestigingSuwi>
             </Bron>
         </AanvraagUitkering>
 
@@ -50,9 +50,9 @@
                 <CdSzWet>BB</CdSzWet>
             </SzWet>
             <Bron>
-                <CdKolomSuwi>K405</CdKolomSuwi>
-                <CdPartijSuwi>P405</CdPartijSuwi>
-                <CdVestigingSuwi>V405</CdVestigingSuwi>
+                <CdKolomSuwi>3</CdKolomSuwi>
+                <CdPartijSuwi>0405</CdPartijSuwi>
+                <CdVestigingSuwi>0405</CdVestigingSuwi>
             </Bron>
         </SpecifiekeGegevensBijzBijstand>
     </ClientSuwi>

@@ -1,0 +1,15 @@
+<d:PersoonsInfoResponse xmlns:d="http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300">
+    <ClientSuwi>
+        <Burgerservicenr>999990032</Burgerservicenr>
+        <Eigendom>
+            <OnroerendeZaak>
+                <KadastraleAanduiding>
+                    <CdKadastraleGemeente>0518</CdKadastraleGemeente>
+                    <KadastraleSectie>AK</KadastraleSectie>
+                    <KadastraalPerceelnr>0004821</KadastraalPerceelnr>
+                </KadastraleAanduiding>
+                <IndMeerGerechtigden>2</IndMeerGerechtigden>
+            </OnroerendeZaak>
+        </Eigendom>
+    </ClientSuwi>
+</d:PersoonsInfoResponse>

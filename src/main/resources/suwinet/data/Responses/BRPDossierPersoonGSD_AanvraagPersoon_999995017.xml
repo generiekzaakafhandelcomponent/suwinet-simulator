@@ -1,0 +1,23 @@
+<brp:AanvraagPersoonResponse xmlns:brp="http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD/v0200">
+    <ClientSuwi>
+        <Voornamen>Sanne Marieke</Voornamen>
+        <SignificantDeelVanDeAchternaam>Visser</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19930412</Geboortedat>
+        <Burgerservicenr>999995017</Burgerservicenr>
+        <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
+        <ANr>6016537302</ANr>
+        <AanduidingNaamgebruik>1</AanduidingNaamgebruik>
+        <Geslacht>2</Geslacht>
+        <Geboorteland>6030</Geboorteland>
+        <Nationaliteit>
+            <CdNationaliteit>0001</CdNationaliteit>
+        </Nationaliteit>
+        <DomicilieAdres>
+            <Postcd>3581CD</Postcd>
+            <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+            <Straatnaam>Wilhelminastraat</Straatnaam>
+            <NaamOpenbareRuimte>Wilhelminastraat</NaamOpenbareRuimte>
+            <Huisnr>5</Huisnr>
+        </DomicilieAdres>
+    </ClientSuwi>
+</brp:AanvraagPersoonResponse>

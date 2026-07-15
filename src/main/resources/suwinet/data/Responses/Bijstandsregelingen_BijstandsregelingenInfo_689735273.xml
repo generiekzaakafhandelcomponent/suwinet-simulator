@@ -1,10 +1,10 @@
 <bij:BijstandsregelingenInfoResponse xmlns:bij="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500">
     <ClientSuwi>
         <Burgerservicenr>689735273</Burgerservicenr>
-        <Voorletters>L.</Voorletters>
+        <Voorletters>L</Voorletters>
         <Voorvoegsel></Voorvoegsel>
         <SignificantDeelVanDeAchternaam>Terphuis</SignificantDeelVanDeAchternaam>
-        <Geslacht>m</Geslacht>
+        <Geslacht>1</Geslacht>
         <Geboortedat>19831102</Geboortedat>
 
         <!-- AanvraagUitkering: ABW, toegekend, periode van werkloosheid 2018 -->
@@ -19,14 +19,14 @@
             </BeslissingOpAanvraagUitkering>
             <PartnerAanvraagUitkering>
                 <Burgerservicenr>022264541</Burgerservicenr>
-                <Voorletters>N.</Voorletters>
+                <Voorletters>N</Voorletters>
                 <Voorvoegsel></Voorvoegsel>
                 <SignificantDeelVanDeAchternaam>van Wollingen</SignificantDeelVanDeAchternaam>
                 <Geboortedat>19850312</Geboortedat>
             </PartnerAanvraagUitkering>
             <Bron>
                 <CdKolomSuwi>1</CdKolomSuwi>
-                <CdPartijSuwi>P401</CdPartijSuwi>
+                <CdPartijSuwi>0401</CdPartijSuwi>
                 <CdVestigingSuwi></CdVestigingSuwi>
             </Bron>
         </AanvraagUitkering>
@@ -43,15 +43,15 @@
             </BeslissingOpAanvraagUitkering>
             <PartnerAanvraagUitkering>
                 <Burgerservicenr>022264541</Burgerservicenr>
-                <Voorletters>N.</Voorletters>
+                <Voorletters>N</Voorletters>
                 <Voorvoegsel></Voorvoegsel>
                 <SignificantDeelVanDeAchternaam>van Wollingen</SignificantDeelVanDeAchternaam>
                 <Geboortedat>19850312</Geboortedat>
             </PartnerAanvraagUitkering>
             <Bron>
                 <CdKolomSuwi>7</CdKolomSuwi>
-                <CdPartijSuwi>P407</CdPartijSuwi>
-                <CdVestigingSuwi>V407</CdVestigingSuwi>
+                <CdPartijSuwi>0407</CdPartijSuwi>
+                <CdVestigingSuwi>0407</CdVestigingSuwi>
             </Bron>
         </AanvraagUitkering>
 
@@ -63,14 +63,14 @@
             </SzWet>
             <PartnerAanvraagUitkering>
                 <Burgerservicenr>022264541</Burgerservicenr>
-                <Voorletters>N.</Voorletters>
+                <Voorletters>N</Voorletters>
                 <Voorvoegsel></Voorvoegsel>
                 <SignificantDeelVanDeAchternaam>van Wollingen</SignificantDeelVanDeAchternaam>
                 <Geboortedat>19850312</Geboortedat>
             </PartnerAanvraagUitkering>
             <Bron>
                 <CdKolomSuwi>2</CdKolomSuwi>
-                <CdPartijSuwi>P402</CdPartijSuwi>
+                <CdPartijSuwi>0402</CdPartijSuwi>
                 <CdVestigingSuwi></CdVestigingSuwi>
             </Bron>
         </AanvraagUitkering>
@@ -80,9 +80,13 @@
             <IdentificatienrVordering>998877665544332</IdentificatienrVordering>
             <DatBesluitVordering>20190210</DatBesluitVordering>
             <CdRedenVordering>13</CdRedenVordering>
-            <BedrAanvangVordering>3000.00</BedrAanvangVordering>
+            <BedrAanvangVordering>
+                <WaardeBedr>300000</WaardeBedr>
+            </BedrAanvangVordering>
             <CdStatusVordering>51</CdStatusVordering>
-            <BedrSaldoVordering>2100.00</BedrSaldoVordering>
+            <BedrSaldoVordering>
+                <WaardeBedr>210000</WaardeBedr>
+            </BedrSaldoVordering>
             <DatOnherroepelijkVordering>20190601</DatOnherroepelijkVordering>
             <SzWet>
                 <CdSzWet>ABW</CdSzWet>
@@ -91,16 +95,16 @@
                 <Burgerservicenr>022264541</Burgerservicenr>
             </PartnerVordering>
             <Fraude>
-                <IndRecidive>N</IndRecidive>
-                <IndRobuusteIncassoToegepast>J</IndRobuusteIncassoToegepast>
-                <CdHoogteBestuurlijkeBoete>01</CdHoogteBestuurlijkeBoete>
-                <CdSrtSanctie>01</CdSrtSanctie>
+                <IndRecidive>0</IndRecidive>
+                <IndRobuusteIncassoToegepast>1</IndRobuusteIncassoToegepast>
+                <CdHoogteBestuurlijkeBoete>1</CdHoogteBestuurlijkeBoete>
+                <CdSrtSanctie>1</CdSrtSanctie>
                 <ParketnrJustitie>45.123456</ParketnrJustitie>
-                <CdRecidivetermijn>01</CdRecidivetermijn>
+                <CdRecidivetermijn>1</CdRecidivetermijn>
             </Fraude>
             <Bron>
                 <CdKolomSuwi>3</CdKolomSuwi>
-                <CdPartijSuwi>P403</CdPartijSuwi>
+                <CdPartijSuwi>0403</CdPartijSuwi>
                 <CdVestigingSuwi></CdVestigingSuwi>
             </Bron>
         </Vordering>
@@ -110,9 +114,13 @@
             <IdentificatienrVordering>445566778899001</IdentificatienrVordering>
             <DatBesluitVordering>20220620</DatBesluitVordering>
             <CdRedenVordering>11</CdRedenVordering>
-            <BedrAanvangVordering>120.00</BedrAanvangVordering>
+            <BedrAanvangVordering>
+                <WaardeBedr>12000</WaardeBedr>
+            </BedrAanvangVordering>
             <CdStatusVordering>51</CdStatusVordering>
-            <BedrSaldoVordering>0.00</BedrSaldoVordering>
+            <BedrSaldoVordering>
+                <WaardeBedr>0</WaardeBedr>
+            </BedrSaldoVordering>
             <SzWet>
                 <CdSzWet>AWB</CdSzWet>
             </SzWet>
@@ -121,7 +129,7 @@
             </PartnerVordering>
             <Bron>
                 <CdKolomSuwi>4</CdKolomSuwi>
-                <CdPartijSuwi>P404</CdPartijSuwi>
+                <CdPartijSuwi>0404</CdPartijSuwi>
                 <CdVestigingSuwi></CdVestigingSuwi>
             </Bron>
         </Vordering>
@@ -136,14 +144,14 @@
             </SzWet>
             <PartnerBijzBijstand>
                 <Burgerservicenr>022264541</Burgerservicenr>
-                <Voorletters>N.</Voorletters>
+                <Voorletters>N</Voorletters>
                 <Voorvoegsel></Voorvoegsel>
                 <SignificantDeelVanDeAchternaam>van Wollingen</SignificantDeelVanDeAchternaam>
                 <Geboortedat>19850312</Geboortedat>
             </PartnerBijzBijstand>
             <Bron>
                 <CdKolomSuwi>5</CdKolomSuwi>
-                <CdPartijSuwi>P405</CdPartijSuwi>
+                <CdPartijSuwi>0405</CdPartijSuwi>
                 <CdVestigingSuwi></CdVestigingSuwi>
             </Bron>
         </SpecifiekeGegevensBijzBijstand>
@@ -158,14 +166,14 @@
             </SzWet>
             <PartnerBijzBijstand>
                 <Burgerservicenr>022264541</Burgerservicenr>
-                <Voorletters>N.</Voorletters>
+                <Voorletters>N</Voorletters>
                 <Voorvoegsel></Voorvoegsel>
                 <SignificantDeelVanDeAchternaam>van Wollingen</SignificantDeelVanDeAchternaam>
                 <Geboortedat>19850312</Geboortedat>
             </PartnerBijzBijstand>
             <Bron>
                 <CdKolomSuwi>6</CdKolomSuwi>
-                <CdPartijSuwi>P406</CdPartijSuwi>
+                <CdPartijSuwi>0406</CdPartijSuwi>
                 <CdVestigingSuwi></CdVestigingSuwi>
             </Bron>
         </SpecifiekeGegevensBijzBijstand>

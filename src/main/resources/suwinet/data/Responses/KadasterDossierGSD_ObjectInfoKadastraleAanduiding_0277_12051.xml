@@ -14,12 +14,6 @@
         <ZakelijkRecht>
             <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
         </ZakelijkRecht>
-        <PubliekrechtelijkeBeperking>
-            <AantekeningKadastraalObject>
-                <DatEAantekeningKadastraalObject>20231029</DatEAantekeningKadastraalObject>
-                <OmsAantekeningKadastraalObject>Beschermd natuurgebied</OmsAantekeningKadastraalObject>
-            </AantekeningKadastraalObject>
-        </PubliekrechtelijkeBeperking>
         <LocatieOZ>
             <StraatadresBag>
                 <Postcd>1411EA</Postcd>
@@ -28,6 +22,12 @@
                 <Huisnr>12</Huisnr>
             </StraatadresBag>
         </LocatieOZ>
+        <PubliekrechtelijkeBeperking>
+            <AantekeningKadastraalObject>
+                <DatEAantekeningKadastraalObject>20231029</DatEAantekeningKadastraalObject>
+                <OmsAantekeningKadastraalObject>Beschermd natuurgebied</OmsAantekeningKadastraalObject>
+            </AantekeningKadastraalObject>
+        </PubliekrechtelijkeBeperking>
         <BedrKoopsom>
             <CdMunteenheid>EUR</CdMunteenheid>
             <WaardeBedr>7525000</WaardeBedr>

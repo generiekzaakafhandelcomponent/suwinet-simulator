@@ -5,8 +5,8 @@
         <Burgerservicenr>689735273</Burgerservicenr>
         <Voornamen>Lars</Voornamen>
         <SignificantDeelVanDeAchternaam>Terphuis</SignificantDeelVanDeAchternaam>
-        <Geboortedat>19990202</Geboortedat>
         <Geslacht>1</Geslacht>
+        <Geboortedat>19990202</Geboortedat>
 
         <!-- Eén Wlz-uitkering, één periode -->
         <Uitkeringsverhouding>

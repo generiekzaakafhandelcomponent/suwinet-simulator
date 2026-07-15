@@ -1,0 +1,24 @@
+<brp:AanvraagPersoonResponse xmlns:brp="http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD/v0200">
+    <ClientSuwi>
+        <Voornamen>Saskia</Voornamen>
+        <Voorvoegsel>de</Voorvoegsel>
+        <SignificantDeelVanDeAchternaam>Vink</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19811027</Geboortedat>
+        <Burgerservicenr>999991085</Burgerservicenr>
+        <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
+        <ANr>6012571893</ANr>
+        <AanduidingNaamgebruik>1</AanduidingNaamgebruik>
+        <Geslacht>2</Geslacht>
+        <Geboorteland>6030</Geboorteland>
+        <Nationaliteit>
+            <CdNationaliteit>0001</CdNationaliteit>
+        </Nationaliteit>
+        <DomicilieAdres>
+            <Postcd>2523CR</Postcd>
+            <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
+            <Straatnaam>Goeverneurlaan</Straatnaam>
+            <NaamOpenbareRuimte>Goeverneurlaan</NaamOpenbareRuimte>
+            <Huisnr>145</Huisnr>
+        </DomicilieAdres>
+    </ClientSuwi>
+</brp:AanvraagPersoonResponse>

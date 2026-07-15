@@ -14,12 +14,6 @@
         <ZakelijkRecht>
             <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
         </ZakelijkRecht>
-        <PubliekrechtelijkeBeperking>
-            <AantekeningKadastraalObject>
-                <DatEAantekeningKadastraalObject>19990919</DatEAantekeningKadastraalObject>
-                <OmsAantekeningKadastraalObject>Overstromingsrisicozone</OmsAantekeningKadastraalObject>
-            </AantekeningKadastraalObject>
-        </PubliekrechtelijkeBeperking>
         <LocatieOZ>
             <StraatadresBag>
                 <Postcd>3191GQ</Postcd>
@@ -28,6 +22,12 @@
                 <Huisnr>2</Huisnr>
             </StraatadresBag>
         </LocatieOZ>
+        <PubliekrechtelijkeBeperking>
+            <AantekeningKadastraalObject>
+                <DatEAantekeningKadastraalObject>19990919</DatEAantekeningKadastraalObject>
+                <OmsAantekeningKadastraalObject>Overstromingsrisicozone</OmsAantekeningKadastraalObject>
+            </AantekeningKadastraalObject>
+        </PubliekrechtelijkeBeperking>
         <BedrKoopsom>
             <CdMunteenheid>EUR</CdMunteenheid>
             <WaardeBedr>7525000</WaardeBedr>

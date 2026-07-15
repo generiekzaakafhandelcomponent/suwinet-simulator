@@ -1,10 +1,10 @@
 <bij:BijstandsregelingenInfoResponse xmlns:bij="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500">
     <ClientSuwi>
         <Burgerservicenr>022264541</Burgerservicenr>
-        <Voorletters>N.</Voorletters>
+        <Voorletters>N</Voorletters>
         <Voorvoegsel>van</Voorvoegsel>
         <SignificantDeelVanDeAchternaam>Wollingen</SignificantDeelVanDeAchternaam>
-        <Geslacht>v</Geslacht>
+        <Geslacht>2</Geslacht>
         <Geboortedat>19850312</Geboortedat>
 
         <!-- AanvraagUitkering: ABW, toegekend, met partner Lars -->
@@ -19,14 +19,14 @@
             </BeslissingOpAanvraagUitkering>
             <PartnerAanvraagUitkering>
                 <Burgerservicenr>689735273</Burgerservicenr>
-                <Voorletters>L.</Voorletters>
+                <Voorletters>L</Voorletters>
                 <Voorvoegsel></Voorvoegsel>
                 <SignificantDeelVanDeAchternaam>Terphuis</SignificantDeelVanDeAchternaam>
                 <Geboortedat>19831102</Geboortedat>
             </PartnerAanvraagUitkering>
             <Bron>
-                <CdKolomSuwi>101</CdKolomSuwi>
-                <CdPartijSuwi>P101</CdPartijSuwi>
+                <CdKolomSuwi>1</CdKolomSuwi>
+                <CdPartijSuwi>0101</CdPartijSuwi>
                 <CdVestigingSuwi></CdVestigingSuwi>
             </Bron>
         </AanvraagUitkering>
@@ -43,14 +43,14 @@
             </BeslissingOpAanvraagUitkering>
             <PartnerAanvraagUitkering>
                 <Burgerservicenr>689735273</Burgerservicenr>
-                <Voorletters>L.</Voorletters>
+                <Voorletters>L</Voorletters>
                 <Voorvoegsel></Voorvoegsel>
                 <SignificantDeelVanDeAchternaam>Terphuis</SignificantDeelVanDeAchternaam>
                 <Geboortedat>19831102</Geboortedat>
             </PartnerAanvraagUitkering>
             <Bron>
-                <CdKolomSuwi>102</CdKolomSuwi>
-                <CdPartijSuwi>P102</CdPartijSuwi>
+                <CdKolomSuwi>2</CdKolomSuwi>
+                <CdPartijSuwi>0102</CdPartijSuwi>
                 <CdVestigingSuwi></CdVestigingSuwi>
             </Bron>
         </AanvraagUitkering>
@@ -60,9 +60,13 @@
             <IdentificatienrVordering>785412369874521</IdentificatienrVordering>
             <DatBesluitVordering>20221105</DatBesluitVordering>
             <CdRedenVordering>13</CdRedenVordering>
-            <BedrAanvangVordering>1250.00</BedrAanvangVordering>
+            <BedrAanvangVordering>
+                <WaardeBedr>125000</WaardeBedr>
+            </BedrAanvangVordering>
             <CdStatusVordering>51</CdStatusVordering>
-            <BedrSaldoVordering>750.00</BedrSaldoVordering>
+            <BedrSaldoVordering>
+                <WaardeBedr>75000</WaardeBedr>
+            </BedrSaldoVordering>
             <DatOnherroepelijkVordering>2023-01-10</DatOnherroepelijkVordering>
             <SzWet>
                 <CdSzWet>ABW</CdSzWet>
@@ -71,9 +75,9 @@
                 <Burgerservicenr>689735273</Burgerservicenr>
             </PartnerVordering>
             <Bron>
-                <CdKolomSuwi>201</CdKolomSuwi>
-                <CdPartijSuwi>P201</CdPartijSuwi>
-                <CdVestigingSuwi>V201</CdVestigingSuwi>
+                <CdKolomSuwi>3</CdKolomSuwi>
+                <CdPartijSuwi>0201</CdPartijSuwi>
+                <CdVestigingSuwi>0201</CdVestigingSuwi>
             </Bron>
         </Vordering>
 
@@ -82,9 +86,13 @@
             <IdentificatienrVordering>654789321554789</IdentificatienrVordering>
             <DatBesluitVordering>20201018</DatBesluitVordering>
             <CdRedenVordering>11</CdRedenVordering>
-            <BedrAanvangVordering>420.00</BedrAanvangVordering>
+            <BedrAanvangVordering>
+                <WaardeBedr>42000</WaardeBedr>
+            </BedrAanvangVordering>
             <CdStatusVordering>51</CdStatusVordering>
-            <BedrSaldoVordering>0.00</BedrSaldoVordering>
+            <BedrSaldoVordering>
+                <WaardeBedr>0</WaardeBedr>
+            </BedrSaldoVordering>
             <SzWet>
                 <CdSzWet>ABW</CdSzWet>
             </SzWet>
@@ -92,9 +100,9 @@
                 <Burgerservicenr>689735273</Burgerservicenr>
             </PartnerVordering>
             <Bron>
-                <CdKolomSuwi>202</CdKolomSuwi>
-                <CdPartijSuwi>P202</CdPartijSuwi>
-                <CdVestigingSuwi>V202</CdVestigingSuwi>
+                <CdKolomSuwi>4</CdKolomSuwi>
+                <CdPartijSuwi>0202</CdPartijSuwi>
+                <CdVestigingSuwi>0202</CdVestigingSuwi>
             </Bron>
         </Vordering>
 
@@ -108,15 +116,15 @@
             </SzWet>
             <PartnerBijzBijstand>
                 <Burgerservicenr>689735273</Burgerservicenr>
-                <Voorletters>L.</Voorletters>
+                <Voorletters>L</Voorletters>
                 <Voorvoegsel></Voorvoegsel>
                 <SignificantDeelVanDeAchternaam>Terphuis</SignificantDeelVanDeAchternaam>
                 <Geboortedat>19831102</Geboortedat>
             </PartnerBijzBijstand>
             <Bron>
-                <CdKolomSuwi>301</CdKolomSuwi>
-                <CdPartijSuwi>P301</CdPartijSuwi>
-                <CdVestigingSuwi>V301</CdVestigingSuwi>
+                <CdKolomSuwi>5</CdKolomSuwi>
+                <CdPartijSuwi>0301</CdPartijSuwi>
+                <CdVestigingSuwi>0301</CdVestigingSuwi>
             </Bron>
         </SpecifiekeGegevensBijzBijstand>
 
@@ -130,15 +138,15 @@
             </SzWet>
             <PartnerBijzBijstand>
                 <Burgerservicenr>689735273</Burgerservicenr>
-                <Voorletters>L.</Voorletters>
+                <Voorletters>L</Voorletters>
                 <Voorvoegsel></Voorvoegsel>
                 <SignificantDeelVanDeAchternaam>Terphuis</SignificantDeelVanDeAchternaam>
                 <Geboortedat>19831102</Geboortedat>
             </PartnerBijzBijstand>
             <Bron>
-                <CdKolomSuwi>302</CdKolomSuwi>
-                <CdPartijSuwi>P302</CdPartijSuwi>
-                <CdVestigingSuwi>V302</CdVestigingSuwi>
+                <CdKolomSuwi>6</CdKolomSuwi>
+                <CdPartijSuwi>0302</CdPartijSuwi>
+                <CdVestigingSuwi>0302</CdVestigingSuwi>
             </Bron>
         </SpecifiekeGegevensBijzBijstand>
 

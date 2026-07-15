@@ -114,8 +114,9 @@
                 <CdNiveauOpleidingDuo>VO-HAVO</CdNiveauOpleidingDuo>
             </InhoudResultaatOpleidingDuo>
             <ResultaatExamen>
-                <DatResultaatExamen>20050701</DatResultaatExamen>
                 <CdResultaatExamen>G</CdResultaatExamen>
+                <DatResultaatExamen>20050701</DatResultaatExamen>
+                <JaarAfgelegdExamen>2005</JaarAfgelegdExamen>
             </ResultaatExamen>
         </ResultaatOpleidingGeregistrDuo>
 
@@ -130,8 +131,9 @@
                 <CdNiveauOpleidingDuo>HBO-BA</CdNiveauOpleidingDuo>
             </InhoudResultaatOpleidingDuo>
             <ResultaatExamen>
-                <DatResultaatExamen>20090630</DatResultaatExamen>
                 <CdResultaatExamen>C</CdResultaatExamen>
+                <DatResultaatExamen>20090630</DatResultaatExamen>
+                <JaarAfgelegdExamen>2009</JaarAfgelegdExamen>
             </ResultaatExamen>
         </ResultaatOpleidingGeregistrDuo>
 
@@ -146,8 +148,9 @@
                 <CdNiveauOpleidingDuo>HBO-MA</CdNiveauOpleidingDuo>
             </InhoudResultaatOpleidingDuo>
             <ResultaatExamen>
-                <DatResultaatExamen>20120615</DatResultaatExamen>
                 <CdResultaatExamen>G</CdResultaatExamen>
+                <DatResultaatExamen>20120615</DatResultaatExamen>
+                <JaarAfgelegdExamen>2012</JaarAfgelegdExamen>
             </ResultaatExamen>
         </ResultaatOpleidingGeregistrDuo>
 

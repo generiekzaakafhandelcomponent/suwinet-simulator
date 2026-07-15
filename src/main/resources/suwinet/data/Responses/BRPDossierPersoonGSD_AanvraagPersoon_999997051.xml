@@ -19,6 +19,27 @@
                 <DatGeldigheidGegevens>20260128</DatGeldigheidGegevens>
             </GeldigheidGegevensNationaliteit>
         </Nationaliteit>
+        <Verblijfstitel>
+            <CdVerblijfstitel>41</CdVerblijfstitel>
+            <DatBVerblijfstitel>20260128</DatBVerblijfstitel>
+            <DatEVerblijfstitel>20270128</DatEVerblijfstitel>
+        </Verblijfstitel>
+        <DomicilieAdres>
+            <Postcd>2595AK</Postcd>
+            <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
+            <Straatnaam>Koningin Marialaan</Straatnaam>
+            <NaamOpenbareRuimte>Koningin Marialaan</NaamOpenbareRuimte>
+            <Huisnr>12</Huisnr>
+            <Huisletter>B</Huisletter>
+            <Huisnrtoevoeging>HS</Huisnrtoevoeging>
+            <IdentificatiecdVerblijfplaats>0518010000612345</IdentificatiecdVerblijfplaats>
+            <IdentificatiecdNraanduiding>0518200000612346</IdentificatiecdNraanduiding>
+        </DomicilieAdres>
+        <AangifteAdreshoudingBrp>
+            <CdGemeenteVanInschrijving>0363</CdGemeenteVanInschrijving>
+            <DatVanInschrijvingBijGemeente>20260128</DatVanInschrijvingBijGemeente>
+            <DatBAdreshoudingBrp>20260128</DatBAdreshoudingBrp>
+        </AangifteAdreshoudingBrp>
         <VerblijfplaatsHistorisch>
             <DomicilieAdres>
                 <Postcd>2597LD</Postcd>
@@ -33,12 +54,12 @@
         </VerblijfplaatsHistorisch>
         <VerblijfplaatsHistorisch>
             <DomicilieAdres>
+                <Locatieoms>Kelder</Locatieoms>
                 <Postcd>4266EB</Postcd>
                 <Gemeentedeel>Eethen</Gemeentedeel>
                 <Straatnaam>Raadhuisstraat</Straatnaam>
                 <Huisnr>16</Huisnr>
                 <Huisletter>X</Huisletter>
-                <Locatieoms>Kelder</Locatieoms>
                 <AanduidingBijHuisnr>Middelste bel</AanduidingBijHuisnr>
             </DomicilieAdres>
             <AangifteAdreshoudingBrp>
@@ -93,22 +114,6 @@
                 <DatBAdreshoudingBrp>20260128</DatBAdreshoudingBrp>
             </AangifteAdreshoudingBrp>
         </VerblijfplaatsHistorisch>
-        <DomicilieAdres>
-            <Postcd>2595AK</Postcd>
-            <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
-            <Straatnaam>Koningin Marialaan</Straatnaam>
-            <NaamOpenbareRuimte>Koningin Marialaan</NaamOpenbareRuimte>
-            <Huisnr>12</Huisnr>
-            <IdentificatiecdVerblijfplaats>0518010000612345</IdentificatiecdVerblijfplaats>
-            <IdentificatiecdNraanduiding>0518200000612346</IdentificatiecdNraanduiding>
-            <Huisletter>B</Huisletter>
-            <Huisnrtoevoeging>HS</Huisnrtoevoeging>
-        </DomicilieAdres>
-        <AangifteAdreshoudingBrp>
-            <CdGemeenteVanInschrijving>0363</CdGemeenteVanInschrijving>
-            <DatVanInschrijvingBijGemeente>20260128</DatVanInschrijvingBijGemeente>
-            <DatBAdreshoudingBrp>20260128</DatBAdreshoudingBrp>
-        </AangifteAdreshoudingBrp>
         <Ouder1>
             <Voornamen>Eveline Johanna</Voornamen>
             <SignificantDeelVanDeAchternaam>Holthuizen</SignificantDeelVanDeAchternaam>
@@ -125,22 +130,6 @@
             <ANr>9356019650</ANr>
             <DatBFamilierechtelijkeBetrekking>20260128</DatBFamilierechtelijkeBetrekking>
         </Ouder2>
-        <InschrijvingsgegevensBrp/>
-        <Verblijfstitel>
-            <CdVerblijfstitel>41</CdVerblijfstitel>
-            <DatBVerblijfstitel>20260128</DatBVerblijfstitel>
-            <DatEVerblijfstitel>20270128</DatEVerblijfstitel>
-        </Verblijfstitel>
-        <Kind>
-            <Voornamen>Catharina-Amalia Carmen woont thuis</Voornamen>
-            <Voorvoegsel>de</Voorvoegsel>
-            <SignificantDeelVanDeAchternaam>Jansen</SignificantDeelVanDeAchternaam>
-            <Geboortedat>20131007</Geboortedat>
-            <Burgerservicenr>243000157</Burgerservicenr>
-            <Titulatuur>
-                <CdAdellijkeTitelPredikaat>PS</CdAdellijkeTitelPredikaat>
-            </Titulatuur>
-        </Kind>
         <Huwelijk>
             <Partner>
                 <Voornamen>Sierra</Voornamen>
@@ -153,5 +142,16 @@
                 <Geboorteland>6030</Geboorteland>
             </Partner>
         </Huwelijk>
+        <Kind>
+            <Voornamen>Catharina-Amalia Carmen woont thuis</Voornamen>
+            <Voorvoegsel>de</Voorvoegsel>
+            <SignificantDeelVanDeAchternaam>Jansen</SignificantDeelVanDeAchternaam>
+            <Geboortedat>20131007</Geboortedat>
+            <Burgerservicenr>243000157</Burgerservicenr>
+            <Titulatuur>
+                <CdAdellijkeTitelPredikaat>PS</CdAdellijkeTitelPredikaat>
+            </Titulatuur>
+        </Kind>
+        <InschrijvingsgegevensBrp/>
     </ClientSuwi>
 </brp:AanvraagPersoonResponse>

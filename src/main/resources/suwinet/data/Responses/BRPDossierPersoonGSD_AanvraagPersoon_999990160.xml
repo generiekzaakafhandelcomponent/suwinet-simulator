@@ -28,10 +28,10 @@
             <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
             <Straatnaam>Oudegracht</Straatnaam>
             <Huisnr>3</Huisnr>
-            <IdentificatiecdVerblijfplaats>0344010001234567</IdentificatiecdVerblijfplaats>
-            <IdentificatiecdNraanduiding>0344200001234567</IdentificatiecdNraanduiding>
             <Huisletter>A</Huisletter>
             <Huisnrtoevoeging/>
+            <IdentificatiecdVerblijfplaats>0344010001234567</IdentificatiecdVerblijfplaats>
+            <IdentificatiecdNraanduiding>0344200001234567</IdentificatiecdNraanduiding>
         </DomicilieAdres>
 
         <AangifteAdreshoudingBrp>

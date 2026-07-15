@@ -1,0 +1,49 @@
+<brp:AanvraagPersoonResponse xmlns:brp="http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD/v0200">
+    <ClientSuwi>
+        <Voornamen>Yusuf</Voornamen>
+        <SignificantDeelVanDeAchternaam>El Idrissi</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19870903</Geboortedat>
+        <Burgerservicenr>999990019</Burgerservicenr>
+        <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
+        <ANr>6012128459</ANr>
+        <AanduidingNaamgebruik>1</AanduidingNaamgebruik>
+        <Geslacht>1</Geslacht>
+        <Geboorteland>5005</Geboorteland>
+        <Nationaliteit>
+            <CdNationaliteit>0202</CdNationaliteit>
+        </Nationaliteit>
+        <Verblijfstitel>
+            <CdVerblijfstitel>41</CdVerblijfstitel>
+            <!-- DynamicDate: today - 3 years -->
+            <DatBVerblijfstitel>20230610</DatBVerblijfstitel>
+            <!-- DynamicDate: today + 2 years -->
+            <DatEVerblijfstitel>20280610</DatEVerblijfstitel>
+        </Verblijfstitel>
+        <DomicilieAdres>
+            <Postcd>2512AX</Postcd>
+            <Woonplaatsnaam>Den Haag</Woonplaatsnaam>
+            <Straatnaam>Wagenstraat</Straatnaam>
+            <NaamOpenbareRuimte>Wagenstraat</NaamOpenbareRuimte>
+            <Huisnr>102</Huisnr>
+            <Huisnrtoevoeging>C</Huisnrtoevoeging>
+        </DomicilieAdres>
+        <Huwelijk>
+            <Partner>
+                <Voornamen>Layla</Voornamen>
+                <SignificantDeelVanDeAchternaam>El Idrissi</SignificantDeelVanDeAchternaam>
+                <Geboortedat>19890218</Geboortedat>
+                <Burgerservicenr>999990020</Burgerservicenr>
+            </Partner>
+        </Huwelijk>
+        <Kind>
+            <Voornamen>Amir</Voornamen>
+            <SignificantDeelVanDeAchternaam>El Idrissi</SignificantDeelVanDeAchternaam>
+            <Geboortedat>20070622</Geboortedat>
+        </Kind>
+        <Kind>
+            <Voornamen>Nora</Voornamen>
+            <SignificantDeelVanDeAchternaam>El Idrissi</SignificantDeelVanDeAchternaam>
+            <Geboortedat>20181105</Geboortedat>
+        </Kind>
+    </ClientSuwi>
+</brp:AanvraagPersoonResponse>

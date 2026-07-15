@@ -48,7 +48,7 @@ public class KadasterEndpoint extends SuwinetEndpoint {
     public PersoonsInfoResponse getPersoonsInfo(@RequestPayload PersoonsInfo request) throws JAXBException, SAXException, IOException {
 
         String xmlFilename = servicePrefix + "_PersoonsInfo_" + request.getBurgerservicenr() + ".xml";
-        logger.debug("request: " + printPayload(request, INCOMING_CLASSES, resourceBodyAction));
+        if (logger.isDebugEnabled()) logger.debug("request: {}", printPayload(request, INCOMING_CLASSES, resourceBodyAction));
         Resource resource = readResponseDirectory(xmlFilename);
         PersoonsInfoResponse response;
         if(resource == null) {
@@ -57,7 +57,7 @@ public class KadasterEndpoint extends SuwinetEndpoint {
         } else {
             response = (PersoonsInfoResponse) unmarshal(PersoonsInfoResponse.class,resource);
         }
-        logger.debug("response: " + printPayload(response, OUT_GOING_CLASSES, resourceBodyReaction));
+        if (logger.isDebugEnabled()) logger.debug("response: {}", printPayload(response, OUT_GOING_CLASSES, resourceBodyReaction));
 
         return response;
     }

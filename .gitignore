@@ -32,6 +32,13 @@ hs_err_pid*
 .gradle
 /build/
 
+# Eclipse build output
+/bin/
+
+# IDE / tooling
+.claude/
+.java-version
+
 # Ignore Gradle GUI config
 gradle-app.setting
 

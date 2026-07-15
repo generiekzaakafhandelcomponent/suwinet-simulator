@@ -1,0 +1,54 @@
+<brp:AanvraagPersoonResponse xmlns:brp="http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD/v0200">
+    <ClientSuwi>
+        <Voornamen>Marco</Voornamen>
+        <Voorvoegsel>da</Voorvoegsel>
+        <SignificantDeelVanDeAchternaam>Silva</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19811017</Geboortedat>
+        <Burgerservicenr>999990081</Burgerservicenr>
+        <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
+        <ANr>6010768408</ANr>
+        <AanduidingNaamgebruik>1</AanduidingNaamgebruik>
+        <Geslacht>1</Geslacht>
+        <Geboorteland>6045</Geboorteland>
+        <Nationaliteit>
+            <CdNationaliteit>0337</CdNationaliteit>
+        </Nationaliteit>
+        <Verblijfstitel>
+            <CdVerblijfstitel>41</CdVerblijfstitel>
+            <!-- DynamicDate: today - 5 years -->
+            <DatBVerblijfstitel>20201210</DatBVerblijfstitel>
+            <!-- DynamicDate: today - 6 months -->
+            <DatEVerblijfstitel>20251210</DatEVerblijfstitel>
+        </Verblijfstitel>
+        <DomicilieAdres>
+            <Postcd>2562AZ</Postcd>
+            <Woonplaatsnaam>Den Haag</Woonplaatsnaam>
+            <Straatnaam>Beeklaan</Straatnaam>
+            <NaamOpenbareRuimte>Beeklaan</NaamOpenbareRuimte>
+            <Huisnr>230</Huisnr>
+            <Huisletter>A</Huisletter>
+            <Huisnrtoevoeging>II</Huisnrtoevoeging>
+        </DomicilieAdres>
+        <Huwelijk>
+            <Partner>
+                <Voornamen>Esmée</Voornamen>
+                <Voorvoegsel>de</Voorvoegsel>
+                <SignificantDeelVanDeAchternaam>Vries</SignificantDeelVanDeAchternaam>
+                <Geboortedat>19830509</Geboortedat>
+                <Burgerservicenr>999990093</Burgerservicenr>
+            </Partner>
+        </Huwelijk>
+        <Kind>
+            <Voornamen>Lukas</Voornamen>
+            <Voorvoegsel>da</Voorvoegsel>
+            <SignificantDeelVanDeAchternaam>Silva</SignificantDeelVanDeAchternaam>
+            <Geboortedat>20040114</Geboortedat>
+        </Kind>
+        <Kind>
+            <Voornamen>Sophie</Voornamen>
+            <Voorvoegsel>da</Voorvoegsel>
+            <SignificantDeelVanDeAchternaam>Silva</SignificantDeelVanDeAchternaam>
+            <Geboortedat>20160721</Geboortedat>
+        </Kind>
+    </ClientSuwi>
+</brp:AanvraagPersoonResponse>

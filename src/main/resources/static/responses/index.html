@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Suwinet Sim Editor</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <!-- Carbon Design System (gevendord): Plex-fonts → gecompileerde Carbon-styles → app-laag -->
+    <link rel="stylesheet" href="vendor/plex/plex.css">
+    <link rel="stylesheet" href="vendor/carbon/carbon.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/mdn-like.min.css">
+</head>
+<body class="cds--g10">
+<div id="loading-overlay" class="loading-overlay" hidden>
+    <div class="loading-card">
+        <div class="loading-title">Response-bestanden laden…</div>
+        <div class="loading-track">
+            <div id="loading-bar" class="loading-bar"></div>
+        </div>
+        <div id="loading-label" class="loading-label">Voorbereiden…</div>
+    </div>
+</div>
+<!-- Carbon UI Shell header (g100-zone) — zelfde patroon als persona-lab's fragments/nav.html.
+     De app-switcher volgt het Carbon-switcherpatroon: grid-knop rechts, uitklappend rechterpaneel
+     met de teruglink naar Persona Lab. -->
+<header class="cds--header cds--g100" aria-label="Suwinet Editor">
+    <a class="cds--header__name" href="./">
+        <span class="cds--header__name--prefix">Ritense&nbsp;</span>Suwinet&nbsp;Editor
+    </a>
+    <nav class="cds--header__nav" aria-label="Weergave">
+        <ul class="cds--header__menu-bar">
+            <li><button class="mode-btn active" data-mode="persons" type="button"><i data-lucide="users" width="14" height="14" stroke-width="2" style="display:block"></i>Personen</button></li>
+            <li><button class="mode-btn" data-mode="files" type="button"><i data-lucide="folder-open" width="14" height="14" stroke-width="2" style="display:block"></i>Bestanden</button></li>
+        </ul>
+    </nav>
+    <div class="cds--header__global">
+        <span class="basedir" id="basedir" title="Configurable via simulator.responses.path"></span>
+        <button id="test-all-btn" class="header-btn" type="button" title="Test alle response-bestanden: SOAP-roundtrip + XSD-validatie"><i data-lucide="play" width="14" height="14" stroke-width="2" style="display:block"></i>Test alle bestanden</button>
+        <button id="reload" class="header-btn" type="button"><i data-lucide="refresh-cw" width="14" height="14" stroke-width="2" style="display:block"></i>Herlaad index</button>
+        <button type="button" class="cds--header__action" id="app-switcher-btn"
+                aria-haspopup="true" aria-expanded="false" aria-controls="app-switcher-menu"
+                aria-label="Wissel van app" title="Wissel van app">
+            <svg viewBox="0 0 20 20" width="20" height="20" fill="currentColor"><circle cx="3.5" cy="3.5" r="1.5"/><circle cx="10" cy="3.5" r="1.5"/><circle cx="16.5" cy="3.5" r="1.5"/><circle cx="3.5" cy="10" r="1.5"/><circle cx="10" cy="10" r="1.5"/><circle cx="16.5" cy="10" r="1.5"/><circle cx="3.5" cy="16.5" r="1.5"/><circle cx="10" cy="16.5" r="1.5"/><circle cx="16.5" cy="16.5" r="1.5"/></svg>
+        </button>
+    </div>
+    <div class="cds--header-panel" id="app-switcher-menu" role="menu" aria-label="Verbonden apps">
+        <ul class="cds--switcher" role="none">
+            <li class="cds--switcher__item" role="none">
+                <span class="app-switcher-head">Verbonden apps</span>
+            </li>
+            <li class="cds--switcher__item" role="none">
+                <a class="cds--switcher__item-link app-item" role="menuitem" href="http://localhost:5003/personas-page">
+                    <span class="app-item-name">Persona Lab</span>
+                    <span class="app-item-host">localhost:5003</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<main class="layout">
+    <aside class="left-pane">
+        <div class="filters">
+            <input id="search" type="search" placeholder="Zoek (BSN, naam, kenteken, bestand...)"/>
+            <span class="result-count" id="result-count"></span>
+        </div>
+        <div class="table-wrap" id="files-wrap" hidden>
+            <table id="files-table">
+                <thead>
+                <tr class="sort-row">
+                    <th data-sort="dienst">Dienst</th>
+                    <th data-sort="operatie">Operatie</th>
+                    <th data-sort="sleutel">Sleutel</th>
+                    <th data-sort="naam">Naam</th>
+                    <th data-sort="geboortedat">Geboren</th>
+                    <th data-sort="postcd">Postcode</th>
+                    <th data-sort="woonplaatsnaam">Woonplaats</th>
+                    <th data-sort="extra">Extra</th>
+                </tr>
+                <tr class="filter-row">
+                    <th data-col-filter="dienst"></th>
+                    <th data-col-filter="operatie"></th>
+                    <th data-col-filter="sleutel"></th>
+                    <th data-col-filter="naam"></th>
+                    <th data-col-filter="geboortedat"></th>
+                    <th data-col-filter="postcd"></th>
+                    <th data-col-filter="woonplaatsnaam"></th>
+                    <th data-col-filter="extra"></th>
+                </tr>
+                </thead>
+                <tbody id="files-tbody"></tbody>
+            </table>
+        </div>
+        <div class="table-wrap" id="persons-wrap">
+            <table id="persons-table">
+                <thead>
+                <tr class="sort-row">
+                    <th data-sort-p="bsn">BSN</th>
+                    <th data-sort-p="naam">Naam</th>
+                    <th data-sort-p="geboortedat">Geboren</th>
+                    <th data-sort-p="woonplaatsnaam">Woonplaats</th>
+                    <th data-sort-p="diensten">Diensten</th>
+                </tr>
+                <tr class="filter-row">
+                    <th data-col-filter-p="bsn"></th>
+                    <th data-col-filter-p="naam"></th>
+                    <th data-col-filter-p="geboortedat"></th>
+                    <th data-col-filter-p="woonplaatsnaam"></th>
+                    <th data-col-filter-p="diensten"></th>
+                </tr>
+                </thead>
+                <tbody id="persons-tbody"></tbody>
+            </table>
+        </div>
+    </aside>
+
+    <div class="resize-handle" id="resize-handle" title="Sleep om de breedte aan te passen (dubbelklik om te resetten)"></div>
+
+    <section class="right-pane" id="right-pane">
+        <div class="empty-state" id="empty-state">
+            Selecteer een persoon links.
+        </div>
+
+        <!-- File detail (existing) -->
+        <div class="detail" id="detail" hidden>
+            <div class="detail-header">
+                <div>
+                    <div class="detail-breadcrumb" id="detail-breadcrumb" hidden></div>
+                    <div class="detail-filename" id="detail-filename"></div>
+                    <div class="detail-sub" id="detail-sub"></div>
+                </div>
+                <button class="hamburger-btn" id="actions-hamburger" type="button"
+                        aria-label="Acties" aria-expanded="false" aria-controls="file-actions">☰</button>
+                <div class="actions" id="file-actions">
+                    <span class="dirty-indicator" id="dirty-indicator" hidden>● niet opgeslagen</span>
+                    <span class="git-indicator" id="git-indicator" hidden></span>
+                    <span class="status" id="status"></span>
+                    <div class="btn-group">
+                        <button id="toggle-diff-btn" type="button" title="Git-diff t.o.v. HEAD tonen/verbergen" hidden>Diff</button>
+                        <button id="toggle-list-btn" type="button" title="Bestandenlijst tonen/verbergen" class="active">Lijst</button>
+                        <button id="toggle-raw-btn" type="button" title="Raw XML tonen/verbergen">XML</button>
+                    </div>
+                    <button id="test-file-btn" type="button" title="Roundtrip-test: SOAP-call naar simulator + diff t.o.v. deze file">Test</button>
+                    <button id="save-btn" type="button" disabled>Opslaan</button>
+                </div>
+            </div>
+            <div class="validation-banner" id="validation-banner" hidden>
+                <div class="validation-banner-icon">⚠</div>
+                <div class="validation-banner-body">
+                    <div class="validation-banner-title">Mogelijke problemen gevonden</div>
+                    <ul class="validation-banner-issues" id="validation-banner-issues"></ul>
+                </div>
+                <div class="validation-banner-actions">
+                    <button type="button" id="validation-fix-btn" class="primary-btn" title="Past de fix toe in de editor — sla daarna nog op">Fix toepassen (nog niet opgeslagen)</button>
+                    <button type="button" id="validation-dismiss-btn" class="secondary-btn">Negeren</button>
+                </div>
+            </div>
+            <div class="detail-body raw-collapsed" id="detail-body">
+                <div class="form-pane" id="form-pane">
+                    <div class="in-file-search-bar" id="form-search-bar">
+                        <input id="form-search" type="search" placeholder="Zoek in formulier…" autocomplete="off"/>
+                        <button type="button" id="form-search-prev" title="Vorige (Shift+Enter)">↑</button>
+                        <button type="button" id="form-search-next" title="Volgende (Enter)">↓</button>
+                        <span class="in-file-search-count" id="form-search-count"></span>
+                        <button type="button" id="form-search-clear" title="Wis zoekopdracht" hidden>×</button>
+                        <label class="form-search-only-label" id="form-search-only-wrap" hidden>
+                            <input type="checkbox" id="form-search-only"/> Alleen resultaten
+                        </label>
+                    </div>
+                    <div class="form-fields" id="form-fields"></div>
+                </div>
+                <div class="raw-resize-handle" id="raw-resize-handle"
+                     title="Sleep om de breedte aan te passen (dubbelklik om te resetten)"></div>
+                <div class="raw-pane" id="raw-pane">
+                    <div class="raw-pane-header">
+                        <span class="raw-pane-title">Raw XML</span>
+                        <div class="raw-history-btns">
+                            <button type="button" id="raw-undo-btn" class="raw-history-btn" title="Ongedaan maken (Ctrl+Z)" disabled>↩</button>
+                            <button type="button" id="raw-redo-btn" class="raw-history-btn" title="Opnieuw (Ctrl+Shift+Z)" disabled>↪</button>
+                        </div>
+                        <div class="dyndate-wrap" id="dyndate-wrap">
+                            <button type="button" id="dyndate-btn" class="dyndate-btn">Datum invullen ▾</button>
+                            <div class="dyndate-panel" id="dyndate-panel" hidden>
+                                <div class="dyndate-hint">Zet de cursor op de regel van de datum die je dynamisch wilt maken, en kies hieronder een offset. De simulator berekent de datum bij elk verzoek opnieuw.</div>
+                                <div class="dyndate-options" id="dyndate-options"></div>
+                                <div class="dyndate-custom-row">
+                                    <input type="text" id="dyndate-custom-input" class="dyndate-custom-input" placeholder="today − 3 weeks" autocomplete="off" />
+                                    <button type="button" id="dyndate-custom-submit" class="dyndate-custom-submit">Invoegen</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="in-file-search-bar" id="raw-search-bar">
+                            <input id="raw-search" type="search" placeholder="Zoek in XML…" autocomplete="off"/>
+                            <button type="button" id="raw-search-prev" title="Vorige (Shift+Enter)">↑</button>
+                            <button type="button" id="raw-search-next" title="Volgende (Enter)">↓</button>
+                            <span class="in-file-search-count" id="raw-search-count"></span>
+                            <button type="button" id="raw-search-clear" title="Wis zoekopdracht" hidden>×</button>
+                        </div>
+                    </div>
+                    <textarea id="raw-editor"></textarea>
+                    <div class="diff-pane" id="diff-pane" hidden>
+                        <div class="diff-toolbar">
+                            <button type="button" id="diff-ignore-ws-btn" title="Verberg wijzigingen die alleen witruimte betreffen">Negeer witruimte</button>
+                        </div>
+                        <div class="diff-empty" id="diff-empty"></div>
+                        <pre class="diff-content" id="diff-content"></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Person detail -->
+        <div class="person-detail" id="person-detail" hidden>
+            <div class="detail-header">
+                <div>
+                    <div class="detail-filename" id="person-name"></div>
+                    <div class="detail-sub" id="person-sub"></div>
+                </div>
+                <div class="person-header-search">
+                    <div class="person-search-chip" id="person-search-chip" hidden>
+                        <span class="person-search-chip-text" id="person-search-chip-text"></span>
+                        <button class="person-search-chip-clear" id="person-search-chip-clear" type="button" aria-label="Zoekopdracht wissen">×</button>
+                    </div>
+                    <input id="person-search" type="search" placeholder="Zoek in bestanden…" autocomplete="off"/>
+                    <span class="person-search-count" id="person-search-count" hidden></span>
+                </div>
+                <div class="actions">
+                    <button id="test-person-btn" type="button" class="secondary-btn" title="Test alle BSN-diensten voor deze persoon">Test alle diensten</button>
+                    <button id="copy-person-btn" type="button" class="primary-btn">Persoon kopiëren</button>
+                </div>
+            </div>
+            <div class="person-body" id="person-body"></div>
+        </div>
+
+        <!-- Template: 'Recente inkomsten toevoegen' panel cloned into person-body -->
+        <template id="quick-income-template">
+            <div class="quick-income">
+                <div class="quick-income-heading">Recente inkomsten toevoegen</div>
+                <p class="muted small quick-income-intro">
+                    Voegt een blok met de laatste N maanden toe (datums relatief aan vandaag),
+                    zodat GZAC de regels als "recent" classificeert via <code>datumEindOpgave</code>
+                    resp. <code>datumEindUitkeringsperiode</code>.
+                </p>
+                <div class="quick-income-form">
+                    <label>Type
+                        <select data-qi="type">
+                            <option value="loondienst">Loondienst (UWV)</option>
+                            <option value="uwvuitkering">UWV-uitkering</option>
+                            <option value="onbekend">Onbekend (UWV)</option>
+                            <option value="pensioen">Pensioen (UWV)</option>
+                            <option value="svbuitkering">SVB-uitkering</option>
+                            <option value="studiefinanciering">Studiefinanciering (DUO)</option>
+                        </select>
+                    </label>
+                    <label>Aantal maanden
+                        <input type="number" data-qi="months" min="1" max="12" value="3"/>
+                    </label>
+                    <label data-qi-svbregeling-row hidden>SVB-regeling
+                        <select data-qi="svbregeling">
+                            <option value="AOW">AOW (ouderdomspensioen)</option>
+                            <option value="ANW">ANW (nabestaanden)</option>
+                            <option value="AIO">AIO (aanvullende inkomensvoorziening ouderen)</option>
+                            <option value="WLZ">WLZ (PGB)</option>
+                        </select>
+                    </label>
+                    <label data-qi-werkgever-row>Werkgever
+                        <input type="text" data-qi="werkgever"/>
+                    </label>
+                    <label data-qi-bruto-row>Bruto € / maand
+                        <input type="number" data-qi="bruto" min="0" step="0.01" value="2000.00"/>
+                    </label>
+                    <label data-qi-netto-row>Netto € / maand
+                        <input type="number" data-qi="netto" min="0" step="0.01" value="2050.00"/>
+                    </label>
+                    <label data-qi-alimentatie-ingehouden-row>Alimentatie ingehouden € / maand (optioneel)
+                        <input type="number" data-qi="alimentatie-ingehouden" min="0" step="0.01" value=""/>
+                    </label>
+                    <label data-qi-alimentatie-rechtstreeks-row>Alimentatie rechtstreeks € / maand (optioneel)
+                        <input type="number" data-qi="alimentatie-rechtstreeks" min="0" step="0.01" value=""/>
+                    </label>
+                </div>
+                <div class="quick-income-status" data-qi="status"></div>
+                <div class="quick-income-actions">
+                    <button type="button" class="primary-btn" data-qi="submit">Toevoegen</button>
+                </div>
+            </div>
+        </template>
+    </section>
+</main>
+
+<!-- Copy modal -->
+<div class="modal-backdrop" id="copy-modal" hidden>
+    <div class="modal">
+        <div class="modal-header">
+            <h2>Persoon kopiëren</h2>
+            <button class="modal-close" type="button" id="copy-modal-close">×</button>
+        </div>
+        <div class="modal-body">
+            <div class="modal-source" id="copy-source"></div>
+            <div class="form-section section-identity">
+                <h3>👤 Identiteit</h3>
+                <div class="form-field-wide">
+                    <label>Doel-BSN
+                        <span class="hint" id="bsn-validation"></span>
+                    </label>
+                    <div class="inline-input">
+                        <input id="copy-bsn" type="text" placeholder="bv. 999991234"/>
+                        <button type="button" id="copy-bsn-gen" class="secondary-btn">Genereer test-BSN</button>
+                    </div>
+                </div>
+                <label class="checkbox-line">
+                    <input type="checkbox" id="copy-anr-toggle"/>
+                    A-nummer aanpassen
+                </label>
+                <div class="form-field-wide indent" id="copy-anr-row" hidden>
+                    <label>Nieuw A-nummer</label>
+                    <input id="copy-anr" type="text" placeholder="10 cijfers"/>
+                </div>
+                <label class="checkbox-line">
+                    <input type="checkbox" id="copy-name-toggle"/>
+                    Naam aanpassen
+                </label>
+                <div class="form-grid indent" id="copy-name-rows" hidden>
+                    <label>Voornamen<input id="copy-voornamen" type="text"/></label>
+                    <label>Voorvoegsel<input id="copy-voorvoegsel" type="text"/></label>
+                    <label>Achternaam<input id="copy-achternaam" type="text"/></label>
+                </div>
+            </div>
+            <div class="form-section section-address">
+                <h3>🏠 Adres (verplicht)</h3>
+                <div class="form-grid">
+                    <label>Stad
+                        <input id="copy-stad" list="cities-datalist" autocomplete="off"/>
+                        <datalist id="cities-datalist"></datalist>
+                    </label>
+                    <label>Gemeentecode
+                        <input id="copy-gemeentecode" type="text" maxlength="4"/>
+                    </label>
+                    <label>Straat<input id="copy-straat" type="text"/></label>
+                    <label>Huisnummer<input id="copy-huisnr" type="text"/></label>
+                    <label>Postcode<input id="copy-postcd" type="text" maxlength="6"/></label>
+                </div>
+                <p class="muted small">
+                    Historische adressen krijgen dezelfde postcode-cijfers met letters AA/BB/CC,
+                    Kerkstraat / Dorpstraat / Schoolstraat als straatnaam, en hetzelfde huisnummer.
+                </p>
+            </div>
+            <div class="form-section section-files">
+                <h3>📁 Bestanden meekopiëren</h3>
+                <div class="files-checklist" id="copy-files"></div>
+            </div>
+            <div class="form-section section-conflict">
+                <h3>⚠️ Bij conflict (doelbestand bestaat al)</h3>
+                <label class="radio-line">
+                    <input type="radio" name="conflict" value="ABORT" checked/>
+                    Afbreken (laat me eerst beslissen)
+                </label>
+                <label class="radio-line">
+                    <input type="radio" name="conflict" value="SKIP"/>
+                    Bestaande overslaan, alleen nieuwe schrijven
+                </label>
+                <label class="radio-line">
+                    <input type="radio" name="conflict" value="OVERWRITE"/>
+                    Overschrijven
+                </label>
+            </div>
+            <div class="form-section unchanged-list">
+                <strong>Niet aangepast:</strong>
+                geboortedatum, geboortegemeente, nationaliteit, partner, kinderen, ouders,
+                werkgever-info, voertuigen, eigendommen.
+            </div>
+        </div>
+        <div class="modal-footer">
+            <span class="status" id="copy-status"></span>
+            <button type="button" class="secondary-btn" id="copy-cancel">Annuleren</button>
+            <button type="button" class="primary-btn" id="copy-submit">Kopieer</button>
+        </div>
+    </div>
+</div>
+
+<!-- Conflict modal: shown when the clone-call returns 409 with conflicting filenames -->
+<div class="modal-backdrop" id="conflict-modal" hidden>
+    <div class="modal">
+        <div class="modal-header">
+            <h2>Conflicten gevonden</h2>
+            <button class="modal-close" type="button" id="conflict-modal-close">×</button>
+        </div>
+        <div class="modal-body">
+            <p>De volgende bestanden bestaan al voor de doel-BSN:</p>
+            <ul class="conflict-list" id="conflict-list"></ul>
+            <p>Wat wil je doen?</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="secondary-btn" id="conflict-cancel">Annuleren</button>
+            <button type="button" class="secondary-btn" id="conflict-skip">Bestaande overslaan</button>
+            <button type="button" class="primary-btn" id="conflict-overwrite">Overschrijven</button>
+        </div>
+    </div>
+</div>
+
+<!-- Test result modal: shown after running a single SOAP test from the file-detail "Test" button -->
+<div class="modal-backdrop" id="test-result-modal" hidden>
+    <div class="modal modal-wide">
+        <div class="modal-header">
+            <h2 id="test-result-modal-title">Test resultaat</h2>
+            <button class="modal-close" type="button" id="test-result-modal-close">×</button>
+        </div>
+        <div class="modal-body">
+            <div id="test-result-modal-body"></div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="primary-btn" id="test-result-modal-ok">Sluiten</button>
+        </div>
+    </div>
+</div>
+
+<!-- All-tests drawer (persistent bottom panel) -->
+<div id="all-test-drawer" class="all-test-drawer">
+    <div id="all-test-resize-handle" class="all-test-resize-handle" title="Sleep om hoogte aan te passen"></div>
+    <div class="all-test-drawer-header">
+        <div class="all-test-drawer-title-area">
+            <span class="all-test-drawer-title">Test alle bestanden</span>
+            <span id="all-test-progress-label" class="all-test-progress-label" hidden></span>
+            <div id="all-test-progress-track" class="all-test-progress-track" hidden>
+                <div id="all-test-progress-bar" class="all-test-progress-bar"></div>
+            </div>
+        </div>
+        <div class="all-test-drawer-actions">
+            <button type="button" id="all-test-rerun-btn" class="secondary-btn" hidden>Opnieuw testen</button>
+            <button type="button" id="all-test-close-btn" class="all-test-drawer-close" aria-label="Sluiten">×</button>
+        </div>
+    </div>
+    <div id="all-test-drawer-body" class="all-test-drawer-body"></div>
+</div>
+
+<script src="lucide.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/xml/xml.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/search/searchcursor.min.js"></script>
+<script src="cities.js"></script>
+<script type="module" src="app.js"></script>
+<script>
+    // App-switcher (Carbon-patroon, zoals persona-lab): grid-knop toggelt het
+    // rechterpaneel via class; sluit bij klik-buiten of Escape.
+    (function () {
+        var btn = document.getElementById('app-switcher-btn');
+        var menu = document.getElementById('app-switcher-menu');
+        if (!btn || !menu) return;
+        function isOpen() { return menu.classList.contains('cds--header-panel--expanded'); }
+        function open() { menu.classList.add('cds--header-panel--expanded'); btn.setAttribute('aria-expanded', 'true'); }
+        function close() { menu.classList.remove('cds--header-panel--expanded'); btn.setAttribute('aria-expanded', 'false'); }
+        btn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            isOpen() ? close() : open();
+        });
+        document.addEventListener('click', function (e) {
+            if (!menu.contains(e.target) && !btn.contains(e.target)) close();
+        });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+    })();
+</script>
+</body>
+</html>

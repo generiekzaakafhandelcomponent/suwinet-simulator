@@ -1,7 +1,6 @@
 <smls:UWVPersoonsIkvInfoResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/UWVDossierInkomstenGSD/v0200">
     <ClientSuwi>
         <Burgerservicenr>999991322</Burgerservicenr>
-
         <!-- 1. Werkgever in Rotterdam: parttime baan in de supermarkt -->
         <Inkomstenverhouding>
             <VolgnrIkv>1</VolgnrIkv>
@@ -42,7 +41,6 @@
                 <IndRegelmatigArbeidspatroon>1</IndRegelmatigArbeidspatroon>
                 <CdAardIkv>12</CdAardIkv>
             </Inkomstenperiode>
-
             <Inkomstenopgave>
                 <DatBIko>20220501</DatBIko>
                 <DatEIko>20220531</DatEIko>
@@ -59,7 +57,6 @@
                     <WaardeBedr>112500</WaardeBedr>
                 </BedrLoonLbPremieVolksverz>
             </Inkomstenopgave>
-
             <Inkomstenopgave>
                 <DatBIko>20220601</DatBIko>
                 <DatEIko>20220630</DatEIko>
@@ -77,7 +74,6 @@
                 </BedrLoonLbPremieVolksverz>
             </Inkomstenopgave>
         </Inkomstenverhouding>
-
         <!-- 2. UWV-uitkering (bijv. ZW na einde dienstverband) -->
         <Inkomstenverhouding>
             <VolgnrIkv>2</VolgnrIkv>
@@ -125,10 +121,10 @@
                 </BedrLoonLbPremieVolksverz>
             </Inkomstenopgave>
         </Inkomstenverhouding>
-
         <!-- 3. SVB-uitkering (bijv. AOW) -->
         <Inkomstenverhouding>
             <VolgnrIkv>3</VolgnrIkv>
+            <!-- DynamicDate: startOfMonth - 2 months -->
             <DatBIkv>20240101</DatBIkv>
             <AdministratieveEenheid>
                 <NaamAdministratieveEenheid>SOCIALE VERZEKERINGSBANK</NaamAdministratieveEenheid>
@@ -148,7 +144,9 @@
                 </FeitelijkAdresAeh>
             </AdministratieveEenheid>
             <Inkomstenperiode>
+                <!-- DynamicDate: startOfMonth - 1 month -->
                 <DatBIkp>20240101</DatBIkp>
+                <!-- DynamicDate: endOfMonth - 1 month -->
                 <DatEIkp>20240131</DatEIkp>
                 <CdSrtIkv>85</CdSrtIkv>
                 <CdTypeArbeidscontract>U</CdTypeArbeidscontract>
@@ -156,7 +154,9 @@
                 <CdAardIkv>15</CdAardIkv>
             </Inkomstenperiode>
             <Inkomstenopgave>
+                <!-- DynamicDate: startOfMonth -->
                 <DatBIko>20240101</DatBIko>
+                <!-- DynamicDate: endOfMonth -->
                 <DatEIko>20240131</DatEIko>
                 <AantSvDagenIko>31</AantSvDagenIko>
                 <AantVerloondeUrenIko>0</AantVerloondeUrenIko>
@@ -173,4 +173,8 @@
             </Inkomstenopgave>
         </Inkomstenverhouding>
     </ClientSuwi>
+    <PeriodeGegevensleveringIko>
+        <DatBPeriode>20220201</DatBPeriode>
+        <DatEPeriode>20240131</DatEPeriode>
+    </PeriodeGegevensleveringIko>
 </smls:UWVPersoonsIkvInfoResponse>

@@ -183,6 +183,7 @@
                 </RechtspersoonAdministratieveEenh>
                 <FeitelijkAdresAeh>
                     <Straatadres>
+                        <Postcd>0000AA</Postcd>
                         <Postcd>1101AB</Postcd>
                         <Woonplaatsnaam>Onbekend</Woonplaatsnaam>
                         <Gemeentenaam>Onbekend</Gemeentenaam>

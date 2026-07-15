@@ -1,7 +1,6 @@
 <smls:UWVPersoonsIkvInfoResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/UWVDossierInkomstenGSD/v0200">
     <ClientSuwi>
         <Burgerservicenr>999997051</Burgerservicenr>
-
         <!-- 1. Werkgever in Rotterdam: parttime baan in de supermarkt -->
         <Inkomstenverhouding>
             <VolgnrIkv>1</VolgnrIkv>
@@ -42,7 +41,6 @@
                 <IndRegelmatigArbeidspatroon>1</IndRegelmatigArbeidspatroon>
                 <CdAardIkv>12</CdAardIkv>
             </Inkomstenperiode>
-
             <Inkomstenopgave>
                 <DatBIko>20220501</DatBIko>
                 <DatEIko>20220531</DatEIko>
@@ -59,7 +57,6 @@
                     <WaardeBedr>112500</WaardeBedr>
                 </BedrLoonLbPremieVolksverz>
             </Inkomstenopgave>
-
             <Inkomstenopgave>
                 <DatBIko>20220601</DatBIko>
                 <DatEIko>20220630</DatEIko>
@@ -77,7 +74,6 @@
                 </BedrLoonLbPremieVolksverz>
             </Inkomstenopgave>
         </Inkomstenverhouding>
-
         <!-- 2. UWV-uitkering (bijv. ZW na einde dienstverband) -->
         <Inkomstenverhouding>
             <VolgnrIkv>2</VolgnrIkv>
@@ -125,7 +121,6 @@
                 </BedrLoonLbPremieVolksverz>
             </Inkomstenopgave>
         </Inkomstenverhouding>
-
         <!-- 3. SVB-uitkering (bijv. AOW) -->
         <Inkomstenverhouding>
             <VolgnrIkv>3</VolgnrIkv>
@@ -172,5 +167,87 @@
                 </BedrLoonLbPremieVolksverz>
             </Inkomstenopgave>
         </Inkomstenverhouding>
+        <!-- Toegevoegd door "Recente inkomsten" -->
+        <Inkomstenverhouding>
+            <VolgnrIkv>4</VolgnrIkv>
+            <DatBIkv>20260301</DatBIkv>
+            <DatEIkv>20260531</DatEIkv>
+            <AdministratieveEenheid>
+                <NaamAdministratieveEenheid>PENSIOENFONDS VOORBEELD</NaamAdministratieveEenheid>
+                <Loonheffingennr>008888888L01</Loonheffingennr>
+                <RechtspersoonAdministratieveEenh>
+                    <FiNr>008888888</FiNr>
+                    <NaamRechtspersoon>PENSIOENFONDS VOORBEELD</NaamRechtspersoon>
+                </RechtspersoonAdministratieveEenh>
+                <FeitelijkAdresAeh>
+                    <Straatadres>
+                        <Postcd>3511LH</Postcd>
+                        <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+                        <Gemeentenaam>Utrecht</Gemeentenaam>
+                        <Straatnaam>Pensioenlaan</Straatnaam>
+                        <Huisnr>1</Huisnr>
+                    </Straatadres>
+                </FeitelijkAdresAeh>
+            </AdministratieveEenheid>
+            <Inkomstenperiode>
+                <DatBIkp>20260301</DatBIkp>
+                <DatEIkp>20260531</DatEIkp>
+                <CdSrtIkv>85</CdSrtIkv>
+                <IndLoonheffingskortingToegepast>1</IndLoonheffingskortingToegepast>
+                <CdAardIkv>15</CdAardIkv>
+            </Inkomstenperiode>
+            <Inkomstenopgave>
+                <DatBIko>20260301</DatBIko>
+                <DatEIko>20260331</DatEIko>
+                <AantSvDagenIko>31</AantSvDagenIko>
+                <AantVerloondeUrenIko>0</AantVerloondeUrenIko>
+                <BedrBrutoloonSv>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>180000</WaardeBedr>
+                </BedrBrutoloonSv>
+                <BedrLoonLbPremieVolksverz>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>180000</WaardeBedr>
+                </BedrLoonLbPremieVolksverz>
+            </Inkomstenopgave>
+            <Inkomstenopgave>
+                <DatBIko>20260401</DatBIko>
+                <DatEIko>20260430</DatEIko>
+                <AantSvDagenIko>30</AantSvDagenIko>
+                <AantVerloondeUrenIko>0</AantVerloondeUrenIko>
+                <BedrBrutoloonSv>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>180000</WaardeBedr>
+                </BedrBrutoloonSv>
+                <BedrLoonLbPremieVolksverz>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>180000</WaardeBedr>
+                </BedrLoonLbPremieVolksverz>
+            </Inkomstenopgave>
+            <Inkomstenopgave>
+                <DatBIko>20260501</DatBIko>
+                <DatEIko>20260531</DatEIko>
+                <AantSvDagenIko>31</AantSvDagenIko>
+                <AantVerloondeUrenIko>0</AantVerloondeUrenIko>
+                <BedrBrutoloonSv>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>180000</WaardeBedr>
+                </BedrBrutoloonSv>
+                <BedrLoonLbPremieVolksverz>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <CdPositiefNegatief>+</CdPositiefNegatief>
+                    <WaardeBedr>180000</WaardeBedr>
+                </BedrLoonLbPremieVolksverz>
+            </Inkomstenopgave>
+        </Inkomstenverhouding>
     </ClientSuwi>
+    <PeriodeGegevensleveringIko>
+        <DatBPeriode>20220201</DatBPeriode>
+        <DatEPeriode>20260507</DatEPeriode>
+    </PeriodeGegevensleveringIko>
 </smls:UWVPersoonsIkvInfoResponse>

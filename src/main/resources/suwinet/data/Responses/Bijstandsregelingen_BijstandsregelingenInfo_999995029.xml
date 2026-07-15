@@ -1,0 +1,3 @@
+<d:BijstandsregelingenInfoResponse xmlns:d="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500" xmlns:fwi="http://bkwi.nl/SuwiML/FWI/v0205">
+    <fwi:NietsGevonden/>
+</d:BijstandsregelingenInfoResponse>

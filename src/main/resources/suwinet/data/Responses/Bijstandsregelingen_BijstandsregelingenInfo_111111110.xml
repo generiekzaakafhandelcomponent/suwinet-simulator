@@ -59,9 +59,13 @@
             <IdentificatienrVordering>123456789012345</IdentificatienrVordering>
             <DatBesluitVordering>20240110</DatBesluitVordering>
             <CdRedenVordering>01</CdRedenVordering>
-            <BedrAanvangVordering>5000.00</BedrAanvangVordering>
+            <BedrAanvangVordering>
+                <WaardeBedr>500000</WaardeBedr>
+            </BedrAanvangVordering>
             <CdStatusVordering>01</CdStatusVordering>
-            <BedrSaldoVordering>3500.00</BedrSaldoVordering>
+            <BedrSaldoVordering>
+                <WaardeBedr>350000</WaardeBedr>
+            </BedrSaldoVordering>
             <DatOnherroepelijkVordering>20240215</DatOnherroepelijkVordering>
             <SzWet>
                 <CdSzWet>PW</CdSzWet>
@@ -88,9 +92,13 @@
             <IdentificatienrVordering>987654321098765</IdentificatienrVordering>
             <DatBesluitVordering>20231205</DatBesluitVordering>
             <CdRedenVordering>02</CdRedenVordering>
-            <BedrAanvangVordering>2500.00</BedrAanvangVordering>
+            <BedrAanvangVordering>
+                <WaardeBedr>250000</WaardeBedr>
+            </BedrAanvangVordering>
             <CdStatusVordering>02</CdStatusVordering>
-            <BedrSaldoVordering>1000.00</BedrSaldoVordering>
+            <BedrSaldoVordering>
+                <WaardeBedr>100000</WaardeBedr>
+            </BedrSaldoVordering>
             <SzWet>
                 <CdSzWet>WWB</CdSzWet>
             </SzWet>
