@@ -1,0 +1,50 @@
+<brp:AanvraagPersoonResponse xmlns:brp="http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD/v0200">
+    <ClientSuwi>
+        <Voornamen/>
+        <SignificantDeelVanDeAchternaam>Basma Al-Hakim</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19910926</Geboortedat>
+        <Burgerservicenr>999971827</Burgerservicenr>
+        <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
+        <ANr>9583585453</ANr>
+        <AanduidingNaamgebruik>1</AanduidingNaamgebruik>
+        <Geslacht>2</Geslacht>
+        <CdGeboortegemeente>0363</CdGeboortegemeente>
+        <Geboorteland>6030</Geboorteland>
+        <GeldigheidGegevensPersoon>
+            <DatGeldigheidGegevens>20150304</DatGeldigheidGegevens>
+        </GeldigheidGegevensPersoon>
+
+        <Nationaliteit>
+            <CdNationaliteit>0001</CdNationaliteit>
+            <GeldigheidGegevensNationaliteit>
+                <DatGeldigheidGegevens>20260201</DatGeldigheidGegevens>
+            </GeldigheidGegevensNationaliteit>
+        </Nationaliteit>
+        <DomicilieAdres>
+            <Postcd>1041AW</Postcd>
+            <Woonplaatsnaam>Amsterdam</Woonplaatsnaam>
+            <Straatnaam>Kombuisweg</Straatnaam>
+            <Huisnr>18</Huisnr>
+            <Huisletter/>
+            <Huisnrtoevoeging/>
+            <IdentificatiecdVerblijfplaats>0363010011073010</IdentificatiecdVerblijfplaats>
+            <IdentificatiecdNraanduiding>0363200011073010</IdentificatiecdNraanduiding>
+        </DomicilieAdres>
+
+        <Ouder1>
+            <Voornamen>Fatima</Voornamen>
+            <Voorvoegsel>Al-</Voorvoegsel>
+            <SignificantDeelVanDeAchternaam>Hakim</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19650318</Geboortedat>
+            <Burgerservicenr>999990020</Burgerservicenr>
+        </Ouder1>
+
+        <Ouder2>
+            <Voornamen>Khalid</Voornamen>
+            <Voorvoegsel/>
+            <SignificantDeelVanDeAchternaam>Al-Hakim</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19621105</Geboortedat>
+            <Burgerservicenr>999991292</Burgerservicenr>
+        </Ouder2>
+    </ClientSuwi>
+</brp:AanvraagPersoonResponse>
