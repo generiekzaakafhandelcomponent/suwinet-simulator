@@ -1,0 +1,11 @@
+<bij:BijstandsregelingenInfoResponse xmlns:bij="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500" xmlns:fwi="http://bkwi.nl/SuwiML/FWI/v0205">
+    <fwi:FWI>
+        <Fout>
+            <Code>FWI0001</Code>
+            <Tekst>Er is een technische fout opgetreden bij het verwerken van de aanvraag.</Tekst>
+            <Bron>
+                <DN>Bijstandsregelingen</DN>
+            </Bron>
+        </Fout>
+    </fwi:FWI>
+</bij:BijstandsregelingenInfoResponse>
