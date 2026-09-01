@@ -48,7 +48,6 @@
             <ANr>9356019650</ANr>
             <DatBFamilierechtelijkeBetrekking>19930506</DatBFamilierechtelijkeBetrekking>
         </Ouder2>
-        <InschrijvingsgegevensBrp/>
         <Kind>
             <Voornamen>Noa</Voornamen>
             <SignificantDeelVanDeAchternaam>Bruinhard</SignificantDeelVanDeAchternaam>
@@ -58,5 +57,6 @@
                 <CdAdellijkeTitelPredikaat>G</CdAdellijkeTitelPredikaat>
             </Titulatuur>
         </Kind>
+        <InschrijvingsgegevensBrp/>
     </ClientSuwi>
 </brp:AanvraagPersoonResponse>

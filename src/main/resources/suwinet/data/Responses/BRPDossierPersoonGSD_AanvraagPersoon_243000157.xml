@@ -39,10 +39,10 @@
             <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
             <Straatnaam>Spui</Straatnaam>
             <Huisnr>70</Huisnr>
-            <IdentificatiecdVerblijfplaats>0530010002090227</IdentificatiecdVerblijfplaats>
-            <IdentificatiecdNraanduiding>0530200002130217</IdentificatiecdNraanduiding>
             <Huisletter>a</Huisletter>
             <Huisnrtoevoeging>Huis</Huisnrtoevoeging>
+            <IdentificatiecdVerblijfplaats>0530010002090227</IdentificatiecdVerblijfplaats>
+            <IdentificatiecdNraanduiding>0530200002130217</IdentificatiecdNraanduiding>
         </DomicilieAdres>
 
         <Ouder1>

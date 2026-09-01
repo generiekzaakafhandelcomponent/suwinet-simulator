@@ -1,0 +1,26 @@
+<smls:UWVPersoonsIkvInfoResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/UWVDossierInkomstenGSD/v0200">
+    <ClientSuwi>
+        <Burgerservicenr>999995017</Burgerservicenr>
+        <Inkomstenverhouding>
+            <VolgnrIkv>1</VolgnrIkv>
+            <DatBIkv>20180601</DatBIkv>
+            <DatEIkv>20260601</DatEIkv>
+            <AdministratieveEenheid>
+                <NaamAdministratieveEenheid>TINKER</NaamAdministratieveEenheid>
+                <Loonheffingennr>820303585L01</Loonheffingennr>
+                <RechtspersoonAdministratieveEenh>
+                    <FiNr>820303585</FiNr>
+                    <NaamRechtspersoon>TINKER</NaamRechtspersoon>
+                </RechtspersoonAdministratieveEenh>
+            </AdministratieveEenheid>
+            <Inkomstenperiode>
+                <DatBIkp>20180601</DatBIkp>
+                <DatEIkp>20260601</DatEIkp>
+            </Inkomstenperiode>
+            <Inkomstenopgave>
+                <DatBIko>20260501</DatBIko>
+                <DatEIko>20260601</DatEIko>
+            </Inkomstenopgave>
+        </Inkomstenverhouding>
+    </ClientSuwi>
+</smls:UWVPersoonsIkvInfoResponse>

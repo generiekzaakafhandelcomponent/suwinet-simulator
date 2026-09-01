@@ -45,7 +45,7 @@ public class UWVDossierInkomstenGSDDigitaleDienstenEndpoint extends SuwinetEndpo
     @ResponsePayload
     public UWVPersoonsIkvInfoResponse getKentekenInfo(@RequestPayload UWVPersoonsIkvInfo request) throws JAXBException, SAXException, IOException {
 
-        logger.debug("request: " + printPayload(request, incomingClasses, resourceBodyAction));
+        if (logger.isDebugEnabled()) logger.debug("request: {}", printPayload(request, incomingClasses, resourceBodyAction));
         String xmlFilename = servicePrefix + "_UWVPersoonsIkvInfo_" + request.getBurgerservicenr() + ".xml";
         logger.info("looking for: " + xmlFilename);
         Resource resource = readResponseDirectory(xmlFilename);
@@ -57,7 +57,7 @@ public class UWVDossierInkomstenGSDDigitaleDienstenEndpoint extends SuwinetEndpo
         } else {
             response = (UWVPersoonsIkvInfoResponse) unmarshal(UWVPersoonsIkvInfoResponse.class,resource);
         }
-        logger.debug("response: " + printPayload(response,outGoingClasses, resourceBodyReaction));
+        if (logger.isDebugEnabled()) logger.debug("response: {}", printPayload(response, outGoingClasses, resourceBodyReaction));
 
         return response;
     }

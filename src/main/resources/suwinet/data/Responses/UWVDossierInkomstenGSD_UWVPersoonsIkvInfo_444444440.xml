@@ -6935,33 +6935,15 @@
                     <FeitelijkAdresPersoonAeh>
                         <DatBAdres>20200101</DatBAdres>
                         <DatEAdres>20231231</DatEAdres>
-                        <Straatadres>
-                            <straatnaam>Nieuwstraat</straatnaam>
-                            <huisnummer>12</huisnummer>
-                            <huisletter>A</huisletter>
-                            <postcode>1234 AB</postcode>
-                            <woonplaats>Amsterdam</woonplaats>
-                            <gemeente>Amsterdam</gemeente>
-                        </Straatadres>
+                        <Straatadres/>
                     </FeitelijkAdresPersoonAeh>
                     <FeitelijkAdresPersoonAeh>
                         <DatBAdres>20240101</DatBAdres>
-                        <StraatadresBuitenland>
-                            <straatnaam>Rue de la Paix</straatnaam>
-                            <huisnummer>7</huisnummer>
-                            <postcode>75002</postcode>
-                            <woonplaats>Parijs</woonplaats>
-                            <land>FR</land>
-                        </StraatadresBuitenland>
+                        <StraatadresBuitenland/>
                     </FeitelijkAdresPersoonAeh>
                     <CorrespondentieadresPersoonAeh>
                         <DatBAdres>20220501</DatBAdres>
-                        <Postbusadres>
-                            <postbusnummer>456</postbusnummer>
-                            <postcode>2500AA</postcode>
-                            <woonplaats>Den Haag</woonplaats>
-                            <gemeente>'s-Gravenhage</gemeente>
-                        </Postbusadres>
+                        <Postbusadres/>
                     </CorrespondentieadresPersoonAeh>
                 </PersoonAdministratieveEenheid>
                 <FeitelijkAdresAeh>

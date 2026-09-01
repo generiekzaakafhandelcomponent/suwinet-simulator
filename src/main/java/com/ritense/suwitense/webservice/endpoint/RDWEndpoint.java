@@ -55,7 +55,7 @@ public class RDWEndpoint extends SuwinetEndpoint {
             logger.info("found: " + xmlFilename);
             response = (KentekenInfoResponse) unmarshal(KentekenInfoResponse.class,resource);
         }
-        logger.debug("response: " + printPayload(response,outGoingClasses, resourceBodyReaction));
+        if (logger.isDebugEnabled()) logger.debug("response: {}", printPayload(response, outGoingClasses, resourceBodyReaction));
         return response;
     }
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "VoertuigbezitInfoPersoon")

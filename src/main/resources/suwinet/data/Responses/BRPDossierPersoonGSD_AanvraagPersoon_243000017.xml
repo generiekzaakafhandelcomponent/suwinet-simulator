@@ -38,10 +38,10 @@
             <Woonplaatsnaam>Den Haag</Woonplaatsnaam>
             <Straatnaam>kerkstraatstraat</Straatnaam>
             <Huisnr>42</Huisnr>
-            <IdentificatiecdVerblijfplaats>0530010002090227</IdentificatiecdVerblijfplaats>
-            <IdentificatiecdNraanduiding>0530200002130217</IdentificatiecdNraanduiding>
             <Huisletter>A</Huisletter>
             <Huisnrtoevoeging></Huisnrtoevoeging>
+            <IdentificatiecdVerblijfplaats>0530010002090227</IdentificatiecdVerblijfplaats>
+            <IdentificatiecdNraanduiding>0530200002130217</IdentificatiecdNraanduiding>
         </DomicilieAdres>
 
         <Ouder1>

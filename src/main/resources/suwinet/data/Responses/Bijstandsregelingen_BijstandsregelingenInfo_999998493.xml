@@ -25,7 +25,7 @@
                 <Geboortedat>19840709</Geboortedat>
             </PartnerAanvraagUitkering>
             <Bron>
-                <CdKolomSuwi>K401</CdKolomSuwi>
+                <CdKolomSuwi>401</CdKolomSuwi>
                 <CdPartijSuwi>P401</CdPartijSuwi>
                 <CdVestigingSuwi>V401</CdVestigingSuwi>
             </Bron>
@@ -49,7 +49,7 @@
                 <Geboortedat>19840709</Geboortedat>
             </PartnerAanvraagUitkering>
             <Bron>
-                <CdKolomSuwi>K407</CdKolomSuwi>
+                <CdKolomSuwi>407</CdKolomSuwi>
                 <CdPartijSuwi>P407</CdPartijSuwi>
                 <CdVestigingSuwi>V407</CdVestigingSuwi>
             </Bron>
@@ -73,7 +73,7 @@
                 <Geboortedat>19840709</Geboortedat>
             </PartnerAanvraagUitkering>
             <Bron>
-                <CdKolomSuwi>K402</CdKolomSuwi>
+                <CdKolomSuwi>402</CdKolomSuwi>
                 <CdPartijSuwi>P402</CdPartijSuwi>
                 <CdVestigingSuwi>V402</CdVestigingSuwi>
             </Bron>
@@ -84,9 +84,13 @@
             <IdentificatienrVordering>998877665544332</IdentificatienrVordering>
             <DatBesluitVordering>20190214</DatBesluitVordering>
             <CdRedenVordering>13</CdRedenVordering>
-            <BedrAanvangVordering>2875.00</BedrAanvangVordering>
+            <BedrAanvangVordering>
+                <WaardeBedr>287500</WaardeBedr>
+            </BedrAanvangVordering>
             <CdStatusVordering>51</CdStatusVordering>
-            <BedrSaldoVordering>1980.00</BedrSaldoVordering>
+            <BedrSaldoVordering>
+                <WaardeBedr>198000</WaardeBedr>
+            </BedrSaldoVordering>
             <DatOnherroepelijkVordering>20190610</DatOnherroepelijkVordering>
             <SzWet>
                 <CdSzWet>ABW</CdSzWet>
@@ -95,15 +99,15 @@
                 <Burgerservicenr>999993549</Burgerservicenr>
             </PartnerVordering>
             <Fraude>
-                <IndRecidive>N</IndRecidive>
-                <IndRobuusteIncassoToegepast>J</IndRobuusteIncassoToegepast>
-                <CdHoogteBestuurlijkeBoete>01</CdHoogteBestuurlijkeBoete>
-                <CdSrtSanctie>01</CdSrtSanctie>
+                <IndRecidive>0</IndRecidive>
+                <IndRobuusteIncassoToegepast>1</IndRobuusteIncassoToegepast>
+                <CdHoogteBestuurlijkeBoete>1</CdHoogteBestuurlijkeBoete>
+                <CdSrtSanctie>1</CdSrtSanctie>
                 <ParketnrJustitie>45.234567</ParketnrJustitie>
-                <CdRecidivetermijn>01</CdRecidivetermijn>
+                <CdRecidivetermijn>1</CdRecidivetermijn>
             </Fraude>
             <Bron>
-                <CdKolomSuwi>K403</CdKolomSuwi>
+                <CdKolomSuwi>403</CdKolomSuwi>
                 <CdPartijSuwi>P403</CdPartijSuwi>
                 <CdVestigingSuwi>V403</CdVestigingSuwi>
             </Bron>
@@ -114,9 +118,13 @@
             <IdentificatienrVordering>445566778899001</IdentificatienrVordering>
             <DatBesluitVordering>20220623</DatBesluitVordering>
             <CdRedenVordering>11</CdRedenVordering>
-            <BedrAanvangVordering>135.00</BedrAanvangVordering>
+            <BedrAanvangVordering>
+                <WaardeBedr>13500</WaardeBedr>
+            </BedrAanvangVordering>
             <CdStatusVordering>51</CdStatusVordering>
-            <BedrSaldoVordering>0.00</BedrSaldoVordering>
+            <BedrSaldoVordering>
+                <WaardeBedr>0</WaardeBedr>
+            </BedrSaldoVordering>
             <SzWet>
                 <CdSzWet>AWB</CdSzWet>
             </SzWet>
@@ -124,7 +132,7 @@
                 <Burgerservicenr>999993549</Burgerservicenr>
             </PartnerVordering>
             <Bron>
-                <CdKolomSuwi>K404</CdKolomSuwi>
+                <CdKolomSuwi>404</CdKolomSuwi>
                 <CdPartijSuwi>P404</CdPartijSuwi>
                 <CdVestigingSuwi>V404</CdVestigingSuwi>
             </Bron>
@@ -146,7 +154,7 @@
                 <Geboortedat>19840709</Geboortedat>
             </PartnerBijzBijstand>
             <Bron>
-                <CdKolomSuwi>K405</CdKolomSuwi>
+                <CdKolomSuwi>405</CdKolomSuwi>
                 <CdPartijSuwi>P405</CdPartijSuwi>
                 <CdVestigingSuwi>V405</CdVestigingSuwi>
             </Bron>
@@ -168,7 +176,7 @@
                 <Geboortedat>19840709</Geboortedat>
             </PartnerBijzBijstand>
             <Bron>
-                <CdKolomSuwi>K406</CdKolomSuwi>
+                <CdKolomSuwi>406</CdKolomSuwi>
                 <CdPartijSuwi>P406</CdPartijSuwi>
                 <CdVestigingSuwi>V406</CdVestigingSuwi>
             </Bron>

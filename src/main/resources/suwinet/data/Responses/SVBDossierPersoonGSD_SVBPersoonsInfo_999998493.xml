@@ -5,8 +5,8 @@
         <Burgerservicenr>999998493</Burgerservicenr>
         <Voornamen>Elise</Voornamen>
         <SignificantDeelVanDeAchternaam>Schouten</SignificantDeelVanDeAchternaam>
-        <Geboortedat>19860423</Geboortedat>
         <Geslacht>2</Geslacht>
+        <Geboortedat>19860423</Geboortedat>
 
         <!-- Eén Wlz-uitkering, één periode -->
         <Uitkeringsverhouding>

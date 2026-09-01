@@ -20,13 +20,6 @@
             <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
         </ZakelijkRecht>
 
-        <PubliekrechtelijkeBeperking>
-            <AantekeningKadastraalObject>
-                <DatEAantekeningKadastraalObject>20300101</DatEAantekeningKadastraalObject>
-                <OmsAantekeningKadastraalObject>Er zijn geen beperkingen bekend in de Landelijke Voorziening WKPB.</OmsAantekeningKadastraalObject>
-            </AantekeningKadastraalObject>
-        </PubliekrechtelijkeBeperking>
-
         <LocatieOZ>
             <StraatadresBag>
                 <Postcd>1093NG</Postcd>
@@ -35,6 +28,13 @@
                 <Huisnr>2</Huisnr>
             </StraatadresBag>
         </LocatieOZ>
+
+        <PubliekrechtelijkeBeperking>
+            <AantekeningKadastraalObject>
+                <DatEAantekeningKadastraalObject>20300101</DatEAantekeningKadastraalObject>
+                <OmsAantekeningKadastraalObject>Er zijn geen beperkingen bekend in de Landelijke Voorziening WKPB.</OmsAantekeningKadastraalObject>
+            </AantekeningKadastraalObject>
+        </PubliekrechtelijkeBeperking>
         
         <BedrKoopsom>
             <CdMunteenheid>EUR</CdMunteenheid>

@@ -20,13 +20,6 @@
             <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
         </ZakelijkRecht>
 
-        <PubliekrechtelijkeBeperking>
-            <AantekeningKadastraalObject>
-                <DatEAantekeningKadastraalObject>20230316</DatEAantekeningKadastraalObject>
-                <OmsAantekeningKadastraalObject>Geen beperkingen geregistreerd.</OmsAantekeningKadastraalObject>
-            </AantekeningKadastraalObject>
-        </PubliekrechtelijkeBeperking>
-
         <LocatieOZ>
             <StraatadresBag>
                 <Postcd>1055EK</Postcd>
@@ -35,6 +28,13 @@
                 <Huisnr>250</Huisnr>
             </StraatadresBag>
         </LocatieOZ>
+
+        <PubliekrechtelijkeBeperking>
+            <AantekeningKadastraalObject>
+                <DatEAantekeningKadastraalObject>20230316</DatEAantekeningKadastraalObject>
+                <OmsAantekeningKadastraalObject>Geen beperkingen geregistreerd.</OmsAantekeningKadastraalObject>
+            </AantekeningKadastraalObject>
+        </PubliekrechtelijkeBeperking>
 
         <IndMeerGerechtigden>2</IndMeerGerechtigden>
 

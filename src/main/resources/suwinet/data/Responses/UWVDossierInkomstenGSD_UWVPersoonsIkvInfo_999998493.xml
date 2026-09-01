@@ -1,9 +1,7 @@
 <smls:UWVPersoonsIkvInfoResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/UWVDossierInkomstenGSD/v0200">
     <ClientSuwi>
-
         <!-- Uwv inkomstenverhoudingen Elise Schouten (bsn: 999998493) -->
         <Burgerservicenr>999998493</Burgerservicenr>
-
         <!-- 1. Werkgever in Utrecht: fulltime baan in de techniek -->
         <Inkomstenverhouding>
             <VolgnrIkv>1</VolgnrIkv>
@@ -27,7 +25,7 @@
                 <CorrespondentieadresAeh>
                     <Straatadres>
                         <Postcd>3500AE</Postcd>
-                        <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+                        <Woonplaatsnaam>Utrech</Woonplaatsnaam>
                         <Gemeentenaam>Utrecht</Gemeentenaam>
                         <Straatnaam>Postbus</Straatnaam>
                         <Huisnr>140</Huisnr>
@@ -44,7 +42,6 @@
                 <IndRegelmatigArbeidspatroon>1</IndRegelmatigArbeidspatroon>
                 <CdAardIkv>12</CdAardIkv>
             </Inkomstenperiode>
-
             <Inkomstenopgave>
                 <DatBIko>20210301</DatBIko>
                 <DatEIko>20210331</DatEIko>
@@ -61,7 +58,6 @@
                     <WaardeBedr>252300</WaardeBedr>
                 </BedrLoonLbPremieVolksverz>
             </Inkomstenopgave>
-
             <Inkomstenopgave>
                 <DatBIko>20210401</DatBIko>
                 <DatEIko>20210430</DatEIko>
@@ -79,7 +75,6 @@
                 </BedrLoonLbPremieVolksverz>
             </Inkomstenopgave>
         </Inkomstenverhouding>
-
         <!-- 2. UWV-uitkering (bijv. WIA na ziekte) -->
         <Inkomstenverhouding>
             <VolgnrIkv>2</VolgnrIkv>
@@ -127,7 +122,6 @@
                 </BedrLoonLbPremieVolksverz>
             </Inkomstenopgave>
         </Inkomstenverhouding>
-
         <!-- 3. SVB-uitkering (Wlz) -->
         <Inkomstenverhouding>
             <VolgnrIkv>3</VolgnrIkv>
@@ -175,6 +169,9 @@
                 </BedrLoonLbPremieVolksverz>
             </Inkomstenopgave>
         </Inkomstenverhouding>
-
     </ClientSuwi>
+    <PeriodeGegevensleveringIko>
+        <DatBPeriode>20200201</DatBPeriode>
+        <DatEPeriode>20230131</DatEPeriode>
+    </PeriodeGegevensleveringIko>
 </smls:UWVPersoonsIkvInfoResponse>

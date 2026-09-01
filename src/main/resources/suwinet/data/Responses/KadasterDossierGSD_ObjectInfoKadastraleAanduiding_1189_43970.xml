@@ -14,12 +14,6 @@
         <ZakelijkRecht>
             <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
         </ZakelijkRecht>
-        <PubliekrechtelijkeBeperking>
-            <AantekeningKadastraalObject>
-                <DatEAantekeningKadastraalObject>19950919</DatEAantekeningKadastraalObject>
-                <OmsAantekeningKadastraalObject>Milieubeschermingsmaatregel</OmsAantekeningKadastraalObject>
-            </AantekeningKadastraalObject>
-        </PubliekrechtelijkeBeperking>
         <LocatieOZ>
             <StraatadresBag>
                 <Postcd>5479DZ</Postcd>
@@ -28,6 +22,12 @@
                 <Huisnr>71</Huisnr>
             </StraatadresBag>
         </LocatieOZ>
+        <PubliekrechtelijkeBeperking>
+            <AantekeningKadastraalObject>
+                <DatEAantekeningKadastraalObject>19950919</DatEAantekeningKadastraalObject>
+                <OmsAantekeningKadastraalObject>Milieubeschermingsmaatregel</OmsAantekeningKadastraalObject>
+            </AantekeningKadastraalObject>
+        </PubliekrechtelijkeBeperking>
         <BedrKoopsom>
             <CdMunteenheid>EUR</CdMunteenheid>
             <WaardeBedr>7525000</WaardeBedr>

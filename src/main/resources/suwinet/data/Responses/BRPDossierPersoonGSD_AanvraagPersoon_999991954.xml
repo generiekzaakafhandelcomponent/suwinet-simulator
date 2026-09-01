@@ -3,7 +3,7 @@
         <Voornamen>Sierra</Voornamen>
         <Voorvoegsel/>
         <SignificantDeelVanDeAchternaam>Kooyman</SignificantDeelVanDeAchternaam>
-        <Geboortedat>20030303</Geboortedat>
+        <Geboortedat>19970303</Geboortedat>
         <Burgerservicenr>999991954</Burgerservicenr>
         <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
         <ANr>3830134803</ANr>
@@ -20,21 +20,21 @@
                 <DatGeldigheidGegevens>19650310</DatGeldigheidGegevens>
             </GeldigheidGegevensNationaliteit>
         </Nationaliteit>
-        <DomicilieAdres>
-            <Postcd>2511BT</Postcd>
-            <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
-            <Straatnaam>Spui</Straatnaam>
-            <Huisnr>70</Huisnr>
-            <IdentificatiecdVerblijfplaats>0530010002090227</IdentificatiecdVerblijfplaats>
-            <IdentificatiecdNraanduiding>0530200002130217</IdentificatiecdNraanduiding>
-            <Huisletter>a</Huisletter>
-            <Huisnrtoevoeging>Huis</Huisnrtoevoeging>
-        </DomicilieAdres>
         <Verblijfstitel>
             <CdVerblijfstitel>1</CdVerblijfstitel>
             <DatBVerblijfstitel>20120915</DatBVerblijfstitel>
             <DatEVerblijfstitel>20240915</DatEVerblijfstitel>
         </Verblijfstitel>
+        <DomicilieAdres>
+            <Postcd>2511BT</Postcd>
+            <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
+            <Straatnaam>Spui</Straatnaam>
+            <Huisnr>70</Huisnr>
+            <Huisletter>a</Huisletter>
+            <Huisnrtoevoeging>Huis</Huisnrtoevoeging>
+            <IdentificatiecdVerblijfplaats>0530010002090227</IdentificatiecdVerblijfplaats>
+            <IdentificatiecdNraanduiding>0530200002130217</IdentificatiecdNraanduiding>
+        </DomicilieAdres>
         <AangifteAdreshoudingBrp>
             <CdGemeenteVanInschrijving>0518</CdGemeenteVanInschrijving>
             <DatVanInschrijvingBijGemeente>19801023</DatVanInschrijvingBijGemeente>
@@ -56,7 +56,18 @@
             <ANr>9356019650</ANr>
             <DatBFamilierechtelijkeBetrekking>19650310</DatBFamilierechtelijkeBetrekking>
         </Ouder2>
-        <InschrijvingsgegevensBrp/>
+        <Huwelijk>
+            <Partner>
+                <Voornamen>Vries</Voornamen>
+                <Voorvoegsel>de</Voorvoegsel>
+                <SignificantDeelVanDeAchternaam>Kooyman</SignificantDeelVanDeAchternaam>
+                <Geboortedat>19700101</Geboortedat>
+                <Burgerservicenr>444444440</Burgerservicenr>
+                <CdGeboortegemeente>0363</CdGeboortegemeente>
+                <Geboorteplaats>'s-Gravenhage</Geboorteplaats>
+                <Geboorteland>6030</Geboorteland>
+            </Partner>
+        </Huwelijk>
         <Kind>
             <Voornamen>Catharina-Amalia Carmen woont thuis</Voornamen>
             <Voorvoegsel>de</Voorvoegsel>
@@ -97,17 +108,6 @@
                 <CdAdellijkeTitelPredikaat>G</CdAdellijkeTitelPredikaat>
             </Titulatuur>
         </Kind>
-        <Huwelijk>
-            <Partner>
-                <Voornamen>Vries</Voornamen>
-                <Voorvoegsel>de</Voorvoegsel>
-                <SignificantDeelVanDeAchternaam>Kooyman</SignificantDeelVanDeAchternaam>
-                <Geboortedat>19700101</Geboortedat>
-                <Burgerservicenr>444444440</Burgerservicenr>
-                <CdGeboortegemeente>0363</CdGeboortegemeente>
-                <Geboorteplaats>'s-Gravenhage</Geboorteplaats>
-                <Geboorteland>6030</Geboorteland>
-            </Partner>
-        </Huwelijk>
+        <InschrijvingsgegevensBrp/>
     </ClientSuwi>
 </brp:AanvraagPersoonResponse>

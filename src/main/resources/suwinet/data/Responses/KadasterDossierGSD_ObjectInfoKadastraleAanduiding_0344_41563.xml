@@ -20,13 +20,6 @@
             <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
         </ZakelijkRecht>
 
-        <PubliekrechtelijkeBeperking>
-            <AantekeningKadastraalObject>
-                <DatEAantekeningKadastraalObject>20300101</DatEAantekeningKadastraalObject>
-                <OmsAantekeningKadastraalObject>Geen beperkingen geregistreerd.</OmsAantekeningKadastraalObject>
-            </AantekeningKadastraalObject>
-        </PubliekrechtelijkeBeperking>
-
         <LocatieOZ>
             <StraatadresBag>
                 <Postcd>3521AZ</Postcd>
@@ -35,6 +28,13 @@
                 <Huisnr>1</Huisnr>
             </StraatadresBag>
         </LocatieOZ>
+
+        <PubliekrechtelijkeBeperking>
+            <AantekeningKadastraalObject>
+                <DatEAantekeningKadastraalObject>20300101</DatEAantekeningKadastraalObject>
+                <OmsAantekeningKadastraalObject>Geen beperkingen geregistreerd.</OmsAantekeningKadastraalObject>
+            </AantekeningKadastraalObject>
+        </PubliekrechtelijkeBeperking>
 
         <BedrKoopsom>
             <CdMunteenheid>EUR</CdMunteenheid>

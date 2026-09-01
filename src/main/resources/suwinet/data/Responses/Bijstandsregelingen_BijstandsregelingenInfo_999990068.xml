@@ -1,0 +1,15 @@
+<d:BijstandsregelingenInfoResponse xmlns:d="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500">
+    <ClientSuwi>
+        <Burgerservicenr>999990068</Burgerservicenr>
+        <AanvraagUitkering>
+            <DatAanvraagUitkering>20230420</DatAanvraagUitkering>
+            <SzWet>
+                <CdSzWet>ABW</CdSzWet>
+            </SzWet>
+            <Bron>
+                <CdKolomSuwi>1</CdKolomSuwi>
+                <CdPartijSuwi>0518</CdPartijSuwi>
+            </Bron>
+        </AanvraagUitkering>
+    </ClientSuwi>
+</d:BijstandsregelingenInfoResponse>

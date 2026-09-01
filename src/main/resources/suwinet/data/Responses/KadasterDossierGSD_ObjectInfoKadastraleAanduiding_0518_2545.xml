@@ -5,7 +5,7 @@
         <DatOntstaan>20230101</DatOntstaan>
         <KadastraleAanduiding>
             <CdKadastraleGemeente>0518</CdKadastraleGemeente>
-            <KadastraleGemeentenaam>Den Haag</KadastraleGemeentenaam>
+            <KadastraleGemeentenaam>'s-Gravenhage</KadastraleGemeentenaam>
             <KadastraleSectie>A</KadastraleSectie>
             <KadastraalPerceelnr>2545</KadastraalPerceelnr>
             <VolgnrKadastraalAppartementsrecht>1</VolgnrKadastraalAppartementsrecht>
@@ -14,20 +14,20 @@
         <ZakelijkRecht>
             <OmsZakelijkRecht>Eigendom (recht van)</OmsZakelijkRecht>
         </ZakelijkRecht>
+        <LocatieOZ>
+            <StraatadresBag>
+                <Postcd>2545CC</Postcd>
+                <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
+                <Straatnaam>Leyweg</Straatnaam>
+                <Huisnr>61</Huisnr>
+            </StraatadresBag>
+        </LocatieOZ>
         <PubliekrechtelijkeBeperking>
             <AantekeningKadastraalObject>
                 <DatEAantekeningKadastraalObject>20221209</DatEAantekeningKadastraalObject>
                 <OmsAantekeningKadastraalObject>Milieubeschermingsmaatregel</OmsAantekeningKadastraalObject>
             </AantekeningKadastraalObject>
         </PubliekrechtelijkeBeperking>
-        <LocatieOZ>
-            <StraatadresBag>
-                <Postcd>2545CC</Postcd>
-                <Woonplaatsnaam>Den Haag</Woonplaatsnaam>
-                <Straatnaam>Leyweg</Straatnaam>
-                <Huisnr>61</Huisnr>
-            </StraatadresBag>
-        </LocatieOZ>
         <BedrKoopsom>
             <CdMunteenheid>EUR</CdMunteenheid>
             <WaardeBedr>12500000</WaardeBedr>
@@ -48,7 +48,7 @@
             <DomicilieAdres>
                 <StraatadresBag>
                     <Postcd>2545CC</Postcd>
-                    <Woonplaatsnaam>Den Haag</Woonplaatsnaam>
+                    <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
                     <Straatnaam>Leyweg</Straatnaam>
                     <Huisnr>61</Huisnr>
                 </StraatadresBag>

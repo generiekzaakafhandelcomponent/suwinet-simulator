@@ -1,0 +1,26 @@
+<smls:UWVPersoonsIkvInfoResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/UWVDossierInkomstenGSD/v0200">
+    <ClientSuwi>
+        <Burgerservicenr>999990081</Burgerservicenr>
+        <Inkomstenverhouding>
+            <VolgnrIkv>1</VolgnrIkv>
+            <DatBIkv>20140428</DatBIkv>
+            <DatEIkv>20260428</DatEIkv>
+            <AdministratieveEenheid>
+                <NaamAdministratieveEenheid>VOORMALIG WERKGEVER</NaamAdministratieveEenheid>
+                <Loonheffingennr>208300136L01</Loonheffingennr>
+                <RechtspersoonAdministratieveEenh>
+                    <FiNr>208300136</FiNr>
+                    <NaamRechtspersoon>VOORMALIG WERKGEVER</NaamRechtspersoon>
+                </RechtspersoonAdministratieveEenh>
+            </AdministratieveEenheid>
+            <Inkomstenperiode>
+                <DatBIkp>20140428</DatBIkp>
+                <DatEIkp>20260428</DatEIkp>
+            </Inkomstenperiode>
+            <Inkomstenopgave>
+                <DatBIko>20260328</DatBIko>
+                <DatEIko>20260428</DatEIko>
+            </Inkomstenopgave>
+        </Inkomstenverhouding>
+    </ClientSuwi>
+</smls:UWVPersoonsIkvInfoResponse>

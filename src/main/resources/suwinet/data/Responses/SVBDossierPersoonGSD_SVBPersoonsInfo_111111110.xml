@@ -4,8 +4,8 @@
         <Voornamen>Henk</Voornamen>
         <Voorvoegsel>de</Voorvoegsel>
         <SignificantDeelVanDeAchternaam>Jansen</SignificantDeelVanDeAchternaam>
-        <Geboortedat>19600720</Geboortedat>
         <Geslacht>2</Geslacht>
+        <Geboortedat>19600720</Geboortedat>
         <!--Zero or more repetitions:-->
         <Uitkeringsverhouding>
             <DatBUitkeringsverhouding>20190301</DatBUitkeringsverhouding>

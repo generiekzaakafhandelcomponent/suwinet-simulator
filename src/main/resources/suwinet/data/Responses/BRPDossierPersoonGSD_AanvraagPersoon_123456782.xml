@@ -20,16 +20,17 @@
                 <DatGeldigheidGegevens>19650310</DatGeldigheidGegevens>
             </GeldigheidGegevensNationaliteit>
         </Nationaliteit>
+        <Verblijfstitel/>
         <DomicilieAdres>
             <Postcd>2511BT</Postcd>
             <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
             <Straatnaam>Spui</Straatnaam>
             <NaamOpenbareRuimte>Spui</NaamOpenbareRuimte>
             <Huisnr>70</Huisnr>
-            <IdentificatiecdVerblijfplaats>0530010002090227</IdentificatiecdVerblijfplaats>
-            <IdentificatiecdNraanduiding>0530200002130217</IdentificatiecdNraanduiding>
             <Huisletter/>
             <Huisnrtoevoeging/>
+            <IdentificatiecdVerblijfplaats>0530010002090227</IdentificatiecdVerblijfplaats>
+            <IdentificatiecdNraanduiding>0530200002130217</IdentificatiecdNraanduiding>
         </DomicilieAdres>
         <AangifteAdreshoudingBrp>
             <CdGemeenteVanInschrijving>0518</CdGemeenteVanInschrijving>
@@ -53,6 +54,5 @@
             <DatBFamilierechtelijkeBetrekking>19650310</DatBFamilierechtelijkeBetrekking>
         </Ouder2>
         <InschrijvingsgegevensBrp/>
-        <Verblijfstitel/>
     </ClientSuwi>
 </brp:AanvraagPersoonResponse>

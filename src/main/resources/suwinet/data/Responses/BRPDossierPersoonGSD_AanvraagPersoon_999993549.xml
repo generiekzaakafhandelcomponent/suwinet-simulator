@@ -1,6 +1,5 @@
 <brp:AanvraagPersoonResponse xmlns:brp="http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD/v0200">
     <ClientSuwi>
-
         <!-- Partner van Elise Schouten (bsn: 999998493),
              Ouder van Koen Maren (bsn: 999993203),
              Elsa Maren (bsn: 999993069),
@@ -15,18 +14,15 @@
         <Geslacht>1</Geslacht>
         <CdGeboortegemeente>0363</CdGeboortegemeente>
         <Geboorteland>6030</Geboorteland>
-
         <GeldigheidGegevensPersoon>
             <DatGeldigheidGegevens>19840709</DatGeldigheidGegevens>
         </GeldigheidGegevensPersoon>
-
         <Nationaliteit>
             <CdNationaliteit>0001</CdNationaliteit>
             <GeldigheidGegevensNationaliteit>
                 <DatGeldigheidGegevens>20010214</DatGeldigheidGegevens>
             </GeldigheidGegevensNationaliteit>
         </Nationaliteit>
-
         <DomicilieAdres>
             <Postcd>3521AZ</Postcd>
             <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
@@ -36,13 +32,11 @@
             <IdentificatiecdVerblijfplaats>0344010000987654</IdentificatiecdVerblijfplaats>
             <IdentificatiecdNraanduiding>0344200000987652</IdentificatiecdNraanduiding>
         </DomicilieAdres>
-
         <AangifteAdreshoudingBrp>
             <CdGemeenteVanInschrijving>0344</CdGemeenteVanInschrijving>
             <DatVanInschrijvingBijGemeente>20210319</DatVanInschrijvingBijGemeente>
             <DatBAdreshoudingBrp>20210319</DatBAdreshoudingBrp>
         </AangifteAdreshoudingBrp>
-
         <VerblijfplaatsHistorisch>
             <DomicilieAdres>
                 <Postcd>2561EH</Postcd>
@@ -55,7 +49,6 @@
                 <DatBAdreshoudingBrp>20120305</DatBAdreshoudingBrp>
             </AangifteAdreshoudingBrp>
         </VerblijfplaatsHistorisch>
-
         <VerblijfplaatsHistorisch>
             <DomicilieAdres>
                 <Postcd>2521EC</Postcd>
@@ -68,7 +61,6 @@
                 <DatBAdreshoudingBrp>20140921</DatBAdreshoudingBrp>
             </AangifteAdreshoudingBrp>
         </VerblijfplaatsHistorisch>
-
         <VerblijfplaatsHistorisch>
             <DomicilieAdres>
                 <Postcd>2545HA</Postcd>
@@ -81,7 +73,6 @@
                 <DatBAdreshoudingBrp>20161201</DatBAdreshoudingBrp>
             </AangifteAdreshoudingBrp>
         </VerblijfplaatsHistorisch>
-
         <VerblijfplaatsHistorisch>
             <DomicilieAdres>
                 <Postcd>2511BT</Postcd>
@@ -94,21 +85,18 @@
                 <DatBAdreshoudingBrp>20180210</DatBAdreshoudingBrp>
             </AangifteAdreshoudingBrp>
         </VerblijfplaatsHistorisch>
-
         <Ouder1>
             <Voornamen>Maja</Voornamen>
             <SignificantDeelVanDeAchternaam>Maren</SignificantDeelVanDeAchternaam>
             <Geboortedat>19580910</Geboortedat>
             <DatBFamilierechtelijkeBetrekking>20010214</DatBFamilierechtelijkeBetrekking>
         </Ouder1>
-
         <Ouder2>
             <Voornamen>Erik</Voornamen>
             <SignificantDeelVanDeAchternaam>Maren</SignificantDeelVanDeAchternaam>
             <Geboortedat>19600105</Geboortedat>
             <DatBFamilierechtelijkeBetrekking>20010214</DatBFamilierechtelijkeBetrekking>
         </Ouder2>
-
         <Huwelijk>
             <DatHuwelijkssluiting>20080917</DatHuwelijkssluiting>
             <Partner>
@@ -123,7 +111,6 @@
             <CdGemeenteHuwelijkssluiting>0344</CdGemeenteHuwelijkssluiting>
             <LandHuwelijkssluiting>6030</LandHuwelijkssluiting>
         </Huwelijk>
-
         <!-- Kinderen: 100% gelijk aan Elise-bestand -->
         <Kind>
             <Voornamen>Koen</Voornamen>
@@ -135,7 +122,6 @@
                 <DatGeldigheidGegevens>20110314</DatGeldigheidGegevens>
             </GeldigheidGegevensKind>
         </Kind>
-
         <Kind>
             <Voornamen>Elsa</Voornamen>
             <SignificantDeelVanDeAchternaam>Maren</SignificantDeelVanDeAchternaam>
@@ -146,7 +132,6 @@
                 <DatGeldigheidGegevens>20131105</DatGeldigheidGegevens>
             </GeldigheidGegevensKind>
         </Kind>
-
         <Kind>
             <Voornamen>Anna</Voornamen>
             <SignificantDeelVanDeAchternaam>Maren</SignificantDeelVanDeAchternaam>
@@ -157,11 +142,9 @@
                 <DatGeldigheidGegevens>20160219</DatGeldigheidGegevens>
             </GeldigheidGegevensKind>
         </Kind>
-
         <InschrijvingsgegevensBrp>
             <CdGemeenteWaarPkZichBevindt>0344</CdGemeenteWaarPkZichBevindt>
             <CdPkVolledigGeconverteerd>P</CdPkVolledigGeconverteerd>
         </InschrijvingsgegevensBrp>
-
     </ClientSuwi>
 </brp:AanvraagPersoonResponse>

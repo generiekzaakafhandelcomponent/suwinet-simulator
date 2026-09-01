@@ -1,0 +1,26 @@
+<smls:UWVPersoonsIkvInfoResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/UWVDossierInkomstenGSD/v0200">
+    <ClientSuwi>
+        <Burgerservicenr>999990044</Burgerservicenr>
+        <Inkomstenverhouding>
+            <VolgnrIkv>1</VolgnrIkv>
+            <DatBIkv>20110401</DatBIkv>
+            <DatEIkv>20260401</DatEIkv>
+            <AdministratieveEenheid>
+                <NaamAdministratieveEenheid>EEN ROTTERDAMS RECLAMEBUREAU</NaamAdministratieveEenheid>
+                <Loonheffingennr>524278550L01</Loonheffingennr>
+                <RechtspersoonAdministratieveEenh>
+                    <FiNr>524278550</FiNr>
+                    <NaamRechtspersoon>EEN ROTTERDAMS RECLAMEBUREAU</NaamRechtspersoon>
+                </RechtspersoonAdministratieveEenh>
+            </AdministratieveEenheid>
+            <Inkomstenperiode>
+                <DatBIkp>20110401</DatBIkp>
+                <DatEIkp>20260401</DatEIkp>
+            </Inkomstenperiode>
+            <Inkomstenopgave>
+                <DatBIko>20260301</DatBIko>
+                <DatEIko>20260401</DatEIko>
+            </Inkomstenopgave>
+        </Inkomstenverhouding>
+    </ClientSuwi>
+</smls:UWVPersoonsIkvInfoResponse>

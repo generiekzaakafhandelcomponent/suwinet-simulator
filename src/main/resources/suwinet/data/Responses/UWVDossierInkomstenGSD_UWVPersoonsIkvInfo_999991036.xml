@@ -1,0 +1,65 @@
+<smls:UWVPersoonsIkvInfoResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/UWVDossierInkomstenGSD/v0200">
+    <ClientSuwi>
+        <Burgerservicenr>999991036</Burgerservicenr>
+        <Inkomstenverhouding>
+            <VolgnrIkv>1</VolgnrIkv>
+            <!-- DynamicDate: today - 2 years -->
+            <DatBIkv>20240610</DatBIkv>
+            <AdministratieveEenheid>
+                <NaamAdministratieveEenheid>SCHOONMAAKBEDRIJF RESATO</NaamAdministratieveEenheid>
+                <Loonheffingennr>956718532L01</Loonheffingennr>
+                <RechtspersoonAdministratieveEenh>
+                    <FiNr>956718532</FiNr>
+                    <NaamRechtspersoon>SCHOONMAAKBEDRIJF RESATO</NaamRechtspersoon>
+                </RechtspersoonAdministratieveEenh>
+            </AdministratieveEenheid>
+            <Inkomstenperiode>
+                <!-- DynamicDate: startOfMonth - 1 month -->
+                <DatBIkp>20260501</DatBIkp>
+                <!-- DynamicDate: endOfMonth - 1 month -->
+                <DatEIkp>20260531</DatEIkp>
+                <IndLoonheffingskortingToegepast>1</IndLoonheffingskortingToegepast>
+            </Inkomstenperiode>
+            <Inkomstenopgave>
+                <!-- DynamicDate: startOfMonth - 1 month -->
+                <DatBIko>20260501</DatBIko>
+                <!-- DynamicDate: endOfMonth - 1 month -->
+                <DatEIko>20260531</DatEIko>
+                <AantVerloondeUrenIko>78</AantVerloondeUrenIko>
+                <BedrBrutoloonSv>
+                    <WaardeBedr>1100</WaardeBedr>
+                </BedrBrutoloonSv>
+            </Inkomstenopgave>
+        </Inkomstenverhouding>
+        <Inkomstenverhouding>
+            <VolgnrIkv>2</VolgnrIkv>
+            <!-- DynamicDate: today - 2 years -->
+            <DatBIkv>20240610</DatBIkv>
+            <AdministratieveEenheid>
+                <NaamAdministratieveEenheid>ALBERT HEIJN HOBBEMAPLEIN</NaamAdministratieveEenheid>
+                <Loonheffingennr>625079004L01</Loonheffingennr>
+                <RechtspersoonAdministratieveEenh>
+                    <FiNr>625079004</FiNr>
+                    <NaamRechtspersoon>ALBERT HEIJN HOBBEMAPLEIN</NaamRechtspersoon>
+                </RechtspersoonAdministratieveEenh>
+            </AdministratieveEenheid>
+            <Inkomstenperiode>
+                <!-- DynamicDate: startOfMonth - 1 month -->
+                <DatBIkp>20260501</DatBIkp>
+                <!-- DynamicDate: endOfMonth - 1 month -->
+                <DatEIkp>20260531</DatEIkp>
+                <IndLoonheffingskortingToegepast>0</IndLoonheffingskortingToegepast>
+            </Inkomstenperiode>
+            <Inkomstenopgave>
+                <!-- DynamicDate: startOfMonth - 1 month -->
+                <DatBIko>20260501</DatBIko>
+                <!-- DynamicDate: endOfMonth - 1 month -->
+                <DatEIko>20260531</DatEIko>
+                <AantVerloondeUrenIko>30</AantVerloondeUrenIko>
+                <BedrBrutoloonSv>
+                    <WaardeBedr>390</WaardeBedr>
+                </BedrBrutoloonSv>
+            </Inkomstenopgave>
+        </Inkomstenverhouding>
+    </ClientSuwi>
+</smls:UWVPersoonsIkvInfoResponse>

@@ -42,7 +42,7 @@ public class UWVDossierInkomstenGSDEndpoint extends SuwinetEndpoint {
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "UWVPersoonsIkvInfo")
     @ResponsePayload
     public UWVPersoonsIkvInfoResponse getUWVPersoonsIkvInfo(@RequestPayload UWVPersoonsIkvInfo request) throws JAXBException, SAXException, IOException {
-        logger.debug("request: " + printPayload(request, incomingClasses, resourceBodyAction));
+        if (logger.isDebugEnabled()) logger.debug("request: {}", printPayload(request, incomingClasses, resourceBodyAction));
         String xmlFilename = servicePrefix + "_UWVPersoonsIkvInfo_" + request.getBurgerservicenr() + ".xml";
         Resource resource = readResponseDirectory(xmlFilename);
 
@@ -54,7 +54,7 @@ public class UWVDossierInkomstenGSDEndpoint extends SuwinetEndpoint {
             response = (UWVPersoonsIkvInfoResponse) unmarshal(UWVPersoonsIkvInfoResponse.class,resource);
         }
 
-        logger.debug("response: " + printPayload(response,outGoingClasses, resourceBodyReaction));
+        if (logger.isDebugEnabled()) logger.debug("response: {}", printPayload(response, outGoingClasses, resourceBodyReaction));
 
         return response;
     }
