@@ -1,0 +1,82 @@
+<brp:AanvraagPersoonResponse xmlns:brp="http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD/v0200">
+    <ClientSuwi>
+
+        <!-- Lg01_305: Paula Gonzalez Perez, geboren in Madrid (Spanje), Spaanse nationaliteit. Partner van Cees Leclercq (bsn: 999991395) -->
+        <Voornamen>Paula</Voornamen>
+        <SignificantDeelVanDeAchternaam>Gonzalez Perez</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19620528</Geboortedat>
+        <Burgerservicenr>999990081</Burgerservicenr>
+        <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
+        <ANr>3520682052</ANr>
+        <!-- V = naam partner voor eigen naam -->
+        <AanduidingNaamgebruik>4</AanduidingNaamgebruik>
+        <Geslacht>2</Geslacht>
+        <Geboorteplaats>Madrid</Geboorteplaats>
+        <Geboorteland>6037</Geboorteland>
+        <GeldigheidGegevensPersoon>
+            <DatGeldigheidGegevens>19850328</DatGeldigheidGegevens>
+        </GeldigheidGegevensPersoon>
+        <Nationaliteit>
+            <!-- 0077 = Spaanse -->
+            <CdNationaliteit>0077</CdNationaliteit>
+            <GeldigheidGegevensNationaliteit>
+                <DatGeldigheidGegevens>00000000</DatGeldigheidGegevens>
+            </GeldigheidGegevensNationaliteit>
+        </Nationaliteit>
+        <Verblijfstitel>
+            <CdVerblijfstitel>40</CdVerblijfstitel>
+            <DatBVerblijfstitel>20110519</DatBVerblijfstitel>
+            <GeldigheidGegevensVerblijfstitel>
+                <DatGeldigheidGegevens>20130802</DatGeldigheidGegevens>
+            </GeldigheidGegevensVerblijfstitel>
+        </Verblijfstitel>
+        <DomicilieAdres>
+            <Postcd>2517AA</Postcd>
+            <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
+            <Straatnaam>Laan van Meerdervoort</Straatnaam>
+            <NaamOpenbareRuimte>Laan van Meerdervoort</NaamOpenbareRuimte>
+            <Huisnr>1</Huisnr>
+            <IdentificatiecdVerblijfplaats>0518010000735254</IdentificatiecdVerblijfplaats>
+            <IdentificatiecdNraanduiding>0518200000735253</IdentificatiecdNraanduiding>
+        </DomicilieAdres>
+        <Immigratie>
+            <DatVestigingNederland>19871127</DatVestigingNederland>
+            <LandVanwaarIngeschreven>6037</LandVanwaarIngeschreven>
+        </Immigratie>
+        <AangifteAdreshoudingBrp>
+            <CdGemeenteVanInschrijving>0518</CdGemeenteVanInschrijving>
+            <DatVanInschrijvingBijGemeente>19871127</DatVanInschrijvingBijGemeente>
+            <DatBAdreshoudingBrp>20160816</DatBAdreshoudingBrp>
+        </AangifteAdreshoudingBrp>
+        <Ouder1>
+            <Voornamen>Isabella Maria</Voornamen>
+            <SignificantDeelVanDeAchternaam>Perez Hierro</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19410130</Geboortedat>
+            <DatBFamilierechtelijkeBetrekking>19620528</DatBFamilierechtelijkeBetrekking>
+        </Ouder1>
+        <Ouder2>
+            <Voornamen>Luis</Voornamen>
+            <SignificantDeelVanDeAchternaam>Gonzalez y Argote</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19401118</Geboortedat>
+            <DatBFamilierechtelijkeBetrekking>19620528</DatBFamilierechtelijkeBetrekking>
+        </Ouder2>
+        <Huwelijk>
+            <DatHuwelijkssluiting>19850328</DatHuwelijkssluiting>
+            <Partner>
+                <Voornamen>Cees</Voornamen>
+                <SignificantDeelVanDeAchternaam>Leclercq</SignificantDeelVanDeAchternaam>
+                <Geboortedat>19611002</Geboortedat>
+                <Burgerservicenr>999991395</Burgerservicenr>
+                <ANr>5945425703</ANr>
+                <Geboorteplaats>Antwerpen</Geboorteplaats>
+                <Geboorteland>5010</Geboorteland>
+            </Partner>
+            <PlaatsHuwelijkssluiting>Madrid</PlaatsHuwelijkssluiting>
+            <LandHuwelijkssluiting>6037</LandHuwelijkssluiting>
+        </Huwelijk>
+        <InschrijvingsgegevensBrp>
+            <CdGemeenteWaarPkZichBevindt>0518</CdGemeenteWaarPkZichBevindt>
+            <CdPkVolledigGeconverteerd>P</CdPkVolledigGeconverteerd>
+        </InschrijvingsgegevensBrp>
+    </ClientSuwi>
+</brp:AanvraagPersoonResponse>

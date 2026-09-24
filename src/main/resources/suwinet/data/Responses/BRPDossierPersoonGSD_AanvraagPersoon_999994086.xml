@@ -1,0 +1,58 @@
+<brp:AanvraagPersoonResponse xmlns:brp="http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD/v0200">
+    <ClientSuwi>
+
+        <!-- Lg01_359: Lethe Olympos, geboren in Thebe (Griekenland), Nederlandse nationaliteit. Persoonsgegevens in onderzoek, ouder 2 onbekend. Geen partner of kinderen -->
+        <Voornamen>Lethe</Voornamen>
+        <SignificantDeelVanDeAchternaam>Olympos</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19860401</Geboortedat>
+        <Burgerservicenr>999994086</Burgerservicenr>
+        <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
+        <ANr>9751510952</ANr>
+        <!-- E = eigen naam -->
+        <AanduidingNaamgebruik>1</AanduidingNaamgebruik>
+        <Geslacht>2</Geslacht>
+        <Geboorteplaats>Thebe</Geboorteplaats>
+        <Geboorteland>6003</Geboorteland>
+        <OnderzoekGegPersoon>
+            <AanduidingOnderzoek>010310</AanduidingOnderzoek>
+            <DatBOnderzoek>20100101</DatBOnderzoek>
+        </OnderzoekGegPersoon>
+        <GeldigheidGegevensPersoon>
+            <DatGeldigheidGegevens>19860401</DatGeldigheidGegevens>
+        </GeldigheidGegevensPersoon>
+        <Nationaliteit>
+            <CdNationaliteit>0001</CdNationaliteit>
+            <GeldigheidGegevensNationaliteit>
+                <DatGeldigheidGegevens>19860401</DatGeldigheidGegevens>
+            </GeldigheidGegevensNationaliteit>
+        </Nationaliteit>
+        <DomicilieAdres>
+            <Postcd>3514TX</Postcd>
+            <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+            <Straatnaam>Nieuwe Keizersgracht</Straatnaam>
+            <NaamOpenbareRuimte>Nieuwe Keizersgracht</NaamOpenbareRuimte>
+            <Huisnr>34</Huisnr>
+            <IdentificatiecdVerblijfplaats>0344010000152333</IdentificatiecdVerblijfplaats>
+            <IdentificatiecdNraanduiding>0344100000071079</IdentificatiecdNraanduiding>
+        </DomicilieAdres>
+        <Immigratie>
+            <DatVestigingNederland>19911223</DatVestigingNederland>
+            <LandVanwaarIngeschreven>6003</LandVanwaarIngeschreven>
+        </Immigratie>
+        <AangifteAdreshoudingBrp>
+            <CdGemeenteVanInschrijving>0344</CdGemeenteVanInschrijving>
+            <DatVanInschrijvingBijGemeente>20080505</DatVanInschrijvingBijGemeente>
+            <DatBAdreshoudingBrp>20080505</DatBAdreshoudingBrp>
+        </AangifteAdreshoudingBrp>
+        <Ouder1>
+            <Voornamen>Pia</Voornamen>
+            <SignificantDeelVanDeAchternaam>Olympos</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19600215</Geboortedat>
+            <DatBFamilierechtelijkeBetrekking>19860401</DatBFamilierechtelijkeBetrekking>
+        </Ouder1>
+        <InschrijvingsgegevensBrp>
+            <CdGemeenteWaarPkZichBevindt>0344</CdGemeenteWaarPkZichBevindt>
+            <CdPkVolledigGeconverteerd>P</CdPkVolledigGeconverteerd>
+        </InschrijvingsgegevensBrp>
+    </ClientSuwi>
+</brp:AanvraagPersoonResponse>
