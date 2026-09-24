@@ -1,0 +1,57 @@
+<brp:AanvraagPersoonResponse xmlns:brp="http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD/v0200">
+    <ClientSuwi>
+
+        <!-- Lg01_348: Penelope Homeros, geboren in Hellevoetsluis, Nederlandse nationaliteit. Geen partner of kinderen -->
+        <Voornamen>Penelope</Voornamen>
+        <SignificantDeelVanDeAchternaam>Homeros</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19911227</Geboortedat>
+        <Burgerservicenr>999992302</Burgerservicenr>
+        <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
+        <ANr>8470283878</ANr>
+        <!-- E = eigen naam -->
+        <AanduidingNaamgebruik>1</AanduidingNaamgebruik>
+        <Geslacht>2</Geslacht>
+        <CdGeboortegemeente>0530</CdGeboortegemeente>
+        <Geboorteland>6030</Geboorteland>
+        <GeldigheidGegevensPersoon>
+            <DatGeldigheidGegevens>19911227</DatGeldigheidGegevens>
+        </GeldigheidGegevensPersoon>
+        <Nationaliteit>
+            <CdNationaliteit>0001</CdNationaliteit>
+            <GeldigheidGegevensNationaliteit>
+                <DatGeldigheidGegevens>19911227</DatGeldigheidGegevens>
+            </GeldigheidGegevensNationaliteit>
+        </Nationaliteit>
+        <DomicilieAdres>
+            <Postcd>3541DT</Postcd>
+            <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+            <Straatnaam>Hof van Monaco</Straatnaam>
+            <NaamOpenbareRuimte>Hof van Monaco</NaamOpenbareRuimte>
+            <Huisnr>2</Huisnr>
+            <IdentificatiecdVerblijfplaats>0344010000200737</IdentificatiecdVerblijfplaats>
+            <IdentificatiecdNraanduiding>0344100000156900</IdentificatiecdNraanduiding>
+        </DomicilieAdres>
+        <AangifteAdreshoudingBrp>
+            <CdGemeenteVanInschrijving>0344</CdGemeenteVanInschrijving>
+            <DatVanInschrijvingBijGemeente>20100120</DatVanInschrijvingBijGemeente>
+            <DatBAdreshoudingBrp>20100120</DatBAdreshoudingBrp>
+        </AangifteAdreshoudingBrp>
+        <Ouder1>
+            <Voornamen>Epikastê</Voornamen>
+            <Voorvoegsel>van</Voorvoegsel>
+            <SignificantDeelVanDeAchternaam>Thebe</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19600606</Geboortedat>
+            <DatBFamilierechtelijkeBetrekking>19911227</DatBFamilierechtelijkeBetrekking>
+        </Ouder1>
+        <Ouder2>
+            <Voornamen>Telemachus</Voornamen>
+            <SignificantDeelVanDeAchternaam>Homeros</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19590606</Geboortedat>
+            <DatBFamilierechtelijkeBetrekking>19911227</DatBFamilierechtelijkeBetrekking>
+        </Ouder2>
+        <InschrijvingsgegevensBrp>
+            <CdGemeenteWaarPkZichBevindt>0344</CdGemeenteWaarPkZichBevindt>
+            <CdPkVolledigGeconverteerd>P</CdPkVolledigGeconverteerd>
+        </InschrijvingsgegevensBrp>
+    </ClientSuwi>
+</brp:AanvraagPersoonResponse>
