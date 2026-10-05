@@ -1,0 +1,39 @@
+<ns4:KentekenInfoResponse xmlns:ns3="http://bkwi.nl/SuwiML/FWI/v0205"
+                          xmlns:ns4="http://bkwi.nl/SuwiML/Diensten/RDWDossierGSD/v0200">
+    <ClientSuwi>
+        
+        <!-- RDW Kentekeninfo van Auto van Nora van Wollingen (bsn: 022264541) -->
+        <Burgerservicenr>022264541</Burgerservicenr>
+        <Voorletters>N</Voorletters>
+        <SignificantDeelVanDeAchternaam>van Wollingen</SignificantDeelVanDeAchternaam>
+        <Geboortedat>20000110</Geboortedat>
+
+        <RdwAdres>
+            <FeitelijkAdres>
+                <Straatadres>
+                    <Postcd>2511BT</Postcd>
+                    <Woonplaatsnaam>'s-Gravenhage</Woonplaatsnaam>
+                    <Straatnaam>Spui</Straatnaam>
+                    <Huisnr>70</Huisnr>
+                </Straatadres>
+            </FeitelijkAdres>
+        </RdwAdres>
+
+        <Aansprakelijke>
+            <Voertuig>
+                <!-- Geen voertuigcode -->
+                <KentekenVoertuig>7TPR98</KentekenVoertuig>
+                <MerkVoertuig>Toyota</MerkVoertuig>
+                <TypeVoertuig>PRIUS</TypeVoertuig>
+                <HoofdkleurVoertuig>GRIJS</HoofdkleurVoertuig>
+                <!-- Auto nieuw in 2020, Nora eigenaar vanaf 2021 -->
+                <DatEersteInschrijvingVoertuigNat>20260915</DatEersteInschrijvingVoertuigNat>
+                <DatEersteInschrijvingVoertuigInt>20260915</DatEersteInschrijvingVoertuigInt>
+                <BedrBpm>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <WaardeBedr>24560</WaardeBedr>
+                </BedrBpm>
+            </Voertuig>
+        </Aansprakelijke>
+    </ClientSuwi>
+</ns4:KentekenInfoResponse>
