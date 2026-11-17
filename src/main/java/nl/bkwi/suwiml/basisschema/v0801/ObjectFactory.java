@@ -39,4 +39,14 @@ public class ObjectFactory {
         return new StandaardBedr();
     }
 
+    /**
+     * Create an instance of {@link StandaardPerc }
+     * 
+     * @return
+     *     the new instance of {@link StandaardPerc }
+     */
+    public StandaardPerc createStandaardPerc() {
+        return new StandaardPerc();
+    }
+
 }

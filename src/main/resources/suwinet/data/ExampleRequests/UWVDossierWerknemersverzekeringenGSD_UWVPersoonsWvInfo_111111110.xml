@@ -1,0 +1,8 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v02="http://bkwi.nl/SuwiML/Diensten/UWVDossierWerknemersverzekeringenGSD/v0200">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <v02:UWVPersoonsWvInfo>
+            <Burgerservicenr>111111110</Burgerservicenr>
+        </v02:UWVPersoonsWvInfo>
+    </soapenv:Body>
+</soapenv:Envelope>
