@@ -1,0 +1,96 @@
+<brp:AanvraagPersoonResponse xmlns:brp="http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD/v0200">
+    <ClientSuwi>
+
+        <!-- Scenario 18: Salma El Amrani (bsn: 700003836), 23 jaar, geboren in Schiedam.
+             Gehuwd met Bilal El Amrani (bsn: 700003691), moeder van Amira El Amrani (bsn: 700003976).
+             Sinds 01-08-2023 woonachtig op het gezinsadres in Rotterdam. Geen eigen inkomen (zorgt voor dochter). -->
+        <Voornamen>Salma</Voornamen>
+        <SignificantDeelVanDeAchternaam>El Amrani</SignificantDeelVanDeAchternaam>
+        <Geboortedat>20030922</Geboortedat>
+        <Burgerservicenr>700003836</Burgerservicenr>
+        <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
+        <ANr>5085458167</ANr>
+        <AanduidingNaamgebruik>1</AanduidingNaamgebruik>
+        <Geslacht>2</Geslacht>
+        <!-- 0606 = Schiedam -->
+        <CdGeboortegemeente>0606</CdGeboortegemeente>
+        <Geboorteland>6030</Geboorteland>
+        <GeldigheidGegevensPersoon>
+            <DatGeldigheidGegevens>20030922</DatGeldigheidGegevens>
+        </GeldigheidGegevensPersoon>
+        <Nationaliteit>
+            <CdNationaliteit>0001</CdNationaliteit>
+            <GeldigheidGegevensNationaliteit>
+                <DatGeldigheidGegevens>20030922</DatGeldigheidGegevens>
+            </GeldigheidGegevensNationaliteit>
+        </Nationaliteit>
+        <DomicilieAdres>
+            <Postcd>3036BL</Postcd>
+            <Woonplaatsnaam>Rotterdam</Woonplaatsnaam>
+            <Straatnaam>Bergweg</Straatnaam>
+            <NaamOpenbareRuimte>Bergweg</NaamOpenbareRuimte>
+            <Huisnr>214</Huisnr>
+            <Huisletter>B</Huisletter>
+            <IdentificatiecdVerblijfplaats>0599010000876543</IdentificatiecdVerblijfplaats>
+            <IdentificatiecdNraanduiding>0599200000876544</IdentificatiecdNraanduiding>
+        </DomicilieAdres>
+        <AangifteAdreshoudingBrp>
+            <CdGemeenteVanInschrijving>0599</CdGemeenteVanInschrijving>
+            <DatVanInschrijvingBijGemeente>20230801</DatVanInschrijvingBijGemeente>
+            <DatBAdreshoudingBrp>20230801</DatBAdreshoudingBrp>
+        </AangifteAdreshoudingBrp>
+        <!-- Ouderlijk huis in Schiedam (geboorte t/m 31-07-2023) -->
+        <VerblijfplaatsHistorisch>
+            <DomicilieAdres>
+                <Postcd>3112JW</Postcd>
+                <Woonplaatsnaam>Schiedam</Woonplaatsnaam>
+                <Straatnaam>Rotterdamsedijk</Straatnaam>
+                <Huisnr>151</Huisnr>
+            </DomicilieAdres>
+            <AangifteAdreshoudingBrp>
+                <CdGemeenteVanInschrijving>0606</CdGemeenteVanInschrijving>
+                <DatVanInschrijvingBijGemeente>20030922</DatVanInschrijvingBijGemeente>
+                <DatBAdreshoudingBrp>20030922</DatBAdreshoudingBrp>
+            </AangifteAdreshoudingBrp>
+        </VerblijfplaatsHistorisch>
+        <Ouder1>
+            <Voornamen>Naima</Voornamen>
+            <SignificantDeelVanDeAchternaam>Ouali</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19750110</Geboortedat>
+            <DatBFamilierechtelijkeBetrekking>20030922</DatBFamilierechtelijkeBetrekking>
+        </Ouder1>
+        <Ouder2>
+            <Voornamen>Rachid</Voornamen>
+            <SignificantDeelVanDeAchternaam>El Amrani</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19720301</Geboortedat>
+            <DatBFamilierechtelijkeBetrekking>20030922</DatBFamilierechtelijkeBetrekking>
+        </Ouder2>
+        <Huwelijk>
+            <DatHuwelijkssluiting>20230715</DatHuwelijkssluiting>
+            <Partner>
+                <Voornamen>Bilal</Voornamen>
+                <SignificantDeelVanDeAchternaam>El Amrani</SignificantDeelVanDeAchternaam>
+                <Geboortedat>20020615</Geboortedat>
+                <Burgerservicenr>700003691</Burgerservicenr>
+                <ANr>5979406794</ANr>
+                <CdGeboortegemeente>0599</CdGeboortegemeente>
+                <Geboorteland>6030</Geboorteland>
+            </Partner>
+            <CdGemeenteHuwelijkssluiting>0599</CdGemeenteHuwelijkssluiting>
+            <LandHuwelijkssluiting>6030</LandHuwelijkssluiting>
+        </Huwelijk>
+        <Kind>
+            <Voornamen>Amira</Voornamen>
+            <SignificantDeelVanDeAchternaam>El Amrani</SignificantDeelVanDeAchternaam>
+            <Geboortedat>20240711</Geboortedat>
+            <Burgerservicenr>700003976</Burgerservicenr>
+            <ANr>2878427679</ANr>
+            <GeldigheidGegevensKind>
+                <DatGeldigheidGegevens>20240711</DatGeldigheidGegevens>
+            </GeldigheidGegevensKind>
+        </Kind>
+        <InschrijvingsgegevensBrp>
+            <CdGemeenteWaarPkZichBevindt>0599</CdGemeenteWaarPkZichBevindt>
+        </InschrijvingsgegevensBrp>
+    </ClientSuwi>
+</brp:AanvraagPersoonResponse>

@@ -1,0 +1,27 @@
+<ns4:DUOStudiefinancieringInfoResponse xmlns:ns4="http://bkwi.nl/SuwiML/Diensten/DUODossierStudiefinancieringGSD/v0200">
+    <ClientSuwi>
+
+        <!-- Scenario 7: DUO Stufi informatie van Sanne Mulder (bsn: 700001426).
+             HBO Communicatie (ingeschreven 01-09-2025 t/m 30-09-2026): basisbeurs uitwonend + aanvullende beurs.
+             Studiefinanciering beëindigd per 30-09-2026 (einde maand van uitschrijving). Geen lopende toekenning meer.
+             CdToekenningBasisbeursStufi: 1 = uitwonend; IndAanvullendeBeursStufi: 1 = ja. -->
+        <Burgerservicenr>700001426</Burgerservicenr>
+
+        <!-- Studiejaar 2025-2026, kalenderjaar 2025 -->
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20250901</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20251231</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>1</CdToekenningBasisbeursStufi>
+            <IndAanvullendeBeursStufi>1</IndAanvullendeBeursStufi>
+        </Studiefinanciering>
+
+        <!-- Kalenderjaar 2026 t/m maand van uitschrijving (stopt per 30-09-2026) -->
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20260101</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20260930</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>1</CdToekenningBasisbeursStufi>
+            <IndAanvullendeBeursStufi>1</IndAanvullendeBeursStufi>
+        </Studiefinanciering>
+
+    </ClientSuwi>
+</ns4:DUOStudiefinancieringInfoResponse>

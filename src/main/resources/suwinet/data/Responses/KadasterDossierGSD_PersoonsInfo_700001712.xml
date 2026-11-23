@@ -1,0 +1,62 @@
+<ns3:PersoonsInfoResponse xmlns:ns3="http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300" xmlns:ns2="http://bkwi.nl/SuwiML/FWI/v0203">
+
+    <!-- Scenario 8: Kadasterinformatie van Ingrid de Boer (bsn: 700001712).
+         Eigendom 1/2 van de woning Merelstraat 18 Utrecht, samen met echtgenoot Gerrit Jan de Boer (bsn: 700001566).
+         Gekocht in 1998; hypotheek volledig afgelost, geen hypotheek ingeschreven. -->
+    <ClientSuwi>
+        <Burgerservicenr>700001712</Burgerservicenr>
+        <Voornamen>Ingrid</Voornamen>
+        <Voorvoegsel>de</Voorvoegsel>
+        <SignificantDeelVanDeAchternaam>Boer</SignificantDeelVanDeAchternaam>
+        <Geslacht>2</Geslacht>
+        <Geboortedat>19640402</Geboortedat>
+
+        <DomicilieAdres>
+            <StraatadresBag>
+                <Postcd>3514CN</Postcd>
+                <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+                <Straatnaam>Merelstraat</Straatnaam>
+                <Huisnr>18</Huisnr>
+            </StraatadresBag>
+        </DomicilieAdres>
+
+        <DatToestandKadaster>20261120</DatToestandKadaster>
+
+        <Eigendom>
+            <!-- Eigen woning (hypotheekvrij), aandeel 1/2 -->
+            <OnroerendeZaak>
+                <CdTypeOnroerendeZaak>P</CdTypeOnroerendeZaak>
+                <DatOntstaan>19780410</DatOntstaan>
+                <KadastraleAanduiding>
+                    <CdKadastraleGemeente>0344</CdKadastraleGemeente>
+                    <KadastraleGemeentenaam>Utrecht</KadastraleGemeentenaam>
+                    <KadastraleSectie>K</KadastraleSectie>
+                    <KadastraalPerceelnr>60411</KadastraalPerceelnr>
+                </KadastraleAanduiding>
+                <OmsKadastraalObject>Bebouwd: Wonen</OmsKadastraalObject>
+                <ZakelijkRecht>
+                    <OmsZakelijkRecht>Eigendom (recht van) 1/2</OmsZakelijkRecht>
+                </ZakelijkRecht>
+                <LocatieOZ>
+                    <StraatadresBag>
+                        <Postcd>3514CN</Postcd>
+                        <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+                        <Straatnaam>Merelstraat</Straatnaam>
+                        <Huisnr>18</Huisnr>
+                    </StraatadresBag>
+                </LocatieOZ>
+                <PubliekrechtelijkeBeperking>
+                    <AantekeningKadastraalObject>
+                        <OmsAantekeningKadastraalObject>Er zijn geen beperkingen bekend in de Landelijke Voorziening WKPB.</OmsAantekeningKadastraalObject>
+                    </AantekeningKadastraalObject>
+                </PubliekrechtelijkeBeperking>
+                <BedrKoopsom>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <WaardeBedr>142000</WaardeBedr>
+                </BedrKoopsom>
+                <JaarAankoop>1998</JaarAankoop>
+                <IndMeerGerechtigden>1</IndMeerGerechtigden>
+            </OnroerendeZaak>
+        </Eigendom>
+    </ClientSuwi>
+</ns3:PersoonsInfoResponse>

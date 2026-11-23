@@ -1,0 +1,111 @@
+<smls:DUOPersoonsInfoResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/DUODossierPersoonGSD/v0300">
+    <ClientSuwi>
+
+        <!-- Scenario 11: DUO opleidingsinformatie van Daan Hendriks (bsn: 700002698).
+             VMBO basisberoepsgerichte leerweg afgerond (2023), daarna MBO niveau 2 Logistiek medewerker (BOL).
+             MBO zonder diploma verlaten op 14-03-2025 (18e verjaardag, einde kwalificatieplicht) tijdens leerjaar 2;
+             stage (BPV) voortijdig beëindigd. Geen startkwalificatie. -->
+        <Burgerservicenr>700002698</Burgerservicenr>
+        <!-- 2 = nee: geen startkwalificatie (VMBO-diploma is geen startkwalificatie, MBO-2 niet afgerond) -->
+        <IndStartkwalificatieDuo>2</IndStartkwalificatieDuo>
+
+        <!-- VMBO-BB in Utrecht, 2019 - 2023 -->
+        <Onderwijsovereenkomst>
+            <Brin>
+                <BrinNr>02UT</BrinNr>
+            </Brin>
+            <DatInschrijvingOpleiding>20190801</DatInschrijvingOpleiding>
+            <DatUitschrijvingOpleiding>20230731</DatUitschrijvingOpleiding>
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>20190801</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20200731</DatEDeelnameOpleiding>
+                <AanduidingLeerjaar>1</AanduidingLeerjaar>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>Basisberoepsgerichte leerweg VMBO</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>VO-VMBO-BB</CdNiveauOpleidingDuo>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>20200801</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20210731</DatEDeelnameOpleiding>
+                <AanduidingLeerjaar>2</AanduidingLeerjaar>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>Basisberoepsgerichte leerweg VMBO</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>VO-VMBO-BB</CdNiveauOpleidingDuo>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>20210801</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20220731</DatEDeelnameOpleiding>
+                <AanduidingLeerjaar>3</AanduidingLeerjaar>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>Basisberoepsgerichte leerweg VMBO</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>VO-VMBO-BB</CdNiveauOpleidingDuo>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>20220801</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20230731</DatEDeelnameOpleiding>
+                <AanduidingLeerjaar>4</AanduidingLeerjaar>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>Basisberoepsgerichte leerweg VMBO</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>VO-VMBO-BB</CdNiveauOpleidingDuo>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+        </Onderwijsovereenkomst>
+
+        <!-- MBO niveau 2 Logistiek medewerker (BOL), ingeschreven 01-09-2023, uitgeschreven 14-03-2025 zonder diploma -->
+        <Onderwijsovereenkomst>
+            <Brin>
+                <BrinNr>25LH</BrinNr>
+            </Brin>
+            <DatInschrijvingOpleiding>20230901</DatInschrijvingOpleiding>
+            <DatUitschrijvingOpleiding>20250314</DatUitschrijvingOpleiding>
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>20230901</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20240731</DatEDeelnameOpleiding>
+                <AanduidingLeerjaar>1</AanduidingLeerjaar>
+                <CdLeerwegMbo>BOL</CdLeerwegMbo>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>Logistiek medewerker</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>MBO-2</CdNiveauOpleidingDuo>
+                    <OmsStudiegebied>Transport en logistiek</OmsStudiegebied>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>20240801</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20250314</DatEDeelnameOpleiding>
+                <AanduidingLeerjaar>2</AanduidingLeerjaar>
+                <CdLeerwegMbo>BOL</CdLeerwegMbo>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>Logistiek medewerker</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>MBO-2</CdNiveauOpleidingDuo>
+                    <OmsStudiegebied>Transport en logistiek</OmsStudiegebied>
+                </InhoudDeelnameOpleidingDuo>
+                <!-- Stage bij distributiecentrum, voortijdig beëindigd -->
+                <Beroepspraktijkovereenkomst>
+                    <DatBBeroepspraktijkvorming>20240902</DatBBeroepspraktijkvorming>
+                    <DatEBeroepspraktijkvormWerkelijk>20250131</DatEBeroepspraktijkvormWerkelijk>
+                    <DatAfslBeroepspraktijkovereenk>20240826</DatAfslBeroepspraktijkovereenk>
+                </Beroepspraktijkovereenkomst>
+            </DeelnameOpleidingGeregistrDuo>
+        </Onderwijsovereenkomst>
+
+        <!-- RESULTATEN: alleen VMBO-BB diploma; geen MBO-diploma -->
+        <ResultaatOpleidingGeregistrDuo>
+            <Brin>
+                <BrinNr>02UT</BrinNr>
+            </Brin>
+            <InhoudResultaatOpleidingDuo>
+                <NaamOpleidingKortDuo>VMBO BB Economie en ondernemen</NaamOpleidingKortDuo>
+                <CdNiveauOpleidingDuo>VO-VMBO-BB</CdNiveauOpleidingDuo>
+            </InhoudResultaatOpleidingDuo>
+            <ResultaatExamen>
+                <CdResultaatExamen>G</CdResultaatExamen>
+                <DatResultaatExamen>20230712</DatResultaatExamen>
+                <JaarAfgelegdExamen>2023</JaarAfgelegdExamen>
+            </ResultaatExamen>
+        </ResultaatOpleidingGeregistrDuo>
+
+    </ClientSuwi>
+</smls:DUOPersoonsInfoResponse>

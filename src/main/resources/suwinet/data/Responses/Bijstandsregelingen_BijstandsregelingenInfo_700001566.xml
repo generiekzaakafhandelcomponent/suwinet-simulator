@@ -1,0 +1,42 @@
+<bij:BijstandsregelingenInfoResponse xmlns:bij="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500">
+    <ClientSuwi>
+
+        <!-- Scenario 8: Gerrit Jan de Boer (bsn: 700001566). Aanvraag Participatiewet (PW) met partner
+             Ingrid de Boer (bsn: 700001712) ingediend op 2 november 2026; nog geen beslissing (in behandeling).
+             Gezamenlijk eigendom van een hypotheekvrije woning (vermogen in eigen woning) is onderdeel van het onderzoek. -->
+        <Burgerservicenr>700001566</Burgerservicenr>
+        <Voornamen>Gerrit Jan</Voornamen>
+        <Voorletters>GJ</Voorletters>
+        <Voorvoegsel>de</Voorvoegsel>
+        <SignificantDeelVanDeAchternaam>Boer</SignificantDeelVanDeAchternaam>
+        <Geslacht>1</Geslacht>
+        <Geboortedat>19620914</Geboortedat>
+        <DomicilieAdres>
+            <Postcd>3514CN</Postcd>
+            <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+            <Gemeentenaam>Utrecht</Gemeentenaam>
+            <Straatnaam>Merelstraat</Straatnaam>
+            <Huisnr>18</Huisnr>
+        </DomicilieAdres>
+
+        <!-- AanvraagUitkering: PW, nog in behandeling (geen BeslissingOpAanvraagUitkering) -->
+        <AanvraagUitkering>
+            <DatAanvraagUitkering>20261102</DatAanvraagUitkering>
+            <SzWet>
+                <CdSzWet>PW</CdSzWet>
+            </SzWet>
+            <PartnerAanvraagUitkering>
+                <Burgerservicenr>700001712</Burgerservicenr>
+                <Voorletters>I</Voorletters>
+                <Voorvoegsel>de</Voorvoegsel>
+                <SignificantDeelVanDeAchternaam>Boer</SignificantDeelVanDeAchternaam>
+                <Geboortedat>19640402</Geboortedat>
+            </PartnerAanvraagUitkering>
+            <Bron>
+                <CdKolomSuwi>3</CdKolomSuwi>
+                <CdPartijSuwi>0344</CdPartijSuwi>
+                <CdVestigingSuwi>0344</CdVestigingSuwi>
+            </Bron>
+        </AanvraagUitkering>
+    </ClientSuwi>
+</bij:BijstandsregelingenInfoResponse>

@@ -1,0 +1,42 @@
+<bij:BijstandsregelingenInfoResponse xmlns:bij="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500">
+    <ClientSuwi>
+        <!-- Scenario 2 - Bijstandsgegevens Ilse Jansen (bsn: 700000434): aanvraag aanvullende PW-bijstand samen met partner Ruben Jansen (bsn: 700000574) wegens sterk wisselend inkomen uit 0-urencontract; besluit nog niet genomen -->
+        <Burgerservicenr>700000434</Burgerservicenr>
+        <Voornamen>Ilse</Voornamen>
+        <Voorletters>I</Voorletters>
+        <SignificantDeelVanDeAchternaam>Jansen</SignificantDeelVanDeAchternaam>
+        <Geslacht>2</Geslacht>
+        <Geboortedat>19940227</Geboortedat>
+        <!-- CdLeefvorm 03 = gehuwden / samenwonenden -->
+        <CdLeefvorm>03</CdLeefvorm>
+        <DomicilieAdres>
+            <Postcd>6523BK</Postcd>
+            <Woonplaatsnaam>Nijmegen</Woonplaatsnaam>
+            <Gemeentenaam>Nijmegen</Gemeentenaam>
+            <Straatnaam>Groenestraat</Straatnaam>
+            <Huisnr>287</Huisnr>
+        </DomicilieAdres>
+        <DossierGsd>
+            <Dossiercd>PW-0268-2026-0093215</Dossiercd>
+            <DatOpnameGegevensInIbSysteem>20261104</DatOpnameGegevensInIbSysteem>
+        </DossierGsd>
+        <!-- Aanvraag aanvullende bijstand (PW) d.d. 02-11-2026, in behandeling (nog geen beslissing) -->
+        <AanvraagUitkering>
+            <DatAanvraagUitkering>20261102</DatAanvraagUitkering>
+            <SzWet>
+                <CdSzWet>PW</CdSzWet>
+            </SzWet>
+            <PartnerAanvraagUitkering>
+                <Burgerservicenr>700000574</Burgerservicenr>
+                <Voorletters>R</Voorletters>
+                <SignificantDeelVanDeAchternaam>Jansen</SignificantDeelVanDeAchternaam>
+                <Geboortedat>19920918</Geboortedat>
+            </PartnerAanvraagUitkering>
+            <Bron>
+                <CdKolomSuwi>3</CdKolomSuwi>
+                <CdPartijSuwi>0268</CdPartijSuwi>
+                <CdVestigingSuwi>0268</CdVestigingSuwi>
+            </Bron>
+        </AanvraagUitkering>
+    </ClientSuwi>
+</bij:BijstandsregelingenInfoResponse>

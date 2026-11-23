@@ -1,0 +1,33 @@
+<smls:VoertuigbezitInfoPersoonResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/RDWDossierGSD/v0200">
+    <ClientSuwi>
+
+        <!-- Scenario 17: Voertuigbezit van Dennis Brouwer (bsn: 700003551).
+             Personenauto TKZ34G (tweedehands Volkswagen Polo uit 2019) op naam sinds 14-09-2026,
+             dus na de start van de bijstandsuitkering (01-03-2025). -->
+        <Burgerservicenr>700003551</Burgerservicenr>
+        <Voorletters>D</Voorletters>
+        <SignificantDeelVanDeAchternaam>Brouwer</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19900127</Geboortedat>
+        <RdwAdres>
+            <FeitelijkAdres>
+                <Straatadres>
+                    <Postcd>3073AH</Postcd>
+                    <Woonplaatsnaam>Rotterdam</Woonplaatsnaam>
+                    <Straatnaam>Groene Hilledijk</Straatnaam>
+                    <Huisnr>212</Huisnr>
+                    <Huisnrtoevoeging>B</Huisnrtoevoeging>
+                </Straatadres>
+            </FeitelijkAdres>
+        </RdwAdres>
+        <Aansprakelijke>
+            <DatRegistratieAansprakelijkheid>20260914</DatRegistratieAansprakelijkheid>
+            <Voertuig>
+                <KentekenVoertuig>TKZ34G</KentekenVoertuig>
+                <StatusVoertuig>
+                    <CdStatusVoertuig>87</CdStatusVoertuig>
+                    <DatBStatusVoertuig>20260914</DatBStatusVoertuig>
+                </StatusVoertuig>
+            </Voertuig>
+        </Aansprakelijke>
+    </ClientSuwi>
+</smls:VoertuigbezitInfoPersoonResponse>

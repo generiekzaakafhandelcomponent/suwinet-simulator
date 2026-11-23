@@ -1,0 +1,59 @@
+<ns4:KentekenInfoResponse xmlns:ns3="http://bkwi.nl/SuwiML/FWI/v0205" xmlns:ns4="http://bkwi.nl/SuwiML/Diensten/RDWDossierGSD/v0200">
+    <ClientSuwi>
+
+        <!-- Scenario 17: Kentekeninfo personenauto TKZ34G van Dennis Brouwer (bsn: 700003551).
+             Tweedehands Volkswagen Polo (eerste toelating 2019), op naam gesteld 14-09-2026 (na start bijstand 01-03-2025). -->
+        <Burgerservicenr>700003551</Burgerservicenr>
+        <Voorletters>D</Voorletters>
+        <SignificantDeelVanDeAchternaam>Brouwer</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19900127</Geboortedat>
+
+        <RdwAdres>
+            <FeitelijkAdres>
+                <Straatadres>
+                    <Postcd>3073AH</Postcd>
+                    <Woonplaatsnaam>Rotterdam</Woonplaatsnaam>
+                    <Straatnaam>Groene Hilledijk</Straatnaam>
+                    <Huisnr>212</Huisnr>
+                    <Huisnrtoevoeging>B</Huisnrtoevoeging>
+                </Straatadres>
+            </FeitelijkAdres>
+        </RdwAdres>
+
+        <Aansprakelijke>
+            <DatRegistratieAansprakelijkheid>20260914</DatRegistratieAansprakelijkheid>
+            <Voertuig>
+                <CdSrtVoertuig>P</CdSrtVoertuig>
+                <KentekenVoertuig>TKZ34G</KentekenVoertuig>
+                <StatusVoertuig>
+                    <CdStatusVoertuig>87</CdStatusVoertuig>
+                    <DatBStatusVoertuig>20260914</DatBStatusVoertuig>
+                </StatusVoertuig>
+                <MerkVoertuig>VOLKSWAGEN</MerkVoertuig>
+                <TypeVoertuig>POLO 1.0 TSI COMFORTLINE</TypeVoertuig>
+                <HoofdkleurVoertuig>GRIJS</HoofdkleurVoertuig>
+                <DatEersteInschrijvingVoertuigNat>20190612</DatEersteInschrijvingVoertuigNat>
+                <DatEersteInschrijvingVoertuigInt>20190612</DatEersteInschrijvingVoertuigInt>
+                <BedrBpm>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <WaardeBedr>1846</WaardeBedr>
+                </BedrBpm>
+                <BedrCatalogusVoertuig>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <WaardeBedr>20490</WaardeBedr>
+                </BedrCatalogusVoertuig>
+                <TellerstandVoertuig>
+                    <TellerstandVoertuig>112480</TellerstandVoertuig>
+                    <CdTellerstandeenheidVoertuig>K</CdTellerstandeenheidVoertuig>
+                </TellerstandVoertuig>
+                <Keuring>
+                    <DatEGeldigheidApk>20270612</DatEGeldigheidApk>
+                </Keuring>
+                <Verzekering>
+                    <CdSrtDekking>WAM</CdSrtDekking>
+                    <DatBVerzekering>20260914</DatBVerzekering>
+                </Verzekering>
+            </Voertuig>
+        </Aansprakelijke>
+    </ClientSuwi>
+</ns4:KentekenInfoResponse>

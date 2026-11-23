@@ -1,0 +1,85 @@
+<ns3:ObjectInfoKadastraleAanduidingResponse xmlns:ns3="http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300" xmlns:ns2="http://bkwi.nl/SuwiML/FWI/v0203">
+
+    <!-- Scenario 8: Woning Merelstraat 18 Utrecht (0344 K 60411), hypotheekvrij.
+         Gezamenlijk eigendom (ieder 1/2) van Gerrit Jan de Boer (bsn: 700001566) en Ingrid de Boer (bsn: 700001712).
+         Gekocht in 1998; geen hypotheek ingeschreven. -->
+    <OnroerendeZaak>
+        <DatToestandKadaster>20261120</DatToestandKadaster>
+        <CdTypeOnroerendeZaak>P</CdTypeOnroerendeZaak>
+        <DatOntstaan>19780410</DatOntstaan>
+
+        <KadastraleAanduiding>
+            <CdKadastraleGemeente>0344</CdKadastraleGemeente>
+            <KadastraleGemeentenaam>Utrecht</KadastraleGemeentenaam>
+            <KadastraleSectie>K</KadastraleSectie>
+            <KadastraalPerceelnr>60411</KadastraalPerceelnr>
+        </KadastraleAanduiding>
+
+        <OmsKadastraalObject>Bebouwd: Wonen</OmsKadastraalObject>
+
+        <ZakelijkRecht>
+            <OmsZakelijkRecht>Eigendom (recht van) 1/2</OmsZakelijkRecht>
+        </ZakelijkRecht>
+
+        <LocatieOZ>
+            <StraatadresBag>
+                <Postcd>3514CN</Postcd>
+                <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+                <Straatnaam>Merelstraat</Straatnaam>
+                <Huisnr>18</Huisnr>
+            </StraatadresBag>
+        </LocatieOZ>
+
+        <PubliekrechtelijkeBeperking>
+            <AantekeningKadastraalObject>
+                <OmsAantekeningKadastraalObject>Er zijn geen beperkingen bekend in de Landelijke Voorziening WKPB.</OmsAantekeningKadastraalObject>
+            </AantekeningKadastraalObject>
+        </PubliekrechtelijkeBeperking>
+
+        <BedrKoopsom>
+            <CdMunteenheid>EUR</CdMunteenheid>
+            <WaardeBedr>142000</WaardeBedr>
+        </BedrKoopsom>
+        <JaarAankoop>1998</JaarAankoop>
+
+        <IndMeerGerechtigden>1</IndMeerGerechtigden>
+
+        <Gerechtigde>
+            <NatuurlijkPersoon>
+                <Burgerservicenr>700001566</Burgerservicenr>
+                <Voornamen>Gerrit Jan</Voornamen>
+                <Voorvoegsel>de</Voorvoegsel>
+                <SignificantDeelVanDeAchternaam>Boer</SignificantDeelVanDeAchternaam>
+                <Geslacht>1</Geslacht>
+                <Geboortedat>19620914</Geboortedat>
+            </NatuurlijkPersoon>
+            <DomicilieAdres>
+                <StraatadresBag>
+                    <Postcd>3514CN</Postcd>
+                    <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+                    <Straatnaam>Merelstraat</Straatnaam>
+                    <Huisnr>18</Huisnr>
+                </StraatadresBag>
+            </DomicilieAdres>
+        </Gerechtigde>
+
+        <Gerechtigde>
+            <NatuurlijkPersoon>
+                <Burgerservicenr>700001712</Burgerservicenr>
+                <Voornamen>Ingrid</Voornamen>
+                <Voorvoegsel>de</Voorvoegsel>
+                <SignificantDeelVanDeAchternaam>Boer</SignificantDeelVanDeAchternaam>
+                <Geslacht>2</Geslacht>
+                <Geboortedat>19640402</Geboortedat>
+            </NatuurlijkPersoon>
+            <DomicilieAdres>
+                <StraatadresBag>
+                    <Postcd>3514CN</Postcd>
+                    <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+                    <Straatnaam>Merelstraat</Straatnaam>
+                    <Huisnr>18</Huisnr>
+                </StraatadresBag>
+            </DomicilieAdres>
+        </Gerechtigde>
+    </OnroerendeZaak>
+</ns3:ObjectInfoKadastraleAanduidingResponse>
