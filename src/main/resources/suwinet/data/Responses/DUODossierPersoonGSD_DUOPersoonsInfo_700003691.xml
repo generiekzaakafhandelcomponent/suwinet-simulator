@@ -1,0 +1,164 @@
+<smls:DUOPersoonsInfoResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/DUODossierPersoonGSD/v0300">
+    <ClientSuwi>
+
+        <!-- Scenario 18: DUO opleidingsinformatie van Bilal El Amrani (bsn: 700003691).
+             HAVO-diploma 2019; HBO Bedrijfskunde 2019-2020 na één jaar gestopt; 2020-2023 fulltime gewerkt;
+             sinds 01-09-2023 HBO-ICT voltijd aan Hogeschool Rotterdam (lopende inschrijving, nu in leerjaar 4). -->
+        <Burgerservicenr>700003691</Burgerservicenr>
+        <!-- 1 = ja: HAVO-diploma is een startkwalificatie -->
+        <IndStartkwalificatieDuo>1</IndStartkwalificatieDuo>
+
+        <!-- HAVO in Rotterdam, 2014 - 2019 -->
+        <Onderwijsovereenkomst>
+            <Brin>
+                <BrinNr>18ZM</BrinNr>
+            </Brin>
+            <DatInschrijvingOpleiding>20140801</DatInschrijvingOpleiding>
+            <DatUitschrijvingOpleiding>20190731</DatUitschrijvingOpleiding>
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>20140801</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20150731</DatEDeelnameOpleiding>
+                <AanduidingLeerjaar>1</AanduidingLeerjaar>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>HAVO - leerjaar 1</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>VO-HAVO</CdNiveauOpleidingDuo>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>20150801</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20160731</DatEDeelnameOpleiding>
+                <AanduidingLeerjaar>2</AanduidingLeerjaar>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>HAVO - leerjaar 2</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>VO-HAVO</CdNiveauOpleidingDuo>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>20160801</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20170731</DatEDeelnameOpleiding>
+                <AanduidingLeerjaar>3</AanduidingLeerjaar>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>HAVO - leerjaar 3</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>VO-HAVO</CdNiveauOpleidingDuo>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>20170801</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20180731</DatEDeelnameOpleiding>
+                <AanduidingLeerjaar>4</AanduidingLeerjaar>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>HAVO - leerjaar 4</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>VO-HAVO</CdNiveauOpleidingDuo>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>20180801</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20190731</DatEDeelnameOpleiding>
+                <AanduidingLeerjaar>5</AanduidingLeerjaar>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>HAVO - eindexamenjaar</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>VO-HAVO</CdNiveauOpleidingDuo>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+        </Onderwijsovereenkomst>
+
+        <!-- HBO Bedrijfskunde, Hogeschool Rotterdam: 01-09-2019 t/m 31-05-2020 (gestopt in eerste jaar) -->
+        <Onderwijsovereenkomst>
+            <Brin>
+                <BrinNr>22OJ</BrinNr>
+            </Brin>
+            <DatInschrijvingOpleiding>20190901</DatInschrijvingOpleiding>
+            <DatUitschrijvingOpleiding>20200531</DatUitschrijvingOpleiding>
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>20190901</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20200531</DatEDeelnameOpleiding>
+                <AanduidingLeerjaar>1</AanduidingLeerjaar>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>B Bedrijfskunde</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>HBO-BA</CdNiveauOpleidingDuo>
+                    <OmsStudiegebied>Economie</OmsStudiegebied>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+        </Onderwijsovereenkomst>
+
+        <!-- HBO-ICT, Hogeschool Rotterdam: ingeschreven sinds 01-09-2023, lopend -->
+        <Onderwijsovereenkomst>
+            <Brin>
+                <BrinNr>22OJ</BrinNr>
+            </Brin>
+            <DatInschrijvingOpleiding>20230901</DatInschrijvingOpleiding>
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>20230901</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20240831</DatEDeelnameOpleiding>
+                <AanduidingLeerjaar>1</AanduidingLeerjaar>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>B HBO-ICT</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>HBO-BA</CdNiveauOpleidingDuo>
+                    <OmsStudiegebied>Techniek</OmsStudiegebied>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>20240901</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20250831</DatEDeelnameOpleiding>
+                <AanduidingLeerjaar>2</AanduidingLeerjaar>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>B HBO-ICT</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>HBO-BA</CdNiveauOpleidingDuo>
+                    <OmsStudiegebied>Techniek</OmsStudiegebied>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>20250901</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20260831</DatEDeelnameOpleiding>
+                <AanduidingLeerjaar>3</AanduidingLeerjaar>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>B HBO-ICT</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>HBO-BA</CdNiveauOpleidingDuo>
+                    <OmsStudiegebied>Techniek</OmsStudiegebied>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+            <!-- huidig studiejaar 2026-2027, lopend -->
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>20260901</DatBDeelnameOpleiding>
+                <AanduidingLeerjaar>4</AanduidingLeerjaar>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>B HBO-ICT</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>HBO-BA</CdNiveauOpleidingDuo>
+                    <OmsStudiegebied>Techniek</OmsStudiegebied>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+        </Onderwijsovereenkomst>
+
+        <!-- RESULTATEN -->
+        <ResultaatOpleidingGeregistrDuo>
+            <Brin>
+                <BrinNr>18ZM</BrinNr>
+            </Brin>
+            <InhoudResultaatOpleidingDuo>
+                <NaamOpleidingKortDuo>HAVO</NaamOpleidingKortDuo>
+                <CdNiveauOpleidingDuo>VO-HAVO</CdNiveauOpleidingDuo>
+            </InhoudResultaatOpleidingDuo>
+            <ResultaatExamen>
+                <CdResultaatExamen>G</CdResultaatExamen>
+                <DatResultaatExamen>20190710</DatResultaatExamen>
+                <JaarAfgelegdExamen>2019</JaarAfgelegdExamen>
+            </ResultaatExamen>
+        </ResultaatOpleidingGeregistrDuo>
+        <!-- Propedeuse HBO-ICT behaald -->
+        <ResultaatOpleidingGeregistrDuo>
+            <Brin>
+                <BrinNr>22OJ</BrinNr>
+            </Brin>
+            <InhoudResultaatOpleidingDuo>
+                <NaamOpleidingKortDuo>P HBO-ICT</NaamOpleidingKortDuo>
+                <CdNiveauOpleidingDuo>HBO-BA</CdNiveauOpleidingDuo>
+            </InhoudResultaatOpleidingDuo>
+            <ResultaatExamen>
+                <CdResultaatExamen>G</CdResultaatExamen>
+                <DatResultaatExamen>20240705</DatResultaatExamen>
+                <JaarAfgelegdExamen>2024</JaarAfgelegdExamen>
+            </ResultaatExamen>
+        </ResultaatOpleidingGeregistrDuo>
+
+    </ClientSuwi>
+</smls:DUOPersoonsInfoResponse>

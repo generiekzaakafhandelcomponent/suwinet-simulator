@@ -1,0 +1,110 @@
+<brp:AanvraagPersoonResponse xmlns:brp="http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD/v0200">
+    <ClientSuwi>
+
+        <!-- Scenario 9: Sanne Bos (bsn: 700001992), ex-partner van Mark Bos (bsn: 700001852).
+             Huwelijk ontbonden door echtscheiding op 12 mei 2026. Woont nog in de voormalige echtelijke woning
+             Rijnlaan 87 Utrecht (kadastraal 0344 AJ 60521), waarvan beide ex-partners ieder 1/2 eigenaar zijn. -->
+        <Voornamen>Sanne</Voornamen>
+        <SignificantDeelVanDeAchternaam>Bos</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19840211</Geboortedat>
+        <Burgerservicenr>700001992</Burgerservicenr>
+        <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
+        <ANr>3878719791</ANr>
+        <AanduidingNaamgebruik>1</AanduidingNaamgebruik>
+        <Geslacht>2</Geslacht>
+        <CdGeboortegemeente>0344</CdGeboortegemeente>
+        <Geboorteland>6030</Geboorteland>
+        <GeldigheidGegevensPersoon>
+            <DatGeldigheidGegevens>19840211</DatGeldigheidGegevens>
+        </GeldigheidGegevensPersoon>
+        <Nationaliteit>
+            <CdNationaliteit>0001</CdNationaliteit>
+            <GeldigheidGegevensNationaliteit>
+                <DatGeldigheidGegevens>19840211</DatGeldigheidGegevens>
+            </GeldigheidGegevensNationaliteit>
+        </Nationaliteit>
+        <!-- Huidig adres: voormalige echtelijke woning (koopwoning) -->
+        <DomicilieAdres>
+            <Postcd>3522BP</Postcd>
+            <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+            <Straatnaam>Rijnlaan</Straatnaam>
+            <NaamOpenbareRuimte>Rijnlaan</NaamOpenbareRuimte>
+            <Huisnr>87</Huisnr>
+            <IdentificatiecdVerblijfplaats>0344010000698233</IdentificatiecdVerblijfplaats>
+            <IdentificatiecdNraanduiding>0344200000698232</IdentificatiecdNraanduiding>
+        </DomicilieAdres>
+        <AangifteAdreshoudingBrp>
+            <CdGemeenteVanInschrijving>0344</CdGemeenteVanInschrijving>
+            <DatVanInschrijvingBijGemeente>19840211</DatVanInschrijvingBijGemeente>
+            <DatBAdreshoudingBrp>20100901</DatBAdreshoudingBrp>
+        </AangifteAdreshoudingBrp>
+        <!-- Gezamenlijke huurwoning (samenwonend, later gehuwd) -->
+        <VerblijfplaatsHistorisch>
+            <DomicilieAdres>
+                <Postcd>3531CK</Postcd>
+                <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+                <Straatnaam>Kanaalstraat</Straatnaam>
+                <Huisnr>145</Huisnr>
+            </DomicilieAdres>
+            <AangifteAdreshoudingBrp>
+                <CdGemeenteVanInschrijving>0344</CdGemeenteVanInschrijving>
+                <DatVanInschrijvingBijGemeente>19840211</DatVanInschrijvingBijGemeente>
+                <DatBAdreshoudingBrp>20080115</DatBAdreshoudingBrp>
+            </AangifteAdreshoudingBrp>
+        </VerblijfplaatsHistorisch>
+        <!-- Ouderlijk huis -->
+        <VerblijfplaatsHistorisch>
+            <DomicilieAdres>
+                <Postcd>3523GA</Postcd>
+                <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+                <Straatnaam>Waalstraat</Straatnaam>
+                <Huisnr>23</Huisnr>
+            </DomicilieAdres>
+            <AangifteAdreshoudingBrp>
+                <CdGemeenteVanInschrijving>0344</CdGemeenteVanInschrijving>
+                <DatVanInschrijvingBijGemeente>19840211</DatVanInschrijvingBijGemeente>
+                <DatBAdreshoudingBrp>19840211</DatBAdreshoudingBrp>
+            </AangifteAdreshoudingBrp>
+        </VerblijfplaatsHistorisch>
+        <Ouder1>
+            <Voornamen>Annemarie</Voornamen>
+            <SignificantDeelVanDeAchternaam>Kok</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19580624</Geboortedat>
+            <DatBFamilierechtelijkeBetrekking>19840211</DatBFamilierechtelijkeBetrekking>
+        </Ouder1>
+        <Ouder2>
+            <Voornamen>Frank</Voornamen>
+            <SignificantDeelVanDeAchternaam>Bos</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19561103</Geboortedat>
+            <DatBFamilierechtelijkeBetrekking>19840211</DatBFamilierechtelijkeBetrekking>
+        </Ouder2>
+        <!-- Actueel: huwelijk ontbonden door echtscheiding (S) -->
+        <Huwelijk>
+            <Partner>
+                <Voornamen>Mark</Voornamen>
+                <SignificantDeelVanDeAchternaam>Bos</SignificantDeelVanDeAchternaam>
+                <Geboortedat>19820704</Geboortedat>
+                <Burgerservicenr>700001852</Burgerservicenr>
+                <ANr>6596578419</ANr>
+                <CdGeboortegemeente>0307</CdGeboortegemeente>
+                <Geboorteland>6030</Geboorteland>
+            </Partner>
+            <DatOntbindingHuwelijk>20260512</DatOntbindingHuwelijk>
+            <CdGemeenteOntbindingHuwelijk>0344</CdGemeenteOntbindingHuwelijk>
+            <LandOntbindingHuwelijk>6030</LandOntbindingHuwelijk>
+            <CdRedenOntbindingHuwelijk>S</CdRedenOntbindingHuwelijk>
+        </Huwelijk>
+        <!-- Historisch: huwelijkssluiting 19 juni 2009 te Utrecht -->
+        <HuwelijkHistorisch>
+            <DatHuwelijkssluiting>20090619</DatHuwelijkssluiting>
+            <Partner>
+                <Burgerservicenr>700001852</Burgerservicenr>
+                <ANr>6596578419</ANr>
+            </Partner>
+        </HuwelijkHistorisch>
+        <InschrijvingsgegevensBrp>
+            <CdGemeenteWaarPkZichBevindt>0344</CdGemeenteWaarPkZichBevindt>
+            <CdPkVolledigGeconverteerd>P</CdPkVolledigGeconverteerd>
+        </InschrijvingsgegevensBrp>
+    </ClientSuwi>
+</brp:AanvraagPersoonResponse>

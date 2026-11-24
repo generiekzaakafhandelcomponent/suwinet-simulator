@@ -1,0 +1,73 @@
+<ns4:DUOStudiefinancieringInfoResponse xmlns:ns4="http://bkwi.nl/SuwiML/Diensten/DUODossierStudiefinancieringGSD/v0200">
+    <ClientSuwi>
+
+        <!-- Scenario 18: DUO Stufi informatie van Bilal El Amrani (bsn: 700003691).
+             Codes: CdToekenningBasisbeursStufi 0 = geen basisbeurs (leenstelsel), 1 = uitwonend;
+             IndAanvullendeBeursStufi 1 = ja; CdStatusPartnertoeslagStufi / CdStatusEenOudertoeslagStufi 1 = toegekend, 2 = niet toegekend.
+             Gehuwd sinds 15-07-2023, dochter geboren 11-07-2024: partnertoeslag vanaf juli 2024
+             (partner Salma heeft geen eigen inkomen); geen eenoudertoeslag (niet alleenstaand). -->
+        <Burgerservicenr>700003691</Burgerservicenr>
+
+        <!-- HBO Bedrijfskunde 2019-2020 (leenstelsel: geen basisbeurs, wel aanvullende beurs), gestopt per 31-05-2020 -->
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20190901</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20191231</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>0</CdToekenningBasisbeursStufi>
+            <IndAanvullendeBeursStufi>1</IndAanvullendeBeursStufi>
+            <CdStatusPartnertoeslagStufi>2</CdStatusPartnertoeslagStufi>
+            <CdStatusEenOudertoeslagStufi>2</CdStatusEenOudertoeslagStufi>
+        </Studiefinanciering>
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20200101</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20200531</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>0</CdToekenningBasisbeursStufi>
+            <IndAanvullendeBeursStufi>1</IndAanvullendeBeursStufi>
+            <CdStatusPartnertoeslagStufi>2</CdStatusPartnertoeslagStufi>
+            <CdStatusEenOudertoeslagStufi>2</CdStatusEenOudertoeslagStufi>
+        </Studiefinanciering>
+
+        <!-- HBO-ICT vanaf 01-09-2023: basisbeurs uitwonend (herinvoering basisbeurs) + aanvullende beurs -->
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20230901</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20231231</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>1</CdToekenningBasisbeursStufi>
+            <IndAanvullendeBeursStufi>1</IndAanvullendeBeursStufi>
+            <CdStatusPartnertoeslagStufi>2</CdStatusPartnertoeslagStufi>
+            <CdStatusEenOudertoeslagStufi>2</CdStatusEenOudertoeslagStufi>
+        </Studiefinanciering>
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20240101</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20240630</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>1</CdToekenningBasisbeursStufi>
+            <IndAanvullendeBeursStufi>1</IndAanvullendeBeursStufi>
+            <CdStatusPartnertoeslagStufi>2</CdStatusPartnertoeslagStufi>
+            <CdStatusEenOudertoeslagStufi>2</CdStatusEenOudertoeslagStufi>
+        </Studiefinanciering>
+        <!-- vanaf maand van geboorte dochter: partnertoeslag toegekend -->
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20240701</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20241231</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>1</CdToekenningBasisbeursStufi>
+            <IndAanvullendeBeursStufi>1</IndAanvullendeBeursStufi>
+            <CdStatusPartnertoeslagStufi>1</CdStatusPartnertoeslagStufi>
+            <CdStatusEenOudertoeslagStufi>2</CdStatusEenOudertoeslagStufi>
+        </Studiefinanciering>
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20250101</DatBToekenningsperiodeStufi>
+            <DatEToekenningsperiodeStufi>20251231</DatEToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>1</CdToekenningBasisbeursStufi>
+            <IndAanvullendeBeursStufi>1</IndAanvullendeBeursStufi>
+            <CdStatusPartnertoeslagStufi>1</CdStatusPartnertoeslagStufi>
+            <CdStatusEenOudertoeslagStufi>2</CdStatusEenOudertoeslagStufi>
+        </Studiefinanciering>
+        <!-- lopende toekenning 2026 (geen einddatum) -->
+        <Studiefinanciering>
+            <DatBToekenningsperiodeStufi>20260101</DatBToekenningsperiodeStufi>
+            <CdToekenningBasisbeursStufi>1</CdToekenningBasisbeursStufi>
+            <IndAanvullendeBeursStufi>1</IndAanvullendeBeursStufi>
+            <CdStatusPartnertoeslagStufi>1</CdStatusPartnertoeslagStufi>
+            <CdStatusEenOudertoeslagStufi>2</CdStatusEenOudertoeslagStufi>
+        </Studiefinanciering>
+
+    </ClientSuwi>
+</ns4:DUOStudiefinancieringInfoResponse>

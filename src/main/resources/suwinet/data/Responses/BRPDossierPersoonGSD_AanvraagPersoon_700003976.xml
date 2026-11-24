@@ -1,0 +1,61 @@
+<brp:AanvraagPersoonResponse xmlns:brp="http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD/v0200">
+    <ClientSuwi>
+
+        <!-- Scenario 18: Amira El Amrani (bsn: 700003976), geboren 11-07-2024 in Rotterdam (2 jaar).
+             Dochter van Salma El Amrani (bsn: 700003836) en Bilal El Amrani (bsn: 700003691); woont bij beide ouders.
+             Ouders zijn gehuwd, dus gezamenlijk gezag van rechtswege (geen aantekening in gezagsregister). -->
+        <Voornamen>Amira</Voornamen>
+        <SignificantDeelVanDeAchternaam>El Amrani</SignificantDeelVanDeAchternaam>
+        <Geboortedat>20240711</Geboortedat>
+        <Burgerservicenr>700003976</Burgerservicenr>
+        <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
+        <ANr>2878427679</ANr>
+        <AanduidingNaamgebruik>1</AanduidingNaamgebruik>
+        <Geslacht>2</Geslacht>
+        <CdGeboortegemeente>0599</CdGeboortegemeente>
+        <Geboorteland>6030</Geboorteland>
+        <GeldigheidGegevensPersoon>
+            <DatGeldigheidGegevens>20240711</DatGeldigheidGegevens>
+        </GeldigheidGegevensPersoon>
+        <Nationaliteit>
+            <CdNationaliteit>0001</CdNationaliteit>
+            <GeldigheidGegevensNationaliteit>
+                <DatGeldigheidGegevens>20240711</DatGeldigheidGegevens>
+            </GeldigheidGegevensNationaliteit>
+        </Nationaliteit>
+        <DomicilieAdres>
+            <Postcd>3036BL</Postcd>
+            <Woonplaatsnaam>Rotterdam</Woonplaatsnaam>
+            <Straatnaam>Bergweg</Straatnaam>
+            <NaamOpenbareRuimte>Bergweg</NaamOpenbareRuimte>
+            <Huisnr>214</Huisnr>
+            <Huisletter>B</Huisletter>
+            <IdentificatiecdVerblijfplaats>0599010000876543</IdentificatiecdVerblijfplaats>
+            <IdentificatiecdNraanduiding>0599200000876544</IdentificatiecdNraanduiding>
+        </DomicilieAdres>
+        <AangifteAdreshoudingBrp>
+            <CdGemeenteVanInschrijving>0599</CdGemeenteVanInschrijving>
+            <DatVanInschrijvingBijGemeente>20240711</DatVanInschrijvingBijGemeente>
+            <DatBAdreshoudingBrp>20240711</DatBAdreshoudingBrp>
+        </AangifteAdreshoudingBrp>
+        <Ouder1>
+            <Voornamen>Salma</Voornamen>
+            <SignificantDeelVanDeAchternaam>El Amrani</SignificantDeelVanDeAchternaam>
+            <Geboortedat>20030922</Geboortedat>
+            <Burgerservicenr>700003836</Burgerservicenr>
+            <ANr>5085458167</ANr>
+            <DatBFamilierechtelijkeBetrekking>20240711</DatBFamilierechtelijkeBetrekking>
+        </Ouder1>
+        <Ouder2>
+            <Voornamen>Bilal</Voornamen>
+            <SignificantDeelVanDeAchternaam>El Amrani</SignificantDeelVanDeAchternaam>
+            <Geboortedat>20020615</Geboortedat>
+            <Burgerservicenr>700003691</Burgerservicenr>
+            <ANr>5979406794</ANr>
+            <DatBFamilierechtelijkeBetrekking>20240711</DatBFamilierechtelijkeBetrekking>
+        </Ouder2>
+        <InschrijvingsgegevensBrp>
+            <CdGemeenteWaarPkZichBevindt>0599</CdGemeenteWaarPkZichBevindt>
+        </InschrijvingsgegevensBrp>
+    </ClientSuwi>
+</brp:AanvraagPersoonResponse>

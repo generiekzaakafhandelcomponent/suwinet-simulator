@@ -1,0 +1,59 @@
+<ns4:KentekenInfoResponse xmlns:ns3="http://bkwi.nl/SuwiML/FWI/v0205" xmlns:ns4="http://bkwi.nl/SuwiML/Diensten/RDWDossierGSD/v0200">
+    <ClientSuwi>
+
+        <!-- Scenario 16: Kentekeninfo bestelauto VND82S van Jeroen van Leeuwen (bsn: 700003411), zzp-elektricien.
+             Bedrijfsauto (CdSrtVoertuig B), nieuw op naam gesteld 15-03-2022. Geen BPM (vrijstelling bestelauto ondernemer). -->
+        <Burgerservicenr>700003411</Burgerservicenr>
+        <Voorletters>J</Voorletters>
+        <Voorvoegsel>van</Voorvoegsel>
+        <SignificantDeelVanDeAchternaam>Leeuwen</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19870819</Geboortedat>
+
+        <RdwAdres>
+            <FeitelijkAdres>
+                <Straatadres>
+                    <Postcd>5654NB</Postcd>
+                    <Woonplaatsnaam>Eindhoven</Woonplaatsnaam>
+                    <Straatnaam>Hoogstraat</Straatnaam>
+                    <Huisnr>187</Huisnr>
+                </Straatadres>
+            </FeitelijkAdres>
+        </RdwAdres>
+
+        <Aansprakelijke>
+            <DatRegistratieAansprakelijkheid>20220315</DatRegistratieAansprakelijkheid>
+            <Voertuig>
+                <CdSrtVoertuig>B</CdSrtVoertuig>
+                <KentekenVoertuig>VND82S</KentekenVoertuig>
+                <StatusVoertuig>
+                    <CdStatusVoertuig>87</CdStatusVoertuig>
+                    <DatBStatusVoertuig>20220315</DatBStatusVoertuig>
+                </StatusVoertuig>
+                <MerkVoertuig>VOLKSWAGEN</MerkVoertuig>
+                <TypeVoertuig>TRANSPORTER 2.0 TDI 110KW L2H1</TypeVoertuig>
+                <HoofdkleurVoertuig>WIT</HoofdkleurVoertuig>
+                <DatEersteInschrijvingVoertuigNat>20220315</DatEersteInschrijvingVoertuigNat>
+                <DatEersteInschrijvingVoertuigInt>20220315</DatEersteInschrijvingVoertuigInt>
+                <BedrBpm>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <WaardeBedr>0</WaardeBedr>
+                </BedrBpm>
+                <BedrCatalogusVoertuig>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <WaardeBedr>41850</WaardeBedr>
+                </BedrCatalogusVoertuig>
+                <TellerstandVoertuig>
+                    <TellerstandVoertuig>98234</TellerstandVoertuig>
+                    <CdTellerstandeenheidVoertuig>K</CdTellerstandeenheidVoertuig>
+                </TellerstandVoertuig>
+                <Keuring>
+                    <DatEGeldigheidApk>20270315</DatEGeldigheidApk>
+                </Keuring>
+                <Verzekering>
+                    <CdSrtDekking>WAM</CdSrtDekking>
+                    <DatBVerzekering>20220315</DatBVerzekering>
+                </Verzekering>
+            </Voertuig>
+        </Aansprakelijke>
+    </ClientSuwi>
+</ns4:KentekenInfoResponse>

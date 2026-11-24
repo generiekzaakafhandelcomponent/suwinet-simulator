@@ -1,0 +1,66 @@
+<ns3:PersoonsInfoResponse xmlns:ns3="http://bkwi.nl/SuwiML/Diensten/KadasterDossierGSD/v0300" xmlns:ns2="http://bkwi.nl/SuwiML/FWI/v0203">
+
+    <!-- Scenario 9: Kadasterinformatie van Mark Bos (bsn: 700001852).
+         Gescheiden (12-05-2026), woont sinds 01-03-2026 in een huurflat (Marokkodreef 34), maar is nog voor 1/2
+         eigenaar van de voormalige echtelijke woning Rijnlaan 87 (0344 AJ 60521), samen met ex-partner
+         Sanne Bos (bsn: 700001992). Gekocht in 2010 met hypotheek. -->
+    <ClientSuwi>
+        <Burgerservicenr>700001852</Burgerservicenr>
+        <Voornamen>Mark</Voornamen>
+        <SignificantDeelVanDeAchternaam>Bos</SignificantDeelVanDeAchternaam>
+        <Geslacht>1</Geslacht>
+        <Geboortedat>19820704</Geboortedat>
+
+        <DomicilieAdres>
+            <StraatadresBag>
+                <Postcd>3564EX</Postcd>
+                <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+                <Straatnaam>Marokkodreef</Straatnaam>
+                <Huisnr>34</Huisnr>
+            </StraatadresBag>
+        </DomicilieAdres>
+
+        <DatToestandKadaster>20261120</DatToestandKadaster>
+
+        <Eigendom>
+            <!-- Voormalige echtelijke woning, aandeel 1/2 -->
+            <OnroerendeZaak>
+                <CdTypeOnroerendeZaak>P</CdTypeOnroerendeZaak>
+                <DatOntstaan>19560301</DatOntstaan>
+                <KadastraleAanduiding>
+                    <CdKadastraleGemeente>0344</CdKadastraleGemeente>
+                    <KadastraleGemeentenaam>Utrecht</KadastraleGemeentenaam>
+                    <KadastraleSectie>AJ</KadastraleSectie>
+                    <KadastraalPerceelnr>60521</KadastraalPerceelnr>
+                </KadastraleAanduiding>
+                <OmsKadastraalObject>Bebouwd: Wonen</OmsKadastraalObject>
+                <ZakelijkRecht>
+                    <OmsZakelijkRecht>Eigendom (recht van) 1/2</OmsZakelijkRecht>
+                </ZakelijkRecht>
+                <LocatieOZ>
+                    <StraatadresBag>
+                        <Postcd>3522BP</Postcd>
+                        <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+                        <Straatnaam>Rijnlaan</Straatnaam>
+                        <Huisnr>87</Huisnr>
+                    </StraatadresBag>
+                </LocatieOZ>
+                <PubliekrechtelijkeBeperking>
+                    <AantekeningKadastraalObject>
+                        <OmsAantekeningKadastraalObject>Er zijn geen beperkingen bekend in de Landelijke Voorziening WKPB.</OmsAantekeningKadastraalObject>
+                    </AantekeningKadastraalObject>
+                </PubliekrechtelijkeBeperking>
+                <BedrKoopsom>
+                    <CdMunteenheid>EUR</CdMunteenheid>
+                    <WaardeBedr>245000</WaardeBedr>
+                </BedrKoopsom>
+                <JaarAankoop>2010</JaarAankoop>
+                <WijzeVerkrijgingEigendom>
+                    <CdWijzeVerkrijgingEigendom>H</CdWijzeVerkrijgingEigendom>
+                    <DatVerkrijgingEigendom>20100827</DatVerkrijgingEigendom>
+                </WijzeVerkrijgingEigendom>
+                <IndMeerGerechtigden>1</IndMeerGerechtigden>
+            </OnroerendeZaak>
+        </Eigendom>
+    </ClientSuwi>
+</ns3:PersoonsInfoResponse>

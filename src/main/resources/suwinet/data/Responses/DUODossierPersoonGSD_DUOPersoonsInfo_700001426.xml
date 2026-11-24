@@ -1,0 +1,122 @@
+<smls:DUOPersoonsInfoResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/DUODossierPersoonGSD/v0300">
+    <ClientSuwi>
+
+        <!-- Scenario 7: DUO opleidingsinformatie van Sanne Mulder (bsn: 700001426).
+             HAVO-diploma 2024 (= startkwalificatie), tussenjaar, per 01-09-2025 HBO Communicatie (Hanzehogeschool Groningen),
+             uitgeschreven per 30-09-2026 (gestopt in begin tweede studiejaar, geen propedeuse behaald). -->
+        <Burgerservicenr>700001426</Burgerservicenr>
+        <!-- 1 = ja: HAVO-diploma is een startkwalificatie -->
+        <IndStartkwalificatieDuo>1</IndStartkwalificatieDuo>
+
+        <!-- HAVO in Assen, 2018 - 2024 (leerjaar 4 gedoubleerd) -->
+        <Onderwijsovereenkomst>
+            <Brin>
+                <BrinNr>20DW</BrinNr>
+            </Brin>
+            <DatInschrijvingOpleiding>20180801</DatInschrijvingOpleiding>
+            <DatUitschrijvingOpleiding>20240731</DatUitschrijvingOpleiding>
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>20180801</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20190731</DatEDeelnameOpleiding>
+                <AanduidingLeerjaar>1</AanduidingLeerjaar>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>HAVO - leerjaar 1</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>VO-HAVO</CdNiveauOpleidingDuo>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>20190801</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20200731</DatEDeelnameOpleiding>
+                <AanduidingLeerjaar>2</AanduidingLeerjaar>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>HAVO - leerjaar 2</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>VO-HAVO</CdNiveauOpleidingDuo>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>20200801</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20210731</DatEDeelnameOpleiding>
+                <AanduidingLeerjaar>3</AanduidingLeerjaar>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>HAVO - leerjaar 3</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>VO-HAVO</CdNiveauOpleidingDuo>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>20210801</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20220731</DatEDeelnameOpleiding>
+                <AanduidingLeerjaar>4</AanduidingLeerjaar>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>HAVO - leerjaar 4</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>VO-HAVO</CdNiveauOpleidingDuo>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+            <!-- leerjaar 4 gedoubleerd -->
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>20220801</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20230731</DatEDeelnameOpleiding>
+                <AanduidingLeerjaar>4</AanduidingLeerjaar>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>HAVO - leerjaar 4</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>VO-HAVO</CdNiveauOpleidingDuo>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>20230801</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20240731</DatEDeelnameOpleiding>
+                <AanduidingLeerjaar>5</AanduidingLeerjaar>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>HAVO - eindexamenjaar</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>VO-HAVO</CdNiveauOpleidingDuo>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+        </Onderwijsovereenkomst>
+
+        <!-- HBO Bachelor Communicatie, Hanzehogeschool Groningen: ingeschreven 01-09-2025, uitgeschreven 30-09-2026 -->
+        <Onderwijsovereenkomst>
+            <Brin>
+                <BrinNr>25BE</BrinNr>
+            </Brin>
+            <DatInschrijvingOpleiding>20250901</DatInschrijvingOpleiding>
+            <DatUitschrijvingOpleiding>20260930</DatUitschrijvingOpleiding>
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>20250901</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20260831</DatEDeelnameOpleiding>
+                <AanduidingLeerjaar>1</AanduidingLeerjaar>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>B Communicatie</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>HBO-BA</CdNiveauOpleidingDuo>
+                    <OmsStudiegebied>Economie</OmsStudiegebied>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+            <!-- tweede studiejaar: na één maand gestopt (uitschrijving per 30-09-2026) -->
+            <DeelnameOpleidingGeregistrDuo>
+                <DatBDeelnameOpleiding>20260901</DatBDeelnameOpleiding>
+                <DatEDeelnameOpleiding>20260930</DatEDeelnameOpleiding>
+                <AanduidingLeerjaar>2</AanduidingLeerjaar>
+                <InhoudDeelnameOpleidingDuo>
+                    <NaamOpleidingKortDuo>B Communicatie</NaamOpleidingKortDuo>
+                    <CdNiveauOpleidingDuo>HBO-BA</CdNiveauOpleidingDuo>
+                    <OmsStudiegebied>Economie</OmsStudiegebied>
+                </InhoudDeelnameOpleidingDuo>
+            </DeelnameOpleidingGeregistrDuo>
+        </Onderwijsovereenkomst>
+
+        <!-- RESULTATEN: alleen HAVO-diploma; HBO zonder resultaat beëindigd -->
+        <ResultaatOpleidingGeregistrDuo>
+            <Brin>
+                <BrinNr>20DW</BrinNr>
+            </Brin>
+            <InhoudResultaatOpleidingDuo>
+                <NaamOpleidingKortDuo>HAVO</NaamOpleidingKortDuo>
+                <CdNiveauOpleidingDuo>VO-HAVO</CdNiveauOpleidingDuo>
+            </InhoudResultaatOpleidingDuo>
+            <ResultaatExamen>
+                <CdResultaatExamen>G</CdResultaatExamen>
+                <DatResultaatExamen>20240709</DatResultaatExamen>
+                <JaarAfgelegdExamen>2024</JaarAfgelegdExamen>
+            </ResultaatExamen>
+        </ResultaatOpleidingGeregistrDuo>
+
+    </ClientSuwi>
+</smls:DUOPersoonsInfoResponse>

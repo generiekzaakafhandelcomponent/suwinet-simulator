@@ -1,0 +1,71 @@
+<bij:BijstandsregelingenInfoResponse xmlns:bij="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500">
+    <ClientSuwi>
+
+        <!-- Scenario 17: Dennis Brouwer (bsn: 700003551), alleenstaand. Lopende bijstandsuitkering Participatiewet (PW)
+             bij gemeente Rotterdam sinds 1 maart 2025. Heeft in september 2026 een auto (TKZ34G) op zijn naam gezet.
+             Bedragen netto per maand, in centen. -->
+        <Burgerservicenr>700003551</Burgerservicenr>
+        <Voornamen>Dennis</Voornamen>
+        <Voorletters>D</Voorletters>
+        <SignificantDeelVanDeAchternaam>Brouwer</SignificantDeelVanDeAchternaam>
+        <Geslacht>1</Geslacht>
+        <Geboortedat>19900127</Geboortedat>
+        <DomicilieAdres>
+            <Postcd>3073AH</Postcd>
+            <Woonplaatsnaam>Rotterdam</Woonplaatsnaam>
+            <Gemeentenaam>Rotterdam</Gemeentenaam>
+            <Straatnaam>Groene Hilledijk</Straatnaam>
+            <Huisnr>212</Huisnr>
+            <Huisnrtoevoeging>B</Huisnrtoevoeging>
+        </DomicilieAdres>
+
+        <!-- AanvraagUitkering: PW, toegekend -->
+        <AanvraagUitkering>
+            <DatAanvraagUitkering>20250210</DatAanvraagUitkering>
+            <SzWet>
+                <CdSzWet>PW</CdSzWet>
+            </SzWet>
+            <BeslissingOpAanvraagUitkering>
+                <CdBeslissingOpAanvraagUitkering>01</CdBeslissingOpAanvraagUitkering>
+                <DatDagtekeningBeslisOpAanvrUitk>20250314</DatDagtekeningBeslisOpAanvrUitk>
+            </BeslissingOpAanvraagUitkering>
+            <Bron>
+                <CdKolomSuwi>3</CdKolomSuwi>
+                <CdPartijSuwi>0599</CdPartijSuwi>
+                <CdVestigingSuwi>0599</CdVestigingSuwi>
+            </Bron>
+        </AanvraagUitkering>
+
+        <!-- Uitkeringsverhouding: PW, lopend sinds 1 maart 2025 -->
+        <Uitkeringsverhouding>
+            <DatBUitkeringsverhouding>20250301</DatBUitkeringsverhouding>
+            <SzWet>
+                <CdSzWet>PW</CdSzWet>
+            </SzWet>
+            <Uitkeringsperiode>
+                <DatBUitkeringsperiode>20250301</DatBUitkeringsperiode>
+                <DatEUitkeringsperiode>20251231</DatEUitkeringsperiode>
+                <InkomstenBijstandUitkering>
+                    <BedrBetaalbaarGesteldeUitkering>
+                        <CdMunteenheid>EUR</CdMunteenheid>
+                        <WaardeBedr>134500</WaardeBedr>
+                    </BedrBetaalbaarGesteldeUitkering>
+                </InkomstenBijstandUitkering>
+            </Uitkeringsperiode>
+            <Uitkeringsperiode>
+                <DatBUitkeringsperiode>20260101</DatBUitkeringsperiode>
+                <InkomstenBijstandUitkering>
+                    <BedrBetaalbaarGesteldeUitkering>
+                        <CdMunteenheid>EUR</CdMunteenheid>
+                        <WaardeBedr>140100</WaardeBedr>
+                    </BedrBetaalbaarGesteldeUitkering>
+                </InkomstenBijstandUitkering>
+            </Uitkeringsperiode>
+            <Bron>
+                <CdKolomSuwi>3</CdKolomSuwi>
+                <CdPartijSuwi>0599</CdPartijSuwi>
+                <CdVestigingSuwi>0599</CdVestigingSuwi>
+            </Bron>
+        </Uitkeringsverhouding>
+    </ClientSuwi>
+</bij:BijstandsregelingenInfoResponse>

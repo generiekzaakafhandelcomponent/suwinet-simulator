@@ -1,0 +1,85 @@
+<brp:AanvraagPersoonResponse xmlns:brp="http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD/v0200">
+    <ClientSuwi>
+
+        <!-- Scenario 17: Dennis Brouwer (bsn: 700003551), alleenstaand, bijstand (PW) sinds 1 maart 2025.
+             Heeft op 14 september 2026 een personenauto (kenteken TKZ34G) op zijn naam gezet, na de start van de uitkering. -->
+        <Voornamen>Dennis</Voornamen>
+        <SignificantDeelVanDeAchternaam>Brouwer</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19900127</Geboortedat>
+        <Burgerservicenr>700003551</Burgerservicenr>
+        <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
+        <ANr>2376463094</ANr>
+        <AanduidingNaamgebruik>1</AanduidingNaamgebruik>
+        <Geslacht>1</Geslacht>
+        <CdGeboortegemeente>0599</CdGeboortegemeente>
+        <Geboorteland>6030</Geboorteland>
+        <GeldigheidGegevensPersoon>
+            <DatGeldigheidGegevens>19900127</DatGeldigheidGegevens>
+        </GeldigheidGegevensPersoon>
+        <Nationaliteit>
+            <CdNationaliteit>0001</CdNationaliteit>
+            <GeldigheidGegevensNationaliteit>
+                <DatGeldigheidGegevens>19900127</DatGeldigheidGegevens>
+            </GeldigheidGegevensNationaliteit>
+        </Nationaliteit>
+        <DomicilieAdres>
+            <Postcd>3073AH</Postcd>
+            <Woonplaatsnaam>Rotterdam</Woonplaatsnaam>
+            <Straatnaam>Groene Hilledijk</Straatnaam>
+            <NaamOpenbareRuimte>Groene Hilledijk</NaamOpenbareRuimte>
+            <Huisnr>212</Huisnr>
+            <Huisletter>B</Huisletter>
+            <IdentificatiecdVerblijfplaats>0599010000512378</IdentificatiecdVerblijfplaats>
+            <IdentificatiecdNraanduiding>0599200000512377</IdentificatiecdNraanduiding>
+        </DomicilieAdres>
+        <AangifteAdreshoudingBrp>
+            <CdGemeenteVanInschrijving>0599</CdGemeenteVanInschrijving>
+            <DatVanInschrijvingBijGemeente>19900127</DatVanInschrijvingBijGemeente>
+            <DatBAdreshoudingBrp>20230601</DatBAdreshoudingBrp>
+        </AangifteAdreshoudingBrp>
+        <VerblijfplaatsHistorisch>
+            <DomicilieAdres>
+                <Postcd>3074EK</Postcd>
+                <Woonplaatsnaam>Rotterdam</Woonplaatsnaam>
+                <Straatnaam>Beijerlandselaan</Straatnaam>
+                <Huisnr>118</Huisnr>
+                <Huisletter>A</Huisletter>
+            </DomicilieAdres>
+            <AangifteAdreshoudingBrp>
+                <CdGemeenteVanInschrijving>0599</CdGemeenteVanInschrijving>
+                <DatVanInschrijvingBijGemeente>19900127</DatVanInschrijvingBijGemeente>
+                <DatBAdreshoudingBrp>20120315</DatBAdreshoudingBrp>
+            </AangifteAdreshoudingBrp>
+        </VerblijfplaatsHistorisch>
+        <!-- Ouderlijk huis -->
+        <VerblijfplaatsHistorisch>
+            <DomicilieAdres>
+                <Postcd>3083BC</Postcd>
+                <Woonplaatsnaam>Rotterdam</Woonplaatsnaam>
+                <Straatnaam>Dorpsweg</Straatnaam>
+                <Huisnr>94</Huisnr>
+            </DomicilieAdres>
+            <AangifteAdreshoudingBrp>
+                <CdGemeenteVanInschrijving>0599</CdGemeenteVanInschrijving>
+                <DatVanInschrijvingBijGemeente>19900127</DatVanInschrijvingBijGemeente>
+                <DatBAdreshoudingBrp>19900127</DatBAdreshoudingBrp>
+            </AangifteAdreshoudingBrp>
+        </VerblijfplaatsHistorisch>
+        <Ouder1>
+            <Voornamen>Monique</Voornamen>
+            <SignificantDeelVanDeAchternaam>Verbeek</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19650714</Geboortedat>
+            <DatBFamilierechtelijkeBetrekking>19900127</DatBFamilierechtelijkeBetrekking>
+        </Ouder1>
+        <Ouder2>
+            <Voornamen>Ronald</Voornamen>
+            <SignificantDeelVanDeAchternaam>Brouwer</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19630302</Geboortedat>
+            <DatBFamilierechtelijkeBetrekking>19900127</DatBFamilierechtelijkeBetrekking>
+        </Ouder2>
+        <InschrijvingsgegevensBrp>
+            <CdGemeenteWaarPkZichBevindt>0599</CdGemeenteWaarPkZichBevindt>
+            <CdPkVolledigGeconverteerd>P</CdPkVolledigGeconverteerd>
+        </InschrijvingsgegevensBrp>
+    </ClientSuwi>
+</brp:AanvraagPersoonResponse>

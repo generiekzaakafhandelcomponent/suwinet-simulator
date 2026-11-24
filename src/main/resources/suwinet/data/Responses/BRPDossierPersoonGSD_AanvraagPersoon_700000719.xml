@@ -1,0 +1,53 @@
+<brp:AanvraagPersoonResponse xmlns:brp="http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD/v0200">
+    <!-- Scenario 3: werknemer met meerdere werkgevers tegelijk (hoofdbaan + bijbaan horeca, eerdere bijbaan beeindigd) -->
+    <ClientSuwi>
+        <Voornamen>Thomas Pieter</Voornamen>
+        <Voorvoegsel>de</Voorvoegsel>
+        <SignificantDeelVanDeAchternaam>Vries</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19880614</Geboortedat>
+        <Burgerservicenr>700000719</Burgerservicenr>
+        <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
+        <ANr>5212581851</ANr>
+        <AanduidingNaamgebruik>1</AanduidingNaamgebruik>
+        <Geslacht>1</Geslacht>
+        <CdGeboortegemeente>0344</CdGeboortegemeente>
+        <Geboorteland>6030</Geboorteland>
+        <GeldigheidGegevensPersoon>
+            <DatGeldigheidGegevens>19880614</DatGeldigheidGegevens>
+        </GeldigheidGegevensPersoon>
+        <Nationaliteit>
+            <CdNationaliteit>0001</CdNationaliteit>
+            <GeldigheidGegevensNationaliteit>
+                <DatGeldigheidGegevens>19880614</DatGeldigheidGegevens>
+            </GeldigheidGegevensNationaliteit>
+        </Nationaliteit>
+        <DomicilieAdres>
+            <Postcd>3531CJ</Postcd>
+            <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+            <Straatnaam>Kanaalstraat</Straatnaam>
+            <NaamOpenbareRuimte>Kanaalstraat</NaamOpenbareRuimte>
+            <Huisnr>187</Huisnr>
+            <IdentificatiecdVerblijfplaats>0344010000412871</IdentificatiecdVerblijfplaats>
+            <IdentificatiecdNraanduiding>0344200000412871</IdentificatiecdNraanduiding>
+        </DomicilieAdres>
+        <AangifteAdreshoudingBrp>
+            <CdGemeenteVanInschrijving>0344</CdGemeenteVanInschrijving>
+            <DatVanInschrijvingBijGemeente>19880614</DatVanInschrijvingBijGemeente>
+            <DatBAdreshoudingBrp>20160901</DatBAdreshoudingBrp>
+        </AangifteAdreshoudingBrp>
+        <Ouder1>
+            <Voornamen>Marjolein</Voornamen>
+            <SignificantDeelVanDeAchternaam>Kuipers</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19600211</Geboortedat>
+            <DatBFamilierechtelijkeBetrekking>19880614</DatBFamilierechtelijkeBetrekking>
+        </Ouder1>
+        <Ouder2>
+            <Voornamen>Pieter Jan</Voornamen>
+            <Voorvoegsel>de</Voorvoegsel>
+            <SignificantDeelVanDeAchternaam>Vries</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19581103</Geboortedat>
+            <DatBFamilierechtelijkeBetrekking>19880614</DatBFamilierechtelijkeBetrekking>
+        </Ouder2>
+        <InschrijvingsgegevensBrp/>
+    </ClientSuwi>
+</brp:AanvraagPersoonResponse>

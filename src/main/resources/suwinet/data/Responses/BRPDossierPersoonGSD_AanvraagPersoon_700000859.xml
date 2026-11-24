@@ -1,0 +1,51 @@
+<brp:AanvraagPersoonResponse xmlns:brp="http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD/v0200">
+    <!-- Scenario 4: ontslagen wegens reorganisatie, WW-uitkering eindigt per 31-01-2027 -->
+    <ClientSuwi>
+        <Voornamen>Sandra Maria</Voornamen>
+        <SignificantDeelVanDeAchternaam>Visser</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19790322</Geboortedat>
+        <Burgerservicenr>700000859</Burgerservicenr>
+        <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
+        <ANr>6852312425</ANr>
+        <AanduidingNaamgebruik>1</AanduidingNaamgebruik>
+        <Geslacht>2</Geslacht>
+        <CdGeboortegemeente>0599</CdGeboortegemeente>
+        <Geboorteland>6030</Geboorteland>
+        <GeldigheidGegevensPersoon>
+            <DatGeldigheidGegevens>19790322</DatGeldigheidGegevens>
+        </GeldigheidGegevensPersoon>
+        <Nationaliteit>
+            <CdNationaliteit>0001</CdNationaliteit>
+            <GeldigheidGegevensNationaliteit>
+                <DatGeldigheidGegevens>19790322</DatGeldigheidGegevens>
+            </GeldigheidGegevensNationaliteit>
+        </Nationaliteit>
+        <DomicilieAdres>
+            <Postcd>3074AH</Postcd>
+            <Woonplaatsnaam>Rotterdam</Woonplaatsnaam>
+            <Straatnaam>Groene Hilledijk</Straatnaam>
+            <NaamOpenbareRuimte>Groene Hilledijk</NaamOpenbareRuimte>
+            <Huisnr>214</Huisnr>
+            <IdentificatiecdVerblijfplaats>0599010000368214</IdentificatiecdVerblijfplaats>
+            <IdentificatiecdNraanduiding>0599200000368214</IdentificatiecdNraanduiding>
+        </DomicilieAdres>
+        <AangifteAdreshoudingBrp>
+            <CdGemeenteVanInschrijving>0599</CdGemeenteVanInschrijving>
+            <DatVanInschrijvingBijGemeente>19790322</DatVanInschrijvingBijGemeente>
+            <DatBAdreshoudingBrp>20110415</DatBAdreshoudingBrp>
+        </AangifteAdreshoudingBrp>
+        <Ouder1>
+            <Voornamen>Anneke</Voornamen>
+            <SignificantDeelVanDeAchternaam>de Graaf</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19520709</Geboortedat>
+            <DatBFamilierechtelijkeBetrekking>19790322</DatBFamilierechtelijkeBetrekking>
+        </Ouder1>
+        <Ouder2>
+            <Voornamen>Johannes</Voornamen>
+            <SignificantDeelVanDeAchternaam>Visser</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19501217</Geboortedat>
+            <DatBFamilierechtelijkeBetrekking>19790322</DatBFamilierechtelijkeBetrekking>
+        </Ouder2>
+        <InschrijvingsgegevensBrp/>
+    </ClientSuwi>
+</brp:AanvraagPersoonResponse>

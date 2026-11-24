@@ -1,0 +1,73 @@
+<brp:AanvraagPersoonResponse xmlns:brp="http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD/v0200">
+    <ClientSuwi>
+
+        <!-- Scenario 11: Daan Hendriks (bsn: 700002698), 19 jaar. Geboren en getogen in Utrecht.
+             MBO-2 zonder diploma verlaten (maart 2025), sinds 15-06-2026 zelfstandig op kamer (uit huis bij ouders).
+             Kleine bijbaan in supermarkt, sinds oktober 2026 Participatiewet-uitkering. -->
+        <Voornamen>Daan Johannes</Voornamen>
+        <SignificantDeelVanDeAchternaam>Hendriks</SignificantDeelVanDeAchternaam>
+        <Geboortedat>20070314</Geboortedat>
+        <Burgerservicenr>700002698</Burgerservicenr>
+        <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
+        <ANr>6727637971</ANr>
+        <AanduidingNaamgebruik>1</AanduidingNaamgebruik>
+        <Geslacht>1</Geslacht>
+        <CdGeboortegemeente>0344</CdGeboortegemeente>
+        <Geboorteland>6030</Geboorteland>
+        <GeldigheidGegevensPersoon>
+            <DatGeldigheidGegevens>20070314</DatGeldigheidGegevens>
+        </GeldigheidGegevensPersoon>
+        <Nationaliteit>
+            <CdNationaliteit>0001</CdNationaliteit>
+            <GeldigheidGegevensNationaliteit>
+                <DatGeldigheidGegevens>20070314</DatGeldigheidGegevens>
+            </GeldigheidGegevensNationaliteit>
+        </Nationaliteit>
+        <!-- Kamer in Utrecht-Zuilen -->
+        <DomicilieAdres>
+            <Postcd>3551CX</Postcd>
+            <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+            <Straatnaam>Amsterdamsestraatweg</Straatnaam>
+            <NaamOpenbareRuimte>Amsterdamsestraatweg</NaamOpenbareRuimte>
+            <Huisnr>388</Huisnr>
+            <Huisnrtoevoeging>2</Huisnrtoevoeging>
+            <IdentificatiecdVerblijfplaats>0344010000926981</IdentificatiecdVerblijfplaats>
+            <IdentificatiecdNraanduiding>0344200000926982</IdentificatiecdNraanduiding>
+        </DomicilieAdres>
+        <AangifteAdreshoudingBrp>
+            <CdGemeenteVanInschrijving>0344</CdGemeenteVanInschrijving>
+            <DatVanInschrijvingBijGemeente>20070314</DatVanInschrijvingBijGemeente>
+            <DatBAdreshoudingBrp>20260615</DatBAdreshoudingBrp>
+        </AangifteAdreshoudingBrp>
+        <!-- Ouderlijk huis in Utrecht-Kanaleneiland (geboorte t/m 14-06-2026) -->
+        <VerblijfplaatsHistorisch>
+            <DomicilieAdres>
+                <Postcd>3526GJ</Postcd>
+                <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+                <Straatnaam>Marco Pololaan</Straatnaam>
+                <Huisnr>214</Huisnr>
+            </DomicilieAdres>
+            <AangifteAdreshoudingBrp>
+                <CdGemeenteVanInschrijving>0344</CdGemeenteVanInschrijving>
+                <DatVanInschrijvingBijGemeente>20070314</DatVanInschrijvingBijGemeente>
+                <DatBAdreshoudingBrp>20070314</DatBAdreshoudingBrp>
+            </AangifteAdreshoudingBrp>
+        </VerblijfplaatsHistorisch>
+        <Ouder1>
+            <Voornamen>Petra</Voornamen>
+            <Voorvoegsel>van</Voorvoegsel>
+            <SignificantDeelVanDeAchternaam>Wijk</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19800607</Geboortedat>
+            <DatBFamilierechtelijkeBetrekking>20070314</DatBFamilierechtelijkeBetrekking>
+        </Ouder1>
+        <Ouder2>
+            <Voornamen>Richard</Voornamen>
+            <SignificantDeelVanDeAchternaam>Hendriks</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19780122</Geboortedat>
+            <DatBFamilierechtelijkeBetrekking>20070314</DatBFamilierechtelijkeBetrekking>
+        </Ouder2>
+        <InschrijvingsgegevensBrp>
+            <CdGemeenteWaarPkZichBevindt>0344</CdGemeenteWaarPkZichBevindt>
+        </InschrijvingsgegevensBrp>
+    </ClientSuwi>
+</brp:AanvraagPersoonResponse>

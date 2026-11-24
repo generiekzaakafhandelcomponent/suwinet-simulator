@@ -1,0 +1,32 @@
+<smls:VoertuigbezitInfoPersoonResponse xmlns:smls="http://bkwi.nl/SuwiML/Diensten/RDWDossierGSD/v0200">
+    <ClientSuwi>
+
+        <!-- Scenario 16: Voertuigbezit van Jeroen van Leeuwen (bsn: 700003411), zzp-elektricien.
+             Bestelauto VND82S (Volkswagen Transporter) op naam sinds 15-03-2022 (nieuw gekocht). -->
+        <Burgerservicenr>700003411</Burgerservicenr>
+        <Voorletters>J</Voorletters>
+        <Voorvoegsel>van</Voorvoegsel>
+        <SignificantDeelVanDeAchternaam>Leeuwen</SignificantDeelVanDeAchternaam>
+        <Geboortedat>19870819</Geboortedat>
+        <RdwAdres>
+            <FeitelijkAdres>
+                <Straatadres>
+                    <Postcd>5654NB</Postcd>
+                    <Woonplaatsnaam>Eindhoven</Woonplaatsnaam>
+                    <Straatnaam>Hoogstraat</Straatnaam>
+                    <Huisnr>187</Huisnr>
+                </Straatadres>
+            </FeitelijkAdres>
+        </RdwAdres>
+        <Aansprakelijke>
+            <DatRegistratieAansprakelijkheid>20220315</DatRegistratieAansprakelijkheid>
+            <Voertuig>
+                <KentekenVoertuig>VND82S</KentekenVoertuig>
+                <StatusVoertuig>
+                    <CdStatusVoertuig>87</CdStatusVoertuig>
+                    <DatBStatusVoertuig>20220315</DatBStatusVoertuig>
+                </StatusVoertuig>
+            </Voertuig>
+        </Aansprakelijke>
+    </ClientSuwi>
+</smls:VoertuigbezitInfoPersoonResponse>

@@ -1,0 +1,93 @@
+<bij:BijstandsregelingenInfoResponse xmlns:bij="http://bkwi.nl/SuwiML/Diensten/Bijstandsregelingen/v0500">
+    <ClientSuwi>
+        <!-- Scenario 11 - Bijstandsgegevens Daan Hendriks (bsn: 700002698), 19 jaar, alleenstaand, gemeente Utrecht.
+             Geen startkwalificatie, kleine bijbaan in supermarkt (ca. 10 uur per week).
+             Melding 03-09-2026, aanvraag PW na zoektermijn van 4 weken (jongere < 27) op 01-10-2026, toegekend bij besluit 22-10-2026. -->
+        <Burgerservicenr>700002698</Burgerservicenr>
+        <Voornamen>Daan Johannes</Voornamen>
+        <Voorletters>DJ</Voorletters>
+        <SignificantDeelVanDeAchternaam>Hendriks</SignificantDeelVanDeAchternaam>
+        <Geslacht>1</Geslacht>
+        <Geboortedat>20070314</Geboortedat>
+        <!-- CdLeefvorm 01 = alleenstaande -->
+        <CdLeefvorm>01</CdLeefvorm>
+        <DomicilieAdres>
+            <Postcd>3551CX</Postcd>
+            <Woonplaatsnaam>Utrecht</Woonplaatsnaam>
+            <Gemeentenaam>Utrecht</Gemeentenaam>
+            <Straatnaam>Amsterdamsestraatweg</Straatnaam>
+            <Huisnr>388</Huisnr>
+            <Huisnrtoevoeging>2</Huisnrtoevoeging>
+        </DomicilieAdres>
+        <DossierGsd>
+            <Dossiercd>PW-0344-2026-0412655</Dossiercd>
+            <DatOpnameGegevensInIbSysteem>20261022</DatOpnameGegevensInIbSysteem>
+        </DossierGsd>
+        <AanvraagUitkering>
+            <DatAanvraagUitkering>20261001</DatAanvraagUitkering>
+            <SzWet>
+                <CdSzWet>PW</CdSzWet>
+            </SzWet>
+            <BeslissingOpAanvraagUitkering>
+                <CdBeslissingOpAanvraagUitkering>01</CdBeslissingOpAanvraagUitkering>
+                <DatDagtekeningBeslisOpAanvrUitk>20261022</DatDagtekeningBeslisOpAanvrUitk>
+            </BeslissingOpAanvraagUitkering>
+            <Bron>
+                <CdKolomSuwi>3</CdKolomSuwi>
+                <CdPartijSuwi>0344</CdPartijSuwi>
+                <CdVestigingSuwi>0344</CdVestigingSuwi>
+            </Bron>
+        </AanvraagUitkering>
+        <!-- Lopende PW-uitkering vanaf 01-10-2026. Jongerennorm 18-20 jaar verhoogd o.g.v. art. 12 PW (ouders kunnen niet in
+             levensonderhoud voorzien) tot 1.050,00 netto per maand. Inkomsten uit bijbaan worden volledig verrekend
+             (geen inkomstenvrijlating). Bedragen netto per maand (CdPeriode 06 = maand). -->
+        <Uitkeringsverhouding>
+            <DatBUitkeringsverhouding>20261001</DatBUitkeringsverhouding>
+            <SzWet>
+                <CdSzWet>PW</CdSzWet>
+            </SzWet>
+            <!-- oktober 2026: inkomsten 423,20 verrekend, betaalbaar 626,80 -->
+            <Uitkeringsperiode>
+                <DatBUitkeringsperiode>20261001</DatBUitkeringsperiode>
+                <DatEUitkeringsperiode>20261031</DatEUitkeringsperiode>
+                <InkomstenBijstandUitkering>
+                    <BedrTotaalInkomstenUitkering>
+                        <CdMunteenheid>EUR</CdMunteenheid>
+                        <CdPositiefNegatief>+</CdPositiefNegatief>
+                        <WaardeBedr>42320</WaardeBedr>
+                        <CdPeriodeEenheidGeldigheidBedr>06</CdPeriodeEenheidGeldigheidBedr>
+                    </BedrTotaalInkomstenUitkering>
+                    <BedrBetaalbaarGesteldeUitkering>
+                        <CdMunteenheid>EUR</CdMunteenheid>
+                        <CdPositiefNegatief>+</CdPositiefNegatief>
+                        <WaardeBedr>62680</WaardeBedr>
+                        <CdPeriodeEenheidGeldigheidBedr>06</CdPeriodeEenheidGeldigheidBedr>
+                    </BedrBetaalbaarGesteldeUitkering>
+                </InkomstenBijstandUitkering>
+            </Uitkeringsperiode>
+            <!-- vanaf november 2026 (lopend): voorlopige verrekening op basis van inkomsten oktober, definitief na loonstrook -->
+            <Uitkeringsperiode>
+                <DatBUitkeringsperiode>20261101</DatBUitkeringsperiode>
+                <InkomstenBijstandUitkering>
+                    <BedrTotaalInkomstenUitkering>
+                        <CdMunteenheid>EUR</CdMunteenheid>
+                        <CdPositiefNegatief>+</CdPositiefNegatief>
+                        <WaardeBedr>42320</WaardeBedr>
+                        <CdPeriodeEenheidGeldigheidBedr>06</CdPeriodeEenheidGeldigheidBedr>
+                    </BedrTotaalInkomstenUitkering>
+                    <BedrBetaalbaarGesteldeUitkering>
+                        <CdMunteenheid>EUR</CdMunteenheid>
+                        <CdPositiefNegatief>+</CdPositiefNegatief>
+                        <WaardeBedr>62680</WaardeBedr>
+                        <CdPeriodeEenheidGeldigheidBedr>06</CdPeriodeEenheidGeldigheidBedr>
+                    </BedrBetaalbaarGesteldeUitkering>
+                </InkomstenBijstandUitkering>
+            </Uitkeringsperiode>
+            <Bron>
+                <CdKolomSuwi>3</CdKolomSuwi>
+                <CdPartijSuwi>0344</CdPartijSuwi>
+                <CdVestigingSuwi>0344</CdVestigingSuwi>
+            </Bron>
+        </Uitkeringsverhouding>
+    </ClientSuwi>
+</bij:BijstandsregelingenInfoResponse>

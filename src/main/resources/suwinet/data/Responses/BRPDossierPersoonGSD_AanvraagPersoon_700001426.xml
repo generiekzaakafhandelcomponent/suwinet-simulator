@@ -1,0 +1,72 @@
+<brp:AanvraagPersoonResponse xmlns:brp="http://bkwi.nl/SuwiML/Diensten/BRPDossierPersoonGSD/v0200">
+    <ClientSuwi>
+
+        <!-- Scenario 7: Sanne Mulder (bsn: 700001426), 20 jaar. Geboren in Assen, sinds augustus 2025 op kamer in Groningen
+             i.v.m. HBO-studie (Hanzehogeschool). Gestopt met studie per 30-09-2026, woont nog steeds op het kameradres. -->
+        <Voornamen>Sanne Lotte</Voornamen>
+        <SignificantDeelVanDeAchternaam>Mulder</SignificantDeelVanDeAchternaam>
+        <Geboortedat>20060418</Geboortedat>
+        <Burgerservicenr>700001426</Burgerservicenr>
+        <CdBrpGegevensGeheim>0</CdBrpGegevensGeheim>
+        <ANr>6265016831</ANr>
+        <AanduidingNaamgebruik>1</AanduidingNaamgebruik>
+        <Geslacht>2</Geslacht>
+        <!-- 0106 = Assen -->
+        <CdGeboortegemeente>0106</CdGeboortegemeente>
+        <Geboorteland>6030</Geboorteland>
+        <GeldigheidGegevensPersoon>
+            <DatGeldigheidGegevens>20060418</DatGeldigheidGegevens>
+        </GeldigheidGegevensPersoon>
+        <Nationaliteit>
+            <CdNationaliteit>0001</CdNationaliteit>
+            <GeldigheidGegevensNationaliteit>
+                <DatGeldigheidGegevens>20060418</DatGeldigheidGegevens>
+            </GeldigheidGegevensNationaliteit>
+        </Nationaliteit>
+        <!-- Studentenkamer in Groningen -->
+        <DomicilieAdres>
+            <Postcd>9712NN</Postcd>
+            <Woonplaatsnaam>Groningen</Woonplaatsnaam>
+            <Straatnaam>Nieuwe Ebbingestraat</Straatnaam>
+            <NaamOpenbareRuimte>Nieuwe Ebbingestraat</NaamOpenbareRuimte>
+            <Huisnr>112</Huisnr>
+            <Huisletter>A</Huisletter>
+            <IdentificatiecdVerblijfplaats>0014010000731426</IdentificatiecdVerblijfplaats>
+            <IdentificatiecdNraanduiding>0014200000731427</IdentificatiecdNraanduiding>
+        </DomicilieAdres>
+        <AangifteAdreshoudingBrp>
+            <CdGemeenteVanInschrijving>0014</CdGemeenteVanInschrijving>
+            <DatVanInschrijvingBijGemeente>20250825</DatVanInschrijvingBijGemeente>
+            <DatBAdreshoudingBrp>20250825</DatBAdreshoudingBrp>
+        </AangifteAdreshoudingBrp>
+        <!-- Ouderlijk huis in Assen (geboorte t/m augustus 2025) -->
+        <VerblijfplaatsHistorisch>
+            <DomicilieAdres>
+                <Postcd>9404KT</Postcd>
+                <Woonplaatsnaam>Assen</Woonplaatsnaam>
+                <Straatnaam>Pelikaanstraat</Straatnaam>
+                <Huisnr>14</Huisnr>
+            </DomicilieAdres>
+            <AangifteAdreshoudingBrp>
+                <CdGemeenteVanInschrijving>0106</CdGemeenteVanInschrijving>
+                <DatVanInschrijvingBijGemeente>20060418</DatVanInschrijvingBijGemeente>
+                <DatBAdreshoudingBrp>20060418</DatBAdreshoudingBrp>
+            </AangifteAdreshoudingBrp>
+        </VerblijfplaatsHistorisch>
+        <Ouder1>
+            <Voornamen>Ingrid</Voornamen>
+            <SignificantDeelVanDeAchternaam>Hoekstra</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19750302</Geboortedat>
+            <DatBFamilierechtelijkeBetrekking>20060418</DatBFamilierechtelijkeBetrekking>
+        </Ouder1>
+        <Ouder2>
+            <Voornamen>Erik Jan</Voornamen>
+            <SignificantDeelVanDeAchternaam>Mulder</SignificantDeelVanDeAchternaam>
+            <Geboortedat>19730911</Geboortedat>
+            <DatBFamilierechtelijkeBetrekking>20060418</DatBFamilierechtelijkeBetrekking>
+        </Ouder2>
+        <InschrijvingsgegevensBrp>
+            <CdGemeenteWaarPkZichBevindt>0014</CdGemeenteWaarPkZichBevindt>
+        </InschrijvingsgegevensBrp>
+    </ClientSuwi>
+</brp:AanvraagPersoonResponse>
