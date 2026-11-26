@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 import org.springframework.ws.config.annotation.EnableWs;
-import org.springframework.ws.config.annotation.WsConfigurerAdapter;
+import org.springframework.ws.config.annotation.WsConfigurer;
 import org.springframework.ws.server.EndpointInterceptor;
 import org.springframework.ws.soap.server.endpoint.interceptor.PayloadValidatingInterceptor;
 import org.springframework.ws.transport.http.MessageDispatcherServlet;
@@ -20,15 +20,16 @@ import java.util.List;
 
 @EnableWs
 @Configuration
-public class DUOPersoonsGSDWebServiceConfig extends WsConfigurerAdapter {
+public class DUOPersoonsGSDWebServiceConfig implements WsConfigurer {
     Logger logger = LoggerFactory.getLogger(DUOPersoonsGSDWebServiceConfig.class);
 
-    @Value("${classpath:suwinet/DUODossierPersoonGSD/Diensten/DUODossierPersoonGSD/v0300-b01/Body*.xsd}")
+    @Value("classpath*:suwinet/DUODossierPersoonGSD/Diensten/DUODossierPersoonGSD/v0300-b01/Body*.xsd")
     private Resource[] dienstenResources;
 
     @Bean
     public XsdSchemaCollection getDUODossierPersoonGSD() {
         CommonsXsdSchemaCollection xsds = new CommonsXsdSchemaCollection(dienstenResources);
+        xsds.setUriResolver(new RelativeUriResolver());
         xsds.setInline(true);
         return xsds;
     }

@@ -1,8 +1,7 @@
 package com.ritense.suwitense.webservice;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectMapper;
 
-import java.io.IOException;
 import java.util.Map;
 
 public class JsonToMap {
@@ -21,7 +20,7 @@ public class JsonToMap {
 
             System.out.println(map);
 
-        } catch (IOException e) {
+        } catch (RuntimeException e) {
             e.printStackTrace();
         }
 

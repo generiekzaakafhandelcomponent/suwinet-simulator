@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 import org.springframework.ws.config.annotation.EnableWs;
-import org.springframework.ws.config.annotation.WsConfigurerAdapter;
+import org.springframework.ws.config.annotation.WsConfigurer;
 import org.springframework.ws.server.EndpointInterceptor;
 import org.springframework.ws.soap.server.endpoint.interceptor.PayloadValidatingInterceptor;
 import org.springframework.ws.transport.http.MessageDispatcherServlet;
@@ -21,15 +21,16 @@ import java.util.List;
 
 @EnableWs
 @Configuration
-public class KadasterWebServiceConfig extends WsConfigurerAdapter {
+public class KadasterWebServiceConfig implements WsConfigurer {
     Logger logger = LoggerFactory.getLogger(KadasterEndpoint.class);
 
-    @Value("${classpath:suwinet/KadasterDossierGSD/Diensten/KadasterDossierGSD/v0300-b02/Body*.xsd}")
+    @Value("classpath*:suwinet/KadasterDossierGSD/Diensten/KadasterDossierGSD/v0300-b02/Body*.xsd")
     private Resource[] dienstenResources;
 
     @Bean
     public XsdSchemaCollection getKadasterDossierGSDXsds() {
         CommonsXsdSchemaCollection xsds = new CommonsXsdSchemaCollection(dienstenResources);
+        xsds.setUriResolver(new RelativeUriResolver());
         xsds.setInline(true);
         return xsds;
     }

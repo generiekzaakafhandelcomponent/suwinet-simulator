@@ -18,6 +18,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.nio.file.NotDirectoryException;
 import java.util.Arrays;
@@ -40,9 +41,13 @@ public class SuwinetEndpoint {
 
         return first.isPresent() ? first.get() : null;
     }
+    private static Class<?> rawClass(Type type) {
+        return type instanceof ParameterizedType parameterized ? (Class<?>) parameterized.getRawType() : (Class<?>) type;
+    }
+
     Object unmarshal(Type xmlClass, Resource resource) {
         try {
-            Class<?> clazz = com.fasterxml.jackson.databind.type.TypeFactory.rawClass(xmlClass);
+            Class<?> clazz = rawClass(xmlClass);
             JAXBContext context = JAXBContext.newInstance(clazz);
             Unmarshaller un = context.createUnmarshaller();
             return un.unmarshal(resource.getInputStream());
