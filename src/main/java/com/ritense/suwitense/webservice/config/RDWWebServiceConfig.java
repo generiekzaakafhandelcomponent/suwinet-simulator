@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 import org.springframework.ws.config.annotation.EnableWs;
-import org.springframework.ws.config.annotation.WsConfigurerAdapter;
+import org.springframework.ws.config.annotation.WsConfigurer;
 import org.springframework.ws.server.EndpointInterceptor;
 import org.springframework.ws.soap.server.endpoint.interceptor.PayloadValidatingInterceptor;
 import org.springframework.ws.transport.http.MessageDispatcherServlet;
@@ -20,15 +20,16 @@ import java.util.List;
 
 @EnableWs
 @Configuration
-public class RDWWebServiceConfig extends WsConfigurerAdapter {
+public class RDWWebServiceConfig implements WsConfigurer {
     Logger logger = LoggerFactory.getLogger(RDWWebServiceConfig.class);
 
-    @Value("${classpath:suwinet/RDWDossierGSD/Diensten/RDWDossierGSD/v0200-b02/Body*.xsd}")
+    @Value("classpath*:suwinet/RDWDossierGSD/Diensten/RDWDossierGSD/v0200-b02/Body*.xsd")
     private Resource[] dienstenResources;
 
     @Bean
     public XsdSchemaCollection getRDWDossierGSDXsds() {
         CommonsXsdSchemaCollection xsds = new CommonsXsdSchemaCollection(dienstenResources);
+        xsds.setUriResolver(new RelativeUriResolver());
         xsds.setInline(true);
         return xsds;
     }
